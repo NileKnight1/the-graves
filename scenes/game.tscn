@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://rvivq0xx8k4y"]
+
+[ext_resource type="PackedScene" uid="uid://cfj564wppea61" path="res://scenes/temp_player.tscn" id="1_uwrxv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+
+[node name="game" type="Node2D" unique_id=275808026]
+
+[node name="CharacterBody2D" parent="." unique_id=312059141 instance=ExtResource("1_uwrxv")]
+position = Vector2(-18, -91)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1735474666]
+zoom = Vector2(1.4, 1.4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1747960841]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=314312543]
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="Panel" type="Panel" parent="." unique_id=2025990821]
+offset_left = -181.0
+offset_top = -157.0
+offset_right = -141.0
+offset_bottom = -117.0
+
+[node name="Panel2" type="Panel" parent="." unique_id=1056162442]
+offset_left = 109.0
+offset_top = -161.0
+offset_right = 149.0
+offset_bottom = -121.0
+
+[node name="Panel3" type="Panel" parent="." unique_id=821492747]
+offset_left = 141.0
+offset_top = -30.0
+offset_right = 181.0
+offset_bottom = 10.0
+
+[node name="Panel4" type="Panel" parent="." unique_id=1251525366]
+offset_left = -242.0
+offset_top = 6.0
+offset_right = -202.0
+offset_bottom = 46.0
+
+[node name="Panel5" type="Panel" parent="." unique_id=1001667698]
+offset_left = 345.0
+offset_top = -90.0
+offset_right = 385.0
+offset_bottom = -50.0
+
+[node name="Panel6" type="Panel" parent="." unique_id=407205339]
+offset_left = 576.0
+offset_top = -55.0
+offset_right = 616.0
+offset_bottom = -15.0

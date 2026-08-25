@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cfj564wppea61"]
+
+[ext_resource type="Script" uid="uid://c4giicxigeufk" path="res://scripts/temp_player.gd" id="1_qc3fp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6iek"]
+bg_color = Color(0.26449275, 0.518242, 0.40182313, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qc3fp"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=312059141]
+script = ExtResource("1_qc3fp")
+
+[node name="Panel" type="Panel" parent="." unique_id=1222239789]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v6iek")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592067596]
+position = Vector2(20, 20.000004)
+scale = Vector2(1.9094183, 1.9094183)
+shape = SubResource("CircleShape2D_qc3fp")
