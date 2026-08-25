@@ -219,6 +219,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 [node name="cam3" type="Camera2D" parent="map above/cams" unique_id=1415543043]
 position = Vector2(1089, -203)
 scale = Vector2(1.1116455, 1.0247914)
+enabled = false
 zoom = Vector2(0.945, 0.945)
 
 [node name="Panel" type="Panel" parent="map above/cams/cam3" unique_id=43199726]

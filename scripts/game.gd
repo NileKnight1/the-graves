@@ -2,18 +2,38 @@ extends Node2D
 
 
 
+var computer_area = 0
+var computer_opened = 0
+var opened_cam = 3
+
+
+
 func _ready() -> void:
 	pass # Replace with function body.
 
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
-		if computer_area:
+		if computer_area && !computer_opened:
+			print("hi")
 			#$"map above/cams/cam1".visible = 1
 			$player/Camera2D.enabled = 0
 			$"map above/cams".visible = 1
-			
+			$"map above/cams".get_child(opened_cam-1).enabled = 1
 			
 			computer_opened = 1
+			stop_move()
+		elif computer_opened:
+			$player/Camera2D.enabled = 1
+			$"map above/cams".visible = 0
+			print("closed")
+			#$"map above/cams/cam3".enabled = 0
+			$"map above/cams".get_child(opened_cam-1).enabled = 0
+			
+			
+			computer_opened = 0
+			allow_move()
+			
 		
 	#print(computer_opened)
 	if computer_opened:
@@ -35,12 +55,10 @@ func _process(delta: float) -> void:
 		$"map above/cams".get_child(opened_cam-1).visible = 1
 		$"map above/cams".get_child(opened_cam-1).enabled = 1
 		
-			
-	
-
-var computer_area = 0
-var computer_opened = 0
-var opened_cam = 3
+func stop_move():
+	$player.move = 0
+func allow_move():
+	$player.move = 1
 
 
 func _on_cams_body_entered(body: Node2D) -> void:

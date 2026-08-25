@@ -4,8 +4,14 @@ extends CharacterBody2D
 var SPEED = 300.0
 var JUMP_VELOCITY = -250.0
 var sprint = 0
+var move = 1
 
 func _physics_process(delta: float) -> void:
+	if !move:
+		#print("hi")
+		return
+	#print("hellll")
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
