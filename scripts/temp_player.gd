@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 		SPEED = 450
 		JUMP_VELOCITY = -350.0
 		
-		print("Sprinting")
+		#print("Sprinting")
 	else:
 		SPEED = 300
 		JUMP_VELOCITY = -250.0

@@ -1,54 +1,225 @@
 [gd_scene format=3 uid="uid://rvivq0xx8k4y"]
 
 [ext_resource type="PackedScene" uid="uid://cfj564wppea61" path="res://scenes/temp_player.tscn" id="1_uwrxv"]
+[ext_resource type="VideoStream" uid="uid://cho7udnr6dowp" path="res://assets/27519-364430915.ogv" id="2_yqjtg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwrxv"]
+bg_color = Color(0.3813141, 0.15812859, 0.06371256, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqjtg"]
+bg_color = Color(0.42631203, 0.23538497, 9.62615e-08, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p57ef"]
+bg_color = Color(0.25057846, 0.097144686, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
+bg_color = Color(0.015686275, 0.05490196, 0.11372549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbhrr"]
+bg_color = Color(0.10980392, 0.16470589, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iywne"]
+bg_color = Color(0.1504, 0.16, 0.1312, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5sy4"]
+bg_color = Color(0, 0, 0, 0.24313726)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
 [node name="game" type="Node2D" unique_id=275808026]
-
-[node name="CharacterBody2D" parent="." unique_id=312059141 instance=ExtResource("1_uwrxv")]
-position = Vector2(-18, -91)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1735474666]
-zoom = Vector2(1.4, 1.4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1747960841]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=314312543]
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
-[node name="Panel" type="Panel" parent="." unique_id=2025990821]
-offset_left = -181.0
-offset_top = -157.0
-offset_right = -141.0
-offset_bottom = -117.0
+[node name="room" type="Node2D" parent="." unique_id=1162011081]
 
-[node name="Panel2" type="Panel" parent="." unique_id=1056162442]
-offset_left = 109.0
-offset_top = -161.0
-offset_right = 149.0
-offset_bottom = -121.0
+[node name="Panel7" type="Panel" parent="room" unique_id=1055698226]
+offset_left = -557.0
+offset_top = -501.0
+offset_right = -517.0
+offset_bottom = -458.72186
+scale = Vector2(26.425932, 15.5872555)
+theme_override_styles/panel = SubResource("StyleBoxFlat_uwrxv")
 
-[node name="Panel3" type="Panel" parent="." unique_id=821492747]
-offset_left = 141.0
-offset_top = -30.0
-offset_right = 181.0
-offset_bottom = 10.0
+[node name="Panel8" type="Panel" parent="room" unique_id=438262776]
+offset_left = -561.0
+offset_top = -38.0
+offset_right = -521.0
+offset_bottom = 2.0
+scale = Vector2(26.526041, 5.0682054)
+theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
 
-[node name="Panel4" type="Panel" parent="." unique_id=1251525366]
-offset_left = -242.0
-offset_top = 6.0
-offset_right = -202.0
-offset_bottom = 46.0
+[node name="desk" type="Node2D" parent="room" unique_id=107007237]
 
-[node name="Panel5" type="Panel" parent="." unique_id=1001667698]
-offset_left = 345.0
-offset_top = -90.0
-offset_right = 385.0
-offset_bottom = -50.0
+[node name="Panel" type="Panel" parent="room/desk" unique_id=669034379]
+offset_left = -101.0
+offset_top = -219.0
+offset_right = -61.0
+offset_bottom = -179.0
+scale = Vector2(2.8258097, 1.8585278)
 
-[node name="Panel6" type="Panel" parent="." unique_id=407205339]
-offset_left = 576.0
-offset_top = -55.0
-offset_right = 616.0
-offset_bottom = -15.0
+[node name="Panel3" type="Panel" parent="room/desk" unique_id=1614876504]
+offset_left = -55.0
+offset_top = -145.0
+offset_right = -15.0
+offset_bottom = -110.67136
+scale = Vector2(0.4616159, 1.0579492)
+
+[node name="Panel2" type="Panel" parent="room/desk" unique_id=339906909]
+offset_left = -160.0
+offset_top = -123.00002
+offset_right = -120.0
+offset_bottom = -83.00002
+scale = Vector2(5.595381, 2.523438)
+theme_override_styles/panel = SubResource("StyleBoxFlat_p57ef")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="room/desk" unique_id=519414229]
+offset_left = -97.0
+offset_top = -212.0
+offset_right = 1823.0
+offset_bottom = 868.0
+scale = Vector2(0.054402083, 0.054402083)
+stream = ExtResource("2_yqjtg")
+autoplay = true
+loop = true
+
+[node name="out_left" type="Node2D" parent="." unique_id=2087284646]
+position = Vector2(-3296, 0)
+
+[node name="Panel" type="Panel" parent="out_left" unique_id=354868027]
+offset_left = 500.0
+offset_top = -520.0
+offset_right = 558.08636
+offset_bottom = -466.24963
+scale = Vector2(38.873165, 8.967383)
+theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
+
+[node name="Panel2" type="Panel" parent="out_left" unique_id=1651635830]
+offset_left = 500.0
+offset_top = -38.0
+offset_right = 595.6814
+offset_bottom = 6.9972076
+scale = Vector2(23.588701, 5.044758)
+theme_override_styles/panel = SubResource("StyleBoxFlat_lbhrr")
+
+[node name="out_right" type="Node2D" parent="." unique_id=1672557119]
+
+[node name="Panel" type="Panel" parent="out_right" unique_id=136629081]
+offset_left = 500.0
+offset_top = -520.0
+offset_right = 558.08636
+offset_bottom = -466.24963
+scale = Vector2(38.873165, 8.967383)
+theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
+
+[node name="Panel2" type="Panel" parent="out_right" unique_id=1805033499]
+offset_left = 500.0
+offset_top = -38.0
+offset_right = 595.6814
+offset_bottom = 6.9972076
+scale = Vector2(23.588701, 5.044758)
+theme_override_styles/panel = SubResource("StyleBoxFlat_lbhrr")
+
+[node name="CharacterBody2D" parent="." unique_id=312059141 instance=ExtResource("1_uwrxv")]
+position = Vector2(-217, -41)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1735474666]
+position = Vector2(0, -110)
+zoom = Vector2(1.4, 1.4)
+
+[node name="pillars" type="Node2D" parent="." unique_id=958760139]
+
+[node name="Panel3" type="Panel" parent="pillars" unique_id=374508602]
+offset_left = 1626.0001
+offset_top = -520.0
+offset_right = 1721.6815
+offset_bottom = -472.98642
+scale = Vector2(0.50030106, 14.6858015)
+theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
+
+[node name="Panel6" type="Panel" parent="pillars" unique_id=547559252]
+offset_left = -1700.9999
+offset_top = -520.0
+offset_right = -1605.3185
+offset_bottom = -472.98642
+scale = Vector2(0.50030106, 14.6858015)
+theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
+
+[node name="Panel4" type="Panel" parent="pillars" unique_id=174311165]
+offset_left = 478.00012
+offset_top = -497.0
+offset_right = 573.6815
+offset_bottom = -451.55255
+scale = Vector2(0.50030106, 14.6858015)
+theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
+
+[node name="Panel5" type="Panel" parent="pillars" unique_id=1231218338]
+offset_left = -577.0
+offset_top = -493.0
+offset_right = -481.3186
+offset_bottom = -447.82492
+scale = Vector2(0.50030106, 14.6858015)
+theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
+
+[node name="cam1" type="Camera2D" parent="." unique_id=1415543043]
+visible = false
+position = Vector2(1089, -203)
+scale = Vector2(1.1116455, 1.0247914)
+zoom = Vector2(0.945, 0.945)
+
+[node name="Panel" type="Panel" parent="cam1" unique_id=43199726]
+offset_left = -609.0072
+offset_top = -371.783
+offset_right = -568.35046
+offset_bottom = -336.2483
+scale = Vector2(29.958494, 20.92507)
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
+
+[node name="cam2" type="Camera2D" parent="." unique_id=1597009136]
+visible = false
+position = Vector2(2247, -203)
+scale = Vector2(1.1116455, 1.0247914)
+zoom = Vector2(0.945, 0.945)
+
+[node name="Panel" type="Panel" parent="cam2" unique_id=793704025]
+offset_left = -609.0072
+offset_top = -371.783
+offset_right = -568.35046
+offset_bottom = -336.2483
+scale = Vector2(29.958494, 20.92507)
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
+
+[node name="cam3" type="Camera2D" parent="." unique_id=17834343]
+visible = false
+position = Vector2(-2268, -203)
+scale = Vector2(1.1116455, 1.0247914)
+zoom = Vector2(0.945, 0.945)
+
+[node name="Panel" type="Panel" parent="cam3" unique_id=1747418563]
+offset_left = -609.0072
+offset_top = -371.783
+offset_right = -568.35046
+offset_bottom = -336.2483
+scale = Vector2(29.958494, 20.92507)
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
+
+[node name="cam4" type="Camera2D" parent="." unique_id=21652491]
+visible = false
+position = Vector2(-1110, -203)
+scale = Vector2(1.1116455, 1.0247914)
+zoom = Vector2(0.945, 0.945)
+
+[node name="Panel" type="Panel" parent="cam4" unique_id=1368386600]
+offset_left = -609.0072
+offset_top = -371.783
+offset_right = -568.35046
+offset_bottom = -336.2483
+scale = Vector2(29.958494, 20.92507)
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")

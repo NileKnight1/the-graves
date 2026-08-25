@@ -11,8 +11,10 @@ bg_color = Color(0.26449275, 0.518242, 0.40182313, 1)
 script = ExtResource("1_qc3fp")
 
 [node name="Panel" type="Panel" parent="." unique_id=1222239789]
+offset_top = 38.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 97.30395
+scale = Vector2(1, -2.7148278)
 theme_override_styles/panel = SubResource("StyleBoxFlat_v6iek")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592067596]
