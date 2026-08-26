@@ -185,11 +185,48 @@ func _on_spawn_timeout() -> void:
 
 func spawn():
 	#print("spawn")
-	var tempx = randi_range(-2986.0, -1693.0)
-	var tempy = randi_range(-70.0, 31)
-	
+	var temp = randi_range(0,1)
+	var tempx
+	var tempy
 	var anomaly_scene = preload("res://scenes/anomaly.tscn").instantiate()
-	anomaly_scene.position = Vector2(tempx, tempy)
+	
+	if temp:
+		tempx = randi_range(-2986.0, -1693.0)
+	else:
+		tempx = randi_range(2666.0, 1630)
+	
+	
+	tempy = randi_range(-70.0, 31)
+	
 	anomaly_scene.destination = Vector2(-200.0, tempy)
+	anomaly_scene.position = Vector2(tempx, tempy)
 	$anomalies.add_child(anomaly_scene)
 	anomaly_scene.move = 1
+
+### p1
+# show
+#$"map above/left/trees/tree4"
+#$"map above/left/trees/tree5"
+
+# hide
+#$"map above/left/trees/tree1", $"map above/left/trees/tree2", $"map above/left/trees/tree3"
+#$"map behind/out_left/trees/tree1", $"map behind/out_left/trees/tree2", $"map behind/out_left/trees/tree3"
+
+#show/hide
+# show $"map behind/out_left/trees/tree4"
+# hide $"map behind/out_left/trees/tree1"
+
+#show $"map above/left/trees/tree1"
+#hide $"map above/left/trees/tree6"
+
+### p2
+
+#show/hide
+#show $"map behind/out_left/p2/cabin/door_hand",
+#hide $"map behind/out_left/p2/cabin/door_hand2"
+
+#show $"map behind/out_left/p2/tree2"
+#show $"map behind/out_left/p2/bush3"
+#
+#hide $"map behind/out_left/p2/tree3"
+#hide $"map behind/out_left/p2/bush4"
