@@ -14,6 +14,7 @@ func _ready() -> void:
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$CanvasLayer/mobile.visible = 1
 	
+	spawn()
 	pass
 
 
@@ -69,6 +70,9 @@ func allow_move():
 func _on_cams_body_entered(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 1
+	if body is CharacterBody2D && body.anomaly:
+		body.queue_free()
+		print("bruh")
 func _on_cams_body_exited(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 0
@@ -87,19 +91,19 @@ var p4_anomalies = []
 
 func _on_p_1_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
-		print("anomaly")
+		#print("anomaly")
 		p1_anomalies_count += 1
 		p1_anomalies.append(body)
 func _on_p_1_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
-		print("anomaly")
+		#print("anomaly")
 		p1_anomalies_count -= 1
 		p1_anomalies.remove_at(p1_anomalies.find(body))
 		
 
 func _on_button1_pressed() -> void:
-	print(p1_anomalies)
-	print(p1_anomalies_count)
+	#print(p1_anomalies)
+	#print(p1_anomalies_count)
 	if p1_anomalies_count:
 		for i in p1_anomalies:
 			i.queue_free()
@@ -107,23 +111,23 @@ func _on_button1_pressed() -> void:
 			
 		#p1_anomalies.clear()
 		
-		print(p1_anomalies_count)
+		#print(p1_anomalies_count)
 
 func _on_p_2_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
-		print("anomaly")
+		#print("anomaly")
 		p2_anomalies_count += 1
 		p2_anomalies.append(body)
 func _on_p_2_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
-		print("anomaly")
+		#print("anomaly")
 		p2_anomalies_count -= 1
 		p2_anomalies.remove_at(p2_anomalies.find(body))
 		
 
 func _on_button_2_pressed() -> void:
-	print(p2_anomalies)
-	print(p2_anomalies_count)
+	#print(p2_anomalies)
+	#print(p2_anomalies_count)
 	if p2_anomalies_count:
 		for i in p2_anomalies:
 			i.queue_free()
@@ -131,24 +135,24 @@ func _on_button_2_pressed() -> void:
 			
 		#p2_anomalies.clear()
 		
-		print(p2_anomalies_count)
+		#print(p2_anomalies_count)
 
 
 func _on_p_3_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
-		print("anomaly")
+		#print("anomaly")
 		p3_anomalies_count += 1
 		p3_anomalies.append(body)
 func _on_p_3_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
-		print("anomaly")
+		#print("anomaly")
 		p3_anomalies_count -= 1
 		p3_anomalies.remove_at(p3_anomalies.find(body))
 		
 
 func _on_button_3_pressed() -> void:
-	print(p3_anomalies)
-	print(p3_anomalies_count)
+	#print(p3_anomalies)
+	#print(p3_anomalies_count)
 	if p3_anomalies_count:
 		for i in p3_anomalies:
 			i.queue_free()
@@ -157,20 +161,35 @@ func _on_button_3_pressed() -> void:
 
 func _on_p_4_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
-		print("anomaly")
+		#print("anomaly")
 		p4_anomalies_count += 1
 		p4_anomalies.append(body)
 func _on_p_4_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
-		print("anomaly")
+		#print("anomaly")
 		p4_anomalies_count -= 1
 		p4_anomalies.remove_at(p4_anomalies.find(body))
 		
 
 func _on_button_4_pressed() -> void:
-	print(p4_anomalies)
-	print(p4_anomalies_count)
+	#print(p4_anomalies)
+	#print(p4_anomalies_count)
 	if p4_anomalies_count:
 		for i in p4_anomalies:
 			i.queue_free()
 			print(i)
+			
+
+func _on_spawn_timeout() -> void:
+	spawn()
+
+func spawn():
+	#print("spawn")
+	var tempx = randi_range(-2986.0, -1693.0)
+	var tempy = randi_range(-70.0, 31)
+	
+	var anomaly_scene = preload("res://scenes/anomaly.tscn").instantiate()
+	anomaly_scene.position = Vector2(tempx, tempy)
+	anomaly_scene.destination = Vector2(-200.0, tempy)
+	$anomalies.add_child(anomaly_scene)
+	anomaly_scene.move = 1

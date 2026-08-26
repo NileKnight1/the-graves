@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://chwnt2iey800b" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cfj564wppea61" path="res://scenes/temp_player.tscn" id="1_uwrxv"]
 [ext_resource type="VideoStream" uid="uid://cho7udnr6dowp" path="res://assets/27519-364430915.ogv" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://bgqrhww4gnhow" path="res://scenes/anomaly.tscn" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dm5ifs68m3i33" path="res://scenes/mobile.tscn" id="5_iywne"]
+[ext_resource type="FontFile" uid="uid://cim17fdmt5ywc" path="res://assets/Signika-Bold.ttf" id="6_p57ef"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
@@ -886,34 +886,9 @@ position = Vector2(46, -55)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
-zoom = Vector2(1.4, 1.4)
+zoom = Vector2(0.22, 0.22)
 
 [node name="anomalies" type="Node2D" parent="." unique_id=1338437649]
-
-[node name="anomaly" parent="anomalies" unique_id=1341686786 instance=ExtResource("3_lbhrr")]
-position = Vector2(-2178, 26)
-
-[node name="anomaly8" parent="anomalies" unique_id=312059141 instance=ExtResource("3_lbhrr")]
-position = Vector2(-1723, 29)
-scale = Vector2(2.279995, 1)
-
-[node name="anomaly2" parent="anomalies" unique_id=1826338762 instance=ExtResource("3_lbhrr")]
-position = Vector2(-1423, 26)
-
-[node name="anomaly3" parent="anomalies" unique_id=1725701630 instance=ExtResource("3_lbhrr")]
-position = Vector2(-1115, 26)
-
-[node name="anomaly4" parent="anomalies" unique_id=2050654115 instance=ExtResource("3_lbhrr")]
-position = Vector2(-851, 26)
-
-[node name="anomaly5" parent="anomalies" unique_id=1795635768 instance=ExtResource("3_lbhrr")]
-position = Vector2(1139, 26)
-
-[node name="anomaly6" parent="anomalies" unique_id=280900988 instance=ExtResource("3_lbhrr")]
-position = Vector2(1829, 26)
-
-[node name="anomaly7" parent="anomalies" unique_id=1537928156 instance=ExtResource("3_lbhrr")]
-position = Vector2(1321, 26)
 
 [node name="map above" type="Node2D" parent="." unique_id=491991416]
 
@@ -1478,6 +1453,29 @@ text = "P1"
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
 visible = false
 
+[node name="shift" type="Label" parent="CanvasLayer" unique_id=2086180496]
+offset_left = 49.0
+offset_top = 8.0
+offset_right = 291.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 48
+text = "Shift 1"
+
+[node name="time" type="Label" parent="CanvasLayer" unique_id=297290087]
+offset_left = 522.0
+offset_top = 8.0
+offset_right = 764.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 48
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="spawn" type="Timer" parent="." unique_id=2061830803]
+wait_time = 5.0
+autostart = true
+
 [connection signal="body_entered" from="areas/cams" to="." method="_on_cams_body_entered"]
 [connection signal="body_exited" from="areas/cams" to="." method="_on_cams_body_exited"]
 [connection signal="body_entered" from="areas/p1" to="." method="_on_p_1_body_entered"]
@@ -1492,3 +1490,4 @@ visible = false
 [connection signal="pressed" from="ui/room/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="ui/room/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="ui/room/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="timeout" from="spawn" to="." method="_on_spawn_timeout"]
