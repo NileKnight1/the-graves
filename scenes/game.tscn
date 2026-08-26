@@ -4,7 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cfj564wppea61" path="res://scenes/temp_player.tscn" id="1_uwrxv"]
 [ext_resource type="VideoStream" uid="uid://cho7udnr6dowp" path="res://assets/27519-364430915.ogv" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bgqrhww4gnhow" path="res://scenes/anomaly.tscn" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://ctcmxmp2uqnw8" path="res://assets/grunge-paint-stripe-vector-brush-260nw-601672577-removebg-preview.png" id="4_u5sy4"]
+[ext_resource type="FontFile" uid="uid://cw8o8fcnfldoe" path="res://assets/Creepster-Regular.ttf" id="5_gee14"]
 [ext_resource type="PackedScene" uid="uid://dm5ifs68m3i33" path="res://scenes/mobile.tscn" id="5_iywne"]
+[ext_resource type="FontFile" uid="uid://deescy0invitk" path="res://assets/HennyPenny-Regular.ttf" id="6_0tnpc"]
 [ext_resource type="FontFile" uid="uid://cim17fdmt5ywc" path="res://assets/Signika-Bold.ttf" id="6_p57ef"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
@@ -134,6 +137,35 @@ bg_color = Color(0.09, 0.09, 0.09, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37s47"]
 bg_color = Color(0.04, 0.04, 0.04, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouja"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2yb1"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wljb1"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.84705883, 0.49803922, 1, 1)
+shadow_size = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgl2t"]
 bg_color = Color(0.10980392, 0.16470589, 0, 1)
 
@@ -153,6 +185,9 @@ border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(256, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
+size = Vector2(174, 162)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
 size = Vector2(1038, 703)
@@ -1177,11 +1212,343 @@ scale = Vector2(3.4555311, 2.2698584)
 theme_override_styles/panel = SubResource("StyleBoxFlat_37s47")
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(46, -55)
+position = Vector2(143, -39)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
-zoom = Vector2(0.22, 0.22)
+zoom = Vector2(1.4, 1.4)
+
+[node name="room" type="Control" parent="player" unique_id=790920656]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -46.0
+offset_top = 55.0
+offset_right = -46.0
+offset_bottom = 55.0
+mouse_filter = 1
+
+[node name="menu" type="Control" parent="player/room" unique_id=1600947440]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="bg" type="Sprite2D" parent="player/room/menu" unique_id=36426239]
+visible = false
+position = Vector2(352.00003, -179.00002)
+rotation = 1.5707964
+scale = Vector2(0.64998233, 0.94649124)
+texture = ExtResource("4_u5sy4")
+
+[node name="title" type="Label" parent="player/room/menu" unique_id=1402786099]
+layout_mode = 0
+offset_left = 255.0
+offset_top = -360.0
+offset_right = 438.0
+offset_bottom = -317.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 36
+text = "Report Radio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="environmental" type="Button" parent="player/room/menu" unique_id=1804039785]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -298.0
+offset_right = 439.0
+offset_bottom = -246.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Environmental"
+icon_alignment = 1
+
+[node name="creatures" type="Button" parent="player/room/menu" unique_id=343485077]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -239.0
+offset_right = 439.0
+offset_bottom = -187.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Creatures"
+icon_alignment = 1
+
+[node name="back" type="Button" parent="player/room/menu" unique_id=551230781]
+visible = false
+layout_mode = 0
+offset_left = 260.0
+offset_top = -180.0
+offset_right = 439.0
+offset_bottom = -128.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Back"
+icon_alignment = 1
+
+[node name="environment" type="Control" parent="player/room" unique_id=416041044]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="p1" type="Button" parent="player/room/environment" unique_id=244052521]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -298.0
+offset_right = 439.0
+offset_bottom = -246.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+keep_pressed_outside = true
+text = "Part 1"
+icon_alignment = 1
+
+[node name="p2" type="Button" parent="player/room/environment" unique_id=2023181837]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -239.0
+offset_right = 439.0
+offset_bottom = -187.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 2"
+icon_alignment = 1
+
+[node name="p3" type="Button" parent="player/room/environment" unique_id=1230113555]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -180.0
+offset_right = 439.0
+offset_bottom = -128.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 3"
+icon_alignment = 1
+
+[node name="p4" type="Button" parent="player/room/environment" unique_id=785583236]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -121.0
+offset_right = 439.0
+offset_bottom = -69.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 4"
+icon_alignment = 1
+
+[node name="back" type="Button" parent="player/room/environment" unique_id=1405433886]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -62.0
+offset_right = 439.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Back"
+icon_alignment = 1
+
+[node name="title" type="Label" parent="player/room/environment" unique_id=611154632]
+layout_mode = 0
+offset_left = 255.0
+offset_top = -360.0
+offset_right = 438.0
+offset_bottom = -317.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 36
+text = "Report Radio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="creatures" type="Control" parent="player/room" unique_id=416967165]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="p1" type="Button" parent="player/room/creatures" unique_id=641934301]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -298.0
+offset_right = 439.0
+offset_bottom = -246.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 1"
+icon_alignment = 1
+
+[node name="p2" type="Button" parent="player/room/creatures" unique_id=1048398711]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -239.0
+offset_right = 439.0
+offset_bottom = -187.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 2"
+icon_alignment = 1
+
+[node name="p3" type="Button" parent="player/room/creatures" unique_id=2137383806]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -180.0
+offset_right = 439.0
+offset_bottom = -128.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 3"
+icon_alignment = 1
+
+[node name="p4" type="Button" parent="player/room/creatures" unique_id=41613055]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -121.0
+offset_right = 439.0
+offset_bottom = -69.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 4"
+icon_alignment = 1
+
+[node name="back" type="Button" parent="player/room/creatures" unique_id=1822078933]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -62.0
+offset_right = 439.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Back"
+icon_alignment = 1
+
+[node name="title" type="Label" parent="player/room/creatures" unique_id=475364831]
+layout_mode = 0
+offset_left = 255.0
+offset_top = -360.0
+offset_right = 438.0
+offset_bottom = -317.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 36
+text = "Report Radio"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="anomalies" type="Node2D" parent="." unique_id=1338437649]
 
@@ -1648,6 +2015,7 @@ offset_top = -520.0
 offset_right = 1721.6815
 offset_bottom = -472.98642
 scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
 
 [node name="Panel6" type="Panel" parent="map above/pillars" unique_id=547559252]
@@ -1656,6 +2024,7 @@ offset_top = -520.0
 offset_right = -1605.3185
 offset_bottom = -472.98642
 scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
 
 [node name="Panel7" type="Panel" parent="map above/pillars" unique_id=1118528379]
@@ -1664,6 +2033,7 @@ offset_top = -520.0
 offset_right = -2706.3186
 offset_bottom = -472.98642
 scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vtaks")
 
 [node name="Panel8" type="Panel" parent="map above/pillars" unique_id=1423868391]
@@ -1672,6 +2042,7 @@ offset_top = -520.0
 offset_right = 2805.6816
 offset_bottom = -472.98642
 scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vtaks")
 
 [node name="Panel4" type="Panel" parent="map above/pillars" unique_id=174311165]
@@ -1680,6 +2051,7 @@ offset_top = -497.0
 offset_right = 573.6815
 offset_bottom = -451.55255
 scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
 
 [node name="Panel5" type="Panel" parent="map above/pillars" unique_id=1231218338]
@@ -1688,6 +2060,7 @@ offset_top = -493.0
 offset_right = -481.3186
 offset_bottom = -447.82492
 scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
 
 [node name="cams" type="Node2D" parent="map above" unique_id=1532539359]
@@ -1753,13 +2126,19 @@ scale = Vector2(29.958494, 20.92507)
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
-visible = false
 
 [node name="cams" type="Area2D" parent="areas" unique_id=149070780]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/cams" unique_id=79845045]
 position = Vector2(-49, -123.5)
 shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="radio" type="Area2D" parent="areas" unique_id=1179215348]
+position = Vector2(285, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/radio" unique_id=893051531]
+position = Vector2(-52, -81)
+shape = SubResource("RectangleShape2D_gee14")
 
 [node name="p1" type="Area2D" parent="areas" unique_id=1267882245]
 
@@ -1790,55 +2169,6 @@ shape = SubResource("RectangleShape2D_iywne")
 
 [node name="ui" type="Node2D" parent="." unique_id=2084578173]
 
-[node name="room" type="Control" parent="ui" unique_id=790920656]
-layout_mode = 3
-anchors_preset = 0
-
-[node name="Button" type="Button" parent="ui/room" unique_id=1348013076]
-layout_mode = 0
-offset_left = 352.0
-offset_top = -392.0
-offset_right = 425.0
-offset_bottom = -308.0
-theme_override_font_sizes/font_size = 55
-text = "P1"
-
-[node name="Button2" type="Button" parent="ui/room" unique_id=1858252975]
-layout_mode = 0
-offset_left = 352.0
-offset_top = -304.0
-offset_right = 425.0
-offset_bottom = -220.0
-theme_override_font_sizes/font_size = 55
-text = "P1"
-
-[node name="Button3" type="Button" parent="ui/room" unique_id=1375149201]
-layout_mode = 0
-offset_left = 352.0
-offset_top = -219.0
-offset_right = 425.0
-offset_bottom = -135.0
-theme_override_font_sizes/font_size = 55
-text = "P1"
-
-[node name="Button4" type="Button" parent="ui/room" unique_id=1748784579]
-layout_mode = 0
-offset_left = 352.0
-offset_top = -134.0
-offset_right = 425.0
-offset_bottom = -50.0
-theme_override_font_sizes/font_size = 55
-text = "P1"
-
-[node name="Button5" type="Button" parent="ui/room" unique_id=48601062]
-layout_mode = 0
-offset_left = -334.0
-offset_top = -376.0
-offset_right = -261.0
-offset_bottom = -292.0
-theme_override_font_sizes/font_size = 55
-text = "P1"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
@@ -1865,10 +2195,24 @@ horizontal_alignment = 1
 
 [node name="spawn" type="Timer" parent="." unique_id=2061830803]
 wait_time = 5.0
-autostart = true
 
+[connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
+[connection signal="pressed" from="player/room/menu/creatures" to="." method="_on_creatures_pressed"]
+[connection signal="pressed" from="player/room/menu/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="player/room/environment/p1" to="." method="_on_en1_pressed"]
+[connection signal="pressed" from="player/room/environment/p2" to="." method="_on_en2_pressed"]
+[connection signal="pressed" from="player/room/environment/p3" to="." method="_on_en3_pressed"]
+[connection signal="pressed" from="player/room/environment/p4" to="." method="_on_en4_pressed"]
+[connection signal="pressed" from="player/room/environment/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="player/room/creatures/p1" to="." method="_on_creature1_pressed"]
+[connection signal="pressed" from="player/room/creatures/p2" to="." method="_on_creature2_pressed"]
+[connection signal="pressed" from="player/room/creatures/p3" to="." method="_on_creature3_pressed"]
+[connection signal="pressed" from="player/room/creatures/p4" to="." method="_on_creature4_pressed"]
+[connection signal="pressed" from="player/room/creatures/back" to="." method="_on_back_pressed"]
 [connection signal="body_entered" from="areas/cams" to="." method="_on_cams_body_entered"]
 [connection signal="body_exited" from="areas/cams" to="." method="_on_cams_body_exited"]
+[connection signal="body_entered" from="areas/radio" to="." method="_on_radio_body_entered"]
+[connection signal="body_exited" from="areas/radio" to="." method="_on_radio_body_exited"]
 [connection signal="body_entered" from="areas/p1" to="." method="_on_p_1_body_entered"]
 [connection signal="body_exited" from="areas/p1" to="." method="_on_p_1_body_exited"]
 [connection signal="body_entered" from="areas/p2" to="." method="_on_p_2_body_entered"]
@@ -1877,9 +2221,4 @@ autostart = true
 [connection signal="body_exited" from="areas/p3" to="." method="_on_p_3_body_exited"]
 [connection signal="body_entered" from="areas/p4" to="." method="_on_p_4_body_entered"]
 [connection signal="body_exited" from="areas/p4" to="." method="_on_p_4_body_exited"]
-[connection signal="pressed" from="ui/room/Button" to="." method="_on_button1_pressed"]
-[connection signal="pressed" from="ui/room/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="ui/room/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="ui/room/Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="ui/room/Button5" to="." method="_on_en1_pressed"]
 [connection signal="timeout" from="spawn" to="." method="_on_spawn_timeout"]

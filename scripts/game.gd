@@ -4,6 +4,9 @@ extends Node2D
 
 var computer_area = 0
 var computer_opened = 0
+var radio_area = 0
+var radio_opened = 0
+
 var opened_cam = 3
 
 
@@ -14,7 +17,7 @@ func _ready() -> void:
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$CanvasLayer/mobile.visible = 1
 	
-	apply_anomaly_event()
+	#apply_anomaly_event()
 	#spawn()
 	pass
 
@@ -41,6 +44,16 @@ func _process(delta: float) -> void:
 			computer_opened = 0
 			allow_move()
 			
+		if radio_area && !radio_opened:
+			$player/room/menu.visible = 1
+			radio_opened = 1
+			#print("hi")
+		elif radio_opened:
+			$player/room/menu.visible = 0
+			$player/room/environment.visible = 0
+			$player/room/creatures.visible = 0
+			radio_opened = 0
+		
 		
 	#print(computer_opened)
 	if computer_opened:
@@ -62,6 +75,8 @@ func _process(delta: float) -> void:
 		$"map above/cams".get_child(opened_cam-1).visible = 1
 		$"map above/cams".get_child(opened_cam-1).enabled = 1
 		
+
+		
 func stop_move():
 	$player.move = 0
 func allow_move():
@@ -77,6 +92,26 @@ func _on_cams_body_entered(body: Node2D) -> void:
 func _on_cams_body_exited(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 0
+
+
+func _on_radio_body_entered(body: Node2D) -> void:
+	if body == $player:
+		radio_area = 1
+		print("radio_area")
+		print(radio_area)
+
+func _on_radio_body_exited(body: Node2D) -> void:
+	if body == $player:
+		radio_area = 0
+		if radio_opened:
+			radio_opened = 0
+			$player/room/menu.visible = 0
+			$player/room/environment.visible = 0
+			$player/room/creatures.visible = 0
+		print("radio_area_leftd")
+		
+
+
 
 var p1_anomalies_count = 0
 var p2_anomalies_count = 0
@@ -102,7 +137,7 @@ func _on_p_1_body_exited(body: Node2D) -> void:
 		p1_anomalies.remove_at(p1_anomalies.find(body))
 		
 
-func _on_button1_pressed() -> void:
+func _on_creature1_pressed() -> void:
 	#print(p1_anomalies)
 	#print(p1_anomalies_count)
 	if p1_anomalies_count:
@@ -126,7 +161,7 @@ func _on_p_2_body_exited(body: Node2D) -> void:
 		p2_anomalies.remove_at(p2_anomalies.find(body))
 		
 
-func _on_button_2_pressed() -> void:
+func _on_creature2_pressed() -> void:
 	#print(p2_anomalies)
 	#print(p2_anomalies_count)
 	if p2_anomalies_count:
@@ -151,7 +186,7 @@ func _on_p_3_body_exited(body: Node2D) -> void:
 		p3_anomalies.remove_at(p3_anomalies.find(body))
 		
 
-func _on_button_3_pressed() -> void:
+func _on_creature3_pressed() -> void:
 	#print(p3_anomalies)
 	#print(p3_anomalies_count)
 	if p3_anomalies_count:
@@ -172,7 +207,7 @@ func _on_p_4_body_exited(body: Node2D) -> void:
 		p4_anomalies.remove_at(p4_anomalies.find(body))
 		
 
-func _on_button_4_pressed() -> void:
+func _on_creature4_pressed() -> void:
 	#print(p4_anomalies)
 	#print(p4_anomalies_count)
 	if p4_anomalies_count:
@@ -344,6 +379,7 @@ func clear_anomaly_event(area):
 			anomaly_events_count -= 1
 
 func _on_en1_pressed() -> void:
+	#print(self)
 	clear_anomaly_event(1)
 func _on_en2_pressed() -> void:
 	clear_anomaly_event(2)
@@ -351,3 +387,14 @@ func _on_en3_pressed() -> void:
 	clear_anomaly_event(3)
 func _on_en4_pressed() -> void:
 	clear_anomaly_event(4)
+
+func _on_environmental_pressed() -> void:
+	$player/room/environment.visible = 1
+	$player/room/menu.visible = 0
+func _on_creatures_pressed() -> void:
+	$player/room/creatures.visible = 1
+	$player/room/menu.visible = 0
+func _on_back_pressed() -> void:
+	$player/room/environment.visible = 0
+	$player/room/creatures.visible = 0
+	$player/room/menu.visible = 1
