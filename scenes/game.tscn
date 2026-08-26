@@ -151,7 +151,13 @@ border_color = Color(0, 0, 0, 1)
 size = Vector2(256, 247)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
-size = Vector2(1053, 703)
+size = Vector2(1038, 703)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
+size = Vector2(1081.5, 703)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
+size = Vector2(1094, 703)
 
 [node name="game" type="Node2D" unique_id=275808026]
 script = ExtResource("1_lnu2h")
@@ -876,7 +882,7 @@ scale = Vector2(1.2348685, 15.541196)
 theme_override_styles/panel = SubResource("StyleBoxFlat_dinhu")
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-462, -55)
+position = Vector2(46, -55)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
@@ -886,6 +892,28 @@ zoom = Vector2(1.4, 1.4)
 
 [node name="anomaly" parent="anomalies" unique_id=1341686786 instance=ExtResource("3_lbhrr")]
 position = Vector2(-2178, 26)
+
+[node name="anomaly8" parent="anomalies" unique_id=312059141 instance=ExtResource("3_lbhrr")]
+position = Vector2(-1723, 29)
+scale = Vector2(2.279995, 1)
+
+[node name="anomaly2" parent="anomalies" unique_id=1826338762 instance=ExtResource("3_lbhrr")]
+position = Vector2(-1423, 26)
+
+[node name="anomaly3" parent="anomalies" unique_id=1725701630 instance=ExtResource("3_lbhrr")]
+position = Vector2(-1115, 26)
+
+[node name="anomaly4" parent="anomalies" unique_id=2050654115 instance=ExtResource("3_lbhrr")]
+position = Vector2(-851, 26)
+
+[node name="anomaly5" parent="anomalies" unique_id=1795635768 instance=ExtResource("3_lbhrr")]
+position = Vector2(1139, 26)
+
+[node name="anomaly6" parent="anomalies" unique_id=280900988 instance=ExtResource("3_lbhrr")]
+position = Vector2(1829, 26)
+
+[node name="anomaly7" parent="anomalies" unique_id=1537928156 instance=ExtResource("3_lbhrr")]
+position = Vector2(1321, 26)
 
 [node name="map above" type="Node2D" parent="." unique_id=491991416]
 
@@ -1382,6 +1410,27 @@ shape = SubResource("RectangleShape2D_lbhrr")
 position = Vector2(-2227.5, -168.5)
 shape = SubResource("RectangleShape2D_iywne")
 
+[node name="p2" type="Area2D" parent="areas" unique_id=951562676]
+position = Vector2(1122, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/p2" unique_id=28930521]
+position = Vector2(-2238.75, -168)
+shape = SubResource("RectangleShape2D_p57ef")
+
+[node name="p3" type="Area2D" parent="areas" unique_id=1769119270]
+position = Vector2(3283, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/p3" unique_id=2079106796]
+position = Vector2(-2207, -168.5)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="p4" type="Area2D" parent="areas" unique_id=477520852]
+position = Vector2(4426, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/p4" unique_id=1806166924]
+position = Vector2(-2235, -168.5)
+shape = SubResource("RectangleShape2D_iywne")
+
 [node name="ui" type="Node2D" parent="." unique_id=2084578173]
 
 [node name="room" type="Control" parent="ui" unique_id=790920656]
@@ -1433,6 +1482,12 @@ visible = false
 [connection signal="body_exited" from="areas/cams" to="." method="_on_cams_body_exited"]
 [connection signal="body_entered" from="areas/p1" to="." method="_on_p_1_body_entered"]
 [connection signal="body_exited" from="areas/p1" to="." method="_on_p_1_body_exited"]
+[connection signal="body_entered" from="areas/p2" to="." method="_on_p_2_body_entered"]
+[connection signal="body_exited" from="areas/p2" to="." method="_on_p_2_body_exited"]
+[connection signal="body_entered" from="areas/p3" to="." method="_on_p_3_body_entered"]
+[connection signal="body_exited" from="areas/p3" to="." method="_on_p_3_body_exited"]
+[connection signal="body_entered" from="areas/p4" to="." method="_on_p_4_body_entered"]
+[connection signal="body_exited" from="areas/p4" to="." method="_on_p_4_body_exited"]
 [connection signal="pressed" from="ui/room/Button" to="." method="_on_button1_pressed"]
 [connection signal="pressed" from="ui/room/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="ui/room/Button3" to="." method="_on_button_3_pressed"]

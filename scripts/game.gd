@@ -108,11 +108,69 @@ func _on_button1_pressed() -> void:
 		#p1_anomalies.clear()
 		
 		print(p1_anomalies_count)
-	
+
+func _on_p_2_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D && body.anomaly :
+		print("anomaly")
+		p2_anomalies_count += 1
+		p2_anomalies.append(body)
+func _on_p_2_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D && body.anomaly :
+		print("anomaly")
+		p2_anomalies_count -= 1
+		p2_anomalies.remove_at(p2_anomalies.find(body))
+		
 
 func _on_button_2_pressed() -> void:
-	pass # Replace with function body.
+	print(p2_anomalies)
+	print(p2_anomalies_count)
+	if p2_anomalies_count:
+		for i in p2_anomalies:
+			i.queue_free()
+			print(i)
+			
+		#p2_anomalies.clear()
+		
+		print(p2_anomalies_count)
+
+
+func _on_p_3_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D && body.anomaly :
+		print("anomaly")
+		p3_anomalies_count += 1
+		p3_anomalies.append(body)
+func _on_p_3_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D && body.anomaly :
+		print("anomaly")
+		p3_anomalies_count -= 1
+		p3_anomalies.remove_at(p3_anomalies.find(body))
+		
+
 func _on_button_3_pressed() -> void:
-	pass # Replace with function body.
+	print(p3_anomalies)
+	print(p3_anomalies_count)
+	if p3_anomalies_count:
+		for i in p3_anomalies:
+			i.queue_free()
+			print(i)
+
+
+func _on_p_4_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D && body.anomaly :
+		print("anomaly")
+		p4_anomalies_count += 1
+		p4_anomalies.append(body)
+func _on_p_4_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D && body.anomaly :
+		print("anomaly")
+		p4_anomalies_count -= 1
+		p4_anomalies.remove_at(p4_anomalies.find(body))
+		
+
 func _on_button_4_pressed() -> void:
-	pass # Replace with function body.
+	print(p4_anomalies)
+	print(p4_anomalies_count)
+	if p4_anomalies_count:
+		for i in p4_anomalies:
+			i.queue_free()
+			print(i)
