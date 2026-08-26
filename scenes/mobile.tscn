@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dm5ifs68m3i33"]
+
+[ext_resource type="Script" uid="uid://dht3vhvoe54af" path="res://scripts/mobile.gd" id="1_jnc8d"]
+[ext_resource type="Texture2D" uid="uid://ch2al10mhx0yy" path="res://assets/ui/ProgressBlack.png" id="2_xp3t8"]
+[ext_resource type="Texture2D" uid="uid://byv5q7kvnitpw" path="res://assets/ui/ProgressWhite.png" id="3_2t62u"]
+
+[node name="mobile" type="CanvasLayer" unique_id=2043303018]
+script = ExtResource("1_jnc8d")
+
+[node name="Control" type="Control" parent="." unique_id=2018416242]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(32.00545, 18.029236)
+mouse_filter = 2
+
+[node name="sprint" type="TouchScreenButton" parent="Control" unique_id=984966303]
+position = Vector2(32.24451, 27.233545)
+scale = Vector2(0.3050595, 0.21426336)
+texture_normal = ExtResource("2_xp3t8")
+texture_pressed = ExtResource("3_2t62u")
+passby_press = true
+action = "sprint"
+visibility_mode = 1
+
+[node name="interact" type="TextureButton" parent="Control" unique_id=284682000]
+layout_mode = 0
+offset_left = 35.275208
+offset_top = 33.667526
+offset_right = 75.27521
+offset_bottom = 73.667534
+scale = Vector2(0.08002439, 0.1184888)
+texture_normal = ExtResource("2_xp3t8")
+texture_pressed = ExtResource("3_2t62u")
+stretch_mode = 5
+
+[node name="jump" type="TextureButton" parent="Control" unique_id=2004550806]
+layout_mode = 0
+offset_left = 25.83935
+offset_top = 28.342854
+offset_right = 65.83935
+offset_bottom = 68.342865
+scale = Vector2(0.12703064, 0.18808901)
+texture_normal = ExtResource("2_xp3t8")
+texture_pressed = ExtResource("3_2t62u")
+stretch_mode = 5
+
+[node name="left" type="TouchScreenButton" parent="Control" unique_id=237091111]
+position = Vector2(1.8121929, 30.00682)
+scale = Vector2(0.18168661, 0.26901585)
+texture_normal = ExtResource("2_xp3t8")
+texture_pressed = ExtResource("3_2t62u")
+passby_press = true
+action = "left"
+visibility_mode = 1
+
+[node name="right" type="TouchScreenButton" parent="Control" unique_id=31096760]
+position = Vector2(7.6861906, 30.00682)
+scale = Vector2(0.18168661, 0.26901585)
+texture_normal = ExtResource("2_xp3t8")
+texture_pressed = ExtResource("3_2t62u")
+passby_press = true
+action = "right"
+visibility_mode = 1
+
+[node name="down" type="TouchScreenButton" parent="Control" unique_id=56414821]
+visible = false
+position = Vector2(4.1555405, 33.112885)
+scale = Vector2(0.13604799, 0.20144063)
+texture_normal = ExtResource("2_xp3t8")
+texture_pressed = ExtResource("3_2t62u")
+passby_press = true
+action = "down"
+visibility_mode = 1
+
+[node name="up" type="TouchScreenButton" parent="Control" unique_id=851934706]
+visible = false
+position = Vector2(4.1555443, 26.678894)
+scale = Vector2(0.13604799, 0.20144063)
+texture_normal = ExtResource("2_xp3t8")
+texture_pressed = ExtResource("3_2t62u")
+passby_press = true
+action = "up"
+visibility_mode = 1
+
+[connection signal="pressed" from="Control/interact" to="." method="_on_interact_pressed"]
+[connection signal="pressed" from="Control/jump" to="." method="_on_jump_pressed"]

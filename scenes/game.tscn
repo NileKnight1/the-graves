@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cfj564wppea61" path="res://scenes/temp_player.tscn" id="1_uwrxv"]
 [ext_resource type="VideoStream" uid="uid://cho7udnr6dowp" path="res://assets/27519-364430915.ogv" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bgqrhww4gnhow" path="res://scenes/anomaly.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dm5ifs68m3i33" path="res://scenes/mobile.tscn" id="5_iywne"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
@@ -1381,13 +1382,13 @@ shape = SubResource("RectangleShape2D_lbhrr")
 position = Vector2(-2227.5, -168.5)
 shape = SubResource("RectangleShape2D_iywne")
 
-[node name="UI" type="Node2D" parent="." unique_id=2084578173]
+[node name="ui" type="Node2D" parent="." unique_id=2084578173]
 
-[node name="room" type="Control" parent="UI" unique_id=790920656]
+[node name="room" type="Control" parent="ui" unique_id=790920656]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Button" type="Button" parent="UI/room" unique_id=1348013076]
+[node name="Button" type="Button" parent="ui/room" unique_id=1348013076]
 layout_mode = 0
 offset_left = 352.0
 offset_top = -392.0
@@ -1396,7 +1397,7 @@ offset_bottom = -308.0
 theme_override_font_sizes/font_size = 55
 text = "P1"
 
-[node name="Button2" type="Button" parent="UI/room" unique_id=1858252975]
+[node name="Button2" type="Button" parent="ui/room" unique_id=1858252975]
 layout_mode = 0
 offset_left = 352.0
 offset_top = -304.0
@@ -1405,7 +1406,7 @@ offset_bottom = -220.0
 theme_override_font_sizes/font_size = 55
 text = "P1"
 
-[node name="Button3" type="Button" parent="UI/room" unique_id=1375149201]
+[node name="Button3" type="Button" parent="ui/room" unique_id=1375149201]
 layout_mode = 0
 offset_left = 352.0
 offset_top = -219.0
@@ -1414,7 +1415,7 @@ offset_bottom = -135.0
 theme_override_font_sizes/font_size = 55
 text = "P1"
 
-[node name="Button4" type="Button" parent="UI/room" unique_id=1748784579]
+[node name="Button4" type="Button" parent="ui/room" unique_id=1748784579]
 layout_mode = 0
 offset_left = 352.0
 offset_top = -134.0
@@ -1423,11 +1424,16 @@ offset_bottom = -50.0
 theme_override_font_sizes/font_size = 55
 text = "P1"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
+
+[node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
+visible = true
+
 [connection signal="body_entered" from="areas/cams" to="." method="_on_cams_body_entered"]
 [connection signal="body_exited" from="areas/cams" to="." method="_on_cams_body_exited"]
 [connection signal="body_entered" from="areas/p1" to="." method="_on_p_1_body_entered"]
 [connection signal="body_exited" from="areas/p1" to="." method="_on_p_1_body_exited"]
-[connection signal="pressed" from="UI/room/Button" to="." method="_on_button1_pressed"]
-[connection signal="pressed" from="UI/room/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="UI/room/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="UI/room/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="ui/room/Button" to="." method="_on_button1_pressed"]
+[connection signal="pressed" from="ui/room/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ui/room/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="ui/room/Button4" to="." method="_on_button_4_pressed"]
