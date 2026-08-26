@@ -14,7 +14,8 @@ func _ready() -> void:
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$CanvasLayer/mobile.visible = 1
 	
-	spawn()
+	apply_anomaly_event()
+	#spawn()
 	pass
 
 
@@ -203,6 +204,29 @@ func spawn():
 	$anomalies.add_child(anomaly_scene)
 	anomaly_scene.move = 1
 
+var anomaly_events = [
+	{"area"=1, "show"=^"map above/left/trees/tree4", "hide"=null},
+	{"area"=1, "show"=^"map above/left/trees/tree5", "hide"=null},
+	{"area"=1, "show"= null, "hide"=^"map above/left/trees/tree1"},
+	{"area"=1, "show"= null, "hide"=^"map above/left/trees/tree2"},
+	{"area"=1, "show"= null, "hide"=^"map above/left/trees/tree3"},
+	{"area"=1, "show"= null, "hide"=^"map behind/out_left/trees/tree1"},
+	{"area"=1, "show"= null, "hide"=^"map behind/out_left/trees/tree2"},
+	{"area"=1, "show"= null, "hide"=^"map behind/out_left/trees/tree3"},
+	{"area"=1, "show"=^"map behind/out_left/trees/tree4", "hide"=^"map behind/out_left/trees/tree1"},
+	{"area"=1, "show"=^"map above/left/trees/tree1", "hide"=^"map above/left/trees/tree6"},
+	
+]
+
+func apply_anomaly_event():
+	var temp = randi_range(0, len(anomaly_events)-1)
+	#print(anomaly_events[0]["show"])
+	#get_node_or_null(anomaly_events[0]["show"]).visible = 1
+	if anomaly_events[temp]["show"] != null:
+		get_node_or_null(anomaly_events[temp]["show"]).visible = 1
+	if anomaly_events[temp]["hide"] != null:
+		get_node_or_null(anomaly_events[temp]["hide"]).visible = 0
+
 ### p1
 # show
 #$"map above/left/trees/tree4"
@@ -230,3 +254,31 @@ func spawn():
 #
 #hide $"map behind/out_left/p2/tree3"
 #hide $"map behind/out_left/p2/bush4"
+
+
+### p3
+
+#show
+#$"map behind/out_right/p3/grave2"
+#$"map above/right/bench3/hide1"
+
+#hide
+#$"map behind/out_right/p3/grave"
+#$"map behind/out_right/p3/grave3"
+#$"map behind/out_right/p3/grave4"
+#$"map behind/out_right/p3/grave5"
+#$"map behind/out_right/p3/grave6"
+
+# show/hide
+#hide $"map behind/out_right/p3/tree2"
+#hide $"map behind/out_right/p3/tree3"
+
+### p4
+
+#show
+#$"map above/right/bench3/hide2"
+#$"map behind/out_right/p4/bush3"
+
+# show/hide
+#hide $"map behind/out_right/p4/bush2"
+#show $"map behind/out_right/p4/bush4"
