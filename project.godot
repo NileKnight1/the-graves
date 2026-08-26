@@ -8,6 +8,10 @@
 
 config_version=5
 
+[addons]
+
+translations_plugin/last_edited_file_path="res://translation.csv"
+
 [application]
 
 config/name="The Grave - Anomalies Game"
@@ -23,7 +27,7 @@ mouse_cursor/emulate_touch_from_mouse=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/csvedit/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
 
 [input]
 
@@ -59,6 +63,10 @@ interact={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translation.ar.translation", "res://translation.en.translation")
 
 [physics]
 

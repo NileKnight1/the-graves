@@ -11,6 +11,7 @@ bg_color = Color(0.47933924, 0, 0.05596737, 1)
 script = ExtResource("1_nacbu")
 
 [node name="Panel" type="Panel" parent="." unique_id=1222239789]
+layout_direction = 2
 offset_top = 38.0
 offset_right = 40.0
 offset_bottom = 97.30395

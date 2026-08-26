@@ -201,7 +201,10 @@ size = Vector2(1094, 703)
 [node name="game" type="Node2D" unique_id=275808026]
 script = ExtResource("1_lnu2h")
 
-[node name="map behind" type="Node2D" parent="." unique_id=244122935]
+[node name="map behind" type="Control" parent="." unique_id=1360215130]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="map behind" unique_id=1747960841]
 
@@ -1220,6 +1223,7 @@ zoom = Vector2(1.4, 1.4)
 
 [node name="room" type="Control" parent="player" unique_id=790920656]
 z_index = 2
+layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = -46.0
@@ -1229,7 +1233,6 @@ offset_bottom = 55.0
 mouse_filter = 1
 
 [node name="menu" type="Control" parent="player/room" unique_id=1600947440]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -1253,7 +1256,6 @@ theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 36
-text = "Report Radio"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1273,7 +1275,6 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Environmental"
 icon_alignment = 1
 
 [node name="creatures" type="Button" parent="player/room/menu" unique_id=343485077]
@@ -1292,7 +1293,6 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Creatures"
 icon_alignment = 1
 
 [node name="back" type="Button" parent="player/room/menu" unique_id=551230781]
@@ -1312,7 +1312,6 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Back"
 icon_alignment = 1
 
 [node name="environment" type="Control" parent="player/room" unique_id=416041044]
@@ -1555,7 +1554,10 @@ vertical_alignment = 1
 [node name="anomaly" parent="anomalies" unique_id=312059141 instance=ExtResource("3_lbhrr")]
 position = Vector2(1630, 9)
 
-[node name="map above" type="Node2D" parent="." unique_id=491991416]
+[node name="map above" type="Control" parent="." unique_id=385126786]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
 
 [node name="left" type="Node2D" parent="map above" unique_id=975079181]
 
@@ -2167,14 +2169,13 @@ position = Vector2(4426, 0)
 position = Vector2(-2235, -168.5)
 shape = SubResource("RectangleShape2D_iywne")
 
-[node name="ui" type="Node2D" parent="." unique_id=2084578173]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
 visible = false
 
 [node name="shift" type="Label" parent="CanvasLayer" unique_id=2086180496]
+layout_direction = 2
 offset_left = 49.0
 offset_top = 8.0
 offset_right = 291.0
@@ -2184,6 +2185,7 @@ theme_override_font_sizes/font_size = 48
 text = "Shift 1"
 
 [node name="time" type="Label" parent="CanvasLayer" unique_id=297290087]
+layout_direction = 2
 offset_left = 522.0
 offset_top = 8.0
 offset_right = 764.0

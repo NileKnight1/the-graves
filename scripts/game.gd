@@ -9,13 +9,41 @@ var radio_opened = 0
 
 var opened_cam = 3
 
+var shift = 1000
 
+func translation():
+	TranslationServer.set_locale("ar") 
+	$player/room/menu/title.text = tr("report_radio")
+	$player/room/environment/title.text = tr("report_radio")
+	$player/room/creatures/title.text = tr("report_radio")
+	
+	$player/room/menu/environmental.text = tr("environmental")
+	$player/room/menu/creatures.text = tr("creatures")
+	$player/room/menu/back.text = tr("back")
+	$player/room/environment/back.text = tr("back")
+	$player/room/creatures/back.text = tr("back")
+	$player/room/environment/back.text = tr("back")
+	$player/room/creatures/back.text = tr("back")
+	
+	$player/room/environment/p1.text = tr("part1")
+	$player/room/environment/p2.text = tr("part2")
+	$player/room/environment/p3.text = tr("part3")
+	$player/room/environment/p4.text = tr("part4")
+	
+	$player/room/creatures/p1.text = tr("part1")
+	$player/room/creatures/p2.text = tr("part2")
+	$player/room/creatures/p3.text = tr("part3")
+	$player/room/creatures/p4.text = tr("part4")
+	
+	$CanvasLayer/shift.text = tr("shift") + " " + str(shift)
 
 func _ready() -> void:
 	#await get_tree().create_timer(1.0).timeout
 	#print(p1_anomalies.find($anomalies/anomaly))
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$CanvasLayer/mobile.visible = 1
+		
+	translation()
 	
 	#apply_anomaly_event()
 	#spawn()
