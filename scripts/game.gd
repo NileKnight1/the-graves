@@ -11,7 +11,8 @@ var opened_cam = 3
 func _ready() -> void:
 	#await get_tree().create_timer(1.0).timeout
 	#print(p1_anomalies.find($anomalies/anomaly))
-	
+	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
+		$CanvasLayer/mobile.visible = 1
 	
 	pass
 

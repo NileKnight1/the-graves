@@ -24,6 +24,15 @@ passby_press = true
 action = "sprint"
 visibility_mode = 1
 
+[node name="jump" type="TouchScreenButton" parent="Control" unique_id=1928724385]
+position = Vector2(27.526564, 29.674026)
+scale = Vector2(0.21068403, 0.319563)
+texture_normal = ExtResource("2_xp3t8")
+texture_pressed = ExtResource("3_2t62u")
+passby_press = true
+action = "jump"
+visibility_mode = 1
+
 [node name="interact" type="TextureButton" parent="Control" unique_id=284682000]
 layout_mode = 0
 offset_left = 35.275208
@@ -35,20 +44,9 @@ texture_normal = ExtResource("2_xp3t8")
 texture_pressed = ExtResource("3_2t62u")
 stretch_mode = 5
 
-[node name="jump" type="TextureButton" parent="Control" unique_id=2004550806]
-layout_mode = 0
-offset_left = 25.83935
-offset_top = 28.342854
-offset_right = 65.83935
-offset_bottom = 68.342865
-scale = Vector2(0.12703064, 0.18808901)
-texture_normal = ExtResource("2_xp3t8")
-texture_pressed = ExtResource("3_2t62u")
-stretch_mode = 5
-
 [node name="left" type="TouchScreenButton" parent="Control" unique_id=237091111]
 position = Vector2(1.8121929, 30.00682)
-scale = Vector2(0.18168661, 0.26901585)
+scale = Vector2(0.18612209, 0.27558327)
 texture_normal = ExtResource("2_xp3t8")
 texture_pressed = ExtResource("3_2t62u")
 passby_press = true
@@ -56,8 +54,8 @@ action = "left"
 visibility_mode = 1
 
 [node name="right" type="TouchScreenButton" parent="Control" unique_id=31096760]
-position = Vector2(7.6861906, 30.00682)
-scale = Vector2(0.18168661, 0.26901585)
+position = Vector2(9.373404, 30.00682)
+scale = Vector2(0.18612209, 0.27558327)
 texture_normal = ExtResource("2_xp3t8")
 texture_pressed = ExtResource("3_2t62u")
 passby_press = true
@@ -85,4 +83,3 @@ action = "up"
 visibility_mode = 1
 
 [connection signal="pressed" from="Control/interact" to="." method="_on_interact_pressed"]
-[connection signal="pressed" from="Control/jump" to="." method="_on_jump_pressed"]
