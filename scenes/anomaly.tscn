@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bgqrhww4gnhow"]
+
+[ext_resource type="Script" uid="uid://fers505lxxae" path="res://scripts/anomaly.gd" id="1_nacbu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fuoq"]
+bg_color = Color(0.47933924, 0, 0.05596737, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qc3fp"]
+
+[node name="anomaly" type="CharacterBody2D" unique_id=312059141]
+script = ExtResource("1_nacbu")
+
+[node name="Panel" type="Panel" parent="." unique_id=1222239789]
+offset_top = 38.0
+offset_right = 40.0
+offset_bottom = 97.30395
+scale = Vector2(1, -2.7148278)
+theme_override_styles/panel = SubResource("StyleBoxFlat_3fuoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592067596]
+position = Vector2(20, 20.000004)
+scale = Vector2(1.9094183, 1.9094183)
+shape = SubResource("CircleShape2D_qc3fp")

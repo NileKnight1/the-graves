@@ -9,7 +9,11 @@ var opened_cam = 3
 
 
 func _ready() -> void:
-	pass # Replace with function body.
+	#await get_tree().create_timer(1.0).timeout
+	#print(p1_anomalies.find($anomalies/anomaly))
+	
+	
+	pass
 
 
 func _process(delta: float) -> void:
@@ -67,3 +71,47 @@ func _on_cams_body_entered(body: Node2D) -> void:
 func _on_cams_body_exited(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 0
+
+var p1_anomalies_count = 0
+var p2_anomalies_count = 0
+var p3_anomalies_count = 0
+var p4_anomalies_count = 0
+
+var p1_anomalies = []
+var p2_anomalies = []
+var p3_anomalies = []
+var p4_anomalies = []
+
+
+
+func _on_p_1_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D && body.anomaly :
+		print("anomaly")
+		p1_anomalies_count += 1
+		p1_anomalies.append(body)
+func _on_p_1_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D && body.anomaly :
+		print("anomaly")
+		p1_anomalies_count -= 1
+		p1_anomalies.remove_at(p1_anomalies.find(body))
+		
+
+func _on_button1_pressed() -> void:
+	print(p1_anomalies)
+	print(p1_anomalies_count)
+	if p1_anomalies_count:
+		for i in p1_anomalies:
+			i.queue_free()
+			print(i)
+			
+		#p1_anomalies.clear()
+		
+		print(p1_anomalies_count)
+	
+
+func _on_button_2_pressed() -> void:
+	pass # Replace with function body.
+func _on_button_3_pressed() -> void:
+	pass # Replace with function body.
+func _on_button_4_pressed() -> void:
+	pass # Replace with function body.

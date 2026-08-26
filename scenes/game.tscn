@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://chwnt2iey800b" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cfj564wppea61" path="res://scenes/temp_player.tscn" id="1_uwrxv"]
 [ext_resource type="VideoStream" uid="uid://cho7udnr6dowp" path="res://assets/27519-364430915.ogv" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bgqrhww4gnhow" path="res://scenes/anomaly.tscn" id="3_lbhrr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
@@ -131,9 +132,6 @@ corner_radius_top_right = 14
 corner_radius_bottom_right = 14
 corner_radius_bottom_left = 14
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
-size = Vector2(256, 247)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iywne"]
 bg_color = Color(0.1504, 0.16, 0.1312, 1)
 
@@ -147,6 +145,12 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
+size = Vector2(256, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
+size = Vector2(1053, 703)
 
 [node name="game" type="Node2D" unique_id=275808026]
 script = ExtResource("1_lnu2h")
@@ -870,18 +874,17 @@ offset_bottom = -240.8903
 scale = Vector2(1.2348685, 15.541196)
 theme_override_styles/panel = SubResource("StyleBoxFlat_dinhu")
 
-[node name="cams" type="Area2D" parent="map behind" unique_id=149070780]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="map behind/cams" unique_id=79845045]
-position = Vector2(-49, -123.5)
-shape = SubResource("RectangleShape2D_lbhrr")
-
-[node name="player" parent="." unique_id=312059141 instance=ExtResource("1_uwrxv")]
+[node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
 position = Vector2(-462, -55)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
 zoom = Vector2(1.4, 1.4)
+
+[node name="anomalies" type="Node2D" parent="." unique_id=1338437649]
+
+[node name="anomaly" parent="anomalies" unique_id=1341686786 instance=ExtResource("3_lbhrr")]
+position = Vector2(-2178, 26)
 
 [node name="map above" type="Node2D" parent="." unique_id=491991416]
 
@@ -1364,5 +1367,67 @@ offset_bottom = -336.2483
 scale = Vector2(29.958494, 20.92507)
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 
-[connection signal="body_entered" from="map behind/cams" to="." method="_on_cams_body_entered"]
-[connection signal="body_exited" from="map behind/cams" to="." method="_on_cams_body_exited"]
+[node name="areas" type="Node2D" parent="." unique_id=231628329]
+
+[node name="cams" type="Area2D" parent="areas" unique_id=149070780]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/cams" unique_id=79845045]
+position = Vector2(-49, -123.5)
+shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="p1" type="Area2D" parent="areas" unique_id=1267882245]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/p1" unique_id=823472423]
+position = Vector2(-2227.5, -168.5)
+shape = SubResource("RectangleShape2D_iywne")
+
+[node name="UI" type="Node2D" parent="." unique_id=2084578173]
+
+[node name="room" type="Control" parent="UI" unique_id=790920656]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Button" type="Button" parent="UI/room" unique_id=1348013076]
+layout_mode = 0
+offset_left = 352.0
+offset_top = -392.0
+offset_right = 425.0
+offset_bottom = -308.0
+theme_override_font_sizes/font_size = 55
+text = "P1"
+
+[node name="Button2" type="Button" parent="UI/room" unique_id=1858252975]
+layout_mode = 0
+offset_left = 352.0
+offset_top = -304.0
+offset_right = 425.0
+offset_bottom = -220.0
+theme_override_font_sizes/font_size = 55
+text = "P1"
+
+[node name="Button3" type="Button" parent="UI/room" unique_id=1375149201]
+layout_mode = 0
+offset_left = 352.0
+offset_top = -219.0
+offset_right = 425.0
+offset_bottom = -135.0
+theme_override_font_sizes/font_size = 55
+text = "P1"
+
+[node name="Button4" type="Button" parent="UI/room" unique_id=1748784579]
+layout_mode = 0
+offset_left = 352.0
+offset_top = -134.0
+offset_right = 425.0
+offset_bottom = -50.0
+theme_override_font_sizes/font_size = 55
+text = "P1"
+
+[connection signal="body_entered" from="areas/cams" to="." method="_on_cams_body_entered"]
+[connection signal="body_exited" from="areas/cams" to="." method="_on_cams_body_exited"]
+[connection signal="body_entered" from="areas/p1" to="." method="_on_p_1_body_entered"]
+[connection signal="body_exited" from="areas/p1" to="." method="_on_p_1_body_exited"]
+[connection signal="pressed" from="UI/room/Button" to="." method="_on_button1_pressed"]
+[connection signal="pressed" from="UI/room/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="UI/room/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="UI/room/Button4" to="." method="_on_button_4_pressed"]

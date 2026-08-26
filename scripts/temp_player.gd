@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+var anomaly = 0
 var SPEED = 300.0
 var JUMP_VELOCITY = -250.0
 var sprint = 0
