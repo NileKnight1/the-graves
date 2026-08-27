@@ -12,7 +12,7 @@ var opened_cam = 3
 var shift = 1
 
 func translation():
-	TranslationServer.set_locale("ar") 
+	#TranslationServer.set_locale("ar") 
 	$player/room/menu/title.text = tr("report_radio")
 	$player/room/environment/title.text = tr("report_radio")
 	$player/room/creatures/title.text = tr("report_radio")
@@ -50,18 +50,22 @@ func _ready() -> void:
 	#print(p1_anomalies.find($anomalies/anomaly))
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$CanvasLayer/mobile.visible = 1
-		
+	
+	phone_up()
 	translation()
 	
 	#apply_anomaly_event()
 	#spawn()
 	pass
 
+func phone_up():
+	var tween = create_tween()
+	tween.tween_property($player/phone, "position:y", $player/phone.position.y - 320 , 1.0)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		if computer_area && !computer_opened:
-			print("hi")
+			#print("hi")
 			#$"map above/cams/cam1".visible = 1
 			$player/Camera2D.enabled = 0
 			$"map above/cams".visible = 1
@@ -97,13 +101,13 @@ func _process(delta: float) -> void:
 		$"map above/cams".get_child(opened_cam-1).enabled = 0
 		
 		if Input.is_action_just_pressed("left"):
-			print("hi")
+			#print("hi")
 			opened_cam -= 1
 			if opened_cam == 0:
 				opened_cam = 4
 				
 		if Input.is_action_just_pressed("right"):
-			print("ih")
+			#print("ih")
 			opened_cam += 1
 			if opened_cam == 5:
 				opened_cam = 1
