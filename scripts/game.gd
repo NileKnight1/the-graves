@@ -38,6 +38,14 @@ func translation():
 	
 	$CanvasLayer/shift.text = tr("shift") + " " + str(shift)
 	$CanvasLayer/danger.text = tr("danger") + " " + str(bad_time) + "/" + str(max_bad_time)
+	#
+	#if (TranslationServer.get_locale() == 'ar'):
+		#$CanvasLayer/danger.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	#
+	$CanvasLayer/reports.text = tr("wrong_reports") + " " + str(wrong_reports_conut) + "/" + str(max_wrong_reports_count)
+	
+	
+	
 	
 	$"map above/cams/cam1/cam".text = tr("cam1")
 	$"map above/cams/cam2/cam".text = tr("cam2")
@@ -176,7 +184,7 @@ func _process(delta: float) -> void:
 			$player/room/creatures.visible = 0
 			radio_opened = 0
 		
-		
+	#print(p1+p2+p3+p4)
 	#print(computer_opened)
 	if computer_opened:
 		$"map above/cams".get_child(opened_cam-1).visible = 0
@@ -249,20 +257,25 @@ var p2_anomalies = []
 var p3_anomalies = []
 var p4_anomalies = []
 
-
+var p1 = 0
+var p2 = 0
+var p3 = 0
+var p4 = 0
 
 func _on_p_1_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
 		#print("anomaly")
 		p1_anomalies_count += 1
 		p1_anomalies.append(body)
+	if body == $player:
+		p1 = 1
 func _on_p_1_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
 		#print("anomaly")
 		p1_anomalies_count -= 1
 		p1_anomalies.remove_at(p1_anomalies.find(body))
-		
-
+	if body == $player:
+		p1 = 0
 func _on_creature1_pressed() -> void:
 	#print(p1_anomalies)
 	#print(p1_anomalies_count)
@@ -280,12 +293,15 @@ func _on_p_2_body_entered(body: Node2D) -> void:
 		#print("anomaly")
 		p2_anomalies_count += 1
 		p2_anomalies.append(body)
+	if body == $player:
+		p2 = 1
 func _on_p_2_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
 		#print("anomaly")
 		p2_anomalies_count -= 1
 		p2_anomalies.remove_at(p2_anomalies.find(body))
-		
+	if body == $player:
+		p2 = 0
 
 func _on_creature2_pressed() -> void:
 	#print(p2_anomalies)
@@ -305,12 +321,15 @@ func _on_p_3_body_entered(body: Node2D) -> void:
 		#print("anomaly")
 		p3_anomalies_count += 1
 		p3_anomalies.append(body)
+	if body == $player:
+		p3 = 1
 func _on_p_3_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
 		#print("anomaly")
 		p3_anomalies_count -= 1
 		p3_anomalies.remove_at(p3_anomalies.find(body))
-		
+	if body == $player:
+		p3 = 0
 
 func _on_creature3_pressed() -> void:
 	#print(p3_anomalies)
@@ -326,12 +345,15 @@ func _on_p_4_body_entered(body: Node2D) -> void:
 		#print("anomaly")
 		p4_anomalies_count += 1
 		p4_anomalies.append(body)
+	if body == $player:
+		p4 = 1
 func _on_p_4_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
 		#print("anomaly")
 		p4_anomalies_count -= 1
 		p4_anomalies.remove_at(p4_anomalies.find(body))
-		
+	if body == $player:
+		p4 = 0
 
 func _on_creature4_pressed() -> void:
 	#print(p4_anomalies)
@@ -380,7 +402,14 @@ func apply_anomaly_event():
 	print("evented")
 
 	for i in anomaly_events:
-		if (computer_opened && i["area"] == opened_cam) || i["exist"]: return
+		if (computer_opened && i["area"] == opened_cam) || i["exist"]: continue
+		match i["area"]:
+			1: if ps1: continue
+			2: if ps2: continue
+			3: if ps3: continue
+			4: if ps4: continue
+			
+		
 		for j in range(i["prob"]):
 			anomaly_events_prob.append(i)
 		
@@ -534,6 +563,7 @@ func clear_anomaly_event(area):
 
 var wrong_report = 1
 var wrong_reports_conut = 0
+var max_wrong_reports_count = 3
 var right_reports_conut = 0
 
 
@@ -542,8 +572,10 @@ var right_reports_conut = 0
 func wrong_report_penalty():
 	print("bad boy")
 	wrong_reports_conut += 1
+	$CanvasLayer/reports.text = tr("wrong_reports") + " " + str(wrong_reports_conut) + "/" + str(max_wrong_reports_count)
 	
-	if wrong_reports_conut == 3:
+	
+	if wrong_reports_conut == max_wrong_reports_count:
 		print("You Lose")
 		lose()
 
@@ -581,7 +613,7 @@ func _on_back_pressed() -> void:
 	$player/room/menu.visible = 1
 
 var bad_time = 0
-var max_bad_time = 100
+var max_bad_time = 1000
 #var danger = 0
 
 func _on_bad_time_timeout() -> void:
@@ -611,4 +643,34 @@ func _on_call_time_timeout() -> void:
 	if seconds < 10:
 		$player/phone/accepted/time.text += "0"
 	$player/phone/accepted/time.text += str(seconds)
-	
+
+var ps1 = 0
+var ps2 = 0
+var ps3 = 0
+var ps4 = 0
+
+func _on_ps_1_body_entered(body: Node2D) -> void:
+	if body == $player:
+		ps1 = 1
+		print("p1")
+func _on_ps_1_body_exited(body: Node2D) -> void:
+	if body == $player:
+		ps1 = 0
+func _on_ps_2_body_entered(body: Node2D) -> void:
+	if body == $player:
+		ps2 = 1
+func _on_ps_2_body_exited(body: Node2D) -> void:
+	if body == $player:
+		ps2 = 0
+func _on_ps_3_body_entered(body: Node2D) -> void:
+	if body == $player:
+		ps3 = 1
+func _on_ps_3_body_exited(body: Node2D) -> void:
+	if body == $player:
+		ps3 = 0
+func _on_ps_4_body_entered(body: Node2D) -> void:
+	if body == $player:
+		ps4 = 1
+func _on_ps_4_body_exited(body: Node2D) -> void:
+	if body == $player:
+		ps4 = 0

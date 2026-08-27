@@ -339,6 +339,18 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tnpc"]
+size = Vector2(1780, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtaks"]
+size = Vector2(1491, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvpfn"]
+size = Vector2(1909, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dinhu"]
+size = Vector2(1720.5, 707)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(256, 247)
 
@@ -1490,7 +1502,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_37s47")
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-3443, -39)
+position = Vector2(-746, -31)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
@@ -2719,6 +2731,33 @@ text = "cam 04"
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
 visible = false
 
+[node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/ps1" unique_id=1295525997]
+position = Vector2(-2128, -168.5)
+shape = SubResource("RectangleShape2D_0tnpc")
+
+[node name="ps2" type="Area2D" parent="areas" unique_id=496432954]
+position = Vector2(127, 700)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/ps2" unique_id=1458849699]
+position = Vector2(-994.5, -872)
+shape = SubResource("RectangleShape2D_vtaks")
+
+[node name="ps3" type="Area2D" parent="areas" unique_id=705900386]
+position = Vector2(127, 700)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/ps3" unique_id=824288614]
+position = Vector2(1008.5, -872)
+shape = SubResource("RectangleShape2D_kvpfn")
+
+[node name="ps4" type="Area2D" parent="areas" unique_id=230429488]
+position = Vector2(127, 700)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/ps4" unique_id=1114693540]
+position = Vector2(1988.75, -878)
+shape = SubResource("RectangleShape2D_dinhu")
+
 [node name="cams" type="Area2D" parent="areas" unique_id=149070780]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/cams" unique_id=79845045]
@@ -2778,17 +2817,30 @@ theme_override_font_sizes/font_size = 48
 text = "Shift 1"
 
 [node name="danger" type="Label" parent="CanvasLayer" unique_id=1023276724]
-visible = false
 layout_direction = 2
-offset_left = 942.0
+offset_left = 850.0
 offset_top = 8.0
-offset_right = 1203.0
-offset_bottom = 113.0
+offset_right = 1246.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
 theme_override_font_sizes/font_size = 48
-text = "Danger 0/60"
+text = "Danger"
+horizontal_alignment = 3
+
+[node name="reports" type="Label" parent="CanvasLayer" unique_id=1040645522]
+layout_direction = 2
+offset_left = 813.0
+offset_top = 67.0
+offset_right = 1247.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 48
+text = "Wrong Reports 0/3"
+horizontal_alignment = 2
 
 [node name="subtitles" type="Label" parent="CanvasLayer" unique_id=802554335]
 layout_direction = 1
@@ -2864,6 +2916,14 @@ wait_time = 7.0
 [connection signal="pressed" from="player/phone/ringing/accept" to="." method="_on_accept_tutorial_pressed"]
 [connection signal="pressed" from="player/phone/ringing/decline" to="." method="_on_decline_tutorial_pressed"]
 [connection signal="pressed" from="player/phone/accepted/decline" to="." method="_on_decline_tutorial_pressed"]
+[connection signal="body_entered" from="areas/ps1" to="." method="_on_ps_1_body_entered"]
+[connection signal="body_exited" from="areas/ps1" to="." method="_on_ps_1_body_exited"]
+[connection signal="body_entered" from="areas/ps2" to="." method="_on_ps_2_body_entered"]
+[connection signal="body_exited" from="areas/ps2" to="." method="_on_ps_2_body_exited"]
+[connection signal="body_entered" from="areas/ps3" to="." method="_on_ps_3_body_entered"]
+[connection signal="body_exited" from="areas/ps3" to="." method="_on_ps_3_body_exited"]
+[connection signal="body_entered" from="areas/ps4" to="." method="_on_ps_4_body_entered"]
+[connection signal="body_exited" from="areas/ps4" to="." method="_on_ps_4_body_exited"]
 [connection signal="body_entered" from="areas/cams" to="." method="_on_cams_body_entered"]
 [connection signal="body_exited" from="areas/cams" to="." method="_on_cams_body_exited"]
 [connection signal="body_entered" from="areas/radio" to="." method="_on_radio_body_entered"]
