@@ -36,6 +36,13 @@ func translation():
 	$player/room/creatures/p4.text = tr("part4")
 	
 	$CanvasLayer/shift.text = tr("shift") + " " + str(shift)
+	$CanvasLayer/danger.text = tr("danger") + " 0/60"
+	
+	$"map above/cams/cam1/cam".text = tr("cam1")
+	$"map above/cams/cam2/cam".text = tr("cam2")
+	$"map above/cams/cam3/cam".text = tr("cam3")
+	$"map above/cams/cam4/cam".text = tr("cam4")
+	
 	
 
 func _ready() -> void:
@@ -412,12 +419,18 @@ func clear_anomaly_event(area):
 			#print(i)
 			print("gotchu")
 			anomaly_events_count -= 1
+			right_reports_conut += 1
+			if right_reports_conut == 6:
+				win()
 	if wrong_report:
 		wrong_report_penalty()
 	wrong_report = 1
 
 var wrong_report = 1
 var wrong_reports_conut = 0
+var right_reports_conut = 0
+
+
 
 
 func wrong_report_penalty():
@@ -429,9 +442,14 @@ func wrong_report_penalty():
 		lose()
 
 func lose():
+	$spawn.stop()
+	$bad_time.stop()
 	$CanvasLayer/black.visible = 1
 	$CanvasLayer/label.text = tr("lose")
+
 func win():
+	$spawn.stop()
+	$bad_time.stop()
 	$CanvasLayer/black.visible = 1
 	$CanvasLayer/label.text = tr("win")
 
@@ -455,3 +473,14 @@ func _on_back_pressed() -> void:
 	$player/room/environment.visible = 0
 	$player/room/creatures.visible = 0
 	$player/room/menu.visible = 1
+
+var bad_time = 0
+#var danger = 0
+
+func _on_bad_time_timeout() -> void:
+	bad_time += anomaly_events_count
+	$CanvasLayer/danger.text = tr("danger") + " " + str(bad_time) + "/60"
+	
+	
+	if bad_time > 60:
+		lose()

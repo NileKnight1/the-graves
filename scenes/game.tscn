@@ -2088,6 +2088,17 @@ offset_bottom = -336.2483
 scale = Vector2(29.958494, 20.92507)
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 
+[node name="cam" type="Label" parent="map above/cams/cam1" unique_id=835605917]
+layout_direction = 2
+offset_left = -433.59146
+offset_top = -270.29892
+offset_right = -191.59146
+offset_bottom = -165.29892
+theme_override_colors/font_color = Color(0.60960835, 0.5529119, 0.56141627, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 38
+text = "cam 01"
+
 [node name="cam2" type="Camera2D" parent="map above/cams" unique_id=21652491]
 visible = false
 position = Vector2(-1110, -203)
@@ -2103,6 +2114,17 @@ offset_bottom = -336.2483
 scale = Vector2(29.958494, 20.92507)
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 
+[node name="cam" type="Label" parent="map above/cams/cam2" unique_id=1086956351]
+layout_direction = 2
+offset_left = -433.59146
+offset_top = -270.29892
+offset_right = -191.59146
+offset_bottom = -165.29892
+theme_override_colors/font_color = Color(0.60960835, 0.5529119, 0.56141627, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 38
+text = "cam 02"
+
 [node name="cam3" type="Camera2D" parent="map above/cams" unique_id=1415543043]
 position = Vector2(1089, -203)
 scale = Vector2(1.1116455, 1.0247914)
@@ -2116,6 +2138,17 @@ offset_right = -568.35046
 offset_bottom = -336.2483
 scale = Vector2(29.958494, 20.92507)
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
+
+[node name="cam" type="Label" parent="map above/cams/cam3" unique_id=1021493561]
+layout_direction = 2
+offset_left = -433.59146
+offset_top = -270.29892
+offset_right = -191.59146
+offset_bottom = -165.29892
+theme_override_colors/font_color = Color(0.60960835, 0.5529119, 0.56141627, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 38
+text = "cam 03"
 
 [node name="cam4" type="Camera2D" parent="map above/cams" unique_id=1597009136]
 visible = false
@@ -2132,7 +2165,19 @@ offset_bottom = -336.2483
 scale = Vector2(29.958494, 20.92507)
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 
+[node name="cam" type="Label" parent="map above/cams/cam4" unique_id=119792344]
+layout_direction = 2
+offset_left = -433.59146
+offset_top = -270.29892
+offset_right = -191.59146
+offset_bottom = -165.29892
+theme_override_colors/font_color = Color(0.60960835, 0.5529119, 0.56141627, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 38
+text = "cam 04"
+
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
+visible = false
 
 [node name="cams" type="Area2D" parent="areas" unique_id=149070780]
 
@@ -2185,16 +2230,33 @@ offset_left = 49.0
 offset_top = 8.0
 offset_right = 291.0
 offset_bottom = 113.0
+theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
+theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
 theme_override_font_sizes/font_size = 48
 text = "Shift 1"
 
+[node name="danger" type="Label" parent="CanvasLayer" unique_id=1023276724]
+layout_direction = 2
+offset_left = 975.0
+offset_top = 8.0
+offset_right = 1236.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 48
+text = "Danger 0/60"
+
 [node name="time" type="Label" parent="CanvasLayer" unique_id=297290087]
+visible = false
 layout_direction = 2
 offset_left = 522.0
 offset_top = 8.0
 offset_right = 764.0
 offset_bottom = 113.0
+theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
+theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
 theme_override_font_sizes/font_size = 48
 text = "00:00"
@@ -2221,7 +2283,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="spawn" type="Timer" parent="." unique_id=2061830803]
-wait_time = 5.0
+wait_time = 10.0
+autostart = true
+
+[node name="bad_time" type="Timer" parent="." unique_id=288077826]
 autostart = true
 
 [connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
@@ -2250,3 +2315,4 @@ autostart = true
 [connection signal="body_entered" from="areas/p4" to="." method="_on_p_4_body_entered"]
 [connection signal="body_exited" from="areas/p4" to="." method="_on_p_4_body_exited"]
 [connection signal="timeout" from="spawn" to="." method="_on_spawn_timeout"]
+[connection signal="timeout" from="bad_time" to="." method="_on_bad_time_timeout"]

@@ -3,10 +3,15 @@ report_radio,Report Radio,راديو الإبلاغ
 environmental,Environmental,تغيير بيئي
 creatures,Creatures,مخلوقات
 back,Back,رجوع
-part1,Part 1,القطاع 1
-part2,Part 2,القطاع 2
-part3,Part 3,القطاع 3
-part4,Part 4,القطاع 4
+part1,Sector 1,القطاع 1
+part2,Sector 2,القطاع 2
+part3,Sector 3,القطاع 3
+part4,Sector 4,القطاع 4
 shift,Shift,الوردية
 win,You Win!,لقد فزت!
 lose,You Lose!,لقد خسرت!
+danger,Danger,الخطر
+cam1,cam 01,كاميرا 01
+cam2,cam 02,كاميرا 02
+cam3,cam 03,كاميرا 03
+cam4,cam 04,كاميرا 04
