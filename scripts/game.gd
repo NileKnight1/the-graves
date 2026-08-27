@@ -12,6 +12,36 @@ var player_name = "عمار"
 
 var shift = 1
 
+#var collect = preload("res://audio/collect.mp3")
+var click_phone = preload("res://audio/click_phone.mp3")
+var hang_up = preload("res://audio/hangup.mp3")
+var dialogue = preload("res://audio/dialogue.mp3")
+var camera_switch = preload("res://audio/camera_switch.mp3")
+var cam_on = preload("res://audio/cam_on.mp3")
+var cam_off = preload("res://audio/cam_off.mp3")
+var start_sound = preload("res://audio/start.mp3")
+var click_radio = preload("res://audio/radio_click.mp3")
+var radio_signal = preload("res://audio/radio_signal.mp3")
+var wrong_signal = preload("res://audio/wrong_singal.mp3")
+var correct = preload("res://audio/correct.mp3")
+
+
+
+
+
+
+
+
+func play_sound(sound):
+	var temp = AudioStreamPlayer.new()
+	temp.stream = sound
+	add_child(temp)
+	
+	temp.finished.connect(temp.queue_free)
+	temp.play()
+	
+
+
 func translation():
 	TranslationServer.set_locale("ar") 
 	$player/room/menu/title.text = tr("report_radio")
@@ -77,6 +107,7 @@ func _ready() -> void:
 
 func phone_up():
 	var tween = create_tween()
+	#$Node/ringtone.play()
 	tween.tween_property($player/phone, "position:y", $player/phone.position.y - 320 , 0.8)
 func phone_down():
 	var tween = create_tween()
@@ -119,41 +150,63 @@ var chat_msg = 0
 
 func _on_skip_msg_timeout() -> void:
 	chat_msg += 1
+	print("im still workingD")
 	chat1_apply()
 
 func chat1_apply():
-	if chat_msg == 9:
+	if chat_msg > 8:
 		chat_msg = 0
 		calling = 0
 		$timers/skip_msg.stop()
 		phone_down()
 		start()
 		return
-		
+	
 	var temp = tr(chat1_array[chat_msg])
 	if "%s" in temp:
 		$CanvasLayer/subtitles.text = temp % player_name
 		print(temp)
 	else:
 		$CanvasLayer/subtitles.text = temp
-
+	#play_sound(dialogue)
+	#dialogue.play()
+	$Node/dia.play()
 
 func start():
+	$Node/dia.stop()
+	$timers/call_time.stop()
+	$timers/skip_msg.stop()
+	
+	
+	await get_tree().create_timer(0.8).timeout
+	play_sound(start_sound)
+	
 	$CanvasLayer/danger.visible = 1
 	$CanvasLayer/reports.visible = 1
 	
 	$CanvasLayer/shift.visible = 1
 	$CanvasLayer/time.visible = 1
-	$timers/call_time.stop()
 	$CanvasLayer/subtitles.text = ""
 	
 	$timers/spawn.start()
 	$timers/shift_time.start()
 	
 	
-
+@onready var walking_sound = $Node/walk_dirt
 
 func _process(delta: float) -> void:
+	if $player.walk:
+		if !walking_sound.playing:
+			walking_sound.play()
+			print("um?a")
+		if $player.sprint:
+			walking_sound.pitch_scale = 2.0
+		else:
+			walking_sound.pitch_scale = 1
+	else:
+		walking_sound.stop()
+		
+	
 	if Input.is_action_just_pressed("interact"):
 		if computer_area && !computer_opened:
 			#print("hi")
@@ -163,8 +216,13 @@ func _process(delta: float) -> void:
 			$"map above/cams".get_child(opened_cam-1).enabled = 1
 			
 			computer_opened = 1
+			play_sound(cam_on)
+			$Node/camera.play()
+			
 			stop_move()
 		elif computer_opened:
+			play_sound(cam_off)
+			$Node/camera.stop()
 			$player/Camera2D.enabled = 1
 			$"map above/cams".visible = 0
 			print("closed")
@@ -178,8 +236,11 @@ func _process(delta: float) -> void:
 		if radio_area && !radio_opened:
 			$player/room/menu.visible = 1
 			radio_opened = 1
+			$Node/radio.play()
+			
 			#print("hi")
 		elif radio_opened:
+			$Node/radio.stop()
 			$player/room/menu.visible = 0
 			$player/room/environment.visible = 0
 			$player/room/creatures.visible = 0
@@ -196,12 +257,14 @@ func _process(delta: float) -> void:
 			opened_cam -= 1
 			if opened_cam == 0:
 				opened_cam = 4
-				
+			play_sound(camera_switch)
 		if Input.is_action_just_pressed("right"):
 			#print("ih")
 			opened_cam += 1
 			if opened_cam == 5:
 				opened_cam = 1
+			play_sound(camera_switch)
+			
 				
 		$"map above/cams".get_child(opened_cam-1).visible = 1
 		$"map above/cams".get_child(opened_cam-1).enabled = 1
@@ -240,6 +303,8 @@ func _on_radio_body_exited(body: Node2D) -> void:
 		radio_area = 0
 		if radio_opened:
 			radio_opened = 0
+			$Node/radio.stop()
+			
 			$player/room/menu.visible = 0
 			$player/room/environment.visible = 0
 			$player/room/creatures.visible = 0
@@ -545,6 +610,9 @@ var anomaly_events_prob = []
 #show    	^"map behind/out_right/p4/bush4"
 
 func clear_anomaly_event(area):
+	play_sound(radio_signal)
+	await get_tree().create_timer(2.0).timeout
+	
 	for i in anomaly_events:
 		if i["area"] == area && i["exist"] == 1:
 			i["exist"] = 0
@@ -566,6 +634,8 @@ func clear_anomaly_event(area):
 				win()
 	if wrong_report:
 		wrong_report_penalty()
+	else:
+		play_sound(correct)
 	wrong_report = 1
 
 var wrong_report = 1
@@ -577,6 +647,7 @@ var right_reports_conut = 0
 
 
 func wrong_report_penalty():
+	play_sound(wrong_signal)
 	print("bad boy")
 	wrong_reports_conut += 1
 	$CanvasLayer/reports.text = tr("wrong_reports") + " " + str(wrong_reports_conut) + "/" + str(max_wrong_reports_count)
@@ -609,12 +680,15 @@ func _on_en4_pressed() -> void:
 	clear_anomaly_event(4)
 
 func _on_environmental_pressed() -> void:
+	play_sound(click_radio)
 	$player/room/environment.visible = 1
 	$player/room/menu.visible = 0
 func _on_creatures_pressed() -> void:
+	play_sound(click_radio)
 	$player/room/creatures.visible = 1
 	$player/room/menu.visible = 0
 func _on_back_pressed() -> void:
+	play_sound(click_radio)
 	$player/room/environment.visible = 0
 	$player/room/creatures.visible = 0
 	$player/room/menu.visible = 1
@@ -633,8 +707,12 @@ func _on_bad_time_timeout() -> void:
 
 
 func _on_accept_tutorial_pressed() -> void:
+	$Node/ringtone.stop()
 	tutorial()
+	play_sound(click_phone)
 func _on_decline_tutorial_pressed() -> void:
+	play_sound(hang_up)
+	$Node/ringtone.stop()
 	phone_down()
 	calling = 0
 	start()
@@ -694,3 +772,24 @@ func _on_shift_time_timeout() -> void:
 	if secs < 10:
 		$CanvasLayer/time.text += "0"
 	$CanvasLayer/time.text += str(secs)
+	
+	if shift_time == 360:
+		$timers/spawn.stop()
+		$timers/bad_time.stop()
+		
+
+
+func _on_room_body_entered(body: Node2D) -> void:
+	if body == $player:
+		$Node/night.volume_db -= 5
+		walking_sound = $Node/walk_wood
+		$Node/walk_dirt.stop()
+		$Node/walk_wood.play()
+		#print("lowerd")
+func _on_room_body_exited(body: Node2D) -> void:
+	if body == $player:
+		$Node/night.volume_db += 5
+		walking_sound = $Node/walk_dirt
+		$Node/walk_dirt.play()
+		$Node/walk_wood.stop()
+		

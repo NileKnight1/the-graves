@@ -9,6 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://dm5ifs68m3i33" path="res://scenes/mobile.tscn" id="5_iywne"]
 [ext_resource type="FontFile" uid="uid://deescy0invitk" path="res://assets/HennyPenny-Regular.ttf" id="6_0tnpc"]
 [ext_resource type="FontFile" uid="uid://cim17fdmt5ywc" path="res://assets/Signika-Bold.ttf" id="6_p57ef"]
+[ext_resource type="AudioStream" uid="uid://mytxcdg0yh6f" path="res://audio/ringtone.mp3" id="10_vtaks"]
+[ext_resource type="AudioStream" uid="uid://dgeubm3gi5is4" path="res://audio/dialogue.mp3" id="11_kvpfn"]
+[ext_resource type="AudioStream" uid="uid://2xs1l0vulvmj" path="res://audio/radio.mp3" id="12_dinhu"]
+[ext_resource type="AudioStream" uid="uid://6p00scerkl1f" path="res://audio/camera.mp3" id="13_kvuet"]
+[ext_resource type="AudioStream" uid="uid://doi0hb801udh0" path="res://audio/night.mp3" id="14_trtic"]
+[ext_resource type="AudioStream" uid="uid://wstyydfieafs" path="res://audio/walking_dirt.mp3" id="15_ir15t"]
+[ext_resource type="AudioStream" uid="uid://t6a1ps8ee86" path="res://audio/walking_wood.mp3" id="16_ca42v"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
@@ -365,6 +372,9 @@ size = Vector2(1081.5, 703)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
 size = Vector2(1094, 703)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir15t"]
+size = Vector2(1079, 672.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
 bg_color = Color(0, 0, 0, 1)
@@ -2729,7 +2739,6 @@ theme_override_font_sizes/font_size = 38
 text = "cam 04"
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
-visible = false
 
 [node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
 
@@ -2797,6 +2806,12 @@ position = Vector2(4426, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/p4" unique_id=1806166924]
 position = Vector2(-2235, -168.5)
 shape = SubResource("RectangleShape2D_iywne")
+
+[node name="room" type="Area2D" parent="areas" unique_id=435522212]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/room" unique_id=1733156293]
+position = Vector2(-20, -171.25)
+shape = SubResource("RectangleShape2D_ir15t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
@@ -2906,6 +2921,39 @@ wait_time = 7.0
 
 [node name="shift_time" type="Timer" parent="timers" unique_id=1733842153]
 
+[node name="Node" type="Node" parent="." unique_id=694605502]
+
+[node name="ringtone" type="AudioStreamPlayer" parent="Node" unique_id=1353244250]
+stream = ExtResource("10_vtaks")
+parameters/looping = true
+
+[node name="dia" type="AudioStreamPlayer" parent="Node" unique_id=590644922]
+stream = ExtResource("11_kvpfn")
+
+[node name="radio" type="AudioStreamPlayer" parent="Node" unique_id=1904667190]
+stream = ExtResource("12_dinhu")
+volume_db = -10.0
+parameters/looping = true
+
+[node name="camera" type="AudioStreamPlayer" parent="Node" unique_id=1510438689]
+stream = ExtResource("13_kvuet")
+parameters/looping = true
+
+[node name="night" type="AudioStreamPlayer" parent="Node" unique_id=1031584916]
+stream = ExtResource("14_trtic")
+autoplay = true
+parameters/looping = true
+
+[node name="walk_dirt" type="AudioStreamPlayer" parent="Node" unique_id=2029448527]
+stream = ExtResource("15_ir15t")
+volume_db = 16.46
+parameters/looping = true
+
+[node name="walk_wood" type="AudioStreamPlayer" parent="Node" unique_id=216894447]
+stream = ExtResource("16_ca42v")
+volume_db = 16.46
+parameters/looping = true
+
 [connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
 [connection signal="pressed" from="player/room/menu/creatures" to="." method="_on_creatures_pressed"]
 [connection signal="pressed" from="player/room/menu/back" to="." method="_on_back_pressed"]
@@ -2942,6 +2990,8 @@ wait_time = 7.0
 [connection signal="body_exited" from="areas/p3" to="." method="_on_p_3_body_exited"]
 [connection signal="body_entered" from="areas/p4" to="." method="_on_p_4_body_entered"]
 [connection signal="body_exited" from="areas/p4" to="." method="_on_p_4_body_exited"]
+[connection signal="body_entered" from="areas/room" to="." method="_on_room_body_entered"]
+[connection signal="body_exited" from="areas/room" to="." method="_on_room_body_exited"]
 [connection signal="timeout" from="timers/spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="timers/bad_time" to="." method="_on_bad_time_timeout"]
 [connection signal="timeout" from="timers/call_time" to="." method="_on_call_time_timeout"]
