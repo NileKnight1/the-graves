@@ -2817,6 +2817,7 @@ theme_override_font_sizes/font_size = 48
 text = "Shift 1"
 
 [node name="danger" type="Label" parent="CanvasLayer" unique_id=1023276724]
+visible = false
 layout_direction = 2
 offset_left = 850.0
 offset_top = 8.0
@@ -2830,6 +2831,7 @@ text = "Danger"
 horizontal_alignment = 3
 
 [node name="reports" type="Label" parent="CanvasLayer" unique_id=1040645522]
+visible = false
 layout_direction = 2
 offset_left = 813.0
 offset_top = 67.0
@@ -2889,16 +2891,20 @@ theme_override_font_sizes/font_size = 236
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="spawn" type="Timer" parent="." unique_id=2061830803]
+[node name="timers" type="Node" parent="." unique_id=896048706]
+
+[node name="spawn" type="Timer" parent="timers" unique_id=2061830803]
 wait_time = 10.0
 
-[node name="bad_time" type="Timer" parent="." unique_id=288077826]
+[node name="bad_time" type="Timer" parent="timers" unique_id=288077826]
 autostart = true
 
-[node name="call_time" type="Timer" parent="." unique_id=177694698]
+[node name="call_time" type="Timer" parent="timers" unique_id=177694698]
 
-[node name="skip_msg" type="Timer" parent="." unique_id=429189266]
+[node name="skip_msg" type="Timer" parent="timers" unique_id=429189266]
 wait_time = 7.0
+
+[node name="shift_time" type="Timer" parent="timers" unique_id=1733842153]
 
 [connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
 [connection signal="pressed" from="player/room/menu/creatures" to="." method="_on_creatures_pressed"]
@@ -2936,7 +2942,8 @@ wait_time = 7.0
 [connection signal="body_exited" from="areas/p3" to="." method="_on_p_3_body_exited"]
 [connection signal="body_entered" from="areas/p4" to="." method="_on_p_4_body_entered"]
 [connection signal="body_exited" from="areas/p4" to="." method="_on_p_4_body_exited"]
-[connection signal="timeout" from="spawn" to="." method="_on_spawn_timeout"]
-[connection signal="timeout" from="bad_time" to="." method="_on_bad_time_timeout"]
-[connection signal="timeout" from="call_time" to="." method="_on_call_time_timeout"]
-[connection signal="timeout" from="skip_msg" to="." method="_on_skip_msg_timeout"]
+[connection signal="timeout" from="timers/spawn" to="." method="_on_spawn_timeout"]
+[connection signal="timeout" from="timers/bad_time" to="." method="_on_bad_time_timeout"]
+[connection signal="timeout" from="timers/call_time" to="." method="_on_call_time_timeout"]
+[connection signal="timeout" from="timers/skip_msg" to="." method="_on_skip_msg_timeout"]
+[connection signal="timeout" from="timers/shift_time" to="." method="_on_shift_time_timeout"]

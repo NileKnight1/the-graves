@@ -57,6 +57,7 @@ func translation():
 	$player/phone/ringing/lab1.text = tr("accept")
 	$player/phone/ringing/lab2.text = tr("decline")
 	$player/phone/caller.text = tr("manager")
+	$player/phone/ringing/label.text = tr("calling")
 	
 
 func _ready() -> void:
@@ -93,8 +94,8 @@ func tutorial():
 	calling = 1
 	$player/phone/ringing.visible = 0
 	$player/phone/accepted.visible = 1
-	$call_time.start()
-	$skip_msg.start()
+	$timers/call_time.start()
+	$timers/skip_msg.start()
 	chat1_apply()
 
 var chat1_array = [
@@ -107,10 +108,6 @@ var chat1_array = [
 	"chat1msg7", 
 	"chat1msg8", 
 	"chat1msg9", 
-	
-	
-	
-	
 ]
 
 #func _unhandled_input(event: InputEvent) -> void:
@@ -128,7 +125,7 @@ func chat1_apply():
 	if chat_msg == 9:
 		chat_msg = 0
 		calling = 0
-		$skip_msg.stop()
+		$timers/skip_msg.stop()
 		phone_down()
 		start()
 		return
@@ -143,12 +140,16 @@ func chat1_apply():
 
 func start():
 	$CanvasLayer/danger.visible = 1
+	$CanvasLayer/reports.visible = 1
+	
 	$CanvasLayer/shift.visible = 1
 	$CanvasLayer/time.visible = 1
-	$call_time.stop()
+	$timers/call_time.stop()
 	$CanvasLayer/subtitles.text = ""
 	
-	$spawn.start()
+	$timers/spawn.start()
+	$timers/shift_time.start()
+	
 	
 
 
@@ -189,7 +190,7 @@ func _process(delta: float) -> void:
 	if computer_opened:
 		$"map above/cams".get_child(opened_cam-1).visible = 0
 		$"map above/cams".get_child(opened_cam-1).enabled = 0
-		
+		#print(opened_cam)
 		if Input.is_action_just_pressed("left"):
 			#print("hi")
 			opened_cam -= 1
@@ -207,7 +208,7 @@ func _process(delta: float) -> void:
 		#
 	if calling && Input.is_action_just_pressed("skip"):
 		chat_msg += 1
-		$skip_msg.start()
+		$timers/skip_msg.start()
 		chat1_apply()
 		
 
@@ -402,7 +403,10 @@ func apply_anomaly_event():
 	print("evented")
 
 	for i in anomaly_events:
+		print(computer_opened && i["area"] == opened_cam)
+		
 		if (computer_opened && i["area"] == opened_cam) || i["exist"]: continue
+		
 		match i["area"]:
 			1: if ps1: continue
 			2: if ps2: continue
@@ -412,7 +416,10 @@ func apply_anomaly_event():
 		
 		for j in range(i["prob"]):
 			anomaly_events_prob.append(i)
-		
+			
+	print (anomaly_events_prob)
+	print(opened_cam)
+	
 	var temp = randi_range(0, len(anomaly_events_prob)-1)
 	var temp2
 	var index = 0
@@ -425,7 +432,7 @@ func apply_anomaly_event():
 		
 	print (anomaly_events_prob[temp])
 	print (anomaly_events[temp2])
-	
+	anomaly_events_prob.clear()
 	
 	anomaly_events[temp2]["exist"] = 1
 	
@@ -454,10 +461,10 @@ var anomaly_events = [
 	{"area"=1, "show"=[^"map above/left/trees/tree4"], "hide"=null, "exist"= 0, "prob"= 3},
 	{"area"=1, "show"=[^"map above/left/trees/tree5"], "hide"=null, "exist"= 0, "prob"= 3},
 	{"area"=1, "show"= null, "hide"=[^"map above/left/trees/tree1"], "exist"= 0, "prob"= 3},
-	{"area"=1, "show"= null, "hide"=[^"map above/left/trees/tree2"], "exist"= 0, "prob"= 3},
-	{"area"=1, "show"= null, "hide"=[^"map above/left/trees/tree3"], "exist"= 0, "prob"= 3},
-	{"area"=1, "show"= null, "hide"=[^"map behind/out_left/trees/tree1"], "exist"= 0, "prob"= 3},
-	{"area"=1, "show"= null, "hide"=[^"map behind/out_left/trees/tree2"], "exist"= 0, "prob"= 3},
+	#{"area"=1, "show"= null, "hide"=[^"map above/left/trees/tree2"], "exist"= 0, "prob"= 3},
+	#{"area"=1, "show"= null, "hide"=[^"map above/left/trees/tree3"], "exist"= 0, "prob"= 3},
+	#{"area"=1, "show"= null, "hide"=[^"map behind/out_left/trees/tree1"], "exist"= 0, "prob"= 3},
+	#{"area"=1, "show"= null, "hide"=[^"map behind/out_left/trees/tree2"], "exist"= 0, "prob"= 3},
 	{"area"=1, "show"= null, "hide"=[^"map behind/out_left/trees/tree3"], "exist"= 0, "prob"= 3},
 	{"area"=1, "show"=[^"map behind/out_left/trees/tree4"], "hide"=[^"map behind/out_left/trees/tree1"], "exist"= 0, "prob"= 3},
 	{"area"=1, "show"=[^"map above/left/trees/tree1"], "hide"=[^"map above/left/trees/tree6"], "exist"= 0, "prob"= 3},
@@ -555,7 +562,7 @@ func clear_anomaly_event(area):
 			print("gotchu")
 			anomaly_events_count -= 1
 			right_reports_conut += 1
-			if right_reports_conut == 6:
+			if right_reports_conut == 600:
 				win()
 	if wrong_report:
 		wrong_report_penalty()
@@ -580,14 +587,14 @@ func wrong_report_penalty():
 		lose()
 
 func lose():
-	$spawn.stop()
-	$bad_time.stop()
+	$timers/spawn.stop()
+	$timers/bad_time.stop()
 	$CanvasLayer/black.visible = 1
 	$CanvasLayer/label.text = tr("lose")
 
 func win():
-	$spawn.stop()
-	$bad_time.stop()
+	$timers/spawn.stop()
+	$timers/bad_time.stop()
 	$CanvasLayer/black.visible = 1
 	$CanvasLayer/label.text = tr("win")
 
@@ -674,3 +681,16 @@ func _on_ps_4_body_entered(body: Node2D) -> void:
 func _on_ps_4_body_exited(body: Node2D) -> void:
 	if body == $player:
 		ps4 = 0
+
+var shift_time = 0
+func _on_shift_time_timeout() -> void:
+	shift_time += 1
+	var mins = shift_time/60
+	var secs = shift_time - mins*60
+	$CanvasLayer/time.text = ""
+	if mins < 10:
+		$CanvasLayer/time.text += "0"
+	$CanvasLayer/time.text += str(mins) + ":"
+	if secs < 10:
+		$CanvasLayer/time.text += "0"
+	$CanvasLayer/time.text += str(secs)
