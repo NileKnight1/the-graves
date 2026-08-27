@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dk4pe3b14n0q3"]
+
+[ext_resource type="Script" uid="uid://uqhx0gpgbhih" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="menu" type="Node2D" unique_id=631255614]
+script = ExtResource("1_l6cm7")
+
+[node name="Button" type="Button" parent="." unique_id=170420475]
+offset_left = 580.0
+offset_top = 246.0
+offset_right = 711.0
+offset_bottom = 309.0
+theme_override_font_sizes/font_size = 40
+text = "Arabic"
+
+[node name="Button2" type="Button" parent="." unique_id=1576274647]
+offset_left = 570.0
+offset_top = 333.0
+offset_right = 701.0
+offset_bottom = 396.0
+theme_override_font_sizes/font_size = 40
+text = "English"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1070363919]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

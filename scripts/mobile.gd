@@ -3,7 +3,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	TranslationServer.set_locale("ar") 
+	#TranslationServer.set_locale("ar") 
 
 	$Control2/sprint.text = tr("sprint")
 	$Control2/jump.text = tr("jump")

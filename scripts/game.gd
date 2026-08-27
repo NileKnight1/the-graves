@@ -39,7 +39,7 @@ func play_sound(sound):
 	temp.play()
 
 func translation():
-	TranslationServer.set_locale("ar") 
+	#TranslationServer.set_locale("ar") 
 	$player/room/menu/title.text = tr("report_radio")
 	$player/room/environment/title.text = tr("report_radio")
 	$player/room/creatures/title.text = tr("report_radio")
@@ -85,12 +85,18 @@ func translation():
 	$player/phone/accepted/lab2.text = tr("decline")
 	$player/phone/caller.text = tr("manager")
 	$player/phone/ringing/label.text = tr("calling")
+	
+	$CanvasLayer/press_e.text = tr("press_e")
+	
+	
+var pc = 1
 
 func _ready() -> void:
 	#await get_tree().create_timer(1.0).timeout
 	#print(p1_anomalies.find($anomalies/anomaly))
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$CanvasLayer/mobile.visible = 1
+		pc = 0
 	translation()
 	
 	phone_up()
@@ -136,6 +142,7 @@ func open_cam():
 	play_sound(cam_on)
 	$sfx/camera.play()
 	walking_sound.stop()
+	$CanvasLayer/press_e.visible = 0
 	
 	stop_move()
 func close_cam():
@@ -159,6 +166,8 @@ func open_radio():
 	$player/room/menu.visible = 1
 	radio_opened = 1
 	$sfx/radio.play()
+	$CanvasLayer/press_e.visible = 0
+	
 
 func close_radio():
 	$sfx/radio.stop()
@@ -236,7 +245,7 @@ func _process(delta: float) -> void:
 func _on_switch_body_entered(body: Node2D) -> void:
 	if body == $player:
 		switch_area = 1
-		$CanvasLayer/press_e.visible = 1
+		if pc: $CanvasLayer/press_e.visible = 1
 func _on_switch_body_exited(body: Node2D) -> void:
 	if body == $player:
 		switch_area = 0
@@ -362,7 +371,7 @@ func end_shift():
 func _on_cams_body_entered(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 1
-		$CanvasLayer/press_e.visible = 1
+		if pc: $CanvasLayer/press_e.visible = 1
 	if body is CharacterBody2D && body.anomaly:
 		body.queue_free()
 		print("bruh")
@@ -377,7 +386,7 @@ func _on_radio_body_entered(body: Node2D) -> void:
 		radio_area = 1
 		print("radio_area")
 		print(radio_area)
-		$CanvasLayer/press_e.visible = 1
+		if pc: $CanvasLayer/press_e.visible = 1
 
 func _on_radio_body_exited(body: Node2D) -> void:
 	if body == $player:

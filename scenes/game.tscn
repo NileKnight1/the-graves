@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://74yjv8hvpbk8" path="res://assets/rect.png" id="19_264po"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+distance = 6.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwrxv"]
 bg_color = Color(0.118634954, 0.032874573, 0.008842035, 1)
@@ -478,9 +479,24 @@ layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 
-[node name="StaticBody2D" type="StaticBody2D" parent="map behind" unique_id=1747960841]
+[node name="bottom bound" type="StaticBody2D" parent="map behind" unique_id=1747960841]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="map behind/StaticBody2D" unique_id=314312543]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map behind/bottom bound" unique_id=314312543]
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="left bound" type="StaticBody2D" parent="map behind" unique_id=1647221990]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map behind/left bound" unique_id=207825637]
+position = Vector2(-3013, -77)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="right bound" type="StaticBody2D" parent="map behind" unique_id=2129267498]
+position = Vector2(6174, 290)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map behind/right bound" unique_id=388132536]
+position = Vector2(-3190, -491)
+rotation = 4.712389
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
 [node name="room" type="Node2D" parent="map behind" unique_id=1162011081]
@@ -677,9 +693,9 @@ position = Vector2(-3296, 0)
 [node name="bg" type="Node2D" parent="map behind/out_left" unique_id=153579227]
 
 [node name="sky" type="Panel" parent="map behind/out_left/bg" unique_id=354868027]
-offset_left = 280.0
+offset_left = -347.0
 offset_top = -520.0
-offset_right = 343.7458
+offset_right = -267.12482
 offset_bottom = -466.24963
 scale = Vector2(38.873165, 8.967383)
 mouse_filter = 2
@@ -705,19 +721,30 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lbhrr")
 
 [node name="street" type="Panel" parent="map behind/out_left/bg" unique_id=1056218648]
-offset_left = 280.0
+offset_left = -351.00006
 offset_top = -39.0
-offset_right = 320.0
+offset_right = -196.80988
 offset_bottom = 1.0
 scale = Vector2(5.5258694, 5.6442947)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gee14")
 
 [node name="w1" type="Panel" parent="map behind/out_left/bg" unique_id=1647856805]
-offset_left = 368.0
-offset_top = -5.0
-offset_right = 408.0
-offset_bottom = 11.109701
+offset_left = 262.0
+offset_top = 91.0
+offset_right = 302.0
+offset_bottom = 107.1097
+rotation = -1.5707964
+scale = Vector2(1.0142487, 3.9106872)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
+
+[node name="w3" type="Panel" parent="map behind/out_left/bg" unique_id=1439941146]
+offset_left = 161.0
+offset_top = 91.0
+offset_right = 201.0
+offset_bottom = 107.1097
+rotation = -1.5707964
 scale = Vector2(1.0142487, 3.9106872)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
@@ -727,6 +754,47 @@ offset_left = 368.0
 offset_top = 90.0
 offset_right = 408.0
 offset_bottom = 106.1097
+rotation = -1.5707964
+scale = Vector2(1.0142487, 3.9106872)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
+
+[node name="w4" type="Panel" parent="map behind/out_left/bg" unique_id=578586593]
+offset_left = -46.0
+offset_top = 91.0
+offset_right = -6.0
+offset_bottom = 107.1097
+rotation = -1.5707964
+scale = Vector2(1.0142487, 3.9106872)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
+
+[node name="w5" type="Panel" parent="map behind/out_left/bg" unique_id=2138421912]
+offset_left = -147.0
+offset_top = 91.0
+offset_right = -107.0
+offset_bottom = 107.1097
+rotation = -1.5707964
+scale = Vector2(1.0142487, 3.9106872)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
+
+[node name="w7" type="Panel" parent="map behind/out_left/bg" unique_id=681299540]
+offset_left = -243.0
+offset_top = 91.0
+offset_right = -203.0
+offset_bottom = 107.1097
+rotation = -1.5707964
+scale = Vector2(1.0142487, 3.9106872)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
+
+[node name="w6" type="Panel" parent="map behind/out_left/bg" unique_id=2127174633]
+offset_left = 60.0
+offset_top = 90.0
+offset_right = 100.0
+offset_bottom = 106.1097
+rotation = -1.5707964
 scale = Vector2(1.0142487, 3.9106872)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
@@ -1142,7 +1210,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 [node name="Panel" type="Panel" parent="map behind/out_right/bg" unique_id=136629081]
 offset_left = 501.0
 offset_top = -520.0
-offset_right = 564.72003
+offset_right = 578.6114
 offset_bottom = -466.24963
 scale = Vector2(38.873165, 8.967383)
 mouse_filter = 2
@@ -1170,7 +1238,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lbhrr")
 [node name="street" type="Panel" parent="map behind/out_right/bg" unique_id=764019041]
 offset_left = 2757.0
 offset_top = -38.0
-offset_right = 2797.0
+offset_right = 2895.078
 offset_bottom = 2.0
 scale = Vector2(5.5258694, 5.6442947)
 mouse_filter = 2
@@ -1656,7 +1724,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_37s47")
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-57, -31)
+position = Vector2(-3002, -31)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
@@ -3013,6 +3081,7 @@ theme_override_font_sizes/font_size = 48
 text = "Shift 1"
 
 [node name="press_e" type="Label" parent="CanvasLayer" unique_id=1381870537]
+visible = false
 layout_direction = 2
 offset_left = 543.0
 offset_top = 171.0
@@ -3247,15 +3316,15 @@ energy = 2.09
 texture = ExtResource("18_ssvqc")
 
 [node name="left" type="PointLight2D" parent="lights" unique_id=2115687293]
-position = Vector2(-1795.7499, -162)
-scale = Vector2(2.0004103, 1.3607843)
+position = Vector2(-2157.25, -162)
+scale = Vector2(2.5935192, 1.3607843)
 energy = 0.56
 blend_mode = 1
 texture = ExtResource("19_264po")
 
 [node name="right" type="PointLight2D" parent="lights" unique_id=439996145]
-position = Vector2(1751.3749, -162)
-scale = Vector2(2.01251, 1.3607843)
+position = Vector2(2021.375, -162)
+scale = Vector2(2.4554963, 1.3607843)
 energy = 0.56
 blend_mode = 1
 texture = ExtResource("19_264po")
