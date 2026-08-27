@@ -24,6 +24,8 @@ var click_radio = preload("res://audio/radio_click.mp3")
 var radio_signal = preload("res://audio/radio_signal.mp3")
 var wrong_signal = preload("res://audio/wrong_singal.mp3")
 var correct = preload("res://audio/correct.mp3")
+var click_switch = preload("res://audio/click_switch.mp3")
+
 
 
 
@@ -249,6 +251,15 @@ func _process(delta: float) -> void:
 			$player/room/creatures.visible = 0
 			radio_opened = 0
 		
+		if switch_area:
+			play_sound(click_switch)
+			if $lights/room.visible:
+				$lights/room.visible = 0
+			else:
+				$lights/room.visible = 1
+	
+	
+	
 	#print(p1+p2+p3+p4)
 	#print(computer_opened)
 	if computer_opened:
@@ -845,3 +856,10 @@ func first_day_survived():
 	else:
 		$CanvasLayer/subtitles.text = temp
 	$sfx/dia.play()
+
+var switch_area = 0
+
+func _on_switch_body_entered(body: Node2D) -> void:
+	switch_area = 1
+func _on_switch_body_exited(body: Node2D) -> void:
+	switch_area = 0

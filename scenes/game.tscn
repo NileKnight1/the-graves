@@ -17,20 +17,47 @@
 [ext_resource type="AudioStream" uid="uid://wstyydfieafs" path="res://audio/walking_dirt.mp3" id="15_ir15t"]
 [ext_resource type="AudioStream" uid="uid://t6a1ps8ee86" path="res://audio/walking_wood.mp3" id="16_ca42v"]
 [ext_resource type="AudioStream" uid="uid://ydxyyrrs28d7" path="res://audio/morning.mp3" id="17_rysoc"]
+[ext_resource type="Texture2D" uid="uid://bqmj5f70pyrd2" path="res://assets/cone.png" id="18_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://74yjv8hvpbk8" path="res://assets/rect.png" id="19_264po"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwrxv"]
-bg_color = Color(0.3813141, 0.15812859, 0.06371256, 1)
+bg_color = Color(0.118634954, 0.032874573, 0.008842035, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqjtg"]
-bg_color = Color(0.42631203, 0.23538497, 9.62615e-08, 1)
+bg_color = Color(0.20686406, 0.1023884, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8ni1"]
+bg_color = Color(0.105882354, 0.07450981, 0.0627451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hbvx"]
+bg_color = Color(0.105882354, 0.07450981, 0.0627451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p57ef"]
 bg_color = Color(0.25057846, 0.097144686, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhx41"]
 bg_color = Color(0.08, 0.08, 0.08, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sww3w"]
 bg_color = Color(0, 0, 0, 1)
@@ -55,6 +82,20 @@ thickness = 2
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_sgl2t"]
 color = Color(0.6045067, 0, 0.04911302, 1)
 thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8j3a"]
+bg_color = Color(0.14767182, 0.14767182, 0.14767176, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ms3bu"]
+bg_color = Color(0.69135684, 0.6913568, 0.69135684, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
 bg_color = Color(0.015686275, 0.05490196, 0.11372549, 1)
@@ -383,6 +424,9 @@ size = Vector2(1094, 703)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir15t"]
 size = Vector2(1079, 672.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssvqc"]
+size = Vector2(86, 213)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -412,6 +456,7 @@ offset_bottom = -458.72186
 scale = Vector2(26.425932, 15.5872555)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uwrxv")
+metadata/_edit_lock_ = true
 
 [node name="Panel8" type="Panel" parent="map behind/room/bg" unique_id=438262776]
 offset_left = -561.0
@@ -421,6 +466,7 @@ offset_bottom = 2.0
 scale = Vector2(26.526041, 5.0682054)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
+metadata/_edit_lock_ = true
 
 [node name="desk" type="Node2D" parent="map behind/room" unique_id=107007237]
 
@@ -431,6 +477,7 @@ offset_right = -61.0
 offset_bottom = -179.0
 scale = Vector2(2.8258097, 1.8585278)
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o8ni1")
 
 [node name="Panel3" type="Panel" parent="map behind/room/desk" unique_id=1614876504]
 offset_left = -55.0
@@ -439,6 +486,7 @@ offset_right = -15.0
 offset_bottom = -110.67136
 scale = Vector2(0.4616159, 1.0579492)
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3hbvx")
 
 [node name="Panel2" type="Panel" parent="map behind/room/desk" unique_id=339906909]
 offset_left = -160.0
@@ -553,6 +601,35 @@ scale = Vector2(5.595381, 2.523438)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p57ef")
 metadata/_edit_use_anchors_ = true
+
+[node name="switch" type="Control" parent="map behind/room" unique_id=950656939]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -472.0
+offset_top = -167.0
+offset_right = -432.0
+offset_bottom = -127.0
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="map behind/room/switch" unique_id=1191995011]
+layout_mode = 0
+offset_left = 8.999999
+offset_top = -1.9999995
+offset_right = 49.0
+offset_bottom = 38.0
+scale = Vector2(0.85822767, 1.0035384)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q8j3a")
+
+[node name="Panel2" type="Panel" parent="map behind/room/switch" unique_id=613471859]
+layout_mode = 0
+offset_left = 21.329113
+offset_top = 7.1415315
+offset_right = 32.597546
+offset_bottom = 28.922934
+scale = Vector2(0.85822767, 1.0035384)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ms3bu")
 
 [node name="out_left" type="Node2D" parent="map behind" unique_id=2087284646]
 position = Vector2(-3296, 0)
@@ -1539,7 +1616,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_37s47")
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-746, -31)
+position = Vector2(-57, -31)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
@@ -1877,6 +1954,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="phone" type="Control" parent="player" unique_id=1368197327]
+light_mask = 2
 z_index = 1
 layout_direction = 2
 layout_mode = 3
@@ -1887,6 +1965,7 @@ offset_right = 108.0
 offset_bottom = 1388.0
 
 [node name="Panel" type="Panel" parent="player/phone" unique_id=300349657]
+light_mask = 2
 layout_mode = 0
 offset_left = 82.0
 offset_top = -1221.0
@@ -1897,6 +1976,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gxtfn")
 
 [node name="Panel2" type="Panel" parent="player/phone" unique_id=1532304267]
+light_mask = 2
 layout_mode = 0
 offset_left = 98.81207
 offset_top = -1197.0
@@ -1908,6 +1988,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
 
 [node name="Panel3" type="Panel" parent="player/phone" unique_id=1692659843]
 visible = false
+light_mask = 2
 layout_mode = 0
 offset_left = 279.81192
 offset_top = -206.0
@@ -1918,6 +1999,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_02fa5")
 
 [node name="caller" type="Label" parent="player/phone" unique_id=914665418]
+light_mask = 2
 layout_mode = 0
 offset_left = 119.0
 offset_top = -1117.0
@@ -1929,6 +2011,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="pfp" type="Button" parent="player/phone" unique_id=1207060996]
+light_mask = 2
 layout_mode = 0
 offset_left = 132.0
 offset_top = -1189.0
@@ -1942,11 +2025,13 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_rm0al")
 disabled = true
 
 [node name="ringing" type="Control" parent="player/phone" unique_id=1693443239]
+light_mask = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="accept" type="Button" parent="player/phone/ringing" unique_id=2066133347]
+light_mask = 2
 layout_mode = 0
 offset_left = 109.0
 offset_top = -1021.0
@@ -1959,6 +2044,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_8ool0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_pr1ej")
 
 [node name="decline" type="Button" parent="player/phone/ringing" unique_id=1183402027]
+light_mask = 2
 layout_mode = 0
 offset_left = 185.0
 offset_top = -1021.0
@@ -1971,6 +2057,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_0sl42")
 theme_override_styles/focus = SubResource("StyleBoxFlat_oaba0")
 
 [node name="lab1" type="Label" parent="player/phone/ringing" unique_id=58417003]
+light_mask = 2
 layout_mode = 0
 offset_left = 104.0
 offset_top = -1013.0
@@ -1983,6 +2070,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="lab2" type="Label" parent="player/phone/ringing" unique_id=707379026]
+light_mask = 2
 layout_mode = 0
 offset_left = 181.0
 offset_top = -1016.0
@@ -1995,6 +2083,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="label" type="Label" parent="player/phone/ringing" unique_id=1081548707]
+light_mask = 2
 layout_mode = 0
 offset_left = 121.0
 offset_top = -1102.0
@@ -2008,11 +2097,13 @@ vertical_alignment = 1
 
 [node name="accepted" type="Control" parent="player/phone" unique_id=1703048213]
 visible = false
+light_mask = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="time" type="Label" parent="player/phone/accepted" unique_id=187735466]
+light_mask = 2
 layout_mode = 0
 offset_left = 121.0
 offset_top = -1102.0
@@ -2025,6 +2116,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="decline" type="Button" parent="player/phone/accepted" unique_id=1903379979]
+light_mask = 2
 layout_mode = 0
 offset_left = 147.0
 offset_top = -1021.0
@@ -2037,6 +2129,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_0sl42")
 theme_override_styles/focus = SubResource("StyleBoxFlat_oaba0")
 
 [node name="lab2" type="Label" parent="player/phone/accepted" unique_id=1801884143]
+light_mask = 2
 layout_mode = 0
 offset_left = 143.0
 offset_top = -1016.0
@@ -2842,6 +2935,12 @@ shape = SubResource("RectangleShape2D_iywne")
 position = Vector2(-20, -171.25)
 shape = SubResource("RectangleShape2D_ir15t")
 
+[node name="switch" type="Area2D" parent="areas" unique_id=702853173]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/switch" unique_id=1790602593]
+position = Vector2(-443, -85.5)
+shape = SubResource("RectangleShape2D_ssvqc")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
@@ -2987,6 +3086,21 @@ parameters/looping = true
 stream = ExtResource("17_rysoc")
 parameters/looping = true
 
+[node name="lights" type="Node2D" parent="." unique_id=125245000]
+
+[node name="room" type="PointLight2D" parent="lights" unique_id=59616191]
+position = Vector2(-32, -206.97011)
+scale = Vector2(1.0000001, 1.0079292)
+blend_mode = 1
+texture = ExtResource("18_ssvqc")
+
+[node name="left" type="PointLight2D" parent="lights" unique_id=2115687293]
+position = Vector2(-1643.5, -162)
+scale = Vector2(1.8203447, 1.3607843)
+energy = 0.4
+blend_mode = 1
+texture = ExtResource("19_264po")
+
 [connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
 [connection signal="pressed" from="player/room/menu/creatures" to="." method="_on_creatures_pressed"]
 [connection signal="pressed" from="player/room/menu/back" to="." method="_on_back_pressed"]
@@ -3025,6 +3139,8 @@ parameters/looping = true
 [connection signal="body_exited" from="areas/p4" to="." method="_on_p_4_body_exited"]
 [connection signal="body_entered" from="areas/room" to="." method="_on_room_body_entered"]
 [connection signal="body_exited" from="areas/room" to="." method="_on_room_body_exited"]
+[connection signal="body_entered" from="areas/switch" to="." method="_on_switch_body_entered"]
+[connection signal="body_exited" from="areas/switch" to="." method="_on_switch_body_exited"]
 [connection signal="timeout" from="timers/spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="timers/bad_time" to="." method="_on_bad_time_timeout"]
 [connection signal="timeout" from="timers/call_time" to="." method="_on_call_time_timeout"]
