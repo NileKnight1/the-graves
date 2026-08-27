@@ -10,6 +10,8 @@ var walk = 0
 func _physics_process(delta: float) -> void:
 	if !move:
 		#print("hi")
+		#print(velocity)
+		#velocity = Vector2(0,0)
 		return
 	#print("hellll")
 	if not is_on_floor():

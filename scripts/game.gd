@@ -116,6 +116,8 @@ func phone_up():
 func phone_down():
 	var tween = create_tween()
 	tween.tween_property($player/phone, "position:y", $player/phone.position.y + 320 , 0.4)
+	$sfx/dia.stop()
+	$CanvasLayer/subtitles.text = ""
 
 var calling = 0
 
@@ -199,7 +201,7 @@ func start():
 @onready var walking_sound = $sfx/walk_dirt
 
 func _process(delta: float) -> void:
-	if $player.walk:
+	if $player.walk && $player.move:
 		if !walking_sound.playing:
 			walking_sound.play()
 			print("um?a")
@@ -646,8 +648,8 @@ func clear_anomaly_event(area):
 			print("gotchu")
 			anomaly_events_count -= 1
 			right_reports_conut += 1
-			if right_reports_conut == 600:
-				win()
+			#if right_reports_conut == 600:
+				#win()
 	if wrong_report:
 		wrong_report_penalty()
 	else:
@@ -741,12 +743,15 @@ func _on_accept_tutorial_pressed() -> void:
 func _on_decline_tutorial_pressed() -> void:
 	play_sound(hang_up)
 	$sfx/ringtone.stop()
+	$sfx/dia.stop()
+	
 	phone_down()
+	
 	calling = 0
 	
 	match call_index:
 		0: start()
-		1: first_day_survived()
+		1: end_day1()
 		
 	
 
@@ -793,7 +798,7 @@ func _on_ps_4_body_exited(body: Node2D) -> void:
 	if body == $player:
 		ps4 = 0
 
-var shift_time = 358
+var shift_time = 320
 func _on_shift_time_timeout() -> void:
 	shift_time += 1
 	var mins = shift_time/60
@@ -847,6 +852,8 @@ func first_day_survived():
 		calling = 0
 		$timers/skip_msg.stop()
 		phone_down()
+		await get_tree().create_timer(1.0).timeout
+		end_day1()
 		return
 	
 	var temp = tr(first_day_survived_chat[chat_msg])
@@ -863,3 +870,20 @@ func _on_switch_body_entered(body: Node2D) -> void:
 	switch_area = 1
 func _on_switch_body_exited(body: Node2D) -> void:
 	switch_area = 0
+
+func end_day1():
+	$sfx/morning.stop()
+	stop_move()
+	
+	$CanvasLayer/shift2.text = tr("shift") + " " + str(shift)
+	$CanvasLayer/t1.text = tr("anomalies_reported")
+	$CanvasLayer/t2.text = tr("anomalies_left")
+	$CanvasLayer/t3.text = tr("max_danger")
+	
+	$CanvasLayer/v1.text = str(right_reports_conut)
+	$CanvasLayer/v2.text = str(anomaly_events_count)
+	$CanvasLayer/v3.text = str(bad_time)
+	
+	$CanvasLayer/black.visible = 1
+	#var tween = create_tween()
+	#tween.tween_property($CanvasLayer/black, "modulate:a", 1.0 , 1.4)
