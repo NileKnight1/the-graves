@@ -12,7 +12,7 @@ var opened_cam = 3
 var shift = 1
 
 func translation():
-	#TranslationServer.set_locale("ar") 
+	TranslationServer.set_locale("ar") 
 	$player/room/menu/title.text = tr("report_radio")
 	$player/room/environment/title.text = tr("report_radio")
 	$player/room/creatures/title.text = tr("report_radio")
@@ -43,6 +43,11 @@ func translation():
 	$"map above/cams/cam3/cam".text = tr("cam3")
 	$"map above/cams/cam4/cam".text = tr("cam4")
 	
+	#$CanvasLayer/subtitles.text = tr("test")
+	
+	$player/phone/lab1.text = tr("accept")
+	$player/phone/lab2.text = tr("decline")
+	$player/phone/caller.text = tr("manager")
 	
 
 func _ready() -> void:
@@ -50,9 +55,11 @@ func _ready() -> void:
 	#print(p1_anomalies.find($anomalies/anomaly))
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$CanvasLayer/mobile.visible = 1
-	
-	phone_up()
 	translation()
+	
+	tutorial()
+	#phone_down()
+	
 	
 	#apply_anomaly_event()
 	#spawn()
@@ -60,7 +67,22 @@ func _ready() -> void:
 
 func phone_up():
 	var tween = create_tween()
-	tween.tween_property($player/phone, "position:y", $player/phone.position.y - 320 , 1.0)
+	tween.tween_property($player/phone, "position:y", $player/phone.position.y - 320 , 0.8)
+func phone_down():
+	var tween = create_tween()
+	tween.tween_property($player/phone, "position:y", $player/phone.position.y + 320 , 0.4)
+
+func tutorial():
+	#await get_tree().create_timer(2).timeout
+	phone_up()
+	
+func start():
+	$CanvasLayer/danger.visible = 1
+	$CanvasLayer/shift.visible = 1
+	$CanvasLayer/time.visible = 1
+	$spawn.start()
+	
+
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
@@ -505,3 +527,10 @@ func _on_bad_time_timeout() -> void:
 	
 	if bad_time > max_bad_time:
 		lose()
+
+
+func _on_accept_tutorial_pressed() -> void:
+	pass # Replace with function body.
+func _on_decline_tutorial_pressed() -> void:
+	phone_down()
+	start()
