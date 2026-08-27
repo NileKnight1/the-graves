@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://dm5ifs68m3i33"]
 
 [ext_resource type="Script" uid="uid://dht3vhvoe54af" path="res://scripts/mobile.gd" id="1_jnc8d"]
+[ext_resource type="Texture2D" uid="uid://dd6f8fpujv2ex" path="res://assets/button_circle_wide.png" id="2_msqve"]
 [ext_resource type="Texture2D" uid="uid://ch2al10mhx0yy" path="res://assets/ui/ProgressBlack.png" id="2_xp3t8"]
 [ext_resource type="Texture2D" uid="uid://byv5q7kvnitpw" path="res://assets/ui/ProgressWhite.png" id="3_2t62u"]
+[ext_resource type="Texture2D" uid="uid://sit7f67m7dc8" path="res://assets/button_circle_wide_highlight.png" id="3_3j2jb"]
+[ext_resource type="Texture2D" uid="uid://c320x03o1xj3w" path="res://assets/direction_left.png" id="4_2t62u"]
+[ext_resource type="Texture2D" uid="uid://dd8fd0v0rj0wp" path="res://assets/button_circle.png" id="4_yu02f"]
+[ext_resource type="Texture2D" uid="uid://bd6c7p2v21hkf" path="res://assets/button_circle_highlight.png" id="5_al58l"]
+[ext_resource type="Texture2D" uid="uid://c28f378hhsqw3" path="res://assets/direction_left_highlight.png" id="5_h83ty"]
+[ext_resource type="Texture2D" uid="uid://bnjfdrlqkqfi8" path="res://assets/direction_right.png" id="6_vwgfj"]
+[ext_resource type="Texture2D" uid="uid://bbrovn32ghr45" path="res://assets/direction_right_highlight.png" id="7_hrbvh"]
+[ext_resource type="FontFile" uid="uid://cim17fdmt5ywc" path="res://assets/Signika-Bold.ttf" id="12_3j2jb"]
 
 [node name="mobile" type="CanvasLayer" unique_id=2043303018]
 script = ExtResource("1_jnc8d")
@@ -17,48 +26,49 @@ scale = Vector2(32.00545, 18.029236)
 mouse_filter = 2
 
 [node name="sprint" type="TouchScreenButton" parent="Control" unique_id=984966303]
-position = Vector2(32.24451, 27.233545)
-scale = Vector2(0.3050595, 0.21426336)
-texture_normal = ExtResource("2_xp3t8")
-texture_pressed = ExtResource("3_2t62u")
+position = Vector2(29.057556, 24.959473)
+scale = Vector2(0.05779918, 0.07366508)
+texture_normal = ExtResource("2_msqve")
+texture_pressed = ExtResource("3_3j2jb")
 passby_press = true
 action = "sprint"
 visibility_mode = 1
 
 [node name="jump" type="TouchScreenButton" parent="Control" unique_id=1928724385]
-position = Vector2(27.526564, 29.674026)
-scale = Vector2(0.21068403, 0.319563)
-texture_normal = ExtResource("2_xp3t8")
-texture_pressed = ExtResource("3_2t62u")
+position = Vector2(28.432657, 30.062284)
+scale = Vector2(0.06601604, 0.100132324)
+texture_normal = ExtResource("4_yu02f")
+texture_pressed = ExtResource("5_al58l")
 passby_press = true
 action = "jump"
 visibility_mode = 1
 
 [node name="interact" type="TextureButton" parent="Control" unique_id=284682000]
 layout_mode = 0
-offset_left = 35.275208
-offset_top = 33.667526
-offset_right = 75.27521
-offset_bottom = 73.667534
-scale = Vector2(0.08002439, 0.1184888)
-texture_normal = ExtResource("2_xp3t8")
-texture_pressed = ExtResource("3_2t62u")
+offset_left = 33.494293
+offset_top = 30.450542
+offset_right = 84.45801
+offset_bottom = 80.71826
+scale = Vector2(0.08521769, 0.12689118)
+texture_normal = ExtResource("4_yu02f")
+texture_pressed = ExtResource("5_al58l")
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="left" type="TouchScreenButton" parent="Control" unique_id=237091111]
 position = Vector2(1.8121929, 30.00682)
-scale = Vector2(0.18612209, 0.27558327)
-texture_normal = ExtResource("2_xp3t8")
-texture_pressed = ExtResource("3_2t62u")
+scale = Vector2(0.061024737, 0.090356804)
+texture_normal = ExtResource("4_2t62u")
+texture_pressed = ExtResource("5_h83ty")
 passby_press = true
 action = "left"
 visibility_mode = 1
 
 [node name="right" type="TouchScreenButton" parent="Control" unique_id=31096760]
 position = Vector2(9.373404, 30.00682)
-scale = Vector2(0.18612209, 0.27558327)
-texture_normal = ExtResource("2_xp3t8")
-texture_pressed = ExtResource("3_2t62u")
+scale = Vector2(0.061024763, 0.090356834)
+texture_normal = ExtResource("6_vwgfj")
+texture_pressed = ExtResource("7_hrbvh")
 passby_press = true
 action = "right"
 visibility_mode = 1
@@ -82,5 +92,54 @@ texture_pressed = ExtResource("3_2t62u")
 passby_press = true
 action = "up"
 visibility_mode = 1
+
+[node name="Control2" type="Control" parent="." unique_id=1774139864]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="sprint" type="Label" parent="Control2" unique_id=1145314647]
+layout_direction = 2
+layout_mode = 0
+offset_left = 925.0
+offset_top = 432.0
+offset_right = 1174.0
+offset_bottom = 545.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_3j2jb")
+theme_override_font_sizes/font_size = 36
+text = "sprint"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="jump" type="Label" parent="Control2" unique_id=1793846178]
+layout_direction = 2
+layout_mode = 0
+offset_left = 853.0
+offset_top = 536.0
+offset_right = 1102.0
+offset_bottom = 649.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_3j2jb")
+theme_override_font_sizes/font_size = 36
+text = "jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="use" type="Label" parent="Control2" unique_id=505088429]
+layout_direction = 2
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 537.0
+offset_right = 1253.0
+offset_bottom = 650.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_3j2jb")
+theme_override_font_sizes/font_size = 36
+text = "use"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Control/interact" to="." method="_on_interact_pressed"]

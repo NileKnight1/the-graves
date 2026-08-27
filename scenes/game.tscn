@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dm5ifs68m3i33" path="res://scenes/mobile.tscn" id="5_iywne"]
 [ext_resource type="FontFile" uid="uid://deescy0invitk" path="res://assets/HennyPenny-Regular.ttf" id="6_0tnpc"]
 [ext_resource type="FontFile" uid="uid://cim17fdmt5ywc" path="res://assets/Signika-Bold.ttf" id="6_p57ef"]
+[ext_resource type="StyleBox" uid="uid://xanwnstf0v21" path="res://new_style_box_flat.tres" id="8_1kice"]
 [ext_resource type="AudioStream" uid="uid://mytxcdg0yh6f" path="res://audio/ringtone.mp3" id="10_vtaks"]
 [ext_resource type="AudioStream" uid="uid://dgeubm3gi5is4" path="res://audio/dialogue.mp3" id="11_kvpfn"]
 [ext_resource type="AudioStream" uid="uid://2xs1l0vulvmj" path="res://audio/radio.mp3" id="12_dinhu"]
@@ -295,16 +296,6 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
-shadow_size = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nepv3"]
-bg_color = Color(0.20574796, 0.398542, 0, 1)
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4url"]
@@ -1630,9 +1621,9 @@ z_index = 2
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
-offset_left = -46.0
+offset_left = -344.0
 offset_top = 55.0
-offset_right = -46.0
+offset_right = -344.0
 offset_bottom = 55.0
 mouse_filter = 1
 
@@ -1962,10 +1953,10 @@ z_index = 1
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
-offset_left = 108.0
-offset_top = 1388.0
-offset_right = 108.0
-offset_bottom = 1388.0
+offset_left = -524.0
+offset_top = 557.0
+offset_right = -524.0
+offset_bottom = 557.0
 
 [node name="Panel" type="Panel" parent="player/phone" unique_id=300349657]
 light_mask = 2
@@ -2041,7 +2032,7 @@ offset_top = -1021.0
 offset_right = 154.0
 offset_bottom = -980.0
 mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_nepv3")
+theme_override_styles/normal = ExtResource("8_1kice")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_m4url")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8ool0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_pr1ej")
@@ -2947,7 +2938,6 @@ shape = SubResource("RectangleShape2D_ssvqc")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
-visible = false
 
 [node name="shift" type="Label" parent="CanvasLayer" unique_id=2086180496]
 visible = false
@@ -3212,7 +3202,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 [connection signal="pressed" from="player/room/creatures/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="player/phone/ringing/accept" to="." method="_on_accept_call_pressed"]
 [connection signal="pressed" from="player/phone/ringing/decline" to="." method="_on_decline_call_pressed"]
-[connection signal="pressed" from="player/phone/accepted/decline" to="." method="_on_decline_tutorial_pressed"]
+[connection signal="pressed" from="player/phone/accepted/decline" to="." method="_on_decline_call_pressed"]
 [connection signal="body_entered" from="areas/ps1" to="." method="_on_ps_1_body_entered"]
 [connection signal="body_exited" from="areas/ps1" to="." method="_on_ps_1_body_exited"]
 [connection signal="body_entered" from="areas/ps2" to="." method="_on_ps_2_body_entered"]

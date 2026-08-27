@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var walking_sound = $sfx/walk_dirt
 
-var day = global.day
+var shift = global.shift
 
 var computer_area = 0
 var computer_opened = 0
@@ -14,7 +14,6 @@ var radio_opened = 0
 var opened_cam = 3
 var player_name = "عمار"
 
-var shift = 1
 
 #var collect = preload("res://audio/collect.mp3")
 var click_phone = preload("res://audio/click_phone.mp3")
@@ -123,6 +122,7 @@ func _process(delta: float) -> void:
 			$"map above/cams".get_child(opened_cam-1).enabled = 1
 			
 			computer_opened = 1
+			$player/phone.visible = 0
 			play_sound(cam_on)
 			$sfx/camera.play()
 			walking_sound.stop()
@@ -133,6 +133,8 @@ func _process(delta: float) -> void:
 			$sfx/camera.stop()
 			$player/Camera2D.enabled = 1
 			$"map above/cams".visible = 0
+			$player/phone.visible = 1
+			
 			print("closed")
 			#$"map above/cams/cam3".enabled = 0
 			$"map above/cams".get_child(opened_cam-1).enabled = 0
@@ -187,7 +189,7 @@ func _process(delta: float) -> void:
 	if calling && Input.is_action_just_pressed("skip"):
 		chat_msg += 1
 		$timers/skip_msg.start()
-		match day:
+		match shift:
 			1:
 				match call_index:
 					0: day1_call1()
@@ -197,9 +199,11 @@ func _process(delta: float) -> void:
 
 
 func _on_switch_body_entered(body: Node2D) -> void:
-	switch_area = 1
+	if body == $player:
+		switch_area = 1
 func _on_switch_body_exited(body: Node2D) -> void:
-	switch_area = 0
+	if body == $player:
+		switch_area = 0
 
 
 func radio_access_on():
@@ -219,10 +223,10 @@ func phone_up():
 	$player/phone/accepted.visible = 0
 	var tween = create_tween()
 	$sfx/ringtone.play()
-	tween.tween_property($player/phone, "position:y", $player/phone.position.y - 320 , 0.8)
+	tween.tween_property($player/phone, "position:y", $player/phone.position.y + 320 , 0.8)
 func phone_down():
 	var tween = create_tween()
-	tween.tween_property($player/phone, "position:y", $player/phone.position.y + 320 , 0.4)
+	tween.tween_property($player/phone, "position:y", $player/phone.position.y - 320 , 0.4)
 	$sfx/dia.stop()
 	$CanvasLayer/subtitles.text = ""
 
@@ -240,7 +244,7 @@ func _on_accept_call_pressed() -> void:
 	$timers/call_time.start()
 	$timers/skip_msg.start()
 	
-	match day:
+	match shift:
 		1:
 			match call_index:
 				0: day1_call1()
@@ -257,7 +261,7 @@ func _on_decline_call_pressed() -> void:
 	
 	calling = 0
 	
-	match day:
+	match shift:
 		1:
 			match call_index:
 				0: day1_start()
@@ -296,7 +300,7 @@ func _on_skip_msg_timeout() -> void:
 	chat_msg += 1
 	#print("im still workingD")
 	
-	match day:
+	match shift:
 		1:
 			match call_index:
 				0: day1_call1()

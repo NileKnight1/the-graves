@@ -1,5 +1,5 @@
 extends Node
-var day = 1
+var shift = 1
 
 func _ready() -> void:
 	pass # Replace with function body.
