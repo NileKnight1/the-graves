@@ -9,7 +9,7 @@ var radio_opened = 0
 
 var opened_cam = 3
 
-var shift = 1000
+var shift = 1
 
 func translation():
 	TranslationServer.set_locale("ar") 
@@ -36,6 +36,7 @@ func translation():
 	$player/room/creatures/p4.text = tr("part4")
 	
 	$CanvasLayer/shift.text = tr("shift") + " " + str(shift)
+	
 
 func _ready() -> void:
 	#await get_tree().create_timer(1.0).timeout
@@ -245,8 +246,13 @@ func _on_creature4_pressed() -> void:
 			
 
 func _on_spawn_timeout() -> void:
+	#print("timeout")
+	
 	#spawn()
 	apply_anomaly_event()
+	
+	
+	pass
 
 func spawn():
 	#print("spawn")
@@ -393,6 +399,7 @@ func clear_anomaly_event(area):
 	for i in anomaly_events:
 		if i["area"] == area && i["exist"] == 1:
 			i["exist"] = 0
+			wrong_report = 0
 			if i["show"] != null:
 				for j in i["show"]:
 					#print(i)
@@ -405,6 +412,28 @@ func clear_anomaly_event(area):
 			#print(i)
 			print("gotchu")
 			anomaly_events_count -= 1
+	if wrong_report:
+		wrong_report_penalty()
+	wrong_report = 1
+
+var wrong_report = 1
+var wrong_reports_conut = 0
+
+
+func wrong_report_penalty():
+	print("bad boy")
+	wrong_reports_conut += 1
+	
+	if wrong_reports_conut == 3:
+		print("You Lose")
+		lose()
+
+func lose():
+	$CanvasLayer/black.visible = 1
+	$CanvasLayer/label.text = tr("lose")
+func win():
+	$CanvasLayer/black.visible = 1
+	$CanvasLayer/label.text = tr("win")
 
 func _on_en1_pressed() -> void:
 	#print(self)

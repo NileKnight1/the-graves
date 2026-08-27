@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cim17fdmt5ywc"
-path="res://.godot/imported/Signika-Bold.ttf-c2d14fa2a87eba28882e21a214e03ea1.fontdata"
+uid="uid://4jy86qk8ejcj"
+path="res://.godot/imported/afsaneh.ttf-45d47fa363e21d5c17fc70c2b482794d.fontdata"
 
 [deps]
 
-source_file="res://assets/Signika-Bold.ttf"
-dest_files=["res://.godot/imported/Signika-Bold.ttf-c2d14fa2a87eba28882e21a214e03ea1.fontdata"]
+source_file="res://assets/afsaneh.ttf"
+dest_files=["res://.godot/imported/afsaneh.ttf-45d47fa363e21d5c17fc70c2b482794d.fontdata"]
 
 [params]
 
@@ -27,7 +27,7 @@ subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
-fallbacks=[Resource("uid://bsjuq85j207xf", "res://assets/alw-cool-jeddah-slit.ttf")]
+fallbacks=[]
 Compress=null
 compress=true
 preload=[]

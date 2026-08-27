@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cim17fdmt5ywc"
-path="res://.godot/imported/Signika-Bold.ttf-c2d14fa2a87eba28882e21a214e03ea1.fontdata"
+uid="uid://c65uokbh1pylb"
+path="res://.godot/imported/ff-bouya-messy.otf-423bbc71c172b8875ecb10f9ca1a7135.fontdata"
 
 [deps]
 
-source_file="res://assets/Signika-Bold.ttf"
-dest_files=["res://.godot/imported/Signika-Bold.ttf-c2d14fa2a87eba28882e21a214e03ea1.fontdata"]
+source_file="res://assets/ff-bouya-messy.otf"
+dest_files=["res://.godot/imported/ff-bouya-messy.otf-423bbc71c172b8875ecb10f9ca1a7135.fontdata"]
 
 [params]
 
@@ -27,7 +27,7 @@ subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
-fallbacks=[Resource("uid://bsjuq85j207xf", "res://assets/alw-cool-jeddah-slit.ttf")]
+fallbacks=[]
 Compress=null
 compress=true
 preload=[]

@@ -198,6 +198,9 @@ size = Vector2(1081.5, 703)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
 size = Vector2(1094, 703)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="game" type="Node2D" unique_id=275808026]
 script = ExtResource("1_lnu2h")
 
@@ -1233,6 +1236,7 @@ offset_bottom = 55.0
 mouse_filter = 1
 
 [node name="menu" type="Control" parent="player/room" unique_id=1600947440]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -1278,6 +1282,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
 icon_alignment = 1
 
 [node name="creatures" type="Button" parent="player/room/menu" unique_id=343485077]
+visible = false
 layout_mode = 0
 offset_left = 260.0
 offset_top = -239.0
@@ -2195,8 +2200,29 @@ theme_override_font_sizes/font_size = 48
 text = "00:00"
 horizontal_alignment = 1
 
+[node name="black" type="Panel" parent="CanvasLayer" unique_id=1548742578]
+visible = false
+layout_direction = 2
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 1298.0
+offset_bottom = 741.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_js0lu")
+
+[node name="label" type="Label" parent="CanvasLayer" unique_id=1269449842]
+layout_direction = 2
+offset_left = 159.0
+offset_top = 152.0
+offset_right = 1140.0
+offset_bottom = 554.0
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 236
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="spawn" type="Timer" parent="." unique_id=2061830803]
 wait_time = 5.0
+autostart = true
 
 [connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
 [connection signal="pressed" from="player/room/menu/creatures" to="." method="_on_creatures_pressed"]
