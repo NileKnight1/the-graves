@@ -18,3 +18,12 @@ cam4,cam 04,كاميرا 04
 manager,Manager,المدير
 accept,Accept, قبول
 decline,Decline, رفض
+chat1msg1,Welcome %s on your first day.,أهلًا بك يا %s في يومك الأول.
+chat1msg2,This place is normal as the whole city. Some weird things happen ... but yeah this is the life.,المكان هنا طبيعي مثل المدينة كلها. بعض الأشياء الغريبة تحدث ... لكن هذه هي الحياة.
+chat1msg3,Some anomalies like to play with things ... they change their position .. take some and bring others!,بعض المخلوقات تحب أن تعبث بالأشياء ... يغيرون أماكنها .. يأخذون بعضها ويجلبون أخرى!
+chat1msg4,"Your shift starts at midnight and ends at 6 AM. Until that, you have to keep the place as it was.",تبدأ ورديتك في منتصف الليل وتنتهي في السادسة صباحًا. وحتى ذلك الوقت، عليك أن تحافظ على المكان كما كان عليه.
+chat1msg5,The place has 4 sectors .. each one has a camera. You can watch them inside your room. The room is in the middle of the sectors.,المكان يتكون من 4 قطاعات .. كل واحد يحتوي على كاميرا. يمكنك المراقبة من غرفتك. تقع الغرفة بمنتصف القطاعات.
+chat1msg6,"If you observed a change or a weird thing, report it at the radio, and specialists will deal with it.",إذا لاحظت تغيرًا أو شيئًا مريبًا، فقم بالإبلاغ في الراديو، وسيتعامل المختصون مع المشكلة.
+chat1msg7,You have to report fast before anomalies effect spread in the place.,عليك أن تبلغ بسرعة قبل أن ينتشر الخطر في المكان.
+chat1msg8,"And keep in mind, if you reported wrong many times, we won't need you with us.",وضع في اعتبارك، إذا أبلغت بلاغات خاطئة عدة مرات، فلا حاجة لنا إليك.
+chat1msg9,Stay alive!,ابقَ حيًّا!

@@ -8,12 +8,12 @@ var radio_area = 0
 var radio_opened = 0
 
 var opened_cam = 3
-var player_name = "Ammar"
+var player_name = "عمار"
 
 var shift = 1
 
 func translation():
-	#TranslationServer.set_locale("ar") 
+	TranslationServer.set_locale("ar") 
 	$player/room/menu/title.text = tr("report_radio")
 	$player/room/environment/title.text = tr("report_radio")
 	$player/room/creatures/title.text = tr("report_radio")
@@ -90,10 +90,17 @@ func tutorial():
 	chat1_apply()
 
 var chat1_array = [
-	"Welcome %s in your first day." % player_name, 
-	"3Welcome in your first day.", 
-	"2Welcome in your first day.", 
-	"4Welcome in your first day.", 
+	"chat1msg1",  
+	"chat1msg2", 
+	"chat1msg3", 
+	"chat1msg4", 
+	"chat1msg5", 
+	"chat1msg6", 
+	"chat1msg7", 
+	"chat1msg8", 
+	"chat1msg9", 
+	
+	
 	
 	
 ]
@@ -110,14 +117,29 @@ func _on_skip_msg_timeout() -> void:
 	chat1_apply()
 
 func chat1_apply():
-	$CanvasLayer/subtitles.text = tr(chat1_array[chat_msg])
+	if chat_msg == 9:
+		chat_msg = 0
+		calling = 0
+		$skip_msg.stop()
+		phone_down()
+		start()
+		return
 		
+	var temp = tr(chat1_array[chat_msg])
+	if "%s" in temp:
+		$CanvasLayer/subtitles.text = temp % player_name
+		print(temp)
+	else:
+		$CanvasLayer/subtitles.text = temp
 
 
 func start():
 	$CanvasLayer/danger.visible = 1
 	$CanvasLayer/shift.visible = 1
 	$CanvasLayer/time.visible = 1
+	$call_time.stop()
+	$CanvasLayer/subtitles.text = ""
+	
 	$spawn.start()
 	
 

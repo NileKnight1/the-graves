@@ -2846,7 +2846,7 @@ autostart = true
 [node name="call_time" type="Timer" parent="." unique_id=177694698]
 
 [node name="skip_msg" type="Timer" parent="." unique_id=429189266]
-wait_time = 2.0
+wait_time = 7.0
 
 [connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
 [connection signal="pressed" from="player/room/menu/creatures" to="." method="_on_creatures_pressed"]
