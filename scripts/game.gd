@@ -8,11 +8,12 @@ var radio_area = 0
 var radio_opened = 0
 
 var opened_cam = 3
+var player_name = "Ammar"
 
 var shift = 1
 
 func translation():
-	TranslationServer.set_locale("ar") 
+	#TranslationServer.set_locale("ar") 
 	$player/room/menu/title.text = tr("report_radio")
 	$player/room/environment/title.text = tr("report_radio")
 	$player/room/creatures/title.text = tr("report_radio")
@@ -45,8 +46,8 @@ func translation():
 	
 	#$CanvasLayer/subtitles.text = tr("test")
 	
-	$player/phone/lab1.text = tr("accept")
-	$player/phone/lab2.text = tr("decline")
+	$player/phone/ringing/lab1.text = tr("accept")
+	$player/phone/ringing/lab2.text = tr("decline")
 	$player/phone/caller.text = tr("manager")
 	
 
@@ -57,7 +58,7 @@ func _ready() -> void:
 		$CanvasLayer/mobile.visible = 1
 	translation()
 	
-	tutorial()
+	phone_call()
 	#phone_down()
 	
 	
@@ -72,10 +73,47 @@ func phone_down():
 	var tween = create_tween()
 	tween.tween_property($player/phone, "position:y", $player/phone.position.y + 320 , 0.4)
 
-func tutorial():
+var calling = 0
+
+func phone_call():
 	#await get_tree().create_timer(2).timeout
 	phone_up()
+
+
+
+func tutorial():
+	calling = 1
+	$player/phone/ringing.visible = 0
+	$player/phone/accepted.visible = 1
+	$call_time.start()
+	$skip_msg.start()
+	chat1_apply()
+
+var chat1_array = [
+	"Welcome %s in your first day." % player_name, 
+	"3Welcome in your first day.", 
+	"2Welcome in your first day.", 
+	"4Welcome in your first day.", 
 	
+	
+]
+
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			#print("umm")
+
+var chat_msg = 0
+
+func _on_skip_msg_timeout() -> void:
+	chat_msg += 1
+	chat1_apply()
+
+func chat1_apply():
+	$CanvasLayer/subtitles.text = tr(chat1_array[chat_msg])
+		
+
+
 func start():
 	$CanvasLayer/danger.visible = 1
 	$CanvasLayer/shift.visible = 1
@@ -136,9 +174,13 @@ func _process(delta: float) -> void:
 				
 		$"map above/cams".get_child(opened_cam-1).visible = 1
 		$"map above/cams".get_child(opened_cam-1).enabled = 1
+		#
+	if calling && Input.is_action_just_pressed("skip"):
+		chat_msg += 1
+		$skip_msg.start()
+		chat1_apply()
 		
 
-		
 func stop_move():
 	$player.move = 0
 func allow_move():
@@ -530,7 +572,21 @@ func _on_bad_time_timeout() -> void:
 
 
 func _on_accept_tutorial_pressed() -> void:
-	pass # Replace with function body.
+	tutorial()
 func _on_decline_tutorial_pressed() -> void:
 	phone_down()
+	calling = 0
 	start()
+	
+var call_time = 0
+func _on_call_time_timeout() -> void:
+	call_time += 1
+	var minutes = call_time/60
+	var seconds = call_time - (minutes*60) 
+	$player/phone/accepted/time.text = "0"
+	$player/phone/accepted/time.text += str(minutes)
+	$player/phone/accepted/time.text += ":"
+	if seconds < 10:
+		$player/phone/accepted/time.text += "0"
+	$player/phone/accepted/time.text += str(seconds)
+	
