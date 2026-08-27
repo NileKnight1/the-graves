@@ -3176,6 +3176,7 @@ parameters/looping = true
 [node name="lights" type="Node2D" parent="." unique_id=125245000]
 
 [node name="room" type="PointLight2D" parent="lights" unique_id=59616191]
+visible = false
 position = Vector2(-32, -206.97011)
 scale = Vector2(1.0000001, 1.0079292)
 energy = 2.09
@@ -3209,8 +3210,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 [connection signal="pressed" from="player/room/creatures/p3" to="." method="_on_creature3_pressed"]
 [connection signal="pressed" from="player/room/creatures/p4" to="." method="_on_creature4_pressed"]
 [connection signal="pressed" from="player/room/creatures/back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="player/phone/ringing/accept" to="." method="_on_accept_tutorial_pressed"]
-[connection signal="pressed" from="player/phone/ringing/decline" to="." method="_on_decline_tutorial_pressed"]
+[connection signal="pressed" from="player/phone/ringing/accept" to="." method="_on_accept_call_pressed"]
+[connection signal="pressed" from="player/phone/ringing/decline" to="." method="_on_decline_call_pressed"]
 [connection signal="pressed" from="player/phone/accepted/decline" to="." method="_on_decline_tutorial_pressed"]
 [connection signal="body_entered" from="areas/ps1" to="." method="_on_ps_1_body_entered"]
 [connection signal="body_exited" from="areas/ps1" to="." method="_on_ps_1_body_exited"]
