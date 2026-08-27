@@ -275,7 +275,9 @@ func _process(delta: float) -> void:
 	if calling && Input.is_action_just_pressed("skip"):
 		chat_msg += 1
 		$timers/skip_msg.start()
-		tutorial()
+		match call_index:
+			0: tutorial()
+			1: first_day_survived()
 		
 
 func stop_move():
@@ -822,14 +824,14 @@ func sunrise():
 	phone_up()
 
 var first_day_survived_chat = [
-	"Hello",
-	"Hi",
-	"Bye",
+	"chat2msg1",
+	"chat2msg2",
+	"chat2msg3",
 	
 ]
 
 func first_day_survived():
-	if chat_msg > 8:
+	if chat_msg > 2:
 		chat_msg = 0
 		calling = 0
 		$timers/skip_msg.stop()

@@ -29,3 +29,6 @@ chat1msg8,"And keep in mind, if you reported wrong many times, we won't need you
 chat1msg9,Stay alive!,ابقَ حيًّا!
 wrong_reports,Wrong Reports,البلاغات الخاطئة
 calling,calling ...,يتصل ...
+chat2msg1,Hello again %s! Good news that you're still alive haha.,أهلًا مجددًا يا %s! خبرٌ رائع أنك مازلت حيًّا ههههه.
+chat2msg2,"That was an easy night anyways .. but don't worry, you'll get paid.",كانت ليلةً سهلة على أية حال .. لكن لا تقلق، ستؤجر على ذلك.
+chat2msg3,Now go home and sleep well .. nights haven't finished yet.,الآن اذهب للمنزل ونم جيدًا .. فالليالي لم تنتهِ بعد.
