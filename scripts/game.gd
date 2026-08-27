@@ -36,7 +36,7 @@ func translation():
 	$player/room/creatures/p4.text = tr("part4")
 	
 	$CanvasLayer/shift.text = tr("shift") + " " + str(shift)
-	$CanvasLayer/danger.text = tr("danger") + " 0/60"
+	$CanvasLayer/danger.text = tr("danger") + " " + str(bad_time) + "/" + str(max_bad_time)
 	
 	$"map above/cams/cam1/cam".text = tr("cam1")
 	$"map above/cams/cam2/cam".text = tr("cam2")
@@ -288,15 +288,30 @@ func apply_anomaly_event():
 		return
 		
 	print("evented")
-	var temp = randi_range(0, len(anomaly_events)-1)
 
-	while (computer_opened && anomaly_events[temp]["area"] == opened_cam) || anomaly_events[temp]["exist"]:
-		temp = randi_range(0, len(anomaly_events)-1)
-		print(temp) 
+	for i in anomaly_events:
+		if (computer_opened && i["area"] == opened_cam) || i["exist"]: return
+		for j in range(i["prob"]):
+			anomaly_events_prob.append(i)
+		
+	var temp = randi_range(0, len(anomaly_events_prob)-1)
+	var temp2
+	var index = 0
 	
-	print (anomaly_events[temp])
+	for i in anomaly_events:
+		if i == anomaly_events_prob[temp]:
+			temp2 = index
+			break
+		index += 1
+		
+	print (anomaly_events_prob[temp])
+	print (anomaly_events[temp2])
 	
-	anomaly_events[temp]["exist"] = 1
+	
+	anomaly_events[temp2]["exist"] = 1
+	
+	if anomaly_events[temp2]["prob"] > 1:
+		anomaly_events[temp2]["prob"] -= 1
 	#print (anomaly_events[temp])
 	
 	#if anomaly_events[temp]["area"] == 1:
@@ -304,12 +319,12 @@ func apply_anomaly_event():
 		#return
 	#print(anomaly_events[0]["show"])
 	#get_node_or_null(anomaly_events[0]["show"]).visible = 1
-	if anomaly_events[temp]["show"] != null:
-		for i in anomaly_events[temp]["show"]:
+	if anomaly_events[temp2]["show"] != null:
+		for i in anomaly_events[temp2]["show"]:
 			#print(i)
 			get_node_or_null(i).visible = 1
-	if anomaly_events[temp]["hide"] != null:
-		for i in anomaly_events[temp]["hide"]:
+	if anomaly_events[temp2]["hide"] != null:
+		for i in anomaly_events[temp2]["hide"]:
 			get_node_or_null(i).visible = 0
 			#print(i)
 			
@@ -317,30 +332,33 @@ func apply_anomaly_event():
 
 
 var anomaly_events = [
-	{"area"=1, "show"=[^"map above/left/trees/tree4"], "hide"=null, "exist"= 0},
-	{"area"=1, "show"=[^"map above/left/trees/tree5"], "hide"=null, "exist"= 0},
-	{"area"=1, "show"= null, "hide"=[^"map above/left/trees/tree1"], "exist"= 0},
-	{"area"=1, "show"= null, "hide"=[^"map above/left/trees/tree2"], "exist"= 0},
-	{"area"=1, "show"= null, "hide"=[^"map above/left/trees/tree3"], "exist"= 0},
-	{"area"=1, "show"= null, "hide"=[^"map behind/out_left/trees/tree1"], "exist"= 0},
-	{"area"=1, "show"= null, "hide"=[^"map behind/out_left/trees/tree2"], "exist"= 0},
-	{"area"=1, "show"= null, "hide"=[^"map behind/out_left/trees/tree3"], "exist"= 0},
-	{"area"=1, "show"=[^"map behind/out_left/trees/tree4"], "hide"=[^"map behind/out_left/trees/tree1"], "exist"= 0},
-	{"area"=1, "show"=[^"map above/left/trees/tree1"], "hide"=[^"map above/left/trees/tree6"], "exist"= 0},
-	{"area"=2, "show"= [^"map behind/out_left/p2/cabin/door_hand2"], "hide"= [^"map behind/out_left/p2/cabin/door_hand"], "exist"= 0},
-	{"area"=2, "hide"= [^"map behind/out_left/p2/tree2", ^"map behind/out_left/p2/bush3"], "show"= [^"map behind/out_left/p2/bush4", ^"map behind/out_left/p2/tree3"], "exist"= 0},
-	{"area"=3, "show"= [^"map behind/out_right/p3/grave2"], "hide"=null, "exist"= 0},
-	{"area"=3, "show"= [^"map above/right/bench3/hide1"], "hide"=null, "exist"= 0},
-	{"area"=3, "show"=null, "hide"= [^"map behind/out_right/p3/grave"], "exist"= 0},
-	{"area"=3, "show"=null, "hide"= [^"map behind/out_right/p3/grave3"], "exist"= 0},
-	{"area"=3, "show"=null, "hide"= [^"map behind/out_right/p3/grave4"], "exist"= 0},
-	{"area"=3, "show"=null, "hide"= [^"map behind/out_right/p3/grave5"], "exist"= 0},
-	{"area"=3, "show"=null, "hide"= [^"map behind/out_right/p3/grave6"], "exist"= 0},
-	{"area"=3, "show"= [^"map behind/out_right/p3/tree3"], "hide"=[^"map behind/out_right/p3/tree2"], "exist"= 0},
-	{"area"=4, "show"=[^"map above/right/bench3/hide2"], "hide"= null, "exist"= 0},
-	{"area"=4, "show"=[^"map behind/out_right/p4/bush3"], "hide"= null, "exist"= 0},
-	{"area"=4, "show"=[^"map behind/out_right/p4/bush4"], "hide"= [^"map behind/out_right/p4/bush2"], "exist"= 0},
-	
+	{"area"=1, "show"=[^"map above/left/trees/tree4"], "hide"=null, "exist"= 0, "prob"= 3},
+	{"area"=1, "show"=[^"map above/left/trees/tree5"], "hide"=null, "exist"= 0, "prob"= 3},
+	{"area"=1, "show"= null, "hide"=[^"map above/left/trees/tree1"], "exist"= 0, "prob"= 3},
+	{"area"=1, "show"= null, "hide"=[^"map above/left/trees/tree2"], "exist"= 0, "prob"= 3},
+	{"area"=1, "show"= null, "hide"=[^"map above/left/trees/tree3"], "exist"= 0, "prob"= 3},
+	{"area"=1, "show"= null, "hide"=[^"map behind/out_left/trees/tree1"], "exist"= 0, "prob"= 3},
+	{"area"=1, "show"= null, "hide"=[^"map behind/out_left/trees/tree2"], "exist"= 0, "prob"= 3},
+	{"area"=1, "show"= null, "hide"=[^"map behind/out_left/trees/tree3"], "exist"= 0, "prob"= 3},
+	{"area"=1, "show"=[^"map behind/out_left/trees/tree4"], "hide"=[^"map behind/out_left/trees/tree1"], "exist"= 0, "prob"= 3},
+	{"area"=1, "show"=[^"map above/left/trees/tree1"], "hide"=[^"map above/left/trees/tree6"], "exist"= 0, "prob"= 3},
+	{"area"=2, "show"= [^"map behind/out_left/p2/cabin/door_hand2"], "hide"= [^"map behind/out_left/p2/cabin/door_hand"], "exist"= 0, "prob"= 3},
+	{"area"=2, "hide"= [^"map behind/out_left/p2/tree2", ^"map behind/out_left/p2/bush3"], "show"= [^"map behind/out_left/p2/bush4", ^"map behind/out_left/p2/tree3"], "exist"= 0, "prob"= 3},
+	{"area"=3, "show"= [^"map behind/out_right/p3/grave2"], "hide"=null, "exist"= 0, "prob"= 3},
+	{"area"=3, "show"= [^"map above/right/bench3/hide1"], "hide"=null, "exist"= 0, "prob"= 3},
+	{"area"=3, "show"=null, "hide"= [^"map behind/out_right/p3/grave"], "exist"= 0, "prob"= 3},
+	{"area"=3, "show"=null, "hide"= [^"map behind/out_right/p3/grave3"], "exist"= 0, "prob"= 3},
+	{"area"=3, "show"=null, "hide"= [^"map behind/out_right/p3/grave4"], "exist"= 0, "prob"= 3},
+	{"area"=3, "show"=null, "hide"= [^"map behind/out_right/p3/grave5"], "exist"= 0, "prob"= 3},
+	{"area"=3, "show"=null, "hide"= [^"map behind/out_right/p3/grave6"], "exist"= 0, "prob"= 3},
+	{"area"=3, "show"= [^"map behind/out_right/p3/tree3"], "hide"=[^"map behind/out_right/p3/tree2"], "exist"= 0, "prob"= 3},
+	{"area"=4, "show"=[^"map above/right/bench3/hide2"], "hide"= null, "exist"= 0, "prob"= 3},
+	{"area"=4, "show"=[^"map behind/out_right/p4/bush3"], "hide"= null, "exist"= 0, "prob"= 3},
+	{"area"=4, "show"=[^"map behind/out_right/p4/bush4"], "hide"= [^"map behind/out_right/p4/bush2"], "exist"= 0, "prob"= 3},
+]
+
+var anomaly_events_prob = []
+
 
 ### p1
 # show
@@ -389,8 +407,6 @@ var anomaly_events = [
 # show/hide
 #hide 		^"map behind/out_right/p3/tree2"
 #show 		^"map behind/out_right/p3/tree3"
-
-]
 
 ### p4
 
@@ -475,12 +491,13 @@ func _on_back_pressed() -> void:
 	$player/room/menu.visible = 1
 
 var bad_time = 0
+var max_bad_time = 100
 #var danger = 0
 
 func _on_bad_time_timeout() -> void:
 	bad_time += anomaly_events_count
-	$CanvasLayer/danger.text = tr("danger") + " " + str(bad_time) + "/60"
+	$CanvasLayer/danger.text = tr("danger") + " " + str(bad_time) + "/" + str(max_bad_time)
 	
 	
-	if bad_time > 60:
+	if bad_time > max_bad_time:
 		lose()

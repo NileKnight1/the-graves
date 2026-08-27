@@ -15,6 +15,7 @@ translations_plugin/last_edited_file_path="res://translation.csv"
 [application]
 
 config/name="The Grave - Anomalies Game"
+run/main_scene="uid://rvivq0xx8k4y"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -8,6 +8,7 @@
 script = ExtResource("1_jnc8d")
 
 [node name="Control" type="Control" parent="." unique_id=2018416242]
+layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
