@@ -106,8 +106,10 @@ func _ready() -> void:
 	pass
 
 func phone_up():
+	$player/phone/ringing.visible = 1
+	$player/phone/accepted.visible = 0
 	var tween = create_tween()
-	#$Node/ringtone.play()
+	$sfx/ringtone.play()
 	tween.tween_property($player/phone, "position:y", $player/phone.position.y - 320 , 0.8)
 func phone_down():
 	var tween = create_tween()
@@ -119,15 +121,11 @@ func phone_call():
 	#await get_tree().create_timer(2).timeout
 	phone_up()
 
+func radio_access_on():
+	$player/room/menu/environmental.visible = 1
+func radio_access_off():
+	$player/room/menu/environmental.visible = 0
 
-
-func tutorial():
-	calling = 1
-	$player/phone/ringing.visible = 0
-	$player/phone/accepted.visible = 1
-	$timers/call_time.start()
-	$timers/skip_msg.start()
-	chat1_apply()
 
 var chat1_array = [
 	"chat1msg1",  
@@ -150,10 +148,13 @@ var chat_msg = 0
 
 func _on_skip_msg_timeout() -> void:
 	chat_msg += 1
-	print("im still workingD")
-	chat1_apply()
+	#print("im still workingD")
+	
+	match call_index:
+		0: tutorial()
+		1: first_day_survived()
 
-func chat1_apply():
+func tutorial():
 	if chat_msg > 8:
 		chat_msg = 0
 		calling = 0
@@ -170,16 +171,17 @@ func chat1_apply():
 		$CanvasLayer/subtitles.text = temp
 	#play_sound(dialogue)
 	#dialogue.play()
-	$Node/dia.play()
+	$sfx/dia.play()
 
 func start():
-	$Node/dia.stop()
+	$sfx/dia.stop()
 	$timers/call_time.stop()
 	$timers/skip_msg.stop()
-	
+	call_index = 1
 	
 	await get_tree().create_timer(0.8).timeout
 	play_sound(start_sound)
+	radio_access_on()
 	
 	$CanvasLayer/danger.visible = 1
 	$CanvasLayer/reports.visible = 1
@@ -192,7 +194,7 @@ func start():
 	$timers/shift_time.start()
 	
 	
-@onready var walking_sound = $Node/walk_dirt
+@onready var walking_sound = $sfx/walk_dirt
 
 func _process(delta: float) -> void:
 	if $player.walk:
@@ -217,12 +219,13 @@ func _process(delta: float) -> void:
 			
 			computer_opened = 1
 			play_sound(cam_on)
-			$Node/camera.play()
+			$sfx/camera.play()
+			walking_sound.stop()
 			
 			stop_move()
 		elif computer_opened:
 			play_sound(cam_off)
-			$Node/camera.stop()
+			$sfx/camera.stop()
 			$player/Camera2D.enabled = 1
 			$"map above/cams".visible = 0
 			print("closed")
@@ -236,11 +239,11 @@ func _process(delta: float) -> void:
 		if radio_area && !radio_opened:
 			$player/room/menu.visible = 1
 			radio_opened = 1
-			$Node/radio.play()
+			$sfx/radio.play()
 			
 			#print("hi")
 		elif radio_opened:
-			$Node/radio.stop()
+			$sfx/radio.stop()
 			$player/room/menu.visible = 0
 			$player/room/environment.visible = 0
 			$player/room/creatures.visible = 0
@@ -272,7 +275,7 @@ func _process(delta: float) -> void:
 	if calling && Input.is_action_just_pressed("skip"):
 		chat_msg += 1
 		$timers/skip_msg.start()
-		chat1_apply()
+		tutorial()
 		
 
 func stop_move():
@@ -303,7 +306,7 @@ func _on_radio_body_exited(body: Node2D) -> void:
 		radio_area = 0
 		if radio_opened:
 			radio_opened = 0
-			$Node/radio.stop()
+			$sfx/radio.stop()
 			
 			$player/room/menu.visible = 0
 			$player/room/environment.visible = 0
@@ -705,18 +708,35 @@ func _on_bad_time_timeout() -> void:
 	if bad_time > max_bad_time:
 		lose()
 
+var call_index = 0
+	
 
 func _on_accept_tutorial_pressed() -> void:
-	$Node/ringtone.stop()
-	tutorial()
+	$sfx/ringtone.stop()
+	call_time = 0
 	play_sound(click_phone)
+	calling = 1
+	$player/phone/ringing.visible = 0
+	$player/phone/accepted.visible = 1
+	$timers/call_time.start()
+	$timers/skip_msg.start()
+	
+	match call_index:
+		0: tutorial()
+		1: first_day_survived()
+
 func _on_decline_tutorial_pressed() -> void:
 	play_sound(hang_up)
-	$Node/ringtone.stop()
+	$sfx/ringtone.stop()
 	phone_down()
 	calling = 0
-	start()
 	
+	match call_index:
+		0: start()
+		1: first_day_survived()
+		
+	
+
 var call_time = 0
 func _on_call_time_timeout() -> void:
 	call_time += 1
@@ -760,7 +780,7 @@ func _on_ps_4_body_exited(body: Node2D) -> void:
 	if body == $player:
 		ps4 = 0
 
-var shift_time = 0
+var shift_time = 358
 func _on_shift_time_timeout() -> void:
 	shift_time += 1
 	var mins = shift_time/60
@@ -774,22 +794,52 @@ func _on_shift_time_timeout() -> void:
 	$CanvasLayer/time.text += str(secs)
 	
 	if shift_time == 360:
-		$timers/spawn.stop()
-		$timers/bad_time.stop()
-		
+		sunrise()
 
 
 func _on_room_body_entered(body: Node2D) -> void:
 	if body == $player:
-		$Node/night.volume_db -= 5
-		walking_sound = $Node/walk_wood
-		$Node/walk_dirt.stop()
-		$Node/walk_wood.play()
+		$sfx/night.volume_db -= 5
+		walking_sound = $sfx/walk_wood
+		$sfx/walk_dirt.stop()
+		$sfx/walk_wood.play()
 		#print("lowerd")
 func _on_room_body_exited(body: Node2D) -> void:
 	if body == $player:
-		$Node/night.volume_db += 5
-		walking_sound = $Node/walk_dirt
-		$Node/walk_dirt.play()
-		$Node/walk_wood.stop()
-		
+		$sfx/night.volume_db += 5
+		walking_sound = $sfx/walk_dirt
+		$sfx/walk_dirt.play()
+		$sfx/walk_wood.stop()
+
+func sunrise():
+	$timers/spawn.stop()
+	$timers/bad_time.stop()
+	$sfx/night.stop()
+	$sfx/morning.play()
+	$"map behind/out_left/bg/sky2".visible = 1
+	$"map behind/out_right/bg/Panel3".visible = 1
+	radio_access_off()
+	phone_up()
+
+var first_day_survived_chat = [
+	"Hello",
+	"Hi",
+	"Bye",
+	
+]
+
+func first_day_survived():
+	if chat_msg > 8:
+		chat_msg = 0
+		calling = 0
+		$timers/skip_msg.stop()
+		phone_down()
+		return
+	
+	var temp = tr(first_day_survived_chat[chat_msg])
+	if "%s" in temp:
+		$CanvasLayer/subtitles.text = temp % player_name
+		print(temp)
+	else:
+		$CanvasLayer/subtitles.text = temp
+	$sfx/dia.play()

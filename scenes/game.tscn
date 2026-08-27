@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://doi0hb801udh0" path="res://audio/night.mp3" id="14_trtic"]
 [ext_resource type="AudioStream" uid="uid://wstyydfieafs" path="res://audio/walking_dirt.mp3" id="15_ir15t"]
 [ext_resource type="AudioStream" uid="uid://t6a1ps8ee86" path="res://audio/walking_wood.mp3" id="16_ca42v"]
+[ext_resource type="AudioStream" uid="uid://ydxyyrrs28d7" path="res://audio/morning.mp3" id="17_rysoc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
@@ -57,6 +58,9 @@ thickness = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
 bg_color = Color(0.015686275, 0.05490196, 0.11372549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4re6"]
+bg_color = Color(0.49019608, 0.29411766, 0.12941177, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbhrr"]
 bg_color = Color(0.10980392, 0.16470589, 0, 1)
@@ -124,6 +128,9 @@ bg_color = Color(0.14767277, 0.08925215, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pf7vy"]
+bg_color = Color(0.490283, 0.29443035, 0.12824145, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt5mj"]
 bg_color = Color(0.009999997, 0.05, 0, 1)
@@ -560,6 +567,16 @@ offset_bottom = -466.24963
 scale = Vector2(38.873165, 8.967383)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
+
+[node name="sky2" type="Panel" parent="map behind/out_left/bg" unique_id=711855427]
+visible = false
+offset_left = 280.0
+offset_top = -520.0
+offset_right = 343.7458
+offset_bottom = -466.24963
+scale = Vector2(38.873165, 8.967383)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i4re6")
 
 [node name="grass" type="Panel" parent="map behind/out_left/bg" unique_id=1651635830]
 offset_left = 500.0
@@ -1013,6 +1030,16 @@ offset_bottom = -466.24963
 scale = Vector2(38.873165, 8.967383)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
+
+[node name="Panel3" type="Panel" parent="map behind/out_right/bg" unique_id=831023181]
+visible = false
+offset_left = 501.0
+offset_top = -520.0
+offset_right = 564.72003
+offset_bottom = -466.24963
+scale = Vector2(38.873165, 8.967383)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel2" type="Panel" parent="map behind/out_right/bg" unique_id=1805033499]
 offset_left = 500.0
@@ -1558,6 +1585,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="environmental" type="Button" parent="player/room/menu" unique_id=1804039785]
+visible = false
 layout_mode = 0
 offset_left = 260.0
 offset_top = -298.0
@@ -2739,6 +2767,7 @@ theme_override_font_sizes/font_size = 38
 text = "cam 04"
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
+visible = false
 
 [node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
 
@@ -2921,37 +2950,41 @@ wait_time = 7.0
 
 [node name="shift_time" type="Timer" parent="timers" unique_id=1733842153]
 
-[node name="Node" type="Node" parent="." unique_id=694605502]
+[node name="sfx" type="Node" parent="." unique_id=694605502]
 
-[node name="ringtone" type="AudioStreamPlayer" parent="Node" unique_id=1353244250]
+[node name="ringtone" type="AudioStreamPlayer" parent="sfx" unique_id=1353244250]
 stream = ExtResource("10_vtaks")
 parameters/looping = true
 
-[node name="dia" type="AudioStreamPlayer" parent="Node" unique_id=590644922]
+[node name="dia" type="AudioStreamPlayer" parent="sfx" unique_id=590644922]
 stream = ExtResource("11_kvpfn")
 
-[node name="radio" type="AudioStreamPlayer" parent="Node" unique_id=1904667190]
+[node name="radio" type="AudioStreamPlayer" parent="sfx" unique_id=1904667190]
 stream = ExtResource("12_dinhu")
 volume_db = -10.0
 parameters/looping = true
 
-[node name="camera" type="AudioStreamPlayer" parent="Node" unique_id=1510438689]
+[node name="camera" type="AudioStreamPlayer" parent="sfx" unique_id=1510438689]
 stream = ExtResource("13_kvuet")
 parameters/looping = true
 
-[node name="night" type="AudioStreamPlayer" parent="Node" unique_id=1031584916]
+[node name="night" type="AudioStreamPlayer" parent="sfx" unique_id=1031584916]
 stream = ExtResource("14_trtic")
 autoplay = true
 parameters/looping = true
 
-[node name="walk_dirt" type="AudioStreamPlayer" parent="Node" unique_id=2029448527]
+[node name="walk_dirt" type="AudioStreamPlayer" parent="sfx" unique_id=2029448527]
 stream = ExtResource("15_ir15t")
 volume_db = 16.46
 parameters/looping = true
 
-[node name="walk_wood" type="AudioStreamPlayer" parent="Node" unique_id=216894447]
+[node name="walk_wood" type="AudioStreamPlayer" parent="sfx" unique_id=216894447]
 stream = ExtResource("16_ca42v")
 volume_db = 16.46
+parameters/looping = true
+
+[node name="morning" type="AudioStreamPlayer" parent="sfx" unique_id=676517257]
+stream = ExtResource("17_rysoc")
 parameters/looping = true
 
 [connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
