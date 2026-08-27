@@ -101,6 +101,72 @@ func _ready() -> void:
 	#spawn()
 	pass
 
+
+func _on_cams_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and computer_area:
+		open_cam()
+		
+func _on_radio_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and radio_area:
+		open_radio()
+
+func _on_switch_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed :
+		play_sound(click_switch)
+		if $lights/room.visible:
+			$lights/room.visible = 0
+		else:
+			$lights/room.visible = 1
+
+
+func _on_button_pressed() -> void:
+	close_cam()
+
+
+
+func open_cam():
+	#print("hi")
+	#$"map above/cams/cam1".visible = 1
+	$player/Camera2D.enabled = 0
+	$"map above/cams".visible = 1
+	$"map above/cams".get_child(opened_cam-1).enabled = 1
+	$CanvasLayer/close_cam.visible = 1
+	computer_opened = 1
+	$player/phone.visible = 0
+	play_sound(cam_on)
+	$sfx/camera.play()
+	walking_sound.stop()
+	
+	stop_move()
+func close_cam():
+	$CanvasLayer/close_cam.visible = 0
+	
+	play_sound(cam_off)
+	$sfx/camera.stop()
+	$player/Camera2D.enabled = 1
+	$"map above/cams".visible = 0
+	$player/phone.visible = 1
+	
+	print("closed")
+	#$"map above/cams/cam3".enabled = 0
+	$"map above/cams".get_child(opened_cam-1).enabled = 0
+	
+	
+	computer_opened = 0
+	allow_move()
+
+func open_radio():
+	$player/room/menu.visible = 1
+	radio_opened = 1
+	$sfx/radio.play()
+
+func close_radio():
+	$sfx/radio.stop()
+	$player/room/menu.visible = 0
+	$player/room/environment.visible = 0
+	$player/room/creatures.visible = 0
+	radio_opened = 0
+
 func _process(delta: float) -> void:
 	if $player.walk && $player.move:
 		if !walking_sound.playing:
@@ -115,46 +181,15 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("interact"):
 		if computer_area && !computer_opened:
-			#print("hi")
-			#$"map above/cams/cam1".visible = 1
-			$player/Camera2D.enabled = 0
-			$"map above/cams".visible = 1
-			$"map above/cams".get_child(opened_cam-1).enabled = 1
-			
-			computer_opened = 1
-			$player/phone.visible = 0
-			play_sound(cam_on)
-			$sfx/camera.play()
-			walking_sound.stop()
-			
-			stop_move()
+			open_cam()
 		elif computer_opened:
-			play_sound(cam_off)
-			$sfx/camera.stop()
-			$player/Camera2D.enabled = 1
-			$"map above/cams".visible = 0
-			$player/phone.visible = 1
-			
-			print("closed")
-			#$"map above/cams/cam3".enabled = 0
-			$"map above/cams".get_child(opened_cam-1).enabled = 0
-			
-			
-			computer_opened = 0
-			allow_move()
+			close_cam()
 			
 		if radio_area && !radio_opened:
-			$player/room/menu.visible = 1
-			radio_opened = 1
-			$sfx/radio.play()
-			
+			open_radio()
 			#print("hi")
 		elif radio_opened:
-			$sfx/radio.stop()
-			$player/room/menu.visible = 0
-			$player/room/environment.visible = 0
-			$player/room/creatures.visible = 0
-			radio_opened = 0
+			close_radio()
 		
 		if switch_area:
 			play_sound(click_switch)
@@ -201,9 +236,11 @@ func _process(delta: float) -> void:
 func _on_switch_body_entered(body: Node2D) -> void:
 	if body == $player:
 		switch_area = 1
+		$CanvasLayer/press_e.visible = 1
 func _on_switch_body_exited(body: Node2D) -> void:
 	if body == $player:
 		switch_area = 0
+		$CanvasLayer/press_e.visible = 0
 
 
 func radio_access_on():
@@ -315,6 +352,9 @@ func end_shift():
 	$sfx/morning.play()
 	$"map behind/out_left/bg/sky2".visible = 1
 	$"map behind/out_right/bg/Panel3".visible = 1
+	$lights/left.visible = 0
+	$lights/right.visible = 0
+	
 	radio_access_off()
 	phone_up()
 
@@ -322,18 +362,22 @@ func end_shift():
 func _on_cams_body_entered(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 1
+		$CanvasLayer/press_e.visible = 1
 	if body is CharacterBody2D && body.anomaly:
 		body.queue_free()
 		print("bruh")
 func _on_cams_body_exited(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 0
+		$CanvasLayer/press_e.visible = 0
+		
 
 func _on_radio_body_entered(body: Node2D) -> void:
 	if body == $player:
 		radio_area = 1
 		print("radio_area")
 		print(radio_area)
+		$CanvasLayer/press_e.visible = 1
 
 func _on_radio_body_exited(body: Node2D) -> void:
 	if body == $player:
@@ -346,6 +390,7 @@ func _on_radio_body_exited(body: Node2D) -> void:
 			$player/room/environment.visible = 0
 			$player/room/creatures.visible = 0
 		print("radio_area_leftd")
+		$CanvasLayer/press_e.visible = 0
 
 
 var p1_anomalies_count = 0

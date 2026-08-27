@@ -418,6 +418,51 @@ size = Vector2(1079, 672.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssvqc"]
 size = Vector2(86, 213)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk1p3"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.6, 0.047999993, 0.047999993, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nepv3"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.43529412, 0.023529412, 0.023529412, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8ral"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.43529412, 0.023529412, 0.023529412, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd4ix"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.6, 0.047999993, 0.047999993, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -497,6 +542,7 @@ offset_top = -212.0
 offset_right = 1823.0
 offset_bottom = 868.0
 scale = Vector2(0.054402083, 0.054402083)
+mouse_filter = 2
 stream = ExtResource("2_yqjtg")
 autoplay = true
 loop = true
@@ -2854,7 +2900,6 @@ theme_override_font_sizes/font_size = 38
 text = "cam 04"
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
-visible = false
 
 [node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
 
@@ -2939,6 +2984,21 @@ shape = SubResource("RectangleShape2D_ssvqc")
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
 
+[node name="close_cam" type="Button" parent="CanvasLayer" unique_id=170245993]
+visible = false
+layout_direction = 2
+offset_left = 1035.0
+offset_top = 111.0
+offset_right = 1109.0
+offset_bottom = 209.0
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/normal = SubResource("StyleBoxFlat_bk1p3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nepv3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n8ral")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yd4ix")
+text = "X"
+
 [node name="shift" type="Label" parent="CanvasLayer" unique_id=2086180496]
 visible = false
 layout_direction = 2
@@ -2951,6 +3011,20 @@ theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
 theme_override_font_sizes/font_size = 48
 text = "Shift 1"
+
+[node name="press_e" type="Label" parent="CanvasLayer" unique_id=1381870537]
+layout_direction = 2
+offset_left = 543.0
+offset_top = 171.0
+offset_right = 785.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.9495844, 0.90889615, 0.97020274, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 16
+text = "Press 'E' to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="danger" type="Label" parent="CanvasLayer" unique_id=1023276724]
 visible = false
@@ -3179,6 +3253,13 @@ energy = 0.56
 blend_mode = 1
 texture = ExtResource("19_264po")
 
+[node name="right" type="PointLight2D" parent="lights" unique_id=439996145]
+position = Vector2(1751.3749, -162)
+scale = Vector2(2.01251, 1.3607843)
+energy = 0.56
+blend_mode = 1
+texture = ExtResource("19_264po")
+
 [node name="Panel" type="Panel" parent="lights" unique_id=2134187755]
 offset_left = -1816.0
 offset_top = 276.0
@@ -3213,8 +3294,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 [connection signal="body_exited" from="areas/ps4" to="." method="_on_ps_4_body_exited"]
 [connection signal="body_entered" from="areas/cams" to="." method="_on_cams_body_entered"]
 [connection signal="body_exited" from="areas/cams" to="." method="_on_cams_body_exited"]
+[connection signal="input_event" from="areas/cams" to="." method="_on_cams_input_event"]
 [connection signal="body_entered" from="areas/radio" to="." method="_on_radio_body_entered"]
 [connection signal="body_exited" from="areas/radio" to="." method="_on_radio_body_exited"]
+[connection signal="input_event" from="areas/radio" to="." method="_on_radio_input_event"]
 [connection signal="body_entered" from="areas/p1" to="." method="_on_p_1_body_entered"]
 [connection signal="body_exited" from="areas/p1" to="." method="_on_p_1_body_exited"]
 [connection signal="body_entered" from="areas/p2" to="." method="_on_p_2_body_entered"]
@@ -3227,6 +3310,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 [connection signal="body_exited" from="areas/room" to="." method="_on_room_body_exited"]
 [connection signal="body_entered" from="areas/switch" to="." method="_on_switch_body_entered"]
 [connection signal="body_exited" from="areas/switch" to="." method="_on_switch_body_exited"]
+[connection signal="input_event" from="areas/switch" to="." method="_on_switch_input_event"]
+[connection signal="pressed" from="CanvasLayer/close_cam" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="timers/spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="timers/bad_time" to="." method="_on_bad_time_timeout"]
 [connection signal="timeout" from="timers/call_time" to="." method="_on_call_time_timeout"]

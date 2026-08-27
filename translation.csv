@@ -34,7 +34,8 @@ chat2msg2,"That was an easy night anyways .. but don't worry, you'll get paid.",
 chat2msg3,Now go home and sleep well .. nights haven't finished yet.,الآن اذهب للمنزل ونم جيدًا .. فالليالي لم تنتهِ بعد.
 sprint,Sprint,جري
 jump,Jump,قفز
-use,Use,استخدام
+use,Interact,استخدام
 anomalies_reported,Anomalies Reported,الظواهر المبلغ عنها
 anomalies_left,Anomalies Left,الظواهر المتروكة
 max_danger,Maximum Danger,أقصى خطر
+press_e,Press 'E' to interact.,اضغط 'E' للاستخدام.
