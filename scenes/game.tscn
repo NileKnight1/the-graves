@@ -575,6 +575,9 @@ size = Vector2(1079, 672.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssvqc"]
 size = Vector2(86, 213)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
+size = Vector2(303, 248.5)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk1p3"]
 content_margin_left = 15.0
 content_margin_top = 5.0
@@ -2646,7 +2649,7 @@ position = Vector2(146, 50)
 shape = SubResource("RectangleShape2D_5newe")
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-105, -48)
+position = Vector2(2737, -48)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
@@ -3971,6 +3974,12 @@ shape = SubResource("RectangleShape2D_ir15t")
 position = Vector2(-443, -85.5)
 shape = SubResource("RectangleShape2D_ssvqc")
 
+[node name="generator" type="Area2D" parent="areas" unique_id=690488269]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/generator" unique_id=1886153961]
+position = Vector2(2924.5, -38.25)
+shape = SubResource("RectangleShape2D_37s47")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
@@ -4301,6 +4310,8 @@ texture = ExtResource("19_264po")
 [connection signal="body_entered" from="areas/switch" to="." method="_on_switch_body_entered"]
 [connection signal="body_exited" from="areas/switch" to="." method="_on_switch_body_exited"]
 [connection signal="input_event" from="areas/switch" to="." method="_on_switch_input_event"]
+[connection signal="body_entered" from="areas/generator" to="." method="_on_generator_body_entered"]
+[connection signal="body_exited" from="areas/generator" to="." method="_on_generator_body_exited"]
 [connection signal="pressed" from="CanvasLayer/close_cam" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="timers/spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="timers/bad_time" to="." method="_on_bad_time_timeout"]

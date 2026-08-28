@@ -222,7 +222,7 @@ func _process(delta: float) -> void:
 	if $player.walk && $player.move:
 		if !walking_sound.playing:
 			walking_sound.play()
-			print("um?a")
+			#print("um?a")
 		if $player.sprint:
 			walking_sound.pitch_scale = 2.0
 		else:
@@ -248,7 +248,10 @@ func _process(delta: float) -> void:
 				$lights/room.visible = 0
 			else:
 				$lights/room.visible = 1
-	
+		
+		if generator_area:
+			generator_on()
+
 	#print(p1+p2+p3+p4)
 	#print(computer_opened)
 	if computer_opened:
@@ -1200,3 +1203,25 @@ var day2_call1_chat = [
 func day2_start():
 	print("hi")
 	shift_start()
+
+var generator_area = 0
+var generator_working = 0
+
+func generator_on():
+	generator_working = 1
+	$"map behind/generator/on".visible = 1
+	$"map behind/generator/off".visible = 0
+func generator_off():
+	generator_working = 0
+	$"map behind/generator/on".visible = 0
+	$"map behind/generator/off".visible = 1
+
+
+
+func _on_generator_body_entered(body: Node2D) -> void:
+	if body == $player:
+		generator_area = 1
+		print("here")
+func _on_generator_body_exited(body: Node2D) -> void:
+	if body == $player:
+		generator_area = 0
