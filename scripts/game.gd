@@ -231,7 +231,7 @@ func _process(delta: float) -> void:
 		walking_sound.stop()
 
 	if Input.is_action_just_pressed("interact"):
-		if computer_area && !computer_opened:
+		if computer_area && !computer_opened && generator_working:
 			open_cam()
 		elif computer_opened:
 			close_cam()
@@ -423,7 +423,7 @@ func shift_end():
 func _on_cams_body_entered(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 1
-		if pc: $CanvasLayer/press_e.visible = 1
+		if pc  && generator_working: $CanvasLayer/press_e.visible = 1
 	if body is CharacterBody2D && body.anomaly:
 		body.queue_free()
 		print("bruh")
@@ -1216,12 +1216,14 @@ var generator_working = 0
 var generator_dec_apply = 0
 
 func generator_on():
+	print("gen on")
+	$"map behind/generator/ProgressBar".visible = 1
+	$"map behind/generator/E".visible = 1
 	generator_dec_apply = 1
 	generator_dec()
 	generator_fixing = 1
 	#$"map behind/generator/ProgressBar".value -= 5
-	$"map behind/generator/ProgressBar".visible = 1
-	$"map behind/generator/E".visible = 1
+
 
 	
 	#await get_tree().create_timer(5.0).timeout
@@ -1231,6 +1233,9 @@ func generator_fixed():
 	$"map behind/generator/off".visible = 0
 	$"map behind/generator/ProgressBar".visible = 0
 	$"map behind/generator/E".visible = 0
+	$"map behind/room/desk/VideoStreamPlayer".visible = 1
+	$"map behind/generator/ProgressBar".value = 250
+	
 	
 	generator_dec_apply = 0
 	generator_fixing = 0
@@ -1240,7 +1245,7 @@ func generator_failed():
 	generator_fixing = 0
 	$"map behind/generator/ProgressBar".visible = 0
 	$"map behind/generator/E".visible = 0
-	$"map behind/generator/ProgressBar".value -= 250
+	$"map behind/generator/ProgressBar".value = 250
 
 func generator_dec():
 	while generator_dec_apply:
@@ -1250,6 +1255,8 @@ func generator_dec():
 			generator_failed()
 
 func generator_off():
+	$"map behind/room/desk/VideoStreamPlayer".visible = 0
+	close_cam()
 	generator_working = 0
 	$"map behind/generator/on".visible = 0
 	$"map behind/generator/off".visible = 1

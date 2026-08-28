@@ -719,6 +719,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p57ef")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="map behind/room/desk" unique_id=519414229]
+visible = false
 offset_left = -97.0
 offset_top = -212.0
 offset_right = 1823.0
