@@ -99,6 +99,30 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66xif"]
+bg_color = Color(0.2600677, 0.22832039, 0.069584, 1)
+shadow_size = 3
+shadow_offset = Vector2(5.02, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnuda"]
+bg_color = Color(0.2600677, 0.22832039, 0.069584, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1kice"]
+color = Color(0.7607843, 0.75686276, 0.74509805, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_5newe"]
+color = Color(0.7607843, 0.75686276, 0.74509805, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0rmfi"]
+color = Color(0.49424523, 1.1611544e-06, 0, 1)
+thickness = 2
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
 bg_color = Color(0.015686275, 0.05490196, 0.11372549, 1)
 
@@ -467,9 +491,6 @@ corner_radius_bottom_left = 15
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ixpq"]
-bg_color = Color(0.05333464, 0.12401638, 0.19208646, 1)
-
 [node name="game" type="Node2D" unique_id=275808026]
 script = ExtResource("1_lnu2h")
 
@@ -686,6 +707,307 @@ offset_bottom = 28.922934
 scale = Vector2(0.85822767, 1.0035384)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ms3bu")
+
+[node name="tasks" type="Control" parent="map behind/room" unique_id=218274819]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="bg" type="Panel" parent="map behind/room/tasks" unique_id=368551991]
+layout_direction = 2
+layout_mode = 0
+offset_left = -380.0
+offset_top = -215.0
+offset_right = -200.0
+offset_bottom = -92.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
+
+[node name="day1" type="Control" parent="map behind/room/tasks" unique_id=1685428592]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="task1" type="Control" parent="map behind/room/tasks/day1" unique_id=938100191]
+layout_direction = 2
+anchors_preset = 0
+offset_left = -364.0
+offset_top = -196.0
+offset_right = -241.0
+offset_bottom = -156.0
+mouse_filter = 2
+
+[node name="square" type="Panel" parent="map behind/room/tasks/day1/task1" unique_id=1790408629]
+layout_direction = 2
+layout_mode = 0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 5.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
+
+[node name="text" type="Label" parent="map behind/room/tasks/day1/task1" unique_id=115280092]
+layout_direction = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = -13.0
+offset_right = 131.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 14
+text = "Discover the area."
+vertical_alignment = 1
+
+[node name="done" type="Control" parent="map behind/room/tasks/day1/task1" unique_id=1299267010]
+visible = false
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="red_line" type="Panel" parent="map behind/room/tasks/day1/task1/done" unique_id=1378474082]
+layout_direction = 2
+layout_mode = 0
+offset_left = -3.845398
+offset_top = -1.0479736
+offset_right = -0.24182129
+offset_bottom = 38.130463
+rotation = 0.9626736
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
+
+[node name="done1" type="Panel" parent="map behind/room/tasks/day1/task1/done" unique_id=1197772792]
+layout_direction = 2
+layout_mode = 0
+offset_left = -3.0295715
+offset_top = 1.9082184
+offset_right = 7.6251526
+offset_bottom = 41.22783
+rotation = -0.5877817
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
+
+[node name="done2" type="Panel" parent="map behind/room/tasks/day1/task1/done" unique_id=10427462]
+layout_direction = 2
+layout_mode = 0
+offset_left = 10.0
+offset_right = 106.0
+offset_bottom = 39.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
+
+[node name="task2" type="Control" parent="map behind/room/tasks/day1" unique_id=1295540046]
+visible = false
+layout_direction = 2
+anchors_preset = 0
+offset_left = -364.0
+offset_top = -178.0
+offset_right = -241.0
+offset_bottom = -138.0
+mouse_filter = 2
+
+[node name="square" type="Panel" parent="map behind/room/tasks/day1/task2" unique_id=1497833224]
+layout_direction = 2
+layout_mode = 0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 5.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
+
+[node name="text" type="Label" parent="map behind/room/tasks/day1/task2" unique_id=1240203777]
+layout_direction = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = -13.0
+offset_right = 131.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 14
+text = "Open the computer."
+vertical_alignment = 1
+
+[node name="done" type="Control" parent="map behind/room/tasks/day1/task2" unique_id=1931622200]
+visible = false
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="red_line" type="Panel" parent="map behind/room/tasks/day1/task2/done" unique_id=2099213656]
+layout_direction = 2
+layout_mode = 0
+offset_left = -3.845398
+offset_top = -1.0479736
+offset_right = -0.24182129
+offset_bottom = 38.130463
+rotation = 0.9626736
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
+
+[node name="done1" type="Panel" parent="map behind/room/tasks/day1/task2/done" unique_id=186250221]
+layout_direction = 2
+layout_mode = 0
+offset_left = -3.0295715
+offset_top = 1.9082184
+offset_right = 7.6251526
+offset_bottom = 41.22783
+rotation = -0.5877817
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
+
+[node name="done2" type="Panel" parent="map behind/room/tasks/day1/task2/done" unique_id=2144459027]
+layout_direction = 2
+layout_mode = 0
+offset_left = 10.0
+offset_right = 115.0
+offset_bottom = 39.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
+
+[node name="task3" type="Control" parent="map behind/room/tasks/day1" unique_id=2015458067]
+visible = false
+layout_direction = 2
+anchors_preset = 0
+offset_left = -364.0
+offset_top = -161.0
+offset_right = -241.0
+offset_bottom = -121.0
+mouse_filter = 2
+
+[node name="square" type="Panel" parent="map behind/room/tasks/day1/task3" unique_id=1455714262]
+layout_direction = 2
+layout_mode = 0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 5.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
+
+[node name="text" type="Label" parent="map behind/room/tasks/day1/task3" unique_id=337663303]
+layout_direction = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = -13.0
+offset_right = 163.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 14
+text = "Report to the radio! (Sec 1)"
+autowrap_mode = 2
+
+[node name="done" type="Control" parent="map behind/room/tasks/day1/task3" unique_id=1180040795]
+visible = false
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="red_line" type="Panel" parent="map behind/room/tasks/day1/task3/done" unique_id=1242009214]
+layout_direction = 2
+layout_mode = 0
+offset_left = -3.845398
+offset_top = -1.0479736
+offset_right = -0.24182129
+offset_bottom = 38.130463
+rotation = 0.9626736
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
+
+[node name="done1" type="Panel" parent="map behind/room/tasks/day1/task3/done" unique_id=3819402]
+layout_direction = 2
+layout_mode = 0
+offset_left = -3.0295715
+offset_top = 1.9082184
+offset_right = 7.6251526
+offset_bottom = 41.22783
+rotation = -0.5877817
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
+
+[node name="done2" type="Panel" parent="map behind/room/tasks/day1/task3/done" unique_id=1750019167]
+layout_direction = 2
+layout_mode = 0
+offset_left = 10.0
+offset_right = 156.0
+offset_bottom = 39.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
+
+[node name="task4" type="Control" parent="map behind/room/tasks/day1" unique_id=415202400]
+visible = false
+layout_direction = 2
+anchors_preset = 0
+offset_left = -364.0
+offset_top = -143.0
+offset_right = -241.0
+offset_bottom = -103.0
+mouse_filter = 2
+
+[node name="text" type="Label" parent="map behind/room/tasks/day1/task4" unique_id=503089493]
+layout_direction = 2
+layout_mode = 0
+offset_left = -4.0
+offset_top = -13.0
+offset_right = 160.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 14
+text = "- You'll never see it changing!"
+vertical_alignment = 1
+
+[node name="done" type="Control" parent="map behind/room/tasks/day1/task4" unique_id=104070359]
+visible = false
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="red_line" type="Panel" parent="map behind/room/tasks/day1/task4/done" unique_id=1662540483]
+layout_direction = 2
+layout_mode = 0
+offset_left = -3.845398
+offset_top = -1.0479736
+offset_right = -0.24182129
+offset_bottom = 38.130463
+rotation = 0.9626736
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
+
+[node name="done1" type="Panel" parent="map behind/room/tasks/day1/task4/done" unique_id=1254332275]
+layout_direction = 2
+layout_mode = 0
+offset_left = -3.0295715
+offset_top = 1.9082184
+offset_right = 7.6251526
+offset_bottom = 41.22783
+rotation = -0.5877817
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
+
+[node name="done2" type="Panel" parent="map behind/room/tasks/day1/task4/done" unique_id=1850243944]
+layout_direction = 2
+layout_mode = 0
+offset_left = 10.0
+offset_right = 115.0
+offset_bottom = 39.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
 
 [node name="out_left" type="Node2D" parent="map behind" unique_id=2087284646]
 position = Vector2(-3296, 0)
@@ -1724,7 +2046,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_37s47")
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-3002, -31)
+position = Vector2(-463, -31)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
@@ -2968,6 +3290,7 @@ theme_override_font_sizes/font_size = 38
 text = "cam 04"
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
+visible = false
 
 [node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
 
@@ -3051,6 +3374,7 @@ shape = SubResource("RectangleShape2D_ssvqc")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
+visible = false
 
 [node name="close_cam" type="Button" parent="CanvasLayer" unique_id=170245993]
 visible = false
@@ -3077,7 +3401,7 @@ offset_bottom = 113.0
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 33
 text = "Shift 1"
 
 [node name="press_e" type="Label" parent="CanvasLayer" unique_id=1381870537]
@@ -3098,14 +3422,14 @@ vertical_alignment = 1
 [node name="danger" type="Label" parent="CanvasLayer" unique_id=1023276724]
 visible = false
 layout_direction = 2
-offset_left = 850.0
+offset_left = 973.0
 offset_top = 8.0
 offset_right = 1246.0
 offset_bottom = 69.0
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 33
 text = "Danger"
 horizontal_alignment = 3
 
@@ -3113,13 +3437,13 @@ horizontal_alignment = 3
 visible = false
 layout_direction = 2
 offset_left = 813.0
-offset_top = 67.0
+offset_top = 48.0
 offset_right = 1247.0
-offset_bottom = 172.0
+offset_bottom = 153.0
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 33
 text = "Wrong Reports 0/3"
 horizontal_alignment = 2
 
@@ -3145,7 +3469,7 @@ offset_bottom = 113.0
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 33
 text = "00:00"
 horizontal_alignment = 1
 
@@ -3260,7 +3584,6 @@ vertical_alignment = 1
 wait_time = 20.0
 
 [node name="bad_time" type="Timer" parent="timers" unique_id=288077826]
-autostart = true
 
 [node name="call_time" type="Timer" parent="timers" unique_id=177694698]
 
@@ -3273,6 +3596,7 @@ wait_time = 7.0
 
 [node name="ringtone" type="AudioStreamPlayer" parent="sfx" unique_id=1353244250]
 stream = ExtResource("10_vtaks")
+volume_db = -80.0
 parameters/looping = true
 
 [node name="dia" type="AudioStreamPlayer" parent="sfx" unique_id=590644922]
@@ -3328,14 +3652,6 @@ scale = Vector2(2.4554963, 1.3607843)
 energy = 0.56
 blend_mode = 1
 texture = ExtResource("19_264po")
-
-[node name="Panel" type="Panel" parent="lights" unique_id=2134187755]
-offset_left = -1816.0
-offset_top = 276.0
-offset_right = -1776.0
-offset_bottom = 316.0
-scale = Vector2(29.94655, 16.119474)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 
 [connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
 [connection signal="pressed" from="player/room/menu/creatures" to="." method="_on_creatures_pressed"]

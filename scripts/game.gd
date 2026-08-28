@@ -11,8 +11,8 @@ var switch_area = 0
 
 var radio_opened = 0
 
-var opened_cam = 3
-var player_name = "عمار"
+var opened_cam = 1
+var player_name = global.player_name
 
 
 #var collect = preload("res://audio/collect.mp3")
@@ -28,6 +28,8 @@ var radio_signal = preload("res://audio/radio_signal.mp3")
 var wrong_signal = preload("res://audio/wrong_singal.mp3")
 var correct = preload("res://audio/correct.mp3")
 var click_switch = preload("res://audio/click_switch.mp3")
+var sudden = preload("res://audio/sudden.mp3")
+
 
 
 func play_sound(sound):
@@ -88,6 +90,11 @@ func translation():
 	
 	$CanvasLayer/press_e.text = tr("press_e")
 	
+	$"map behind/room/tasks/day1/task1/text".text = tr("day1tadsk1") + " (" + str(discovered1+discovered2+discovered3+discovered4) + "/4)"
+	$"map behind/room/tasks/day1/task2/text".text = tr("day1task2")
+	$"map behind/room/tasks/day1/task3/text".text = tr("day1task3")
+	
+	
 	
 var pc = 1
 
@@ -100,6 +107,9 @@ func _ready() -> void:
 	translation()
 	
 	phone_up()
+	
+	developer()
+	
 	#phone_down()
 	
 	
@@ -117,7 +127,7 @@ func _on_radio_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 		open_radio()
 
 func _on_switch_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed :
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and switch_area:
 		play_sound(click_switch)
 		if $lights/room.visible:
 			$lights/room.visible = 0
@@ -144,8 +154,17 @@ func open_cam():
 	walking_sound.stop()
 	$CanvasLayer/press_e.visible = 0
 	
+	if !day1task2 && day1call1_done:
+		day1task2_apply()
+		
+
 	stop_move()
+
+
 func close_cam():
+	if !day1task2 && day1call1_done:
+		return
+	
 	$CanvasLayer/close_cam.visible = 0
 	
 	play_sound(cam_off)
@@ -161,12 +180,18 @@ func close_cam():
 	
 	computer_opened = 0
 	allow_move()
+	await get_tree().create_timer(0.2).timeout
+	allow_move()
+	day1task2 = 1
+
 
 func open_radio():
 	$player/room/menu.visible = 1
 	radio_opened = 1
 	$sfx/radio.play()
 	$CanvasLayer/press_e.visible = 0
+	#if !day1task2:
+		#
 	
 
 func close_radio():
@@ -210,11 +235,18 @@ func _process(delta: float) -> void:
 	#print(p1+p2+p3+p4)
 	#print(computer_opened)
 	if computer_opened:
+		if !day1task2 && day1call1_done:
+			$"map above/cams".get_child(opened_cam-1).visible = 1
+			$"map above/cams".get_child(opened_cam-1).enabled = 1
+			return
+		
 		$"map above/cams".get_child(opened_cam-1).visible = 0
 		$"map above/cams".get_child(opened_cam-1).enabled = 0
 		#print(opened_cam)
+
 		if Input.is_action_just_pressed("left"):
 			#print("hi")
+
 			opened_cam -= 1
 			if opened_cam == 0:
 				opened_cam = 4
@@ -417,6 +449,19 @@ var p2 = 0
 var p3 = 0
 var p4 = 0
 
+func developer():
+	discovered1 = 1
+	discovered2 = 1
+	discovered3 = 1
+	discovered4 = 1
+	#$"map behind/room/tasks/day1/task1/text".text = tr("day1task1") + " (" + str(discovered1+discovered2+discovered3+discovered4) + "/4)"
+	discovering()
+
+var discovered1 = 0
+var discovered2 = 0
+var discovered3 = 0
+var discovered4 = 0
+
 func _on_p_1_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
 		#print("anomaly")
@@ -424,6 +469,8 @@ func _on_p_1_body_entered(body: Node2D) -> void:
 		p1_anomalies.append(body)
 	if body == $player:
 		p1 = 1
+		discovered1 = 1
+		discovering()
 func _on_p_1_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
 		#print("anomaly")
@@ -450,6 +497,9 @@ func _on_p_2_body_entered(body: Node2D) -> void:
 		p2_anomalies.append(body)
 	if body == $player:
 		p2 = 1
+		discovered2 = 1
+		discovering()
+		
 func _on_p_2_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
 		#print("anomaly")
@@ -477,6 +527,9 @@ func _on_p_3_body_entered(body: Node2D) -> void:
 		p3_anomalies.append(body)
 	if body == $player:
 		p3 = 1
+		discovered3 = 1
+		discovering()
+		
 func _on_p_3_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
 		#print("anomaly")
@@ -500,6 +553,9 @@ func _on_p_4_body_entered(body: Node2D) -> void:
 		p4_anomalies.append(body)
 	if body == $player:
 		p4 = 1
+		discovered4 = 1
+		discovering()
+		
 func _on_p_4_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D && body.anomaly :
 		#print("anomaly")
@@ -567,8 +623,8 @@ func apply_anomaly_event():
 		for j in range(i["prob"]):
 			anomaly_events_prob.append(i)
 			
-	print (anomaly_events_prob)
-	print(opened_cam)
+	#print (anomaly_events_prob)
+	#print(opened_cam)
 	
 	var temp = randi_range(0, len(anomaly_events_prob)-1)
 	var temp2
@@ -696,6 +752,8 @@ var anomaly_events_prob = []
 func clear_anomaly_event(area):
 	play_sound(radio_signal)
 	await get_tree().create_timer(2.0).timeout
+	if !day1task3:
+		day1task3_apply(area)
 	
 	for i in anomaly_events:
 		if i["area"] == area && i["exist"] == 1:
@@ -775,7 +833,7 @@ func _on_back_pressed() -> void:
 	$player/room/menu.visible = 1
 
 var bad_time = 0
-var max_bad_time = 500
+var max_bad_time = 300
 #var danger = 0
 
 func _on_bad_time_timeout() -> void:
@@ -817,7 +875,7 @@ func _on_ps_4_body_exited(body: Node2D) -> void:
 	if body == $player:
 		ps4 = 0
 
-var shift_time = 320
+var shift_time = 0
 
 func _on_shift_time_timeout() -> void:
 	shift_time += 1
@@ -848,6 +906,74 @@ func _on_room_body_exited(body: Node2D) -> void:
 		$sfx/walk_dirt.play()
 		$sfx/walk_wood.stop()
 
+var day1call1_done = 0
+var discovered = 0
+var day1task2 = 1
+var day1task3 = 0
+var day1task4 = 0
+
+func discovering():
+	$"map behind/room/tasks/day1/task1/text".text = tr("day1task1") + " (" + str(discovered1+discovered2+discovered3+discovered4) + "/4)"
+	
+	if discovered:
+		return
+	
+	if discovered1 && discovered2 && discovered3 && discovered4:
+		discovered = 1
+		$"map behind/room/tasks/day1/task1/done".visible = 1
+		if day1call1_done:
+			$"map behind/room/tasks/day1/task2".visible = 1
+		
+		day1task2 = 0
+		opened_cam = 1
+	
+
+func day1task2_apply():
+	await get_tree().create_timer(2.0).timeout
+	play_sound(sudden)
+	var temp2 = 2
+	anomaly_events[temp2]["exist"] = 1
+	if anomaly_events[temp2]["prob"] > 1:
+		anomaly_events[temp2]["prob"] -= 1
+	if anomaly_events[temp2]["show"] != null:
+		for i in anomaly_events[temp2]["show"]:
+			get_node_or_null(i).visible = 1
+	if anomaly_events[temp2]["hide"] != null:
+		for i in anomaly_events[temp2]["hide"]:
+			get_node_or_null(i).visible = 0
+			
+	anomaly_events_count += 1
+	await get_tree().create_timer(1.0).timeout
+	day1task2 = 1
+	
+	close_cam()
+	$"map behind/room/tasks/day1/task2/done".visible = 1
+	$"map behind/room/tasks/day1/task3".visible = 1
+	radio_access_on()
+	
+	allow_move()
+
+func day1task3_apply(area):
+	if area == 1:
+		day1task3 = 1
+		$"map behind/room/tasks/day1/task3/done".visible = 1
+		$"map behind/room/tasks/day1/task4".visible = 1
+		await get_tree().create_timer(0.8).timeout
+		play_sound(start_sound)
+		radio_access_on()
+		
+		$CanvasLayer/danger.visible = 1
+		$CanvasLayer/reports.visible = 1
+		
+		$CanvasLayer/shift.visible = 1
+		$CanvasLayer/time.visible = 1
+		$CanvasLayer/subtitles.text = ""
+		
+		$timers/spawn.start()
+		$timers/shift_time.start()
+	else:
+		wrong_reports_conut -= 1
+
 func day1_call1():
 	if chat_msg > 8:
 		chat_msg = 0
@@ -873,19 +999,9 @@ func day1_start():
 	$timers/skip_msg.stop()
 	call_index = 1
 	
-	await get_tree().create_timer(0.8).timeout
-	play_sound(start_sound)
-	radio_access_on()
-	
-	$CanvasLayer/danger.visible = 1
-	$CanvasLayer/reports.visible = 1
-	
-	$CanvasLayer/shift.visible = 1
-	$CanvasLayer/time.visible = 1
-	$CanvasLayer/subtitles.text = ""
-	
-	$timers/spawn.start()
-	$timers/shift_time.start()
+	day1call1_done = 1
+	if discovered:
+		$"map behind/room/tasks/day1/task2".visible = 1
 
 
 

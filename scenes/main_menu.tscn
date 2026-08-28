@@ -23,5 +23,14 @@ text = "English"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1070363919]
 
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1627626101]
+offset_left = 493.0
+offset_top = 113.0
+offset_right = 895.0
+offset_bottom = 209.0
+theme_override_font_sizes/font_size = 64
+placeholder_text = "Name ..."
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]

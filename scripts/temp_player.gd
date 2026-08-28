@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		walk = 1
 	
 	if Input.is_action_pressed("sprint"):
-		SPEED = 450
+		SPEED = 1000
 		JUMP_VELOCITY = -350.0
 		sprint = 1
 		
