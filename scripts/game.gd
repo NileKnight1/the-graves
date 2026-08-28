@@ -42,6 +42,8 @@ func play_sound(sound):
 
 func translation():
 	#TranslationServer.set_locale("ar") 
+	$player.get_child(0).text = player_name
+	
 	$player/room/menu/title.text = tr("report_radio")
 	$player/room/environment/title.text = tr("report_radio")
 	$player/room/creatures/title.text = tr("report_radio")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c4giicxigeufk" path="res://scripts/temp_player.gd" id="1_qc3fp"]
 [ext_resource type="Texture2D" uid="uid://vrvesx3meffb" path="res://assets/player/walk/frame_00013.png" id="7_3fv0j"]
 [ext_resource type="Texture2D" uid="uid://dayivaano3frf" path="res://assets/player/walk/frame_00008.png" id="8_7kblh"]
+[ext_resource type="FontFile" uid="uid://deescy0invitk" path="res://assets/HennyPenny-Regular.ttf" id="8_ed2sy"]
 [ext_resource type="Texture2D" uid="uid://dc8a8le85l7e2" path="res://assets/player/walk/frame_00009.png" id="9_86l30"]
 [ext_resource type="Texture2D" uid="uid://0a7bj2l3qj3r" path="res://assets/player/walk/frame_00010.png" id="10_bxwro"]
 [ext_resource type="Texture2D" uid="uid://bm386hllcc4fx" path="res://assets/player/walk/frame_00011.png" id="11_8w310"]
@@ -153,14 +154,31 @@ bg_color = Color(0.26449275, 0.518242, 0.40182313, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qc3fp"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6pee"]
+bg_color = Color(0.68499994, 0.65, 1, 1)
+skew = Vector2(0.215, 0.32)
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=312059141]
 script = ExtResource("1_qc3fp")
+
+[node name="name" type="Label" parent="." unique_id=1234178152]
+light_mask = 2
+z_index = 3
+layout_direction = 2
+offset_left = 11.0
+offset_top = -160.0
+offset_right = 62.0
+offset_bottom = -140.0
+theme_override_fonts/font = ExtResource("8_ed2sy")
+theme_override_font_sizes/font_size = 10
+text = "Ammar"
+vertical_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=805986178]
 position = Vector2(19, -50.000004)
 scale = Vector2(0.38833338, 0.3883334)
 sprite_frames = SubResource("SpriteFrames_h0i82")
-animation = &"sprint"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Panel" type="Panel" parent="." unique_id=1222239789]
@@ -176,3 +194,15 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_v6iek")
 position = Vector2(22.000002, 13.000002)
 scale = Vector2(1.9094183, 1.9094183)
 shape = SubResource("CircleShape2D_qc3fp")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1074505597]
+light_mask = 2
+z_index = 3
+layout_direction = 2
+offset_left = -0.44088542
+offset_top = -152.0
+offset_right = 7.485895
+offset_bottom = -144.06969
+rotation = -0.7624315
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r6pee")

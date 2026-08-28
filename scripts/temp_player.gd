@@ -7,6 +7,7 @@ var sprint = 0
 var move = 1
 var walk = 0 
 
+
 func _physics_process(delta: float) -> void:
 	if !move:
 		#print("hi")
