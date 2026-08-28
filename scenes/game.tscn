@@ -492,6 +492,13 @@ corner_radius_bottom_left = 15
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5newe"]
+playback_mode = 1
+random_pitch = 1.1024144
+streams_count = 1
+stream_0/stream = ExtResource("11_kvpfn")
+stream_0/weight = 8.018
+
 [node name="game" type="Node2D" unique_id=275808026]
 script = ExtResource("1_lnu2h")
 
@@ -3601,7 +3608,7 @@ volume_db = -80.0
 parameters/looping = true
 
 [node name="dia" type="AudioStreamPlayer" parent="sfx" unique_id=590644922]
-stream = ExtResource("11_kvpfn")
+stream = SubResource("AudioStreamRandomizer_5newe")
 
 [node name="radio" type="AudioStreamPlayer" parent="sfx" unique_id=1904667190]
 stream = ExtResource("12_dinhu")

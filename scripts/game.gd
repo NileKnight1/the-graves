@@ -277,8 +277,8 @@ func _process(delta: float) -> void:
 		match shift:
 			1:
 				match call_index:
-					0: day1_call1()
-					1: day1_call2()
+					0: day_call(chat1_array, day1_start)
+					1: day_call(day1_call2_chat, end_day1)
 			2:
 				pass
 
@@ -334,8 +334,8 @@ func _on_accept_call_pressed() -> void:
 	match shift:
 		1:
 			match call_index:
-				0: day1_call1()
-				1: day1_call2()
+				0: day_call(chat1_array, day1_start)
+				1: day_call(day1_call2_chat, end_day1)
 		2:
 			pass
 			
@@ -369,18 +369,6 @@ func _on_call_time_timeout() -> void:
 		$player/phone/accepted/time.text += "0"
 	$player/phone/accepted/time.text += str(seconds)
 
-var chat1_array = [
-	"chat1msg1",  
-	"chat1msg2", 
-	"chat1msg3", 
-	"chat1msg4", 
-	"chat1msg5", 
-	"chat1msg6", 
-	"chat1msg7", 
-	"chat1msg8", 
-	"chat1msg9", 
-]
-
 var chat_msg = 0
 
 func _on_skip_msg_timeout() -> void:
@@ -390,8 +378,8 @@ func _on_skip_msg_timeout() -> void:
 	match shift:
 		1:
 			match call_index:
-				0: day1_call1()
-				1: day1_call2()
+				0: day_call(chat1_array, day1_start)
+				1: day_call(day1_call2_chat, end_day1)
 		2:
 			pass
 
@@ -1014,30 +1002,9 @@ func day1task3_apply(area):
 		subtitle("day1sub4", 2.0)
 		await get_tree().create_timer(5.0).timeout
 		subtitle("", 0.0)
-		
-
 
 	else:
 		wrong_reports_conut -= 1
-
-func day1_call1():
-	if chat_msg > 8:
-		chat_msg = 0
-		calling = 0
-		$timers/skip_msg.stop()
-		phone_down()
-		day1_start()
-		return
-	
-	var temp = tr(chat1_array[chat_msg])
-	if "%s" in temp:
-		$CanvasLayer/subtitles.text = temp % player_name
-		print(temp)
-	else:
-		$CanvasLayer/subtitles.text = temp
-	#play_sound(dialogue)
-	#dialogue.play()
-	$sfx/dia.play()
 
 func day1_start():
 	$sfx/dia.stop()
@@ -1058,30 +1025,87 @@ func day1_start():
 			await get_tree().create_timer(1.0).timeout
 			day1task2_apply()
 
-
-var day1_call2_chat = [
-	"chat2msg1",
-	"chat2msg2",
-	"chat2msg3",
+var chat1_array = [
+	["chat1msg1", 2],  
+	["chat1msg2", 3.5], 
+	["chat1msg3", 3.5], 
+	["chat1msg4", 3.5], 
+	["chat1msg5", 4.5], 
+	["chat1msg6", 3.5], 
+	["chat1msg7", 1.5], 
+	["chat1msg8", 1.5], 
+	["chat1msg9", 0.5], 
 ]
 
-func day1_call2():
-	if chat_msg > 2:
+var day1_call2_chat = [
+	["chat2msg1", 1],
+	["chat2msg2", 1],
+	["chat2msg3", 1],
+]
+
+func day_call(chat, target):
+	if chat_msg == len(chat):
 		chat_msg = 0
 		calling = 0
 		$timers/skip_msg.stop()
 		phone_down()
-		await get_tree().create_timer(1.0).timeout
-		end_day1()
+		target.call()
 		return
+	var temp = tr(chat[chat_msg][0])
 	
-	var temp = tr(day1_call2_chat[chat_msg])
+	$CanvasLayer/subtitles.visible_ratio = 0
+	var temp_sec = randi_range(0, 17)
+	$sfx/dia.play(temp_sec)
+	var tween = create_tween()
+	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
+
 	if "%s" in temp:
 		$CanvasLayer/subtitles.text = temp % player_name
-		print(temp)
 	else:
 		$CanvasLayer/subtitles.text = temp
-	$sfx/dia.play()
+	
+
+
+
+	await get_tree().create_timer(chat[chat_msg][1]).timeout
+	$sfx/dia.stop()
+	
+	
+#
+#func day1_call1():
+	#if chat_msg > 8:
+		#chat_msg = 0
+		#calling = 0
+		#$timers/skip_msg.stop()
+		#phone_down()
+		#day1_start()
+		#return
+	#
+	#var temp = tr(chat1_array[chat_msg])
+	#if "%s" in temp:
+		#$CanvasLayer/subtitles.text = temp % player_name
+	#else:
+		#$CanvasLayer/subtitles.text = temp
+	#$sfx/dia.play()
+
+#
+#func day1_call2():
+	#if chat_msg > 2:
+		#chat_msg = 0
+		#calling = 0
+		#$timers/skip_msg.stop()
+		#phone_down()
+		#await get_tree().create_timer(1.0).timeout
+		#end_day1()
+		#return
+	#
+	#var temp = tr(day1_call2_chat[chat_msg])
+	#if "%s" in temp:
+		#$CanvasLayer/subtitles.text = temp % player_name
+	#else:
+		#$CanvasLayer/subtitles.text = temp
+	#$sfx/dia.play()
+
 
 func end_day1():
 	$sfx/morning.stop()
