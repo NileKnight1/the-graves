@@ -156,7 +156,7 @@ func open_cam():
 	
 	if !day1task2 && day1call1_done:
 		day1task2_apply()
-		
+
 
 	stop_move()
 
@@ -164,6 +164,13 @@ func open_cam():
 func close_cam():
 	if !day1task2 && day1call1_done:
 		return
+	
+	if day1task2 || !day1call1_done:
+		$"map above/cams".get_child(opened_cam-1).visible = 0
+		$"map above/cams".get_child(opened_cam-1).enabled = 0
+		opened_cam = 1
+		$"map above/cams".get_child(opened_cam-1).visible = 1
+		$"map above/cams".get_child(opened_cam-1).enabled = 1
 	
 	$CanvasLayer/close_cam.visible = 0
 	
@@ -182,7 +189,8 @@ func close_cam():
 	allow_move()
 	await get_tree().create_timer(0.2).timeout
 	allow_move()
-	day1task2 = 1
+	if day1call1_done:
+		day1task2 = 1
 
 
 func open_radio():
@@ -202,6 +210,7 @@ func close_radio():
 	radio_opened = 0
 
 func _process(delta: float) -> void:
+	#print(day1task2)
 	if $player.walk && $player.move:
 		if !walking_sound.playing:
 			walking_sound.play()
@@ -776,9 +785,16 @@ func clear_anomaly_event(area):
 				#win()
 	if wrong_report:
 		wrong_report_penalty()
+		subtitle("wrong_report", 0.6)
 	else:
 		play_sound(correct)
+		subtitle("right_report", 0.6)
 	wrong_report = 1
+	
+	await get_tree().create_timer(1.0).timeout
+	subtitle("", 0)
+	
+
 
 var wrong_report = 1
 var wrong_reports_conut = 0
@@ -839,8 +855,7 @@ var max_bad_time = 300
 func _on_bad_time_timeout() -> void:
 	bad_time += anomaly_events_count
 	$CanvasLayer/danger.text = tr("danger") + " " + str(bad_time) + "/" + str(max_bad_time)
-	
-	
+
 	if bad_time > max_bad_time:
 		lose()
 
@@ -906,6 +921,12 @@ func _on_room_body_exited(body: Node2D) -> void:
 		$sfx/walk_dirt.play()
 		$sfx/walk_wood.stop()
 
+func subtitle(sub, time):
+	$CanvasLayer/subtitles.text = tr(sub)
+	$sfx/sub.play()
+	await get_tree().create_timer(time).timeout
+	$sfx/sub.stop()
+
 var day1call1_done = 0
 var discovered = 0
 var day1task2 = 1
@@ -929,6 +950,13 @@ func discovering():
 	
 
 func day1task2_apply():
+	if day1task2:
+		return
+	
+	
+	await get_tree().create_timer(0.5).timeout
+	subtitle("day1sub1", 0.5)
+	
 	await get_tree().create_timer(2.0).timeout
 	play_sound(sudden)
 	var temp2 = 2
@@ -943,10 +971,15 @@ func day1task2_apply():
 			get_node_or_null(i).visible = 0
 			
 	anomaly_events_count += 1
+	subtitle("day1sub2", 0.5)
+	
 	await get_tree().create_timer(1.0).timeout
 	day1task2 = 1
 	
+	
+	
 	close_cam()
+	
 	$"map behind/room/tasks/day1/task2/done".visible = 1
 	$"map behind/room/tasks/day1/task3".visible = 1
 	radio_access_on()
@@ -957,7 +990,10 @@ func day1task3_apply(area):
 	if area == 1:
 		day1task3 = 1
 		$"map behind/room/tasks/day1/task3/done".visible = 1
-		$"map behind/room/tasks/day1/task4".visible = 1
+		#$"map behind/room/tasks/day1/task4".visible = 1
+		await get_tree().create_timer(2.0).timeout
+		
+		subtitle("day1sub3", 1.0)
 		await get_tree().create_timer(0.8).timeout
 		play_sound(start_sound)
 		radio_access_on()
@@ -971,6 +1007,10 @@ func day1task3_apply(area):
 		
 		$timers/spawn.start()
 		$timers/shift_time.start()
+		
+		await get_tree().create_timer(5.0).timeout
+		subtitle("", 0)
+
 	else:
 		wrong_reports_conut -= 1
 
@@ -1000,9 +1040,17 @@ func day1_start():
 	call_index = 1
 	
 	day1call1_done = 1
+	
 	if discovered:
 		$"map behind/room/tasks/day1/task2".visible = 1
-
+		if computer_opened:
+			$"map above/cams".get_child(opened_cam-1).visible = 0
+			$"map above/cams".get_child(opened_cam-1).enabled = 0
+			opened_cam = 1
+			$"map above/cams".get_child(opened_cam-1).visible = 1
+			$"map above/cams".get_child(opened_cam-1).enabled = 1
+			await get_tree().create_timer(1.0).timeout
+			day1task2_apply()
 
 
 var day1_call2_chat = [

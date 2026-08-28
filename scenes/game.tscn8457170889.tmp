@@ -19,7 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://t6a1ps8ee86" path="res://audio/walking_wood.mp3" id="16_ca42v"]
 [ext_resource type="AudioStream" uid="uid://ydxyyrrs28d7" path="res://audio/morning.mp3" id="17_rysoc"]
 [ext_resource type="Texture2D" uid="uid://bqmj5f70pyrd2" path="res://assets/cone.png" id="18_ssvqc"]
-[ext_resource type="AudioStream" uid="uid://d0l4ciu1e13h1" path="res://audio/sub.mp3" id="19_5newe"]
 [ext_resource type="Texture2D" uid="uid://74yjv8hvpbk8" path="res://assets/rect.png" id="19_264po"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
@@ -3629,10 +3628,6 @@ parameters/looping = true
 
 [node name="morning" type="AudioStreamPlayer" parent="sfx" unique_id=676517257]
 stream = ExtResource("17_rysoc")
-parameters/looping = true
-
-[node name="sub" type="AudioStreamPlayer" parent="sfx" unique_id=1677365609]
-stream = ExtResource("19_5newe")
 parameters/looping = true
 
 [node name="lights" type="Node2D" parent="." unique_id=125245000]
