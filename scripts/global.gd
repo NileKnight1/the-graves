@@ -1,5 +1,5 @@
 extends Node
-var shift = 1
+var shift = 2
 var player_name = "Player"
 
 func _ready() -> void:

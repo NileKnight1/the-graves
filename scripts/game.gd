@@ -14,6 +14,8 @@ var radio_opened = 0
 var opened_cam = 1
 var player_name = global.player_name
 
+var shift_time = 0
+
 
 #var collect = preload("res://audio/collect.mp3")
 var click_phone = preload("res://audio/click_phone.mp3")
@@ -29,6 +31,8 @@ var wrong_signal = preload("res://audio/wrong_singal.mp3")
 var correct = preload("res://audio/correct.mp3")
 var click_switch = preload("res://audio/click_switch.mp3")
 var sudden = preload("res://audio/sudden.mp3")
+var punch = preload("res://audio/punch.mp3")
+
 
 
 
@@ -107,10 +111,12 @@ func _ready() -> void:
 		$CanvasLayer/mobile.visible = 1
 		pc = 0
 	translation()
-	
+	tasks()
+	#day1_end()
 	phone_up()
 	
 	developer()
+
 	
 	#phone_down()
 	
@@ -281,9 +287,9 @@ func _process(delta: float) -> void:
 				match call_index:
 					0: day_call(chat1_array, day1_start)
 					1: day_call(day1_call2_chat, day1_end)
-			#2:
-				#match call_index:
-					#0: day_call(day2_call1_chat, day2_start)
+			2:
+				match call_index:
+					0: day_call(day2_call1_chat, day2_start)
 					#1: day_call(day2_call2_chat, day2_end)
 
 
@@ -341,8 +347,10 @@ func _on_accept_call_pressed() -> void:
 				0: day_call(chat1_array, day1_start)
 				1: day_call(day1_call2_chat, day1_end)
 		2:
-			pass
-			
+			match call_index:
+				0: day_call(day2_call1_chat, day2_start)
+				#1: day_call(day2_call2_chat, day2_end)
+
 func _on_decline_call_pressed() -> void:
 	play_sound(hang_up)
 	$sfx/ringtone.stop()
@@ -358,7 +366,9 @@ func _on_decline_call_pressed() -> void:
 				0: day1_start()
 				1: day1_end()
 		2:
-			pass
+			match call_index:
+				0: day2_start()
+				#1: day1_end()
 
 var call_time = 0
 
@@ -387,7 +397,7 @@ func _on_skip_msg_timeout() -> void:
 		2:
 			pass
 
-func end_shift():
+func shift_end():
 	$timers/spawn.stop()
 	$timers/bad_time.stop()
 	$sfx/night.stop()
@@ -576,12 +586,12 @@ func _on_creature4_pressed() -> void:
 
 func _on_spawn_timeout() -> void:
 	#print("timeout")
-	
 	#spawn()
 	apply_anomaly_event()
+	$timers/spawn.wait_time = randi_range(15,20)
+	$timers/spawn.start()
 	
-	
-	pass
+
 
 func spawn():
 	#print("spawn")
@@ -895,7 +905,6 @@ func _on_ps_4_body_exited(body: Node2D) -> void:
 	if body == $player:
 		ps4 = 0
 
-var shift_time = 0
 
 func _on_shift_time_timeout() -> void:
 	shift_time += 1
@@ -910,7 +919,7 @@ func _on_shift_time_timeout() -> void:
 	$CanvasLayer/time.text += str(secs)
 	
 	if shift_time == 360:
-		end_shift()
+		shift_end()
 
 func _on_room_body_entered(body: Node2D) -> void:
 	if body == $player:
@@ -935,11 +944,36 @@ func subtitle(sub, time):
 	await get_tree().create_timer(time).timeout
 	$sfx/sub.stop()
 
-var day1call1_done = 0
-var discovered = 0
+func tasks():
+	match shift:
+		1: 
+			$"map behind/room/tasks/day1".visible = 1
+			day1call1_done = 0
+			discovered = 0
+			day1task3 = 0
+			
+		#2:$"map behind/room/tasks/day2".visible = 1
+	
+	
+
+func shift_start():
+	play_sound(start_sound)
+	radio_access_on()
+	
+	$CanvasLayer/danger.visible = 1
+	$CanvasLayer/reports.visible = 1
+	
+	$CanvasLayer/shift.visible = 1
+	$CanvasLayer/time.visible = 1
+	
+	$timers/bad_time.start()
+	$timers/spawn.start()
+	$timers/shift_time.start()
+
+var day1call1_done = 1
+var discovered = 1
 var day1task2 = 1
-var day1task3 = 0
-var day1task4 = 0
+var day1task3 = 1
 
 func discovering():
 	$"map behind/room/tasks/day1/task1/text".text = tr("day1task1") + " (" + str(discovered1+discovered2+discovered3+discovered4) + "/4)"
@@ -1003,17 +1037,8 @@ func day1task3_apply(area):
 		
 		subtitle("day1sub3", 1.0)
 		await get_tree().create_timer(2.0).timeout
-		play_sound(start_sound)
-		radio_access_on()
 		
-		$CanvasLayer/danger.visible = 1
-		$CanvasLayer/reports.visible = 1
-		
-		$CanvasLayer/shift.visible = 1
-		$CanvasLayer/time.visible = 1
-		
-		$timers/spawn.start()
-		$timers/shift_time.start()
+		shift_start()
 		
 		await get_tree().create_timer(5.0).timeout
 		subtitle("day1sub4", 2.0)
@@ -1133,20 +1158,45 @@ func day_call(chat, target):
 func day1_end():
 	$sfx/morning.stop()
 	stop_move()
-	
-	$CanvasLayer/shift2.text = tr("shift") + " " + str(shift)
-	$CanvasLayer/t1.text = tr("anomalies_reported")
-	$CanvasLayer/t2.text = tr("anomalies_left")
-	$CanvasLayer/t3.text = tr("max_danger")
-	
-	$CanvasLayer/v1.text = str(right_reports_conut)
-	$CanvasLayer/v2.text = str(anomaly_events_count)
-	$CanvasLayer/v3.text = str(bad_time)
-	
 	$CanvasLayer/black.visible = 1
+	
+	await get_tree().create_timer(1.0).timeout
+	play_sound(start_sound)
+	$CanvasLayer/shift2.text = tr("shift") + " " + str(shift)
+	
+	await get_tree().create_timer(1.5).timeout
+	$CanvasLayer/t1.text = tr("anomalies_reported")
+	$CanvasLayer/v1.text = str(right_reports_conut)
+	play_sound(punch)
+	
+	
+	await get_tree().create_timer(0.4).timeout
+	$CanvasLayer/t2.text = tr("anomalies_left")
+	$CanvasLayer/v2.text = str(anomaly_events_count)
+	play_sound(punch)
+	
+	await get_tree().create_timer(0.4).timeout
+	$CanvasLayer/t3.text = tr("max_danger")
+	$CanvasLayer/v3.text = str(bad_time)
+	play_sound(punch)
+	
+	
 	#var tween = create_tween()
 	#tween.tween_property($CanvasLayer/black, "modulate:a", 1.0 , 1.4)
+	await get_tree().create_timer(5.0).timeout
+	global.shift += 1
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	#day2_start()
+	
 
 var day2_call1_chat = [
-	[]
+	["day2call1sen1", 1.0],
+	["day2call1sen2", 1.5],
 ]
+#
+#func day2_call1():
+	#phone_up()
+
+func day2_start():
+	print("hi")
+	shift_start()
