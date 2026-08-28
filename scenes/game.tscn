@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cfj564wppea61" path="res://scenes/temp_player.tscn" id="1_uwrxv"]
 [ext_resource type="VideoStream" uid="uid://cho7udnr6dowp" path="res://assets/27519-364430915.ogv" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bgqrhww4gnhow" path="res://scenes/anomaly.tscn" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://chd4yw0eswb32" path="res://assets/progress-bar-frame.png" id="4_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://ctcmxmp2uqnw8" path="res://assets/grunge-paint-stripe-vector-brush-260nw-601672577-removebg-preview.png" id="4_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://cyqmhmc2lnv3i" path="res://assets/progress-bar-circle.png" id="5_e1j6l"]
 [ext_resource type="FontFile" uid="uid://cw8o8fcnfldoe" path="res://assets/Creepster-Regular.ttf" id="5_gee14"]
 [ext_resource type="PackedScene" uid="uid://dm5ifs68m3i33" path="res://scenes/mobile.tscn" id="5_iywne"]
 [ext_resource type="FontFile" uid="uid://deescy0invitk" path="res://assets/HennyPenny-Regular.ttf" id="6_0tnpc"]
@@ -2642,11 +2644,41 @@ rotation = 2.2178297
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_3x338")
 
+[node name="ProgressBar" type="TextureProgressBar" parent="map behind/generator" unique_id=468849089]
+visible = false
+light_mask = 2
+layout_direction = 2
+offset_left = 94.0
+offset_top = -162.0
+offset_right = 222.0
+offset_bottom = -34.0
+scale = Vector2(0.79761904, 0.79761904)
+mouse_filter = 2
+max_value = 1000.0
+value = 250.0
+fill_mode = 4
+texture_under = ExtResource("4_bt5mj")
+texture_progress = ExtResource("5_e1j6l")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="map behind/generator" unique_id=1814282063]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map behind/generator/StaticBody2D" unique_id=1188901409]
 position = Vector2(146, 50)
 shape = SubResource("RectangleShape2D_5newe")
+
+[node name="E" type="Label" parent="map behind/generator" unique_id=580490757]
+visible = false
+light_mask = 2
+layout_direction = 2
+offset_left = 110.0
+offset_top = -145.0
+offset_right = 181.0
+offset_bottom = -78.0
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 28
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
 position = Vector2(2737, -48)
@@ -4001,7 +4033,6 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_yd4ix")
 text = "X"
 
 [node name="shift" type="Label" parent="CanvasLayer" unique_id=2086180496]
-visible = false
 layout_direction = 2
 offset_left = 49.0
 offset_top = 8.0
@@ -4014,7 +4045,6 @@ theme_override_font_sizes/font_size = 33
 text = "Shift 1"
 
 [node name="press_e" type="Label" parent="CanvasLayer" unique_id=1381870537]
-visible = false
 layout_direction = 2
 offset_left = 543.0
 offset_top = 171.0
@@ -4069,7 +4099,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="time" type="Label" parent="CanvasLayer" unique_id=297290087]
-visible = false
 layout_direction = 2
 offset_left = 522.0
 offset_top = 8.0
@@ -4202,6 +4231,9 @@ wait_time = 7.0
 
 [node name="shift_time" type="Timer" parent="timers" unique_id=1733842153]
 
+[node name="generator_progress" type="Timer" parent="timers" unique_id=1618882421]
+wait_time = 0.1
+
 [node name="sfx" type="Node" parent="." unique_id=694605502]
 
 [node name="ringtone" type="AudioStreamPlayer" parent="sfx" unique_id=1353244250]
@@ -4318,3 +4350,4 @@ texture = ExtResource("19_264po")
 [connection signal="timeout" from="timers/call_time" to="." method="_on_call_time_timeout"]
 [connection signal="timeout" from="timers/skip_msg" to="." method="_on_skip_msg_timeout"]
 [connection signal="timeout" from="timers/shift_time" to="." method="_on_shift_time_timeout"]
+[connection signal="timeout" from="timers/generator_progress" to="." method="_on_generator_progress_timeout"]

@@ -248,9 +248,15 @@ func _process(delta: float) -> void:
 				$lights/room.visible = 0
 			else:
 				$lights/room.visible = 1
-		
-		if generator_area:
+
+		if generator_fixing:
+			$"map behind/generator/ProgressBar".value += 75
+			if $"map behind/generator/ProgressBar".value >= 1000:
+				generator_fixed()
+
+		if generator_area && !generator_fixing && !generator_working:
 			generator_on()
+		
 
 	#print(p1+p2+p3+p4)
 	#print(computer_opened)
@@ -1205,12 +1211,44 @@ func day2_start():
 	shift_start()
 
 var generator_area = 0
+var generator_fixing = 0
 var generator_working = 0
+var generator_dec_apply = 0
 
 func generator_on():
+	generator_dec_apply = 1
+	generator_dec()
+	generator_fixing = 1
+	#$"map behind/generator/ProgressBar".value -= 5
+	$"map behind/generator/ProgressBar".visible = 1
+	$"map behind/generator/E".visible = 1
+
+	
+	#await get_tree().create_timer(5.0).timeout
+func generator_fixed():
 	generator_working = 1
 	$"map behind/generator/on".visible = 1
 	$"map behind/generator/off".visible = 0
+	$"map behind/generator/ProgressBar".visible = 0
+	$"map behind/generator/E".visible = 0
+	
+	generator_dec_apply = 0
+	generator_fixing = 0
+
+func generator_failed():
+	generator_dec_apply = 0
+	generator_fixing = 0
+	$"map behind/generator/ProgressBar".visible = 0
+	$"map behind/generator/E".visible = 0
+	$"map behind/generator/ProgressBar".value -= 250
+
+func generator_dec():
+	while generator_dec_apply:
+		await get_tree().create_timer(0.01).timeout
+		$"map behind/generator/ProgressBar".value -= 2
+		if $"map behind/generator/ProgressBar".value <= 0:
+			generator_failed()
+
 func generator_off():
 	generator_working = 0
 	$"map behind/generator/on".visible = 0
@@ -1225,3 +1263,6 @@ func _on_generator_body_entered(body: Node2D) -> void:
 func _on_generator_body_exited(body: Node2D) -> void:
 	if body == $player:
 		generator_area = 0
+
+func _on_generator_progress_timeout() -> void:
+	pass # Replace with function body.
