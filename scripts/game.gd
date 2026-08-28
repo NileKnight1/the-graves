@@ -457,6 +457,8 @@ func developer():
 	discovered4 = 1
 	#$"map behind/room/tasks/day1/task1/text".text = tr("day1task1") + " (" + str(discovered1+discovered2+discovered3+discovered4) + "/4)"
 	discovering()
+	#day1task2 = 1
+	
 
 var discovered1 = 0
 var discovered2 = 0
@@ -752,7 +754,18 @@ var anomaly_events_prob = []
 
 func clear_anomaly_event(area):
 	play_sound(radio_signal)
+	subtitle("report_sent", 0.8)
+	$player/room/environment/p1.disabled = 1
+	$player/room/environment/p2.disabled = 1
+	$player/room/environment/p3.disabled = 1
+	$player/room/environment/p4.disabled = 1
+	
 	await get_tree().create_timer(2.0).timeout
+	$player/room/environment/p1.disabled = 0
+	$player/room/environment/p2.disabled = 0
+	$player/room/environment/p3.disabled = 0
+	$player/room/environment/p4.disabled = 0
+	
 	if !day1task3:
 		day1task3_apply(area)
 	
