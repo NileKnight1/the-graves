@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bto7mmwutn2bf"]
+
+[ext_resource type="Texture2D" uid="uid://ceygawe2jh4ws" path="res://assets/player.png" id="1_3vyb7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(410, 0, 205, 384)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D" unique_id=1187697662]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=492092898]
+sprite_frames = SubResource("SpriteFrames_qhqgy")

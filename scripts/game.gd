@@ -278,9 +278,11 @@ func _process(delta: float) -> void:
 			1:
 				match call_index:
 					0: day_call(chat1_array, day1_start)
-					1: day_call(day1_call2_chat, end_day1)
-			2:
-				pass
+					1: day_call(day1_call2_chat, day1_end)
+			#2:
+				#match call_index:
+					#0: day_call(day2_call1_chat, day2_start)
+					#1: day_call(day2_call2_chat, day2_end)
 
 
 func _on_switch_body_entered(body: Node2D) -> void:
@@ -335,7 +337,7 @@ func _on_accept_call_pressed() -> void:
 		1:
 			match call_index:
 				0: day_call(chat1_array, day1_start)
-				1: day_call(day1_call2_chat, end_day1)
+				1: day_call(day1_call2_chat, day1_end)
 		2:
 			pass
 			
@@ -352,7 +354,7 @@ func _on_decline_call_pressed() -> void:
 		1:
 			match call_index:
 				0: day1_start()
-				1: end_day1()
+				1: day1_end()
 		2:
 			pass
 
@@ -379,7 +381,7 @@ func _on_skip_msg_timeout() -> void:
 		1:
 			match call_index:
 				0: day_call(chat1_array, day1_start)
-				1: day_call(day1_call2_chat, end_day1)
+				1: day_call(day1_call2_chat, day1_end)
 		2:
 			pass
 
@@ -1058,6 +1060,12 @@ func day_call(chat, target):
 	$sfx/dia.play(temp_sec)
 	var tween = create_tween()
 	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
+	
+	#if Input.is_action_just_pressed("skip"):
+		#tween.kill()
+		#$CanvasLayer/subtitles.visible_ratio = 0
+		#print('kileed')
+		
 
 	if "%s" in temp:
 		$CanvasLayer/subtitles.text = temp % player_name
@@ -1096,7 +1104,7 @@ func day_call(chat, target):
 		#$timers/skip_msg.stop()
 		#phone_down()
 		#await get_tree().create_timer(1.0).timeout
-		#end_day1()
+		#day1_end()
 		#return
 	#
 	#var temp = tr(day1_call2_chat[chat_msg])
@@ -1107,7 +1115,7 @@ func day_call(chat, target):
 	#$sfx/dia.play()
 
 
-func end_day1():
+func day1_end():
 	$sfx/morning.stop()
 	stop_move()
 	
@@ -1123,3 +1131,7 @@ func end_day1():
 	$CanvasLayer/black.visible = 1
 	#var tween = create_tween()
 	#tween.tween_property($CanvasLayer/black, "modulate:a", 1.0 , 1.4)
+
+var day2_call1_chat = [
+	[]
+]

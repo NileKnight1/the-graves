@@ -24,6 +24,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		walk = 1
 	
+	if sprint:
+		$AnimatedSprite2D.play("sprint")
+	elif walk:
+		$AnimatedSprite2D.play("walk")
+	else:
+		$AnimatedSprite2D.play("idle")
+		
+	
+	
 	if Input.is_action_pressed("sprint"):
 		SPEED = 1000
 		JUMP_VELOCITY = -350.0
@@ -42,7 +51,14 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		if direction < 0:
+			$AnimatedSprite2D.flip_h = 1
+		else:
+			$AnimatedSprite2D.flip_h = 0
+			
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		#$AnimatedSprite2D.flip_h = 1
 
 	move_and_slide()
