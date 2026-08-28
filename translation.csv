@@ -41,9 +41,10 @@ max_danger,Maximum Danger,أقصى خطر
 press_e,Press 'E' to interact.,اضغط 'E' للاستخدام.
 day1task1,Discover the area.,استكشف المنطقة.
 day1task2,Open the computer.,افتح الحاسوب.
-day1task3,Report to the radio! (Sec 1),بلغ عن ذلك في الراديو! (قطاع 1)
-day1sub3,You'll never see it changing!,لن تراها تتغير أبدًا!
+day1task3,Report to the radio! (Sec 1),بلغ في الراديو! (قطاع 1)
+day1sub4,But you'll never see it changing!,ولكن لن تراها تتغير أبدًا!
 day1sub1,Watch carefully.,راقب بدقة.
 day1sub2,This is sector 1!,ذلك القطاع الأول.
 wrong_report,Wrong report.,إبلاغً خاطئ.
 right_report,Handled.,تم التعامل.
+day1sub3,"Put your eyes on trees, bushes, graves and etc.",ضع عيونك على الأشجار، والشجيرات، والمقابر وإلخ.

@@ -90,7 +90,7 @@ func translation():
 	
 	$CanvasLayer/press_e.text = tr("press_e")
 	
-	$"map behind/room/tasks/day1/task1/text".text = tr("day1tadsk1") + " (" + str(discovered1+discovered2+discovered3+discovered4) + "/4)"
+	$"map behind/room/tasks/day1/task1/text".text = tr("day1task1") + " (" + str(discovered1+discovered2+discovered3+discovered4) + "/4)"
 	$"map behind/room/tasks/day1/task2/text".text = tr("day1task2")
 	$"map behind/room/tasks/day1/task3/text".text = tr("day1task3")
 	
@@ -922,8 +922,11 @@ func _on_room_body_exited(body: Node2D) -> void:
 		$sfx/walk_wood.stop()
 
 func subtitle(sub, time):
+	$CanvasLayer/subtitles.visible_ratio = 0
 	$CanvasLayer/subtitles.text = tr(sub)
+	var tween = create_tween()
 	$sfx/sub.play()
+	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, time)
 	await get_tree().create_timer(time).timeout
 	$sfx/sub.stop()
 
@@ -973,7 +976,7 @@ func day1task2_apply():
 	anomaly_events_count += 1
 	subtitle("day1sub2", 0.5)
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	day1task2 = 1
 	
 	
@@ -994,7 +997,7 @@ func day1task3_apply(area):
 		await get_tree().create_timer(2.0).timeout
 		
 		subtitle("day1sub3", 1.0)
-		await get_tree().create_timer(0.8).timeout
+		await get_tree().create_timer(2.0).timeout
 		play_sound(start_sound)
 		radio_access_on()
 		
@@ -1003,13 +1006,16 @@ func day1task3_apply(area):
 		
 		$CanvasLayer/shift.visible = 1
 		$CanvasLayer/time.visible = 1
-		$CanvasLayer/subtitles.text = ""
 		
 		$timers/spawn.start()
 		$timers/shift_time.start()
 		
 		await get_tree().create_timer(5.0).timeout
-		subtitle("", 0)
+		subtitle("day1sub4", 2.0)
+		await get_tree().create_timer(5.0).timeout
+		subtitle("", 0.0)
+		
+
 
 	else:
 		wrong_reports_conut -= 1
