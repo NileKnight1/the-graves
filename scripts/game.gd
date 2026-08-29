@@ -115,8 +115,8 @@ func _ready() -> void:
 	tasks()
 	#day1_end()
 	phone_up()
-	antenna_sabo()
-	generator_sabo()
+	#antenna_sabo()
+	#generator_sabo()
 	developer()
 
 	
@@ -1534,3 +1534,23 @@ func _on_antenna_mouse_entered() -> void:
 	if antenna_area && !antenna_working && !antenna_fixing:
 		$"map behind/room/antenna/outline".visible = 0
 		$"map behind/room/antenna/hover".visible = 1
+
+
+func _on_cam_2_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_cam_2_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_cam_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.
+
+
+func _on_cam_2_mouse_entered() -> void:
+	pass # Replace with function body.
+
+
+func _on_cam_2_mouse_exited() -> void:
+	pass # Replace with function body.

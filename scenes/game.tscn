@@ -374,9 +374,9 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvpfn"]
 bg_color = Color(0.04039242, 0.13801497, 0, 1)
-border_width_left = 12
+border_width_left = 8
 border_width_top = 1
-border_width_right = 12
+border_width_right = 8
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 
@@ -833,6 +833,24 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1va0p"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tvof"]
+bg_color = Color(0.88, 0.88, 0.88, 1)
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eky20"]
+bg_color = Color(0.88, 0.88, 0.88, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsry6"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tnpc"]
 size = Vector2(1780, 707)
@@ -3942,7 +3960,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-403, -74)
+position = Vector2(-1233, -40)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
@@ -5194,6 +5212,184 @@ theme_override_colors/font_color = Color(0.60960835, 0.5529119, 0.56141627, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 38
 text = "cam 04"
+
+[node name="cams_" type="Node2D" parent="map above" unique_id=1403504653]
+
+[node name="cam2" type="Node2D" parent="map above/cams_" unique_id=1324717280]
+position = Vector2(0, 23)
+
+[node name="outline" type="Node2D" parent="map above/cams_/cam2" unique_id=369049717]
+
+[node name="Panel7" type="Panel" parent="map above/cams_/cam2/outline" unique_id=177425343]
+offset_left = -1653.0001
+offset_top = -400.04816
+offset_right = -1633.5841
+offset_bottom = -398.40985
+scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1va0p")
+
+[node name="Panel8" type="Panel" parent="map above/cams_/cam2/outline" unique_id=629900498]
+offset_left = -1644.9999
+offset_top = -384.0482
+offset_right = -1625.5839
+offset_bottom = -382.40988
+rotation = -1.5707964
+scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1va0p")
+
+[node name="Panel9" type="Panel" parent="map above/cams_/cam2/outline" unique_id=2014547220]
+offset_left = -1624.0
+offset_top = -410.04822
+offset_right = -1604.584
+offset_bottom = -408.4099
+rotation = 0.2617994
+scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1va0p")
+
+[node name="Panel6" type="Panel" parent="map above/cams_/cam2/outline" unique_id=1539567635]
+offset_left = -1633.0001
+offset_top = -407.00003
+offset_right = -1605.3451
+offset_bottom = -336.17
+rotation = -1.3048844
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2tvof")
+
+[node name="hover" type="Node2D" parent="map above/cams_/cam2" unique_id=1064582034]
+
+[node name="Panel7" type="Panel" parent="map above/cams_/cam2" unique_id=785860296]
+offset_left = -1653.0001
+offset_top = -400.04816
+offset_right = -1633.5841
+offset_bottom = -398.40985
+scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1va0p")
+
+[node name="Panel8" type="Panel" parent="map above/cams_/cam2" unique_id=1867075295]
+offset_left = -1644.9999
+offset_top = -384.0482
+offset_right = -1625.5839
+offset_bottom = -382.40988
+rotation = -1.5707964
+scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1va0p")
+
+[node name="Panel9" type="Panel" parent="map above/cams_/cam2" unique_id=1795734156]
+offset_left = -1624.0
+offset_top = -410.04822
+offset_right = -1604.584
+offset_bottom = -408.4099
+rotation = 0.2617994
+scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1va0p")
+
+[node name="Panel6" type="Panel" parent="map above/cams_/cam2" unique_id=1256776940]
+offset_left = -1633.0001
+offset_top = -407.00003
+offset_right = -1605.3451
+offset_bottom = -336.17
+rotation = -1.3048844
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eky20")
+
+[node name="Panel10" type="Panel" parent="map above/cams_/cam2" unique_id=1487204621]
+offset_left = -1571.2052
+offset_top = -394.42496
+offset_right = -1532.1235
+offset_bottom = -393.9015
+rotation = -1.3048844
+scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fsry6")
+
+[node name="on" type="Control" parent="map above/cams_/cam2" unique_id=1881983292]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1622.2322
+offset_top = -445.52808
+offset_right = -1582.2322
+offset_bottom = -405.52808
+rotation = 1.8386242
+scale = Vector2(0.42245755, 0.42245755)
+mouse_filter = 2
+
+[node name="green" type="Button" parent="map above/cams_/cam2/on" unique_id=670705251]
+light_mask = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = -28.0
+offset_right = 59.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_sxt1d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="black2" type="Button" parent="map above/cams_/cam2/on" unique_id=742435600]
+light_mask = 2
+layout_mode = 0
+offset_left = 65.0
+offset_top = -28.0
+offset_right = 89.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7gkqi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="off" type="Control" parent="map above/cams_/cam2" unique_id=177203595]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1622.2322
+offset_top = -445.52808
+offset_right = -1582.2322
+offset_bottom = -405.52808
+rotation = 1.8386242
+scale = Vector2(0.42245755, 0.42245755)
+mouse_filter = 2
+
+[node name="black1" type="Button" parent="map above/cams_/cam2/off" unique_id=510326054]
+light_mask = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = -28.0
+offset_right = 59.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7gkqi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="red" type="Button" parent="map above/cams_/cam2/off" unique_id=377891368]
+light_mask = 2
+layout_mode = 0
+offset_left = 65.0
+offset_top = -28.0
+offset_right = 89.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2iuns")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
 
