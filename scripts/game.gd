@@ -2,17 +2,18 @@ extends Node2D
 
 @onready var walking_sound = $sfx/walk_dirt
 
+var player_name = global.player_name
 var shift = global.shift
 
 var computer_area = 0
 var computer_opened = 0
 var radio_area = 0
 var switch_area = 0
-
 var radio_opened = 0
-
 var opened_cam = 1
-var player_name = global.player_name
+
+var antenna_working = 1
+var generator_working = 1
 
 var shift_time = 0
 
@@ -1264,7 +1265,6 @@ func day2_start():
 
 var generator_area = 0
 var generator_fixing = 0
-var generator_working = 0
 var generator_dec_apply = 0
 
 func generator_sabo():
@@ -1272,6 +1272,8 @@ func generator_sabo():
 	close_cam()
 	$"map behind/generator/on".visible = 0
 	$"map behind/generator/off".visible = 1
+	$"map behind/room/desk/VideoStreamPlayer".visible = 0
+	light_off()
 
 func generator_on():
 	print("gen on")
@@ -1359,7 +1361,7 @@ func _on_ladder_up_exited(body: Node2D) -> void:
 
 var antenna_area = 0
 var antenna_fixing = 0
-var antenna_working = 0
+
 
 func _on_antenna_body_entered(body: Node2D) -> void:
 	if body == $player:
@@ -1463,3 +1465,13 @@ func _on_antenna_fix_num9_pressed() -> void:
 	antenna_num_pressed(9)
 func _on_antenna_fix_num10_pressed() -> void:
 	antenna_num_pressed(10)
+
+
+func _on_cams_mouse_entered() -> void:
+	$"map behind/room/desk/hover".visible = 1
+	$"map behind/room/desk/outline". visible = 0
+func _on_cams_mouse_exited() -> void:
+	$"map behind/room/desk/hover".visible = 0
+	$"map behind/room/desk/outline". visible = 1
+	
+	

@@ -125,12 +125,13 @@ corner_radius_bottom_left = 35
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yg85"]
 bg_color = Color(0.105882354, 0.07450981, 0.0627451, 1)
-draw_center = false
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(1.8289685e-06, 0.31050372, 0.7638149, 0.6)
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8ni1"]
 bg_color = Color(0.105882354, 0.07450981, 0.0627451, 1)
@@ -220,7 +221,7 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 shadow_color = Color(0.3137255, 0.5686275, 1, 0.6)
-shadow_size = 4
+shadow_size = 7
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ms3bu"]
 bg_color = Color(0.69135684, 0.6913568, 0.69135684, 1)
@@ -728,6 +729,9 @@ size = Vector2(1720.5, 707)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(256, 247)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnb83"]
+size = Vector2(123, 97)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
 size = Vector2(174, 162)
 
@@ -960,17 +964,17 @@ disabled = true
 
 [node name="desk" type="Node2D" parent="map behind/room" unique_id=107007237]
 
-[node name="outline3" type="Panel" parent="map behind/room/desk" unique_id=669034379]
+[node name="outline" type="Panel" parent="map behind/room/desk" unique_id=866785701]
 visible = false
-offset_left = -103.96763
-offset_top = -220.65887
-offset_right = -61.867256
-offset_bottom = -178.87372
+offset_left = -101.0
+offset_top = -219.0
+offset_right = -61.0
+offset_bottom = -179.0
 scale = Vector2(2.8258097, 1.8585278)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1yg85")
 
-[node name="outline" type="Panel" parent="map behind/room/desk" unique_id=414608205]
+[node name="hover" type="Panel" parent="map behind/room/desk" unique_id=414608205]
 visible = false
 offset_left = -101.0
 offset_top = -219.0
@@ -1008,7 +1012,6 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p57ef")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="map behind/room/desk" unique_id=519414229]
-visible = false
 offset_left = -97.0
 offset_top = -212.0
 offset_right = 1823.0
@@ -2052,7 +2055,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="on" type="Control" parent="map behind/room/antenna" unique_id=1892326812]
-visible = false
 anchors_preset = 0
 offset_left = 129.0
 offset_top = -633.0
@@ -2092,6 +2094,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
 disabled = true
 
 [node name="off" type="Control" parent="map behind/room/antenna" unique_id=498410803]
+visible = false
 anchors_preset = 0
 offset_left = 129.0
 offset_top = -633.0
@@ -3479,6 +3482,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
 disabled = true
 
 [node name="off" type="Control" parent="map behind/generator" unique_id=1360191333]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -3516,7 +3520,6 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
 disabled = true
 
 [node name="on" type="Control" parent="map behind/generator" unique_id=134188931]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -3618,7 +3621,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-403, -578)
+position = Vector2(-403, -74)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
@@ -4872,7 +4875,6 @@ theme_override_font_sizes/font_size = 38
 text = "cam 04"
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
-visible = false
 
 [node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
 visible = false
@@ -4910,6 +4912,12 @@ shape = SubResource("RectangleShape2D_dinhu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/cams" unique_id=79845045]
 position = Vector2(-49, -123.5)
 shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="com" type="Area2D" parent="areas" unique_id=1258482396]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/com" unique_id=440384623]
+position = Vector2(-44.5, -173.5)
+shape = SubResource("RectangleShape2D_qnb83")
 
 [node name="radio" type="Area2D" parent="areas" unique_id=1179215348]
 position = Vector2(285, 0)
@@ -5325,7 +5333,11 @@ texture = ExtResource("19_264po")
 [connection signal="body_exited" from="areas/ps4" to="." method="_on_ps_4_body_exited"]
 [connection signal="body_entered" from="areas/cams" to="." method="_on_cams_body_entered"]
 [connection signal="body_exited" from="areas/cams" to="." method="_on_cams_body_exited"]
-[connection signal="input_event" from="areas/cams" to="." method="_on_cams_input_event"]
+[connection signal="body_entered" from="areas/com" to="." method="_on_cams_body_entered"]
+[connection signal="body_exited" from="areas/com" to="." method="_on_cams_body_exited"]
+[connection signal="input_event" from="areas/com" to="." method="_on_cams_input_event"]
+[connection signal="mouse_entered" from="areas/com" to="." method="_on_cams_mouse_entered"]
+[connection signal="mouse_exited" from="areas/com" to="." method="_on_cams_mouse_exited"]
 [connection signal="body_entered" from="areas/radio" to="." method="_on_radio_body_entered"]
 [connection signal="body_exited" from="areas/radio" to="." method="_on_radio_body_exited"]
 [connection signal="input_event" from="areas/radio" to="." method="_on_radio_input_event"]
