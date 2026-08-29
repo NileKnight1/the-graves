@@ -235,7 +235,7 @@ func _process(delta: float) -> void:
 			open_cam()
 		elif computer_opened:
 			close_cam()
-			
+	
 		if radio_area && !radio_opened:
 			open_radio()
 			#print("hi")
@@ -248,20 +248,29 @@ func _process(delta: float) -> void:
 				light_off()
 			else:
 				light_on()
-
+		
 		if generator_fixing:
 			$"map behind/generator/ProgressBar".value += 75
 			if $"map behind/generator/ProgressBar".value >= 1000:
 				generator_fixed()
-
+		
 		if generator_area && !generator_fixing && !generator_working:
 			generator_on()
 		
 		if ladder_area_down:
 			ladder_up()
+			await get_tree().create_timer(0.1).timeout
+			$"map behind/out_left/p2/ladder/outline".visible = 1
 		elif ladder_area_up:
 			ladder_down()
-
+			await get_tree().create_timer(0.1).timeout
+			$"map behind/out_left/p2/ladder/outline".visible = 1
+		
+		if antenna_area && !antenna_fixing && !antenna_working:
+			antenna_on()
+		
+	
+	
 	#print(p1+p2+p3+p4)
 	#print(computer_opened)
 	if computer_opened:
@@ -1307,10 +1316,48 @@ var ladder_area_down = 0
 var ladder_area_up = 0
 
 func _on_ladder_body_entered(body: Node2D) -> void:
-	ladder_area_down = 1
+	if body == $player:
+		ladder_area_down = 1
+		$"map behind/out_left/p2/ladder/outline".visible = 1
+		$CanvasLayer/press_e.visible = 1
 func _on_ladder_body_exited(body: Node2D) -> void:
-	ladder_area_down = 0
+	if body == $player:
+		ladder_area_down = 0
+		$"map behind/out_left/p2/ladder/outline".visible = 0
+		$CanvasLayer/press_e.visible = 0
 func _on_ladder_up_entered(body: Node2D) -> void:
-	ladder_area_up = 1
+	if body == $player:
+		ladder_area_up = 1
+		$"map behind/out_left/p2/ladder/outline".visible = 1
+		$CanvasLayer/press_e.visible = 1
 func _on_ladder_up_exited(body: Node2D) -> void:
-	ladder_area_up = 0
+	if body == $player:
+		ladder_area_up = 0
+		$"map behind/out_left/p2/ladder/outline".visible = 0
+		$CanvasLayer/press_e.visible = 0
+
+var antenna_area = 0
+var antenna_fixing = 0
+var antenna_working = 0
+
+func _on_antenna_body_entered(body: Node2D) -> void:
+	if body == $player:
+		antenna_area = 1
+		if !antenna_working:
+			$"map behind/room/antenna/outline".visible = 1
+func _on_antenna_body_exited(body: Node2D) -> void:
+	if body == $player:
+		antenna_area = 0
+		$"map behind/room/antenna/outline".visible = 0
+
+func antenna_on():
+	pass
+	
+
+func antenna_fixed():
+	antenna_fixing = 0
+	antenna_working = 1
+	$"map behind/room/antenna/outline".visible = 0
+
+func antenna_failed():
+	antenna_fixing = 0
