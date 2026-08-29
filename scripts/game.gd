@@ -118,7 +118,16 @@ func _ready() -> void:
 	#antenna_sabo()
 	#generator_sabo()
 	developer()
-
+	
+	print($player/Camera2D.position)
+	#$player/cam_fix.position.x = $player/Camera2D.position.x - 440
+	#$player/cam_fix.position.x = $player/Camera2D.position.x + 340
+	#$player/cam_fix.position.y = $player/Camera2D.position.y
+	#$player/cam_fix.position.y = $player/Camera2D.position.y - 180
+	
+	
+	
+	#print($player/Camera2D.)
 	
 	#phone_down()
 	
@@ -151,13 +160,17 @@ func _on_antenna_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and antenna_area && !antenna_fixing && !antenna_working:
 		antenna_on()
 
-
 func _on_ladder_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if ladder_area_up:
 			ladder_down()
 		elif ladder_area_down:
 			ladder_up()
+
+func _on_cam_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		cam_mouse_click(2)
+	
 
 func _on_button_pressed() -> void:
 	close_cam()
@@ -282,6 +295,9 @@ func _process(delta: float) -> void:
 		if antenna_area && !antenna_fixing && !antenna_working:
 			antenna_on()
 		
+		for i in range(4):
+			if cam_area[i] && !cam_working[i] && generator_working && !cam_fixing:
+				camera_on(i+1)
 	
 	
 	#print(p1+p2+p3+p4)
@@ -1537,20 +1553,105 @@ func _on_antenna_mouse_entered() -> void:
 
 
 func _on_cam_2_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
-
-
+	cam_entered(2)
 func _on_cam_2_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_cam_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
-
-
+	cam_exited(2)
 func _on_cam_2_mouse_entered() -> void:
-	pass # Replace with function body.
-
-
+	cam_mouse_enter(2)
 func _on_cam_2_mouse_exited() -> void:
-	pass # Replace with function body.
+	cam_mouse_exit(2)
+
+#func _on_cam_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	#cam_mouse_click(2)
+
+var cam_working = [0, 0, 0, 0]
+var cam_area = [0, 0, 0, 0]
+var cam_fixing = 0
+var cam_fix_pressed = 0
+var cam_fix_current = 1
+var cam_current = 1
+
+
+func cam_entered(num):
+	if !cam_working[num-1] && generator_working:
+		$"map above/cams_".get_child(num-1).get_child(0).visible = 1
+		cam_area[num-1] = 1
+
+func cam_exited(num):
+	$"map above/cams_".get_child(num-1).get_child(0).visible = 0
+	$"map above/cams_".get_child(num-1).get_child(1).visible = 0
+	cam_area[num-1] = 0
+
+func cam_mouse_enter(num):
+	if cam_area[num-1] && !cam_working[num-1] && generator_working:
+		$"map above/cams_".get_child(num-1).get_child(0).visible = 0
+		$"map above/cams_".get_child(num-1).get_child(1).visible = 1
+
+func cam_mouse_exit(num):
+	if cam_area[num-1] && !cam_working[num-1] && generator_working:
+		$"map above/cams_".get_child(num-1).get_child(0).visible = 1
+		$"map above/cams_".get_child(num-1).get_child(1).visible = 0
+
+func camera_on(num):
+	#$player/cam_fix.position.x = $player/Camera2D.position.x - 440
+	#$player/cam_fix.position.x = $player/Camera2D.position.x + 340
+	#$player/cam_fix.position.y = $player/Camera2D.position.y
+	#$player/cam_fix.position.y = $player/Camera2D.position.y - 180
+	cam_fixing = 1
+	cam_current = num
+	cam_fix_pressed = 0
+	cam_fix_current = 1
+	$player/cam_fix.visible = 1
+	
+	cam_fix_rand(cam_fix_current)
+
+func cam_fix_rand(x):
+	if cam_fix_pressed == 3:
+		cam_fixed()
+	
+	var tempx = randi_range($player/Camera2D.position.x - 440, $player/Camera2D.position.x + 340)
+	var tempy = randi_range($player/Camera2D.position.y, $player/Camera2D.position.y - 180)
+	$player/cam_fix.position = Vector2(tempx, tempy)
+	print("cam_fix_pressed: "+str(cam_fix_pressed))
+	print("x: "+str(x))
+	
+	
+	await get_tree().create_timer(3.0).timeout
+	if cam_fix_pressed < x:
+		cam_failed()
+
+
+
+func cam_sabo(num):
+	cam_working[num-1] = 0
+	$"map above/cams_".get_child(cam_current-1).get_child(8).visible = 0
+	$"map above/cams_".get_child(cam_current-1).get_child(7).visible = 1
+
+func cam_fixed():
+	cam_working[cam_current-1] = 1
+	cam_fixing = 0
+	$player/cam_fix.visible = 0
+	print("hia")
+	#print($"map above/cams_".get_child(cam_current-1).get_children())
+	#print(cam_current)
+	#print($"map above/cams_".get_child(cam_current-1).get_child(8))
+	
+	$"map above/cams_".get_child(cam_current-1).get_child(8).visible = 0
+	$"map above/cams_".get_child(cam_current-1).get_child(7).visible = 1
+	$"map above/cams_".get_child(cam_current-1).get_child(0).visible = 0
+	$"map above/cams_".get_child(cam_current-1).get_child(1).visible = 0
+	
+
+func cam_mouse_click(num):
+	if cam_area[num-1] && !cam_working[num-1] && generator_working && !cam_fixing:
+		camera_on(num)
+
+func cam_failed():
+	$player/cam_fix.visible = 0
+	cam_fixing = 0
+	print("loser")
+
+func _on_cam_fix_pressed() -> void:
+	cam_fix_pressed += 1
+	cam_fix_current += 1
+	cam_fix_rand(cam_fix_current)

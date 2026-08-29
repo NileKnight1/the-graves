@@ -834,17 +834,22 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tvof"]
+bg_color = Color(0.88, 0.88, 0.88, 1)
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3ulk"]
+bg_color = Color(0.88, 0.88, 0.88, 1)
+shadow_color = Color(0.3137255, 0.5686275, 1, 0.6)
+shadow_size = 6
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1va0p"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tvof"]
-bg_color = Color(0.88, 0.88, 0.88, 1)
-shadow_color = Color(1, 1, 1, 0.6)
-shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eky20"]
 bg_color = Color(0.88, 0.88, 0.88, 1)
@@ -3960,7 +3965,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-1233, -40)
+position = Vector2(-1293, -40)
+
+[node name="cam_fix" type="Button" parent="player" unique_id=2020536231]
+visible = false
+z_index = 2
+offset_left = -80.0
+offset_top = -299.0
+offset_right = 14.0
+offset_bottom = -245.0
+theme_override_font_sizes/font_size = 33
+text = "Press"
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
@@ -5215,12 +5230,35 @@ text = "cam 04"
 
 [node name="cams_" type="Node2D" parent="map above" unique_id=1403504653]
 
-[node name="cam2" type="Node2D" parent="map above/cams_" unique_id=1324717280]
+[node name="cam1" type="Node2D" parent="map above/cams_" unique_id=1718264054]
+visible = false
 position = Vector2(0, 23)
 
-[node name="outline" type="Node2D" parent="map above/cams_/cam2" unique_id=369049717]
+[node name="outline" type="Node2D" parent="map above/cams_/cam1" unique_id=881034701]
+visible = false
 
-[node name="Panel7" type="Panel" parent="map above/cams_/cam2/outline" unique_id=177425343]
+[node name="Panel6" type="Panel" parent="map above/cams_/cam1/outline" unique_id=1156578846]
+offset_left = -1633.0001
+offset_top = -407.00003
+offset_right = -1605.3451
+offset_bottom = -336.17
+rotation = -1.3048844
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2tvof")
+
+[node name="hover" type="Node2D" parent="map above/cams_/cam1" unique_id=480226941]
+visible = false
+
+[node name="Panel6" type="Panel" parent="map above/cams_/cam1/hover" unique_id=155494749]
+offset_left = -1633.0001
+offset_top = -407.00003
+offset_right = -1605.3451
+offset_bottom = -336.17
+rotation = -1.3048844
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o3ulk")
+
+[node name="Panel7" type="Panel" parent="map above/cams_/cam1" unique_id=7946254]
 offset_left = -1653.0001
 offset_top = -400.04816
 offset_right = -1633.5841
@@ -5229,7 +5267,7 @@ scale = Vector2(0.50030106, 14.6858015)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1va0p")
 
-[node name="Panel8" type="Panel" parent="map above/cams_/cam2/outline" unique_id=629900498]
+[node name="Panel8" type="Panel" parent="map above/cams_/cam1" unique_id=397802647]
 offset_left = -1644.9999
 offset_top = -384.0482
 offset_right = -1625.5839
@@ -5239,7 +5277,7 @@ scale = Vector2(0.50030106, 14.6858015)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1va0p")
 
-[node name="Panel9" type="Panel" parent="map above/cams_/cam2/outline" unique_id=2014547220]
+[node name="Panel9" type="Panel" parent="map above/cams_/cam1" unique_id=929617695]
 offset_left = -1624.0
 offset_top = -410.04822
 offset_right = -1604.584
@@ -5248,6 +5286,114 @@ rotation = 0.2617994
 scale = Vector2(0.50030106, 14.6858015)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1va0p")
+
+[node name="Panel6" type="Panel" parent="map above/cams_/cam1" unique_id=528507349]
+offset_left = -1633.0001
+offset_top = -407.00003
+offset_right = -1605.3451
+offset_bottom = -336.17
+rotation = -1.3048844
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eky20")
+
+[node name="Panel10" type="Panel" parent="map above/cams_/cam1" unique_id=378793168]
+offset_left = -1571.2052
+offset_top = -394.42496
+offset_right = -1532.1235
+offset_bottom = -393.9015
+rotation = -1.3048844
+scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fsry6")
+
+[node name="on" type="Control" parent="map above/cams_/cam1" unique_id=1387110638]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1622.2322
+offset_top = -445.52808
+offset_right = -1582.2322
+offset_bottom = -405.52808
+rotation = 1.8386242
+scale = Vector2(0.42245755, 0.42245755)
+mouse_filter = 2
+
+[node name="green" type="Button" parent="map above/cams_/cam1/on" unique_id=1847097721]
+light_mask = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = -28.0
+offset_right = 59.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_sxt1d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="black2" type="Button" parent="map above/cams_/cam1/on" unique_id=54645169]
+light_mask = 2
+layout_mode = 0
+offset_left = 65.0
+offset_top = -28.0
+offset_right = 89.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7gkqi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="off" type="Control" parent="map above/cams_/cam1" unique_id=1666182469]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1622.2322
+offset_top = -445.52808
+offset_right = -1582.2322
+offset_bottom = -405.52808
+rotation = 1.8386242
+scale = Vector2(0.42245755, 0.42245755)
+mouse_filter = 2
+
+[node name="black1" type="Button" parent="map above/cams_/cam1/off" unique_id=1503470036]
+light_mask = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = -28.0
+offset_right = 59.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7gkqi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="red" type="Button" parent="map above/cams_/cam1/off" unique_id=1100088545]
+light_mask = 2
+layout_mode = 0
+offset_left = 65.0
+offset_top = -28.0
+offset_right = 89.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2iuns")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="cam2" type="Node2D" parent="map above/cams_" unique_id=1324717280]
+position = Vector2(0, 23)
+
+[node name="outline" type="Node2D" parent="map above/cams_/cam2" unique_id=369049717]
+visible = false
 
 [node name="Panel6" type="Panel" parent="map above/cams_/cam2/outline" unique_id=1539567635]
 offset_left = -1633.0001
@@ -5259,6 +5405,16 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2tvof")
 
 [node name="hover" type="Node2D" parent="map above/cams_/cam2" unique_id=1064582034]
+visible = false
+
+[node name="Panel6" type="Panel" parent="map above/cams_/cam2/hover" unique_id=1507003145]
+offset_left = -1633.0001
+offset_top = -407.00003
+offset_right = -1605.3451
+offset_bottom = -336.17
+rotation = -1.3048844
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o3ulk")
 
 [node name="Panel7" type="Panel" parent="map above/cams_/cam2" unique_id=785860296]
 offset_left = -1653.0001
@@ -5351,6 +5507,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
 disabled = true
 
 [node name="off" type="Control" parent="map above/cams_/cam2" unique_id=177203595]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -1622.2322
@@ -5502,6 +5659,13 @@ shape = SubResource("RectangleShape2D_bt5mj")
 [node name="ladder_" type="Area2D" parent="areas" unique_id=715447474]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/ladder_" unique_id=457613960]
+position = Vector2(-659.5, -255)
+shape = SubResource("RectangleShape2D_bhx41")
+
+[node name="cam2" type="Area2D" parent="areas" unique_id=1785821375]
+position = Vector2(-925, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/cam2" unique_id=1152369083]
 position = Vector2(-659.5, -255)
 shape = SubResource("RectangleShape2D_bhx41")
 
@@ -5824,6 +5988,7 @@ texture = ExtResource("19_264po")
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n8" to="." method="_on_antenna_fix_num8_pressed"]
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n9" to="." method="_on_antenna_fix_num9_pressed"]
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n10" to="." method="_on_antenna_fix_num10_pressed"]
+[connection signal="pressed" from="player/cam_fix" to="." method="_on_cam_fix_pressed"]
 [connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
 [connection signal="pressed" from="player/room/menu/creatures" to="." method="_on_creatures_pressed"]
 [connection signal="pressed" from="player/room/menu/back" to="." method="_on_back_pressed"]
@@ -5887,6 +6052,11 @@ texture = ExtResource("19_264po")
 [connection signal="input_event" from="areas/ladder_" to="." method="_on_ladder_input_event"]
 [connection signal="mouse_entered" from="areas/ladder_" to="." method="_on_ladder__mouse_entered"]
 [connection signal="mouse_exited" from="areas/ladder_" to="." method="_on_ladder__mouse_exited"]
+[connection signal="body_entered" from="areas/cam2" to="." method="_on_cam_2_body_entered"]
+[connection signal="body_exited" from="areas/cam2" to="." method="_on_cam_2_body_exited"]
+[connection signal="input_event" from="areas/cam2" to="." method="_on_cam_2_input_event"]
+[connection signal="mouse_entered" from="areas/cam2" to="." method="_on_cam_2_mouse_entered"]
+[connection signal="mouse_exited" from="areas/cam2" to="." method="_on_cam_2_mouse_exited"]
 [connection signal="body_entered" from="areas/ladder_up" to="." method="_on_ladder_up_entered"]
 [connection signal="body_exited" from="areas/ladder_up" to="." method="_on_ladder_up_exited"]
 [connection signal="body_entered" from="areas/antenna" to="." method="_on_antenna_body_entered"]
