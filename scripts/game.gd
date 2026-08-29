@@ -257,6 +257,10 @@ func _process(delta: float) -> void:
 		if generator_area && !generator_fixing && !generator_working:
 			generator_on()
 		
+		if ladder_area_down:
+			ladder_up()
+		elif ladder_area_up:
+			ladder_down()
 
 	#print(p1+p2+p3+p4)
 	#print(computer_opened)
@@ -331,6 +335,11 @@ func light_on():
 	$lights/room.visible = 1
 	$"map behind/room/bg/lamp/off".visible = 0
 	$"map behind/room/bg/lamp/on".visible = 1
+
+func ladder_up():
+	$player.position = Vector2(-533, -580)
+func ladder_down():
+	$player.position = Vector2(-764.0, -47)
 
 
 func phone_up():
@@ -1290,7 +1299,18 @@ func _on_generator_body_exited(body: Node2D) -> void:
 	if body == $player:
 		generator_area = 0
 		$"map behind/generator/outline".visible = 0
-		
 
 func _on_generator_progress_timeout() -> void:
 	pass # Replace with function body.
+
+var ladder_area_down = 0
+var ladder_area_up = 0
+
+func _on_ladder_body_entered(body: Node2D) -> void:
+	ladder_area_down = 1
+func _on_ladder_body_exited(body: Node2D) -> void:
+	ladder_area_down = 0
+func _on_ladder_up_entered(body: Node2D) -> void:
+	ladder_area_up = 1
+func _on_ladder_up_exited(body: Node2D) -> void:
+	ladder_area_up = 0

@@ -27,6 +27,13 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = 6.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
+bg_color = Color(0.015686275, 0.05490196, 0.11372549, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bt5mj"]
+a = Vector2(522, -535)
+b = Vector2(-574, -534)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwrxv"]
 bg_color = Color(0.118634954, 0.032874573, 0.008842035, 1)
 
@@ -229,9 +236,6 @@ thickness = 2
 color = Color(0.49424523, 1.1611544e-06, 0, 1)
 thickness = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
-bg_color = Color(0.015686275, 0.05490196, 0.11372549, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4re6"]
 bg_color = Color(0.49019608, 0.29411766, 0.12941177, 1)
 
@@ -254,9 +258,6 @@ border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dinhu"]
 bg_color = Color(0.10630914, 0.06423487, 0.0049199797, 1)
-border_width_left = 3
-border_width_right = 3
-border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1j6l"]
@@ -301,6 +302,12 @@ bg_color = Color(0.14767277, 0.08925215, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_veaf0"]
+bg_color = Color(0.4186222, 0.29146945, 0.050313853, 1)
+border_width_left = 1
+border_width_right = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pf7vy"]
 bg_color = Color(0.490283, 0.29443035, 0.12824145, 1)
@@ -609,6 +616,9 @@ bg_color = Color(0.1504, 0.16, 0.1312, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtaks"]
 bg_color = Color(0.13830167, 0.020732904, 0.012608305, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dku7i"]
+bg_color = Color(0.1504, 0.16, 0.1312, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5sy4"]
 bg_color = Color(0, 0, 0, 0.36078432)
 border_width_left = 5
@@ -652,6 +662,12 @@ size = Vector2(86, 213)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
 size = Vector2(303, 248.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt5mj"]
+size = Vector2(168, 223.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1j6l"]
+size = Vector2(168, 117.75)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk1p3"]
 content_margin_left = 15.0
@@ -730,6 +746,15 @@ position = Vector2(-3013, -77)
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
+[node name="sky" type="Panel" parent="map behind/left bound" unique_id=354868027]
+offset_left = -3643.0
+offset_top = -520.0
+offset_right = -3563.1248
+offset_bottom = -466.24963
+scale = Vector2(38.873165, 8.967383)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
+
 [node name="right bound" type="StaticBody2D" parent="map behind" unique_id=2129267498]
 position = Vector2(6174, 290)
 
@@ -737,6 +762,11 @@ position = Vector2(6174, 290)
 position = Vector2(-3190, -491)
 rotation = 4.712389
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="roof" type="StaticBody2D" parent="map behind" unique_id=577028233]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map behind/roof" unique_id=1925784188]
+shape = SubResource("SegmentShape2D_bt5mj")
 
 [node name="room" type="Node2D" parent="map behind" unique_id=1162011081]
 
@@ -762,9 +792,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
 
 [node name="Panel9" type="Panel" parent="map behind/room/bg" unique_id=745694103]
 offset_left = -561.0
-offset_top = -445.0
+offset_top = -497.0
 offset_right = -521.0
-offset_bottom = -426.453
+offset_bottom = -468.19296
 scale = Vector2(26.526041, 5.0682054)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2gnni")
@@ -1611,15 +1641,6 @@ position = Vector2(-3296, 0)
 
 [node name="bg" type="Node2D" parent="map behind/out_left" unique_id=153579227]
 
-[node name="sky" type="Panel" parent="map behind/out_left/bg" unique_id=354868027]
-offset_left = -347.0
-offset_top = -520.0
-offset_right = -267.12482
-offset_bottom = -466.24963
-scale = Vector2(38.873165, 8.967383)
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
-
 [node name="sky2" type="Panel" parent="map behind/out_left/bg" unique_id=711855427]
 visible = false
 offset_left = 280.0
@@ -2121,6 +2142,116 @@ offset_bottom = -118.57915
 scale = Vector2(3.060208, 3.060208)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
+
+[node name="ladder" type="Node2D" parent="map behind/out_left/p2" unique_id=1319942843]
+
+[node name="l2" type="Panel" parent="map behind/out_left/p2/ladder" unique_id=612121675]
+offset_left = 2672.0002
+offset_top = -499.0
+offset_right = 2684.957
+offset_bottom = -467.66394
+scale = Vector2(1.2348685, 15.541196)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
+
+[node name="l3" type="Panel" parent="map behind/out_left/p2/ladder" unique_id=607568930]
+offset_left = 2584.0
+offset_top = -499.0
+offset_right = 2596.9568
+offset_bottom = -467.66394
+scale = Vector2(1.2348685, 15.541196)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
+
+[node name="l4" type="Panel" parent="map behind/out_left/p2/ladder" unique_id=2141450020]
+offset_left = 2675.0
+offset_top = -116.0
+offset_right = 2687.9568
+offset_bottom = -110.901886
+rotation = 1.5707964
+scale = Vector2(1.2348685, 15.541196)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
+
+[node name="l5" type="Panel" parent="map behind/out_left/p2/ladder" unique_id=1205786184]
+offset_left = 2675.0
+offset_top = -61.0
+offset_right = 2687.9568
+offset_bottom = -55.901886
+rotation = 1.5707964
+scale = Vector2(1.2348685, 15.541196)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
+
+[node name="l6" type="Panel" parent="map behind/out_left/p2/ladder" unique_id=1940390435]
+offset_left = 2675.0
+offset_top = -221.0
+offset_right = 2687.9568
+offset_bottom = -215.90189
+rotation = 1.5707964
+scale = Vector2(1.2348685, 15.541196)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
+
+[node name="l7" type="Panel" parent="map behind/out_left/p2/ladder" unique_id=1698443389]
+offset_left = 2675.0
+offset_top = -166.0
+offset_right = 2687.9568
+offset_bottom = -160.90189
+rotation = 1.5707964
+scale = Vector2(1.2348685, 15.541196)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
+
+[node name="l8" type="Panel" parent="map behind/out_left/p2/ladder" unique_id=1136824676]
+offset_left = 2675.0
+offset_top = -327.0
+offset_right = 2687.9568
+offset_bottom = -321.9019
+rotation = 1.5707964
+scale = Vector2(1.2348685, 15.541196)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
+
+[node name="l9" type="Panel" parent="map behind/out_left/p2/ladder" unique_id=949989797]
+offset_left = 2675.0
+offset_top = -272.0
+offset_right = 2687.9568
+offset_bottom = -266.9019
+rotation = 1.5707964
+scale = Vector2(1.2348685, 15.541196)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
+
+[node name="l10" type="Panel" parent="map behind/out_left/p2/ladder" unique_id=655103762]
+offset_left = 2675.0
+offset_top = -432.0
+offset_right = 2687.9568
+offset_bottom = -426.9019
+rotation = 1.5707964
+scale = Vector2(1.2348685, 15.541196)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
+
+[node name="l11" type="Panel" parent="map behind/out_left/p2/ladder" unique_id=1757584560]
+offset_left = 2675.0
+offset_top = -377.0
+offset_right = 2687.9568
+offset_bottom = -371.9019
+rotation = 1.5707964
+scale = Vector2(1.2348685, 15.541196)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
+
+[node name="l12" type="Panel" parent="map behind/out_left/p2/ladder" unique_id=143458801]
+offset_left = 2675.0
+offset_top = -486.0
+offset_right = 2687.9568
+offset_bottom = -480.9019
+rotation = 1.5707964
+scale = Vector2(1.2348685, 15.541196)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
 
 [node name="out_right" type="Node2D" parent="map behind" unique_id=1672557119]
 
@@ -2858,7 +2989,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-1098, -48)
+position = Vector2(-764, -47)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
@@ -3991,6 +4122,16 @@ scale = Vector2(0.50030106, 14.6858015)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
 
+[node name="Panel9" type="Panel" parent="map above/pillars" unique_id=2045959473]
+offset_left = -577.0
+offset_top = -493.0
+offset_right = -481.3186
+offset_bottom = -417.89706
+rotation = -1.5707964
+scale = Vector2(0.50030106, 14.6858015)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dku7i")
+
 [node name="cams" type="Node2D" parent="map above" unique_id=1532539359]
 visible = false
 
@@ -4102,7 +4243,6 @@ theme_override_font_sizes/font_size = 38
 text = "cam 04"
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
-visible = false
 
 [node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
 
@@ -4188,6 +4328,18 @@ shape = SubResource("RectangleShape2D_ssvqc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/generator" unique_id=1886153961]
 position = Vector2(2924.5, -38.25)
 shape = SubResource("RectangleShape2D_37s47")
+
+[node name="ladder_down" type="Area2D" parent="areas" unique_id=2111489024]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/ladder_down" unique_id=541909141]
+position = Vector2(-666, -121.75)
+shape = SubResource("RectangleShape2D_bt5mj")
+
+[node name="ladder_up" type="Area2D" parent="areas" unique_id=1379630846]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/ladder_up" unique_id=2114396368]
+position = Vector2(-499, -584.125)
+shape = SubResource("RectangleShape2D_e1j6l")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
@@ -4457,6 +4609,7 @@ stream = ExtResource("19_5newe")
 parameters/looping = true
 
 [node name="lights" type="Node2D" parent="." unique_id=125245000]
+visible = false
 
 [node name="room" type="PointLight2D" parent="lights" unique_id=59616191]
 visible = false
@@ -4524,6 +4677,10 @@ texture = ExtResource("19_264po")
 [connection signal="input_event" from="areas/switch" to="." method="_on_switch_input_event"]
 [connection signal="body_entered" from="areas/generator" to="." method="_on_generator_body_entered"]
 [connection signal="body_exited" from="areas/generator" to="." method="_on_generator_body_exited"]
+[connection signal="body_entered" from="areas/ladder_down" to="." method="_on_ladder_body_entered"]
+[connection signal="body_exited" from="areas/ladder_down" to="." method="_on_ladder_body_exited"]
+[connection signal="body_entered" from="areas/ladder_up" to="." method="_on_ladder_up_entered"]
+[connection signal="body_exited" from="areas/ladder_up" to="." method="_on_ladder_up_exited"]
 [connection signal="pressed" from="CanvasLayer/close_cam" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="timers/spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="timers/bad_time" to="." method="_on_bad_time_timeout"]
