@@ -115,7 +115,8 @@ func _ready() -> void:
 	tasks()
 	#day1_end()
 	phone_up()
-	
+	antenna_sabo()
+	generator_sabo()
 	developer()
 
 	
@@ -338,6 +339,8 @@ func _on_switch_body_exited(body: Node2D) -> void:
 		switch_area = 0
 		$CanvasLayer/press_e.visible = 0
 		$"map behind/room/switch/outline".visible = 0
+		$"map behind/room/switch/hover".visible = 0
+		
 
 
 func radio_access_on():
@@ -480,7 +483,9 @@ func _on_cams_body_exited(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 0
 		$CanvasLayer/press_e.visible = 0
+		$"map behind/room/desk/hover".visible = 0
 		$"map behind/room/desk/outline".visible = 0
+		
 		
 
 func _on_radio_body_entered(body: Node2D) -> void:
@@ -496,6 +501,8 @@ func _on_radio_body_exited(body: Node2D) -> void:
 	if body == $player:
 		radio_area = 0
 		$"map behind/room/radio/outline".visible = 0
+		$"map behind/room/radio/hover".visible = 0
+		
 		if radio_opened:
 			radio_opened = 0
 			$sfx/radio.stop()
@@ -1296,6 +1303,8 @@ func generator_fixed():
 	$"map behind/room/desk/VideoStreamPlayer".visible = 1
 	$"map behind/generator/ProgressBar".value = 250
 	$"map behind/generator/outline".visible = 0
+	$"map behind/generator/hover".visible = 0
+	
 	
 	generator_dec_apply = 0
 	generator_fixing = 0
@@ -1334,6 +1343,8 @@ func _on_generator_body_exited(body: Node2D) -> void:
 	if body == $player:
 		generator_area = 0
 		$"map behind/generator/outline".visible = 0
+		$"map behind/generator/hover".visible = 0
+		
 
 var ladder_area_down = 0
 var ladder_area_up = 0
@@ -1347,6 +1358,8 @@ func _on_ladder_body_exited(body: Node2D) -> void:
 	if body == $player:
 		ladder_area_down = 0
 		$"map behind/out_left/p2/ladder/outline".visible = 0
+		$"map behind/out_left/p2/ladder/hover".visible = 0
+		
 		$CanvasLayer/press_e.visible = 0
 func _on_ladder_up_entered(body: Node2D) -> void:
 	if body == $player:
@@ -1357,6 +1370,8 @@ func _on_ladder_up_exited(body: Node2D) -> void:
 	if body == $player:
 		ladder_area_up = 0
 		$"map behind/out_left/p2/ladder/outline".visible = 0
+		$"map behind/out_left/p2/ladder/hover".visible = 0
+		
 		$CanvasLayer/press_e.visible = 0
 
 var antenna_area = 0
@@ -1372,6 +1387,8 @@ func _on_antenna_body_exited(body: Node2D) -> void:
 	if body == $player:
 		antenna_area = 0
 		$"map behind/room/antenna/outline".visible = 0
+		$"map behind/room/antenna/hover".visible = 0
+		
 		$"map behind/room/antenna/fix".visible = 0
 		antenna_failed()
 
@@ -1406,6 +1423,8 @@ func antenna_sabo():
 func antenna_fixed():
 	antenna_working = 1
 	$"map behind/room/antenna/outline".visible = 0
+	$"map behind/room/antenna/hover".visible = 0
+	
 	antenna_reset()
 	$"map behind/room/antenna/off".visible = 0
 	$"map behind/room/antenna/on".visible = 1
@@ -1468,10 +1487,50 @@ func _on_antenna_fix_num10_pressed() -> void:
 
 
 func _on_cams_mouse_entered() -> void:
-	$"map behind/room/desk/hover".visible = 1
-	$"map behind/room/desk/outline". visible = 0
+	if computer_area && generator_working:
+		$"map behind/room/desk/hover".visible = 1
+		$"map behind/room/desk/outline". visible = 0
 func _on_cams_mouse_exited() -> void:
-	$"map behind/room/desk/hover".visible = 0
-	$"map behind/room/desk/outline". visible = 1
-	
-	
+	if computer_area && generator_working:
+		$"map behind/room/desk/hover".visible = 0
+		$"map behind/room/desk/outline". visible = 1
+func _on_radio_mouse_entered() -> void:
+	if radio_area && antenna_working:
+		$"map behind/room/radio/outline".visible = 0
+		$"map behind/room/radio/hover".visible = 1
+func _on_radio_mouse_exited() -> void:
+	if radio_area && antenna_working:
+		$"map behind/room/radio/outline".visible = 1
+		$"map behind/room/radio/hover".visible = 0
+func _on_switch_mouse_entered() -> void:
+	if switch_area && generator_working:
+		$"map behind/room/switch/outline".visible = 0
+		$"map behind/room/switch/hover".visible = 1
+func _on_switch_mouse_exited() -> void:
+	if switch_area && generator_working:
+		$"map behind/room/switch/outline".visible = 1
+		$"map behind/room/switch/hover".visible = 0
+func _on_generator_mouse_exited() -> void:
+	if generator_area && !generator_working && !generator_fixing:
+		$"map behind/generator/outline".visible = 1
+		$"map behind/generator/hover".visible = 0
+func _on_generator_mouse_entered() -> void:
+	if generator_area && !generator_working && !generator_fixing:
+		$"map behind/generator/outline".visible = 0
+		$"map behind/generator/hover".visible = 1
+func _on_ladder__mouse_exited() -> void:
+	if ladder_area_down || ladder_area_up:
+		$"map behind/out_left/p2/ladder/outline".visible = 1
+		$"map behind/out_left/p2/ladder/hover".visible = 0
+func _on_ladder__mouse_entered() -> void:
+	if ladder_area_down || ladder_area_up:
+		$"map behind/out_left/p2/ladder/outline".visible = 0
+		$"map behind/out_left/p2/ladder/hover".visible = 1
+func _on_antenna_mouse_exited() -> void:
+	if antenna_area && !antenna_working && !antenna_fixing:
+		$"map behind/room/antenna/outline".visible = 1
+		$"map behind/room/antenna/hover".visible = 0
+func _on_antenna_mouse_entered() -> void:
+	if antenna_area && !antenna_working && !antenna_fixing:
+		$"map behind/room/antenna/outline".visible = 0
+		$"map behind/room/antenna/hover".visible = 1
