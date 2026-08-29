@@ -743,6 +743,9 @@ size = Vector2(303, 248.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bt5mj"]
 size = Vector2(168, 223.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhx41"]
+size = Vector2(127, 490)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1j6l"]
 size = Vector2(61, 117.75)
 
@@ -4849,7 +4852,6 @@ theme_override_font_sizes/font_size = 38
 text = "cam 04"
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
-visible = false
 
 [node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
 visible = false
@@ -4950,6 +4952,12 @@ shape = SubResource("RectangleShape2D_37s47")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/ladder_down" unique_id=541909141]
 position = Vector2(-666, -121.75)
 shape = SubResource("RectangleShape2D_bt5mj")
+
+[node name="ladder_" type="Area2D" parent="areas" unique_id=715447474]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/ladder_" unique_id=457613960]
+position = Vector2(-659.5, -255)
+shape = SubResource("RectangleShape2D_bhx41")
 
 [node name="ladder_up" type="Area2D" parent="areas" unique_id=1379630846]
 
@@ -5315,12 +5323,17 @@ texture = ExtResource("19_264po")
 [connection signal="input_event" from="areas/switch" to="." method="_on_switch_input_event"]
 [connection signal="body_entered" from="areas/generator" to="." method="_on_generator_body_entered"]
 [connection signal="body_exited" from="areas/generator" to="." method="_on_generator_body_exited"]
+[connection signal="input_event" from="areas/generator" to="." method="_on_generator_input_event"]
 [connection signal="body_entered" from="areas/ladder_down" to="." method="_on_ladder_body_entered"]
 [connection signal="body_exited" from="areas/ladder_down" to="." method="_on_ladder_body_exited"]
+[connection signal="body_entered" from="areas/ladder_" to="." method="_on_ladder_body_entered"]
+[connection signal="body_exited" from="areas/ladder_" to="." method="_on_ladder_body_exited"]
+[connection signal="input_event" from="areas/ladder_" to="." method="_on_ladder_input_event"]
 [connection signal="body_entered" from="areas/ladder_up" to="." method="_on_ladder_up_entered"]
 [connection signal="body_exited" from="areas/ladder_up" to="." method="_on_ladder_up_exited"]
 [connection signal="body_entered" from="areas/antenna" to="." method="_on_antenna_body_entered"]
 [connection signal="body_exited" from="areas/antenna" to="." method="_on_antenna_body_exited"]
+[connection signal="input_event" from="areas/antenna" to="." method="_on_antenna_input_event"]
 [connection signal="pressed" from="CanvasLayer/close_cam" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="timers/spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="timers/bad_time" to="." method="_on_bad_time_timeout"]

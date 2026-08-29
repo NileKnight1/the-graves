@@ -127,21 +127,35 @@ func _ready() -> void:
 
 
 func _on_cams_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and computer_area:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and computer_area && generator_working:
 		open_cam()
 		
 func _on_radio_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and radio_area:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and radio_area && antenna_working:
 		open_radio()
 
 func _on_switch_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and switch_area:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and switch_area && generator_working:
 		play_sound(click_switch)
 		if $lights/room.visible:
 			light_off()
 		else:
 			light_on()
 
+func _on_generator_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and generator_area && !generator_fixing && !generator_working:
+		generator_on()
+func _on_antenna_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and antenna_area && !antenna_fixing && !antenna_working:
+		antenna_on()
+
+
+func _on_ladder_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if ladder_area_up:
+			ladder_down()
+		elif ladder_area_down:
+			ladder_up()
 
 func _on_button_pressed() -> void:
 	close_cam()
@@ -236,7 +250,7 @@ func _process(delta: float) -> void:
 		elif computer_opened:
 			close_cam()
 	
-		if radio_area && !radio_opened:
+		if radio_area && !radio_opened && antenna_working:
 			open_radio()
 			#print("hi")
 		elif radio_opened:
@@ -259,12 +273,9 @@ func _process(delta: float) -> void:
 		
 		if ladder_area_down:
 			ladder_up()
-			await get_tree().create_timer(0.1).timeout
-			$"map behind/out_left/p2/ladder/outline".visible = 1
 		elif ladder_area_up:
 			ladder_down()
-			await get_tree().create_timer(0.1).timeout
-			$"map behind/out_left/p2/ladder/outline".visible = 1
+
 		
 		if antenna_area && !antenna_fixing && !antenna_working:
 			antenna_on()
@@ -347,9 +358,12 @@ func light_on():
 
 func ladder_up():
 	$player.position = Vector2(-533, -580)
+	await get_tree().create_timer(0.1).timeout
+	$"map behind/out_left/p2/ladder/outline".visible = 1
 func ladder_down():
 	$player.position = Vector2(-764.0, -47)
-
+	await get_tree().create_timer(0.1).timeout
+	$"map behind/out_left/p2/ladder/outline".visible = 1
 
 func phone_up():
 	$player/phone/ringing.visible = 1
@@ -1246,11 +1260,12 @@ func day2_start():
 
 var generator_area = 0
 var generator_fixing = 0
-var generator_working = 1
+var generator_working = 0
 var generator_dec_apply = 0
 
 func generator_sabo():
 	generator_working = 0
+	close_cam()
 	$"map behind/generator/on".visible = 0
 	$"map behind/generator/off".visible = 1
 
@@ -1379,6 +1394,7 @@ func antenna_sabo():
 	antenna_working = 0
 	$"map behind/room/antenna/off".visible = 1
 	$"map behind/room/antenna/on".visible = 0
+	close_radio()
 	
 
 func antenna_fixed():
