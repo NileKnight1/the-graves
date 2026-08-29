@@ -1249,6 +1249,11 @@ var generator_fixing = 0
 var generator_working = 1
 var generator_dec_apply = 0
 
+func generator_sabo():
+	generator_working = 0
+	$"map behind/generator/on".visible = 0
+	$"map behind/generator/off".visible = 1
+
 func generator_on():
 	print("gen on")
 	$"map behind/generator/ProgressBar".visible = 1
@@ -1309,9 +1314,6 @@ func _on_generator_body_exited(body: Node2D) -> void:
 		generator_area = 0
 		$"map behind/generator/outline".visible = 0
 
-func _on_generator_progress_timeout() -> void:
-	pass # Replace with function body.
-
 var ladder_area_down = 0
 var ladder_area_up = 0
 
@@ -1349,15 +1351,95 @@ func _on_antenna_body_exited(body: Node2D) -> void:
 	if body == $player:
 		antenna_area = 0
 		$"map behind/room/antenna/outline".visible = 0
+		$"map behind/room/antenna/fix".visible = 0
+		antenna_failed()
+
+var antenna_nums = [1, 2, 3, 4, 5, 6, 7 ,8, 9, 10]
+var antenna_nums_temp = []
 
 func antenna_on():
-	pass
+	$"map behind/room/antenna/fix".visible = 1
+	antenna_fixing = 1
+	antenna_current_num = 1
+	antenna_nums_temp = antenna_nums.duplicate()
+	antenna_time()
+	#print(antenna_nums)
+	
+	for i in $"map behind/room/antenna/fix/nums".get_children():
+		var temp = randi_range(0, len(antenna_nums_temp)-1)
+		i.text = str(antenna_nums_temp[temp])
+		antenna_nums_temp.remove_at(temp)
+		#print(antenna_nums)
+		
+		
+
+var antenna_current_num = 1
+
+func antenna_sabo():
+	antenna_working = 0
+	$"map behind/room/antenna/off".visible = 1
+	$"map behind/room/antenna/on".visible = 0
 	
 
 func antenna_fixed():
-	antenna_fixing = 0
 	antenna_working = 1
 	$"map behind/room/antenna/outline".visible = 0
+	antenna_reset()
+	$"map behind/room/antenna/off".visible = 0
+	$"map behind/room/antenna/on".visible = 1
+	
 
 func antenna_failed():
+	antenna_reset()
+	for i in $"map behind/room/antenna/fix/nums".get_children():
+		i.set_deferred("disabled", 0)
+
+
+func antenna_reset():
+	$"map behind/room/antenna/fix".visible = 0
+	antenna_current_num = 1
 	antenna_fixing = 0
+	
+
+func antenna_num_pressed(num):
+	$"map behind/room/antenna/fix/nums".get_child(num-1).set_deferred("disabled", 1)
+	if str(antenna_current_num) != $"map behind/room/antenna/fix/nums".get_child(num-1).text:
+		antenna_failed()
+	elif antenna_current_num == 10:
+		antenna_fixed()
+	
+	antenna_current_num += 1
+
+func antenna_time():
+	var time = 5
+	$"map behind/room/antenna/fix/time".text = "00:0" + str(time)
+	
+	for i in range(5):
+		if !antenna_fixing: return
+		time -= 1
+		await get_tree().create_timer(1.0).timeout
+		$"map behind/room/antenna/fix/time".text = "00:0" + str(time)
+	
+	antenna_failed()
+
+
+func _on_antenna_fix_num1_pressed() -> void:
+	antenna_num_pressed(1)
+func _on_antenna_fix_num2_pressed() -> void:
+	antenna_num_pressed(2)
+func _on_antenna_fix_num3_pressed() -> void:
+	antenna_num_pressed(3)
+func _on_antenna_fix_num4_pressed() -> void:
+	antenna_num_pressed(4)
+func _on_antenna_fix_num5_pressed() -> void:
+	antenna_num_pressed(5)
+func _on_antenna_fix_num6_pressed() -> void:
+	antenna_num_pressed(6)
+func _on_antenna_fix_num7_pressed() -> void:
+	antenna_num_pressed(7)
+func _on_antenna_fix_num8_pressed() -> void:
+	antenna_num_pressed(8)
+func _on_antenna_fix_num9_pressed() -> void:
+	antenna_num_pressed(9)
+func _on_antenna_fix_num10_pressed() -> void:
+	antenna_num_pressed(10)

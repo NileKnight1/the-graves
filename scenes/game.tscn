@@ -255,18 +255,6 @@ border_width_left = 1
 border_width_right = 1
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbjts"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1hsc"]
 bg_color = Color(0.61, 0.21350002, 0.21350002, 0.6039216)
 corner_radius_top_left = 10
@@ -296,6 +284,48 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbjts"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxt1d"]
+bg_color = Color(0.5294118, 0.9098039, 0, 0.6)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+shadow_color = Color(0.53083336, 0.91, 0, 0.6)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gkqi"]
+bg_color = Color(0.31431612, 0.31431612, 0.3143161, 0.6)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+shadow_color = Color(0.3137255, 0.3137255, 0.3137255, 0.6)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iuns"]
+bg_color = Color(0.78, 0, 0.012999801, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+shadow_color = Color(0.78, 0, 0.012999801, 0.56078434)
+shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4re6"]
 bg_color = Color(0.49019608, 0.29411766, 0.12941177, 1)
@@ -463,36 +493,6 @@ corner_radius_top_left = 35
 corner_radius_top_right = 35
 corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gkqi"]
-bg_color = Color(0.31431612, 0.31431612, 0.3143161, 0.6)
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 35
-corner_radius_top_right = 35
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
-shadow_color = Color(0.3137255, 0.3137255, 0.3137255, 0.6)
-shadow_size = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iuns"]
-bg_color = Color(0.78, 0, 0.012999801, 1)
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 35
-corner_radius_top_right = 35
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
-shadow_color = Color(0.78, 0, 0.012999801, 0.56078434)
-shadow_size = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxt1d"]
-bg_color = Color(0.5294118, 0.9098039, 0, 0.6)
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 35
-corner_radius_top_right = 35
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
-shadow_color = Color(0.53083336, 0.91, 0, 0.6)
-shadow_size = 4
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_7gkqi"]
 color = Color(1, 1, 1, 1)
@@ -1835,6 +1835,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_veukt")
 
 [node name="fix" type="Control" parent="map behind/room/antenna" unique_id=1809477263]
+visible = false
 light_mask = 2
 z_index = 4
 layout_direction = 2
@@ -1845,17 +1846,16 @@ offset_right = 293.0
 offset_bottom = 84.0
 mouse_filter = 2
 
-[node name="p1" type="Panel" parent="map behind/room/antenna/fix" unique_id=1557582852]
+[node name="nums" type="Control" parent="map behind/room/antenna/fix" unique_id=2019480273]
+light_mask = 2
+z_index = 4
 layout_direction = 2
-layout_mode = 0
-offset_left = -267.0
-offset_top = -848.0
-offset_right = 52.0
-offset_bottom = -722.0
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nbjts")
 
-[node name="Button" type="Button" parent="map behind/room/antenna/fix" unique_id=1482106091]
+[node name="n1" type="Button" parent="map behind/room/antenna/fix/nums" unique_id=2023190139]
 layout_mode = 0
 offset_left = -257.0
 offset_top = -839.0
@@ -1868,8 +1868,244 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_i1hsc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_iekjf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ounyb")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_okmmv")
-disabled = true
 text = "1"
+
+[node name="n2" type="Button" parent="map behind/room/antenna/fix/nums" unique_id=378101613]
+layout_mode = 0
+offset_left = -196.0
+offset_top = -839.0
+offset_right = -139.37778
+offset_bottom = -787.0
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 1)
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_i1hsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ounyb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_okmmv")
+text = "1"
+
+[node name="n3" type="Button" parent="map behind/room/antenna/fix/nums" unique_id=791925877]
+layout_mode = 0
+offset_left = -135.0
+offset_top = -839.0
+offset_right = -78.37778
+offset_bottom = -787.0
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 1)
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_i1hsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ounyb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_okmmv")
+text = "1"
+
+[node name="n4" type="Button" parent="map behind/room/antenna/fix/nums" unique_id=816995074]
+layout_mode = 0
+offset_left = -74.0
+offset_top = -839.0
+offset_right = -17.377777
+offset_bottom = -787.0
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 1)
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_i1hsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ounyb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_okmmv")
+text = "1"
+
+[node name="n5" type="Button" parent="map behind/room/antenna/fix/nums" unique_id=1996757114]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -839.0
+offset_right = 44.622223
+offset_bottom = -787.0
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 1)
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_i1hsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ounyb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_okmmv")
+text = "1"
+
+[node name="n6" type="Button" parent="map behind/room/antenna/fix/nums" unique_id=1141969719]
+layout_mode = 0
+offset_left = -257.0
+offset_top = -782.0
+offset_right = -200.37778
+offset_bottom = -730.0
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 1)
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_i1hsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ounyb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_okmmv")
+text = "1"
+
+[node name="n7" type="Button" parent="map behind/room/antenna/fix/nums" unique_id=139502691]
+layout_mode = 0
+offset_left = -196.0
+offset_top = -782.0
+offset_right = -139.37778
+offset_bottom = -730.0
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 1)
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_i1hsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ounyb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_okmmv")
+text = "1"
+
+[node name="n8" type="Button" parent="map behind/room/antenna/fix/nums" unique_id=1761267694]
+layout_mode = 0
+offset_left = -135.0
+offset_top = -782.0
+offset_right = -78.37778
+offset_bottom = -730.0
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 1)
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_i1hsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ounyb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_okmmv")
+text = "1"
+
+[node name="n9" type="Button" parent="map behind/room/antenna/fix/nums" unique_id=407177953]
+layout_mode = 0
+offset_left = -74.0
+offset_top = -782.0
+offset_right = -17.377777
+offset_bottom = -730.0
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 1)
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_i1hsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ounyb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_okmmv")
+text = "1"
+
+[node name="n10" type="Button" parent="map behind/room/antenna/fix/nums" unique_id=1752659012]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -782.0
+offset_right = 44.622223
+offset_bottom = -730.0
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 1)
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_i1hsc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ounyb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_okmmv")
+text = "1"
+
+[node name="p1" type="Panel" parent="map behind/room/antenna/fix" unique_id=1557582852]
+layout_direction = 2
+layout_mode = 0
+offset_left = -266.0
+offset_top = -878.0
+offset_right = 52.0
+offset_bottom = -722.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nbjts")
+
+[node name="time" type="Label" parent="map behind/room/antenna/fix" unique_id=774387412]
+layout_mode = 0
+offset_left = -163.0
+offset_top = -887.0
+offset_right = -53.0
+offset_bottom = -830.0
+theme_override_colors/font_color = Color(0.8784314, 0.8784314, 0.8784314, 1)
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 32
+text = "00:05"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="on" type="Control" parent="map behind/room/antenna" unique_id=1892326812]
+visible = false
+anchors_preset = 0
+offset_left = 129.0
+offset_top = -633.0
+offset_right = 169.0
+offset_bottom = -593.0
+rotation = 1.5707964
+mouse_filter = 2
+
+[node name="green" type="Button" parent="map behind/room/antenna/on" unique_id=1061686507]
+light_mask = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = -28.0
+offset_right = 59.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_sxt1d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="black2" type="Button" parent="map behind/room/antenna/on" unique_id=933294738]
+light_mask = 2
+layout_mode = 0
+offset_left = 65.0
+offset_top = -28.0
+offset_right = 89.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7gkqi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="off" type="Control" parent="map behind/room/antenna" unique_id=498410803]
+anchors_preset = 0
+offset_left = 129.0
+offset_top = -633.0
+offset_right = 169.0
+offset_bottom = -593.0
+rotation = 1.5707964
+mouse_filter = 2
+
+[node name="black1" type="Button" parent="map behind/room/antenna/off" unique_id=1665788835]
+light_mask = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = -28.0
+offset_right = 59.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7gkqi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="red" type="Button" parent="map behind/room/antenna/off" unique_id=305657036]
+light_mask = 2
+layout_mode = 0
+offset_left = 65.0
+offset_top = -28.0
+offset_right = 89.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2iuns")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
 
 [node name="out_left" type="Node2D" parent="map behind" unique_id=2087284646]
 position = Vector2(-3296, 0)
@@ -5024,6 +5260,16 @@ energy = 0.56
 blend_mode = 1
 texture = ExtResource("19_264po")
 
+[connection signal="pressed" from="map behind/room/antenna/fix/nums/n1" to="." method="_on_antenna_fix_num1_pressed"]
+[connection signal="pressed" from="map behind/room/antenna/fix/nums/n2" to="." method="_on_antenna_fix_num2_pressed"]
+[connection signal="pressed" from="map behind/room/antenna/fix/nums/n3" to="." method="_on_antenna_fix_num3_pressed"]
+[connection signal="pressed" from="map behind/room/antenna/fix/nums/n4" to="." method="_on_antenna_fix_num4_pressed"]
+[connection signal="pressed" from="map behind/room/antenna/fix/nums/n5" to="." method="_on_antenna_fix_num5_pressed"]
+[connection signal="pressed" from="map behind/room/antenna/fix/nums/n6" to="." method="_on_antenna_fix_num6_pressed"]
+[connection signal="pressed" from="map behind/room/antenna/fix/nums/n7" to="." method="_on_antenna_fix_num7_pressed"]
+[connection signal="pressed" from="map behind/room/antenna/fix/nums/n8" to="." method="_on_antenna_fix_num8_pressed"]
+[connection signal="pressed" from="map behind/room/antenna/fix/nums/n9" to="." method="_on_antenna_fix_num9_pressed"]
+[connection signal="pressed" from="map behind/room/antenna/fix/nums/n10" to="." method="_on_antenna_fix_num10_pressed"]
 [connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
 [connection signal="pressed" from="player/room/menu/creatures" to="." method="_on_creatures_pressed"]
 [connection signal="pressed" from="player/room/menu/back" to="." method="_on_back_pressed"]
