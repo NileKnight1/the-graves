@@ -118,6 +118,10 @@ func _ready() -> void:
 	#antenna_sabo()
 	#generator_sabo()
 	developer()
+	cam_sabo(2)
+	#cam_sabo(1)
+	#cam_sabo(4)
+	
 	
 	print($player/Camera2D.position)
 	#$player/cam_fix.position.x = $player/Camera2D.position.x - 440
@@ -168,8 +172,7 @@ func _on_ladder_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 			ladder_up()
 
 func _on_cam_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		cam_mouse_click(2)
+	cam_mouse_click(event, 2)
 	
 
 func _on_button_pressed() -> void:
@@ -179,6 +182,7 @@ func _on_button_pressed() -> void:
 
 func open_cam():
 	#print("hi")
+	$"map above/cams_".visible = 0
 	#$"map above/cams/cam1".visible = 1
 	$player/Camera2D.enabled = 0
 	$"map above/cams".visible = 1
@@ -210,7 +214,7 @@ func close_cam():
 		$"map above/cams".get_child(opened_cam-1).enabled = 1
 	
 	$CanvasLayer/close_cam.visible = 0
-	
+	$"map above/cams_".visible = 1
 	play_sound(cam_off)
 	$sfx/camera.stop()
 	$player/Camera2D.enabled = 1
@@ -1564,7 +1568,7 @@ func _on_cam_2_mouse_exited() -> void:
 #func _on_cam_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	#cam_mouse_click(2)
 
-var cam_working = [0, 0, 0, 0]
+var cam_working = [1, 1, 1, 1]
 var cam_area = [0, 0, 0, 0]
 var cam_fixing = 0
 var cam_fix_pressed = 0
@@ -1576,11 +1580,13 @@ func cam_entered(num):
 	if !cam_working[num-1] && generator_working:
 		$"map above/cams_".get_child(num-1).get_child(0).visible = 1
 		cam_area[num-1] = 1
+		if pc:$CanvasLayer/press_e.visible = 1
 
 func cam_exited(num):
 	$"map above/cams_".get_child(num-1).get_child(0).visible = 0
 	$"map above/cams_".get_child(num-1).get_child(1).visible = 0
 	cam_area[num-1] = 0
+	$CanvasLayer/press_e.visible = 0
 
 func cam_mouse_enter(num):
 	if cam_area[num-1] && !cam_working[num-1] && generator_working:
@@ -1624,27 +1630,31 @@ func cam_fix_rand(x):
 
 func cam_sabo(num):
 	cam_working[num-1] = 0
-	$"map above/cams_".get_child(cam_current-1).get_child(8).visible = 0
-	$"map above/cams_".get_child(cam_current-1).get_child(7).visible = 1
+	$"map above/cams_".get_child(num-1).get_child(8).visible = 1
+	$"map above/cams_".get_child(num-1).get_child(7).visible = 0
+	$"map above/cams".get_child(num-1).get_child(0).visible = 1
+	
 
 func cam_fixed():
 	cam_working[cam_current-1] = 1
+	$CanvasLayer/press_e.visible = 0
 	cam_fixing = 0
 	$player/cam_fix.visible = 0
-	print("hia")
+	print("cam fixed")
 	#print($"map above/cams_".get_child(cam_current-1).get_children())
 	#print(cam_current)
 	#print($"map above/cams_".get_child(cam_current-1).get_child(8))
-	
+	$"map above/cams".get_child(cam_current-1).get_child(0).visible = 0
 	$"map above/cams_".get_child(cam_current-1).get_child(8).visible = 0
 	$"map above/cams_".get_child(cam_current-1).get_child(7).visible = 1
 	$"map above/cams_".get_child(cam_current-1).get_child(0).visible = 0
 	$"map above/cams_".get_child(cam_current-1).get_child(1).visible = 0
 	
 
-func cam_mouse_click(num):
-	if cam_area[num-1] && !cam_working[num-1] && generator_working && !cam_fixing:
-		camera_on(num)
+func cam_mouse_click(event, num):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if cam_area[num-1] && !cam_working[num-1] && generator_working && !cam_fixing:
+			camera_on(num)
 
 func cam_failed():
 	$player/cam_fix.visible = 0
@@ -1655,3 +1665,35 @@ func _on_cam_fix_pressed() -> void:
 	cam_fix_pressed += 1
 	cam_fix_current += 1
 	cam_fix_rand(cam_fix_current)
+
+
+func _on_cam_1_body_entered(body: Node2D) -> void:
+	cam_entered(1)
+func _on_cam_1_body_exited(body: Node2D) -> void:
+	cam_exited(1)
+func _on_cam_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	cam_mouse_click(event, 1)
+func _on_cam_1_mouse_entered() -> void:
+	cam_mouse_enter(1)
+func _on_cam_1_mouse_exited() -> void:
+	cam_mouse_exit(1)
+func _on_cam_3_body_entered(body: Node2D) -> void:
+	cam_entered(3)
+func _on_cam_3_body_exited(body: Node2D) -> void:
+	cam_exited(3)
+func _on_cam_3_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	cam_mouse_click(event, 3)
+func _on_cam_3_mouse_entered() -> void:
+	cam_mouse_enter(3)
+func _on_cam_3_mouse_exited() -> void:
+	cam_mouse_exit(3)
+func _on_cam_4_body_entered(body: Node2D) -> void:
+	cam_entered(4)
+func _on_cam_4_body_exited(body: Node2D) -> void:
+	cam_exited(4)
+func _on_cam_4_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	cam_mouse_click(event, 4) 
+func _on_cam_4_mouse_entered() -> void:
+	cam_mouse_enter(4)
+func _on_cam_4_mouse_exited() -> void:
+	cam_mouse_exit(4)
