@@ -14,6 +14,7 @@ var opened_cam = 1
 
 var antenna_working = 1
 var generator_working = 1
+var max_anomaly_count = 3
 
 var shift_time = 0
 
@@ -118,16 +119,16 @@ func _ready() -> void:
 	#antenna_sabo()
 	#generator_sabo()
 	developer()
-	cam_sabo(2)
+	#cam_sabo(2)
 	#cam_sabo(1)
 	#cam_sabo(4)
 	
 	
-	print($player/Camera2D.position)
-	#$player/cam_fix.position.x = $player/Camera2D.position.x - 440
-	#$player/cam_fix.position.x = $player/Camera2D.position.x + 340
-	#$player/cam_fix.position.y = $player/Camera2D.position.y
-	#$player/cam_fix.position.y = $player/Camera2D.position.y - 180
+	#print($player/Camera2D.position)
+	#$player/cam_fix.position.x = $player/Camera2D.position.x - 350
+	#$player/cam_fix.position.x = $player/Camera2D.position.x + 400
+	#$player/cam_fix.position.y = $player/Camera2D.position.y + 140
+	#$player/cam_fix.position.y = $player/Camera2D.position.y + 280
 	
 	
 	
@@ -705,7 +706,7 @@ func spawn():
 var anomaly_events_count = 0
 
 func apply_anomaly_event():
-	if anomaly_events_count > 2:
+	if anomaly_events_count > max_anomaly_count -1 :
 		return
 		
 	print("evented")
@@ -1059,237 +1060,6 @@ func shift_start():
 	$timers/spawn.start()
 	$timers/shift_time.start()
 
-var day1call1_done = 1
-var discovered = 1
-var day1task2 = 1
-var day1task3 = 1
-
-func discovering():
-	$"map behind/room/tasks/day1/task1/text".text = tr("day1task1") + " (" + str(discovered1+discovered2+discovered3+discovered4) + "/4)"
-	
-	if discovered:
-		return
-	
-	if discovered1 && discovered2 && discovered3 && discovered4:
-		discovered = 1
-		$"map behind/room/tasks/day1/task1/done".visible = 1
-		if day1call1_done:
-			$"map behind/room/tasks/day1/task2".visible = 1
-		
-		day1task2 = 0
-		opened_cam = 1
-	
-
-func day1task2_apply():
-	if day1task2:
-		return
-	
-	
-	await get_tree().create_timer(0.5).timeout
-	subtitle("day1sub1", 0.5)
-	
-	await get_tree().create_timer(2.0).timeout
-	play_sound(sudden)
-	var temp2 = 2
-	anomaly_events[temp2]["exist"] = 1
-	if anomaly_events[temp2]["prob"] > 1:
-		anomaly_events[temp2]["prob"] -= 1
-	if anomaly_events[temp2]["show"] != null:
-		for i in anomaly_events[temp2]["show"]:
-			get_node_or_null(i).visible = 1
-	if anomaly_events[temp2]["hide"] != null:
-		for i in anomaly_events[temp2]["hide"]:
-			get_node_or_null(i).visible = 0
-			
-	anomaly_events_count += 1
-	subtitle("day1sub2", 0.5)
-	
-	await get_tree().create_timer(3.0).timeout
-	day1task2 = 1
-	
-	
-	
-	close_cam()
-	
-	$"map behind/room/tasks/day1/task2/done".visible = 1
-	$"map behind/room/tasks/day1/task3".visible = 1
-	radio_access_on()
-	
-	allow_move()
-
-func day1task3_apply(area):
-	if area == 1:
-		day1task3 = 1
-		$"map behind/room/tasks/day1/task3/done".visible = 1
-		#$"map behind/room/tasks/day1/task4".visible = 1
-		await get_tree().create_timer(2.0).timeout
-		
-		subtitle("day1sub3", 1.0)
-		await get_tree().create_timer(2.0).timeout
-		
-		shift_start()
-		
-		await get_tree().create_timer(5.0).timeout
-		subtitle("day1sub4", 2.0)
-		await get_tree().create_timer(5.0).timeout
-		subtitle("", 0.0)
-
-	else:
-		wrong_reports_conut -= 1
-
-func day1_start():
-	$sfx/dia.stop()
-	$timers/call_time.stop()
-	$timers/skip_msg.stop()
-	call_index = 1
-	
-	day1call1_done = 1
-	
-	if discovered:
-		$"map behind/room/tasks/day1/task2".visible = 1
-		if computer_opened:
-			$"map above/cams".get_child(opened_cam-1).visible = 0
-			$"map above/cams".get_child(opened_cam-1).enabled = 0
-			opened_cam = 1
-			$"map above/cams".get_child(opened_cam-1).visible = 1
-			$"map above/cams".get_child(opened_cam-1).enabled = 1
-			await get_tree().create_timer(1.0).timeout
-			day1task2_apply()
-
-var chat1_array = [
-	["chat1msg1", 2],  
-	["chat1msg2", 3.5], 
-	["chat1msg3", 3.5], 
-	["chat1msg4", 3.5], 
-	["chat1msg5", 4.5], 
-	["chat1msg6", 3.5], 
-	["chat1msg7", 1.5], 
-	["chat1msg8", 1.5], 
-	["chat1msg9", 0.5], 
-]
-
-var day1_call2_chat = [
-	["chat2msg1", 1],
-	["chat2msg2", 1],
-	["chat2msg3", 1],
-]
-
-func day_call(chat, target):
-	if chat_msg == len(chat):
-		chat_msg = 0
-		calling = 0
-		$timers/skip_msg.stop()
-		phone_down()
-		target.call()
-		return
-	var temp = tr(chat[chat_msg][0])
-	
-	$CanvasLayer/subtitles.visible_ratio = 0
-	var temp_sec = randi_range(0, 17)
-	$sfx/dia.play(temp_sec)
-	var tween = create_tween()
-	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
-	
-	#if Input.is_action_just_pressed("skip"):
-		#tween.kill()
-		#$CanvasLayer/subtitles.visible_ratio = 0
-		#print('kileed')
-		
-
-	if "%s" in temp:
-		$CanvasLayer/subtitles.text = temp % player_name
-	else:
-		$CanvasLayer/subtitles.text = temp
-	
-
-
-
-	await get_tree().create_timer(chat[chat_msg][1]).timeout
-	$sfx/dia.stop()
-	
-	
-#
-#func day1_call1():
-	#if chat_msg > 8:
-		#chat_msg = 0
-		#calling = 0
-		#$timers/skip_msg.stop()
-		#phone_down()
-		#day1_start()
-		#return
-	#
-	#var temp = tr(chat1_array[chat_msg])
-	#if "%s" in temp:
-		#$CanvasLayer/subtitles.text = temp % player_name
-	#else:
-		#$CanvasLayer/subtitles.text = temp
-	#$sfx/dia.play()
-
-#
-#func day1_call2():
-	#if chat_msg > 2:
-		#chat_msg = 0
-		#calling = 0
-		#$timers/skip_msg.stop()
-		#phone_down()
-		#await get_tree().create_timer(1.0).timeout
-		#day1_end()
-		#return
-	#
-	#var temp = tr(day1_call2_chat[chat_msg])
-	#if "%s" in temp:
-		#$CanvasLayer/subtitles.text = temp % player_name
-	#else:
-		#$CanvasLayer/subtitles.text = temp
-	#$sfx/dia.play()
-
-
-func day1_end():
-	$sfx/morning.stop()
-	stop_move()
-	$CanvasLayer/black.visible = 1
-	
-	await get_tree().create_timer(1.0).timeout
-	play_sound(start_sound)
-	$CanvasLayer/shift2.text = tr("shift") + " " + str(shift)
-	
-	await get_tree().create_timer(1.5).timeout
-	$CanvasLayer/t1.text = tr("anomalies_reported")
-	$CanvasLayer/v1.text = str(right_reports_conut)
-	play_sound(punch)
-	
-	
-	await get_tree().create_timer(0.4).timeout
-	$CanvasLayer/t2.text = tr("anomalies_left")
-	$CanvasLayer/v2.text = str(anomaly_events_count)
-	play_sound(punch)
-	
-	await get_tree().create_timer(0.4).timeout
-	$CanvasLayer/t3.text = tr("max_danger")
-	$CanvasLayer/v3.text = str(bad_time)
-	play_sound(punch)
-	
-	
-	#var tween = create_tween()
-	#tween.tween_property($CanvasLayer/black, "modulate:a", 1.0 , 1.4)
-	await get_tree().create_timer(5.0).timeout
-	global.shift += 1
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
-	#day2_start()
-	
-
-var day2_call1_chat = [
-	["day2call1sen1", 1.0],
-	["day2call1sen2", 1.5],
-]
-#
-#func day2_call1():
-	#phone_up()
-
-func day2_start():
-	print("hi")
-	shift_start()
-
 var generator_area = 0
 var generator_fixing = 0
 var generator_dec_apply = 0
@@ -1607,25 +1377,43 @@ func camera_on(num):
 	cam_current = num
 	cam_fix_pressed = 0
 	cam_fix_current = 1
-	$player/cam_fix.visible = 1
+
 	
 	cam_fix_rand(cam_fix_current)
+
+var cam_prog_time = 0
 
 func cam_fix_rand(x):
 	if cam_fix_pressed == 3:
 		cam_fixed()
-	
-	var tempx = randi_range($player/Camera2D.position.x - 440, $player/Camera2D.position.x + 340)
-	var tempy = randi_range($player/Camera2D.position.y, $player/Camera2D.position.y - 180)
+	cam_prog_time = 0
+	$player/cam_fix/bar.value = 0
+	await get_tree().create_timer(0.02).timeout
+
+	#$player/cam_fix.position.x = $player/Camera2D.position.x - 350
+	#$player/cam_fix.position.x = $player/Camera2D.position.x + 400
+	#$player/cam_fix.position.y = $player/Camera2D.position.y + 140
+	#$player/cam_fix.position.y = $player/Camera2D.position.y + 280
+	if cam_fixing:
+		$player/cam_fix.visible = 1
+		cam_prog_time = 1
+		cam_prog()
+	var tempx = randi_range($player/Camera2D.position.x - 350, $player/Camera2D.position.x + 400)
+	var tempy = randi_range($player/Camera2D.position.y + 140, $player/Camera2D.position.y + 280)
 	$player/cam_fix.position = Vector2(tempx, tempy)
 	print("cam_fix_pressed: "+str(cam_fix_pressed))
 	print("x: "+str(x))
 	
-	
-	await get_tree().create_timer(3.0).timeout
+
+	await get_tree().create_timer(3).timeout
 	if cam_fix_pressed < x:
+		cam_prog_time = 0
 		cam_failed()
 
+func cam_prog():
+	while cam_prog_time:
+		await get_tree().create_timer(0.01).timeout
+		$player/cam_fix/bar.value += 1
 
 
 func cam_sabo(num):
@@ -1636,6 +1424,7 @@ func cam_sabo(num):
 	
 
 func cam_fixed():
+	cam_prog_time = 0
 	cam_working[cam_current-1] = 1
 	$CanvasLayer/press_e.visible = 0
 	cam_fixing = 0
@@ -1659,6 +1448,7 @@ func cam_mouse_click(event, num):
 func cam_failed():
 	$player/cam_fix.visible = 0
 	cam_fixing = 0
+	cam_prog_time = 0
 	print("loser")
 
 func _on_cam_fix_pressed() -> void:
@@ -1697,3 +1487,234 @@ func _on_cam_4_mouse_entered() -> void:
 	cam_mouse_enter(4)
 func _on_cam_4_mouse_exited() -> void:
 	cam_mouse_exit(4)
+
+var day1call1_done = 1
+var discovered = 1
+var day1task2 = 1
+var day1task3 = 1
+
+func discovering():
+	$"map behind/room/tasks/day1/task1/text".text = tr("day1task1") + " (" + str(discovered1+discovered2+discovered3+discovered4) + "/4)"
+	
+	if discovered:
+		return
+	
+	if discovered1 && discovered2 && discovered3 && discovered4:
+		discovered = 1
+		$"map behind/room/tasks/day1/task1/done".visible = 1
+		if day1call1_done:
+			$"map behind/room/tasks/day1/task2".visible = 1
+		
+		day1task2 = 0
+		opened_cam = 1
+	
+
+func day1task2_apply():
+	if day1task2:
+		return
+	
+	
+	await get_tree().create_timer(0.5).timeout
+	subtitle("day1sub1", 0.5)
+	
+	await get_tree().create_timer(2.0).timeout
+	play_sound(sudden)
+	var temp2 = 2
+	anomaly_events[temp2]["exist"] = 1
+	if anomaly_events[temp2]["prob"] > 1:
+		anomaly_events[temp2]["prob"] -= 1
+	if anomaly_events[temp2]["show"] != null:
+		for i in anomaly_events[temp2]["show"]:
+			get_node_or_null(i).visible = 1
+	if anomaly_events[temp2]["hide"] != null:
+		for i in anomaly_events[temp2]["hide"]:
+			get_node_or_null(i).visible = 0
+			
+	anomaly_events_count += 1
+	subtitle("day1sub2", 0.5)
+	
+	await get_tree().create_timer(3.0).timeout
+	day1task2 = 1
+	
+	
+	
+	close_cam()
+	
+	$"map behind/room/tasks/day1/task2/done".visible = 1
+	$"map behind/room/tasks/day1/task3".visible = 1
+	radio_access_on()
+	
+	allow_move()
+
+func day1task3_apply(area):
+	if area == 1:
+		day1task3 = 1
+		$"map behind/room/tasks/day1/task3/done".visible = 1
+		#$"map behind/room/tasks/day1/task4".visible = 1
+		await get_tree().create_timer(2.0).timeout
+		
+		subtitle("day1sub3", 1.0)
+		await get_tree().create_timer(2.0).timeout
+		
+		shift_start()
+		
+		await get_tree().create_timer(5.0).timeout
+		subtitle("day1sub4", 2.0)
+		await get_tree().create_timer(5.0).timeout
+		subtitle("", 0.0)
+
+	else:
+		wrong_reports_conut -= 1
+
+func day1_start():
+	$sfx/dia.stop()
+	$timers/call_time.stop()
+	$timers/skip_msg.stop()
+	call_index = 1
+	
+	day1call1_done = 1
+	
+	if discovered:
+		$"map behind/room/tasks/day1/task2".visible = 1
+		if computer_opened:
+			$"map above/cams".get_child(opened_cam-1).visible = 0
+			$"map above/cams".get_child(opened_cam-1).enabled = 0
+			opened_cam = 1
+			$"map above/cams".get_child(opened_cam-1).visible = 1
+			$"map above/cams".get_child(opened_cam-1).enabled = 1
+			await get_tree().create_timer(1.0).timeout
+			day1task2_apply()
+
+var chat1_array = [
+	["chat1msg1", 2],  
+	["chat1msg2", 3.5], 
+	["chat1msg3", 3.5], 
+	["chat1msg4", 3.5], 
+	["chat1msg5", 4.5], 
+	["chat1msg6", 3.5], 
+	["chat1msg7", 1.5], 
+	["chat1msg8", 1.5], 
+	["chat1msg9", 0.5], 
+]
+
+var day1_call2_chat = [
+	["chat2msg1", 1],
+	["chat2msg2", 1],
+	["chat2msg3", 1],
+]
+
+func day_call(chat, target):
+	if chat_msg == len(chat):
+		chat_msg = 0
+		calling = 0
+		$timers/skip_msg.stop()
+		phone_down()
+		target.call()
+		return
+	var temp = tr(chat[chat_msg][0])
+	
+	$CanvasLayer/subtitles.visible_ratio = 0
+	var temp_sec = randi_range(0, 17)
+	$sfx/dia.play(temp_sec)
+	var tween = create_tween()
+	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
+	
+	#if Input.is_action_just_pressed("skip"):
+		#tween.kill()
+		#$CanvasLayer/subtitles.visible_ratio = 0
+		#print('kileed')
+		
+
+	if "%s" in temp:
+		$CanvasLayer/subtitles.text = temp % player_name
+	else:
+		$CanvasLayer/subtitles.text = temp
+	
+
+
+
+	await get_tree().create_timer(chat[chat_msg][1]).timeout
+	$sfx/dia.stop()
+	
+	
+#
+#func day1_call1():
+	#if chat_msg > 8:
+		#chat_msg = 0
+		#calling = 0
+		#$timers/skip_msg.stop()
+		#phone_down()
+		#day1_start()
+		#return
+	#
+	#var temp = tr(chat1_array[chat_msg])
+	#if "%s" in temp:
+		#$CanvasLayer/subtitles.text = temp % player_name
+	#else:
+		#$CanvasLayer/subtitles.text = temp
+	#$sfx/dia.play()
+
+#
+#func day1_call2():
+	#if chat_msg > 2:
+		#chat_msg = 0
+		#calling = 0
+		#$timers/skip_msg.stop()
+		#phone_down()
+		#await get_tree().create_timer(1.0).timeout
+		#day1_end()
+		#return
+	#
+	#var temp = tr(day1_call2_chat[chat_msg])
+	#if "%s" in temp:
+		#$CanvasLayer/subtitles.text = temp % player_name
+	#else:
+		#$CanvasLayer/subtitles.text = temp
+	#$sfx/dia.play()
+
+
+func day1_end():
+	$sfx/morning.stop()
+	stop_move()
+	$CanvasLayer/black.visible = 1
+	
+	await get_tree().create_timer(1.0).timeout
+	play_sound(start_sound)
+	$CanvasLayer/shift2.text = tr("shift") + " " + str(shift)
+	
+	await get_tree().create_timer(1.5).timeout
+	$CanvasLayer/t1.text = tr("anomalies_reported")
+	$CanvasLayer/v1.text = str(right_reports_conut)
+	play_sound(punch)
+	
+	
+	await get_tree().create_timer(0.4).timeout
+	$CanvasLayer/t2.text = tr("anomalies_left")
+	$CanvasLayer/v2.text = str(anomaly_events_count)
+	play_sound(punch)
+	
+	await get_tree().create_timer(0.4).timeout
+	$CanvasLayer/t3.text = tr("max_danger")
+	$CanvasLayer/v3.text = str(bad_time)
+	play_sound(punch)
+	
+	
+	#var tween = create_tween()
+	#tween.tween_property($CanvasLayer/black, "modulate:a", 1.0 , 1.4)
+	await get_tree().create_timer(5.0).timeout
+	global.shift += 1
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	#day2_start()
+	
+
+var day2_call1_chat = [
+	["day2call1sen1", 1.0],
+	["day2call1sen2", 1.5],
+]
+#
+#func day2_call1():
+	#phone_up()
+
+func day2_start():
+	print("hi")
+	shift_start()
