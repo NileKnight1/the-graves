@@ -138,9 +138,9 @@ func _on_switch_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and switch_area:
 		play_sound(click_switch)
 		if $lights/room.visible:
-			$lights/room.visible = 0
+			light_off()
 		else:
-			$lights/room.visible = 1
+			light_on()
 
 
 func _on_button_pressed() -> void:
@@ -245,9 +245,9 @@ func _process(delta: float) -> void:
 		if switch_area:
 			play_sound(click_switch)
 			if $lights/room.visible:
-				$lights/room.visible = 0
+				light_off()
 			else:
-				$lights/room.visible = 1
+				light_on()
 
 		if generator_fixing:
 			$"map behind/generator/ProgressBar".value += 75
@@ -322,6 +322,15 @@ func stop_move():
 func allow_move():
 	$player.move = 1
 
+func light_off():
+	$lights/room.visible = 0
+	$"map behind/room/bg/lamp/off".visible = 1
+	$"map behind/room/bg/lamp/on".visible = 0
+	
+func light_on():
+	$lights/room.visible = 1
+	$"map behind/room/bg/lamp/off".visible = 0
+	$"map behind/room/bg/lamp/on".visible = 1
 
 
 func phone_up():
@@ -423,7 +432,11 @@ func shift_end():
 func _on_cams_body_entered(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 1
-		if pc  && generator_working: $CanvasLayer/press_e.visible = 1
+		if pc  && generator_working:
+			$CanvasLayer/press_e.visible = 1
+		if generator_working:
+			$"map behind/room/desk/outline".visible = 1
+		
 	if body is CharacterBody2D && body.anomaly:
 		body.queue_free()
 		print("bruh")
@@ -431,6 +444,7 @@ func _on_cams_body_exited(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 0
 		$CanvasLayer/press_e.visible = 0
+		$"map behind/room/desk/outline".visible = 0
 		
 
 func _on_radio_body_entered(body: Node2D) -> void:
@@ -439,10 +453,12 @@ func _on_radio_body_entered(body: Node2D) -> void:
 		print("radio_area")
 		print(radio_area)
 		if pc: $CanvasLayer/press_e.visible = 1
+		$"map behind/room/radio/outline".visible = 1
 
 func _on_radio_body_exited(body: Node2D) -> void:
 	if body == $player:
 		radio_area = 0
+		$"map behind/room/radio/outline".visible = 0
 		if radio_opened:
 			radio_opened = 0
 			$sfx/radio.stop()
@@ -1212,7 +1228,7 @@ func day2_start():
 
 var generator_area = 0
 var generator_fixing = 0
-var generator_working = 0
+var generator_working = 1
 var generator_dec_apply = 0
 
 func generator_on():
@@ -1235,7 +1251,7 @@ func generator_fixed():
 	$"map behind/generator/E".visible = 0
 	$"map behind/room/desk/VideoStreamPlayer".visible = 1
 	$"map behind/generator/ProgressBar".value = 250
-	
+	$"map behind/generator/outline".visible = 0
 	
 	generator_dec_apply = 0
 	generator_fixing = 0
@@ -1266,10 +1282,15 @@ func generator_off():
 func _on_generator_body_entered(body: Node2D) -> void:
 	if body == $player:
 		generator_area = 1
+		if !generator_working:
+			$"map behind/generator/outline".visible = 1
+			
 		print("here")
 func _on_generator_body_exited(body: Node2D) -> void:
 	if body == $player:
 		generator_area = 0
+		$"map behind/generator/outline".visible = 0
+		
 
 func _on_generator_progress_timeout() -> void:
 	pass # Replace with function body.

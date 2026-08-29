@@ -33,7 +33,101 @@ bg_color = Color(0.118634954, 0.032874573, 0.008842035, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqjtg"]
 bg_color = Color(0.20686406, 0.1023884, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gnni"]
+bg_color = Color(0.1468741, 0.06555221, 6.016344e-09, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bt5mj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmvbu"]
+bg_color = Color(0.20574796, 0.398542, 0, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_weeiq"]
+bg_color = Color(0.1254902, 0.2627451, 0, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxocx"]
+bg_color = Color(0.1267305, 0.264353, 1.92523e-07, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgxg3"]
+bg_color = Color(0.29868677, 0.30489337, 0.33254093, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8oq8"]
+bg_color = Color(0.20574796, 0.398542, 0, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nbsr"]
+bg_color = Color(0.18, 0.17580001, 0.14400001, 1)
+border_width_top = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkywm"]
+bg_color = Color(0.86, 0.77400005, 0, 1)
+border_width_top = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yg85"]
+bg_color = Color(0.105882354, 0.07450981, 0.0627451, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1.8289685e-06, 0.31050372, 0.7638149, 0.6)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8ni1"]
+bg_color = Color(0.105882354, 0.07450981, 0.0627451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.3137255, 0.5686275, 1, 0.6)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x338"]
 bg_color = Color(0.105882354, 0.07450981, 0.0627451, 1)
 border_width_left = 1
 border_width_top = 1
@@ -56,6 +150,15 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0g06"]
+bg_color = Color(0.08, 0.08, 0.08, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+shadow_color = Color(0.3137255, 0.5686275, 1, 0.6)
+shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhx41"]
 bg_color = Color(0.08, 0.08, 0.08, 1)
@@ -221,6 +324,15 @@ bg_color = Color(0.09, 0.09, 0.09, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37s47"]
 bg_color = Color(0.04, 0.04, 0.04, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbak0"]
+bg_color = Color(0.79368633, 0, 0.04813537, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.31486395, 0.5672772, 1, 0.6)
+shadow_size = 8
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ixpq"]
 bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 10
@@ -235,12 +347,13 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbak0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_753oq"]
 bg_color = Color(0.79368633, 0, 0.04813537, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+shadow_color = Color(0.31486395, 0.5672772, 1, 0.6)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x28f"]
 bg_color = Color(0.5984456, 0, 0.023439964, 1)
@@ -254,58 +367,18 @@ bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmvbu"]
-bg_color = Color(0.20574796, 0.398542, 0, 1)
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_size = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_weeiq"]
-bg_color = Color(0.1254902, 0.2627451, 0, 1)
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxocx"]
-bg_color = Color(0.1267305, 0.264353, 1.92523e-07, 1)
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_size = 2
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nv0b"]
 bg_color = Color(0.29868677, 0.30489337, 0.33254093, 1)
 draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 35
 corner_radius_top_right = 35
 corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8oq8"]
-bg_color = Color(0.20574796, 0.398542, 0, 1)
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gkqi"]
 bg_color = Color(0.31431612, 0.31431612, 0.3143161, 0.6)
@@ -677,7 +750,6 @@ offset_bottom = -458.72186
 scale = Vector2(26.425932, 15.5872555)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uwrxv")
-metadata/_edit_lock_ = true
 
 [node name="Panel8" type="Panel" parent="map behind/room/bg" unique_id=438262776]
 offset_left = -561.0
@@ -687,11 +759,85 @@ offset_bottom = 2.0
 scale = Vector2(26.526041, 5.0682054)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yqjtg")
-metadata/_edit_lock_ = true
+
+[node name="Panel9" type="Panel" parent="map behind/room/bg" unique_id=745694103]
+offset_left = -561.0
+offset_top = -445.0
+offset_right = -521.0
+offset_bottom = -426.453
+scale = Vector2(26.526041, 5.0682054)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2gnni")
+
+[node name="lamp" type="Node2D" parent="map behind/room/bg" unique_id=972939704]
+
+[node name="wire" type="Panel" parent="map behind/room/bg/lamp" unique_id=510328938]
+offset_left = -28.000002
+offset_top = -405.00003
+offset_right = -25.836647
+offset_bottom = -404.0135
+rotation = 1.5707964
+scale = Vector2(26.526041, 5.0682054)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_bt5mj")
+
+[node name="frame" type="Button" parent="map behind/room/bg/lamp" unique_id=1318898646]
+light_mask = 2
+offset_left = -72.0
+offset_top = -345.0
+offset_right = 10.0
+offset_bottom = -320.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vgxg3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="off" type="Button" parent="map behind/room/bg/lamp" unique_id=519047884]
+light_mask = 2
+offset_left = -70.0
+offset_top = -336.0
+offset_right = 7.0
+offset_bottom = -321.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_4nbsr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="on" type="Button" parent="map behind/room/bg/lamp" unique_id=1230788025]
+visible = false
+light_mask = 2
+offset_left = -70.0
+offset_top = -336.0
+offset_right = 7.0
+offset_bottom = -321.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_fkywm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
 
 [node name="desk" type="Node2D" parent="map behind/room" unique_id=107007237]
 
-[node name="Panel" type="Panel" parent="map behind/room/desk" unique_id=669034379]
+[node name="outline3" type="Panel" parent="map behind/room/desk" unique_id=669034379]
+visible = false
+offset_left = -103.96763
+offset_top = -220.65887
+offset_right = -61.867256
+offset_bottom = -178.87372
+scale = Vector2(2.8258097, 1.8585278)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1yg85")
+
+[node name="outline" type="Panel" parent="map behind/room/desk" unique_id=414608205]
+visible = false
 offset_left = -101.0
 offset_top = -219.0
 offset_right = -61.0
@@ -699,6 +845,15 @@ offset_bottom = -179.0
 scale = Vector2(2.8258097, 1.8585278)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o8ni1")
+
+[node name="Panel4" type="Panel" parent="map behind/room/desk" unique_id=1135956269]
+offset_left = -101.0
+offset_top = -219.0
+offset_right = -61.0
+offset_bottom = -179.0
+scale = Vector2(2.8258097, 1.8585278)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3x338")
 
 [node name="Panel3" type="Panel" parent="map behind/room/desk" unique_id=1614876504]
 offset_left = -55.0
@@ -732,6 +887,17 @@ loop = true
 
 [node name="radio" type="Node2D" parent="map behind/room" unique_id=212885127]
 position = Vector2(313, 0)
+
+[node name="outline" type="Panel" parent="map behind/room/radio" unique_id=424919119]
+visible = false
+offset_left = -139.0
+offset_top = -122.0
+offset_right = -108.67648
+offset_bottom = -102.24046
+scale = Vector2(2.077595, 1.3664289)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s0g06")
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="map behind/room/radio" unique_id=1676674915]
 offset_left = -139.0
@@ -2479,6 +2645,15 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_37s47")
 [node name="generator" type="Node2D" parent="map behind" unique_id=948164126]
 position = Vector2(2780, -83)
 
+[node name="outline" type="Panel" parent="map behind/generator" unique_id=258142089]
+visible = false
+offset_left = 26.0
+offset_top = -32.0
+offset_right = 266.72
+offset_bottom = 117.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
+
 [node name="Panel2" type="Panel" parent="map behind/generator" unique_id=1426504754]
 offset_left = 42.0
 offset_top = 104.0
@@ -2501,7 +2676,7 @@ offset_top = -32.0
 offset_right = 266.72
 offset_bottom = 117.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_753oq")
 
 [node name="Panel6" type="Panel" parent="map behind/generator" unique_id=1715698272]
 offset_left = 26.0
@@ -2662,6 +2837,7 @@ texture_under = ExtResource("4_bt5mj")
 texture_progress = ExtResource("5_e1j6l")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="map behind/generator" unique_id=1814282063]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map behind/generator/StaticBody2D" unique_id=1188901409]
 position = Vector2(146, 50)
@@ -2682,7 +2858,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(2737, -48)
+position = Vector2(-1098, -48)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
 position = Vector2(0, -110)
@@ -4034,6 +4210,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_yd4ix")
 text = "X"
 
 [node name="shift" type="Label" parent="CanvasLayer" unique_id=2086180496]
+visible = false
 layout_direction = 2
 offset_left = 49.0
 offset_top = 8.0
@@ -4046,6 +4223,7 @@ theme_override_font_sizes/font_size = 33
 text = "Shift 1"
 
 [node name="press_e" type="Label" parent="CanvasLayer" unique_id=1381870537]
+visible = false
 layout_direction = 2
 offset_left = 543.0
 offset_top = 171.0
@@ -4100,6 +4278,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="time" type="Label" parent="CanvasLayer" unique_id=297290087]
+visible = false
 layout_direction = 2
 offset_left = 522.0
 offset_top = 8.0
@@ -4281,8 +4460,8 @@ parameters/looping = true
 
 [node name="room" type="PointLight2D" parent="lights" unique_id=59616191]
 visible = false
-position = Vector2(-32, -206.97011)
-scale = Vector2(1.0000001, 1.0079292)
+position = Vector2(-33, -153.00003)
+scale = Vector2(1.0000001, 0.75787085)
 energy = 2.09
 texture = ExtResource("18_ssvqc")
 
