@@ -28,7 +28,6 @@ var max_sabo_game = 0
 var shift_time = 0
 
 
-
 #var collect = preload("res://audio/collect.mp3")
 var click_phone = preload("res://audio/click_phone.mp3")
 var hang_up = preload("res://audio/hangup.mp3")
@@ -749,7 +748,7 @@ func apply_anomaly_event():
 	print("evented")
 
 	for i in anomaly_events:
-		print(computer_opened && i["area"] == opened_cam)
+		#print(computer_opened && i["area"] == opened_cam)
 		
 		if (computer_opened && i["area"] == opened_cam) || i["exist"]: continue
 		
@@ -1115,6 +1114,10 @@ func generator_sabo():
 	$"map behind/generator/off".visible = 1
 	$"map behind/room/desk/VideoStreamPlayer".visible = 0
 	light_off()
+	
+	subtitle("generatorsabo", 1.0)
+	await get_tree().create_timer(3.0).timeout
+	subtitle("", 0)
 
 func generator_on():
 	print("gen on")
@@ -1253,6 +1256,10 @@ func antenna_sabo():
 	$"map behind/room/antenna/off".visible = 1
 	$"map behind/room/antenna/on".visible = 0
 	close_radio()
+	
+	subtitle("antennasabo", 1.0)
+	await get_tree().create_timer(3.0).timeout
+	subtitle("", 0)
 	
 
 func antenna_fixed():
@@ -1462,11 +1469,14 @@ func cam_prog():
 
 
 func cam_sabo(num):
+	subtitle("camsabo", 1.0)
 	cam_working[num-1] = 0
 	$"map above/cams_".get_child(num-1).get_child(8).visible = 1
 	$"map above/cams_".get_child(num-1).get_child(7).visible = 0
 	$"map above/cams".get_child(num-1).get_child(0).visible = 1
 	
+	await get_tree().create_timer(3.0).timeout
+	subtitle("", 0)
 
 func cam_fixed():
 	cam_prog_time = 0
@@ -1535,13 +1545,18 @@ func _on_cam_4_mouse_exited() -> void:
 
 func sabo_time():
 	var temp = randi_range(min_sabo_time, max_sabo_time)
+	print(min_sabo_time)
+	print(max_sabo_time)
+	
 	$timers/sabo_timer.wait_time = temp
 	$timers/sabo_timer.start()
+	print("sabo time started")
 
 func _on_sabo_timer_timeout() -> void:
+	sabo_time()
 	if sabo_game == max_sabo_game: return
 	sabo_game += 1
-	
+	print("sabotaging")
 	var temp = randi_range(1, 8)
 	var temp_to = 0
 	var temp_cam = []
@@ -1555,7 +1570,7 @@ func _on_sabo_timer_timeout() -> void:
 		#for i in range(4):
 			#if i: temp_cam = [i]
 
-	if temp < 6:
+	if temp < 6 && generator_working:
 		cam_sabo(temp_cam.pick_random()-1)
 	elif temp < 8 && generator_working:
 		generator_sabo()
@@ -1806,12 +1821,13 @@ var day2_call1_chat = [
 var day2force = 0
 
 func day2_starters():
-	generator_sabo()
+	#generator_sabo()
+	set_shift_values(15, 20, 4, 300, 5, 10, 30)
 	day2force = 1
 
 func day2_time():
 	if shift_time == 1:
-		set_shift_values(15, 20, 4, 300, 5, 10, 3)
+		print("im here")
 	elif shift_time == 60:
 		set_shift_values(15, 20)
 	elif shift_time == 150:
@@ -1824,6 +1840,9 @@ func day2_start():
 	day2force = 0
 	subtitle("day2sub1", 1.0)
 	shift_start()
+	#await get_tree().create_timer(1.0).timeout
+	
+	sabo_time()
 	await get_tree().create_timer(3.0).timeout
 	subtitle("", 0)
 
