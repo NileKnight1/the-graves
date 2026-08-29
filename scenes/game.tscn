@@ -213,6 +213,15 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ja1h7"]
+bg_color = Color(0.69135684, 0.6913568, 0.69135684, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+shadow_color = Color(0.3137255, 0.5686275, 1, 0.6)
+shadow_size = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ms3bu"]
 bg_color = Color(0.69135684, 0.6913568, 0.69135684, 1)
 corner_radius_top_left = 1
@@ -1134,6 +1143,17 @@ offset_bottom = 38.0
 scale = Vector2(0.85822767, 1.0035384)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q8j3a")
+
+[node name="outline" type="Panel" parent="map behind/room/switch" unique_id=102244429]
+visible = false
+layout_mode = 0
+offset_left = 21.329102
+offset_top = 7.1415405
+offset_right = 32.597534
+offset_bottom = 28.922943
+scale = Vector2(0.85822767, 1.0035384)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ja1h7")
 
 [node name="Panel2" type="Panel" parent="map behind/room/switch" unique_id=613471859]
 layout_mode = 0
@@ -4852,6 +4872,7 @@ theme_override_font_sizes/font_size = 38
 text = "cam 04"
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
+visible = false
 
 [node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
 visible = false

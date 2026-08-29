@@ -256,7 +256,7 @@ func _process(delta: float) -> void:
 		elif radio_opened:
 			close_radio()
 		
-		if switch_area:
+		if switch_area && generator_working:
 			play_sound(click_switch)
 			if $lights/room.visible:
 				light_off()
@@ -329,11 +329,14 @@ func _process(delta: float) -> void:
 func _on_switch_body_entered(body: Node2D) -> void:
 	if body == $player:
 		switch_area = 1
-		if pc: $CanvasLayer/press_e.visible = 1
+		if generator_working:
+			if pc: $CanvasLayer/press_e.visible = 1
+			$"map behind/room/switch/outline".visible = 1
 func _on_switch_body_exited(body: Node2D) -> void:
 	if body == $player:
 		switch_area = 0
 		$CanvasLayer/press_e.visible = 0
+		$"map behind/room/switch/outline".visible = 0
 
 
 func radio_access_on():
@@ -484,8 +487,9 @@ func _on_radio_body_entered(body: Node2D) -> void:
 		radio_area = 1
 		print("radio_area")
 		print(radio_area)
-		if pc: $CanvasLayer/press_e.visible = 1
-		$"map behind/room/radio/outline".visible = 1
+		if antenna_working:
+			if pc: $CanvasLayer/press_e.visible = 1
+			$"map behind/room/radio/outline".visible = 1
 
 func _on_radio_body_exited(body: Node2D) -> void:
 	if body == $player:
