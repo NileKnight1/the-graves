@@ -18,7 +18,7 @@ cam4,cam 04,كاميرا 04
 manager,Manager,المدير
 accept,Accept, قبول
 decline,Decline, رفض
-chat1msg1,Welcome %s on your first day.,أهلًا بك يا %s في يومك الأول.
+chat1msg1,Welcome %s on your first day.,السلام عليكم يا %s في يومك الأول.
 chat1msg2,This place is normal as the whole city. Some weird things happen ... but yeah this is the life.,المكان هنا طبيعي مثل المدينة كلها. بعض الأشياء الغريبة تحدث ... لكن هذه هي الحياة.
 chat1msg3,Some anomalies like to play with things ... they change their position .. take some and bring others!,بعض المخلوقات تحب أن تعبث بالأشياء ... يغيرون أماكنها .. يأخذون بعضها ويجلبون أخرى!
 chat1msg4,"Your shift starts at midnight and ends at 6 AM. Until that, you have to keep the place as it was.",تبدأ ورديتك في منتصف الليل وتنتهي في السادسة صباحًا. وحتى ذلك الوقت، عليك أن تحافظ على المكان كما كان عليه.
@@ -51,5 +51,10 @@ day1sub3,"Put your eyes on trees, bushes, graves and etc.",ضع عيونك عل�
 report_sent,Report sent ...,تم إرسال البلاغ.
 day2call1sen1,New night Nile Knight.,ليلةً جديدة يا فارس النيل
 day2call1sen2,"The generator has broken down this morning, but the worker forgot to fix it.",لقد تعطل المحرك صباح اليوم، ولكن نسي العامل أن يصلحه.
-day2call1sen3,"You have to fix it yourself, it supports room light and cameras energy ... unless you don't need them!",عليك أن تصلحه بنفسك، فهو يغذي الغرفة والكاميرات بالطاقة ... إلا ألا تكون في حاجتها!
+day2call1sen3,"You have to fix it yourself, it supports room light and cameras energy ... unless you don't need them!",عليك أن تصلحه بنفسك، فهو يغذي الغرفة والكاميرات بالطاقة ... إلا ألا تكن في حاجتها!
 day2sub1,The device is beside sector 4.,الجهاز بجانب القطاع 4.
+camsabo,A camera has just been sabotaged.,تعرضت إحدى الكاميرات للتخريب للتو.
+generatorsabo,The generator has just been sabotaged.,تعرض المولد للتخريب للتو.
+antennasabo,The antenna has just been sabotaged.,تعرض هوائي الراديو للتخريب للتو.
+day2call1sen4,The radio antenna on the roof was sparking .. it might go down too.,كان هوائي الراديو يعطي شرزًا .. يمكن أن يتعطل هو أيضًا.
+day2call1sen5,Good luck.,وفقك الله.

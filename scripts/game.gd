@@ -378,7 +378,7 @@ func _process(delta: float) -> void:
 			1:
 				match call_index:
 					0: day_call(chat1_array, day1_start)
-					1: day_call(day1_call2_chat, day1_end)
+					1: day_call(day1_call2_chat, day_end)
 			2:
 				match call_index:
 					0: day_call(day2_call1_chat, day2_start)
@@ -459,7 +459,7 @@ func _on_accept_call_pressed() -> void:
 		1:
 			match call_index:
 				0: day_call(chat1_array, day1_start)
-				1: day_call(day1_call2_chat, day1_end)
+				1: day_call(day1_call2_chat, day_end)
 		2:
 			match call_index:
 				0: day_call(day2_call1_chat, day2_start)
@@ -478,7 +478,7 @@ func _on_decline_call_pressed() -> void:
 		1:
 			match call_index:
 				0: day1_start()
-				1: day1_end()
+				1: day_end()
 		2:
 			match call_index:
 				0: day2_start()
@@ -507,7 +507,7 @@ func _on_skip_msg_timeout() -> void:
 		1:
 			match call_index:
 				0: day_call(chat1_array, day1_start)
-				1: day_call(day1_call2_chat, day1_end)
+				1: day_call(day1_call2_chat, day_end)
 		2:
 			pass
 
@@ -1774,7 +1774,7 @@ func day_call(chat, target):
 	#$sfx/dia.play()
 
 
-func day1_end():
+func day_end():
 	$sfx/morning.stop()
 	stop_move()
 	$CanvasLayer/black.visible = 1
@@ -1811,7 +1811,9 @@ func day1_end():
 var day2_call1_chat = [
 	["day2call1sen1", 1.0],
 	["day2call1sen2", 2.0],
-	["day2call1sen3", 2.5]
+	["day2call1sen3", 2.5],
+	["day2call1sen4", 2.0],
+	["day2call1sen5", 0.5],
 	
 ]
 #
@@ -1822,7 +1824,7 @@ var day2force = 0
 
 func day2_starters():
 	#generator_sabo()
-	set_shift_values(15, 20, 4, 300, 5, 10, 30)
+	set_shift_values(15, 20, 4, 300, 40, 60, 7)
 	day2force = 1
 
 func day2_time():
@@ -1834,6 +1836,7 @@ func day2_time():
 		set_shift_values(12, 16)
 	elif shift_time == 240:
 		set_shift_values(8, 14)
+	#elif
 
 func day2_start():
 	print("day2")
