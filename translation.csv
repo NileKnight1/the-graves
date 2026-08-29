@@ -50,5 +50,6 @@ right_report,Handled.,تم التعامل.
 day1sub3,"Put your eyes on trees, bushes, graves and etc.",ضع عيونك على الأشجار، والشجيرات، والمقابر وإلخ.
 report_sent,Report sent ...,تم إرسال البلاغ.
 day2call1sen1,New night Nile Knight.,ليلةً جديدة يا فارس النيل
-day2call1sen2,No news .. go work!,لا جديد .. اذهب للعمل!
-,,
+day2call1sen2,"The generator has broken down this morning, but the worker forgot to fix it.",لقد تعطل المحرك صباح اليوم، ولكن نسي العامل أن يصلحه.
+day2call1sen3,"You have to fix it yourself, it supports room light and cameras energy ... unless you don't need them!",عليك أن تصلحه بنفسك، فهو يغذي الغرفة والكاميرات بالطاقة ... إلا ألا تكون في حاجتها!
+day2sub1,The device is beside sector 4.,الجهاز بجانب القطاع 4.

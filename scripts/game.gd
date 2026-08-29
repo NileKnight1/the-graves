@@ -20,6 +20,11 @@ var max_spawn_time = 25
 var max_anomaly_count = 3
 var max_bad_time = 300
 
+var sabo_game = 0
+var min_sabo_time = 60 
+var max_sabo_time = 100
+var max_sabo_game = 0
+
 var shift_time = 0
 
 
@@ -128,7 +133,7 @@ func _ready() -> void:
 	#cam_sabo(2)
 	#cam_sabo(1)
 	#cam_sabo(4)
-	
+	day_starters()
 	
 	#print($player/Camera2D.position)
 	#$player/cam_fix.position.x = $player/Camera2D.position.x - 350
@@ -147,15 +152,32 @@ func _ready() -> void:
 	#spawn()
 #var shift_values = 
 
-func set_shift_values(minspawntime, maxspawntime, maxanomalycount, maxbadtime):
+func set_shift_values(
+	minspawntime = min_spawn_time,
+	 maxspawntime = min_spawn_time,
+	 maxanomalycount = max_anomaly_count,
+	 maxbadtime = max_bad_time,
+	 minsabotime = min_sabo_time,
+	 maxsabotime = max_sabo_time,
+	 maxsabogame = max_sabo_game,
+	
+	):
 	if minspawntime != -1: min_spawn_time = minspawntime
-	if maxspawntime != -1: max_spawn_time = maxspawntime
+	if maxspawntime != -1: min_spawn_time = maxspawntime
 	if maxanomalycount != -1: max_anomaly_count = maxanomalycount
 	if maxbadtime != -1: max_bad_time = maxbadtime
+	if minsabotime != -1: min_sabo_time = minsabotime
+	if maxsabotime != -1: max_sabo_time = maxsabotime
+	if maxsabogame != -1: max_sabo_game = maxsabogame
 
 func shift_time_manager():
 	match shift:
 		1: day1_time()
+		2: day2_time()
+
+func day_starters():
+	match shift:
+		2: day2_starters()
 
 func _on_cams_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and computer_area && generator_working:
@@ -1082,7 +1104,13 @@ var generator_dec_apply = 0
 
 func generator_sabo():
 	generator_working = 0
-	close_cam()
+	
+	cam_sabo(1)
+	cam_sabo(2)
+	cam_sabo(3)
+	cam_sabo(4)
+	
+	if computer_opened: close_cam()
 	$"map behind/generator/on".visible = 0
 	$"map behind/generator/off".visible = 1
 	$"map behind/room/desk/VideoStreamPlayer".visible = 0
@@ -1101,6 +1129,15 @@ func generator_on():
 	
 	#await get_tree().create_timer(5.0).timeout
 func generator_fixed():
+	cam_current = 1
+	cam_fixed()
+	cam_current = 2
+	cam_fixed()
+	cam_current = 3
+	cam_fixed()
+	cam_current = 4
+	cam_fixed()
+	
 	generator_working = 1
 	$"map behind/generator/on".visible = 1
 	$"map behind/generator/off".visible = 0
@@ -1129,17 +1166,9 @@ func generator_dec():
 		if $"map behind/generator/ProgressBar".value <= 0:
 			generator_failed()
 
-func generator_off():
-	$"map behind/room/desk/VideoStreamPlayer".visible = 0
-	close_cam()
-	generator_working = 0
-	$"map behind/generator/on".visible = 0
-	$"map behind/generator/off".visible = 1
-
-
-
 func _on_generator_body_entered(body: Node2D) -> void:
 	if body == $player:
+		if day2force: return
 		generator_area = 1
 		if !generator_working:
 			$"map behind/generator/outline".visible = 1
@@ -1504,6 +1533,36 @@ func _on_cam_4_mouse_entered() -> void:
 func _on_cam_4_mouse_exited() -> void:
 	cam_mouse_exit(4)
 
+func sabo_time():
+	var temp = randi_range(min_sabo_time, max_sabo_time)
+	$timers/sabo_timer.wait_time = temp
+	$timers/sabo_timer.start()
+
+func _on_sabo_timer_timeout() -> void:
+	if sabo_game == max_sabo_game: return
+	sabo_game += 1
+	
+	var temp = randi_range(1, 8)
+	var temp_to = 0
+	var temp_cam = []
+
+	for i in range(4):
+		if cam_working[i]:
+			temp_cam.append(i)
+	#if temp_to == 0:
+		#temp_cam = [-1]
+	#elif temp_to == 1:
+		#for i in range(4):
+			#if i: temp_cam = [i]
+
+	if temp < 6:
+		cam_sabo(temp_cam.pick_random()-1)
+	elif temp < 8 && generator_working:
+		generator_sabo()
+	elif antenna_working:
+		antenna_sabo()
+
+
 var day1call1_done = 1
 var discovered = 1
 var day1task2 = 1
@@ -1627,8 +1686,11 @@ var day1_call2_chat = [
 
 
 func day1_time():
-	if shift_time == 60:
-		set_shift_values([])
+	if shift_time == 120:
+		set_shift_values(15, 20)
+	elif shift_time == 240:
+		set_shift_values(14, 18)
+		
 
 func day_call(chat, target):
 	if chat_msg == len(chat):
@@ -1733,17 +1795,40 @@ func day1_end():
 
 var day2_call1_chat = [
 	["day2call1sen1", 1.0],
-	["day2call1sen2", 1.5],
+	["day2call1sen2", 2.0],
+	["day2call1sen3", 2.5]
+	
 ]
 #
 #func day2_call1():
 	#phone_up()
 
+var day2force = 0
+
+func day2_starters():
+	generator_sabo()
+	day2force = 1
+
+func day2_time():
+	if shift_time == 1:
+		set_shift_values(15, 20, 4, 300, 5, 10, 3)
+	elif shift_time == 60:
+		set_shift_values(15, 20)
+	elif shift_time == 150:
+		set_shift_values(12, 16)
+	elif shift_time == 240:
+		set_shift_values(8, 14)
+
 func day2_start():
-	print("hi")
+	print("day2")
+	day2force = 0
+	subtitle("day2sub1", 1.0)
 	shift_start()
+	await get_tree().create_timer(3.0).timeout
+	subtitle("", 0)
+
 
 ### Planning
 # shift1: environmental - 3 max - 15:25 secs (2:00) 15:20 (4:00) 14:18 (6:00) - 300 danger
-# shift2: environmental - 4 max - 20:25 (01:00) 15:20 (02:30) 12:16 (4:00) 8:14 secs - 300 danger generator_sabotaged
+# shift2: environmental - 4 max - 15:25 (01:00) 15:20 (02:30) 12:16 (4:00) 8:14 secs - 300 danger generator_sabotaged
 # shift3: environmental - 4 max - 12:18 secs - 300 danger generator/cams/antenna

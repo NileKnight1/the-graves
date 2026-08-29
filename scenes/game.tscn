@@ -6137,6 +6137,7 @@ shape = SubResource("RectangleShape2D_pl11u")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
+visible = false
 
 [node name="close_cam" type="Button" parent="CanvasLayer" unique_id=170245993]
 visible = false
@@ -6383,8 +6384,8 @@ wait_time = 7.0
 
 [node name="shift_time" type="Timer" parent="timers" unique_id=1733842153]
 
-[node name="generator_progress" type="Timer" parent="timers" unique_id=1618882421]
-wait_time = 0.1
+[node name="sabo_timer" type="Timer" parent="timers" unique_id=1760832061]
+one_shot = true
 
 [node name="sfx" type="Node" parent="." unique_id=694605502]
 
@@ -6429,7 +6430,6 @@ stream = ExtResource("19_5newe")
 parameters/looping = true
 
 [node name="lights" type="Node2D" parent="." unique_id=125245000]
-visible = false
 
 [node name="room" type="PointLight2D" parent="lights" unique_id=59616191]
 visible = false
@@ -6566,4 +6566,4 @@ texture = ExtResource("19_264po")
 [connection signal="timeout" from="timers/call_time" to="." method="_on_call_time_timeout"]
 [connection signal="timeout" from="timers/skip_msg" to="." method="_on_skip_msg_timeout"]
 [connection signal="timeout" from="timers/shift_time" to="." method="_on_shift_time_timeout"]
-[connection signal="timeout" from="timers/generator_progress" to="." method="_on_generator_progress_timeout"]
+[connection signal="timeout" from="timers/sabo_timer" to="." method="_on_sabo_timer_timeout"]
