@@ -6221,7 +6221,8 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="CanvasLayer" unique_id=203637865]
+[node name="pause2" type="Button" parent="CanvasLayer" unique_id=203637865]
+visible = false
 offset_left = 531.0
 offset_top = -1.0
 offset_right = 749.0
@@ -6350,6 +6351,7 @@ vertical_alignment = 1
 
 [node name="pause" type="Control" parent="CanvasLayer" unique_id=967419704]
 process_mode = 3
+visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0

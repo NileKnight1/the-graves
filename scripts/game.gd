@@ -14,12 +14,14 @@ var opened_cam = 1
 
 var antenna_working = 1
 var generator_working = 1
+
 var min_spawn_time = 15
 var max_spawn_time = 25
-
 var max_anomaly_count = 3
+var max_bad_time = 300
 
 var shift_time = 0
+
 
 
 #var collect = preload("res://audio/collect.mp3")
@@ -118,7 +120,7 @@ func _ready() -> void:
 	translation()
 	tasks()
 	#day1_end()
-	get_tree().paused = 1
+	#get_tree().paused = 1
 	phone_up()
 	#antenna_sabo()
 	#generator_sabo()
@@ -143,8 +145,17 @@ func _ready() -> void:
 	
 	#apply_anomaly_event()
 	#spawn()
-	pass
+#var shift_values = 
 
+func set_shift_values(minspawntime, maxspawntime, maxanomalycount, maxbadtime):
+	if minspawntime != -1: min_spawn_time = minspawntime
+	if maxspawntime != -1: max_spawn_time = maxspawntime
+	if maxanomalycount != -1: max_anomaly_count = maxanomalycount
+	if maxbadtime != -1: max_bad_time = maxbadtime
+
+func shift_time_manager():
+	match shift:
+		1: day1_time()
 
 func _on_cams_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and computer_area && generator_working:
@@ -958,7 +969,7 @@ func _on_back_pressed() -> void:
 	$player/room/menu.visible = 1
 
 var bad_time = 0
-var max_bad_time = 300
+
 #var danger = 0
 
 func _on_bad_time_timeout() -> void:
@@ -1012,6 +1023,7 @@ func _on_shift_time_timeout() -> void:
 		$CanvasLayer/time.text += "0"
 	$CanvasLayer/time.text += str(secs)
 	
+	shift_time_manager()
 	if shift_time == 360:
 		shift_end()
 
@@ -1607,6 +1619,17 @@ var day1_call2_chat = [
 	["chat2msg3", 1],
 ]
 
+### Planning
+# shift1: environmental - 3 max - 15:25 secs (2:00) 15:20 (4:00) 14:18 (6:00) - 300 danger
+# shift2: environmental - 4 max - 20:25 (01:00) 15:20 (02:30) 12:16 (4:00) 8:14 secs - 300 danger generator_sabotaged
+# shift3: environmental - 4 max - 12:18 secs - 300 danger generator/cams/antenna
+
+
+
+func day1_time():
+	if shift_time == 60:
+		set_shift_values([])
+
 func day_call(chat, target):
 	if chat_msg == len(chat):
 		chat_msg = 0
@@ -1633,9 +1656,6 @@ func day_call(chat, target):
 		$CanvasLayer/subtitles.text = temp % player_name
 	else:
 		$CanvasLayer/subtitles.text = temp
-	
-
-
 
 	await get_tree().create_timer(chat[chat_msg][1]).timeout
 	$sfx/dia.stop()
@@ -1722,3 +1742,8 @@ var day2_call1_chat = [
 func day2_start():
 	print("hi")
 	shift_start()
+
+### Planning
+# shift1: environmental - 3 max - 15:25 secs (2:00) 15:20 (4:00) 14:18 (6:00) - 300 danger
+# shift2: environmental - 4 max - 20:25 (01:00) 15:20 (02:30) 12:16 (4:00) 8:14 secs - 300 danger generator_sabotaged
+# shift3: environmental - 4 max - 12:18 secs - 300 danger generator/cams/antenna
