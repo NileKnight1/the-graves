@@ -6221,8 +6221,16 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=203637865]
+offset_left = 531.0
+offset_top = -1.0
+offset_right = 749.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 40
+text = "Pause"
+
 [node name="time" type="Label" parent="CanvasLayer" unique_id=297290087]
-visible = false
 layout_direction = 2
 offset_left = 522.0
 offset_top = 8.0
@@ -6339,6 +6347,24 @@ theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 236
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="pause" type="Control" parent="CanvasLayer" unique_id=967419704]
+process_mode = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="resume" type="Button" parent="CanvasLayer/pause" unique_id=1387735495]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 173.0
+offset_right = 796.0
+offset_bottom = 302.0
+theme_override_font_sizes/font_size = 88
+text = "Resume"
 
 [node name="timers" type="Node" parent="." unique_id=896048706]
 

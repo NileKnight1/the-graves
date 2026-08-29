@@ -14,6 +14,9 @@ var opened_cam = 1
 
 var antenna_working = 1
 var generator_working = 1
+var min_spawn_time = 15
+var max_spawn_time = 25
+
 var max_anomaly_count = 3
 
 var shift_time = 0
@@ -115,6 +118,7 @@ func _ready() -> void:
 	translation()
 	tasks()
 	#day1_end()
+	get_tree().paused = 1
 	phone_up()
 	#antenna_sabo()
 	#generator_sabo()
@@ -678,7 +682,7 @@ func _on_spawn_timeout() -> void:
 	#print("timeout")
 	#spawn()
 	apply_anomaly_event()
-	$timers/spawn.wait_time = randi_range(15,20)
+	$timers/spawn.wait_time = randi_range(min_spawn_time, max_spawn_time)
 	$timers/spawn.start()
 	
 
