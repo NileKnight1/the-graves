@@ -6074,12 +6074,6 @@ stream = ExtResource("13_e1j6l")
 autoplay = true
 loop = true
 
-[node name="decision" type="Control" parent="CanvasLayer" unique_id=803355168]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="room" type="Control" parent="CanvasLayer" unique_id=1019839140]
 z_index = 2
 layout_direction = 2
@@ -6411,6 +6405,71 @@ text = "Report Radio"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="decision" type="Control" parent="CanvasLayer" unique_id=77446715]
+visible = false
+z_index = 2
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 296.0
+offset_top = 478.0
+offset_right = 296.0
+offset_bottom = 478.0
+mouse_filter = 1
+
+[node name="title" type="Label" parent="CanvasLayer/decision" unique_id=754728031]
+layout_mode = 0
+offset_left = 255.0
+offset_top = -360.0
+offset_right = 438.0
+offset_bottom = -299.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 36
+text = "Choose"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="o1" type="Button" parent="CanvasLayer/decision" unique_id=1621227290]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -298.0
+offset_right = 439.0
+offset_bottom = -246.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "You can stay."
+icon_alignment = 1
+
+[node name="o2" type="Button" parent="CanvasLayer/decision" unique_id=386888117]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -239.0
+offset_right = 439.0
+offset_bottom = -187.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "No sorry."
+icon_alignment = 1
+
 [node name="timers" type="Node" parent="." unique_id=896048706]
 
 [node name="spawn" type="Timer" parent="timers" unique_id=2061830803]
@@ -6600,6 +6659,8 @@ texture = ExtResource("19_264po")
 [connection signal="pressed" from="CanvasLayer/room/environment/p4" to="." method="_on_en4_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/environment/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/creatures/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/decision/o1" to="." method="_on_environmental_pressed"]
+[connection signal="pressed" from="CanvasLayer/decision/o2" to="." method="_on_creatures_pressed"]
 [connection signal="timeout" from="timers/spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="timers/bad_time" to="." method="_on_bad_time_timeout"]
 [connection signal="timeout" from="timers/call_time" to="." method="_on_call_time_timeout"]

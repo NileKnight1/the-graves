@@ -1991,12 +1991,23 @@ var day3_creature1_chat = [
 	["d3c1s1", 0.5],
 	["d3c1s2", 1.0],
 	["d3c1s3", 1.5],
-	
-	
 ]
 
 func day3_creature1_talked():
-	allow_move()
+	#allow_move()
 	await get_tree().create_timer(1.0).timeout
-	
-	subtitle("", 0)
+	$CanvasLayer/decision.visible = 1
+	#subtitle("", 0)
+
+# Creature 1 -> Day2 -> appear once and disappear
+# Creature 1 -> Day3 -> appear in security room -> asks for stay
+## yes -> it stays -> it watches cameras
+## no -> it goes -> he simply goes
+
+
+func _on_option_1_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_option_2_pressed() -> void:
+	pass # Replace with function body.
