@@ -6080,8 +6080,6 @@ visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("13_e1j6l")
-autoplay = true
-loop = true
 
 [node name="room" type="Control" parent="CanvasLayer" unique_id=1019839140]
 z_index = 2

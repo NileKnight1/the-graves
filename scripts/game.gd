@@ -18,7 +18,7 @@ var generator_working = 1
 var min_spawn_time = 15
 var max_spawn_time = 25
 var max_anomaly_count = 3
-var max_bad_time = 300
+var max_bad_time = 3000
 
 var sabo_game = 0
 var min_sabo_time = 60 
@@ -306,6 +306,8 @@ func match_shift():
 				2: day_chat(day3_creature1_chat_stay, day3_creature1_stay)
 				3: day_chat(day3_creature1_chat_leave, day3_creature1_leave)
 				4: day_chat(day3_creature1_chat_end, day3_creature1_leave)
+				5: day_chat(day3_call2_chat, day_end)
+				
 
 func _process(delta: float) -> void:
 	#print(day1task2)
@@ -482,7 +484,6 @@ func _on_decline_call_pressed() -> void:
 	play_sound(hang_up)
 	$sfx/ringtone.stop()
 	$sfx/dia.stop()
-	
 	phone_down()
 	
 	calling = 0
@@ -499,6 +500,8 @@ func _on_decline_call_pressed() -> void:
 		3:
 			match call_index:
 				0: day3_start()
+	call_index +=1
+	
 
 var call_time = 0
 
@@ -1184,6 +1187,8 @@ func _on_generator_body_entered(body: Node2D) -> void:
 	if body == $player:
 		if day2force: return
 		if !day3_visitor_safe: day3_visitor_appear()
+		if !day4_creature1_safe: day4_creature_appear()
+		
 		generator_area = 1
 		if !generator_working:
 			$"map behind/generator/outline".visible = 1
@@ -1615,6 +1620,7 @@ func decision_option(option):
 func day_call(chat, target):
 	if chat_msg == len(chat):
 		chat_msg = 0
+		call_index += 1
 		calling = 0
 		$timers/skip_msg.stop()
 		phone_down()
@@ -1651,6 +1657,7 @@ func day_chat(chat, target):
 	if chat_msg == len(chat):
 		#print("chat done")
 		chat_msg = 0
+		call_index += 1
 		calling = 0
 		$timers/skip_msg.stop()
 		target.call()
@@ -1787,7 +1794,7 @@ func day1_start():
 	$sfx/dia.stop()
 	$timers/call_time.stop()
 	$timers/skip_msg.stop()
-	call_index = 1
+	#call_index = 1
 	
 	day1call1_done = 1
 	
@@ -1884,7 +1891,7 @@ func day2_start():
 	print("day2")
 	day2force = 0
 	subtitle("day2sub1", 1.0)
-	call_index += 1
+	#call_index += 1
 	shift_start()
 	#await get_tree().create_timer(1.0).timeout
 	
@@ -1916,8 +1923,6 @@ func day3_time():
 		set_shift_values(12, 16)
 	elif shift_time == 240:
 		set_shift_values(8, 14)
-	elif shift_time == 300:
-		day2_creature1()
 
 var day3_call1_chat = [
 	["day3call1sen1", 1.0],
@@ -1929,7 +1934,7 @@ var day3_call1_chat = [
 func day3_start():
 	print("day3")
 	
-	call_index += 1
+	#call_index += 1
 	shift_start()
 	day3_visitor()
 	#sabo_time()
@@ -2002,7 +2007,7 @@ var day3_creature1_chat = [
 
 func day3_creature1_talked():
 	#allow_move()
-	call_index += 1
+	#call_index += 1
 	print("call index" + str(call_index))
 	#await get_tree().create_timer(1.0).timeout
 	show_decision_option("Answer", "youcanstay", "nosorry.")
@@ -2031,6 +2036,7 @@ func day3_creature1_no():
 var cam_helper_creature_exist = 0
 
 func day3_creature1_stay():
+	global.day3creature_stayed = 1
 	allow_move()
 	call_index += 1
 	$timers/bad_time.paused = 0
@@ -2038,6 +2044,7 @@ func day3_creature1_stay():
 	#$areas/day3visitorfound/CollisionShape2D.set_deferred("disabled", 1)
 	day3_creature1_end_()
 	await get_tree().create_timer(4.0).timeout
+	sabo_time()
 	subtitle("", 0)
 
 var day3_creature1_chat_end = [
@@ -2050,7 +2057,8 @@ var day3_creature1_shift = 0
 func day3_creature1_end_():
 	print("leave soon")
 	await get_tree().create_timer(90).timeout
-	call_index += 1
+	#call_index += 1
+	sabo_time()
 	cam_helper_creature_exist = 0
 	day3_creature1_shift = 1
 	subtitle("leaving", 1)
@@ -2080,3 +2088,37 @@ func cam_helper_creature(area):
 	$CanvasLayer/subtitles.text += str(area)
 	await get_tree().create_timer(2.9).timeout
 	subtitle("", 0)
+
+var day3_call2_chat = [
+	["day3call2sen1", 1],
+]
+
+func day4_time():
+	if shift_time == 1:
+		print("im here")
+	elif shift_time == 60:
+		set_shift_values(15, 20)
+	elif shift_time == 150:
+		set_shift_values(12, 16)
+	elif shift_time == 240:
+		set_shift_values(8, 14)
+	elif shift_time == 300:
+		day2_creature1()
+
+func day4_start():
+	print("dayd")
+	shift_start()
+	day4_visitor()
+	#sabo_time()
+
+var day4_creature1_safe = 1
+
+func day4_visitor():
+	await get_tree().create_timer(10).timeout
+	generator_sabo()
+	if generator_area:
+		day4_creature_appear()
+
+func day4_creature_appear():
+	$anomalies/anomaly2.visible = 1
+	
