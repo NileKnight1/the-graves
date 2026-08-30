@@ -661,35 +661,6 @@ corner_radius_top_right = 60
 corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouja"]
-bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
-border_color = Color(0.8, 0, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2yb1"]
-bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
-border_color = Color(0.8, 0, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_color = Color(1, 1, 1, 1)
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wljb1"]
-bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
-border_color = Color(0.8, 0, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_color = Color(0.84705883, 0.49803922, 1, 1)
-shadow_size = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxtfn"]
 bg_color = Color(0, 0, 0, 1)
 border_color = Color(0, 0, 0, 1)
@@ -1012,6 +983,35 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouja"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2yb1"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wljb1"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.84705883, 0.49803922, 1, 1)
+shadow_size = 5
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5newe"]
 playback_mode = 1
@@ -4060,13 +4060,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ip3rd")
 text = "Press"
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1735474666]
-visible = false
 position = Vector2(0, -110)
 zoom = Vector2(1.4, 1.4)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
 [node name="Camera2D2" type="Camera2D" parent="player" unique_id=940701609]
+visible = false
 position = Vector2(-204, -94)
 rotation = 0.12217305
 ignore_rotation = false
@@ -4075,337 +4075,6 @@ zoom = Vector2(2.08, 2.08)
 limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
-
-[node name="room" type="Control" parent="player" unique_id=790920656]
-z_index = 2
-layout_direction = 2
-layout_mode = 3
-anchors_preset = 0
-offset_left = -344.0
-offset_top = 55.0
-offset_right = -344.0
-offset_bottom = 55.0
-mouse_filter = 1
-
-[node name="menu" type="Control" parent="player/room" unique_id=1600947440]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 1
-
-[node name="bg" type="Sprite2D" parent="player/room/menu" unique_id=36426239]
-visible = false
-position = Vector2(352.00003, -179.00002)
-rotation = 1.5707964
-scale = Vector2(0.64998233, 0.94649124)
-texture = ExtResource("4_u5sy4")
-
-[node name="title" type="Label" parent="player/room/menu" unique_id=1402786099]
-layout_mode = 0
-offset_left = 255.0
-offset_top = -360.0
-offset_right = 438.0
-offset_bottom = -317.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_constants/outline_size = 9
-theme_override_fonts/font = ExtResource("5_gee14")
-theme_override_font_sizes/font_size = 36
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="environmental" type="Button" parent="player/room/menu" unique_id=1804039785]
-visible = false
-layout_mode = 0
-offset_left = 260.0
-offset_top = -298.0
-offset_right = 439.0
-offset_bottom = -246.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-icon_alignment = 1
-
-[node name="creatures" type="Button" parent="player/room/menu" unique_id=343485077]
-visible = false
-layout_mode = 0
-offset_left = 260.0
-offset_top = -239.0
-offset_right = 439.0
-offset_bottom = -187.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-icon_alignment = 1
-
-[node name="back" type="Button" parent="player/room/menu" unique_id=551230781]
-visible = false
-layout_mode = 0
-offset_left = 260.0
-offset_top = -180.0
-offset_right = 439.0
-offset_bottom = -128.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-icon_alignment = 1
-
-[node name="environment" type="Control" parent="player/room" unique_id=416041044]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 1
-
-[node name="p1" type="Button" parent="player/room/environment" unique_id=244052521]
-layout_mode = 0
-offset_left = 260.0
-offset_top = -298.0
-offset_right = 439.0
-offset_bottom = -246.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-keep_pressed_outside = true
-text = "Part 1"
-icon_alignment = 1
-
-[node name="p2" type="Button" parent="player/room/environment" unique_id=2023181837]
-layout_mode = 0
-offset_left = 260.0
-offset_top = -239.0
-offset_right = 439.0
-offset_bottom = -187.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Part 2"
-icon_alignment = 1
-
-[node name="p3" type="Button" parent="player/room/environment" unique_id=1230113555]
-layout_mode = 0
-offset_left = 260.0
-offset_top = -180.0
-offset_right = 439.0
-offset_bottom = -128.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Part 3"
-icon_alignment = 1
-
-[node name="p4" type="Button" parent="player/room/environment" unique_id=785583236]
-layout_mode = 0
-offset_left = 260.0
-offset_top = -121.0
-offset_right = 439.0
-offset_bottom = -69.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Part 4"
-icon_alignment = 1
-
-[node name="back" type="Button" parent="player/room/environment" unique_id=1405433886]
-layout_mode = 0
-offset_left = 260.0
-offset_top = -62.0
-offset_right = 439.0
-offset_bottom = -10.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Back"
-icon_alignment = 1
-
-[node name="title" type="Label" parent="player/room/environment" unique_id=611154632]
-layout_mode = 0
-offset_left = 255.0
-offset_top = -360.0
-offset_right = 438.0
-offset_bottom = -317.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_constants/outline_size = 9
-theme_override_fonts/font = ExtResource("5_gee14")
-theme_override_font_sizes/font_size = 36
-text = "Report Radio"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="creatures" type="Control" parent="player/room" unique_id=416967165]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 1
-
-[node name="p1" type="Button" parent="player/room/creatures" unique_id=641934301]
-layout_mode = 0
-offset_left = 260.0
-offset_top = -298.0
-offset_right = 439.0
-offset_bottom = -246.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Part 1"
-icon_alignment = 1
-
-[node name="p2" type="Button" parent="player/room/creatures" unique_id=1048398711]
-layout_mode = 0
-offset_left = 260.0
-offset_top = -239.0
-offset_right = 439.0
-offset_bottom = -187.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Part 2"
-icon_alignment = 1
-
-[node name="p3" type="Button" parent="player/room/creatures" unique_id=2137383806]
-layout_mode = 0
-offset_left = 260.0
-offset_top = -180.0
-offset_right = 439.0
-offset_bottom = -128.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Part 3"
-icon_alignment = 1
-
-[node name="p4" type="Button" parent="player/room/creatures" unique_id=41613055]
-layout_mode = 0
-offset_left = 260.0
-offset_top = -121.0
-offset_right = 439.0
-offset_bottom = -69.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Part 4"
-icon_alignment = 1
-
-[node name="back" type="Button" parent="player/room/creatures" unique_id=1822078933]
-layout_mode = 0
-offset_left = 260.0
-offset_top = -62.0
-offset_right = 439.0
-offset_bottom = -10.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
-text = "Back"
-icon_alignment = 1
-
-[node name="title" type="Label" parent="player/room/creatures" unique_id=475364831]
-layout_mode = 0
-offset_left = 255.0
-offset_top = -360.0
-offset_right = 438.0
-offset_bottom = -317.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_constants/outline_size = 9
-theme_override_fonts/font = ExtResource("5_gee14")
-theme_override_font_sizes/font_size = 36
-text = "Report Radio"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="phone" type="Control" parent="player" unique_id=1368197327]
 light_mask = 2
@@ -6166,7 +5835,6 @@ debug_color = Color(0.989497, 0, 0.29520148, 0.41960785)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
-visible = false
 
 [node name="close_cam" type="Button" parent="CanvasLayer" unique_id=170245993]
 visible = false
@@ -6406,6 +6074,343 @@ stream = ExtResource("13_e1j6l")
 autoplay = true
 loop = true
 
+[node name="decision" type="Control" parent="CanvasLayer" unique_id=803355168]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="room" type="Control" parent="CanvasLayer" unique_id=1019839140]
+z_index = 2
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 296.0
+offset_top = 478.0
+offset_right = 296.0
+offset_bottom = 478.0
+mouse_filter = 1
+
+[node name="menu" type="Control" parent="CanvasLayer/room" unique_id=1031709947]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="bg" type="Sprite2D" parent="CanvasLayer/room/menu" unique_id=1101166373]
+visible = false
+position = Vector2(352.00003, -179.00002)
+rotation = 1.5707964
+scale = Vector2(0.64998233, 0.94649124)
+texture = ExtResource("4_u5sy4")
+
+[node name="title" type="Label" parent="CanvasLayer/room/menu" unique_id=1245174891]
+layout_mode = 0
+offset_left = 255.0
+offset_top = -360.0
+offset_right = 438.0
+offset_bottom = -317.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="environmental" type="Button" parent="CanvasLayer/room/menu" unique_id=1805977063]
+visible = false
+layout_mode = 0
+offset_left = 260.0
+offset_top = -298.0
+offset_right = 439.0
+offset_bottom = -246.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+icon_alignment = 1
+
+[node name="creatures" type="Button" parent="CanvasLayer/room/menu" unique_id=1192049498]
+visible = false
+layout_mode = 0
+offset_left = 260.0
+offset_top = -239.0
+offset_right = 439.0
+offset_bottom = -187.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+icon_alignment = 1
+
+[node name="back" type="Button" parent="CanvasLayer/room/menu" unique_id=2132935176]
+visible = false
+layout_mode = 0
+offset_left = 260.0
+offset_top = -180.0
+offset_right = 439.0
+offset_bottom = -128.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+icon_alignment = 1
+
+[node name="environment" type="Control" parent="CanvasLayer/room" unique_id=1702565061]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="p1" type="Button" parent="CanvasLayer/room/environment" unique_id=918468115]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -298.0
+offset_right = 439.0
+offset_bottom = -246.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+keep_pressed_outside = true
+text = "Part 1"
+icon_alignment = 1
+
+[node name="p2" type="Button" parent="CanvasLayer/room/environment" unique_id=473737402]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -239.0
+offset_right = 439.0
+offset_bottom = -187.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 2"
+icon_alignment = 1
+
+[node name="p3" type="Button" parent="CanvasLayer/room/environment" unique_id=1094704681]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -180.0
+offset_right = 439.0
+offset_bottom = -128.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 3"
+icon_alignment = 1
+
+[node name="p4" type="Button" parent="CanvasLayer/room/environment" unique_id=1919499783]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -121.0
+offset_right = 439.0
+offset_bottom = -69.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 4"
+icon_alignment = 1
+
+[node name="back" type="Button" parent="CanvasLayer/room/environment" unique_id=2028470497]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -62.0
+offset_right = 439.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Back"
+icon_alignment = 1
+
+[node name="title" type="Label" parent="CanvasLayer/room/environment" unique_id=19915501]
+layout_mode = 0
+offset_left = 255.0
+offset_top = -360.0
+offset_right = 438.0
+offset_bottom = -317.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 36
+text = "Report Radio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="creatures" type="Control" parent="CanvasLayer/room" unique_id=1749117228]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="p1" type="Button" parent="CanvasLayer/room/creatures" unique_id=1747716675]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -298.0
+offset_right = 439.0
+offset_bottom = -246.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 1"
+icon_alignment = 1
+
+[node name="p2" type="Button" parent="CanvasLayer/room/creatures" unique_id=1253814483]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -239.0
+offset_right = 439.0
+offset_bottom = -187.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 2"
+icon_alignment = 1
+
+[node name="p3" type="Button" parent="CanvasLayer/room/creatures" unique_id=1373275688]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -180.0
+offset_right = 439.0
+offset_bottom = -128.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 3"
+icon_alignment = 1
+
+[node name="p4" type="Button" parent="CanvasLayer/room/creatures" unique_id=1428119467]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -121.0
+offset_right = 439.0
+offset_bottom = -69.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Part 4"
+icon_alignment = 1
+
+[node name="back" type="Button" parent="CanvasLayer/room/creatures" unique_id=1236679711]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -62.0
+offset_right = 439.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "Back"
+icon_alignment = 1
+
+[node name="title" type="Label" parent="CanvasLayer/room/creatures" unique_id=328800171]
+layout_mode = 0
+offset_left = 255.0
+offset_top = -360.0
+offset_right = 438.0
+offset_bottom = -317.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 36
+text = "Report Radio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="timers" type="Node" parent="." unique_id=896048706]
 
 [node name="spawn" type="Timer" parent="timers" unique_id=2061830803]
@@ -6507,19 +6512,6 @@ texture = ExtResource("19_264po")
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n9" to="." method="_on_antenna_fix_num9_pressed"]
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n10" to="." method="_on_antenna_fix_num10_pressed"]
 [connection signal="pressed" from="player/cam_fix/but" to="." method="_on_cam_fix_pressed"]
-[connection signal="pressed" from="player/room/menu/environmental" to="." method="_on_environmental_pressed"]
-[connection signal="pressed" from="player/room/menu/creatures" to="." method="_on_creatures_pressed"]
-[connection signal="pressed" from="player/room/menu/back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="player/room/environment/p1" to="." method="_on_en1_pressed"]
-[connection signal="pressed" from="player/room/environment/p2" to="." method="_on_en2_pressed"]
-[connection signal="pressed" from="player/room/environment/p3" to="." method="_on_en3_pressed"]
-[connection signal="pressed" from="player/room/environment/p4" to="." method="_on_en4_pressed"]
-[connection signal="pressed" from="player/room/environment/back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="player/room/creatures/p1" to="." method="_on_creature1_pressed"]
-[connection signal="pressed" from="player/room/creatures/p2" to="." method="_on_creature2_pressed"]
-[connection signal="pressed" from="player/room/creatures/p3" to="." method="_on_creature3_pressed"]
-[connection signal="pressed" from="player/room/creatures/p4" to="." method="_on_creature4_pressed"]
-[connection signal="pressed" from="player/room/creatures/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="player/phone/ringing/accept" to="." method="_on_accept_call_pressed"]
 [connection signal="pressed" from="player/phone/ringing/decline" to="." method="_on_decline_call_pressed"]
 [connection signal="pressed" from="player/phone/accepted/decline" to="." method="_on_decline_call_pressed"]
@@ -6599,6 +6591,15 @@ texture = ExtResource("19_264po")
 [connection signal="mouse_exited" from="areas/antenna" to="." method="_on_antenna_mouse_exited"]
 [connection signal="body_entered" from="areas/day3visitorfound" to="." method="_on_day_3_visitorfound_body_entered"]
 [connection signal="pressed" from="CanvasLayer/close_cam" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/room/menu/environmental" to="." method="_on_environmental_pressed"]
+[connection signal="pressed" from="CanvasLayer/room/menu/creatures" to="." method="_on_creatures_pressed"]
+[connection signal="pressed" from="CanvasLayer/room/menu/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/room/environment/p1" to="." method="_on_en1_pressed"]
+[connection signal="pressed" from="CanvasLayer/room/environment/p2" to="." method="_on_en2_pressed"]
+[connection signal="pressed" from="CanvasLayer/room/environment/p3" to="." method="_on_en3_pressed"]
+[connection signal="pressed" from="CanvasLayer/room/environment/p4" to="." method="_on_en4_pressed"]
+[connection signal="pressed" from="CanvasLayer/room/environment/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/room/creatures/back" to="." method="_on_back_pressed"]
 [connection signal="timeout" from="timers/spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="timers/bad_time" to="." method="_on_bad_time_timeout"]
 [connection signal="timeout" from="timers/call_time" to="." method="_on_call_time_timeout"]

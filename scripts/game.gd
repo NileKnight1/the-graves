@@ -59,27 +59,27 @@ func translation():
 	#TranslationServer.set_locale("ar") 
 	$player.get_child(0).text = player_name
 	
-	$player/room/menu/title.text = tr("report_radio")
-	$player/room/environment/title.text = tr("report_radio")
-	$player/room/creatures/title.text = tr("report_radio")
+	$CanvasLayer/room/menu/title.text = tr("report_radio")
+	$CanvasLayer/room/environment/title.text = tr("report_radio")
+	$CanvasLayer/room/creatures/title.text = tr("report_radio")
 	
-	$player/room/menu/environmental.text = tr("environmental")
-	$player/room/menu/creatures.text = tr("creatures")
-	$player/room/menu/back.text = tr("back")
-	$player/room/environment/back.text = tr("back")
-	$player/room/creatures/back.text = tr("back")
-	$player/room/environment/back.text = tr("back")
-	$player/room/creatures/back.text = tr("back")
+	$CanvasLayer/room/menu/environmental.text = tr("environmental")
+	$CanvasLayer/room/menu/creatures.text = tr("creatures")
+	$CanvasLayer/room/menu/back.text = tr("back")
+	$CanvasLayer/room/environment/back.text = tr("back")
+	$CanvasLayer/room/creatures/back.text = tr("back")
+	$CanvasLayer/room/environment/back.text = tr("back")
+	$CanvasLayer/room/creatures/back.text = tr("back")
 	
-	$player/room/environment/p1.text = tr("part1")
-	$player/room/environment/p2.text = tr("part2")
-	$player/room/environment/p3.text = tr("part3")
-	$player/room/environment/p4.text = tr("part4")
+	$CanvasLayer/room/environment/p1.text = tr("part1")
+	$CanvasLayer/room/environment/p2.text = tr("part2")
+	$CanvasLayer/room/environment/p3.text = tr("part3")
+	$CanvasLayer/room/environment/p4.text = tr("part4")
 	
-	$player/room/creatures/p1.text = tr("part1")
-	$player/room/creatures/p2.text = tr("part2")
-	$player/room/creatures/p3.text = tr("part3")
-	$player/room/creatures/p4.text = tr("part4")
+	$CanvasLayer/room/creatures/p1.text = tr("part1")
+	$CanvasLayer/room/creatures/p2.text = tr("part2")
+	$CanvasLayer/room/creatures/p3.text = tr("part3")
+	$CanvasLayer/room/creatures/p4.text = tr("part4")
 	
 	$CanvasLayer/shift.text = tr("shift") + " " + str(shift)
 	$CanvasLayer/danger.text = tr("danger") + " " + str(bad_time) + "/" + str(max_bad_time)
@@ -274,7 +274,7 @@ func close_cam():
 
 
 func open_radio():
-	$player/room/menu.visible = 1
+	$CanvasLayer/room/menu.visible = 1
 	radio_opened = 1
 	$sfx/radio.play()
 	$CanvasLayer/press_e.visible = 0
@@ -284,10 +284,25 @@ func open_radio():
 
 func close_radio():
 	$sfx/radio.stop()
-	$player/room/menu.visible = 0
-	$player/room/environment.visible = 0
-	$player/room/creatures.visible = 0
+	$CanvasLayer/room/menu.visible = 0
+	$CanvasLayer/room/environment.visible = 0
+	$CanvasLayer/room/creatures.visible = 0
 	radio_opened = 0
+
+func match_shift():
+	match shift:
+		1:
+			match call_index:
+				0: day_call(chat1_array, day1_start)
+				1: day_call(day1_call2_chat, day_end)
+		2:
+			match call_index:
+				0: day_call(day2_call1_chat, day2_start)
+				1: day_call(day2_call2_chat, day_end)
+		3:
+			match call_index:
+				0: day_call(day3_call1_chat, day3_start)
+				1: day_chat(day3_creature1_chat, day3_creature1_talked)
 
 func _process(delta: float) -> void:
 	#print(day1task2)
@@ -384,20 +399,8 @@ func _process(delta: float) -> void:
 	if calling && Input.is_action_just_pressed("skip"):
 		chat_msg += 1
 		$timers/skip_msg.start()
-		match shift:
-			1:
-				match call_index:
-					0: day_call(chat1_array, day1_start)
-					1: day_call(day1_call2_chat, day_end)
-			2:
-				match call_index:
-					0: day_call(day2_call1_chat, day2_start)
-					1: day_call(day2_call2_chat, day_end)
-			3:
-				match call_index:
-					0: day_call(day3_call1_chat, day3_start)
-					#1: day_call(day3_call2_chat, day_end)
-			
+		match_shift()
+		
 
 func _on_switch_body_entered(body: Node2D) -> void:
 	if body == $player:
@@ -415,9 +418,9 @@ func _on_switch_body_exited(body: Node2D) -> void:
 
 
 func radio_access_on():
-	$player/room/menu/environmental.visible = 1
+	$CanvasLayer/room/menu/environmental.visible = 1
 func radio_access_off():
-	$player/room/menu/environmental.visible = 0
+	$CanvasLayer/room/menu/environmental.visible = 0
 
 func stop_move():
 	$player.move = 0
@@ -469,19 +472,7 @@ func _on_accept_call_pressed() -> void:
 	$timers/call_time.start()
 	$timers/skip_msg.start()
 	
-	match shift:
-		1:
-			match call_index:
-				0: day_call(chat1_array, day1_start)
-				1: day_call(day1_call2_chat, day_end)
-		2:
-			match call_index:
-				0: day_call(day2_call1_chat, day2_start)
-				1: day_call(day2_call2_chat, day_end)
-		3:
-			match call_index:
-				0: day_call(day3_call1_chat, day3_start)
-				#1:
+	match_shift()
 
 func _on_decline_call_pressed() -> void:
 	play_sound(hang_up)
@@ -524,19 +515,7 @@ func _on_skip_msg_timeout() -> void:
 	chat_msg += 1
 	#print("im still workingD")
 	
-	match shift:
-		1:
-			match call_index:
-				0: day_call(chat1_array, day1_start)
-				1: day_call(day1_call2_chat, day_end)
-		2:
-			match call_index:
-				0: day_call(day2_call1_chat, day2_start)
-				1: day_call(day2_call2_chat, day_end)
-		3: 
-			match call_index:
-				0: day_call(day3_call1_chat, day3_start)
-				1: day_call(day2_call2_chat, day_end)
+	match_shift()
 
 
 func shift_end():
@@ -592,9 +571,9 @@ func _on_radio_body_exited(body: Node2D) -> void:
 			radio_opened = 0
 			$sfx/radio.stop()
 			
-			$player/room/menu.visible = 0
-			$player/room/environment.visible = 0
-			$player/room/creatures.visible = 0
+			$CanvasLayer/room/menu.visible = 0
+			$CanvasLayer/room/environment.visible = 0
+			$CanvasLayer/room/creatures.visible = 0
 		print("radio_area_leftd")
 		$CanvasLayer/press_e.visible = 0
 
@@ -919,16 +898,16 @@ var anomaly_events_prob = []
 func clear_anomaly_event(area):
 	play_sound(radio_signal)
 	subtitle("report_sent", 0.8)
-	$player/room/environment/p1.disabled = 1
-	$player/room/environment/p2.disabled = 1
-	$player/room/environment/p3.disabled = 1
-	$player/room/environment/p4.disabled = 1
+	$CanvasLayer/room/environment/p1.disabled = 1
+	$CanvasLayer/room/environment/p2.disabled = 1
+	$CanvasLayer/room/environment/p3.disabled = 1
+	$CanvasLayer/room/environment/p4.disabled = 1
 	
 	await get_tree().create_timer(2.0).timeout
-	$player/room/environment/p1.disabled = 0
-	$player/room/environment/p2.disabled = 0
-	$player/room/environment/p3.disabled = 0
-	$player/room/environment/p4.disabled = 0
+	$CanvasLayer/room/environment/p1.disabled = 0
+	$CanvasLayer/room/environment/p2.disabled = 0
+	$CanvasLayer/room/environment/p3.disabled = 0
+	$CanvasLayer/room/environment/p4.disabled = 0
 	
 	if !day1task3:
 		day1task3_apply(area)
@@ -1005,17 +984,17 @@ func _on_en4_pressed() -> void:
 
 func _on_environmental_pressed() -> void:
 	play_sound(click_radio)
-	$player/room/environment.visible = 1
-	$player/room/menu.visible = 0
+	$CanvasLayer/room/environment.visible = 1
+	$CanvasLayer/room/menu.visible = 0
 func _on_creatures_pressed() -> void:
 	play_sound(click_radio)
-	$player/room/creatures.visible = 1
-	$player/room/menu.visible = 0
+	$CanvasLayer/room/creatures.visible = 1
+	$CanvasLayer/room/menu.visible = 0
 func _on_back_pressed() -> void:
 	play_sound(click_radio)
-	$player/room/environment.visible = 0
-	$player/room/creatures.visible = 0
-	$player/room/menu.visible = 1
+	$CanvasLayer/room/environment.visible = 0
+	$CanvasLayer/room/creatures.visible = 0
+	$CanvasLayer/room/menu.visible = 1
 
 var bad_time = 0
 
@@ -1736,6 +1715,13 @@ func day1_time():
 		set_shift_values(14, 18)
 		
 
+func start_chat():
+	call_time = 0
+	calling = 1
+	$timers/skip_msg.start()
+	
+	match_shift()
+
 func day_call(chat, target):
 	if chat_msg == len(chat):
 		chat_msg = 0
@@ -1770,8 +1756,31 @@ func day_call(chat, target):
 
 	await get_tree().create_timer(chat[chat_msg][1]).timeout
 	$sfx/dia.stop()
+
+func day_chat(chat, target):
+	if chat_msg == len(chat):
+		#print("chat done")
+		chat_msg = 0
+		calling = 0
+		$timers/skip_msg.stop()
+		target.call()
+		return
 	
-	
+	var temp = tr(chat[chat_msg][0])
+	$CanvasLayer/subtitles.visible_ratio = 0
+	var temp_sec = randi_range(0, 17)
+	$sfx/dia.play(temp_sec)
+	var tween = create_tween()
+	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
+
+	if "%s" in temp:
+		$CanvasLayer/subtitles.text = temp % player_name
+	else:
+		$CanvasLayer/subtitles.text = temp
+
+	await get_tree().create_timer(chat[chat_msg][1]).timeout
+	$sfx/dia.stop()
+
 #
 #func day1_call1():
 	#if chat_msg > 8:
@@ -1940,7 +1949,7 @@ var day3_visitor_safe = 1
 func day3_visitor():
 	#cam_sabo(3)
 	
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(35).timeout
 	day3_visitor_safe = 0 
 	generator_sabo()
 
@@ -1958,15 +1967,36 @@ func flicker_effect():
 	$CanvasLayer/VideoStreamPlayer.visible = 1
 	await get_tree().create_timer(0.2).timeout
 	$CanvasLayer/VideoStreamPlayer.visible = 0
-	
+
+
 
 func _on_day_3_visitorfound_body_entered(body: Node2D) -> void:
 	if body == $player:
 		if $anomalies/anomaly2.visible:
 			stop_move()
+			print(call_index)
+			print("speak")
 			$player/sprite.play("idle")
 			play_sound(sudden)
 			$player/Camera2D.enabled = 0
 			$player/Camera2D2.enabled = 1
 			flicker_effect()
-			
+			await get_tree().create_timer(1.0).timeout
+			$player.position.x = 300
+			$player/Camera2D.enabled = 1
+			$player/Camera2D2.enabled = 0
+			start_chat()
+
+var day3_creature1_chat = [
+	["d3c1s1", 0.5],
+	["d3c1s2", 1.0],
+	["d3c1s3", 1.5],
+	
+	
+]
+
+func day3_creature1_talked():
+	allow_move()
+	await get_tree().create_timer(1.0).timeout
+	
+	subtitle("", 0)
