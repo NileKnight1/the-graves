@@ -4581,7 +4581,8 @@ vertical_alignment = 1
 [node name="anomalies" type="Node2D" parent="." unique_id=1338437649]
 
 [node name="anomaly" parent="anomalies" unique_id=312059141 instance=ExtResource("3_lbhrr")]
-position = Vector2(1630, 9)
+visible = false
+position = Vector2(-326, -18)
 
 [node name="map above" type="Control" parent="." unique_id=385126786]
 layout_direction = 2

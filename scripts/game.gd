@@ -25,7 +25,7 @@ var min_sabo_time = 60
 var max_sabo_time = 100
 var max_sabo_game = 0
 
-var shift_time = 0
+var shift_time = 359
 
 
 #var collect = preload("res://audio/collect.mp3")
@@ -300,6 +300,10 @@ func _process(delta: float) -> void:
 	else:
 		walking_sound.stop()
 
+	match shift:
+		2:
+			if ps1: $anomalies/anomaly.visible = 0
+
 	if Input.is_action_just_pressed("interact"):
 		if computer_area && !computer_opened && generator_working:
 			open_cam()
@@ -367,7 +371,11 @@ func _process(delta: float) -> void:
 				opened_cam = 1
 			play_sound(camera_switch)
 			
-				
+		if opened_cam == 1 && day2creature1_appeared:
+			day2creature1_appeared = 0
+			play_sound(sudden)
+		
+		
 		$"map above/cams".get_child(opened_cam-1).visible = 1
 		$"map above/cams".get_child(opened_cam-1).enabled = 1
 		#
@@ -382,7 +390,7 @@ func _process(delta: float) -> void:
 			2:
 				match call_index:
 					0: day_call(day2_call1_chat, day2_start)
-					#1: day_call(day2_call2_chat, day2_end)
+					1: day_call(day2_call2_chat, day_end)
 
 
 func _on_switch_body_entered(body: Node2D) -> void:
@@ -463,7 +471,7 @@ func _on_accept_call_pressed() -> void:
 		2:
 			match call_index:
 				0: day_call(day2_call1_chat, day2_start)
-				#1: day_call(day2_call2_chat, day2_end)
+				1: day_call(day2_call2_chat, day_end)
 
 func _on_decline_call_pressed() -> void:
 	play_sound(hang_up)
@@ -482,7 +490,7 @@ func _on_decline_call_pressed() -> void:
 		2:
 			match call_index:
 				0: day2_start()
-				#1: day1_end()
+				1: day_end()
 
 var call_time = 0
 
@@ -509,7 +517,9 @@ func _on_skip_msg_timeout() -> void:
 				0: day_call(chat1_array, day1_start)
 				1: day_call(day1_call2_chat, day_end)
 		2:
-			pass
+			match call_index:
+				0: day_call(day2_call1_chat, day2_start)
+				1: day_call(day2_call2_chat, day_end)
 
 func shift_end():
 	$timers/spawn.stop()
@@ -1715,8 +1725,13 @@ func day_call(chat, target):
 		phone_down()
 		target.call()
 		return
-	var temp = tr(chat[chat_msg][0])
 	
+	match shift:
+		3:
+			match call_index:
+				1: if !global.day2creature_found: chat_msg+= 1
+	
+	var temp = tr(chat[chat_msg][0])
 	$CanvasLayer/subtitles.visible_ratio = 0
 	var temp_sec = randi_range(0, 17)
 	$sfx/dia.play(temp_sec)
@@ -1820,6 +1835,13 @@ var day2_call1_chat = [
 #func day2_call1():
 	#phone_up()
 
+var day2_call2_chat = [
+	["day2call2sen1", 1.5],
+	["day2call2sen2", 1.0],
+	
+	
+]
+
 var day2force = 0
 
 func day2_starters():
@@ -1836,12 +1858,15 @@ func day2_time():
 		set_shift_values(12, 16)
 	elif shift_time == 240:
 		set_shift_values(8, 14)
+	elif shift_time == 300:
+		day2_creature1()
 	#elif
 
 func day2_start():
 	print("day2")
 	day2force = 0
 	subtitle("day2sub1", 1.0)
+	call_index += 1
 	shift_start()
 	#await get_tree().create_timer(1.0).timeout
 	
@@ -1849,8 +1874,48 @@ func day2_start():
 	await get_tree().create_timer(3.0).timeout
 	subtitle("", 0)
 
+var day2creature1_appeared = 0
 
-### Planning
+func day2_creature1():
+	if ps1 || (computer_opened && opened_cam == 1): 
+		await get_tree().create_timer(1.0).timeout
+		day2_creature1()
+		return
+	$anomalies/anomaly.visible = 1
+	day2creature1_appeared = 1
+	global.day2creature_found = 1
+	
+	print("anomaly is here")
+
+
+
+func day3_time():
+	if shift_time == 1:
+		print("im here")
+	elif shift_time == 60:
+		set_shift_values(15, 20)
+	elif shift_time == 150:
+		set_shift_values(12, 16)
+	elif shift_time == 240:
+		set_shift_values(8, 14)
+	elif shift_time == 300:
+		day2_creature1()
+
+var day3_call1_chat = [
+	"day3call1sen1",
+	"day3call1sen2",
+	"day3call1sen3",
+	"day3call1sen4",
+]
+
+func day3_start():
+	print("day 3")
+	
+	call_index += 1
+	shift_start()
+	
+
+### Planninga
 # shift1: environmental - 3 max - 15:25 secs (2:00) 15:20 (4:00) 14:18 (6:00) - 300 danger
 # shift2: environmental - 4 max - 15:25 (01:00) 15:20 (02:30) 12:16 (4:00) 8:14 secs - 300 danger generator_sabotaged
 # shift3: environmental - 4 max - 12:18 secs - 300 danger generator/cams/antenna
