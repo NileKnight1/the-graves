@@ -9,15 +9,19 @@ var walk = 0
 
 
 func _physics_process(delta: float) -> void:
-	if !move:
+	#if !move:
 		#print("hi")
 		#print(velocity)
 		#velocity = Vector2(0,0)
-		return
+		#return
 	#print("hellll")
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
+	if !move: 
+		velocity.x = 0
+		move_and_slide()
+		return
 	
 	#print(velocity)
 	if velocity.y != 0 || velocity.x == 0:
@@ -26,11 +30,11 @@ func _physics_process(delta: float) -> void:
 		walk = 1
 	
 	if sprint:
-		$AnimatedSprite2D.play("sprint")
+		$sprite.play("sprint")
 	elif walk:
-		$AnimatedSprite2D.play("walk")
+		$sprite.play("walk")
 	else:
-		$AnimatedSprite2D.play("idle")
+		$sprite.play("idle")
 		
 	
 	
@@ -53,13 +57,13 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 		if direction < 0:
-			$AnimatedSprite2D.flip_h = 1
+			$sprite.flip_h = 1
 		else:
-			$AnimatedSprite2D.flip_h = 0
+			$sprite.flip_h = 0
 			
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		#$AnimatedSprite2D.flip_h = 1
+		#$sprite.flip_h = 1
 
 	move_and_slide()

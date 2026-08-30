@@ -174,7 +174,7 @@ theme_override_font_sizes/font_size = 10
 text = "Ammar"
 vertical_alignment = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=805986178]
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=805986178]
 position = Vector2(19, -50.000004)
 scale = Vector2(0.38833338, 0.3883334)
 sprite_frames = SubResource("SpriteFrames_h0i82")

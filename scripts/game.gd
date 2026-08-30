@@ -1938,7 +1938,7 @@ func day3_start():
 var day3_visitor_safe = 1
 
 func day3_visitor():
-	cam_sabo(3)
+	#cam_sabo(3)
 	
 	await get_tree().create_timer(5).timeout
 	day3_visitor_safe = 0 
@@ -1953,3 +1953,20 @@ func day3_visitor_appear():
 # shift1: environmental - 3 max - 15:25 secs (2:00) 15:20 (4:00) 14:18 (6:00) - 300 danger
 # shift2: environmental - 4 max - 15:25 (01:00) 15:20 (02:30) 12:16 (4:00) 8:14 secs - 300 danger generator_sabotaged
 # shift3: environmental - 4 max - 12:18 secs - 300 danger generator/cams/antenna
+
+func flicker_effect():
+	$CanvasLayer/VideoStreamPlayer.visible = 1
+	await get_tree().create_timer(0.2).timeout
+	$CanvasLayer/VideoStreamPlayer.visible = 0
+	
+
+func _on_day_3_visitorfound_body_entered(body: Node2D) -> void:
+	if body == $player:
+		if $anomalies/anomaly2.visible:
+			stop_move()
+			$player/sprite.play("idle")
+			play_sound(sudden)
+			$player/Camera2D.enabled = 0
+			$player/Camera2D2.enabled = 1
+			flicker_effect()
+			
