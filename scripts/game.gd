@@ -1939,7 +1939,9 @@ var day3_visitor_safe = 1
 func day3_visitor():
 	#cam_sabo(3)
 	
-	await get_tree().create_timer(350).timeout
+	await get_tree().create_timer(60).timeout
+	if generator_area:
+		day3_visitor_appear()
 	day3_visitor_safe = 0 
 	generator_sabo()
 
