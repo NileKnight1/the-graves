@@ -43,6 +43,9 @@ var correct = preload("res://audio/correct.mp3")
 var click_switch = preload("res://audio/click_switch.mp3")
 var sudden = preload("res://audio/sudden.mp3")
 var punch = preload("res://audio/punch.mp3")
+var scary = preload("res://audio/dragon-studio-scary-transition-401717.mp3")
+var high_pitch = preload("res://audio/highpitch.mp3")
+
 
 
 func play_sound(sound):
@@ -66,13 +69,31 @@ func flicker_effect():
 	$CanvasLayer/VideoStreamPlayer.stop()
 
 func crawl_effect():
+
+	
+	$sfx/night.volume_db = -80
+	$sfx/camera.volume_db = -80
+	
+	#await get_tree().create_timer(2).timeout
+	flicker_effect()
+	flicker_effect()
+	await get_tree().create_timer(0.5).timeout
+	
 	$CanvasLayer/videostream2.visible = 1
 	$CanvasLayer/videostream2.stream = crawl
 	$CanvasLayer/videostream2.play()
-	await get_tree().create_timer(8).timeout
+	play_sound(scary)
+	
+	await get_tree().create_timer(5).timeout
+	close_cam()
 	$CanvasLayer/videostream2.stream = null
 	$CanvasLayer/videostream2.visible = 0
 	$CanvasLayer/videostream2.stop()
+	play_sound(high_pitch)
+	await get_tree().create_timer(0.7).timeout
+	
+	$sfx/night.volume_db = 0
+	$sfx/camera.volume_db = 0
 
 
 func translation():
@@ -143,10 +164,14 @@ func _ready() -> void:
 		pc = 0
 	translation()
 	tasks()
-	crawl_effect()
 	#day1_end()
 	#get_tree().paused = 1
+	
+	await get_tree().create_timer(4).timeout
+	crawl_effect()
+	await get_tree().create_timer(100).timeout
 	phone_up()
+	
 	#antenna_sabo()
 	#generator_sabo()
 	developer()

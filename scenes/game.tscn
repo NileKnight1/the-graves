@@ -6092,16 +6092,20 @@ text = "Resume"
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 stream = ExtResource("13_e1j6l")
 
 [node name="videostream2" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=1460121371]
 material = SubResource("ShaderMaterial_qnb83")
-offset_left = 244.0
-offset_top = 820.0
-offset_right = 1524.0
-offset_bottom = 1540.0
+offset_left = -220.0
+offset_top = 1915.0
+offset_right = 2762.6826
+offset_bottom = 3592.7593
 rotation = -1.5707964
+mouse_filter = 2
 stream = ExtResource("13_e1j6l")
+speed_scale = 5.0
+expand = true
 loop = true
 
 [node name="room" type="Control" parent="CanvasLayer" unique_id=1019839140]
@@ -6518,7 +6522,7 @@ wait_time = 7.0
 [node name="sabo_timer" type="Timer" parent="timers" unique_id=1760832061]
 one_shot = true
 
-[node name="sfx" type="Node" parent="." unique_id=694605502]
+[node name="sfx" type="Node2D" parent="." unique_id=864452028]
 
 [node name="ringtone" type="AudioStreamPlayer" parent="sfx" unique_id=1353244250]
 stream = ExtResource("10_vtaks")
@@ -6589,6 +6593,9 @@ scale = Vector2(2.4554963, 2.8862746)
 energy = 0.56
 blend_mode = 1
 texture = ExtResource("19_264po")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=692850819]
+color = Color(0.7750634, 0.7750634, 0.7750634, 1)
 
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n1" to="." method="_on_antenna_fix_num1_pressed"]
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n2" to="." method="_on_antenna_fix_num2_pressed"]
