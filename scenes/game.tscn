@@ -4272,6 +4272,7 @@ vertical_alignment = 1
 [node name="anomalies" type="Node2D" parent="." unique_id=1338437649]
 
 [node name="anomaly" parent="anomalies" unique_id=312059141 instance=ExtResource("3_lbhrr")]
+visible = false
 position = Vector2(-326, 358)
 
 [node name="anomaly2" parent="anomalies" unique_id=1260922437 instance=ExtResource("3_lbhrr")]

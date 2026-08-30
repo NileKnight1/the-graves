@@ -755,7 +755,6 @@ func apply_anomaly_event():
 		return
 		
 	print("evented")
-
 	for i in anomaly_events:
 		#print(computer_opened && i["area"] == opened_cam)
 		
@@ -770,9 +769,7 @@ func apply_anomaly_event():
 		
 		for j in range(i["prob"]):
 			anomaly_events_prob.append(i)
-			
-	#print (anomaly_events_prob)
-	#print(opened_cam)
+	
 	
 	var temp = randi_range(0, len(anomaly_events_prob)-1)
 	var temp2
@@ -789,6 +786,9 @@ func apply_anomaly_event():
 	anomaly_events_prob.clear()
 	
 	anomaly_events[temp2]["exist"] = 1
+	
+	if cam_helper_creature_exist:
+		cam_helper_creature(anomaly_events[temp2]["area"])
 	
 	if anomaly_events[temp2]["prob"] > 1:
 		anomaly_events[temp2]["prob"] -= 1
@@ -1600,6 +1600,7 @@ func show_decision_option(title, o1, o2):
 	$CanvasLayer/decision.visible = 1
 
 func decision_option(option):
+	print(call_index)
 	match shift:
 		3:
 			match call_index:
@@ -1936,7 +1937,7 @@ var day3_visitor_safe = 1
 func day3_visitor():
 	#cam_sabo(3)
 	
-	await get_tree().create_timer(35).timeout
+	await get_tree().create_timer(350).timeout
 	day3_visitor_safe = 0 
 	generator_sabo()
 
@@ -1986,8 +1987,8 @@ var day3_creature1_chat = [
 
 func day3_creature1_talked():
 	#allow_move()
-	print("call index" + str(call_index))
 	call_index += 1
+	print("call index" + str(call_index))
 	#await get_tree().create_timer(1.0).timeout
 	show_decision_option("Answer", "youcanstay", "nosorry.")
 	#subtitle("", 0)
@@ -2008,16 +2009,23 @@ var day3_creature1_chat_leave = [
 
 func day3_creature1_yes():
 	start_chat()
-	call_index += 1
 func day3_creature1_no():
 	call_index += 1
 	start_chat()
 
+var cam_helper_creature_exist = 0
+
 func day3_creature1_stay():
 	allow_move()
+	call_index += 1
 	$timers/bad_time.paused = 0
+	cam_helper_creature_exist = 1
+	$areas/day3visitorfound/CollisionShape2D.set_deferred("disabled", 1)
+	
 	await get_tree().create_timer(4.0).timeout
 	subtitle("", 0)
+
+
 func day3_creature1_leave():
 	print("no sorry")
 	
@@ -2031,3 +2039,14 @@ func day3_creature1_leave():
 	allow_move()
 	$timers/bad_time.paused = 0
 	subtitle("", 0)
+
+func cam_helper_creature(area):
+	await get_tree().create_timer(5).timeout
+	subtitle("area", 1.0)
+	await get_tree().create_timer(1).timeout
+	$CanvasLayer/subtitles.text += str(area)
+	
+	await get_tree().create_timer(2.9).timeout
+	subtitle("", 0)
+	
+	
