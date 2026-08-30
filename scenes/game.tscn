@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://2xs1l0vulvmj" path="res://audio/radio.mp3" id="12_dinhu"]
 [ext_resource type="VideoStream" uid="uid://d0ng2x86780y7" path="res://assets/flicker.ogv" id="13_e1j6l"]
 [ext_resource type="AudioStream" uid="uid://6p00scerkl1f" path="res://audio/camera.mp3" id="13_kvuet"]
+[ext_resource type="Shader" uid="uid://bjgqtqhyfbet8" path="res://scripts/video.gdshader" id="14_bhx41"]
 [ext_resource type="AudioStream" uid="uid://doi0hb801udh0" path="res://audio/night.mp3" id="14_trtic"]
 [ext_resource type="AudioStream" uid="uid://wstyydfieafs" path="res://audio/walking_dirt.mp3" id="15_ir15t"]
 [ext_resource type="AudioStream" uid="uid://t6a1ps8ee86" path="res://audio/walking_wood.mp3" id="16_ca42v"]
@@ -984,6 +985,11 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qnb83"]
+shader = ExtResource("14_bhx41")
+shader_parameter/threshold = 0.05
+shader_parameter/softness = 0.05
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouja"]
 bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
@@ -4282,6 +4288,13 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("10_pl11u")
 
+[node name="anomaly3" parent="anomalies" unique_id=1729570609 instance=ExtResource("3_lbhrr")]
+visible = false
+position = Vector2(-52, -26)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("10_pl11u")
+
 [node name="map above" type="Control" parent="." unique_id=385126786]
 layout_direction = 2
 layout_mode = 3
@@ -6080,6 +6093,16 @@ visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("13_e1j6l")
+
+[node name="videostream2" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=1460121371]
+material = SubResource("ShaderMaterial_qnb83")
+offset_left = 244.0
+offset_top = 820.0
+offset_right = 1524.0
+offset_bottom = 1540.0
+rotation = -1.5707964
+stream = ExtResource("13_e1j6l")
+loop = true
 
 [node name="room" type="Control" parent="CanvasLayer" unique_id=1019839140]
 z_index = 2

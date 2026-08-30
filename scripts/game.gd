@@ -45,8 +45,6 @@ var sudden = preload("res://audio/sudden.mp3")
 var punch = preload("res://audio/punch.mp3")
 
 
-
-
 func play_sound(sound):
 	var temp = AudioStreamPlayer.new()
 	temp.stream = sound
@@ -54,6 +52,28 @@ func play_sound(sound):
 	
 	temp.finished.connect(temp.queue_free)
 	temp.play()
+
+var flicker = preload("res://assets/flicker.ogv")
+var crawl = preload("res://assets/crawl.ogv")
+
+func flicker_effect():
+	$CanvasLayer/VideoStreamPlayer.visible = 1
+	$CanvasLayer/VideoStreamPlayer.stream = flicker
+	$CanvasLayer/VideoStreamPlayer.play()
+	await get_tree().create_timer(0.2).timeout
+	$CanvasLayer/VideoStreamPlayer.stream = null
+	$CanvasLayer/VideoStreamPlayer.visible = 0
+	$CanvasLayer/VideoStreamPlayer.stop()
+
+func crawl_effect():
+	$CanvasLayer/videostream2.visible = 1
+	$CanvasLayer/videostream2.stream = crawl
+	$CanvasLayer/videostream2.play()
+	await get_tree().create_timer(8).timeout
+	$CanvasLayer/videostream2.stream = null
+	$CanvasLayer/videostream2.visible = 0
+	$CanvasLayer/videostream2.stop()
+
 
 func translation():
 	#TranslationServer.set_locale("ar") 
@@ -123,6 +143,7 @@ func _ready() -> void:
 		pc = 0
 	translation()
 	tasks()
+	crawl_effect()
 	#day1_end()
 	#get_tree().paused = 1
 	phone_up()
@@ -307,7 +328,15 @@ func match_shift():
 				3: day_chat(day3_creature1_chat_leave, day3_creature1_leave)
 				4: day_chat(day3_creature1_chat_end, day3_creature1_leave)
 				5: day_chat(day3_call2_chat, day_end)
-				
+		4:
+			match call_index:
+				0: day_call(day4_call1_chat, day4_start)
+				1: day_chat(day4_creature1_chat, day4_creature1_talked)
+				2: day_chat(day4_creature1_chat_stay, day4_creature1_stay)
+				3: day_chat(day4_creature1_chat_leave, day4_creature1_leave)
+				4: day_chat(day4_creature1_chat_end, day4_creature1_leave)
+
+
 
 func _process(delta: float) -> void:
 	#print(day1task2)
@@ -1960,43 +1989,50 @@ func day3_visitor_appear():
 # shift2: environmental - 4 max - 15:25 (01:00) 15:20 (02:30) 12:16 (4:00) 8:14 secs - 300 danger generator_sabotaged
 # shift3: environmental - 4 max - 12:18 secs - 300 danger generator/cams/antenna
 
-func flicker_effect():
-	$CanvasLayer/VideoStreamPlayer.visible = 1
-	await get_tree().create_timer(0.2).timeout
-	$CanvasLayer/VideoStreamPlayer.visible = 0
 
 
-var day3_creature1_area = 0
+
+var day_creature_area = 0
 
 func _on_day_3_visitorfound_body_entered(body: Node2D) -> void:
 	if body == $player:
-		day3_creature1_area = 1
-		
-		if $anomalies/anomaly2.visible && day3_creature1_shift:
-			stop_move()
-			start_chat()
-			
-		elif $anomalies/anomaly2.visible && !cam_helper_creature_exist:
-			stop_move()
-			print($anomalies/anomaly2.position)
-			#$anomalies/anomaly2.position = Vector2(-706.0, -26)
-			$timers/bad_time.paused = 1
-			#$timers
-			print(call_index)
-			print("speak")
-			#$player/sprite.play("idle")
-			play_sound(sudden)
-			$player/Camera2D.enabled = 0
-			$player/Camera2D2.enabled = 1
-			flicker_effect()
-			await get_tree().create_timer(1.0).timeout
-			$player.position.x = 300
-			$player/Camera2D.enabled = 1
-			$player/Camera2D2.enabled = 0
-			start_chat()
+		day_creature_area = 1
+		match shift:
+			3:
+				if $anomalies/anomaly2.visible && day3_creature1_shift:
+					stop_move()
+					start_chat()
+				elif $anomalies/anomaly2.visible && !cam_helper_creature_exist:
+					stop_move()
+					print($anomalies/anomaly2.position)
+					#$anomalies/anomaly2.position = Vector2(-706.0, -26)
+					$timers/bad_time.paused = 1
+					#$timers
+					print(call_index)
+					print("speak")
+					#$player/sprite.play("idle")
+					play_sound(sudden)
+					$player/Camera2D.enabled = 0
+					$player/Camera2D2.enabled = 1
+					flicker_effect()
+					await get_tree().create_timer(1.0).timeout
+					$player.position.x = 300
+					$player/Camera2D.enabled = 1
+					$player/Camera2D2.enabled = 0
+					start_chat()
+			4:
+				if $anomalies/anomaly3.visible && cam_sabo_creature_exist:
+					stop_move()
+					$timers/bad_time.paused = 1
+					await get_tree().create_timer(1.0).timeout
+					$player.position.x = 300
+					start_chat()
+					
+
+
 func _on_day_3_visitorfound_body_exited(body: Node2D) -> void:
 	if body == $player:
-		day3_creature1_area = 0
+		day_creature_area = 0
 
 
 var day3_creature1_chat = [
@@ -2062,8 +2098,8 @@ func day3_creature1_end_():
 	cam_helper_creature_exist = 0
 	day3_creature1_shift = 1
 	subtitle("leaving", 1)
-	if day3_creature1_area:
-		day3_creature1_area = 0
+	if day_creature_area:
+		day_creature_area = 0
 		stop_move()
 		start_chat()
 
@@ -2093,6 +2129,11 @@ var day3_call2_chat = [
 	["day3call2sen1", 1],
 ]
 
+var day4_call1_chat = [
+	["", 1],
+	["", 1],
+]
+
 func day4_time():
 	if shift_time == 1:
 		print("im here")
@@ -2106,12 +2147,13 @@ func day4_time():
 		day2_creature1()
 
 func day4_start():
-	print("dayd")
+	print("day 4")
 	shift_start()
 	day4_visitor()
 	#sabo_time()
 
-var day4_creature1_safe = 1
+var day4_creature1_safe = 0
+var cam_sabo_creature_exist = 0
 
 func day4_visitor():
 	await get_tree().create_timer(10).timeout
@@ -2121,4 +2163,81 @@ func day4_visitor():
 
 func day4_creature_appear():
 	$anomalies/anomaly2.visible = 1
+
+var day4_creature1_chat = [
+	["hello", 0.5],
+	["needhelp", 1.0],
+]
+
+func day4_creature1_talked():
+	show_decision_option("Answer", "yesplease", "no")
+
+var day4_creature1_chat_stay = [
+	["well", 1.0],
+]
+
+var day4_creature1_chat_leave = [
+	["np", 0.5],
+]
+
+func day4_creature1_yes():
+	start_chat()
+func day4_creature1_no():
+	call_index += 1
+	start_chat()
+
+func day4_creature1_stay():
+	global.day4creature_stayed = 1
+	allow_move()
+	call_index += 1
+	$timers/bad_time.paused = 0
+	cam_helper_creature_exist = 1
+	day3_creature1_end_()
+	await get_tree().create_timer(4.0).timeout
+	sabo_time()
+	subtitle("", 0)
+
+var day4_creature1_chat_end = [
+	["", 0],
+]
+
+var day4_creature1_shift = 0
+
+func day4_creature1_end_():
+	print("leave soon")
+	await get_tree().create_timer(90).timeout
+	sabo_time()
+	cam_helper_creature_exist = 0
+	day3_creature1_shift = 1
+	subtitle("leaving", 1)
+	if day_creature_area:
+		day_creature_area = 0
+		stop_move()
+		start_chat()
+
+func day4_creature1_leave():
+	print("no sorry")
+	$anomalies/anomaly2.speed = 200
+	$anomalies/anomaly2.destination = Vector2(-706.0, $anomalies/anomaly2.global_position.y)
+	$anomalies/anomaly2.move = 1
+	await get_tree().create_timer(4.0).timeout
+	$anomalies/anomaly2.visible = 0
+	allow_move()
+	$timers/bad_time.paused = 0
+	subtitle("", 0)
+
+func cam_sabo_creature(area):
+	await get_tree().create_timer(10).timeout
+	subtitle("sector", 1.0)
+	await get_tree().create_timer(1).timeout
+	area += 1
+	if area == 5: area = 1
+	$CanvasLayer/subtitles.text += str(area)
+	await get_tree().create_timer(2.9).timeout
+	subtitle("", 0)
+
+var day4_call2_chat = [
+	["day4call2sen1", 1],
+	["day4call2sen2", 1],
 	
+]
