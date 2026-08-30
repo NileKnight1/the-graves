@@ -69,12 +69,41 @@ func flicker_effect():
 	$CanvasLayer/VideoStreamPlayer.stop()
 
 func crawl_effect():
-
+	print('effect')
+	var hand1 = $CanvasLayer/textures/hand1
+	var hand2 = $CanvasLayer/textures/hand2
+	var time = $CanvasLayer/time
+	var danger = $CanvasLayer/danger
 	
+	$sfx/beats.play(25)
+	hand1.visible = 1
+	var tween = create_tween()
+	tween.tween_property(hand1 ,"position:y", hand1.position.y + 50 , 1)
+	await get_tree().create_timer(1.5).timeout
+	var tween2 = create_tween()
+	var tween3 = create_tween()
+	
+	tween2.tween_property(hand1 ,"position:y", hand1.position.y - 50 , 0.5)
+	tween3.tween_property(time ,"position:y", time.position.y - 50 , 0.5)
+	await get_tree().create_timer(1.5).timeout
+	var tween4 = create_tween()
+	tween4.tween_property(hand2 ,"position:x", hand2.position.x - 50 , 1)
+
+	await get_tree().create_timer(1.5).timeout
+	
+	var tween5 = create_tween()
+	var tween6 = create_tween()
+	tween5.tween_property(hand2 ,"position:x", hand2.position.x + 50 , 0.2)
+	tween6.tween_property(danger ,"position:x", danger.position.x + 310 , 0.2)
+	
+	
+	
+	
+	return
 	$sfx/night.volume_db = -80
 	$sfx/camera.volume_db = -80
 	
-	#await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2).timeout
 	flicker_effect()
 	flicker_effect()
 	await get_tree().create_timer(0.5).timeout
@@ -84,8 +113,8 @@ func crawl_effect():
 	$CanvasLayer/videostream2.play()
 	play_sound(scary)
 	
-	await get_tree().create_timer(5).timeout
-	close_cam()
+	await get_tree().create_timer(1).timeout
+	#close_cam()
 	$CanvasLayer/videostream2.stream = null
 	$CanvasLayer/videostream2.visible = 0
 	$CanvasLayer/videostream2.stop()
@@ -167,7 +196,7 @@ func _ready() -> void:
 	#day1_end()
 	#get_tree().paused = 1
 	
-	await get_tree().create_timer(4).timeout
+	#await get_tree().create_timer(5).timeout
 	crawl_effect()
 	await get_tree().create_timer(100).timeout
 	phone_up()

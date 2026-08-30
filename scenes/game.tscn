@@ -22,10 +22,12 @@
 [ext_resource type="AudioStream" uid="uid://doi0hb801udh0" path="res://audio/night.mp3" id="14_trtic"]
 [ext_resource type="AudioStream" uid="uid://wstyydfieafs" path="res://audio/walking_dirt.mp3" id="15_ir15t"]
 [ext_resource type="AudioStream" uid="uid://t6a1ps8ee86" path="res://audio/walking_wood.mp3" id="16_ca42v"]
+[ext_resource type="Texture2D" uid="uid://b1jdygyyg68wd" path="res://assets/image-removebg-preview.png" id="16_qnb83"]
 [ext_resource type="AudioStream" uid="uid://ydxyyrrs28d7" path="res://audio/morning.mp3" id="17_rysoc"]
 [ext_resource type="Texture2D" uid="uid://bqmj5f70pyrd2" path="res://assets/cone.png" id="18_ssvqc"]
 [ext_resource type="AudioStream" uid="uid://d0l4ciu1e13h1" path="res://audio/sub.mp3" id="19_5newe"]
 [ext_resource type="Texture2D" uid="uid://74yjv8hvpbk8" path="res://assets/rect.png" id="19_264po"]
+[ext_resource type="AudioStream" uid="uid://dgxlfchq0oics" path="res://audio/voicebosch-heart-and-breath-suspense-196083.mp3" id="26_sww3w"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = 6.0
@@ -988,6 +990,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qnb83"]
 shader = ExtResource("14_bhx41")
+shader_parameter/key_color = Color(0, 1, 0, 1)
 shader_parameter/threshold = 0.05
 shader_parameter/softness = 0.05
 
@@ -5874,7 +5877,6 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_yd4ix")
 text = "X"
 
 [node name="shift" type="Label" parent="CanvasLayer" unique_id=2086180496]
-visible = false
 layout_direction = 2
 offset_left = 49.0
 offset_top = 8.0
@@ -5902,7 +5904,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="danger" type="Label" parent="CanvasLayer" unique_id=1023276724]
-visible = false
 layout_direction = 2
 offset_left = 973.0
 offset_top = 8.0
@@ -5916,7 +5917,6 @@ text = "Danger"
 horizontal_alignment = 3
 
 [node name="reports" type="Label" parent="CanvasLayer" unique_id=1040645522]
-visible = false
 layout_direction = 2
 offset_left = 813.0
 offset_top = 48.0
@@ -6504,6 +6504,34 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
 text = "No sorry."
 icon_alignment = 1
 
+[node name="textures" type="Control" parent="CanvasLayer" unique_id=729522698]
+z_index = 2
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 296.0
+offset_top = 478.0
+offset_right = 296.0
+offset_bottom = 478.0
+mouse_filter = 1
+
+[node name="hand1" type="TextureRect" parent="CanvasLayer/textures" unique_id=287474889]
+layout_mode = 0
+offset_left = 277.0
+offset_top = -471.0
+offset_right = 552.0
+offset_bottom = -360.0
+rotation = -1.5707964
+texture = ExtResource("16_qnb83")
+
+[node name="hand2" type="TextureRect" parent="CanvasLayer/textures" unique_id=605837739]
+layout_mode = 0
+offset_left = 979.0
+offset_top = -507.0
+offset_right = 1254.0
+offset_bottom = -396.0
+texture = ExtResource("16_qnb83")
+
 [node name="timers" type="Node" parent="." unique_id=896048706]
 
 [node name="spawn" type="Timer" parent="timers" unique_id=2061830803]
@@ -6564,6 +6592,9 @@ parameters/looping = true
 stream = ExtResource("19_5newe")
 parameters/looping = true
 
+[node name="beats" type="AudioStreamPlayer" parent="sfx" unique_id=142052379]
+stream = ExtResource("26_sww3w")
+
 [node name="lights" type="Node2D" parent="." unique_id=125245000]
 
 [node name="room" type="PointLight2D" parent="lights" unique_id=59616191]
@@ -6593,9 +6624,6 @@ scale = Vector2(2.4554963, 2.8862746)
 energy = 0.56
 blend_mode = 1
 texture = ExtResource("19_264po")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=692850819]
-color = Color(0.7750634, 0.7750634, 0.7750634, 1)
 
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n1" to="." method="_on_antenna_fix_num1_pressed"]
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n2" to="." method="_on_antenna_fix_num2_pressed"]
