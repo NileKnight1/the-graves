@@ -303,6 +303,8 @@ func match_shift():
 			match call_index:
 				0: day_call(day3_call1_chat, day3_start)
 				1: day_chat(day3_creature1_chat, day3_creature1_talked)
+				2: day_chat(day3_creature1_chat_stay, day3_creature1_stay)
+				3: day_chat(day3_creature1_chat_leave, day3_creature1_leave)
 
 func _process(delta: float) -> void:
 	#print(day1task2)
@@ -1585,6 +1587,120 @@ func _on_sabo_timer_timeout() -> void:
 	elif antenna_working:
 		antenna_sabo()
 
+func _on_option_1_pressed() -> void:
+	decision_option(0)
+func _on_option_2_pressed() -> void:
+	decision_option(1)
+
+func show_decision_option(title, o1, o2):
+	close_radio()
+	$CanvasLayer/decision/title.text = title
+	$CanvasLayer/decision/o1.text = o1
+	$CanvasLayer/decision/o2.text = o2
+	$CanvasLayer/decision.visible = 1
+
+func decision_option(option):
+	match shift:
+		3:
+			match call_index:
+				2:
+					match option:
+						0: day3_creature1_yes()
+						1: day3_creature1_no()
+	$CanvasLayer/decision.visible = 0
+
+func day_call(chat, target):
+	if chat_msg == len(chat):
+		chat_msg = 0
+		calling = 0
+		$timers/skip_msg.stop()
+		phone_down()
+		target.call()
+		return
+	
+	match shift:
+		3:
+			match call_index:
+				0: if !global.day2creature_found && chat_msg == 1: chat_msg+= 1
+	
+	var temp = tr(chat[chat_msg][0])
+	$CanvasLayer/subtitles.visible_ratio = 0
+	var temp_sec = randi_range(0, 17)
+	$sfx/dia.play(temp_sec)
+	var tween = create_tween()
+	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
+	
+	#if Input.is_action_just_pressed("skip"):
+		#tween.kill()
+		#$CanvasLayer/subtitles.visible_ratio = 0
+		#print('kileed')
+		
+
+	if "%s" in temp:
+		$CanvasLayer/subtitles.text = temp % player_name
+	else:
+		$CanvasLayer/subtitles.text = temp
+
+	await get_tree().create_timer(chat[chat_msg][1]).timeout
+	$sfx/dia.stop()
+
+func day_chat(chat, target):
+	if chat_msg == len(chat):
+		#print("chat done")
+		chat_msg = 0
+		calling = 0
+		$timers/skip_msg.stop()
+		target.call()
+		return
+	
+	var temp = tr(chat[chat_msg][0])
+	$CanvasLayer/subtitles.visible_ratio = 0
+	var temp_sec = randi_range(0, 17)
+	$sfx/dia.play(temp_sec)
+	var tween = create_tween()
+	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
+
+	if "%s" in temp:
+		$CanvasLayer/subtitles.text = temp % player_name
+	else:
+		$CanvasLayer/subtitles.text = temp
+
+	await get_tree().create_timer(chat[chat_msg][1]).timeout
+	$sfx/dia.stop()
+
+func day_end():
+	$sfx/morning.stop()
+	stop_move()
+	$CanvasLayer/black.visible = 1
+	
+	await get_tree().create_timer(1.0).timeout
+	play_sound(start_sound)
+	$CanvasLayer/shift2.text = tr("shift") + " " + str(shift)
+	
+	await get_tree().create_timer(1.5).timeout
+	$CanvasLayer/t1.text = tr("anomalies_reported")
+	$CanvasLayer/v1.text = str(right_reports_conut)
+	play_sound(punch)
+	
+	
+	await get_tree().create_timer(0.4).timeout
+	$CanvasLayer/t2.text = tr("anomalies_left")
+	$CanvasLayer/v2.text = str(anomaly_events_count)
+	play_sound(punch)
+	
+	await get_tree().create_timer(0.4).timeout
+	$CanvasLayer/t3.text = tr("max_danger")
+	$CanvasLayer/v3.text = str(bad_time)
+	play_sound(punch)
+	
+	
+	#var tween = create_tween()
+	#tween.tween_property($CanvasLayer/black, "modulate:a", 1.0 , 1.4)
+	await get_tree().create_timer(5.0).timeout
+	global.shift += 1
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	#day2_start()
+
 
 var day1call1_done = 1
 var discovered = 1
@@ -1722,135 +1838,6 @@ func start_chat():
 	
 	match_shift()
 
-func day_call(chat, target):
-	if chat_msg == len(chat):
-		chat_msg = 0
-		calling = 0
-		$timers/skip_msg.stop()
-		phone_down()
-		target.call()
-		return
-	
-	match shift:
-		3:
-			match call_index:
-				0: if !global.day2creature_found && chat_msg == 1: chat_msg+= 1
-	
-	var temp = tr(chat[chat_msg][0])
-	$CanvasLayer/subtitles.visible_ratio = 0
-	var temp_sec = randi_range(0, 17)
-	$sfx/dia.play(temp_sec)
-	var tween = create_tween()
-	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
-	
-	#if Input.is_action_just_pressed("skip"):
-		#tween.kill()
-		#$CanvasLayer/subtitles.visible_ratio = 0
-		#print('kileed')
-		
-
-	if "%s" in temp:
-		$CanvasLayer/subtitles.text = temp % player_name
-	else:
-		$CanvasLayer/subtitles.text = temp
-
-	await get_tree().create_timer(chat[chat_msg][1]).timeout
-	$sfx/dia.stop()
-
-func day_chat(chat, target):
-	if chat_msg == len(chat):
-		#print("chat done")
-		chat_msg = 0
-		calling = 0
-		$timers/skip_msg.stop()
-		target.call()
-		return
-	
-	var temp = tr(chat[chat_msg][0])
-	$CanvasLayer/subtitles.visible_ratio = 0
-	var temp_sec = randi_range(0, 17)
-	$sfx/dia.play(temp_sec)
-	var tween = create_tween()
-	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
-
-	if "%s" in temp:
-		$CanvasLayer/subtitles.text = temp % player_name
-	else:
-		$CanvasLayer/subtitles.text = temp
-
-	await get_tree().create_timer(chat[chat_msg][1]).timeout
-	$sfx/dia.stop()
-
-#
-#func day1_call1():
-	#if chat_msg > 8:
-		#chat_msg = 0
-		#calling = 0
-		#$timers/skip_msg.stop()
-		#phone_down()
-		#day1_start()
-		#return
-	#
-	#var temp = tr(chat1_array[chat_msg])
-	#if "%s" in temp:
-		#$CanvasLayer/subtitles.text = temp % player_name
-	#else:
-		#$CanvasLayer/subtitles.text = temp
-	#$sfx/dia.play()
-
-#
-#func day1_call2():
-	#if chat_msg > 2:
-		#chat_msg = 0
-		#calling = 0
-		#$timers/skip_msg.stop()
-		#phone_down()
-		#await get_tree().create_timer(1.0).timeout
-		#day1_end()
-		#return
-	#
-	#var temp = tr(day1_call2_chat[chat_msg])
-	#if "%s" in temp:
-		#$CanvasLayer/subtitles.text = temp % player_name
-	#else:
-		#$CanvasLayer/subtitles.text = temp
-	#$sfx/dia.play()
-
-
-func day_end():
-	$sfx/morning.stop()
-	stop_move()
-	$CanvasLayer/black.visible = 1
-	
-	await get_tree().create_timer(1.0).timeout
-	play_sound(start_sound)
-	$CanvasLayer/shift2.text = tr("shift") + " " + str(shift)
-	
-	await get_tree().create_timer(1.5).timeout
-	$CanvasLayer/t1.text = tr("anomalies_reported")
-	$CanvasLayer/v1.text = str(right_reports_conut)
-	play_sound(punch)
-	
-	
-	await get_tree().create_timer(0.4).timeout
-	$CanvasLayer/t2.text = tr("anomalies_left")
-	$CanvasLayer/v2.text = str(anomaly_events_count)
-	play_sound(punch)
-	
-	await get_tree().create_timer(0.4).timeout
-	$CanvasLayer/t3.text = tr("max_danger")
-	$CanvasLayer/v3.text = str(bad_time)
-	play_sound(punch)
-	
-	
-	#var tween = create_tween()
-	#tween.tween_property($CanvasLayer/black, "modulate:a", 1.0 , 1.4)
-	await get_tree().create_timer(5.0).timeout
-	global.shift += 1
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
-	#day2_start()
-	
-
 var day2_call1_chat = [
 	["day2call1sen1", 1.0],
 	["day2call1sen2", 2.0],
@@ -1974,6 +1961,10 @@ func _on_day_3_visitorfound_body_entered(body: Node2D) -> void:
 	if body == $player:
 		if $anomalies/anomaly2.visible:
 			stop_move()
+			print($anomalies/anomaly2.position)
+			#$anomalies/anomaly2.position = Vector2(-706.0, -26)
+			$timers/bad_time.paused = 1
+			#$timers
 			print(call_index)
 			print("speak")
 			$player/sprite.play("idle")
@@ -1995,8 +1986,10 @@ var day3_creature1_chat = [
 
 func day3_creature1_talked():
 	#allow_move()
-	await get_tree().create_timer(1.0).timeout
-	$CanvasLayer/decision.visible = 1
+	print("call index" + str(call_index))
+	call_index += 1
+	#await get_tree().create_timer(1.0).timeout
+	show_decision_option("Answer", "youcanstay", "nosorry.")
 	#subtitle("", 0)
 
 # Creature 1 -> Day2 -> appear once and disappear
@@ -2004,10 +1997,37 @@ func day3_creature1_talked():
 ## yes -> it stays -> it watches cameras
 ## no -> it goes -> he simply goes
 
+var day3_creature1_chat_stay = [
+	["d3c1s5", 1.0],
+	["d3c1s6", 1.0],
+]
 
-func _on_option_1_pressed() -> void:
-	pass # Replace with function body.
+var day3_creature1_chat_leave = [
+	["d3c1s4", 0.5],
+]
 
+func day3_creature1_yes():
+	start_chat()
+	call_index += 1
+func day3_creature1_no():
+	call_index += 1
+	start_chat()
 
-func _on_option_2_pressed() -> void:
-	pass # Replace with function body.
+func day3_creature1_stay():
+	allow_move()
+	$timers/bad_time.paused = 0
+	await get_tree().create_timer(4.0).timeout
+	subtitle("", 0)
+func day3_creature1_leave():
+	print("no sorry")
+	
+	$anomalies/anomaly2.speed = 200
+	$anomalies/anomaly2.destination = Vector2(-706.0, $anomalies/anomaly2.global_position.y)
+	
+	$anomalies/anomaly2.move = 1
+	
+	await get_tree().create_timer(4.0).timeout
+	$anomalies/anomaly2.visible = 0
+	allow_move()
+	$timers/bad_time.paused = 0
+	subtitle("", 0)

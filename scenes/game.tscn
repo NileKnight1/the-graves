@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://deescy0invitk" path="res://assets/HennyPenny-Regular.ttf" id="6_0tnpc"]
 [ext_resource type="FontFile" uid="uid://cim17fdmt5ywc" path="res://assets/Signika-Bold.ttf" id="6_p57ef"]
 [ext_resource type="StyleBox" uid="uid://xanwnstf0v21" path="res://new_style_box_flat.tres" id="8_1kice"]
+[ext_resource type="Script" uid="uid://dc6hvb8b843gw" path="res://scripts/creature.gd" id="10_pl11u"]
 [ext_resource type="AudioStream" uid="uid://mytxcdg0yh6f" path="res://audio/ringtone.mp3" id="10_vtaks"]
 [ext_resource type="AudioStream" uid="uid://dgeubm3gi5is4" path="res://audio/dialogue.mp3" id="11_kvpfn"]
 [ext_resource type="AudioStream" uid="uid://2xs1l0vulvmj" path="res://audio/radio.mp3" id="12_dinhu"]
@@ -1036,6 +1037,8 @@ mouse_filter = 2
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
 [node name="left bound" type="StaticBody2D" parent="map behind" unique_id=1647221990]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map behind/left bound" unique_id=207825637]
 position = Vector2(-3013, -77)
@@ -4023,6 +4026,8 @@ vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
 position = Vector2(459, -40)
+collision_layer = 5
+collision_mask = 5
 
 [node name="cam_fix" type="Control" parent="player" unique_id=407638891]
 visible = false
@@ -4267,12 +4272,13 @@ vertical_alignment = 1
 [node name="anomalies" type="Node2D" parent="." unique_id=1338437649]
 
 [node name="anomaly" parent="anomalies" unique_id=312059141 instance=ExtResource("3_lbhrr")]
-visible = false
-position = Vector2(-326, -18)
+position = Vector2(-326, 358)
 
 [node name="anomaly2" parent="anomalies" unique_id=1260922437 instance=ExtResource("3_lbhrr")]
-visible = false
-position = Vector2(-68, -26)
+position = Vector2(-52, -26)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("10_pl11u")
 
 [node name="map above" type="Control" parent="." unique_id=385126786]
 layout_direction = 2
@@ -5835,6 +5841,7 @@ debug_color = Color(0.989497, 0, 0.29520148, 0.41960785)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
+visible = false
 
 [node name="close_cam" type="Button" parent="CanvasLayer" unique_id=170245993]
 visible = false
@@ -6659,8 +6666,8 @@ texture = ExtResource("19_264po")
 [connection signal="pressed" from="CanvasLayer/room/environment/p4" to="." method="_on_en4_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/environment/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/creatures/back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="CanvasLayer/decision/o1" to="." method="_on_environmental_pressed"]
-[connection signal="pressed" from="CanvasLayer/decision/o2" to="." method="_on_creatures_pressed"]
+[connection signal="pressed" from="CanvasLayer/decision/o1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/decision/o2" to="." method="_on_option_2_pressed"]
 [connection signal="timeout" from="timers/spawn" to="." method="_on_spawn_timeout"]
 [connection signal="timeout" from="timers/bad_time" to="." method="_on_bad_time_timeout"]
 [connection signal="timeout" from="timers/call_time" to="." method="_on_call_time_timeout"]
