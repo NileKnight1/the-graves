@@ -25,7 +25,7 @@ var min_sabo_time = 60
 var max_sabo_time = 100
 var max_sabo_game = 0
 
-var shift_time = 359
+var shift_time = 0
 
 
 #var collect = preload("res://audio/collect.mp3")
@@ -173,10 +173,12 @@ func shift_time_manager():
 	match shift:
 		1: day1_time()
 		2: day2_time()
+		3: day3_time()
 
 func day_starters():
 	match shift:
 		2: day2_starters()
+		#3: day3_starterts()
 
 func _on_cams_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and computer_area && generator_working:
@@ -391,7 +393,11 @@ func _process(delta: float) -> void:
 				match call_index:
 					0: day_call(day2_call1_chat, day2_start)
 					1: day_call(day2_call2_chat, day_end)
-
+			3:
+				match call_index:
+					0: day_call(day3_call1_chat, day3_start)
+					#1: day_call(day3_call2_chat, day_end)
+			
 
 func _on_switch_body_entered(body: Node2D) -> void:
 	if body == $player:
@@ -472,6 +478,10 @@ func _on_accept_call_pressed() -> void:
 			match call_index:
 				0: day_call(day2_call1_chat, day2_start)
 				1: day_call(day2_call2_chat, day_end)
+		3:
+			match call_index:
+				0: day_call(day3_call1_chat, day3_start)
+				#1:
 
 func _on_decline_call_pressed() -> void:
 	play_sound(hang_up)
@@ -491,6 +501,9 @@ func _on_decline_call_pressed() -> void:
 			match call_index:
 				0: day2_start()
 				1: day_end()
+		3:
+			match call_index:
+				0: day3_start()
 
 var call_time = 0
 
@@ -520,6 +533,11 @@ func _on_skip_msg_timeout() -> void:
 			match call_index:
 				0: day_call(day2_call1_chat, day2_start)
 				1: day_call(day2_call2_chat, day_end)
+		3: 
+			match call_index:
+				0: day_call(day3_call1_chat, day3_start)
+				1: day_call(day2_call2_chat, day_end)
+
 
 func shift_end():
 	$timers/spawn.stop()
@@ -544,7 +562,7 @@ func _on_cams_body_entered(body: Node2D) -> void:
 			$"map behind/room/desk/outline".visible = 1
 		
 	if body is CharacterBody2D && body.anomaly:
-		body.queue_free()
+		#body.queue_free()
 		print("bruh")
 func _on_cams_body_exited(body: Node2D) -> void:
 	if body == $player:
@@ -1182,6 +1200,7 @@ func generator_dec():
 func _on_generator_body_entered(body: Node2D) -> void:
 	if body == $player:
 		if day2force: return
+		if !day3_visitor_safe: day3_visitor_appear()
 		generator_area = 1
 		if !generator_working:
 			$"map behind/generator/outline".visible = 1
@@ -1729,7 +1748,7 @@ func day_call(chat, target):
 	match shift:
 		3:
 			match call_index:
-				1: if !global.day2creature_found: chat_msg+= 1
+				0: if !global.day2creature_found && chat_msg == 1: chat_msg+= 1
 	
 	var temp = tr(chat[chat_msg][0])
 	$CanvasLayer/subtitles.visible_ratio = 0
@@ -1902,18 +1921,33 @@ func day3_time():
 		day2_creature1()
 
 var day3_call1_chat = [
-	"day3call1sen1",
-	"day3call1sen2",
-	"day3call1sen3",
-	"day3call1sen4",
+	["day3call1sen1", 1.0],
+	["day3call1sen2", 1.0],
+	["day3call1sen3", 1.0],
+	["day3call1sen4", 1.0],
 ]
 
 func day3_start():
-	print("day 3")
+	print("day3")
 	
 	call_index += 1
 	shift_start()
+	day3_visitor()
+	#sabo_time()
+
+var day3_visitor_safe = 1
+
+func day3_visitor():
+	cam_sabo(3)
 	
+	await get_tree().create_timer(5).timeout
+	day3_visitor_safe = 0 
+	generator_sabo()
+
+func day3_visitor_appear():
+	$anomalies/anomaly2.visible = 1
+	print ("it appear yabaa")
+
 
 ### Planninga
 # shift1: environmental - 3 max - 15:25 secs (2:00) 15:20 (4:00) 14:18 (6:00) - 300 danger
