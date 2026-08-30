@@ -6657,6 +6657,7 @@ texture = ExtResource("19_264po")
 [connection signal="mouse_entered" from="areas/antenna" to="." method="_on_antenna_mouse_entered"]
 [connection signal="mouse_exited" from="areas/antenna" to="." method="_on_antenna_mouse_exited"]
 [connection signal="body_entered" from="areas/day3visitorfound" to="." method="_on_day_3_visitorfound_body_entered"]
+[connection signal="body_exited" from="areas/day3visitorfound" to="." method="_on_day_3_visitorfound_body_exited"]
 [connection signal="pressed" from="CanvasLayer/close_cam" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/menu/environmental" to="." method="_on_environmental_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/menu/creatures" to="." method="_on_creatures_pressed"]

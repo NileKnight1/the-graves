@@ -305,6 +305,7 @@ func match_shift():
 				1: day_chat(day3_creature1_chat, day3_creature1_talked)
 				2: day_chat(day3_creature1_chat_stay, day3_creature1_stay)
 				3: day_chat(day3_creature1_chat_leave, day3_creature1_leave)
+				4: day_chat(day3_creature1_chat_end, day3_creature1_leave)
 
 func _process(delta: float) -> void:
 	#print(day1task2)
@@ -426,6 +427,7 @@ func radio_access_off():
 
 func stop_move():
 	$player.move = 0
+	$player/sprite.play("idle")
 func allow_move():
 	$player.move = 1
 
@@ -1957,10 +1959,17 @@ func flicker_effect():
 	$CanvasLayer/VideoStreamPlayer.visible = 0
 
 
+var day3_creature1_area = 0
 
 func _on_day_3_visitorfound_body_entered(body: Node2D) -> void:
 	if body == $player:
-		if $anomalies/anomaly2.visible:
+		day3_creature1_area = 1
+		
+		if $anomalies/anomaly2.visible && day3_creature1_shift:
+			stop_move()
+			start_chat()
+			
+		elif $anomalies/anomaly2.visible && !cam_helper_creature_exist:
 			stop_move()
 			print($anomalies/anomaly2.position)
 			#$anomalies/anomaly2.position = Vector2(-706.0, -26)
@@ -1968,7 +1977,7 @@ func _on_day_3_visitorfound_body_entered(body: Node2D) -> void:
 			#$timers
 			print(call_index)
 			print("speak")
-			$player/sprite.play("idle")
+			#$player/sprite.play("idle")
 			play_sound(sudden)
 			$player/Camera2D.enabled = 0
 			$player/Camera2D2.enabled = 1
@@ -1978,6 +1987,10 @@ func _on_day_3_visitorfound_body_entered(body: Node2D) -> void:
 			$player/Camera2D.enabled = 1
 			$player/Camera2D2.enabled = 0
 			start_chat()
+func _on_day_3_visitorfound_body_exited(body: Node2D) -> void:
+	if body == $player:
+		day3_creature1_area = 0
+
 
 var day3_creature1_chat = [
 	["d3c1s1", 0.5],
@@ -2020,11 +2033,29 @@ func day3_creature1_stay():
 	call_index += 1
 	$timers/bad_time.paused = 0
 	cam_helper_creature_exist = 1
-	$areas/day3visitorfound/CollisionShape2D.set_deferred("disabled", 1)
-	
+	#$areas/day3visitorfound/CollisionShape2D.set_deferred("disabled", 1)
+	day3_creature1_end_()
 	await get_tree().create_timer(4.0).timeout
 	subtitle("", 0)
 
+var day3_creature1_chat_end = [
+	["d3c1s7", 1],
+	["d3c1s8", 1],
+]
+
+var day3_creature1_shift = 0
+
+func day3_creature1_end_():
+	print("leave soon")
+	await get_tree().create_timer(90).timeout
+	call_index += 1
+	cam_helper_creature_exist = 0
+	day3_creature1_shift = 1
+	subtitle("leaving", 1)
+	if day3_creature1_area:
+		day3_creature1_area = 0
+		stop_move()
+		start_chat()
 
 func day3_creature1_leave():
 	print("no sorry")
@@ -2045,8 +2076,5 @@ func cam_helper_creature(area):
 	subtitle("area", 1.0)
 	await get_tree().create_timer(1).timeout
 	$CanvasLayer/subtitles.text += str(area)
-	
 	await get_tree().create_timer(2.9).timeout
 	subtitle("", 0)
-	
-	
