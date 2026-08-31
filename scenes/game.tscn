@@ -4101,7 +4101,14 @@ collision_mask = 0
 script = ExtResource("10_pl11u")
 
 [node name="vamp" parent="anomalies" unique_id=260498244 instance=ExtResource("3_lbhrr")]
+visible = false
 position = Vector2(2190, -26)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("10_pl11u")
+
+[node name="tech" parent="anomalies" unique_id=1494754720 instance=ExtResource("3_lbhrr")]
+position = Vector2(-275, -26)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("10_pl11u")

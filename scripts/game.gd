@@ -266,12 +266,12 @@ func _ready() -> void:
 		pc = 0
 	translation()
 	tasks()
-	
+	day6_tech_steal()
 	#day1_end()
 	#get_tree().paused = 1
 	
-	await get_tree().create_timer(25).timeout
-	vamp_kill()
+	#await get_tree().create_timer(25).timeout
+	#vamp_kill()
 	#crawl_effect()
 	await get_tree().create_timer(100).timeout
 	phone_up()
@@ -326,8 +326,8 @@ func shift_time_manager():
 		3: day3_time()
 		4: day4_time()
 		5: day5_time()
-		
-		
+		6: day6_time()
+
 
 func day_starters():
 	match shift:
@@ -484,6 +484,11 @@ func match_shift():
 			match call_index:
 				0: day_call(day5_call1_chat, day5_start)
 				1: day_chat(day5_end_chat, day_end)
+		6:
+			match call_index:
+				0: day_call(day6_call1_chat, day6_start)
+				1: day_chat(day6_tech_chat, day6_tech_steal)
+				2: day_chat(day6_end_chat, day_end)
 
 func _process(delta: float) -> void:
 	#print(day1task2)
@@ -726,6 +731,10 @@ func _on_decline_call_pressed() -> void:
 		5:
 			match call_index:
 				0: day5_start()
+				1: day_end()
+		6:
+			match call_index:
+				0: day6_start()
 				1: day_end()
 			
 	
@@ -2660,3 +2669,26 @@ var day6_call1_chat = [
 var day6_end_chat = [
 	["day6end", 1.0],
 ]
+
+### Day6
+## -> generator tech, 
+# if yes -> it steals generator -> spawn franky
+# if no -> sabotage all cameras
+
+func day6_tech_appear():
+	$anomalies/tech.visible = 1
+
+var day6_tech_chat = [
+	["tech1", 1.0],
+]
+
+func day6_tech_steal():
+	if ps4 || (computer_opened && opened_cam == 4):
+		await get_tree().create_timer(3.0).timeout
+		day6_tech_steal()
+	else:
+		$anomalies/tech.visible = 0
+		$areas/generator/CollisionShape2D.set_deferred("disabled", 1)
+		generator_sabo()
+		$"map behind/generator".queue_free()
+		
