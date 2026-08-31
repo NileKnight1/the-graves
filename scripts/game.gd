@@ -49,6 +49,8 @@ var punch = preload("res://audio/punch.mp3")
 var scary = preload("res://audio/dragon-studio-scary-transition-401717.mp3")
 var high_pitch = preload("res://audio/highpitch.mp3")
 var beep = preload("res://audio/dragon-studio-censor-beep-1-372459.mp3")
+var vamp_laugh = preload("res://audio/vamp_laught.mp3")
+
 
 
 func play_sound(sound, vol = 0.0):
@@ -472,8 +474,7 @@ func match_shift():
 		5:
 			match call_index:
 				0: day_call(day5_call1_chat, day5_start)
-
-
+				1: day_chat(day5_end_chat, day_end)
 
 func _process(delta: float) -> void:
 	#print(day1task2)
@@ -626,11 +627,15 @@ func allow_move():
 	$player.move = 1
 
 func light_off():
+	light = 0
 	$lights/room.visible = 0
 	$"map behind/room/bg/lamp/off".visible = 1
 	$"map behind/room/bg/lamp/on".visible = 0
-	
+
+var light = 0
+
 func light_on():
+	light = 1
 	$lights/room.visible = 1
 	$"map behind/room/bg/lamp/off".visible = 0
 	$"map behind/room/bg/lamp/on".visible = 1
@@ -1185,6 +1190,8 @@ func lose():
 	$timers/bad_time.stop()
 	$CanvasLayer/black.visible = 1
 	$CanvasLayer/label.text = tr("lose")
+	await get_tree().create_timer(3.0).timeout
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func win():
 	$timers/spawn.stop()
@@ -1254,6 +1261,10 @@ func _on_ps_3_body_exited(body: Node2D) -> void:
 func _on_ps_4_body_entered(body: Node2D) -> void:
 	if body == $player:
 		ps4 = 1
+		if $anomalies/vamp.visible:
+			if shift == 5: day5_vamp_kill()
+			else: $anomalies/vamp.visible = 0
+			
 func _on_ps_4_body_exited(body: Node2D) -> void:
 	if body == $player:
 		ps4 = 0
@@ -1275,8 +1286,10 @@ func _on_shift_time_timeout() -> void:
 	if shift_time == 360:
 		shift_end()
 
+var player_in_room = 0
 func _on_room_body_entered(body: Node2D) -> void:
 	if body == $player:
+		player_in_room = 1
 		$sfx/night.volume_db -= 5
 		walking_sound = $sfx/walk_wood
 		$sfx/walk_dirt.stop()
@@ -1284,6 +1297,7 @@ func _on_room_body_entered(body: Node2D) -> void:
 		#print("lowerd")
 func _on_room_body_exited(body: Node2D) -> void:
 	if body == $player:
+		player_in_room = 0
 		$sfx/night.volume_db += 5
 		walking_sound = $sfx/walk_dirt
 		$sfx/walk_dirt.play()
@@ -2355,8 +2369,6 @@ func day4_time():
 		set_shift_values(12, 16)
 	elif shift_time == 240:
 		set_shift_values(8, 14)
-	elif shift_time == 300:
-		day2_creature1()
 
 func day4_start():
 	print("day 4")
@@ -2504,16 +2516,28 @@ func day5_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
+	elif shift_time == 3:
+		play_sound(vamp_laugh)
+		day5_creature()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
-	elif shift_time == 300:
-		day2_creature1()
+	
 
 func day5_start():
 	shift_start()
-	day4_visitor()
-	#sabo_time()
+	sabo_time()
 
 var day5_call1_chat = [
 	["", 0],
 ]
+
+var day5_end_chat = [
+	["", 0]
+]
+
+func day5_creature():
+	if light || player_in_room:
+		await get_tree().create_timer(5).timeout
+		day5_creature()
+	else:
+		$anomalies/vamp.visible = 1

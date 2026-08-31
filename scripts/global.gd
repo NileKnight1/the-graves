@@ -1,5 +1,5 @@
 extends Node
-var shift = 4
+var shift = 5
 var player_name = "Player"
 
 var day2creature_found = 0
