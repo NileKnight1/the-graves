@@ -77,8 +77,9 @@ func flicker_effect():
 var force_camera = 0
 
 func crawl_effect():
-	print('effect')
 	force_camera = 1
+	await get_tree().create_timer(2).timeout
+	print('effect')
 	var hand1 = $CanvasLayer/textures/hand1
 	var hand2 = $CanvasLayer/textures/hand2
 	var time = $CanvasLayer/time
@@ -151,14 +152,18 @@ func crawl_effect():
 	flicker_effect()
 	await get_tree().create_timer(0.2).timeout
 	flicker_effect()
+	$CanvasLayer/black.visible = 1
 	generator_sabo()
+	var tween7 = create_tween()
+	tween7.tween_property($CanvasLayer/black, "modulate:a", 0, 5.0)
 	flicker_effect()
 	await get_tree().create_timer(0.2).timeout
 	flicker_effect()
-	
 	await get_tree().create_timer(0.7).timeout
 	$sfx/night.volume_db = 0
 	$sfx/camera.volume_db = 0
+	sabo_time()
+	
 
 
 var shake_intensity = 0.0
@@ -357,7 +362,7 @@ func open_cam():
 		day4_crawl = 0
 		crawl_effect()
 	
-	$CanvasLayer/decision.visible = 0
+	hide_decisions()
 	
 	#print("hi")
 	$"map above/cams_".visible = 0
@@ -739,7 +744,7 @@ func _on_cams_body_entered(body: Node2D) -> void:
 func _on_cams_body_exited(body: Node2D) -> void:
 	if body == $player:
 		if $anomalies/anomaly2.visible && cam_sabo_creature_exist:
-			$CanvasLayer/decision.visible = 0
+			hide_decisions()
 		
 		computer_area = 0
 		$CanvasLayer/press_e.visible = 0
@@ -1823,10 +1828,12 @@ func decision_option(option):
 				4:
 					match option:
 						0: day4_creature_kick()
-						1: $CanvasLayer/decision.visible = 0
+	hide_decisions()
 
-
+func hide_decisions():
 	$CanvasLayer/decision.visible = 0
+	force_radio_close = 0
+	force_cam_close = 0
 
 func day_call(chat, target):
 	if chat_msg == len(chat):
@@ -2053,6 +2060,7 @@ func day1_time():
 		
 
 func start_chat():
+	force_radio_close = 0
 	call_time = 0
 	calling = 1
 	$timers/skip_msg.start()
@@ -2247,6 +2255,7 @@ var day3_creature1_chat_leave = [
 ]
 
 func day3_creature1_yes():
+	
 	print("call", call_index)
 	start_chat()
 func day3_creature1_no():
@@ -2441,9 +2450,7 @@ func day4_creature_kick():
 		cam_sabo_creature_exist = 0
 		stop_move()
 		start_chat()
-		force_cam_close = 0
+		force_cam_close = 1
 		day4_crawl = 1
 		await get_tree().create_timer(4.1).timeout
-		force_cam_close = 1 
-		
-		
+		force_cam_close = 0 
