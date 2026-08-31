@@ -301,6 +301,8 @@ func shift_time_manager():
 		1: day1_time()
 		2: day2_time()
 		3: day3_time()
+		4: day4_time()
+		
 
 func day_starters():
 	match shift:
@@ -664,6 +666,10 @@ func _on_decline_call_pressed() -> void:
 		3:
 			match call_index:
 				0: day3_start()
+		4:
+			match call_index:
+				0: day4_start()
+	
 	call_index +=1
 	
 
@@ -710,6 +716,8 @@ func _on_cams_body_entered(body: Node2D) -> void:
 			$CanvasLayer/press_e.visible = 1
 		if generator_working:
 			$"map behind/room/desk/outline".visible = 1
+		elif $anomalies/anomaly3.visible &&!cam_sabo_creature_exist:
+			show_decision_option("choose", "kick", "cancel")
 		
 	if body is CharacterBody2D && body.anomaly:
 		#body.queue_free()
@@ -1765,6 +1773,7 @@ func _on_option_2_pressed() -> void:
 
 func show_decision_option(title, o1, o2):
 	close_radio()
+	close_cam()
 	$CanvasLayer/decision/title.text = title
 	$CanvasLayer/decision/o1.text = o1
 	$CanvasLayer/decision/o2.text = o2
@@ -1779,6 +1788,14 @@ func decision_option(option):
 					match option:
 						0: day3_creature1_yes()
 						1: day3_creature1_no()
+		4:
+			match call_index:
+				4:
+					match option:
+						0: day4_creature_kick()
+						1: $CanvasLayer/decision.visible = 0
+
+
 	$CanvasLayer/decision.visible = 0
 
 func day_call(chat, target):
@@ -2156,13 +2173,13 @@ func _on_day_3_visitorfound_body_entered(body: Node2D) -> void:
 					$player/Camera2D2.enabled = 0
 					start_chat()
 			4:
-				if $anomalies/anomaly3.visible && cam_sabo_creature_exist:
+				if $anomalies/anomaly3.visible && !cam_sabo_creature_exist:
 					stop_move()
 					$timers/bad_time.paused = 1
 					await get_tree().create_timer(1.0).timeout
 					$player.position.x = 300
 					start_chat()
-					
+
 
 
 func _on_day_3_visitorfound_body_exited(body: Node2D) -> void:
@@ -2212,6 +2229,7 @@ func day3_creature1_stay():
 	call_index += 1
 	$timers/bad_time.paused = 0
 	cam_helper_creature_exist = 1
+	
 	#$areas/day3visitorfound/CollisionShape2D.set_deferred("disabled", 1)
 	day3_creature1_end_()
 	await get_tree().create_timer(4.0).timeout
@@ -2374,5 +2392,9 @@ func cam_sabo_creature(area):
 var day4_call2_chat = [
 	["day4call2sen1", 1],
 	["day4call2sen2", 1],
-	
 ]
+
+func day4_creature_kick():
+		$CanvasLayer/decision.visible = 0
+		cam_sabo_creature_exist = 0
+		start_chat()
