@@ -270,10 +270,10 @@ func _ready() -> void:
 	#day1_end()
 	#get_tree().paused = 1
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(25).timeout
 	vamp_kill()
 	#crawl_effect()
-	#await get_tree().create_timer(100).timeout
+	await get_tree().create_timer(100).timeout
 	phone_up()
 	
 	#antenna_sabo()
