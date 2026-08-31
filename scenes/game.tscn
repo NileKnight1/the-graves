@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://cim17fdmt5ywc" path="res://assets/Signika-Bold.ttf" id="6_p57ef"]
 [ext_resource type="StyleBox" uid="uid://xanwnstf0v21" path="res://new_style_box_flat.tres" id="8_1kice"]
 [ext_resource type="Script" uid="uid://dc6hvb8b843gw" path="res://scripts/creature.gd" id="10_pl11u"]
+[ext_resource type="Script" uid="uid://cie144tqxiphy" path="res://scripts/frank.gd" id="10_sgl2t"]
 [ext_resource type="AudioStream" uid="uid://mytxcdg0yh6f" path="res://audio/ringtone.mp3" id="10_vtaks"]
 [ext_resource type="AudioStream" uid="uid://dgeubm3gi5is4" path="res://audio/dialogue.mp3" id="11_kvpfn"]
 [ext_resource type="AudioStream" uid="uid://2xs1l0vulvmj" path="res://audio/radio.mp3" id="12_dinhu"]
@@ -543,6 +544,20 @@ border_width_left = 1
 border_width_right = 1
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6met"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7itva"]
+bg_color = Color(0.63258916, 0.43502998, 3.85046e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5ny5"]
+bg_color = Color(0.63258916, 0.43502998, 3.85046e-07, 1)
+skew = Vector2(1.08, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ss2i"]
+bg_color = Color(0.63258916, 0.43502998, 3.85046e-07, 1)
+skew = Vector2(0.9, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pf7vy"]
 bg_color = Color(0.490283, 0.29443035, 0.12824145, 1)
 
@@ -978,6 +993,9 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd4ix"]
+bg_color = Color(0.72, 0, 0, 0.06666667)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qnb83"]
 shader = ExtResource("14_bhx41")
@@ -3279,6 +3297,71 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
 metadata/_edit_use_anchors_ = true
 
+[node name="frank" type="Node2D" parent="map behind/out_left/p2" unique_id=1861326412]
+
+[node name="home" type="Panel" parent="map behind/out_left/p2/frank" unique_id=207425048]
+offset_left = 2128.0
+offset_top = -5.0000143
+offset_right = 2134.5413
+offset_bottom = -1.729312
+scale = Vector2(7.643624, 7.643624)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s6met")
+
+[node name="home2" type="Panel" parent="map behind/out_left/p2/frank" unique_id=1611847091]
+offset_left = 2125.0
+offset_right = 2131.5413
+offset_bottom = 0.6541405
+scale = Vector2(7.643624, 7.643624)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s6met")
+
+[node name="home3" type="Panel" parent="map behind/out_left/p2/frank" unique_id=1725684965]
+offset_left = 2125.0
+offset_top = 11.000004
+offset_right = 2131.5413
+offset_bottom = 11.654144
+scale = Vector2(7.643624, 7.643624)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s6met")
+
+[node name="home4" type="Panel" parent="map behind/out_left/p2/frank" unique_id=734478297]
+offset_left = 2132.0
+offset_top = -5.0
+offset_right = 2133.439
+offset_bottom = -1.7292976
+scale = Vector2(7.643624, 7.643624)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7itva")
+
+[node name="home5" type="Panel" parent="map behind/out_left/p2/frank" unique_id=1145562975]
+offset_left = 2153.0
+offset_top = -1.9999998
+offset_right = 2153.654
+offset_bottom = -0.8225477
+scale = Vector2(7.643624, 7.643624)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o5ny5")
+
+[node name="home7" type="Panel" parent="map behind/out_left/p2/frank" unique_id=260670267]
+offset_left = 2157.0
+offset_top = 7.0000067
+offset_right = 2157.5234
+offset_bottom = 8.04663
+scale = Vector2(7.643624, 7.643624)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o5ny5")
+
+[node name="home6" type="Panel" parent="map behind/out_left/p2/frank" unique_id=5764369]
+offset_left = 2161.146
+offset_top = 1.1605685
+offset_right = 2161.5798
+offset_bottom = 2.4514773
+rotation = 0.8246929
+scale = Vector2(7.643624, 7.643624)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ss2i")
+
 [node name="out_right" type="Node2D" parent="map behind" unique_id=1672557119]
 
 [node name="bg" type="Node2D" parent="map behind/out_right" unique_id=1187041632]
@@ -4114,10 +4197,10 @@ collision_mask = 0
 script = ExtResource("10_pl11u")
 
 [node name="frank" parent="anomalies" unique_id=456403309 instance=ExtResource("3_lbhrr")]
-position = Vector2(3028, -26)
+position = Vector2(-3166, -26)
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("10_pl11u")
+script = ExtResource("10_sgl2t")
 
 [node name="map above" type="Control" parent="." unique_id=385126786]
 layout_direction = 2
@@ -5986,6 +6069,16 @@ offset_bottom = 741.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_js0lu")
 
+[node name="red" type="Panel" parent="CanvasLayer" unique_id=145079217]
+visible = false
+layout_direction = 2
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 1298.0
+offset_bottom = 741.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
+
 [node name="shift2" type="Label" parent="CanvasLayer" unique_id=1903131424]
 layout_direction = 2
 offset_left = 263.0
@@ -6614,6 +6707,7 @@ stream = ExtResource("26_sww3w")
 stream = ExtResource("27_suyxu")
 
 [node name="lights" type="Node2D" parent="." unique_id=125245000]
+visible = false
 
 [node name="room_dark" type="PointLight2D" parent="lights" unique_id=1301865641]
 position = Vector2(-25.000044, -162.49994)

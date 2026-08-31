@@ -507,7 +507,7 @@ func _process(delta: float) -> void:
 		walking_sound.stop()
 	
 	
-	var shaked = $"map above/cams"
+	var shaked = $"."
 	if active_shake_time > 0:
 		shake_time += delta * shake_time_speed
 		active_shake_time -= delta
@@ -2692,16 +2692,45 @@ func day6_tech_steal():
 	else:
 		$anomalies/tech.visible = 0
 		$areas/generator/CollisionShape2D.set_deferred("disabled", 1)
+		subtitle("RUN", 0.2)
 		generator_sabo()
+		antenna_sabo()
 		$"map behind/generator".queue_free()
+		$CanvasLayer/red.visible = 1
 		#await get_tree().create_timer(5).timeout
 		$anomalies/frank.visible = 1
-		play_sound(frank_scream)
-		await get_tree().create_timer(1).timeout
-		play_sound(electricity)
-		await get_tree().create_timer(1).timeout
-		play_sound(electricity)
-		$anomalies/frank.speed = 100
+		frank_sounds_on = 1
+		frank_sounds()
+		$anomalies/frank.player = $player
+		$anomalies/frank.speed = 150
 		$anomalies/frank.move = 1
-		#$anomalies/frank.move = 1
-	
+		
+		await get_tree().create_timer(30).timeout
+		subtitle("Stay away.", 0.5)
+		
+		frank_sounds_on = 0
+		$CanvasLayer/red.visible = 0
+		$anomalies/frank.speed = 700
+		$anomalies/frank.target_player = 0
+		$anomalies/frank.destination = Vector2(-3676.0, -26)
+		subtitle("", 0)
+		await get_tree().create_timer(5).timeout 
+		play_sound(frank_scream)
+		
+
+var frank_sounds_on = 0
+
+#func frank_time():
+	#
+
+func frank_sounds():
+	while frank_sounds_on:
+		play_sound(frank_scream)
+		screen_shake(30, 3)
+		await get_tree().create_timer(1).timeout
+		screen_shake(30, 3)
+		play_sound(electricity)
+		await get_tree().create_timer(1).timeout
+		screen_shake(30, 9)
+		play_sound(electricity)
+		await get_tree().create_timer(3).timeout
