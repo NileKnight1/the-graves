@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://d0l4ciu1e13h1" path="res://audio/sub.mp3" id="19_5newe"]
 [ext_resource type="Texture2D" uid="uid://74yjv8hvpbk8" path="res://assets/rect.png" id="19_264po"]
 [ext_resource type="AudioStream" uid="uid://dgxlfchq0oics" path="res://audio/voicebosch-heart-and-breath-suspense-196083.mp3" id="26_sww3w"]
+[ext_resource type="AudioStream" uid="uid://dwbycnc4g38ad" path="res://audio/soundreality-heart-beat-137135.mp3" id="27_suyxu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = 6.0
@@ -945,7 +946,7 @@ content_margin_left = 15.0
 content_margin_top = 5.0
 content_margin_right = 15.0
 content_margin_bottom = 5.0
-bg_color = Color(0.6, 0.047999993, 0.047999993, 1)
+bg_color = Color(0.2898948, 0.009417913, 0.009396687, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
@@ -956,11 +957,12 @@ content_margin_left = 15.0
 content_margin_top = 5.0
 content_margin_right = 15.0
 content_margin_bottom = 5.0
-bg_color = Color(0.43529412, 0.023529412, 0.023529412, 1)
+bg_color = Color(0.19215687, 0.003921569, 0.003921569, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8ral"]
@@ -968,18 +970,7 @@ content_margin_left = 15.0
 content_margin_top = 5.0
 content_margin_right = 15.0
 content_margin_bottom = 5.0
-bg_color = Color(0.43529412, 0.023529412, 0.023529412, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd4ix"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(0.6, 0.047999993, 0.047999993, 1)
+bg_color = Color(0.1925905, 0.002863885, 0.002861674, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
@@ -990,7 +981,6 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qnb83"]
 shader = ExtResource("14_bhx41")
-shader_parameter/key_color = Color(0, 1, 0, 1)
 shader_parameter/threshold = 0.05
 shader_parameter/softness = 0.05
 
@@ -5868,12 +5858,14 @@ offset_left = 1035.0
 offset_top = 111.0
 offset_right = 1109.0
 offset_bottom = 209.0
+theme_override_colors/font_color = Color(0.5931331, 0.59313387, 0.59313315, 1)
+theme_override_colors/font_pressed_color = Color(0.3779187, 0.3779189, 0.37791875, 1)
+theme_override_colors/font_hover_color = Color(0.42745098, 0.42745098, 0.42745098, 1)
 theme_override_fonts/font = ExtResource("6_p57ef")
 theme_override_font_sizes/font_size = 71
 theme_override_styles/normal = SubResource("StyleBoxFlat_bk1p3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nepv3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_n8ral")
-theme_override_styles/focus = SubResource("StyleBoxFlat_yd4ix")
 text = "X"
 
 [node name="shift" type="Label" parent="CanvasLayer" unique_id=2086180496]
@@ -6097,16 +6089,13 @@ stream = ExtResource("13_e1j6l")
 
 [node name="videostream2" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=1460121371]
 material = SubResource("ShaderMaterial_qnb83")
-offset_left = -220.0
-offset_top = 1915.0
-offset_right = 2762.6826
-offset_bottom = 3592.7593
-rotation = -1.5707964
+offset_left = 28.0
+offset_top = 11.0
+offset_right = 1267.1108
+offset_bottom = 708.0
 mouse_filter = 2
 stream = ExtResource("13_e1j6l")
-speed_scale = 5.0
 expand = true
-loop = true
 
 [node name="room" type="Control" parent="CanvasLayer" unique_id=1019839140]
 z_index = 2
@@ -6567,6 +6556,7 @@ parameters/looping = true
 
 [node name="camera" type="AudioStreamPlayer" parent="sfx" unique_id=1510438689]
 stream = ExtResource("13_kvuet")
+volume_db = -20.0
 parameters/looping = true
 
 [node name="night" type="AudioStreamPlayer" parent="sfx" unique_id=1031584916]
@@ -6595,6 +6585,9 @@ parameters/looping = true
 [node name="beats" type="AudioStreamPlayer" parent="sfx" unique_id=142052379]
 stream = ExtResource("26_sww3w")
 
+[node name="heartbeats" type="AudioStreamPlayer" parent="sfx" unique_id=2059519708]
+stream = ExtResource("27_suyxu")
+
 [node name="lights" type="Node2D" parent="." unique_id=125245000]
 
 [node name="room" type="PointLight2D" parent="lights" unique_id=59616191]
@@ -6607,21 +6600,21 @@ texture = ExtResource("18_ssvqc")
 [node name="left" type="PointLight2D" parent="lights" unique_id=2115687293]
 position = Vector2(-2157.25, -555)
 scale = Vector2(2.5935192, 2.9019606)
-energy = 0.56
+energy = 0.8
 blend_mode = 1
 texture = ExtResource("19_264po")
 
 [node name="left2" type="PointLight2D" parent="lights" unique_id=2135118412]
 position = Vector2(-25.742651, -917.9078)
 scale = Vector2(-0.90515226, 1.4787931)
-energy = 0.56
+energy = 0.8
 blend_mode = 1
 texture = ExtResource("19_264po")
 
 [node name="right" type="PointLight2D" parent="lights" unique_id=439996145]
 position = Vector2(2021.375, -551)
 scale = Vector2(2.4554963, 2.8862746)
-energy = 0.56
+energy = 0.8
 blend_mode = 1
 texture = ExtResource("19_264po")
 

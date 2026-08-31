@@ -45,19 +45,22 @@ var sudden = preload("res://audio/sudden.mp3")
 var punch = preload("res://audio/punch.mp3")
 var scary = preload("res://audio/dragon-studio-scary-transition-401717.mp3")
 var high_pitch = preload("res://audio/highpitch.mp3")
+var beep = preload("res://audio/dragon-studio-censor-beep-1-372459.mp3")
 
 
-
-func play_sound(sound):
+func play_sound(sound, vol = 0.0):
 	var temp = AudioStreamPlayer.new()
 	temp.stream = sound
+	temp.volume_db = vol
 	add_child(temp)
 	
 	temp.finished.connect(temp.queue_free)
 	temp.play()
 
 var flicker = preload("res://assets/flicker.ogv")
-var crawl = preload("res://assets/crawl.ogv")
+#var crawl = preload("res://assets/chroma-keyed-video2.ogv")
+var crawl = preload("res://assets/chroma-keyed-video (1).ogv")
+
 
 func flicker_effect():
 	$CanvasLayer/VideoStreamPlayer.visible = 1
@@ -75,54 +78,91 @@ func crawl_effect():
 	var time = $CanvasLayer/time
 	var danger = $CanvasLayer/danger
 	
-	$sfx/beats.play(25)
+	#$sfx/beats.play(25)
+	$sfx/heartbeats.play()
+	
 	hand1.visible = 1
 	var tween = create_tween()
 	tween.tween_property(hand1 ,"position:y", hand1.position.y + 50 , 1)
 	await get_tree().create_timer(1.5).timeout
+	$sfx/heartbeats.volume_db += 2
 	var tween2 = create_tween()
 	var tween3 = create_tween()
-	
 	tween2.tween_property(hand1 ,"position:y", hand1.position.y - 50 , 0.5)
 	tween3.tween_property(time ,"position:y", time.position.y - 50 , 0.5)
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(5).timeout
+	$sfx/heartbeats.volume_db += 2
+	$sfx/night.volume_db = -80
+	$sfx/camera.volume_db = -80
 	var tween4 = create_tween()
 	tween4.tween_property(hand2 ,"position:x", hand2.position.x - 50 , 1)
 
 	await get_tree().create_timer(1.5).timeout
-	
+	$sfx/heartbeats.volume_db += 2
 	var tween5 = create_tween()
 	var tween6 = create_tween()
 	tween5.tween_property(hand2 ,"position:x", hand2.position.x + 50 , 0.2)
 	tween6.tween_property(danger ,"position:x", danger.position.x + 310 , 0.2)
 	
+	#return
+	await get_tree().create_timer(1.2).timeout
+	$CanvasLayer/black.visible = 1
 	
+	play_sound(beep, 5.0)
+	await get_tree().create_timer(1.2).timeout
+	play_sound(beep, 5.0)
+	await get_tree().create_timer(1.2).timeout
+	play_sound(beep, 5.0)
+	$sfx/heartbeats.stop()
+	await get_tree().create_timer(1.2).timeout
+	screen_shake(30, 4)
+
+	$sfx/night.volume_db = 0
+	$sfx/camera.volume_db = 0
+
 	
-	
-	return
-	$sfx/night.volume_db = -80
-	$sfx/camera.volume_db = -80
-	
-	await get_tree().create_timer(2).timeout
-	flicker_effect()
-	flicker_effect()
+	#await get_tree().create_timer(2).timeout
+	$CanvasLayer/black.visible = 0
+	#flicker_effect()
+	screen_shake(80, 2)
+	#flicker_effect()
 	await get_tree().create_timer(0.5).timeout
 	
 	$CanvasLayer/videostream2.visible = 1
 	$CanvasLayer/videostream2.stream = crawl
 	$CanvasLayer/videostream2.play()
-	play_sound(scary)
+	$CanvasLayer/videostream2.stream_position = 7
+	play_sound(scary, 10.0)
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(7).timeout
 	#close_cam()
 	$CanvasLayer/videostream2.stream = null
 	$CanvasLayer/videostream2.visible = 0
 	$CanvasLayer/videostream2.stop()
-	play_sound(high_pitch)
+	play_sound(high_pitch, 5.0)
 	await get_tree().create_timer(0.7).timeout
 	
 	$sfx/night.volume_db = 0
 	$sfx/camera.volume_db = 0
+
+
+var shake_intensity = 0.0
+var active_shake_time = 0.0
+var shake_decay = 5.0
+var shake_time = 0.0
+var shake_time_speed = 20.0
+var noise = FastNoiseLite.new()
+
+#func shake_cam():
+
+
+func screen_shake(intensity, time):
+	randomize()
+	noise.seed = randi()
+	noise.frequency = 2.0
+	shake_intensity = intensity
+	active_shake_time = time
+	shake_time = 0.0
 
 
 func translation():
@@ -196,7 +236,7 @@ func _ready() -> void:
 	#day1_end()
 	#get_tree().paused = 1
 	
-	#await get_tree().create_timer(5).timeout
+	#await get_tree().create_timer(10).timeout
 	crawl_effect()
 	await get_tree().create_timer(100).timeout
 	phone_up()
@@ -404,7 +444,23 @@ func _process(delta: float) -> void:
 			walking_sound.pitch_scale = 1
 	else:
 		walking_sound.stop()
-
+	
+	
+	var shaked = $"map above/cams"
+	if active_shake_time > 0:
+		shake_time += delta * shake_time_speed
+		active_shake_time -= delta
+		shaked.position = Vector2(
+			noise.get_noise_2d(shake_time, 0.0) * shake_intensity,
+			noise.get_noise_2d(0.0, shake_time) * shake_intensity
+		)
+		
+		shake_intensity = max(shake_intensity - shake_decay * delta, 0.0)
+	else:
+		shaked.position = shaked.position.lerp(Vector2.ZERO, 10.5 * delta)
+	
+	
+	
 	match shift:
 		2:
 			if ps1: $anomalies/anomaly.visible = 0
