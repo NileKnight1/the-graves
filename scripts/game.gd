@@ -30,6 +30,11 @@ var shift_time = 0
 var force_radio_close = 0
 var force_cam_close = 0
 
+var vamp1 = preload("res://assets/vamp1.png")
+var vamp2 = preload("res://assets/vamp2.png")
+var vamp3 = preload("res://assets/vamp3.png")
+
+
 
 #var collect = preload("res://audio/collect.mp3")
 var click_phone = preload("res://audio/click_phone.mp3")
@@ -50,6 +55,9 @@ var scary = preload("res://audio/dragon-studio-scary-transition-401717.mp3")
 var high_pitch = preload("res://audio/highpitch.mp3")
 var beep = preload("res://audio/dragon-studio-censor-beep-1-372459.mp3")
 var vamp_laugh = preload("res://audio/vamp_laught.mp3")
+var bats = preload("res://audio/bats.mp3")
+var hiss = preload("res://audio/hiss.mp3")
+var bite = preload("res://audio/bite.mp3")
 
 
 
@@ -258,10 +266,12 @@ func _ready() -> void:
 		pc = 0
 	translation()
 	tasks()
+	
 	#day1_end()
 	#get_tree().paused = 1
 	
-	#await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(3).timeout
+	vamp_kill()
 	#crawl_effect()
 	#await get_tree().create_timer(100).timeout
 	phone_up()
@@ -625,6 +635,7 @@ func allow_move():
 	$player.move = 1
 
 func light_off(silent = 0):
+	if !light: return
 	light = 0
 	$lights/room.visible = 0
 	$"map behind/room/bg/lamp/off".visible = 1
@@ -654,12 +665,17 @@ func ladder_down():
 	$"map behind/out_left/p2/ladder/outline".visible = 1
 
 func phone_up():
+	$CanvasLayer/phone/ringing/accept.disabled = 0
+	$CanvasLayer/phone/ringing/decline.disabled = 0
+	
 	$CanvasLayer/phone/ringing.visible = 1
 	$CanvasLayer/phone/accepted.visible = 0
 	var tween = create_tween()
 	$sfx/ringtone.play()
 	tween.tween_property($CanvasLayer/phone, "position:y", $CanvasLayer/phone.position.y + 320 , 0.8)
 func phone_down():
+	$CanvasLayer/phone/ringing/accept.disabled = 1
+	$CanvasLayer/phone/ringing/decline.disabled = 1
 	var tween = create_tween()
 	tween.tween_property($CanvasLayer/phone, "position:y", $CanvasLayer/phone.position.y - 320 , 0.4)
 	$sfx/dia.stop()
@@ -763,7 +779,7 @@ func _on_cams_body_entered(body: Node2D) -> void:
 		if $anomalies/anomaly2.visible && cam_sabo_creature_exist:
 			show_decision_option("choose", "kick", "cancel")
 		
-		if vamp_in_room && light:
+		if vamp_in_room && !light:
 			vamp_kill()
 
 	if body is CharacterBody2D && body.anomaly:
@@ -1251,6 +1267,7 @@ func _on_ps_1_body_entered(body: Node2D) -> void:
 		ps1 = 1
 		if vamp_move:
 			light_off(1)
+			vamp_move_to_room()
 			
 			
 		print("p1")
@@ -2580,15 +2597,44 @@ func vamp_spawn():
 
 func vamp_kill():
 	print("killed")
+	vamp_move = 0
+	vamp_in_room = 0
+	play_sound(bats)
+	
+	$sfx/night.stop()
+	#$sfx/.stop()
+	
+	$CanvasLayer/image.visible = 1
+	$CanvasLayer/image.texture = vamp1
+	play_sound(hiss)
+	await get_tree().create_timer(0.3).timeout
+	$CanvasLayer/image.texture = null
+	await get_tree().create_timer(0.1).timeout
+	$CanvasLayer/image.texture = vamp2
+	play_sound(hiss)
+	await get_tree().create_timer(0.3).timeout
+	$CanvasLayer/image.texture = null
+	await get_tree().create_timer(0.1).timeout
+	$CanvasLayer/image.texture = vamp3
+	play_sound(hiss)
+	await get_tree().create_timer(0.3).timeout
+	$CanvasLayer/black.visible = 1
+	$CanvasLayer/image.texture = null
+	play_sound(bite)
+	
+	lose()
+	
 	
 	#lose()
 
-func vamp_kill():
+func vamp_dead():
 	print("vamp dead")
-
+	vamp_move = 0
+	vamp_in_room = 0
 
 var vamp_in_room = 0
 
 func vamp_move_to_room():
+	print("vamp in room")
 	$anomalies/vamp.visible = 0
 	vamp_in_room = 1

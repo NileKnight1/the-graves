@@ -5750,6 +5750,7 @@ offset_left = 109.0
 offset_top = -1021.0
 offset_right = 154.0
 offset_bottom = -980.0
+focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("8_1kice")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_m4url")
@@ -6526,6 +6527,12 @@ offset_top = -507.0
 offset_right = 1254.0
 offset_bottom = -396.0
 texture = ExtResource("16_qnb83")
+
+[node name="image" type="TextureRect" parent="CanvasLayer" unique_id=484453327]
+visible = false
+offset_right = 1271.1111
+offset_bottom = 715.0
+expand_mode = 2
 
 [node name="timers" type="Node" parent="." unique_id=896048706]
 
