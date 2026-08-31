@@ -313,6 +313,8 @@ func shift_time_manager():
 		2: day2_time()
 		3: day3_time()
 		4: day4_time()
+		5: day5_time()
+		
 		
 
 func day_starters():
@@ -467,7 +469,9 @@ func match_shift():
 				3: day_chat(day4_creature1_chat_leave, day4_creature1_leave)
 				4: day_chat(day4_creature1_chat_end, day4_creature1_leave)
 				5: day_chat(day4_end_chat, day_end)
-				
+		5:
+			match call_index:
+				0: day_call(day5_call1_chat, day5_start)
 
 
 
@@ -689,9 +693,16 @@ func _on_decline_call_pressed() -> void:
 		3:
 			match call_index:
 				0: day3_start()
+				1: day_end()
 		4:
 			match call_index:
 				0: day4_start()
+				1: day_end()
+		5:
+			match call_index:
+				0: day5_start()
+				1: day_end()
+			
 	
 	call_index +=1
 	
@@ -2463,4 +2474,46 @@ func day4_creature_kick():
 var day4_end_chat = [
 	["day4c1", 1.0],
 	["day4c2", 1.0],
+]
+
+
+#### ANOTHER GAME
+### Shift 5
+### Visitors Day
+# Creature 1 -> asks to visit someone who doesn't exist
+# Creature 2 -> asks to visit someone who exists -> write player's name instead of it -> chases player
+# Normal creatures -> visit and leave
+# Creature 3 -> visitor turns off light and goes on, player turn light again, visitor can't pass back, so it just stand
+# Creature 4 -> visitor goes in and disappears
+# Creature 5 -> goes for wrong grave
+# Creature 6 ->  
+
+### Another events
+# someone asks for help ->
+## 1: helped -> help you later
+## 2: not helped -> nothing
+# gang sabotaging cameras -> hide ->
+## 1: they steal screen
+## 2: someone you helped before helps you
+
+
+func day5_time():
+	if shift_time == 1:
+		print("im here")
+	elif shift_time == 60:
+		set_shift_values(15, 20)
+	elif shift_time == 150:
+		set_shift_values(12, 16)
+	elif shift_time == 240:
+		set_shift_values(8, 14)
+	elif shift_time == 300:
+		day2_creature1()
+
+func day5_start():
+	shift_start()
+	day4_visitor()
+	#sabo_time()
+
+var day5_call1_chat = [
+	["", 0],
 ]
