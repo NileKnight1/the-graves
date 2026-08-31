@@ -71,38 +71,40 @@ func flicker_effect():
 	$CanvasLayer/VideoStreamPlayer.visible = 0
 	$CanvasLayer/VideoStreamPlayer.stop()
 
+var force_camera = 0
+
 func crawl_effect():
 	print('effect')
+	force_camera = 1
 	var hand1 = $CanvasLayer/textures/hand1
 	var hand2 = $CanvasLayer/textures/hand2
 	var time = $CanvasLayer/time
 	var danger = $CanvasLayer/danger
 	
-	#$sfx/beats.play(25)
 	$sfx/heartbeats.play()
 	
 	hand1.visible = 1
 	var tween = create_tween()
-	tween.tween_property(hand1 ,"position:y", hand1.position.y + 50 , 1)
+	tween.tween_property(hand1 ,"position:y", hand1.position.y + 70 , 1)
 	await get_tree().create_timer(1.5).timeout
 	$sfx/heartbeats.volume_db += 2
 	var tween2 = create_tween()
 	var tween3 = create_tween()
-	tween2.tween_property(hand1 ,"position:y", hand1.position.y - 50 , 0.5)
-	tween3.tween_property(time ,"position:y", time.position.y - 50 , 0.5)
+	tween2.tween_property(hand1 ,"position:y", hand1.position.y - 90 , 0.5)
+	tween3.tween_property(time ,"position:y", time.position.y - 90 , 0.5)
 	await get_tree().create_timer(5).timeout
 	$sfx/heartbeats.volume_db += 2
 	$sfx/night.volume_db = -80
 	$sfx/camera.volume_db = -80
 	var tween4 = create_tween()
-	tween4.tween_property(hand2 ,"position:x", hand2.position.x - 50 , 1)
+	tween4.tween_property(hand2 ,"position:x", hand2.position.x - 90 , 1)
 
 	await get_tree().create_timer(1.5).timeout
 	$sfx/heartbeats.volume_db += 2
 	var tween5 = create_tween()
 	var tween6 = create_tween()
-	tween5.tween_property(hand2 ,"position:x", hand2.position.x + 50 , 0.2)
-	tween6.tween_property(danger ,"position:x", danger.position.x + 310 , 0.2)
+	tween5.tween_property(hand2 ,"position:x", hand2.position.x + 90 , 0.2)
+	tween6.tween_property(danger ,"position:x", danger.position.x + 350 , 0.2)
 	
 	#return
 	await get_tree().create_timer(1.2).timeout
@@ -117,31 +119,41 @@ func crawl_effect():
 	await get_tree().create_timer(1.2).timeout
 	screen_shake(30, 4)
 
-	$sfx/night.volume_db = 0
-	$sfx/camera.volume_db = 0
 
-	
 	#await get_tree().create_timer(2).timeout
 	$CanvasLayer/black.visible = 0
-	#flicker_effect()
-	screen_shake(80, 2)
-	#flicker_effect()
-	await get_tree().create_timer(0.5).timeout
-	
+	screen_shake(60, 3)
+	$sfx/heartbeats.volume_db += 2
+	await get_tree().create_timer(2).timeout
+	$sfx/heartbeats.stop()
+	#$sfx/night.volume_db = 0
+	#$sfx/camera.volume_db = 0
+	await get_tree().create_timer(2.8).timeout
+	screen_shake(150, 1)
+	await get_tree().create_timer(0.2).timeout
 	$CanvasLayer/videostream2.visible = 1
 	$CanvasLayer/videostream2.stream = crawl
 	$CanvasLayer/videostream2.play()
 	$CanvasLayer/videostream2.stream_position = 7
 	play_sound(scary, 10.0)
 	
-	await get_tree().create_timer(7).timeout
+	await get_tree().create_timer(0.6).timeout
 	#close_cam()
 	$CanvasLayer/videostream2.stream = null
 	$CanvasLayer/videostream2.visible = 0
 	$CanvasLayer/videostream2.stop()
 	play_sound(high_pitch, 5.0)
-	await get_tree().create_timer(0.7).timeout
+	force_camera = 0
+	await get_tree().create_timer(0.2).timeout
+	flicker_effect()
+	await get_tree().create_timer(0.2).timeout
+	flicker_effect()
+	generator_sabo()
+	flicker_effect()
+	await get_tree().create_timer(0.2).timeout
+	flicker_effect()
 	
+	await get_tree().create_timer(0.7).timeout
 	$sfx/night.volume_db = 0
 	$sfx/camera.volume_db = 0
 
@@ -237,8 +249,8 @@ func _ready() -> void:
 	#get_tree().paused = 1
 	
 	#await get_tree().create_timer(10).timeout
-	crawl_effect()
-	await get_tree().create_timer(100).timeout
+	#crawl_effect()
+	#await get_tree().create_timer(100).timeout
 	phone_up()
 	
 	#antenna_sabo()
@@ -359,6 +371,9 @@ func open_cam():
 func close_cam():
 	if !day1task2 && day1call1_done:
 		return
+	if force_camera:
+		$CanvasLayer/close_cam.visible = 0
+		return
 	
 	if day1task2 || !day1call1_done:
 		$"map above/cams".get_child(opened_cam-1).visible = 0
@@ -458,8 +473,18 @@ func _process(delta: float) -> void:
 		shake_intensity = max(shake_intensity - shake_decay * delta, 0.0)
 	else:
 		shaked.position = shaked.position.lerp(Vector2.ZERO, 10.5 * delta)
-	
-	
+	shaked = $CanvasLayer
+	if active_shake_time > 0:
+		shake_time += delta * shake_time_speed
+		active_shake_time -= delta
+		
+		shaked.offset = Vector2(
+			noise.get_noise_2d(shake_time, 0.0) * shake_intensity,
+			noise.get_noise_2d(0.0, shake_time) * shake_intensity
+		)
+		shake_intensity = max(shake_intensity - shake_decay * delta, 0.0)
+	else:
+		shaked.offset = shaked.offset.lerp(Vector2.ZERO, 10.5 * delta)
 	
 	match shift:
 		2:
