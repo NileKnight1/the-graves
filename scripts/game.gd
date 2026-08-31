@@ -77,6 +77,7 @@ func flicker_effect():
 var force_camera = 0
 
 func crawl_effect():
+	global.day4crawl = 1
 	force_camera = 1
 	await get_tree().create_timer(2).timeout
 	print('effect')
@@ -89,7 +90,7 @@ func crawl_effect():
 	
 	hand1.visible = 1
 	var tween = create_tween()
-	tween.tween_property(hand1 ,"position:y", hand1.position.y + 70 , 1)
+	tween.tween_property(hand1 ,"position:y", hand1.position.y + 90 , 1)
 	await get_tree().create_timer(1.5).timeout
 	$sfx/heartbeats.volume_db += 2
 	var tween2 = create_tween()
@@ -160,6 +161,8 @@ func crawl_effect():
 	await get_tree().create_timer(0.2).timeout
 	flicker_effect()
 	await get_tree().create_timer(0.7).timeout
+	time.position.y += 90
+	danger.position.x -= 350
 	$sfx/night.volume_db = 0
 	$sfx/camera.volume_db = 0
 	sabo_time()
@@ -229,11 +232,11 @@ func translation():
 	
 	#$CanvasLayer/subtitles.text = tr("test")
 	
-	$player/phone/ringing/lab1.text = tr("accept")
-	$player/phone/ringing/lab2.text = tr("decline")
-	$player/phone/accepted/lab2.text = tr("decline")
-	$player/phone/caller.text = tr("manager")
-	$player/phone/ringing/label.text = tr("calling")
+	$CanvasLayer/phone/ringing/lab1.text = tr("accept")
+	$CanvasLayer/phone/ringing/lab2.text = tr("decline")
+	$CanvasLayer/phone/accepted/lab2.text = tr("decline")
+	$CanvasLayer/phone/caller.text = tr("manager")
+	$CanvasLayer/phone/ringing/label.text = tr("calling")
 	
 	$CanvasLayer/press_e.text = tr("press_e")
 	
@@ -372,7 +375,7 @@ func open_cam():
 	$"map above/cams".get_child(opened_cam-1).enabled = 1
 	$CanvasLayer/close_cam.visible = 1
 	computer_opened = 1
-	$player/phone.visible = 0
+	$CanvasLayer/phone.visible = 0
 	play_sound(cam_on)
 	$sfx/camera.play()
 	walking_sound.stop()
@@ -405,7 +408,7 @@ func close_cam():
 	$sfx/camera.stop()
 	$player/Camera2D.enabled = 1
 	$"map above/cams".visible = 0
-	$player/phone.visible = 1
+	$CanvasLayer/phone.visible = 1
 	
 	print("closed")
 	#$"map above/cams/cam3".enabled = 0
@@ -463,6 +466,8 @@ func match_shift():
 				2: day_chat(day4_creature1_chat_stay, day4_creature1_stay)
 				3: day_chat(day4_creature1_chat_leave, day4_creature1_leave)
 				4: day_chat(day4_creature1_chat_end, day4_creature1_leave)
+				5: day_chat(day4_end_chat, day_end)
+				
 
 
 
@@ -636,14 +641,14 @@ func ladder_down():
 	$"map behind/out_left/p2/ladder/outline".visible = 1
 
 func phone_up():
-	$player/phone/ringing.visible = 1
-	$player/phone/accepted.visible = 0
+	$CanvasLayer/phone/ringing.visible = 1
+	$CanvasLayer/phone/accepted.visible = 0
 	var tween = create_tween()
 	$sfx/ringtone.play()
-	tween.tween_property($player/phone, "position:y", $player/phone.position.y + 320 , 0.8)
+	tween.tween_property($CanvasLayer/phone, "position:y", $CanvasLayer/phone.position.y + 320 , 0.8)
 func phone_down():
 	var tween = create_tween()
-	tween.tween_property($player/phone, "position:y", $player/phone.position.y - 320 , 0.4)
+	tween.tween_property($CanvasLayer/phone, "position:y", $CanvasLayer/phone.position.y - 320 , 0.4)
 	$sfx/dia.stop()
 	$CanvasLayer/subtitles.text = ""
 
@@ -656,8 +661,8 @@ func _on_accept_call_pressed() -> void:
 	call_time = 0
 	play_sound(click_phone)
 	calling = 1
-	$player/phone/ringing.visible = 0
-	$player/phone/accepted.visible = 1
+	$CanvasLayer/phone/ringing.visible = 0
+	$CanvasLayer/phone/accepted.visible = 1
 	$timers/call_time.start()
 	$timers/skip_msg.start()
 	
@@ -697,12 +702,12 @@ func _on_call_time_timeout() -> void:
 	call_time += 1
 	var minutes = call_time/60
 	var seconds = call_time - (minutes*60) 
-	$player/phone/accepted/time.text = "0"
-	$player/phone/accepted/time.text += str(minutes)
-	$player/phone/accepted/time.text += ":"
+	$CanvasLayer/phone/accepted/time.text = "0"
+	$CanvasLayer/phone/accepted/time.text += str(minutes)
+	$CanvasLayer/phone/accepted/time.text += ":"
 	if seconds < 10:
-		$player/phone/accepted/time.text += "0"
-	$player/phone/accepted/time.text += str(seconds)
+		$CanvasLayer/phone/accepted/time.text += "0"
+	$CanvasLayer/phone/accepted/time.text += str(seconds)
 
 var chat_msg = 0
 
@@ -2454,3 +2459,8 @@ func day4_creature_kick():
 		day4_crawl = 1
 		await get_tree().create_timer(4.1).timeout
 		force_cam_close = 0 
+
+var day4_end_chat = [
+	["day4c1", 1.0],
+	["day4c2", 1.0],
+]

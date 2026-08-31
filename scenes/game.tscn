@@ -666,6 +666,135 @@ corner_radius_top_right = 60
 corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgl2t"]
+bg_color = Color(0.10980392, 0.16470589, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iywne"]
+bg_color = Color(0.1504, 0.16, 0.1312, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtaks"]
+bg_color = Color(0.13830167, 0.020732904, 0.012608305, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dku7i"]
+bg_color = Color(0.1504, 0.16, 0.1312, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tvof"]
+bg_color = Color(0.88, 0.88, 0.88, 1)
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3ulk"]
+bg_color = Color(0.88, 0.88, 0.88, 1)
+shadow_color = Color(0.3137255, 0.5686275, 1, 0.6)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1va0p"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eky20"]
+bg_color = Color(0.88, 0.88, 0.88, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsry6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rundi"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5sy4"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghitk"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kwaa"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jye5l"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tnpc"]
+size = Vector2(1780, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtaks"]
+size = Vector2(1491, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvpfn"]
+size = Vector2(1909, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dinhu"]
+size = Vector2(1720.5, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
+size = Vector2(256, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnb83"]
+size = Vector2(257, 245)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
+size = Vector2(174, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
+size = Vector2(1038, 703)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
+size = Vector2(1081.5, 703)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
+size = Vector2(1094, 703)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir15t"]
+size = Vector2(1079, 672.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssvqc"]
+size = Vector2(86, 213)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
+size = Vector2(303, 248.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt5mj"]
+size = Vector2(168, 223.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhx41"]
+size = Vector2(127, 490)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1j6l"]
+size = Vector2(61, 117.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl11u"]
+size = Vector2(128, 228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sww3w"]
+size = Vector2(227, 203)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxtfn"]
 bg_color = Color(0, 0, 0, 1)
 border_color = Color(0, 0, 0, 1)
@@ -811,135 +940,6 @@ corner_radius_top_right = 40
 corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 shadow_size = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgl2t"]
-bg_color = Color(0.10980392, 0.16470589, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iywne"]
-bg_color = Color(0.1504, 0.16, 0.1312, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtaks"]
-bg_color = Color(0.13830167, 0.020732904, 0.012608305, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dku7i"]
-bg_color = Color(0.1504, 0.16, 0.1312, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tvof"]
-bg_color = Color(0.88, 0.88, 0.88, 1)
-shadow_color = Color(1, 1, 1, 0.6)
-shadow_size = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3ulk"]
-bg_color = Color(0.88, 0.88, 0.88, 1)
-shadow_color = Color(0.3137255, 0.5686275, 1, 0.6)
-shadow_size = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1va0p"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eky20"]
-bg_color = Color(0.88, 0.88, 0.88, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsry6"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rundi"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5sy4"]
-bg_color = Color(0, 0, 0, 0)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghitk"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kwaa"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jye5l"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tnpc"]
-size = Vector2(1780, 707)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtaks"]
-size = Vector2(1491, 707)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvpfn"]
-size = Vector2(1909, 707)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dinhu"]
-size = Vector2(1720.5, 707)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
-size = Vector2(256, 247)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnb83"]
-size = Vector2(257, 245)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
-size = Vector2(174, 162)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
-size = Vector2(1038, 703)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
-size = Vector2(1081.5, 703)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
-size = Vector2(1094, 703)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir15t"]
-size = Vector2(1079, 672.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssvqc"]
-size = Vector2(86, 213)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
-size = Vector2(303, 248.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt5mj"]
-size = Vector2(168, 223.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhx41"]
-size = Vector2(127, 490)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1j6l"]
-size = Vector2(61, 117.75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl11u"]
-size = Vector2(128, 228)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sww3w"]
-size = Vector2(227, 203)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk1p3"]
 content_margin_left = 15.0
@@ -4080,194 +4080,6 @@ limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
-[node name="phone" type="Control" parent="player" unique_id=1368197327]
-light_mask = 2
-z_index = 1
-layout_direction = 2
-layout_mode = 3
-anchors_preset = 0
-offset_left = -524.0
-offset_top = 557.0
-offset_right = -524.0
-offset_bottom = 557.0
-
-[node name="Panel" type="Panel" parent="player/phone" unique_id=300349657]
-light_mask = 2
-layout_mode = 0
-offset_left = 82.0
-offset_top = -1221.0
-offset_right = 122.0
-offset_bottom = -1181.0
-scale = Vector2(4.3953, 7.170543)
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gxtfn")
-
-[node name="Panel2" type="Panel" parent="player/phone" unique_id=1532304267]
-light_mask = 2
-layout_mode = 0
-offset_left = 98.81207
-offset_top = -1197.0
-offset_right = 131.16205
-offset_bottom = -1163.6941
-scale = Vector2(4.3953, 7.170543)
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
-
-[node name="Panel3" type="Panel" parent="player/phone" unique_id=1692659843]
-visible = false
-light_mask = 2
-layout_mode = 0
-offset_left = 279.81192
-offset_top = -206.0
-offset_right = 297.60092
-offset_bottom = -195.26161
-scale = Vector2(4.3953, 7.170543)
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_02fa5")
-
-[node name="caller" type="Label" parent="player/phone" unique_id=914665418]
-light_mask = 2
-layout_mode = 0
-offset_left = 119.0
-offset_top = -1117.0
-offset_right = 218.0
-offset_bottom = -1096.0
-theme_override_fonts/font = ExtResource("6_p57ef")
-text = "Manager"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="pfp" type="Button" parent="player/phone" unique_id=1207060996]
-light_mask = 2
-layout_mode = 0
-offset_left = 132.0
-offset_top = -1189.0
-offset_right = 205.0
-offset_bottom = -1118.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_458eo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_h3rex")
-theme_override_styles/hover = SubResource("StyleBoxFlat_fedci")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_8qswn")
-theme_override_styles/focus = SubResource("StyleBoxFlat_rm0al")
-disabled = true
-
-[node name="ringing" type="Control" parent="player/phone" unique_id=1693443239]
-light_mask = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="accept" type="Button" parent="player/phone/ringing" unique_id=2066133347]
-light_mask = 2
-layout_mode = 0
-offset_left = 109.0
-offset_top = -1021.0
-offset_right = 154.0
-offset_bottom = -980.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = ExtResource("8_1kice")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_m4url")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8ool0")
-theme_override_styles/focus = SubResource("StyleBoxFlat_pr1ej")
-
-[node name="decline" type="Button" parent="player/phone/ringing" unique_id=1183402027]
-light_mask = 2
-layout_mode = 0
-offset_left = 185.0
-offset_top = -1021.0
-offset_right = 230.0
-offset_bottom = -980.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_7025r")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_05nbr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0sl42")
-theme_override_styles/focus = SubResource("StyleBoxFlat_oaba0")
-
-[node name="lab1" type="Label" parent="player/phone/ringing" unique_id=58417003]
-light_mask = 2
-layout_mode = 0
-offset_left = 104.0
-offset_top = -1013.0
-offset_right = 158.0
-offset_bottom = -989.0
-theme_override_fonts/font = ExtResource("6_p57ef")
-theme_override_font_sizes/font_size = 12
-text = "Accept"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="lab2" type="Label" parent="player/phone/ringing" unique_id=707379026]
-light_mask = 2
-layout_mode = 0
-offset_left = 181.0
-offset_top = -1016.0
-offset_right = 235.0
-offset_bottom = -986.0
-theme_override_fonts/font = ExtResource("6_p57ef")
-theme_override_font_sizes/font_size = 12
-text = "Decline"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="label" type="Label" parent="player/phone/ringing" unique_id=1081548707]
-light_mask = 2
-layout_mode = 0
-offset_left = 121.0
-offset_top = -1102.0
-offset_right = 220.0
-offset_bottom = -1081.0
-theme_override_fonts/font = ExtResource("6_p57ef")
-theme_override_font_sizes/font_size = 8
-text = "calling ..."
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="accepted" type="Control" parent="player/phone" unique_id=1703048213]
-visible = false
-light_mask = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="time" type="Label" parent="player/phone/accepted" unique_id=187735466]
-light_mask = 2
-layout_mode = 0
-offset_left = 121.0
-offset_top = -1102.0
-offset_right = 220.0
-offset_bottom = -1081.0
-theme_override_fonts/font = ExtResource("6_p57ef")
-theme_override_font_sizes/font_size = 8
-text = "00:00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="decline" type="Button" parent="player/phone/accepted" unique_id=1903379979]
-light_mask = 2
-layout_mode = 0
-offset_left = 147.0
-offset_top = -1021.0
-offset_right = 192.0
-offset_bottom = -980.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_7025r")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_05nbr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0sl42")
-theme_override_styles/focus = SubResource("StyleBoxFlat_oaba0")
-
-[node name="lab2" type="Label" parent="player/phone/accepted" unique_id=1801884143]
-light_mask = 2
-layout_mode = 0
-offset_left = 143.0
-offset_top = -1016.0
-offset_right = 197.0
-offset_bottom = -986.0
-theme_override_fonts/font = ExtResource("6_p57ef")
-theme_override_font_sizes/font_size = 12
-text = "Decline"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="anomalies" type="Node2D" parent="." unique_id=1338437649]
 
 [node name="anomaly" parent="anomalies" unique_id=312059141 instance=ExtResource("3_lbhrr")]
@@ -5848,6 +5660,194 @@ debug_color = Color(0.989497, 0, 0.29520148, 0.41960785)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 
+[node name="phone" type="Control" parent="CanvasLayer" unique_id=1368197327]
+light_mask = 2
+z_index = 1
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -39.0
+offset_top = 921.0
+offset_right = -39.0
+offset_bottom = 921.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/phone" unique_id=300349657]
+light_mask = 2
+layout_mode = 0
+offset_left = 82.0
+offset_top = -1221.0
+offset_right = 122.0
+offset_bottom = -1181.0
+scale = Vector2(4.3953, 7.170543)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gxtfn")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/phone" unique_id=1532304267]
+light_mask = 2
+layout_mode = 0
+offset_left = 98.81207
+offset_top = -1197.0
+offset_right = 131.16205
+offset_bottom = -1163.6941
+scale = Vector2(4.3953, 7.170543)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/phone" unique_id=1692659843]
+visible = false
+light_mask = 2
+layout_mode = 0
+offset_left = 279.81192
+offset_top = -206.0
+offset_right = 297.60092
+offset_bottom = -195.26161
+scale = Vector2(4.3953, 7.170543)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_02fa5")
+
+[node name="caller" type="Label" parent="CanvasLayer/phone" unique_id=914665418]
+light_mask = 2
+layout_mode = 0
+offset_left = 119.0
+offset_top = -1117.0
+offset_right = 218.0
+offset_bottom = -1096.0
+theme_override_fonts/font = ExtResource("6_p57ef")
+text = "Manager"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pfp" type="Button" parent="CanvasLayer/phone" unique_id=1207060996]
+light_mask = 2
+layout_mode = 0
+offset_left = 132.0
+offset_top = -1189.0
+offset_right = 205.0
+offset_bottom = -1118.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_458eo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h3rex")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fedci")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8qswn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rm0al")
+disabled = true
+
+[node name="ringing" type="Control" parent="CanvasLayer/phone" unique_id=1693443239]
+light_mask = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="accept" type="Button" parent="CanvasLayer/phone/ringing" unique_id=2066133347]
+light_mask = 2
+layout_mode = 0
+offset_left = 109.0
+offset_top = -1021.0
+offset_right = 154.0
+offset_bottom = -980.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = ExtResource("8_1kice")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m4url")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8ool0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pr1ej")
+
+[node name="decline" type="Button" parent="CanvasLayer/phone/ringing" unique_id=1183402027]
+light_mask = 2
+layout_mode = 0
+offset_left = 185.0
+offset_top = -1021.0
+offset_right = 230.0
+offset_bottom = -980.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7025r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_05nbr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0sl42")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oaba0")
+
+[node name="lab1" type="Label" parent="CanvasLayer/phone/ringing" unique_id=58417003]
+light_mask = 2
+layout_mode = 0
+offset_left = 104.0
+offset_top = -1013.0
+offset_right = 158.0
+offset_bottom = -989.0
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 12
+text = "Accept"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lab2" type="Label" parent="CanvasLayer/phone/ringing" unique_id=707379026]
+light_mask = 2
+layout_mode = 0
+offset_left = 181.0
+offset_top = -1016.0
+offset_right = 235.0
+offset_bottom = -986.0
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 12
+text = "Decline"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label" type="Label" parent="CanvasLayer/phone/ringing" unique_id=1081548707]
+light_mask = 2
+layout_mode = 0
+offset_left = 121.0
+offset_top = -1102.0
+offset_right = 220.0
+offset_bottom = -1081.0
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "calling ..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="accepted" type="Control" parent="CanvasLayer/phone" unique_id=1703048213]
+visible = false
+light_mask = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="time" type="Label" parent="CanvasLayer/phone/accepted" unique_id=187735466]
+light_mask = 2
+layout_mode = 0
+offset_left = 121.0
+offset_top = -1102.0
+offset_right = 220.0
+offset_bottom = -1081.0
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 8
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="decline" type="Button" parent="CanvasLayer/phone/accepted" unique_id=1903379979]
+light_mask = 2
+layout_mode = 0
+offset_left = 147.0
+offset_top = -1021.0
+offset_right = 192.0
+offset_bottom = -980.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7025r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_05nbr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0sl42")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oaba0")
+
+[node name="lab2" type="Label" parent="CanvasLayer/phone/accepted" unique_id=1801884143]
+light_mask = 2
+layout_mode = 0
+offset_left = 143.0
+offset_top = -1016.0
+offset_right = 197.0
+offset_bottom = -986.0
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 12
+text = "Decline"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
 visible = false
 
@@ -6635,9 +6635,6 @@ texture = ExtResource("19_264po")
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n9" to="." method="_on_antenna_fix_num9_pressed"]
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n10" to="." method="_on_antenna_fix_num10_pressed"]
 [connection signal="pressed" from="player/cam_fix/but" to="." method="_on_cam_fix_pressed"]
-[connection signal="pressed" from="player/phone/ringing/accept" to="." method="_on_accept_call_pressed"]
-[connection signal="pressed" from="player/phone/ringing/decline" to="." method="_on_decline_call_pressed"]
-[connection signal="pressed" from="player/phone/accepted/decline" to="." method="_on_decline_call_pressed"]
 [connection signal="body_entered" from="areas/ps1" to="." method="_on_ps_1_body_entered"]
 [connection signal="body_exited" from="areas/ps1" to="." method="_on_ps_1_body_exited"]
 [connection signal="body_entered" from="areas/ps2" to="." method="_on_ps_2_body_entered"]
@@ -6714,6 +6711,9 @@ texture = ExtResource("19_264po")
 [connection signal="mouse_exited" from="areas/antenna" to="." method="_on_antenna_mouse_exited"]
 [connection signal="body_entered" from="areas/day3visitorfound" to="." method="_on_day_3_visitorfound_body_entered"]
 [connection signal="body_exited" from="areas/day3visitorfound" to="." method="_on_day_3_visitorfound_body_exited"]
+[connection signal="pressed" from="CanvasLayer/phone/ringing/accept" to="." method="_on_accept_call_pressed"]
+[connection signal="pressed" from="CanvasLayer/phone/ringing/decline" to="." method="_on_decline_call_pressed"]
+[connection signal="pressed" from="CanvasLayer/phone/accepted/decline" to="." method="_on_decline_call_pressed"]
 [connection signal="pressed" from="CanvasLayer/close_cam" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/menu/environmental" to="." method="_on_environmental_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/menu/creatures" to="." method="_on_creatures_pressed"]
