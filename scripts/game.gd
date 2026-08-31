@@ -58,6 +58,9 @@ var vamp_laugh = preload("res://audio/vamp_laught.mp3")
 var bats = preload("res://audio/bats.mp3")
 var hiss = preload("res://audio/hiss.mp3")
 var bite = preload("res://audio/bite.mp3")
+var frank_scream = preload("res://audio/frank.mp3")
+var electricity = preload("res://audio/electricity.mp3")
+
 
 
 
@@ -270,11 +273,11 @@ func _ready() -> void:
 	#day1_end()
 	#get_tree().paused = 1
 	
-	#await get_tree().create_timer(25).timeout
+	#await get_tree().create_timer(3).timeout
 	#vamp_kill()
 	#crawl_effect()
 	await get_tree().create_timer(100).timeout
-	phone_up()
+	#phone_up()
 	
 	#antenna_sabo()
 	#generator_sabo()
@@ -2691,4 +2694,14 @@ func day6_tech_steal():
 		$areas/generator/CollisionShape2D.set_deferred("disabled", 1)
 		generator_sabo()
 		$"map behind/generator".queue_free()
-		
+		#await get_tree().create_timer(5).timeout
+		$anomalies/frank.visible = 1
+		play_sound(frank_scream)
+		await get_tree().create_timer(1).timeout
+		play_sound(electricity)
+		await get_tree().create_timer(1).timeout
+		play_sound(electricity)
+		$anomalies/frank.speed = 100
+		$anomalies/frank.move = 1
+		#$anomalies/frank.move = 1
+	
