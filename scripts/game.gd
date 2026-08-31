@@ -60,6 +60,10 @@ var hiss = preload("res://audio/hiss.mp3")
 var bite = preload("res://audio/bite.mp3")
 var frank_scream = preload("res://audio/frank.mp3")
 var electricity = preload("res://audio/electricity.mp3")
+var psst = preload("res://audio/psst.mp3")
+var door = preload("res://audio/door.mp3")
+
+
 
 
 
@@ -269,11 +273,12 @@ func _ready() -> void:
 		pc = 0
 	translation()
 	tasks()
-	day6_tech_steal()
+	#day6_tech_steal()
 	#day1_end()
 	#get_tree().paused = 1
 	
-	#await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(3).timeout
+	day6_battery_inspect()
 	#vamp_kill()
 	#crawl_effect()
 	await get_tree().create_timer(100).timeout
@@ -1904,6 +1909,13 @@ func decision_option(option):
 				4:
 					match option:
 						0: day4_creature_kick()
+		6:
+			match call_index:
+				2:
+					match option:
+						0: day6_battery_inspect()
+						1: day6_battery_leave()
+
 	hide_decisions()
 
 func hide_decisions():
@@ -2734,3 +2746,22 @@ func frank_sounds():
 		screen_shake(30, 9)
 		play_sound(electricity)
 		await get_tree().create_timer(3).timeout
+
+
+func _on_frank_battery_body_entered(body: Node2D) -> void:
+	show_decision_option("CHOOSE", "Inspect", "Leave")
+func _on_frank_battery_body_exited(body: Node2D) -> void:
+	if body == $player:
+		hide_decisions()
+
+func day6_battery_inspect():
+	print("battery yes")
+	#stop_move()
+	play_sound(psst)
+	await get_tree().create_timer(1.0).timeout
+	play_sound(door)
+	$"map behind/out_left/p2/cabin/open".visible = 1
+
+func day6_battery_leave():
+	print("battery no")
+	hide_decisions()
