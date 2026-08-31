@@ -2558,7 +2558,7 @@ func day5_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
-	elif shift_time == 3:
+	elif shift_time == 180:
 		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
@@ -2638,3 +2638,25 @@ func vamp_move_to_room():
 	print("vamp in room")
 	$anomalies/vamp.visible = 0
 	vamp_in_room = 1
+
+
+func day6_start():
+	shift_start()
+	sabo_time()
+
+func day6_time():
+	if shift_time == 1:
+		print("im here")
+	elif shift_time == 60:
+		set_shift_values(15, 20)
+	elif shift_time == 150:
+		set_shift_values(12, 16)
+	elif shift_time == 240:
+		set_shift_values(8, 14)
+
+var day6_call1_chat = [
+	["day6start", 1.0],
+]
+var day6_end_chat = [
+	["day6end", 1.0],
+]
