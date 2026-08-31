@@ -334,7 +334,6 @@ func _on_radio_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 
 func _on_switch_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and switch_area && generator_working:
-		play_sound(click_switch)
 		if $lights/room.visible:
 			light_off()
 		else:
@@ -532,7 +531,6 @@ func _process(delta: float) -> void:
 			close_radio()
 		
 		if switch_area && generator_working:
-			play_sound(click_switch)
 			if $lights/room.visible:
 				light_off()
 			else:
@@ -626,11 +624,13 @@ func stop_move():
 func allow_move():
 	$player.move = 1
 
-func light_off():
+func light_off(silent = 0):
 	light = 0
 	$lights/room.visible = 0
 	$"map behind/room/bg/lamp/off".visible = 1
 	$"map behind/room/bg/lamp/on".visible = 0
+	if !silent:
+		play_sound(click_switch)
 
 var light = 0
 
@@ -639,6 +639,10 @@ func light_on():
 	$lights/room.visible = 1
 	$"map behind/room/bg/lamp/off".visible = 0
 	$"map behind/room/bg/lamp/on".visible = 1
+	play_sound(click_switch)
+	
+	if vamp_in_room:
+		vamp_dead()
 
 func ladder_up():
 	$player.position = Vector2(-533, -580)
@@ -759,6 +763,9 @@ func _on_cams_body_entered(body: Node2D) -> void:
 		if $anomalies/anomaly2.visible && cam_sabo_creature_exist:
 			show_decision_option("choose", "kick", "cancel")
 		
+		if vamp_in_room && light:
+			vamp_kill()
+
 	if body is CharacterBody2D && body.anomaly:
 		#body.queue_free()
 		print("bruh")
@@ -1242,6 +1249,10 @@ var ps4 = 0
 func _on_ps_1_body_entered(body: Node2D) -> void:
 	if body == $player:
 		ps1 = 1
+		if vamp_move:
+			light_off(1)
+			
+			
 		print("p1")
 func _on_ps_1_body_exited(body: Node2D) -> void:
 	if body == $player:
@@ -1262,7 +1273,8 @@ func _on_ps_4_body_entered(body: Node2D) -> void:
 	if body == $player:
 		ps4 = 1
 		if $anomalies/vamp.visible:
-			if shift == 5: day5_vamp_kill()
+			print("vamp area")
+			if shift == 5: vamp_kill()
 			else: $anomalies/vamp.visible = 0
 			
 func _on_ps_4_body_exited(body: Node2D) -> void:
@@ -1298,10 +1310,15 @@ func _on_room_body_entered(body: Node2D) -> void:
 func _on_room_body_exited(body: Node2D) -> void:
 	if body == $player:
 		player_in_room = 0
+		
 		$sfx/night.volume_db += 5
 		walking_sound = $sfx/walk_dirt
 		$sfx/walk_dirt.play()
 		$sfx/walk_wood.stop()
+		if vamp_move == 1 || vamp_move == 2:
+			light_off()
+			vamp_move += 1
+
 
 func subtitle(sub, time):
 	$CanvasLayer/subtitles.visible_ratio = 0
@@ -1748,7 +1765,7 @@ func cam_failed():
 	$player/cam_fix.visible = 0
 	cam_fixing = 0
 	cam_prog_time = 0
-	print("loser")
+	#print("loser")
 
 func _on_cam_fix_pressed() -> void:
 	cam_fix_pressed += 1
@@ -2085,6 +2102,8 @@ var day1_call2_chat = [
 func day1_time():
 	if shift_time == 120:
 		set_shift_values(15, 20)
+	elif shift_time == 180:
+		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(14, 18)
 		
@@ -2130,6 +2149,8 @@ func day2_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
+	elif shift_time == 180:
+		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
 	elif shift_time == 300:
@@ -2170,6 +2191,8 @@ func day3_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
+	elif shift_time == 180:
+		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
 
@@ -2367,6 +2390,8 @@ func day4_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
+	elif shift_time == 180:
+		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
 
@@ -2517,8 +2542,7 @@ func day5_time():
 	elif shift_time == 150:
 		set_shift_values(12, 16)
 	elif shift_time == 3:
-		play_sound(vamp_laugh)
-		day5_creature()
+		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
 	
@@ -2528,16 +2552,43 @@ func day5_start():
 	sabo_time()
 
 var day5_call1_chat = [
-	["", 0],
+	["a", 1.0],
 ]
 
 var day5_end_chat = [
-	["", 0]
+	["a", 1.0]
 ]
 
-func day5_creature():
-	if light || player_in_room:
-		await get_tree().create_timer(5).timeout
-		day5_creature()
+var vamp_move = 0
+
+func vamp_spawn():
+	if (computer_opened && opened_cam == 4) || ps4:
+		print("vamp spawne failed")
+		await get_tree().create_timer(3).timeout
+		vamp_spawn()
 	else:
+		print("vamp spawned")
+		play_sound(vamp_laugh)
 		$anomalies/vamp.visible = 1
+		await get_tree().create_timer(1.2).timeout
+		if ps1:
+			light_off(1)
+			vamp_move_to_room()
+		else:
+			cam_sabo(1)
+			vamp_move = 1
+
+func vamp_kill():
+	print("killed")
+	
+	#lose()
+
+func vamp_kill():
+	print("vamp dead")
+
+
+var vamp_in_room = 0
+
+func vamp_move_to_room():
+	$anomalies/vamp.visible = 0
+	vamp_in_room = 1
