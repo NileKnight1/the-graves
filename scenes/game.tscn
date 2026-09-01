@@ -7084,6 +7084,8 @@ texture = ExtResource("19_264po")
 [connection signal="body_exited" from="areas/day3visitorfound" to="." method="_on_day_3_visitorfound_body_exited"]
 [connection signal="body_entered" from="areas/frank_battery" to="." method="_on_frank_battery_body_entered"]
 [connection signal="body_exited" from="areas/frank_battery" to="." method="_on_frank_battery_body_exited"]
+[connection signal="body_entered" from="areas/tech" to="." method="_on_tech_body_entered"]
+[connection signal="body_exited" from="areas/tech" to="." method="_on_tech_body_exited"]
 [connection signal="pressed" from="CanvasLayer/phone/ringing/accept" to="." method="_on_accept_call_pressed"]
 [connection signal="pressed" from="CanvasLayer/phone/ringing/decline" to="." method="_on_decline_call_pressed"]
 [connection signal="pressed" from="CanvasLayer/phone/accepted/decline" to="." method="_on_decline_call_pressed"]

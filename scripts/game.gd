@@ -501,8 +501,12 @@ func match_shift():
 		6:
 			match call_index:
 				0: day_call(day6_call1_chat, day6_start)
-				1: day_chat(day6_tech_chat, day6_tech_steal)
-				2: day_chat(day6_end_chat, day_end)
+				1: day_chat(day6_tech_chat_first, day6_tech_options1)
+				2: day_chat(day6_tech_chat_fixed, day6_tech_fixed)
+				3: day_chat(day6_tech_chat_second_allowed, day6_tech_options2)
+				4: day_chat(day6_tech_chat_second_dis, day6_tech_options2)
+				5: day_chat(day6_tech_chat_fixed, day6_tech_fixed)
+				6: day_chat(day6_end_chat, day_end)
 
 func _process(delta: float) -> void:
 	#print(day1task2)
@@ -2722,14 +2726,13 @@ func day6_tech_appear():
 	$anomalies/tech.destination = Vector2(-502.0, -26)
 	$anomalies/tech.move = 1
 
-var day6_tech_chat = [
-	["tech1", 1.0],
-]
-
 func day6_tech_meet():
-	
+	$areas/tech/CollisionShape2D.set_deferred("disabled", 0)
 
 func day6_tech_steal():
+	pass
+
+func frank_spawn():
 	if ps4 || (computer_opened && opened_cam == 4):
 		await get_tree().create_timer(3.0).timeout
 		day6_tech_steal()
@@ -2842,3 +2845,20 @@ func day6_battery_leave():
 	$"map behind/out_left/p2/frank/outline".visible = 0
 	print("battery no")
 	hide_decisions()
+
+func _on_tech_body_entered(body: Node2D) -> void:
+	$areas/tech/CollisionShape2D.set_deferred("disabled", 1)
+	stop_move()
+	await get_tree().create_timer(1.0).timeout
+	start_chat()
+
+var day6_tech_chat = [
+	["tech1", 1.0],
+]
+
+
+### scenarios
+# good come -> allowed -> bad come -> allowed/disallowed
+# good come -> disallowed -> bad come -> allowed/disallowed
+# bad come -> allowed -> good come -> chat
+# bad come -> disallowed -> good come -> allowed/disallowed
