@@ -1113,6 +1113,12 @@ corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 shadow_size = 2
 
+[sub_resource type="LabelSettings" id="LabelSettings_gxtfn"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpl5h"]
 bg_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(15.55, 0.065)
@@ -1120,12 +1126,6 @@ shadow_offset = Vector2(15.55, 0.065)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nej56"]
 bg_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(15.55, 0.065)
-
-[sub_resource type="LabelSettings" id="LabelSettings_gxtfn"]
-font_size = 8
-font_color = Color(0, 0, 0, 1)
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qnb83"]
 shader = ExtResource("14_bhx41")
@@ -1285,6 +1285,7 @@ position = Vector2(-214, 443)
 script = ExtResource("1_lnu2h")
 
 [node name="map behind" type="Control" parent="." unique_id=1360215130]
+visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
@@ -4563,6 +4564,7 @@ collision_mask = 0
 script = ExtResource("10_sgl2t")
 
 [node name="map above" type="Control" parent="." unique_id=385126786]
+visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
@@ -5960,6 +5962,7 @@ theme_override_font_sizes/font_size = 38
 text = "cam 04"
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
+visible = false
 
 [node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
 visible = false
@@ -6157,6 +6160,7 @@ mouse_filter = 2
 
 [node name="camera" type="Control" parent="CanvasLayer" unique_id=177041334]
 process_mode = 3
+visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
@@ -6735,6 +6739,292 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
+[node name="topic1" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1333321899]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=1256709237]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 142.0
+offset_right = 637.0
+offset_bottom = 168.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 20
+text = "Road Construction"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=597896598]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 174.0
+offset_right = 517.0
+offset_bottom = 353.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "A main road in Ravenford city was blocked due to heavy road construstion that being done by the government. Workers are doing their best to finish the project by the end of the week. The road can't be blocked so much since it's so important one."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=622632829]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 174.0
+offset_right = 637.0
+offset_bottom = 353.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "Drivers are complaining of the big blockage. One person died in an ambulance going to the hospital .. his family is asking for an indemnity. Two food trucks content was damaged because of staying much time on road leading to not-small financial losses."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=790679055]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 272.0
+offset_right = 865.0
+offset_bottom = 325.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "Officials are trying to fix losses that happened and reduce incoming ones during this coming week. Its opening will make a huge difference after the so many repairs done in it."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic1" unique_id=636836928]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 143.99997
+offset_right = 1980.0
+offset_bottom = 833.0
+scale = Vector2(0.15785496, 0.17126271)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic2" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1719061689]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic2" unique_id=709030984]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 410.25
+offset_right = 521.0
+offset_bottom = 455.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic2" unique_id=811979921]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 432.25
+offset_right = 517.0
+offset_bottom = 611.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "A brand new supermarket announced its opening date yesterday .. the supermarket will contiang all fruits, vegetables, sweets, medicine and all things a person can think of. Opening date is after 2 days from now. Don't forget to give a visit that day."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic2" unique_id=435259365]
+layout_mode = 0
+offset_left = 424.99997
+offset_top = 349.0
+offset_right = 1749.0
+offset_bottom = 1038.0
+scale = Vector2(0.051359452, 0.084905624)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic3" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=2003324900]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 212.0
+offset_right = 40.0
+offset_bottom = 252.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic3" unique_id=2140753474]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 137.0
+offset_right = 741.0
+offset_bottom = 176.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic3" unique_id=114929905]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 159.0
+offset_right = 741.0
+offset_bottom = 240.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "Briarwood's school won against Oakridge's private school with a score of 4:0 .. biggest score differnce through the whole competition. All students are so exciting for playing in the mid-finals. Willowmere and Mapleton schools are going to play their match tommorow."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="topic4" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1210515110]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 212.0
+offset_right = 40.0
+offset_bottom = 252.0
+mouse_filter = 2
+
+[node name="title2" type="Label" parent="CanvasLayer/news/pages/page1/topic4" unique_id=1390632890]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 248.0
+offset_right = 629.0
+offset_bottom = 267.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "WEiRD"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic4" unique_id=242118464]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 271.0
+offset_right = 629.0
+offset_bottom = 396.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "A local resident claims to seeing a very tall creature looking through his window .. no one of his neighbours ensureds this situation. Another rumors maybe ..."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="topic5" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=414487098]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_left = 119.0
+offset_right = 159.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic5" unique_id=1370803138]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 460.0
+offset_right = 617.0
+offset_bottom = 479.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "City Park"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic5" unique_id=1339056796]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 483.0
+offset_right = 617.0
+offset_bottom = 608.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "The main park of Ravenford is going to be renovated so soon .. workers have put their equipment in the area and going to start in couple of days. People are so excited for the reopening."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="topic6" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1915513161]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_left = 344.0
+offset_right = 384.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic6" unique_id=709184589]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 410.25
+offset_right = 517.0
+offset_bottom = 455.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "Weather Cast"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1770958912]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 432.25
+offset_right = 517.0
+offset_bottom = 611.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "Weather cast saying that weather is being calm this week .. not harch not cold. They suggest people to do what they love during this week.
+Tomorrow specifically is gonna be the calmset day during the whole week.
+Resident of another cities are moving to Ravenford to enjoy this weather."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1665023708]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 349.0
+offset_right = 1754.0
+offset_bottom = 1038.0
+scale = Vector2(0.051359452, 0.084905624)
+texture = ExtResource("15_v2yb1")
+
 [node name="control" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=835955205]
 process_mode = 3
 layout_direction = 2
@@ -6827,294 +7117,6 @@ rotation = 1.5707964
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
-[node name="topic1" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1333321899]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=1256709237]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 142.0
-offset_right = 637.0
-offset_bottom = 168.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 20
-text = "Road Construction"
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=597896598]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 174.0
-offset_right = 517.0
-offset_bottom = 353.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "A main road in Ravenford city was blocked due to heavy road construstion that being done by the government. Workers are doing their best to finish the project by the end of the week. The road can't be blocked so much since it's so important one."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=622632829]
-layout_mode = 0
-offset_left = 531.0
-offset_top = 174.0
-offset_right = 637.0
-offset_bottom = 353.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "Drivers are complaining of the big blockage. One person died in an ambulance going to the hospital .. his family is asking for an indemnity. Two food trucks content was damaged because of staying much time on road leading to not-small financial losses."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=790679055]
-layout_mode = 0
-offset_left = 656.0
-offset_top = 272.0
-offset_right = 865.0
-offset_bottom = 325.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "Officials are trying to fix losses that happened and reduce incoming ones during this coming week. Its opening will make a huge difference after the so many repairs done in it."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic1" unique_id=636836928]
-layout_mode = 0
-offset_left = 656.0
-offset_top = 143.99997
-offset_right = 1980.0
-offset_bottom = 833.0
-scale = Vector2(0.15785496, 0.17126271)
-texture = ExtResource("15_v2yb1")
-
-[node name="topic2" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1719061689]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic2" unique_id=811979921]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 432.25
-offset_right = 517.0
-offset_bottom = 611.25
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "A brand new supermarket announced its opening date yesterday .. the supermarket will contiang all fruits, vegetables, sweets, medicine and all things a person can think of. Opening date is after 2 days from now. Don't forget to give a visit that day."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic2" unique_id=709030984]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 410.25
-offset_right = 521.0
-offset_bottom = 455.25
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "Supermarket"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic2" unique_id=435259365]
-layout_mode = 0
-offset_left = 424.99997
-offset_top = 349.0
-offset_right = 1749.0
-offset_bottom = 1038.0
-scale = Vector2(0.051359452, 0.084905624)
-texture = ExtResource("15_v2yb1")
-
-[node name="topic3" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=2003324900]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_top = 212.0
-offset_right = 40.0
-offset_bottom = 252.0
-mouse_filter = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic3" unique_id=114929905]
-layout_mode = 0
-offset_left = 530.0
-offset_top = 159.0
-offset_right = 741.0
-offset_bottom = 240.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "Briarwood's school won against Oakridge's private school with a score of 4:0 .. biggest score differnce through the whole competition. All students are so exciting for playing in the mid-finals. Willowmere and Mapleton schools are going to play their match tommorow."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic3" unique_id=2140753474]
-layout_mode = 0
-offset_left = 530.0
-offset_top = 137.0
-offset_right = 741.0
-offset_bottom = 176.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "Schools Mini FIFA"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="topic4" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1210515110]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_top = 212.0
-offset_right = 40.0
-offset_bottom = 252.0
-mouse_filter = 2
-
-[node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic4" unique_id=242118464]
-layout_mode = 0
-offset_left = 530.0
-offset_top = 271.0
-offset_right = 629.0
-offset_bottom = 396.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "A local resident claims to seeing a very tall creature looking through his window .. no one of his neighbours ensureds this situation. Another rumors maybe ..."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title2" type="Label" parent="CanvasLayer/news/pages/page1/topic4" unique_id=1390632890]
-layout_mode = 0
-offset_left = 530.0
-offset_top = 248.0
-offset_right = 629.0
-offset_bottom = 267.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "WEiRD"
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="topic5" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=414487098]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_left = 119.0
-offset_right = 159.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic5" unique_id=1339056796]
-layout_mode = 0
-offset_left = 518.0
-offset_top = 483.0
-offset_right = 617.0
-offset_bottom = 608.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "The main park of Ravenford is going to be renovated so soon .. workers have put their equipment in the area and going to start in couple of days. People are so excited for the reopening."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title3" type="Label" parent="CanvasLayer/news/pages/page1/topic5" unique_id=1370803138]
-layout_mode = 0
-offset_left = 518.0
-offset_top = 460.0
-offset_right = 617.0
-offset_bottom = 479.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "City Park"
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="topic6" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1915513161]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_left = 344.0
-offset_right = 384.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1770958912]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 432.25
-offset_right = 517.0
-offset_bottom = 611.25
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "Weather cast saying that weather is being calm this week .. not harch not cold. They suggest people to do what they love during this week.
-Tomorrow specifically is gonna be the calmset day during the whole week.
-Resident of another cities are moving to Ravenford to enjoy this weather."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic6" unique_id=709184589]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 410.25
-offset_right = 517.0
-offset_bottom = 455.25
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "Weather Cast"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1665023708]
-layout_mode = 0
-offset_left = 430.0
-offset_top = 349.0
-offset_right = 1754.0
-offset_bottom = 1038.0
-scale = Vector2(0.051359452, 0.084905624)
-texture = ExtResource("15_v2yb1")
-
 [node name="page2" type="Control" parent="CanvasLayer/news/pages" unique_id=79335699]
 process_mode = 3
 visible = false
@@ -7123,6 +7125,247 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
+
+[node name="topic1" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=410888199]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title2" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=2034765006]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 142.0
+offset_right = 629.0
+offset_bottom = 168.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 20
+text = "A Cute Reunite"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=437925247]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 174.0
+offset_right = 517.0
+offset_bottom = 353.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of sorrowful separation .. depressed and lost in life obstacles .. a resident find a pet of his neighbour and join them together as a surprise on his birthday. That meaningful moment was recorded in a near restaurnt in cemetry street."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic1" unique_id=1026975133]
+layout_mode = 0
+offset_left = 528.75
+offset_top = 173.75
+offset_right = 1852.75
+offset_bottom = 862.75
+scale = Vector2(0.072885215, 0.21480413)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic2" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=180901564]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_left = 234.0
+offset_top = -203.0
+offset_right = 274.0
+offset_bottom = -163.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic2" unique_id=935609907]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 410.25
+offset_right = 511.0
+offset_bottom = 455.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "Internet?"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic2" unique_id=1870239589]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 432.25
+offset_right = 511.0
+offset_bottom = 547.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "Network coverage throughout the village has been weak lately. Most importantly, some mail has been delayed, causing numerous problems. Other couln't enjoy their times."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic2" unique_id=348311215]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 344.0
+offset_right = 1746.0
+offset_bottom = 1033.0
+scale = Vector2(0.051359452, 0.084905624)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic3" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=2146964670]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_left = 344.0
+offset_top = -203.0
+offset_right = 384.0
+offset_bottom = -163.0
+pivot_offset = Vector2(405, 503)
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1917136098]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 410.25
+offset_right = 517.0
+offset_bottom = 455.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "What was that"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1335486807]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 432.25
+offset_right = 517.0
+offset_bottom = 543.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "A lake in Ravenford changes its color suddenly without any sensic reason .. researchers are investigating the area trying to find any clue. "
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1695907823]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 344.0
+offset_right = 1754.0
+offset_bottom = 1033.0
+scale = Vector2(0.051359452, 0.084905624)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic4" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=1610298987]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 229.0
+offset_right = 40.0
+offset_bottom = 269.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic4" unique_id=2009135562]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 137.0
+offset_right = 622.0
+offset_bottom = 176.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "SUPER SECRET TOPIC"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic4" unique_id=2036565526]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 159.0
+offset_right = 622.0
+offset_bottom = 240.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "We learned from some of our informants that someone discovered a secret area with strange things... This person smelled attractive scents that brought him to the area... Some say that this story is fabricated and there is no person by this name, and some say that he has been kidnapped!"
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic4" unique_id=237226839]
+layout_mode = 0
+offset_left = 637.0
+offset_top = 137.0
+offset_right = 1961.0
+offset_bottom = 826.0
+scale = Vector2(0.16918427, 0.14513792)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic5" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=392915576]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 346.0
+offset_right = 40.0
+offset_bottom = 386.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic5" unique_id=952150160]
+layout_mode = 0
+offset_left = 647.0
+offset_top = 137.0
+offset_right = 858.0
+offset_bottom = 176.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "Celebrating Charites"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic5" unique_id=102070001]
+layout_mode = 0
+offset_left = 647.0
+offset_top = 159.0
+offset_right = 858.0
+offset_bottom = 240.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "Charities across Ravenford celebrated local donation day, with wealthy residents donating large sums to help the city's poor and needy. A gang attempted to steal some of the money but were apprehended before they could escape."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic5" unique_id=467814411]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 137.0
+offset_right = 1729.0
+offset_bottom = 826.0
+scale = Vector2(0.16918427, 0.14513792)
+texture = ExtResource("15_v2yb1")
 
 [node name="control" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=1321971899]
 process_mode = 3
@@ -7183,30 +7426,121 @@ offset_bottom = 351.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
-[node name="topic1" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=410888199]
+[node name="page3" type="Control" parent="CanvasLayer/news/pages" unique_id=420574280]
 process_mode = 3
+visible = false
 layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=437925247]
+[node name="topic1" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1335578913]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 44.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic1" unique_id=1310083190]
 layout_mode = 0
 offset_left = 411.0
-offset_top = 174.0
-offset_right = 517.0
-offset_bottom = 353.0
+offset_top = 137.0
+offset_right = 622.0
+offset_bottom = 176.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "Kidnapped Employees"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic1" unique_id=1698378134]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 159.0
+offset_right = 622.0
+offset_bottom = 240.0
 pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "After several months of sorrowful separation .. depressed and lost in life obstacles .. a resident find a pet of his neighbour and join them together as a surprise on his birthday. That meaningful moment was recorded in a near restaurnt in cemetry street."
+text = "Ravenford Electric Company reported that three of its employees disappeared while on duty, but no evidence or trace of them has been found. The police are now investigating, but it appears that this is a case that will not be solved, or at least not in the near future."
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
 
-[node name="title2" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=2034765006]
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic1" unique_id=1665929119]
+layout_mode = 0
+offset_left = 639.0
+offset_top = 136.99998
+offset_right = 1963.0
+offset_bottom = 826.0
+scale = Vector2(0.16918427, 0.14513792)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic2" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=178429179]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 121.0
+offset_right = 40.0
+offset_bottom = 161.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic2" unique_id=2127148859]
+layout_mode = 0
+offset_left = 647.0
+offset_top = 137.0
+offset_right = 858.0
+offset_bottom = 176.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "A prisoner escape"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic2" unique_id=1237849378]
+layout_mode = 0
+offset_left = 647.0
+offset_top = 159.0
+offset_right = 858.0
+offset_bottom = 240.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "Some prisoners escaped from the prison without anyone noticing, as if they used a supernatural ability to move to the outside. It is said that one person was responsible for the escape, but his identity has not determined. Citizens have been in a state of extreme panic since hearing the news."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic2" unique_id=969598055]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 141.0
+offset_right = 1735.0
+offset_bottom = 830.0
+scale = Vector2(0.16918427, 0.14513792)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic3" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1819073805]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 243.0
+offset_right = 40.0
+offset_bottom = 283.0
+mouse_filter = 2
+
+[node name="title2" type="Label" parent="CanvasLayer/news/pages/page3/topic3" unique_id=733973477]
 layout_mode = 0
 offset_left = 409.0
 offset_top = 142.0
@@ -7216,45 +7550,45 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 20
-text = "A Cute Reunite"
+text = "The Walking Objects"
 horizontal_alignment = 3
 autowrap_mode = 2
 
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic1" unique_id=1026975133]
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic3" unique_id=1832124511]
 layout_mode = 0
-offset_left = 528.75
-offset_top = 173.75
-offset_right = 1852.75
-offset_bottom = 862.75
-scale = Vector2(0.072885215, 0.21480413)
-texture = ExtResource("15_v2yb1")
-
-[node name="topic2" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=180901564]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_left = 234.0
-offset_top = -203.0
-offset_right = 274.0
-offset_bottom = -163.0
-mouse_filter = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic2" unique_id=1870239589]
-layout_mode = 0
-offset_left = 405.0
-offset_top = 432.25
-offset_right = 511.0
-offset_bottom = 547.0
+offset_left = 411.0
+offset_top = 174.0
+offset_right = 517.0
+offset_bottom = 353.0
 pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "Network coverage throughout the village has been weak lately. Most importantly, some mail has been delayed, causing numerous problems. Other couln't enjoy their times."
+text = "One person reported that a tree appeared under his house when he woke up, while someone on the opposite street reported that a tree had disappeared from his house, and it turned out to be the same tree that had appeared at the other person's house. Another reported seeing a strange creature moving a bench in the street . "
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
 
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic2" unique_id=935609907]
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic3" unique_id=1040885148]
+layout_mode = 0
+offset_left = 530.00006
+offset_top = 176.0
+offset_right = 1854.0
+offset_bottom = 865.0
+scale = Vector2(0.072885215, 0.21480413)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic4" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1171888755]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_left = 234.0
+offset_top = 40.0
+offset_right = 274.0
+offset_bottom = 80.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic4" unique_id=653408070]
 layout_mode = 0
 offset_left = 405.0
 offset_top = 410.25
@@ -7264,32 +7598,62 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
-text = "Internet?"
+text = "Demolition"
 horizontal_alignment = 3
 vertical_alignment = 3
 autowrap_mode = 2
 
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic2" unique_id=348311215]
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic4" unique_id=1042597104]
 layout_mode = 0
-offset_left = 422.0
-offset_top = 344.0
-offset_right = 1746.0
-offset_bottom = 1033.0
+offset_left = 405.0
+offset_top = 432.25
+offset_right = 511.0
+offset_bottom = 571.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "The municipality plans to demolish some dilapidated buildings to protect them, as an old building last year caused the death of seven people living in it, and would have had even worse consequences if it weren't for God's mercy."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic4" unique_id=876928134]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 345.25
+offset_right = 1742.0
+offset_bottom = 1034.25
 scale = Vector2(0.051359452, 0.084905624)
 texture = ExtResource("15_v2yb1")
 
-[node name="topic3" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=2146964670]
+[node name="topic5" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=577463497]
 process_mode = 3
 layout_direction = 2
 anchors_preset = 0
 offset_left = 344.0
-offset_top = -203.0
+offset_top = 40.0
 offset_right = 384.0
-offset_bottom = -163.0
+offset_bottom = 80.0
 pivot_offset = Vector2(405, 503)
 mouse_filter = 2
 
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1335486807]
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic5" unique_id=1375415083]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 410.25
+offset_right = 517.0
+offset_bottom = 455.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "Revamp"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic5" unique_id=1701588571]
 layout_mode = 0
 offset_left = 411.0
 offset_top = 432.25
@@ -7299,139 +7663,19 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "A lake in Ravenford changes its color suddenly without any sensic reason .. researchers are investigating the area trying to find any clue. "
+text = "The franchise decided to rebuild its struggling roster to revamp them, as an injury crisis last season ruined the chances of seven starters competing in it, and would have brought even worse results if it weren't for luck's favor and the resilience of the rookies."
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
 
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1917136098]
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic5" unique_id=2044569369]
 layout_mode = 0
-offset_left = 411.0
-offset_top = 410.25
-offset_right = 517.0
-offset_bottom = 455.25
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "What was that"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1695907823]
-layout_mode = 0
-offset_left = 430.0
-offset_top = 344.0
-offset_right = 1754.0
-offset_bottom = 1033.0
+offset_left = 427.0
+offset_top = 345.25
+offset_right = 1751.0
+offset_bottom = 1034.25
 scale = Vector2(0.051359452, 0.084905624)
 texture = ExtResource("15_v2yb1")
-
-[node name="topic4" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=1610298987]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_top = 229.0
-offset_right = 40.0
-offset_bottom = 269.0
-mouse_filter = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic4" unique_id=237226839]
-layout_mode = 0
-offset_left = 637.0
-offset_top = 137.0
-offset_right = 1961.0
-offset_bottom = 826.0
-scale = Vector2(0.16918427, 0.14513792)
-texture = ExtResource("15_v2yb1")
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic4" unique_id=2036565526]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 159.0
-offset_right = 622.0
-offset_bottom = 240.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "We learned from some of our informants that someone discovered a secret area with strange things... This person smelled attractive scents that brought him to the area... Some say that this story is fabricated and there is no person by this name, and some say that he has been kidnapped!"
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic4" unique_id=2009135562]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 137.0
-offset_right = 622.0
-offset_bottom = 176.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "SUPER SECRET TOPIC"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="topic5" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=392915576]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_top = 346.0
-offset_right = 40.0
-offset_bottom = 386.0
-mouse_filter = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic5" unique_id=467814411]
-layout_mode = 0
-offset_left = 405.0
-offset_top = 137.0
-offset_right = 1729.0
-offset_bottom = 826.0
-scale = Vector2(0.16918427, 0.14513792)
-texture = ExtResource("15_v2yb1")
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic5" unique_id=102070001]
-layout_mode = 0
-offset_left = 647.0
-offset_top = 159.0
-offset_right = 858.0
-offset_bottom = 240.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "Charities across Ravenford celebrated local donation day, with wealthy residents donating large sums to help the city's poor and needy. A gang attempted to steal some of the money but were apprehended before they could escape."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic5" unique_id=952150160]
-layout_mode = 0
-offset_left = 647.0
-offset_top = 137.0
-offset_right = 858.0
-offset_bottom = 176.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "Celebrating Charites"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="page3" type="Control" parent="CanvasLayer/news/pages" unique_id=420574280]
-process_mode = 3
-visible = false
-layout_direction = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
 
 [node name="control" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1509597104]
 process_mode = 3
@@ -7491,248 +7735,6 @@ offset_right = 862.0
 offset_bottom = 372.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
-
-[node name="topic1" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1819073805]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_top = 243.0
-offset_right = 40.0
-offset_bottom = 283.0
-mouse_filter = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic1" unique_id=1832124511]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 174.0
-offset_right = 517.0
-offset_bottom = 353.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "One person reported that a tree appeared under his house when he woke up, while someone on the opposite street reported that a tree had disappeared from his house, and it turned out to be the same tree that had appeared at the other person's house. Another reported seeing a strange creature moving a bench in the street . "
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title2" type="Label" parent="CanvasLayer/news/pages/page3/topic1" unique_id=733973477]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 142.0
-offset_right = 629.0
-offset_bottom = 168.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 20
-text = "The Walking Objects"
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic1" unique_id=1040885148]
-layout_mode = 0
-offset_left = 530.00006
-offset_top = 176.0
-offset_right = 1854.0
-offset_bottom = 865.0
-scale = Vector2(0.072885215, 0.21480413)
-texture = ExtResource("15_v2yb1")
-
-[node name="topic2" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1171888755]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_left = 234.0
-offset_top = 40.0
-offset_right = 274.0
-offset_bottom = 80.0
-mouse_filter = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic2" unique_id=1042597104]
-layout_mode = 0
-offset_left = 405.0
-offset_top = 432.25
-offset_right = 511.0
-offset_bottom = 571.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "The municipality plans to demolish some dilapidated buildings to protect them, as an old building last year caused the death of seven people living in it, and would have had even worse consequences if it weren't for God's mercy."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic2" unique_id=653408070]
-layout_mode = 0
-offset_left = 405.0
-offset_top = 410.25
-offset_right = 511.0
-offset_bottom = 455.25
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "Demolition"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic2" unique_id=876928134]
-layout_mode = 0
-offset_left = 418.0
-offset_top = 345.25
-offset_right = 1742.0
-offset_bottom = 1034.25
-scale = Vector2(0.051359452, 0.084905624)
-texture = ExtResource("15_v2yb1")
-
-[node name="topic3" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=577463497]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_left = 344.0
-offset_top = 40.0
-offset_right = 384.0
-offset_bottom = 80.0
-pivot_offset = Vector2(405, 503)
-mouse_filter = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic3" unique_id=1701588571]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 432.25
-offset_right = 517.0
-offset_bottom = 543.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "The franchise decided to rebuild its struggling roster to revamp them, as an injury crisis last season ruined the chances of seven starters competing in it, and would have brought even worse results if it weren't for luck's favor and the resilience of the rookies."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic3" unique_id=1375415083]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 410.25
-offset_right = 517.0
-offset_bottom = 455.25
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "Revamp"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic3" unique_id=2044569369]
-layout_mode = 0
-offset_left = 427.0
-offset_top = 345.25
-offset_right = 1751.0
-offset_bottom = 1034.25
-scale = Vector2(0.051359452, 0.084905624)
-texture = ExtResource("15_v2yb1")
-
-[node name="topic4" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1335578913]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_top = 4.0
-offset_right = 40.0
-offset_bottom = 44.0
-mouse_filter = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic4" unique_id=1665929119]
-layout_mode = 0
-offset_left = 639.0
-offset_top = 136.99998
-offset_right = 1963.0
-offset_bottom = 826.0
-scale = Vector2(0.16918427, 0.14513792)
-texture = ExtResource("15_v2yb1")
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic4" unique_id=1698378134]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 159.0
-offset_right = 622.0
-offset_bottom = 240.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "Ravenford Electric Company reported that three of its employees disappeared while on duty, but no evidence or trace of them has been found. The police are now investigating, but it appears that this is a case that will not be solved, or at least not in the near future."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic4" unique_id=1310083190]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 137.0
-offset_right = 622.0
-offset_bottom = 176.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "Kidnapped Employees"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="topic5" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=178429179]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_top = 121.0
-offset_right = 40.0
-offset_bottom = 161.0
-mouse_filter = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic5" unique_id=969598055]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 141.0
-offset_right = 1735.0
-offset_bottom = 830.0
-scale = Vector2(0.16918427, 0.14513792)
-texture = ExtResource("15_v2yb1")
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic5" unique_id=1237849378]
-layout_mode = 0
-offset_left = 647.0
-offset_top = 159.0
-offset_right = 858.0
-offset_bottom = 240.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "Some prisoners escaped from the prison without anyone noticing, as if they used a supernatural ability to move to the outside. It is said that one person was responsible for the escape, but his identity has not determined. Citizens have been in a state of extreme panic since hearing the news."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic5" unique_id=2127148859]
-layout_mode = 0
-offset_left = 647.0
-offset_top = 137.0
-offset_right = 858.0
-offset_bottom = 176.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "A prisoner escape"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
 
 [node name="pause" type="Control" parent="CanvasLayer" unique_id=967419704]
 process_mode = 3

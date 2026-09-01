@@ -294,8 +294,8 @@ func _ready() -> void:
 	#vamp_kill()
 	#crawl_effect()
 	#await get_tree().create_timer(100).timeout
-	phone_up()
-	
+	test()
+	#phone_up()
 	#antenna_sabo()
 	#generator_sabo()
 	developer()
@@ -3003,6 +3003,14 @@ var day7_call1_chat = [
 ### new creatures
 # time shifter -> very rare creature -> asks for time, player answer shifts time to it
 
+func _on_left_pressed() -> void:
+	Input.action_press("left")
+	Input.action_release("left")
+func _on_right_pressed() -> void:
+	Input.action_press("right")
+	Input.action_release("right")
+
+
 func _on_news_body_entered(body: Node2D) -> void:
 	if body == $player:
 		$"map behind/room/news/outline". visible = 1
@@ -3055,7 +3063,6 @@ func _on_right_news_pressed() -> void:
 
 ## Newspaper topics
 func newspaper_pages_refresh():
-	$CanvasLayer/news/pages/page1/topic1/image.texture = preload("res://assets/newspaper/cons.png")
 	$CanvasLayer/news/pages/page1/topic2/image.texture = preload("res://assets/newspaper/market.PNG")
 	$CanvasLayer/news/pages/page1/topic6/image.texture = preload("res://assets/newspaper/weather.PNG")
 	
@@ -3071,10 +3078,63 @@ func newspaper_pages_refresh():
 	$CanvasLayer/news/pages/page3/topic2/image.texture = preload("res://assets/newspaper/demo.PNG")
 	$CanvasLayer/news/pages/page3/topic3/image.texture = preload("res://assets/newspaper/sports.PNG")
 	
+	### page1
+	#$CanvasLayer/news/pages/page1/topic1/title
+	#$CanvasLayer/news/pages/page1/topic1/col1
+	#$CanvasLayer/news/pages/page1/topic1/col2
+	#$CanvasLayer/news/pages/page1/topic1/col3
+	#$CanvasLayer/news/pages/page1/topic1/image.texture = day1_page1[0][4]
+	
+var day1_page1 = [
+	["day1_page1_topic1_title", "day1_page1_topic1_col1", "day1_page1_topic1_col2", "day1_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
+	["day1_page1_topic2_title", "day1_page1_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day1_page1_topic3_title", "day1_page1_topic3_col1"],
+	["day1_page1_topic4_title", "day1_page1_topic4_col1"],
+	["day1_page1_topic5_title", "day1_page1_topic5_col1"],
+	["day1_page1_topic6_title", "day1_page1_topic6_col1", preload("res://assets/newspaper/cons.png")],
+]
+var day1_page2 = [
+	["day1_page2_topic1_title", "day1_page2_topic1_col1", preload("res://assets/newspaper/cons.png")],
+	["day1_page2_topic2_title", "day1_page2_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day1_page2_topic3_title", "day1_page2_topic3_col1", preload("res://assets/newspaper/cons.png")],
+	["day1_page2_topic4_title", "day1_page2_topic4_col1", preload("res://assets/newspaper/cons.png")],
+	["day1_page2_topic5_title", "day1_page2_topic5_col1", preload("res://assets/newspaper/cons.png")],
+]
+var day1_page3 = [
+	["day1_page3_topic1_title", "day1_page3_topic1_col1", preload("res://assets/newspaper/cons.png")],
+	["day1_page3_topic2_title", "day1_page3_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day1_page3_topic3_title", "day1_page3_topic3_col1", preload("res://assets/newspaper/cons.png")],
+	["day1_page3_topic4_title", "day1_page3_topic4_col1", preload("res://assets/newspaper/cons.png")],
+	["day1_page3_topic5_title", "day1_page3_topic5_col1", preload("res://assets/newspaper/cons.png")],
+	
+]
 
-func _on_left_pressed() -> void:
-	Input.action_press("left")
-	Input.action_release("left")
-func _on_right_pressed() -> void:
-	Input.action_press("right")
-	Input.action_release("right")
+func test():
+	var page1 = $CanvasLayer/news/pages/page1
+	var page2 = $CanvasLayer/news/pages/page2
+	var page3 = $CanvasLayer/news/pages/page3
+	
+	for topic in page1.get_child_count():
+		if page1.get_child(topic).name == "control": break
+		for part in page1.get_child(topic).get_child_count():
+			if page1.get_child(topic).get_child(part) is Label:
+				page1.get_child(topic).get_child(part).text = tr(day1_page1[topic][part])
+			else:
+				page1.get_child(topic).get_child(part).texture = day1_page1[topic][part]
+
+	for topic in page2.get_child_count():
+		if page2.get_child(topic).name == "control": break
+		for part in page2.get_child(topic).get_child_count():
+			if page2.get_child(topic).get_child(part) is Label:
+				page2.get_child(topic).get_child(part).text = tr(day1_page2[topic][part])
+			else:
+				page2.get_child(topic).get_child(part).texture = day1_page2[topic][part]
+
+	for topic in page3.get_child_count():
+		if page3.get_child(topic).name == "control": break
+		for part in page3.get_child(topic).get_child_count():
+			if page3.get_child(topic).get_child(part) is Label:
+				page3.get_child(topic).get_child(part).text = tr(day1_page3[topic][part])
+			else:
+				page3.get_child(topic).get_child(part).texture = day1_page3[topic][part]
+		
