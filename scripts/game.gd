@@ -519,7 +519,7 @@ func match_shift():
 func _process(delta: float) -> void:
 	#print(day1task2)
 	#print($anomalies/tech.position)
-	
+
 	if $player.walk && $player.move:
 		if !walking_sound.playing:
 			walking_sound.play()
@@ -3084,30 +3084,6 @@ func newspaper_pages_refresh():
 	#$CanvasLayer/news/pages/page1/topic1/col2
 	#$CanvasLayer/news/pages/page1/topic1/col3
 	#$CanvasLayer/news/pages/page1/topic1/image.texture = day1_page1[0][4]
-	
-var day1_page1 = [
-	["day1_page1_topic1_title", "day1_page1_topic1_col1", "day1_page1_topic1_col2", "day1_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
-	["day1_page1_topic2_title", "day1_page1_topic2_col1", preload("res://assets/newspaper/cons.png")],
-	["day1_page1_topic3_title", "day1_page1_topic3_col1"],
-	["day1_page1_topic4_title", "day1_page1_topic4_col1"],
-	["day1_page1_topic5_title", "day1_page1_topic5_col1"],
-	["day1_page1_topic6_title", "day1_page1_topic6_col1", preload("res://assets/newspaper/cons.png")],
-]
-var day1_page2 = [
-	["day1_page2_topic1_title", "day1_page2_topic1_col1", preload("res://assets/newspaper/cons.png")],
-	["day1_page2_topic2_title", "day1_page2_topic2_col1", preload("res://assets/newspaper/cons.png")],
-	["day1_page2_topic3_title", "day1_page2_topic3_col1", preload("res://assets/newspaper/cons.png")],
-	["day1_page2_topic4_title", "day1_page2_topic4_col1", preload("res://assets/newspaper/cons.png")],
-	["day1_page2_topic5_title", "day1_page2_topic5_col1", preload("res://assets/newspaper/cons.png")],
-]
-var day1_page3 = [
-	["day1_page3_topic1_title", "day1_page3_topic1_col1", preload("res://assets/newspaper/cons.png")],
-	["day1_page3_topic2_title", "day1_page3_topic2_col1", preload("res://assets/newspaper/cons.png")],
-	["day1_page3_topic3_title", "day1_page3_topic3_col1", preload("res://assets/newspaper/cons.png")],
-	["day1_page3_topic4_title", "day1_page3_topic4_col1", preload("res://assets/newspaper/cons.png")],
-	["day1_page3_topic5_title", "day1_page3_topic5_col1", preload("res://assets/newspaper/cons.png")],
-	
-]
 
 func news_paper_translation():
 	var page1 = $CanvasLayer/news/pages/page1
@@ -3137,4 +3113,58 @@ func news_paper_translation():
 				page3.get_child(topic).get_child(part).text = tr(day1_page3[topic][part])
 			else:
 				page3.get_child(topic).get_child(part).texture = day1_page3[topic][part]
-		
+
+var day1_page1 = [
+	["day1_page1_topic1_title", "day1_page1_topic1_col1", "day1_page1_topic1_col2", "day1_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
+	["day1_page1_topic2_title", "day1_page1_topic2_col1", preload("res://assets/newspaper/market.PNG")],
+	["day1_page1_topic3_title", "day1_page1_topic3_col1"],
+	["day1_page1_topic4_title", "day1_page1_topic4_col1"],
+	["day1_page1_topic5_title", "day1_page1_topic5_col1"],
+	["day1_page1_topic6_title", "day1_page1_topic6_col1", preload("res://assets/newspaper/weather.PNG")],
+]
+var day1_page2 = [
+	["day1_page2_topic1_title", "day1_page2_topic1_col1", preload("res://assets/newspaper/reunion.PNG")],
+	["day1_page2_topic2_title", "day1_page2_topic2_col1", preload("res://assets/newspaper/internt.PNG")],
+	["day1_page2_topic3_title", "day1_page2_topic3_col1", preload("res://assets/newspaper/lake.PNG")],
+	["day1_page2_topic4_title", "day1_page2_topic4_col1", preload("res://assets/newspaper/secret.PNG")],
+	["day1_page2_topic5_title", "day1_page2_topic5_col1", preload("res://assets/newspaper/charity.PNG")],
+]
+var day1_page3 = [
+	["day1_page3_topic1_title", "day1_page3_topic1_col1", preload("res://assets/newspaper/elec.PNG")],
+	["day1_page3_topic2_title", "day1_page3_topic2_col1", preload("res://assets/newspaper/prison.PNG")],
+	["day1_page3_topic3_title", "day1_page3_topic3_col1", preload("res://assets/newspaper/mystery.PNG")],
+	["day1_page3_topic4_title", "day1_page3_topic4_col1", preload("res://assets/newspaper/demo.PNG")],
+	["day1_page3_topic5_title", "day1_page3_topic5_col1", preload("res://assets/newspaper/sports.PNG")],
+]
+
+var day2_page1 = [
+	["day2_page1_topic1_title", "day2_page1_topic1_col1", "day2_page1_topic1_col2", "day2_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
+	["day2_page1_topic2_title", "day2_page1_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day2_page1_topic3_title", "day2_page1_topic3_col1"],
+	["day2_page1_topic4_title", "day2_page1_topic4_col1"],
+	["day2_page1_topic5_title", "day2_page1_topic5_col1"],
+	["day2_page1_topic6_title", "day2_page1_topic6_col1", preload("res://assets/newspaper/cons.png")],
+]
+var day2_page2 = [
+	["day2_page2_topic1_title", "day2_page2_topic1_col1", preload("res://assets/newspaper/cons.png")],
+	["day2_page2_topic2_title", "day2_page2_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day2_page2_topic3_title", "day2_page2_topic3_col1", preload("res://assets/newspaper/cons.png")],
+	["day2_page2_topic4_title", "day2_page2_topic4_col1", preload("res://assets/newspaper/cons.png")],
+	["day2_page2_topic5_title", "day2_page2_topic5_col1", preload("res://assets/newspaper/cons.png")],
+]
+var day2_page3 = [
+	["day2_page3_topic1_title", "day2_page3_topic1_col1", preload("res://assets/newspaper/cons.png")],
+	["day2_page3_topic2_title", "day2_page3_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day2_page3_topic3_title", "day2_page3_topic3_col1", preload("res://assets/newspaper/cons.png")],
+	["day2_page3_topic4_title", "day2_page3_topic4_col1", preload("res://assets/newspaper/cons.png")],
+	["day2_page3_topic5_title", "day2_page3_topic5_col1", preload("res://assets/newspaper/cons.png")],
+]
+
+
+func _on_pause_pressed() -> void:
+	get_tree().paused = 1
+	$CanvasLayer/pause.visible = 1
+
+func _on_resume_pressed() -> void:
+	get_tree().paused = 0
+	$CanvasLayer/pause.visible = 0
