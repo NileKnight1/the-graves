@@ -30,6 +30,8 @@ var shift_time = 0
 
 var force_radio_close = 0
 var force_cam_close = 0
+var force_generator_nofix = 0
+var force_generator_nosabo = 0
 
 var vamp1 = preload("res://assets/vamp1.png")
 var vamp2 = preload("res://assets/vamp2.png")
@@ -346,7 +348,7 @@ func shift_time_manager():
 func day_starters():
 	match shift:
 		2: day2_starters()
-		#3: day3_starterts()
+		6: day6_starters()
 
 func _on_cams_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and computer_area && generator_working:
@@ -503,7 +505,7 @@ func match_shift():
 				0: day_call(day6_call1_chat, day6_start)
 				1: day_chat(day6_tech_chat_first, day6_tech_options1)
 				2: day_chat(day6_tech_chat_second, day6_tech_options1)
-				3: day_chat(day6_tech_chat_second_stolen, day6_tech_options1)
+				3: day_chat(day6_tech_chat_second_stolen, day6_tech_first_disallow)
 				4: day_chat(day6_end_chat, day_end)
 
 func _process(delta: float) -> void:
@@ -1443,6 +1445,9 @@ func generator_steal_apply():
 
 
 func generator_on():
+	if force_generator_nofix:
+		subtitle("requiretech", 1.0)
+		return
 	print("gen on")
 	$"map behind/generator/ProgressBar".visible = 1
 	$"map behind/generator/E".visible = 1
@@ -1898,7 +1903,7 @@ func _on_sabo_timer_timeout() -> void:
 
 	if temp < 6 && generator_working:
 		cam_sabo(temp_cam.pick_random()-1)
-	elif temp < 8 && generator_working:
+	elif temp < 8 && generator_working && !force_generator_nosabo:
 		generator_sabo()
 	elif antenna_working:
 		antenna_sabo()
@@ -2710,7 +2715,7 @@ func day6_start():
 func day6_time():
 	if shift_time == 1:
 		print("im here")
-	elif shift_time == 2: #edit
+	elif shift_time == 30: #edit
 		var temp = randi_range(0,1)
 		if temp: day6_tech = "bad"
 		else: day6_tech = "good"
@@ -2768,6 +2773,15 @@ var day6_tech_chat_first = [
 	["tech1", 1.0],
 ]
 
+func day6_starters():
+	generator_sabo()
+	force_generator_nofix = 1
+	$"map behind/generator/off".visible = 0
+	$"map behind/generator/shut".visible = 1
+	
+	subtitle("generatorshut", 1.0)
+	
+
 func day6_tech_options1():
 	show_decision_option("Choose", "goon", "no")
 
@@ -2777,7 +2791,6 @@ func day6_tech_first_allow():
 	$anomalies/tech.speed = 300
 	$anomalies/tech.destination = Vector2(2743.0, -26)
 	$anomalies/tech.move = 1
-	
 	await get_tree().create_timer(15).timeout #edit
 	day6_check_space()
 
@@ -2793,6 +2806,10 @@ func day6_check_space():
 
 
 func generator_tech_fix():
+	generator_fixed()
+	force_generator_nofix = 0
+	force_generator_nosabo = 1
+	sabo_time()
 	$anomalies/tech.visible = 1
 	$anomalies/tech.speed = 300
 	$anomalies/tech.destination = Vector2(-3692.0, -26)
@@ -2805,7 +2822,7 @@ func day6_next_tech():
 	else: day6_tech = "good"
 	
 	attempt += 1
-	await get_tree().create_timer(10).timeout #edit
+	await get_tree().create_timer(20).timeout #edit
 	day6_tech_appear()
 
 func day6_tech_first_disallow():

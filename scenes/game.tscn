@@ -4272,6 +4272,44 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_7gkqi")
 theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
 disabled = true
 
+[node name="shut" type="Control" parent="map behind/generator" unique_id=260525058]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="black2" type="Button" parent="map behind/generator/shut" unique_id=534764211]
+light_mask = 2
+layout_mode = 0
+offset_left = 65.0
+offset_top = -28.0
+offset_right = 89.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7gkqi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
+[node name="black1" type="Button" parent="map behind/generator/shut" unique_id=1418781439]
+light_mask = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = -28.0
+offset_right = 59.676056
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mmvbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_weeiq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxocx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7gkqi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o8oq8")
+disabled = true
+
 [node name="Panel7" type="Panel" parent="map behind/generator" unique_id=1812456811]
 offset_left = 131.41133
 offset_top = 15.127159
