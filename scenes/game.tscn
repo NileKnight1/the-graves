@@ -844,6 +844,9 @@ size = Vector2(128, 228)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sww3w"]
 size = Vector2(227, 203)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qouja"]
+size = Vector2(105, 101)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxtfn"]
 bg_color = Color(0, 0, 0, 1)
 border_color = Color(0, 0, 0, 1)
@@ -3523,6 +3526,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_veaf0")
 metadata/_edit_use_anchors_ = true
 
 [node name="frank" type="Node2D" parent="map behind/out_left/p2" unique_id=1861326412]
+visible = false
 position = Vector2(0, -17)
 
 [node name="outline" type="Node2D" parent="map behind/out_left/p2/frank" unique_id=1745065753]
@@ -5986,6 +5990,9 @@ debug_color = Color(0.989497, 0, 0.29520148, 0.41960785)
 [node name="frank_battery" type="Area2D" parent="areas" unique_id=1592461497]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/frank_battery" unique_id=40775346]
+position = Vector2(-1142.5, -20.5)
+shape = SubResource("RectangleShape2D_qouja")
+disabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
 

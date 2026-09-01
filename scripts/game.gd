@@ -14,6 +14,7 @@ var opened_cam = 1
 
 var antenna_working = 1
 var generator_working = 1
+var generator_stolen = 1
 
 var min_spawn_time = 15
 var max_spawn_time = 25
@@ -282,12 +283,12 @@ func _ready() -> void:
 	#day1_end()
 	#get_tree().paused = 1
 	
-	await get_tree().create_timer(3).timeout
-	day6_battery_inspect()
+	#await get_tree().create_timer(3).timeout
+	#day6_battery_inspect()
 	#vamp_kill()
 	#crawl_effect()
-	await get_tree().create_timer(100).timeout
-	#phone_up()
+	#await get_tree().create_timer(100).timeout
+	phone_up()
 	
 	#antenna_sabo()
 	#generator_sabo()
@@ -1400,7 +1401,6 @@ var generator_dec_apply = 0
 
 func generator_sabo():
 	generator_working = 0
-	
 	cam_sabo(1)
 	cam_sabo(2)
 	cam_sabo(3)
@@ -1415,6 +1415,24 @@ func generator_sabo():
 	subtitle("generatorsabo", 1.0)
 	await get_tree().create_timer(3.0).timeout
 	subtitle("", 0)
+
+func generator_steal_apply():
+	generator_working = 0
+	generator_stolen = 1
+	$anomalies/tech.visible = 0
+	cam_sabo(1)
+	cam_sabo(2)
+	cam_sabo(3)
+	cam_sabo(4)
+	if computer_opened: close_cam()
+	$"map behind/room/desk/VideoStreamPlayer".visible = 0
+	$areas/generator/CollisionShape2D.set_deferred("disabled", 1)
+	$"map behind/generator".queue_free()
+	light_off()
+	subtitle("generatostolen", 1.0)
+	await get_tree().create_timer(3.0).timeout
+	subtitle("", 0)
+
 
 func generator_on():
 	print("gen on")
@@ -1916,7 +1934,7 @@ func decision_option(option):
 						0: day4_creature_kick()
 		6:
 			match call_index:
-				2:
+				1:
 					match option:
 						0: day6_battery_inspect()
 						1: day6_battery_leave()
@@ -2707,12 +2725,9 @@ func day6_tech_steal():
 		await get_tree().create_timer(3.0).timeout
 		day6_tech_steal()
 	else:
-		$anomalies/tech.visible = 0
-		$areas/generator/CollisionShape2D.set_deferred("disabled", 1)
-		subtitle("RUN", 0.2)
-		generator_sabo()
+		#generator_sabo()
 		antenna_sabo()
-		$"map behind/generator".queue_free()
+		subtitle("RUN", 0.2)
 		$CanvasLayer/red.visible = 1
 		#await get_tree().create_timer(5).timeout
 		$anomalies/frank.visible = 1
@@ -2730,15 +2745,14 @@ func day6_tech_steal():
 		$anomalies/frank.speed = 700
 		$anomalies/frank.target_player = 0
 		$anomalies/frank.destination = Vector2(-3676.0, -26)
-		subtitle("", 0)
-		await get_tree().create_timer(5).timeout 
-		play_sound(frank_scream)
+		$areas/frank_battery/CollisionShape2D.set_deferred("disabled", 0)
+		$"map behind/out_left/p2/frank".visible = 1
 		
+		await get_tree().create_timer(2).timeout 
+		subtitle("", 0)
+		play_sound(frank_scream)
 
 var frank_sounds_on = 0
-
-#func frank_time():
-	#
 
 func frank_sounds():
 	while frank_sounds_on:
@@ -2754,14 +2768,19 @@ func frank_sounds():
 
 
 func _on_frank_battery_body_entered(body: Node2D) -> void:
-	show_decision_option("CHOOSE", "Inspect", "Leave")
+	if body == $player:
+		show_decision_option("CHOOSE", "Inspect", "Leave")
+		$"map behind/out_left/p2/frank/outline".visible = 1
+
 func _on_frank_battery_body_exited(body: Node2D) -> void:
 	if body == $player:
 		hide_decisions()
+		$"map behind/out_left/p2/frank/outline".visible = 0
 
 func day6_battery_inspect():
 	print("battery yes")
 	stop_move()
+	hide_decisions()
 	play_sound(psst)
 	await get_tree().create_timer(1.0).timeout
 	play_sound(door)
@@ -2791,13 +2810,14 @@ func day6_battery_inspect():
 	#await get_tree().create_timer(0.1).timeout
 	#$CanvasLayer/image.texture = frank3
 	#play_sound(frank_scream)
-	await get_tree().create_timer(0.3).timeout
+	#await get_tree().create_timer(0.3).timeout
 	#$CanvasLayer/image.texture = null
 	#sprite
 	#$player/Camera2D.zoom = Vector2(1.4, 1.4)
 	#await get_tree().create_timer(2).timeout
 	
 	await get_tree().create_timer(2.3).timeout
+	screen_shake(35, 5)
 	$CanvasLayer/black.visible = 1
 	$CanvasLayer/js.visible = 1
 	play_sound(fnaf, 10)
@@ -2807,22 +2827,10 @@ func day6_battery_inspect():
 	play_sound(fnaf, 10)
 	await get_tree().create_timer(2).timeout
 	$CanvasLayer/js.visible = 0
-	
 	lose()
-	
-	
-	
-	
-	#lose()
 
-
-var cam_zoom = 0
-
-func day6_cam_zoom():
-	while cam_zoom:
-		await get_tree().create_timer(0.1)
-		$player/Camera2D.zoom = Vector2(2.2, 2.2)
 
 func day6_battery_leave():
+	$"map behind/out_left/p2/frank/outline".visible = 0
 	print("battery no")
 	hide_decisions()
