@@ -141,7 +141,7 @@ func crawl_effect():
 	
 	#return
 	await get_tree().create_timer(1.2).timeout
-	$CanvasLayer/black.visible = 1
+	$CanvasLayer/overscreen/black.visible = 1
 	
 	play_sound(beep, 5.0)
 	await get_tree().create_timer(1.2).timeout
@@ -154,7 +154,7 @@ func crawl_effect():
 
 
 	#await get_tree().create_timer(2).timeout
-	$CanvasLayer/black.visible = 0
+	$CanvasLayer/overscreen/black.visible = 0
 	screen_shake(60, 3)
 	$sfx/heartbeats.volume_db += 2
 	await get_tree().create_timer(2).timeout
@@ -181,10 +181,10 @@ func crawl_effect():
 	flicker_effect()
 	await get_tree().create_timer(0.2).timeout
 	flicker_effect()
-	$CanvasLayer/black.visible = 1
+	$CanvasLayer/overscreen/black.visible = 1
 	generator_sabo()
 	var tween7 = create_tween()
-	tween7.tween_property($CanvasLayer/black, "modulate:a", 0, 5.0)
+	tween7.tween_property($CanvasLayer/overscreen/black, "modulate:a", 0, 5.0)
 	flicker_effect()
 	await get_tree().create_timer(0.2).timeout
 	flicker_effect()
@@ -1254,17 +1254,17 @@ func wrong_report_penalty():
 func lose():
 	$timers/spawn.stop()
 	$timers/bad_time.stop()
-	$CanvasLayer/black.visible = 1
-	$CanvasLayer/label.visible = 1
-	$CanvasLayer/label.text = tr("lose")
+	$CanvasLayer/overscreen/black.visible = 1
+	$CanvasLayer/end_stats/label.visible = 1
+	$CanvasLayer/end_stats/label.text = tr("lose")
 	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func win():
 	$timers/spawn.stop()
 	$timers/bad_time.stop()
-	$CanvasLayer/black.visible = 1
-	$CanvasLayer/label.text = tr("win")
+	$CanvasLayer/overscreen/black.visible = 1
+	$CanvasLayer/end_stats/label.text = tr("win")
 
 func _on_en1_pressed() -> void:
 	#print(self)
@@ -2044,7 +2044,7 @@ func day_chat(chat, target):
 func day_end():
 	$sfx/morning.stop()
 	stop_move()
-	$CanvasLayer/black.visible = 1
+	$CanvasLayer/overscreen/black.visible = 1
 	
 	await get_tree().create_timer(1.0).timeout
 	play_sound(start_sound)
@@ -2068,7 +2068,7 @@ func day_end():
 	
 	
 	#var tween = create_tween()
-	#tween.tween_property($CanvasLayer/black, "modulate:a", 1.0 , 1.4)
+	#tween.tween_property($CanvasLayer/overscreen/black, "modulate:a", 1.0 , 1.4)
 	await get_tree().create_timer(5.0).timeout
 	global.shift += 1
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
@@ -2699,7 +2699,7 @@ func vamp_kill():
 	$CanvasLayer/image.texture = vamp3
 	play_sound(hiss)
 	await get_tree().create_timer(0.3).timeout
-	$CanvasLayer/black.visible = 1
+	$CanvasLayer/overscreen/black.visible = 1
 	$CanvasLayer/image.texture = null
 	play_sound(bite)
 	
@@ -2865,7 +2865,7 @@ func frank_spawn():
 		#generator_sabo()
 		antenna_sabo()
 		subtitle("RUN", 0.2)
-		$CanvasLayer/red.visible = 1
+		$CanvasLayer/overscreen/red.visible = 1
 		#await get_tree().create_timer(5).timeout
 		$anomalies/frank.visible = 1
 		frank_sounds_on = 1
@@ -2878,7 +2878,7 @@ func frank_spawn():
 		subtitle("Stay away.", 0.5)
 		
 		frank_sounds_on = 0
-		$CanvasLayer/red.visible = 0
+		$CanvasLayer/overscreen/red.visible = 0
 		$anomalies/frank.speed = 700
 		$anomalies/frank.target_player = 0
 		$anomalies/frank.destination = Vector2(-3676.0, -26)
@@ -2961,7 +2961,7 @@ func day6_battery_inspect():
 	
 	await get_tree().create_timer(2.3).timeout
 	screen_shake(35, 5)
-	$CanvasLayer/black.visible = 1
+	$CanvasLayer/overscreen/black.visible = 1
 	$CanvasLayer/js.visible = 1
 	play_sound(fnaf, 10)
 	await get_tree().create_timer(0.5).timeout
