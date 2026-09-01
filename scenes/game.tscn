@@ -6612,7 +6612,6 @@ horizontal_alignment = 2
 
 [node name="news" type="Control" parent="CanvasLayer" unique_id=348508205]
 process_mode = 3
-visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
@@ -6620,7 +6619,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="PastelYellowVignetteConcreteTexturedBackground53876124561" type="Sprite2D" parent="CanvasLayer/news" unique_id=570315062]
+[node name="bg" type="Sprite2D" parent="CanvasLayer/news" unique_id=570315062]
 position = Vector2(638.1605, 341.01312)
 rotation = 1.5707964
 scale = Vector2(0.7849027, 0.9789895)
@@ -6788,6 +6787,20 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=1256709237]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 142.0
+offset_right = 637.0
+offset_bottom = 168.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 20
+text = "Road Construction"
+horizontal_alignment = 3
+autowrap_mode = 2
+
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=597896598]
 layout_mode = 0
 offset_left = 411.0
@@ -6798,12 +6811,12 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
+text = "A main road in Las Vegas was blocked due to heavy road construstion that being done by the government. Workers are doing their best to finish the project by the end of the week. The road can't be blocked so much since it's so important one."
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
 
-[node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=622632829]
+[node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=622632829]
 layout_mode = 0
 offset_left = 531.0
 offset_top = 174.0
@@ -6813,12 +6826,12 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
+text = "Drivers are complaining of the big blockage. One person died in an ambulance going to the hospital .. his family is asking for an indemnity. Two food trucks content was damaged because of staying much time on road leading to not-small financial losses."
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
 
-[node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=790679055]
+[node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=790679055]
 layout_mode = 0
 offset_left = 656.0
 offset_top = 272.0
@@ -6828,26 +6841,17 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "The exact reopening date has not yet been announced, but officials expect normal traffic to resume before the end of the week traffic to resume before the end of the week wekek week."
+text = "Officials are trying to fix losses that happened and reduce incoming ones during this coming week. Its opening will make a huge difference after the so many repairs done in it."
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
 
-[node name="title2" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=1256709237]
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic1" unique_id=636836928]
 layout_mode = 0
-offset_left = 409.0
-offset_top = 142.0
-offset_right = 608.0
-offset_bottom = 168.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 20
-text = "TITLE TITLE"
-autowrap_mode = 2
-
-[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page1/topic1" unique_id=1977343669]
-position = Vector2(760.5, 203.99998)
+offset_left = 656.0
+offset_top = 143.99997
+offset_right = 1980.0
+offset_bottom = 833.0
 scale = Vector2(0.15785496, 0.17126271)
 texture = ExtResource("15_v2yb1")
 

@@ -284,6 +284,7 @@ func _ready() -> void:
 		pc = 0
 	translation()
 	tasks()
+	newspaper_pages_refresh()
 	#day6_tech_steal()
 	#day1_end()
 	#get_tree().paused = 1
@@ -744,6 +745,9 @@ func _on_decline_call_pressed() -> void:
 	phone_down()
 	
 	calling = 0
+	print("shift",shift)
+	print("call_index",call_index)
+	
 	
 	match shift:
 		1:
@@ -772,7 +776,7 @@ func _on_decline_call_pressed() -> void:
 				1: day_end()
 			
 	
-	call_index +=1
+	call_index += 1
 	
 
 var call_time = 0
@@ -3048,3 +3052,8 @@ func _on_right_news_pressed() -> void:
 		opened_news_page = 0
 	$CanvasLayer/news/pages.get_child(opened_news_page).visible = 1
 	play_sound(paper_turn)
+
+## Newspaper topics
+func newspaper_pages_refresh():
+	$CanvasLayer/news/pages/page1/topic1/image.texture = preload("res://assets/newspaper/cons.png")
+	
