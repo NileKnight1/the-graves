@@ -224,6 +224,46 @@ thickness = 2
 color = Color(0.6045067, 0, 0.04911302, 1)
 thickness = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvi2r"]
+bg_color = Color(0.25057846, 0.097144686, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_deyyv"]
+bg_color = Color(0.9557801, 0.8448282, 0.5085938, 1)
+skew = Vector2(3.235, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnd7u"]
+bg_color = Color(0.9557801, 0.8448282, 0.5085938, 1)
+skew = Vector2(3.235, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.3137255, 0.5686275, 1, 0.6)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2n6p"]
+bg_color = Color(0.9557801, 0.8448282, 0.5085938, 1)
+skew = Vector2(3.235, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(1, 1, 1, 0.6)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8j3a"]
 bg_color = Color(0.14767182, 0.14767182, 0.14767176, 1)
 corner_radius_top_left = 3
@@ -1533,11 +1573,41 @@ metadata/_edit_use_anchors_ = true
 [node name="Panel2" type="Panel" parent="map behind/room/radio" unique_id=1363499583]
 offset_left = -160.0
 offset_top = -96.0
-offset_right = -133.72833
-offset_bottom = -66.6997
-scale = Vector2(5.595381, 2.523438)
+offset_right = 40.0
+offset_bottom = -23.57
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_p57ef")
+theme_override_styles/panel = SubResource("StyleBoxFlat_vvi2r")
+metadata/_edit_use_anchors_ = true
+
+[node name="news" type="Node2D" parent="map behind/room" unique_id=1656145525]
+position = Vector2(454, 0)
+
+[node name="outline" type="Panel" parent="map behind/room/news" unique_id=708368313]
+visible = false
+offset_left = -166.0
+offset_top = -101.0
+offset_right = -134.757
+offset_bottom = -94.866
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_deyyv")
+metadata/_edit_use_anchors_ = true
+
+[node name="hover" type="Panel" parent="map behind/room/news" unique_id=1879922743]
+offset_left = -166.0
+offset_top = -101.0
+offset_right = -134.757
+offset_bottom = -94.866
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vnd7u")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel6" type="Panel" parent="map behind/room/news" unique_id=1081255382]
+offset_left = -166.0
+offset_top = -101.0
+offset_right = -134.757
+offset_bottom = -94.866
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2n6p")
 metadata/_edit_use_anchors_ = true
 
 [node name="switch" type="Control" parent="map behind/room" unique_id=950656939]
@@ -4471,6 +4541,7 @@ collision_mask = 0
 script = ExtResource("10_sgl2t")
 
 [node name="map above" type="Control" parent="." unique_id=385126786]
+visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
@@ -5868,6 +5939,7 @@ theme_override_font_sizes/font_size = 38
 text = "cam 04"
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
+visible = false
 
 [node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
 visible = false
@@ -6043,6 +6115,7 @@ shape = SubResource("RectangleShape2D_wljb1")
 disabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
+visible = false
 
 [node name="phone" type="Control" parent="CanvasLayer" unique_id=1368197327]
 light_mask = 2

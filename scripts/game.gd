@@ -2731,9 +2731,6 @@ func day6_time():
 var day6_call1_chat = [
 	["day6start", 1.0],
 ]
-var day6_end_chat = [
-	["day6end", 1.0],
-]
 
 ### Day6
 ## -> generator tech, 
@@ -2967,3 +2964,24 @@ func day6_battery_leave():
 	print("battery no")
 	call_index = temp_call_index
 	hide_decisions()
+
+var day6_end_chat = [
+	["day6end", 1.0],
+]
+
+func day7_time():
+	if shift_time == 1:
+		print("shift", shift)
+	elif shift_time == 60:
+		set_shift_values(15, 20)
+	elif shift_time == 150:
+		set_shift_values(12, 16)
+	elif shift_time == 240:
+		set_shift_values(8, 14)
+
+var day7_call1_chat = [
+	["day7start", 1.0],
+]
+
+### new creatures
+# time shifter -> very rare creature -> asks for time, player answer shifts time to it
