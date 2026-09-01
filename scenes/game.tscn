@@ -847,6 +847,9 @@ size = Vector2(227, 203)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qouja"]
 size = Vector2(105, 101)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wljb1"]
+size = Vector2(247, 254)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxtfn"]
 bg_color = Color(0, 0, 0, 1)
 border_color = Color(0, 0, 0, 1)
@@ -4418,13 +4421,13 @@ collision_mask = 0
 script = ExtResource("10_pl11u")
 
 [node name="tech" parent="anomalies" unique_id=1494754720 instance=ExtResource("3_lbhrr")]
-position = Vector2(-275, -26)
+position = Vector2(-3692, -26)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("10_pl11u")
 
 [node name="frank" parent="anomalies" unique_id=456403309 instance=ExtResource("3_lbhrr")]
-position = Vector2(-3166, -26)
+position = Vector2(3533, -26)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("10_sgl2t")
@@ -5992,6 +5995,13 @@ debug_color = Color(0.989497, 0, 0.29520148, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/frank_battery" unique_id=40775346]
 position = Vector2(-1142.5, -20.5)
 shape = SubResource("RectangleShape2D_qouja")
+disabled = true
+
+[node name="tech" type="Area2D" parent="areas" unique_id=1343699192]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/tech" unique_id=475596824]
+position = Vector2(-288.5, -90)
+shape = SubResource("RectangleShape2D_wljb1")
 disabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]

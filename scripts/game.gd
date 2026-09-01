@@ -633,6 +633,9 @@ func _on_switch_body_entered(body: Node2D) -> void:
 		if generator_working:
 			if pc: $CanvasLayer/press_e.visible = 1
 			$"map behind/room/switch/outline".visible = 1
+	if body == $anomalies/tech:
+		day6_tech_meet()
+
 func _on_switch_body_exited(body: Node2D) -> void:
 	if body == $player:
 		switch_area = 0
@@ -2715,10 +2718,16 @@ var day6_end_chat = [
 
 func day6_tech_appear():
 	$anomalies/tech.visible = 1
+	$anomalies/tech.speed = 200
+	$anomalies/tech.destination = Vector2(-502.0, -26)
+	$anomalies/tech.move = 1
 
 var day6_tech_chat = [
 	["tech1", 1.0],
 ]
+
+func day6_tech_meet():
+	
 
 func day6_tech_steal():
 	if ps4 || (computer_opened && opened_cam == 4):
@@ -2765,7 +2774,6 @@ func frank_sounds():
 		screen_shake(30, 9)
 		play_sound(electricity)
 		await get_tree().create_timer(3).timeout
-
 
 func _on_frank_battery_body_entered(body: Node2D) -> void:
 	if body == $player:
