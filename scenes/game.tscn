@@ -1285,7 +1285,6 @@ position = Vector2(-214, 443)
 script = ExtResource("1_lnu2h")
 
 [node name="map behind" type="Control" parent="." unique_id=1360215130]
-visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0

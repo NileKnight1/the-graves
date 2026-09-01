@@ -294,7 +294,7 @@ func _ready() -> void:
 	#vamp_kill()
 	#crawl_effect()
 	#await get_tree().create_timer(100).timeout
-	test()
+	news_paper_translation()
 	#phone_up()
 	#antenna_sabo()
 	#generator_sabo()
@@ -3109,7 +3109,7 @@ var day1_page3 = [
 	
 ]
 
-func test():
+func news_paper_translation():
 	var page1 = $CanvasLayer/news/pages/page1
 	var page2 = $CanvasLayer/news/pages/page2
 	var page3 = $CanvasLayer/news/pages/page3
