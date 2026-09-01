@@ -410,7 +410,7 @@ func open_cam():
 	$player/Camera2D.enabled = 0
 	$"map above/cams".visible = 1
 	$"map above/cams".get_child(opened_cam-1).enabled = 1
-	$CanvasLayer/close_cam.visible = 1
+	$CanvasLayer/camera.visible = 1
 	computer_opened = 1
 	$CanvasLayer/phone.visible = 0
 	play_sound(cam_on)
@@ -429,7 +429,7 @@ func close_cam():
 	if !day1task2 && day1call1_done:
 		return
 	if force_camera:
-		$CanvasLayer/close_cam.visible = 0
+		$CanvasLayer/camera.visible = 0
 		return
 	
 	if day1task2 || !day1call1_done:
@@ -439,7 +439,7 @@ func close_cam():
 		$"map above/cams".get_child(opened_cam-1).visible = 1
 		$"map above/cams".get_child(opened_cam-1).enabled = 1
 	
-	$CanvasLayer/close_cam.visible = 0
+	$CanvasLayer/camera.visible = 0
 	$"map above/cams_".visible = 1
 	play_sound(cam_off)
 	$sfx/camera.stop()
@@ -3071,5 +3071,10 @@ func newspaper_pages_refresh():
 	$CanvasLayer/news/pages/page3/topic2/image.texture = preload("res://assets/newspaper/demo.PNG")
 	$CanvasLayer/news/pages/page3/topic3/image.texture = preload("res://assets/newspaper/sports.PNG")
 	
-	
-	
+
+func _on_left_pressed() -> void:
+	Input.action_press("left")
+	Input.action_release("left")
+func _on_right_pressed() -> void:
+	Input.action_press("right")
+	Input.action_release("right")

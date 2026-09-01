@@ -897,6 +897,70 @@ size = Vector2(105, 101)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wljb1"]
 size = Vector2(247, 254)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk1p3"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.2898948, 0.009417913, 0.009396687, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nepv3"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.19215687, 0.003921569, 0.003921569, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8ral"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.1925905, 0.002863885, 0.002861674, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouja"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2yb1"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wljb1"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.84705883, 0.49803922, 1, 1)
+shadow_size = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd4ix"]
 bg_color = Color(0.72, 0, 0, 0.06666667)
 
@@ -1048,70 +1112,6 @@ corner_radius_top_right = 40
 corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 shadow_size = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk1p3"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(0.2898948, 0.009417913, 0.009396687, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nepv3"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(0.19215687, 0.003921569, 0.003921569, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_color = Color(1, 1, 1, 0.6)
-shadow_size = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8ral"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(0.1925905, 0.002863885, 0.002861674, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouja"]
-bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
-border_color = Color(0.8, 0, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2yb1"]
-bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
-border_color = Color(0.8, 0, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_color = Color(1, 1, 1, 1)
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wljb1"]
-bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
-border_color = Color(0.8, 0, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_color = Color(0.84705883, 0.49803922, 1, 1)
-shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpl5h"]
 bg_color = Color(0, 0, 0, 1)
@@ -4563,7 +4563,6 @@ collision_mask = 0
 script = ExtResource("10_sgl2t")
 
 [node name="map above" type="Control" parent="." unique_id=385126786]
-visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
@@ -6156,6 +6155,71 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
+[node name="camera" type="Control" parent="CanvasLayer" unique_id=177041334]
+process_mode = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="close_cam" type="Button" parent="CanvasLayer/camera" unique_id=170245993]
+layout_direction = 2
+layout_mode = 0
+offset_left = 1035.0
+offset_top = 111.0
+offset_right = 1109.0
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(0.5931331, 0.59313387, 0.59313315, 1)
+theme_override_colors/font_pressed_color = Color(0.3779187, 0.3779189, 0.37791875, 1)
+theme_override_colors/font_hover_color = Color(0.42745098, 0.42745098, 0.42745098, 1)
+theme_override_fonts/font = ExtResource("6_p57ef")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/normal = SubResource("StyleBoxFlat_bk1p3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nepv3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n8ral")
+text = "X"
+
+[node name="right" type="Button" parent="CanvasLayer/camera" unique_id=1292521762]
+layout_mode = 0
+offset_left = 1166.0
+offset_top = 319.0
+offset_right = 1246.0
+offset_bottom = 395.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = ">"
+icon_alignment = 1
+
+[node name="left" type="Button" parent="CanvasLayer/camera" unique_id=246964936]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 395.0
+offset_right = 199.0
+offset_bottom = 471.0
+rotation = -3.1415927
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = ">"
+icon_alignment = 1
+
 [node name="overscreen" type="Control" parent="CanvasLayer" unique_id=968829197]
 process_mode = 3
 layout_direction = 2
@@ -6376,23 +6440,6 @@ text = "Decline"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="close_cam" type="Button" parent="CanvasLayer" unique_id=170245993]
-visible = false
-layout_direction = 2
-offset_left = 1035.0
-offset_top = 111.0
-offset_right = 1109.0
-offset_bottom = 209.0
-theme_override_colors/font_color = Color(0.5931331, 0.59313387, 0.59313315, 1)
-theme_override_colors/font_pressed_color = Color(0.3779187, 0.3779189, 0.37791875, 1)
-theme_override_colors/font_hover_color = Color(0.42745098, 0.42745098, 0.42745098, 1)
-theme_override_fonts/font = ExtResource("6_p57ef")
-theme_override_font_sizes/font_size = 71
-theme_override_styles/normal = SubResource("StyleBoxFlat_bk1p3")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nepv3")
-theme_override_styles/hover = SubResource("StyleBoxFlat_n8ral")
-text = "X"
-
 [node name="pause2" type="Button" parent="CanvasLayer" unique_id=203637865]
 visible = false
 offset_left = 531.0
@@ -6612,6 +6659,7 @@ horizontal_alignment = 2
 
 [node name="news" type="Control" parent="CanvasLayer" unique_id=348508205]
 process_mode = 3
+visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
@@ -6681,7 +6729,6 @@ mouse_filter = 2
 
 [node name="page1" type="Control" parent="CanvasLayer/news/pages" unique_id=233356727]
 process_mode = 3
-visible = false
 layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
@@ -7379,6 +7426,7 @@ autowrap_mode = 2
 
 [node name="page3" type="Control" parent="CanvasLayer/news/pages" unique_id=420574280]
 process_mode = 3
+visible = false
 layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
@@ -8360,10 +8408,12 @@ texture = ExtResource("19_264po")
 [connection signal="body_exited" from="areas/frank_battery" to="." method="_on_frank_battery_body_exited"]
 [connection signal="body_entered" from="areas/tech" to="." method="_on_tech_body_entered"]
 [connection signal="body_exited" from="areas/tech" to="." method="_on_tech_body_exited"]
+[connection signal="pressed" from="CanvasLayer/camera/close_cam" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/camera/right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="CanvasLayer/camera/left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="CanvasLayer/phone/ringing/accept" to="." method="_on_accept_call_pressed"]
 [connection signal="pressed" from="CanvasLayer/phone/ringing/decline" to="." method="_on_decline_call_pressed"]
 [connection signal="pressed" from="CanvasLayer/phone/accepted/decline" to="." method="_on_decline_call_pressed"]
-[connection signal="pressed" from="CanvasLayer/close_cam" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/news/buttons/left" to="." method="_on_left_news_pressed"]
 [connection signal="pressed" from="CanvasLayer/news/buttons/right" to="." method="_on_right_news_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/menu/environmental" to="." method="_on_environmental_pressed"]
