@@ -3059,5 +3059,9 @@ func newspaper_pages_refresh():
 	$CanvasLayer/news/pages/page1/topic2/image.texture = preload("res://assets/newspaper/market.PNG")
 	$CanvasLayer/news/pages/page1/topic6/image.texture = preload("res://assets/newspaper/weather.PNG")
 	
-	
-	
+	#$CanvasLayer/news/pages/page2/topic1/image.texture = preload()
+	#$CanvasLayer/news/pages/page2/topic2/image.texture = preload()
+	#$CanvasLayer/news/pages/page2/topic3/image.texture = preload()
+	#$CanvasLayer/news/pages/page2/topic4/image.texture = preload()
+	#$CanvasLayer/news/pages/page2/topic5/image.texture = preload()
+	#
