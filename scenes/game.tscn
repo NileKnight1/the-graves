@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://t6a1ps8ee86" path="res://audio/walking_wood.mp3" id="16_ca42v"]
 [ext_resource type="Texture2D" uid="uid://b1jdygyyg68wd" path="res://assets/image-removebg-preview.png" id="16_qnb83"]
 [ext_resource type="AudioStream" uid="uid://ydxyyrrs28d7" path="res://audio/morning.mp3" id="17_rysoc"]
+[ext_resource type="Texture2D" uid="uid://c3ycbukd021du" path="res://assets/js/spritesheet.png" id="18_qouja"]
 [ext_resource type="Texture2D" uid="uid://bqmj5f70pyrd2" path="res://assets/cone.png" id="18_ssvqc"]
 [ext_resource type="AudioStream" uid="uid://d0l4ciu1e13h1" path="res://audio/sub.mp3" id="19_5newe"]
 [ext_resource type="Texture2D" uid="uid://74yjv8hvpbk8" path="res://assets/rect.png" id="19_264po"]
@@ -430,22 +431,35 @@ bg_color = Color(0.12225228, 0.12225222, 0.12225223, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trtic"]
 bg_color = Color(0.14767277, 0.08925215, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awynl"]
-bg_color = Color(0.103743605, 0.103743516, 0.103743516, 1)
+bg_color = Color(0.07, 0.07, 0.07, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mowrl"]
+bg_color = Color(0.52, 0, 0.043333415, 0.078431375)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3qou"]
+bg_color = Color(0.52, 0, 0.043333415, 0.078431375)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65ua2"]
+bg_color = Color(0.52, 0, 0.043333415, 0.078431375)
+shadow_color = Color(0.32127732, 0.5362744, 3.85046e-07, 0.6)
+shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5tdf"]
 bg_color = Color(1, 1, 1, 0.6)
@@ -1050,6 +1064,147 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 shadow_color = Color(0.84705883, 0.49803922, 1, 1)
 shadow_size = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wljb1"]
+atlas = ExtResource("18_qouja")
+region = Rect2(0, 0, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2yb1"]
+atlas = ExtResource("18_qouja")
+region = Rect2(500, 0, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js0lu"]
+atlas = ExtResource("18_qouja")
+region = Rect2(1000, 0, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxtfn"]
+atlas = ExtResource("18_qouja")
+region = Rect2(1500, 0, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twgab"]
+atlas = ExtResource("18_qouja")
+region = Rect2(0, 281, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02fa5"]
+atlas = ExtResource("18_qouja")
+region = Rect2(500, 281, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nepv3"]
+atlas = ExtResource("18_qouja")
+region = Rect2(1000, 281, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7025r"]
+atlas = ExtResource("18_qouja")
+region = Rect2(1500, 281, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4url"]
+atlas = ExtResource("18_qouja")
+region = Rect2(0, 562, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ool0"]
+atlas = ExtResource("18_qouja")
+region = Rect2(500, 562, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr1ej"]
+atlas = ExtResource("18_qouja")
+region = Rect2(1000, 562, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05nbr"]
+atlas = ExtResource("18_qouja")
+region = Rect2(1500, 562, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sl42"]
+atlas = ExtResource("18_qouja")
+region = Rect2(0, 843, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaba0"]
+atlas = ExtResource("18_qouja")
+region = Rect2(500, 843, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_458eo"]
+atlas = ExtResource("18_qouja")
+region = Rect2(1000, 843, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3rex"]
+atlas = ExtResource("18_qouja")
+region = Rect2(1500, 843, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fedci"]
+atlas = ExtResource("18_qouja")
+region = Rect2(0, 1124, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qswn"]
+atlas = ExtResource("18_qouja")
+region = Rect2(500, 1124, 500, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm0al"]
+atlas = ExtResource("18_qouja")
+region = Rect2(1000, 1124, 500, 281)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sgl2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wljb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2yb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js0lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxtfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twgab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02fa5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nepv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7025r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4url")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ool0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr1ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05nbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sl42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaba0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_458eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3rex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fedci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qswn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm0al")
+}],
+"loop": true,
+"name": &"default",
+"speed": 25.0
+}]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5newe"]
 playback_mode = 1
@@ -2460,9 +2615,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_i4re6")
 
 [node name="grass" type="Panel" parent="map behind/out_left/bg" unique_id=1651635830]
 offset_left = 500.0
-offset_top = -38.0
+offset_top = -46.0
 offset_right = 595.6814
-offset_bottom = 6.9972076
+offset_bottom = -1.0027924
 scale = Vector2(23.588701, 5.044758)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lbhrr")
@@ -2959,6 +3114,46 @@ offset_bottom = -155.5312
 scale = Vector2(3.060208, 3.060208)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_awynl")
+
+[node name="eye3" type="Panel" parent="map behind/out_left/p2/cabin" unique_id=1581029720]
+visible = false
+offset_left = 2130.0
+offset_top = -167.0
+offset_right = 2132.941
+offset_bottom = -164.57915
+scale = Vector2(3.060208, 3.060208)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mowrl")
+
+[node name="eye4" type="Panel" parent="map behind/out_left/p2/cabin" unique_id=514439539]
+visible = false
+offset_left = 2170.0
+offset_top = -167.0
+offset_right = 2172.941
+offset_bottom = -164.57915
+scale = Vector2(3.060208, 3.060208)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3qou")
+
+[node name="eye1" type="Panel" parent="map behind/out_left/p2/cabin" unique_id=513143987]
+visible = false
+offset_left = 2130.0
+offset_top = -167.0
+offset_right = 2132.941
+offset_bottom = -164.57915
+scale = Vector2(3.060208, 3.060208)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_65ua2")
+
+[node name="eye2" type="Panel" parent="map behind/out_left/p2/cabin" unique_id=190873931]
+visible = false
+offset_left = 2170.0
+offset_top = -167.0
+offset_right = 2172.941
+offset_bottom = -164.57915
+scale = Vector2(3.060208, 3.060208)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_65ua2")
 
 [node name="ladder" type="Node2D" parent="map behind/out_left/p2" unique_id=1319942843]
 
@@ -6671,6 +6866,13 @@ visible = false
 offset_right = 1271.1111
 offset_bottom = 715.0
 expand_mode = 2
+
+[node name="js" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=961465385]
+visible = false
+position = Vector2(637.6762, 360.75)
+scale = Vector2(2.5427048, 2.5427046)
+sprite_frames = SubResource("SpriteFrames_sgl2t")
+autoplay = "default"
 
 [node name="timers" type="Node" parent="." unique_id=896048706]
 

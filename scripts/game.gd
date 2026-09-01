@@ -33,6 +33,9 @@ var force_cam_close = 0
 var vamp1 = preload("res://assets/vamp1.png")
 var vamp2 = preload("res://assets/vamp2.png")
 var vamp3 = preload("res://assets/vamp3.png")
+var frank1 = preload("res://assets/frank1.png")
+var frank2 = preload("res://assets/frank2.png")
+var frank3 = preload("res://assets/frank3.png")
 
 
 
@@ -62,6 +65,8 @@ var frank_scream = preload("res://audio/frank.mp3")
 var electricity = preload("res://audio/electricity.mp3")
 var psst = preload("res://audio/psst.mp3")
 var door = preload("res://audio/door.mp3")
+var fnaf = preload("res://audio/freesound_community-cryo_outage-94622.mp3")
+
 
 
 
@@ -2756,11 +2761,67 @@ func _on_frank_battery_body_exited(body: Node2D) -> void:
 
 func day6_battery_inspect():
 	print("battery yes")
-	#stop_move()
+	stop_move()
 	play_sound(psst)
 	await get_tree().create_timer(1.0).timeout
 	play_sound(door)
 	$"map behind/out_left/p2/cabin/open".visible = 1
+	$"map behind/out_left/p2/cabin/eye3".visible = 1
+	$"map behind/out_left/p2/cabin/eye4".visible = 1
+	$sfx/night.stop()
+	
+	await get_tree().create_timer(1.0).timeout
+	var tween = create_tween()
+	tween.tween_property($player/Camera2D, "zoom", Vector2(3.5, 3.5), 3)
+	await get_tree().create_timer(2.5).timeout
+	play_sound(electricity)
+	$"map behind/out_left/p2/cabin/eye1".visible = 1
+	$"map behind/out_left/p2/cabin/eye2".visible = 1
+	await get_tree().create_timer(0.5).timeout
+	#$CanvasLayer/image.visible = 1
+	#$CanvasLayer/image.texture = frank1
+	#play_sound(frank_scream)
+	#await get_tree().create_timer(0.3).timeout
+	#$CanvasLayer/image.texture = null
+	#await get_tree().create_timer(0.1).timeout
+	#$CanvasLayer/image.texture = frank2
+	#play_sound(electricity)
+	#await get_tree().create_timer(0.3).timeout
+	#$CanvasLayer/image.texture = null
+	#await get_tree().create_timer(0.1).timeout
+	#$CanvasLayer/image.texture = frank3
+	#play_sound(frank_scream)
+	await get_tree().create_timer(0.3).timeout
+	#$CanvasLayer/image.texture = null
+	#sprite
+	#$player/Camera2D.zoom = Vector2(1.4, 1.4)
+	#await get_tree().create_timer(2).timeout
+	
+	await get_tree().create_timer(2.3).timeout
+	$CanvasLayer/black.visible = 1
+	$CanvasLayer/js.visible = 1
+	play_sound(fnaf, 10)
+	await get_tree().create_timer(0.5).timeout
+	play_sound(fnaf, 10)
+	await get_tree().create_timer(0.5).timeout
+	play_sound(fnaf, 10)
+	await get_tree().create_timer(2).timeout
+	$CanvasLayer/js.visible = 0
+	
+	lose()
+	
+	
+	
+	
+	#lose()
+
+
+var cam_zoom = 0
+
+func day6_cam_zoom():
+	while cam_zoom:
+		await get_tree().create_timer(0.1)
+		$player/Camera2D.zoom = Vector2(2.2, 2.2)
 
 func day6_battery_leave():
 	print("battery no")
