@@ -9,6 +9,7 @@ var computer_area = 0
 var computer_opened = 0
 var radio_area = 0
 var switch_area = 0
+var news_area = 0
 var radio_opened = 0
 var opened_cam = 1
 
@@ -284,7 +285,7 @@ func _ready() -> void:
 	#day6_tech_steal()
 	#day1_end()
 	#get_tree().paused = 1
-	
+	#day6_battery_inspect()
 	#await get_tree().create_timer(3).timeout
 	#day6_battery_inspect()
 	#vamp_kill()
@@ -357,6 +358,10 @@ func _on_cams_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 func _on_radio_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and radio_area && antenna_working:
 		open_radio()
+
+func _on_news_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and news_area:
+		open_news()
 
 func _on_switch_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and switch_area && generator_working:
@@ -591,7 +596,11 @@ func _process(delta: float) -> void:
 		for i in range(4):
 			if cam_area[i] && !cam_working[i] && generator_working && !cam_fixing:
 				camera_on(i+1)
-	
+				
+		if news_area && !news_open:
+			open_news()
+		elif news_area:
+			close_news()
 	
 	#print(p1+p2+p3+p4)
 	#print(computer_opened)
@@ -632,6 +641,7 @@ func _process(delta: float) -> void:
 		$timers/skip_msg.start()
 		match_shift()
 		
+	
 
 func _on_switch_body_entered(body: Node2D) -> void:
 	#print(body)
@@ -1243,6 +1253,7 @@ func lose():
 	$timers/spawn.stop()
 	$timers/bad_time.stop()
 	$CanvasLayer/black.visible = 1
+	$CanvasLayer/label.visible = 1
 	$CanvasLayer/label.text = tr("lose")
 	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
@@ -2985,3 +2996,37 @@ var day7_call1_chat = [
 
 ### new creatures
 # time shifter -> very rare creature -> asks for time, player answer shifts time to it
+
+func _on_news_body_entered(body: Node2D) -> void:
+	if body == $player:
+		$"map behind/room/news/outline". visible = 1
+		if pc: $CanvasLayer/press_e.visible = 1
+		news_area = 1
+func _on_news_body_exited(body: Node2D) -> void:
+	if body == $player:
+		close_news()
+		$"map behind/room/news/hover".visible = 0
+		$"map behind/room/news/outline". visible = 0
+		$CanvasLayer/press_e.visible = 0
+		
+		news_area = 0
+
+func _on_news_mouse_entered() -> void:
+	if news_area:
+		$"map behind/room/news/hover".visible = 1
+		$"map behind/room/news/outline". visible = 0
+		
+func _on_news_mouse_exited() -> void:
+	if news_area:
+		$"map behind/room/news/hover".visible = 0
+		$"map behind/room/news/outline". visible = 1
+
+var news_open = 0
+
+func open_news():
+	news_open = 1
+	$CanvasLayer/news.visible = 1
+
+func close_news():
+	news_open = 0
+	$CanvasLayer/news.visible = 0

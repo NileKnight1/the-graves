@@ -20,10 +20,14 @@
 [ext_resource type="VideoStream" uid="uid://d0ng2x86780y7" path="res://assets/flicker.ogv" id="13_e1j6l"]
 [ext_resource type="Shader" uid="uid://bjgqtqhyfbet8" path="res://scripts/video.gdshader" id="14_bhx41"]
 [ext_resource type="AudioStream" uid="uid://doi0hb801udh0" path="res://audio/night.mp3" id="14_trtic"]
+[ext_resource type="Texture2D" uid="uid://c5g1g6iojdstb" path="res://assets/pastel-yellow-vignette-concrete-textured-background_53876-124561.png" id="14_wljb1"]
+[ext_resource type="FontFile" uid="uid://fv626k1q1ubw" path="res://assets/LibreBaskerville-Bold.ttf" id="15_gxtfn"]
 [ext_resource type="AudioStream" uid="uid://wstyydfieafs" path="res://audio/walking_dirt.mp3" id="15_ir15t"]
+[ext_resource type="Texture2D" uid="uid://bh3pl1oov8cte" path="res://assets/frank1.png" id="15_v2yb1"]
 [ext_resource type="AudioStream" uid="uid://t6a1ps8ee86" path="res://audio/walking_wood.mp3" id="16_ca42v"]
 [ext_resource type="Texture2D" uid="uid://b1jdygyyg68wd" path="res://assets/image-removebg-preview.png" id="16_qnb83"]
 [ext_resource type="AudioStream" uid="uid://ydxyyrrs28d7" path="res://audio/morning.mp3" id="17_rysoc"]
+[ext_resource type="FontFile" uid="uid://b2lxvl8k8x5ww" path="res://assets/LibreBaskerville-Regular.ttf" id="17_twgab"]
 [ext_resource type="Texture2D" uid="uid://c3ycbukd021du" path="res://assets/js/spritesheet.png" id="18_qouja"]
 [ext_resource type="Texture2D" uid="uid://bqmj5f70pyrd2" path="res://assets/cone.png" id="18_ssvqc"]
 [ext_resource type="AudioStream" uid="uid://d0l4ciu1e13h1" path="res://audio/sub.mp3" id="19_5newe"]
@@ -849,7 +853,10 @@ size = Vector2(256, 247)
 size = Vector2(257, 245)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
-size = Vector2(174, 162)
+size = Vector2(113, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2yb1"]
+size = Vector2(96, 162)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
 size = Vector2(1038, 703)
@@ -1076,6 +1083,23 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd4ix"]
 bg_color = Color(0.72, 0, 0, 0.06666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fccuv"]
+bg_color = Color(0.84705883, 0.827451, 0.6039216, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_size = 21
+shadow_offset = Vector2(15.55, 0.065)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpl5h"]
+bg_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(15.55, 0.065)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qnb83"]
 shader = ExtResource("14_bhx41")
@@ -1570,17 +1594,17 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_sww3w")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel2" type="Panel" parent="map behind/room/radio" unique_id=1363499583]
+[node name="desk" type="Panel" parent="map behind/room/radio" unique_id=1363499583]
 offset_left = -160.0
 offset_top = -96.0
-offset_right = 40.0
+offset_right = 76.225006
 offset_bottom = -23.57
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vvi2r")
 metadata/_edit_use_anchors_ = true
 
 [node name="news" type="Node2D" parent="map behind/room" unique_id=1656145525]
-position = Vector2(454, 0)
+position = Vector2(489, 0)
 
 [node name="outline" type="Panel" parent="map behind/room/news" unique_id=708368313]
 visible = false
@@ -1593,6 +1617,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_deyyv")
 metadata/_edit_use_anchors_ = true
 
 [node name="hover" type="Panel" parent="map behind/room/news" unique_id=1879922743]
+visible = false
 offset_left = -166.0
 offset_top = -101.0
 offset_right = -134.757
@@ -4445,7 +4470,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-973, -40)
+position = Vector2(205, -40)
 collision_layer = 5
 collision_mask = 5
 
@@ -5939,7 +5964,6 @@ theme_override_font_sizes/font_size = 38
 text = "cam 04"
 
 [node name="areas" type="Node2D" parent="." unique_id=231628329]
-visible = false
 
 [node name="ps1" type="Area2D" parent="areas" unique_id=799650009]
 visible = false
@@ -5988,8 +6012,15 @@ shape = SubResource("RectangleShape2D_qnb83")
 position = Vector2(285, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/radio" unique_id=893051531]
-position = Vector2(-52, -81)
+position = Vector2(-82.5, -81)
 shape = SubResource("RectangleShape2D_gee14")
+
+[node name="news" type="Area2D" parent="areas" unique_id=734265166]
+position = Vector2(285, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/news" unique_id=1796829133]
+position = Vector2(61, -81)
+shape = SubResource("RectangleShape2D_v2yb1")
 
 [node name="p1" type="Area2D" parent="areas" unique_id=1267882245]
 visible = false
@@ -6115,7 +6146,6 @@ shape = SubResource("RectangleShape2D_wljb1")
 disabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
-visible = false
 
 [node name="phone" type="Control" parent="CanvasLayer" unique_id=1368197327]
 light_mask = 2
@@ -6519,6 +6549,7 @@ theme_override_font_sizes/font_size = 95
 horizontal_alignment = 1
 
 [node name="label" type="Label" parent="CanvasLayer" unique_id=1269449842]
+visible = false
 layout_direction = 2
 offset_left = 159.0
 offset_top = 152.0
@@ -6528,6 +6559,114 @@ theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 236
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="news" type="Control" parent="CanvasLayer" unique_id=348508205]
+process_mode = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="PastelYellowVignetteConcreteTexturedBackground53876124561" type="Sprite2D" parent="CanvasLayer/news" unique_id=570315062]
+visible = false
+position = Vector2(641, 361.0333)
+rotation = 1.5707964
+scale = Vector2(0.74439377, 0.83638483)
+texture = ExtResource("14_wljb1")
+
+[node name="bg" type="Panel" parent="CanvasLayer/news" unique_id=1015984382]
+layout_direction = 2
+layout_mode = 0
+offset_left = 411.0
+offset_top = 86.0
+offset_right = 866.0
+offset_bottom = 634.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fccuv")
+
+[node name="control" type="Control" parent="CanvasLayer/news" unique_id=233356727]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="bg2" type="Panel" parent="CanvasLayer/news/control" unique_id=940363956]
+layout_direction = 2
+layout_mode = 0
+offset_left = 434.0
+offset_top = 163.0
+offset_right = 848.0
+offset_bottom = 164.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
+
+[node name="bg3" type="Panel" parent="CanvasLayer/news/control" unique_id=388625337]
+layout_direction = 2
+layout_mode = 0
+offset_left = 434.0
+offset_top = 167.0
+offset_right = 848.0
+offset_bottom = 168.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
+
+[node name="bg4" type="Panel" parent="CanvasLayer/news/control" unique_id=1420976421]
+layout_direction = 2
+layout_mode = 0
+offset_left = 434.0
+offset_top = 171.0
+offset_right = 848.0
+offset_bottom = 172.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
+
+[node name="title" type="Label" parent="CanvasLayer/news/control" unique_id=318868198]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 86.0
+offset_right = 749.0
+offset_bottom = 170.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0.47843137, 0.09019608, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 49
+text = "NEWSPAPER"
+horizontal_alignment = 1
+
+[node name="title2" type="Label" parent="CanvasLayer/news/control" unique_id=1256709237]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 172.0
+offset_right = 638.0
+offset_bottom = 198.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 20
+text = "TITLE TITLE"
+autowrap_mode = 2
+
+[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/control" unique_id=1977343669]
+position = Vector2(748, 253)
+scale = Vector2(0.1344411, 0.2235123)
+texture = ExtResource("15_v2yb1")
+
+[node name="col1" type="Label" parent="CanvasLayer/news/control" unique_id=597896598]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 200.0
+offset_right = 653.0
+offset_bottom = 330.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem magna, aliquam laoreet pharetra vel, lorem magna, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem magna, aliquam laoreet pharetra vel, lorem magna, lorem label, lorem magna lorem magna lorem magna lorem loremq."
+autowrap_mode = 2
 
 [node name="pause" type="Control" parent="CanvasLayer" unique_id=967419704]
 process_mode = 3
@@ -6556,6 +6695,7 @@ mouse_filter = 2
 stream = ExtResource("13_e1j6l")
 
 [node name="videostream2" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=1460121371]
+visible = false
 material = SubResource("ShaderMaterial_qnb83")
 offset_left = 28.0
 offset_top = 11.0
@@ -7137,6 +7277,11 @@ texture = ExtResource("19_264po")
 [connection signal="input_event" from="areas/radio" to="." method="_on_radio_input_event"]
 [connection signal="mouse_entered" from="areas/radio" to="." method="_on_radio_mouse_entered"]
 [connection signal="mouse_exited" from="areas/radio" to="." method="_on_radio_mouse_exited"]
+[connection signal="body_entered" from="areas/news" to="." method="_on_news_body_entered"]
+[connection signal="body_exited" from="areas/news" to="." method="_on_news_body_exited"]
+[connection signal="input_event" from="areas/news" to="." method="_on_news_input_event"]
+[connection signal="mouse_entered" from="areas/news" to="." method="_on_news_mouse_entered"]
+[connection signal="mouse_exited" from="areas/news" to="." method="_on_news_mouse_exited"]
 [connection signal="body_entered" from="areas/p1" to="." method="_on_p_1_body_entered"]
 [connection signal="body_exited" from="areas/p1" to="." method="_on_p_1_body_exited"]
 [connection signal="body_entered" from="areas/p2" to="." method="_on_p_2_body_entered"]
