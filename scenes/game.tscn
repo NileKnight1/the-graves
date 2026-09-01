@@ -1101,6 +1101,16 @@ shadow_offset = Vector2(15.55, 0.065)
 bg_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(15.55, 0.065)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nej56"]
+bg_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(15.55, 0.065)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gxtfn"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qnb83"]
 shader = ExtResource("14_bhx41")
 shader_parameter/threshold = 0.05
@@ -6579,9 +6589,9 @@ texture = ExtResource("14_wljb1")
 [node name="bg" type="Panel" parent="CanvasLayer/news" unique_id=1015984382]
 layout_direction = 2
 layout_mode = 0
-offset_left = 411.0
-offset_top = 86.0
-offset_right = 866.0
+offset_left = 396.0
+offset_top = 48.0
+offset_right = 881.0
 offset_bottom = 634.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fccuv")
@@ -6597,39 +6607,39 @@ mouse_filter = 2
 [node name="bg2" type="Panel" parent="CanvasLayer/news/control" unique_id=940363956]
 layout_direction = 2
 layout_mode = 0
-offset_left = 434.0
-offset_top = 163.0
-offset_right = 848.0
-offset_bottom = 164.0
+offset_left = 396.0
+offset_top = 125.0
+offset_right = 886.0
+offset_bottom = 126.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
 [node name="bg3" type="Panel" parent="CanvasLayer/news/control" unique_id=388625337]
 layout_direction = 2
 layout_mode = 0
-offset_left = 434.0
-offset_top = 167.0
-offset_right = 848.0
-offset_bottom = 168.0
+offset_left = 396.0
+offset_top = 130.0
+offset_right = 886.0
+offset_bottom = 131.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
-[node name="bg4" type="Panel" parent="CanvasLayer/news/control" unique_id=1420976421]
+[node name="line" type="Panel" parent="CanvasLayer/news/control" unique_id=1211975710]
 layout_direction = 2
 layout_mode = 0
-offset_left = 434.0
-offset_top = 171.0
-offset_right = 848.0
-offset_bottom = 172.0
+offset_left = 396.0
+offset_top = 339.0
+offset_right = 886.0
+offset_bottom = 340.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="title" type="Label" parent="CanvasLayer/news/control" unique_id=318868198]
 layout_mode = 0
 offset_left = 524.0
-offset_top = 86.0
+offset_top = 48.0
 offset_right = 749.0
-offset_bottom = 170.0
+offset_bottom = 132.0
 pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0.47843137, 0.09019608, 0.09019608, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
@@ -6639,10 +6649,10 @@ horizontal_alignment = 1
 
 [node name="title2" type="Label" parent="CanvasLayer/news/control" unique_id=1256709237]
 layout_mode = 0
-offset_left = 439.0
-offset_top = 172.0
-offset_right = 638.0
-offset_bottom = 198.0
+offset_left = 409.0
+offset_top = 142.0
+offset_right = 608.0
+offset_bottom = 168.0
 pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
@@ -6651,21 +6661,53 @@ text = "TITLE TITLE"
 autowrap_mode = 2
 
 [node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/control" unique_id=1977343669]
-position = Vector2(748, 253)
-scale = Vector2(0.1344411, 0.2235123)
+position = Vector2(760.5, 203.99998)
+scale = Vector2(0.15785496, 0.17126271)
 texture = ExtResource("15_v2yb1")
 
 [node name="col1" type="Label" parent="CanvasLayer/news/control" unique_id=597896598]
 layout_mode = 0
-offset_left = 439.0
-offset_top = 200.0
-offset_right = 653.0
-offset_bottom = 330.0
+offset_left = 411.0
+offset_top = 174.0
+offset_right = 517.0
+offset_bottom = 353.0
 pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem magna, aliquam laoreet pharetra vel, lorem magna, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem magna, aliquam laoreet pharetra vel, lorem magna, lorem label, lorem magna lorem magna lorem magna lorem loremq."
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers Workers."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col3" type="Label" parent="CanvasLayer/news/control" unique_id=2098455089]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 174.0
+offset_right = 641.0
+offset_bottom = 329.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers Workers."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col2" type="Label" parent="CanvasLayer/news/control" unique_id=790679055]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 272.0
+offset_right = 865.0
+offset_bottom = 325.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "The exact reopening date has not yet been announced, but officials expect normal traffic to resume before the end of the week traffic to resume before the end of the week wekek week."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="pause" type="Control" parent="CanvasLayer" unique_id=967419704]
