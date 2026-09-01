@@ -3059,9 +3059,17 @@ func newspaper_pages_refresh():
 	$CanvasLayer/news/pages/page1/topic2/image.texture = preload("res://assets/newspaper/market.PNG")
 	$CanvasLayer/news/pages/page1/topic6/image.texture = preload("res://assets/newspaper/weather.PNG")
 	
-	#$CanvasLayer/news/pages/page2/topic1/image.texture = preload()
-	#$CanvasLayer/news/pages/page2/topic2/image.texture = preload()
-	#$CanvasLayer/news/pages/page2/topic3/image.texture = preload()
-	#$CanvasLayer/news/pages/page2/topic4/image.texture = preload()
-	#$CanvasLayer/news/pages/page2/topic5/image.texture = preload()
-	#
+	$CanvasLayer/news/pages/page2/topic1/image.texture = preload("res://assets/newspaper/reunion.PNG")
+	$CanvasLayer/news/pages/page2/topic2/image.texture = preload("res://assets/newspaper/internt.PNG")
+	$CanvasLayer/news/pages/page2/topic3/image.texture = preload("res://assets/newspaper/lake.PNG")
+	$CanvasLayer/news/pages/page2/topic4/image.texture = preload("res://assets/newspaper/secret.PNG")
+	$CanvasLayer/news/pages/page2/topic5/image.texture = preload("res://assets/newspaper/charity.PNG")
+	
+	$CanvasLayer/news/pages/page3/topic5/image.texture = preload("res://assets/newspaper/prison.PNG")
+	$CanvasLayer/news/pages/page3/topic4/image.texture = preload("res://assets/newspaper/elec.PNG")
+	$CanvasLayer/news/pages/page3/topic1/image.texture = preload("res://assets/newspaper/mystery.PNG")
+	$CanvasLayer/news/pages/page3/topic2/image.texture = preload("res://assets/newspaper/demo.PNG")
+	$CanvasLayer/news/pages/page3/topic3/image.texture = preload("res://assets/newspaper/sports.PNG")
+	
+	
+	
