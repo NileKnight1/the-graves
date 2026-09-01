@@ -111,8 +111,8 @@ func crawl_effect():
 	print('effect')
 	var hand1 = $CanvasLayer/textures/hand1
 	var hand2 = $CanvasLayer/textures/hand2
-	var time = $CanvasLayer/time
-	var danger = $CanvasLayer/danger
+	var time = $CanvasLayer/gui/time
+	var danger = $CanvasLayer/gui/danger
 	
 	$sfx/heartbeats.play()
 	
@@ -242,13 +242,13 @@ func translation():
 	$CanvasLayer/room/creatures/p3.text = tr("part3")
 	$CanvasLayer/room/creatures/p4.text = tr("part4")
 	
-	$CanvasLayer/shift.text = tr("shift") + " " + str(shift)
-	$CanvasLayer/danger.text = tr("danger") + " " + str(bad_time) + "/" + str(max_bad_time)
+	$CanvasLayer/gui/shift.text = tr("shift") + " " + str(shift)
+	$CanvasLayer/gui/danger.text = tr("danger") + " " + str(bad_time) + "/" + str(max_bad_time)
 	#
 	#if (TranslationServer.get_locale() == 'ar'):
-		#$CanvasLayer/danger.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		#$CanvasLayer/gui/danger.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	#
-	$CanvasLayer/reports.text = tr("wrong_reports") + " " + str(wrong_reports_conut) + "/" + str(max_wrong_reports_count)
+	$CanvasLayer/gui/reports.text = tr("wrong_reports") + " " + str(wrong_reports_conut) + "/" + str(max_wrong_reports_count)
 	
 	
 	
@@ -258,7 +258,7 @@ func translation():
 	$"map above/cams/cam3/cam".text = tr("cam3")
 	$"map above/cams/cam4/cam".text = tr("cam4")
 	
-	#$CanvasLayer/subtitles.text = tr("test")
+	#$CanvasLayer/gui/subtitles.text = tr("test")
 	
 	$CanvasLayer/phone/ringing/lab1.text = tr("accept")
 	$CanvasLayer/phone/ringing/lab2.text = tr("decline")
@@ -266,7 +266,7 @@ func translation():
 	$CanvasLayer/phone/caller.text = tr("manager")
 	$CanvasLayer/phone/ringing/label.text = tr("calling")
 	
-	$CanvasLayer/press_e.text = tr("press_e")
+	$CanvasLayer/gui/press_e.text = tr("press_e")
 	
 	$"map behind/room/tasks/day1/task1/text".text = tr("day1task1") + " (" + str(discovered1+discovered2+discovered3+discovered4) + "/4)"
 	$"map behind/room/tasks/day1/task2/text".text = tr("day1task2")
@@ -415,7 +415,7 @@ func open_cam():
 	play_sound(cam_on)
 	$sfx/camera.play()
 	walking_sound.stop()
-	$CanvasLayer/press_e.visible = 0
+	$CanvasLayer/gui/press_e.visible = 0
 	
 	if !day1task2 && day1call1_done:
 		day1task2_apply()
@@ -465,7 +465,7 @@ func open_radio():
 	$CanvasLayer/room/menu.visible = 1
 	radio_opened = 1
 	$sfx/radio.play()
-	$CanvasLayer/press_e.visible = 0
+	$CanvasLayer/gui/press_e.visible = 0
 	#if !day1task2:
 		#
 	
@@ -650,13 +650,13 @@ func _on_switch_body_entered(body: Node2D) -> void:
 	if body == $player:
 		switch_area = 1
 		if generator_working:
-			if pc: $CanvasLayer/press_e.visible = 1
+			if pc: $CanvasLayer/gui/press_e.visible = 1
 			$"map behind/room/switch/outline".visible = 1
 
 func _on_switch_body_exited(body: Node2D) -> void:
 	if body == $player:
 		switch_area = 0
-		$CanvasLayer/press_e.visible = 0
+		$CanvasLayer/gui/press_e.visible = 0
 		$"map behind/room/switch/outline".visible = 0
 		$"map behind/room/switch/hover".visible = 0
 		
@@ -718,7 +718,7 @@ func phone_down():
 	var tween = create_tween()
 	tween.tween_property($CanvasLayer/phone, "position:y", $CanvasLayer/phone.position.y - 320 , 0.4)
 	$sfx/dia.stop()
-	$CanvasLayer/subtitles.text = ""
+	$CanvasLayer/gui/subtitles.text = ""
 
 var calling = 0
 var call_index = 0
@@ -815,7 +815,7 @@ func _on_cams_body_entered(body: Node2D) -> void:
 	if body == $player:
 		computer_area = 1
 		if pc  && generator_working:
-			$CanvasLayer/press_e.visible = 1
+			$CanvasLayer/gui/press_e.visible = 1
 		if generator_working:
 			$"map behind/room/desk/outline".visible = 1
 			
@@ -834,7 +834,7 @@ func _on_cams_body_exited(body: Node2D) -> void:
 			hide_decisions()
 		
 		computer_area = 0
-		$CanvasLayer/press_e.visible = 0
+		$CanvasLayer/gui/press_e.visible = 0
 		$"map behind/room/desk/hover".visible = 0
 		$"map behind/room/desk/outline".visible = 0
 		
@@ -846,7 +846,7 @@ func _on_radio_body_entered(body: Node2D) -> void:
 		#print("radio_area")
 		print(radio_area)
 		if antenna_working:
-			if pc: $CanvasLayer/press_e.visible = 1
+			if pc: $CanvasLayer/gui/press_e.visible = 1
 			$"map behind/room/radio/outline".visible = 1
 
 func _on_radio_body_exited(body: Node2D) -> void:
@@ -863,7 +863,7 @@ func _on_radio_body_exited(body: Node2D) -> void:
 			$CanvasLayer/room/environment.visible = 0
 			$CanvasLayer/room/creatures.visible = 0
 		#print("radio_area_leftd")
-		$CanvasLayer/press_e.visible = 0
+		$CanvasLayer/gui/press_e.visible = 0
 
 
 var p1_anomalies_count = 0
@@ -1244,7 +1244,7 @@ func wrong_report_penalty():
 	play_sound(wrong_signal)
 	print("bad boy")
 	wrong_reports_conut += 1
-	$CanvasLayer/reports.text = tr("wrong_reports") + " " + str(wrong_reports_conut) + "/" + str(max_wrong_reports_count)
+	$CanvasLayer/gui/reports.text = tr("wrong_reports") + " " + str(wrong_reports_conut) + "/" + str(max_wrong_reports_count)
 	
 	
 	if wrong_reports_conut == max_wrong_reports_count:
@@ -1296,7 +1296,7 @@ var bad_time = 0
 
 func _on_bad_time_timeout() -> void:
 	bad_time += anomaly_events_count
-	$CanvasLayer/danger.text = tr("danger") + " " + str(bad_time) + "/" + str(max_bad_time)
+	$CanvasLayer/gui/danger.text = tr("danger") + " " + str(bad_time) + "/" + str(max_bad_time)
 
 	if bad_time > max_bad_time:
 		lose()
@@ -1347,13 +1347,13 @@ func _on_shift_time_timeout() -> void:
 	shift_time += 1
 	var mins = shift_time/60
 	var secs = shift_time - mins*60
-	$CanvasLayer/time.text = ""
+	$CanvasLayer/gui/time.text = ""
 	if mins < 10:
-		$CanvasLayer/time.text += "0"
-	$CanvasLayer/time.text += str(mins) + ":"
+		$CanvasLayer/gui/time.text += "0"
+	$CanvasLayer/gui/time.text += str(mins) + ":"
 	if secs < 10:
-		$CanvasLayer/time.text += "0"
-	$CanvasLayer/time.text += str(secs)
+		$CanvasLayer/gui/time.text += "0"
+	$CanvasLayer/gui/time.text += str(secs)
 	
 	shift_time_manager()
 	if shift_time == 360:
@@ -1382,11 +1382,11 @@ func _on_room_body_exited(body: Node2D) -> void:
 
 
 func subtitle(sub, time):
-	$CanvasLayer/subtitles.visible_ratio = 0
-	$CanvasLayer/subtitles.text = tr(sub)
+	$CanvasLayer/gui/subtitles.visible_ratio = 0
+	$CanvasLayer/gui/subtitles.text = tr(sub)
 	var tween = create_tween()
 	$sfx/sub.play()
-	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, time)
+	tween.tween_property($CanvasLayer/gui/subtitles, "visible_ratio", 1.0, time)
 	await get_tree().create_timer(time).timeout
 	$sfx/sub.stop()
 
@@ -1406,11 +1406,11 @@ func shift_start():
 	play_sound(start_sound)
 	radio_access_on()
 	
-	$CanvasLayer/danger.visible = 1
-	$CanvasLayer/reports.visible = 1
+	$CanvasLayer/gui/danger.visible = 1
+	$CanvasLayer/gui/reports.visible = 1
 	
-	$CanvasLayer/shift.visible = 1
-	$CanvasLayer/time.visible = 1
+	$CanvasLayer/gui/shift.visible = 1
+	$CanvasLayer/gui/time.visible = 1
 	
 	$timers/bad_time.start()
 	$timers/spawn.start()
@@ -1535,26 +1535,26 @@ func _on_ladder_body_entered(body: Node2D) -> void:
 	if body == $player:
 		ladder_area_down = 1
 		$"map behind/out_left/p2/ladder/outline".visible = 1
-		$CanvasLayer/press_e.visible = 1
+		$CanvasLayer/gui/press_e.visible = 1
 func _on_ladder_body_exited(body: Node2D) -> void:
 	if body == $player:
 		ladder_area_down = 0
 		$"map behind/out_left/p2/ladder/outline".visible = 0
 		$"map behind/out_left/p2/ladder/hover".visible = 0
 		
-		$CanvasLayer/press_e.visible = 0
+		$CanvasLayer/gui/press_e.visible = 0
 func _on_ladder_up_entered(body: Node2D) -> void:
 	if body == $player:
 		ladder_area_up = 1
 		$"map behind/out_left/p2/ladder/outline".visible = 1
-		$CanvasLayer/press_e.visible = 1
+		$CanvasLayer/gui/press_e.visible = 1
 func _on_ladder_up_exited(body: Node2D) -> void:
 	if body == $player:
 		ladder_area_up = 0
 		$"map behind/out_left/p2/ladder/outline".visible = 0
 		$"map behind/out_left/p2/ladder/hover".visible = 0
 		
-		$CanvasLayer/press_e.visible = 0
+		$CanvasLayer/gui/press_e.visible = 0
 
 var antenna_area = 0
 var antenna_fixing = 0
@@ -1746,13 +1746,13 @@ func cam_entered(num):
 	if !cam_working[num-1] && generator_working:
 		$"map above/cams_".get_child(num-1).get_child(0).visible = 1
 		cam_area[num-1] = 1
-		if pc:$CanvasLayer/press_e.visible = 1
+		if pc:$CanvasLayer/gui/press_e.visible = 1
 
 func cam_exited(num):
 	$"map above/cams_".get_child(num-1).get_child(0).visible = 0
 	$"map above/cams_".get_child(num-1).get_child(1).visible = 0
 	cam_area[num-1] = 0
-	$CanvasLayer/press_e.visible = 0
+	$CanvasLayer/gui/press_e.visible = 0
 
 func cam_mouse_enter(num):
 	if cam_area[num-1] && !cam_working[num-1] && generator_working:
@@ -1825,7 +1825,7 @@ func cam_sabo(num):
 func cam_fixed():
 	cam_prog_time = 0
 	cam_working[cam_current-1] = 1
-	$CanvasLayer/press_e.visible = 0
+	$CanvasLayer/gui/press_e.visible = 0
 	cam_fixing = 0
 	$player/cam_fix.visible = 0
 	print("cam fixed")
@@ -1996,22 +1996,22 @@ func day_call(chat, target):
 				0: if !global.day2creature_found && chat_msg == 1: chat_msg+= 1
 	
 	var temp = tr(chat[chat_msg][0])
-	$CanvasLayer/subtitles.visible_ratio = 0
+	$CanvasLayer/gui/subtitles.visible_ratio = 0
 	var temp_sec = randi_range(0, 17)
 	$sfx/dia.play(temp_sec)
 	var tween = create_tween()
-	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
+	tween.tween_property($CanvasLayer/gui/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
 	
 	#if Input.is_action_just_pressed("skip"):
 		#tween.kill()
-		#$CanvasLayer/subtitles.visible_ratio = 0
+		#$CanvasLayer/gui/subtitles.visible_ratio = 0
 		#print('kileed')
 		
 
 	if "%s" in temp:
-		$CanvasLayer/subtitles.text = temp % player_name
+		$CanvasLayer/gui/subtitles.text = temp % player_name
 	else:
-		$CanvasLayer/subtitles.text = temp
+		$CanvasLayer/gui/subtitles.text = temp
 
 	await get_tree().create_timer(chat[chat_msg][1]).timeout
 	$sfx/dia.stop()
@@ -2027,16 +2027,16 @@ func day_chat(chat, target):
 		return
 	
 	var temp = tr(chat[chat_msg][0])
-	$CanvasLayer/subtitles.visible_ratio = 0
+	$CanvasLayer/gui/subtitles.visible_ratio = 0
 	var temp_sec = randi_range(0, 17)
 	$sfx/dia.play(temp_sec)
 	var tween = create_tween()
-	tween.tween_property($CanvasLayer/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
+	tween.tween_property($CanvasLayer/gui/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
 
 	if "%s" in temp:
-		$CanvasLayer/subtitles.text = temp % player_name
+		$CanvasLayer/gui/subtitles.text = temp % player_name
 	else:
-		$CanvasLayer/subtitles.text = temp
+		$CanvasLayer/gui/subtitles.text = temp
 
 	await get_tree().create_timer(chat[chat_msg][1]).timeout
 	$sfx/dia.stop()
@@ -2048,22 +2048,22 @@ func day_end():
 	
 	await get_tree().create_timer(1.0).timeout
 	play_sound(start_sound)
-	$CanvasLayer/shift2.text = tr("shift") + " " + str(shift)
+	$CanvasLayer/end_stats/shift2.text = tr("shift") + " " + str(shift)
 	
 	await get_tree().create_timer(1.5).timeout
-	$CanvasLayer/t1.text = tr("anomalies_reported")
-	$CanvasLayer/v1.text = str(right_reports_conut)
+	$CanvasLayer/end_stats/t1.text = tr("anomalies_reported")
+	$CanvasLayer/end_stats/v1.text = str(right_reports_conut)
 	play_sound(punch)
 	
 	
 	await get_tree().create_timer(0.4).timeout
-	$CanvasLayer/t2.text = tr("anomalies_left")
-	$CanvasLayer/v2.text = str(anomaly_events_count)
+	$CanvasLayer/end_stats/t2.text = tr("anomalies_left")
+	$CanvasLayer/end_stats/v2.text = str(anomaly_events_count)
 	play_sound(punch)
 	
 	await get_tree().create_timer(0.4).timeout
-	$CanvasLayer/t3.text = tr("max_danger")
-	$CanvasLayer/v3.text = str(bad_time)
+	$CanvasLayer/end_stats/t3.text = tr("max_danger")
+	$CanvasLayer/end_stats/v3.text = str(bad_time)
 	play_sound(punch)
 	
 	
@@ -2468,7 +2468,7 @@ func cam_helper_creature(area):
 	await get_tree().create_timer(5).timeout
 	subtitle("area", 1.0)
 	await get_tree().create_timer(1).timeout
-	$CanvasLayer/subtitles.text += str(area)
+	$CanvasLayer/gui/subtitles.text += str(area)
 	await get_tree().create_timer(2.9).timeout
 	subtitle("", 0)
 
@@ -2585,7 +2585,7 @@ func cam_sabo_creature(area):
 		await get_tree().create_timer(1).timeout
 		area += 1
 		if area == 5: area = 1
-		$CanvasLayer/subtitles.text += str(area)
+		$CanvasLayer/gui/subtitles.text += str(area)
 		await get_tree().create_timer(2.9).timeout
 		subtitle("", 0)
 
@@ -3002,14 +3002,14 @@ var day7_call1_chat = [
 func _on_news_body_entered(body: Node2D) -> void:
 	if body == $player:
 		$"map behind/room/news/outline". visible = 1
-		if pc: $CanvasLayer/press_e.visible = 1
+		if pc: $CanvasLayer/gui/press_e.visible = 1
 		news_area = 1
 func _on_news_body_exited(body: Node2D) -> void:
 	if body == $player:
 		close_news()
 		$"map behind/room/news/hover".visible = 0
 		$"map behind/room/news/outline". visible = 0
-		$CanvasLayer/press_e.visible = 0
+		$CanvasLayer/gui/press_e.visible = 0
 		
 		news_area = 0
 
