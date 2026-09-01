@@ -6681,6 +6681,7 @@ mouse_filter = 2
 
 [node name="page1" type="Control" parent="CanvasLayer/news/pages" unique_id=233356727]
 process_mode = 3
+visible = false
 layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
@@ -6811,7 +6812,7 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "A main road in Las Vegas was blocked due to heavy road construstion that being done by the government. Workers are doing their best to finish the project by the end of the week. The road can't be blocked so much since it's so important one."
+text = "A main road in Ravenford city was blocked due to heavy road construstion that being done by the government. Workers are doing their best to finish the project by the end of the week. The road can't be blocked so much since it's so important one."
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
@@ -6873,28 +6874,32 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
+text = "A brand new supermarket announced its opening date yesterday .. the supermarket will contiang all fruits, vegetables, sweets, medicine and all things a person can think of. Opening date is after 2 days from now. Don't forget to give a visit that day."
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic2" unique_id=709030984]
 layout_mode = 0
-offset_left = 411.0
+offset_left = 409.0
 offset_top = 410.25
-offset_right = 517.0
+offset_right = 521.0
 offset_bottom = 455.25
 pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
-text = "TITLE TITLE"
+text = "Supermarket"
 horizontal_alignment = 3
 vertical_alignment = 3
 autowrap_mode = 2
 
-[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page1/topic2" unique_id=1016450242]
-position = Vector2(464, 376.25)
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic2" unique_id=435259365]
+layout_mode = 0
+offset_left = 424.99997
+offset_top = 349.0
+offset_right = 1749.0
+offset_bottom = 1038.0
 scale = Vector2(0.051359452, 0.084905624)
 texture = ExtResource("15_v2yb1")
 
@@ -6917,7 +6922,7 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials.  "
+text = "Briarwood's school won against Oakridge's private school with a score of 4:0 .. biggest score differnce through the whole competition. All students are so exciting for playing in the mid-finals. Willowmere and Mapleton schools are going to play their match tommorow."
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
@@ -6932,7 +6937,7 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
-text = "TITLE TIT TIT TIT  TITLE"
+text = "Schools Mini FIFA"
 horizontal_alignment = 3
 vertical_alignment = 3
 autowrap_mode = 2
@@ -6956,7 +6961,7 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. After several months of repairs."
+text = "A local resident claims to seeing a very tall creature looking through his window .. no one of his neighbours ensureds this situation. Another rumors maybe ..."
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
@@ -6971,7 +6976,7 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
-text = "TITLE TITL"
+text = "WEiRD"
 horizontal_alignment = 3
 autowrap_mode = 2
 
@@ -6994,7 +6999,7 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. After several months of repairs."
+text = "The main park of Ravenford is going to be renovated so soon .. workers have put their equipment in the area and going to start in couple of days. People are so excited for the reopening."
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
@@ -7009,7 +7014,7 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
-text = "TITLE TITL"
+text = "City Park"
 horizontal_alignment = 3
 autowrap_mode = 2
 
@@ -7032,7 +7037,9 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
+text = "Weather cast saying that weather is being calm this week .. not harch not cold. They suggest people to do what they love during this week.
+Tomorrow specifically is gonna be the calmset day during the whole week.
+Resident of another cities are moving to Ravenford to enjoy this weather."
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
@@ -7047,19 +7054,22 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
-text = "TITLE TITLE"
+text = "Weather Cast"
 horizontal_alignment = 3
 vertical_alignment = 3
 autowrap_mode = 2
 
-[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1122133333]
-position = Vector2(466, 376.25)
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1665023708]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 349.0
+offset_right = 1754.0
+offset_bottom = 1038.0
 scale = Vector2(0.051359452, 0.084905624)
 texture = ExtResource("15_v2yb1")
 
 [node name="page2" type="Control" parent="CanvasLayer/news/pages" unique_id=79335699]
 process_mode = 3
-visible = false
 layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
@@ -7162,8 +7172,12 @@ text = "TITLE TITI TITLE"
 horizontal_alignment = 3
 autowrap_mode = 2
 
-[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page2/topic1" unique_id=573655307]
-position = Vector2(580.75, 249)
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic1" unique_id=1026975133]
+layout_mode = 0
+offset_left = 528.75
+offset_top = 173.75
+offset_right = 1852.75
+offset_bottom = 862.75
 scale = Vector2(0.072885215, 0.21480413)
 texture = ExtResource("15_v2yb1")
 
@@ -7207,8 +7221,12 @@ horizontal_alignment = 3
 vertical_alignment = 3
 autowrap_mode = 2
 
-[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page2/topic2" unique_id=1269876852]
-position = Vector2(458, 376.25)
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic2" unique_id=348311215]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 344.0
+offset_right = 1746.0
+offset_bottom = 1033.0
 scale = Vector2(0.051359452, 0.084905624)
 texture = ExtResource("15_v2yb1")
 
@@ -7253,8 +7271,12 @@ horizontal_alignment = 3
 vertical_alignment = 3
 autowrap_mode = 2
 
-[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page2/topic3" unique_id=240153297]
-position = Vector2(466, 376.25)
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1695907823]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 344.0
+offset_right = 1754.0
+offset_bottom = 1033.0
 scale = Vector2(0.051359452, 0.084905624)
 texture = ExtResource("15_v2yb1")
 
@@ -7267,8 +7289,12 @@ offset_right = 40.0
 offset_bottom = 269.0
 mouse_filter = 2
 
-[node name="Frank2" type="Sprite2D" parent="CanvasLayer/news/pages/page2/topic4" unique_id=646785678]
-position = Vector2(749, 190)
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic4" unique_id=237226839]
+layout_mode = 0
+offset_left = 637.0
+offset_top = 137.0
+offset_right = 1961.0
+offset_bottom = 826.0
 scale = Vector2(0.16918427, 0.14513792)
 texture = ExtResource("15_v2yb1")
 
@@ -7311,8 +7337,12 @@ offset_right = 40.0
 offset_bottom = 386.0
 mouse_filter = 2
 
-[node name="Frank2" type="Sprite2D" parent="CanvasLayer/news/pages/page2/topic5" unique_id=140015414]
-position = Vector2(517, 190)
+[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic5" unique_id=467814411]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 137.0
+offset_right = 1729.0
+offset_bottom = 826.0
 scale = Vector2(0.16918427, 0.14513792)
 texture = ExtResource("15_v2yb1")
 

@@ -3056,4 +3056,8 @@ func _on_right_news_pressed() -> void:
 ## Newspaper topics
 func newspaper_pages_refresh():
 	$CanvasLayer/news/pages/page1/topic1/image.texture = preload("res://assets/newspaper/cons.png")
+	$CanvasLayer/news/pages/page1/topic2/image.texture = preload("res://assets/newspaper/market.PNG")
+	$CanvasLayer/news/pages/page1/topic6/image.texture = preload("res://assets/newspaper/weather.PNG")
+	
+	
 	
