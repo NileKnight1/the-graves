@@ -14,7 +14,7 @@ var opened_cam = 1
 
 var antenna_working = 1
 var generator_working = 1
-var generator_stolen = 1
+var generator_stolen = 0
 
 var min_spawn_time = 15
 var max_spawn_time = 25
@@ -502,8 +502,8 @@ func match_shift():
 			match call_index:
 				0: day_call(day6_call1_chat, day6_start)
 				1: day_chat(day6_tech_chat_first, day6_tech_options1)
-				2: day_chat(day6_tech_chat_second_allowed, day6_tech_options1)
-				3: day_chat(day6_tech_chat_second_dis, day6_tech_options1)
+				2: day_chat(day6_tech_chat_second, day6_tech_options1)
+				3: day_chat(day6_tech_chat_second_stolen, day6_tech_options1)
 				4: day_chat(day6_end_chat, day_end)
 
 func _process(delta: float) -> void:
@@ -632,7 +632,7 @@ func _process(delta: float) -> void:
 		
 
 func _on_switch_body_entered(body: Node2D) -> void:
-	print(body)
+	#print(body)
 	if body == $player:
 		switch_area = 1
 		if generator_working:
@@ -1946,6 +1946,10 @@ func decision_option(option):
 					match option:
 						0: day6_tech_first_allow()
 						1: day6_tech_first_disallow()
+				3:
+					match option:
+						0: day6_tech_first_allow()
+						1: day6_tech_first_disallow()
 				4:
 					match option:
 						0: day6_battery_inspect()
@@ -2706,7 +2710,11 @@ func day6_start():
 func day6_time():
 	if shift_time == 1:
 		print("im here")
-	elif shift_time == 5:
+	elif shift_time == 2: #edit
+		var temp = randi_range(0,1)
+		if temp: day6_tech = "bad"
+		else: day6_tech = "good"
+		print(day6_tech)
 		day6_tech_appear()
 	elif shift_time == 60:
 		set_shift_values(15, 20)
@@ -2743,9 +2751,6 @@ func day6_tech_meet():
 		await get_tree().create_timer(1.0).timeout
 		day6_tech_meet()
 
-func day6_tech_steal():
-	pass
-
 var day6_tech = "bad"
 var attempt = 1
 
@@ -2753,6 +2758,9 @@ func _on_tech_body_entered(body: Node2D) -> void:
 	if body == $player:
 		$areas/tech/CollisionShape2D.set_deferred("disabled", 1)
 		stop_move()
+		if attempt == 2 && generator_stolen:
+			print("stolen")
+			call_index += 1
 		await get_tree().create_timer(1.0).timeout
 		start_chat()
 
@@ -2770,39 +2778,50 @@ func day6_tech_first_allow():
 	$anomalies/tech.destination = Vector2(2743.0, -26)
 	$anomalies/tech.move = 1
 	
-	await get_tree().create_timer(15).timeout
+	await get_tree().create_timer(15).timeout #edit
 	day6_check_space()
 
 func day6_check_space():
 	if ps4:
 		await get_tree().create_timer(10).timeout
 		day6_check_space()
-	elif attempt == 1:
+	else:
 		if day6_tech == "bad" :
 			generator_steal_apply()
 		else:
-			$anomalies/tech.visible = 1
-			$anomalies/tech.speed = 300
-			$anomalies/tech.destination = Vector2(-3692.0, -26)
-			$anomalies/tech.move = 1
-	else:
-		pass
+			generator_tech_fix()
+
+
+func generator_tech_fix():
+	$anomalies/tech.visible = 1
+	$anomalies/tech.speed = 300
+	$anomalies/tech.destination = Vector2(-3692.0, -26)
+	$anomalies/tech.move = 1
+	day6_next_tech()
+
+func day6_next_tech():
+	if attempt == 2: return
+	if day6_tech == "good": day6_tech = "bad"
+	else: day6_tech = "good"
+	
+	attempt += 1
+	await get_tree().create_timer(10).timeout #edit
+	day6_tech_appear()
 
 func day6_tech_first_disallow():
 	allow_move()
+	if attempt == 1:
+		day6_next_tech()
 	$anomalies/tech.visible = 1
 	$anomalies/tech.speed = 300
 	$anomalies/tech.destination = Vector2(-3692.0, -26)
 	$anomalies/tech.move = 1
 
-var day6_tech_chat_second_allowed = [
-	["",],
+var day6_tech_chat_second = [
+	["im the good one", 1.0],
 ]
-var day6_tech_chat_second_dis = [
-	["",],
-]
-var day6_tech_chat_fixed = [
-	["",],
+var day6_tech_chat_second_stolen = [
+	["he stole it", 1.0],
 ]
 
 ### scenarios
@@ -2811,11 +2830,10 @@ var day6_tech_chat_fixed = [
 # bad come -> allowed -> good come -> chat
 # bad come -> disallowed -> good come -> allowed/disallowed
 
-
 func frank_spawn():
 	if ps4 || (computer_opened && opened_cam == 4):
 		await get_tree().create_timer(3.0).timeout
-		day6_tech_steal()
+		frank_spawn()
 	else:
 		#generator_sabo()
 		antenna_sabo()
@@ -2842,6 +2860,7 @@ func frank_spawn():
 		
 		await get_tree().create_timer(2).timeout 
 		subtitle("", 0)
+		day6_next_tech()
 		play_sound(frank_scream)
 
 var frank_sounds_on = 0
@@ -2858,13 +2877,19 @@ func frank_sounds():
 		play_sound(electricity)
 		await get_tree().create_timer(3).timeout
 
+var temp_call_index = 1
+
 func _on_frank_battery_body_entered(body: Node2D) -> void:
 	if body == $player:
+		temp_call_index = call_index
+		call_index = 4
 		show_decision_option("CHOOSE", "Inspect", "Leave")
+		
 		$"map behind/out_left/p2/frank/outline".visible = 1
 
 func _on_frank_battery_body_exited(body: Node2D) -> void:
 	if body == $player:
+		call_index = temp_call_index
 		hide_decisions()
 		$"map behind/out_left/p2/frank/outline".visible = 0
 
@@ -2923,4 +2948,5 @@ func day6_battery_inspect():
 func day6_battery_leave():
 	$"map behind/out_left/p2/frank/outline".visible = 0
 	print("battery no")
+	call_index = temp_call_index
 	hide_decisions()
