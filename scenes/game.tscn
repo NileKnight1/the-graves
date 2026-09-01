@@ -6000,7 +6000,7 @@ disabled = true
 [node name="tech" type="Area2D" parent="areas" unique_id=1343699192]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/tech" unique_id=475596824]
-position = Vector2(-288.5, -90)
+position = Vector2(-232, -90)
 shape = SubResource("RectangleShape2D_wljb1")
 disabled = true
 

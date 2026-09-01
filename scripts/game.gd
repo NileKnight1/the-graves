@@ -502,14 +502,14 @@ func match_shift():
 			match call_index:
 				0: day_call(day6_call1_chat, day6_start)
 				1: day_chat(day6_tech_chat_first, day6_tech_options1)
-				2: day_chat(day6_tech_chat_fixed, day6_tech_fixed)
-				3: day_chat(day6_tech_chat_second_allowed, day6_tech_options1)
-				4: day_chat(day6_tech_chat_second_dis, day6_tech_options1)
-				5: day_chat(day6_tech_chat_fixed, day6_tech_fixed)
-				6: day_chat(day6_end_chat, day_end)
+				2: day_chat(day6_tech_chat_second_allowed, day6_tech_options1)
+				3: day_chat(day6_tech_chat_second_dis, day6_tech_options1)
+				4: day_chat(day6_end_chat, day_end)
 
 func _process(delta: float) -> void:
 	#print(day1task2)
+	#print($anomalies/tech.position)
+	
 	if $player.walk && $player.move:
 		if !walking_sound.playing:
 			walking_sound.play()
@@ -632,13 +632,12 @@ func _process(delta: float) -> void:
 		
 
 func _on_switch_body_entered(body: Node2D) -> void:
+	print(body)
 	if body == $player:
 		switch_area = 1
 		if generator_working:
 			if pc: $CanvasLayer/press_e.visible = 1
 			$"map behind/room/switch/outline".visible = 1
-	if body == $anomalies/tech:
-		day6_tech_meet()
 
 func _on_switch_body_exited(body: Node2D) -> void:
 	if body == $player:
@@ -725,7 +724,7 @@ func _on_accept_call_pressed() -> void:
 
 func _on_decline_call_pressed() -> void:
 	play_sound(hang_up)
-	print("hanged")
+	#print("hanged")
 	$sfx/ringtone.stop()
 	$sfx/dia.stop()
 	phone_down()
@@ -830,7 +829,7 @@ func _on_cams_body_exited(body: Node2D) -> void:
 func _on_radio_body_entered(body: Node2D) -> void:
 	if body == $player:
 		radio_area = 1
-		print("radio_area")
+		#print("radio_area")
 		print(radio_area)
 		if antenna_working:
 			if pc: $CanvasLayer/press_e.visible = 1
@@ -849,7 +848,7 @@ func _on_radio_body_exited(body: Node2D) -> void:
 			$CanvasLayer/room/menu.visible = 0
 			$CanvasLayer/room/environment.visible = 0
 			$CanvasLayer/room/creatures.visible = 0
-		print("radio_area_leftd")
+		#print("radio_area_leftd")
 		$CanvasLayer/press_e.visible = 0
 
 
@@ -1027,7 +1026,7 @@ func apply_anomaly_event():
 	if anomaly_events_count > max_anomaly_count -1 :
 		return
 		
-	print("evented")
+	#print("evented")
 	for i in anomaly_events:
 		#print(computer_opened && i["area"] == opened_cam)
 		
@@ -1055,7 +1054,7 @@ func apply_anomaly_event():
 		index += 1
 		
 	print (anomaly_events_prob[temp])
-	print (anomaly_events[temp2])
+	#print (anomaly_events[temp2])
 	anomaly_events_prob.clear()
 	
 	anomaly_events[temp2]["exist"] = 1
@@ -1439,6 +1438,8 @@ func generator_steal_apply():
 	subtitle("generatostolen", 1.0)
 	await get_tree().create_timer(3.0).timeout
 	subtitle("", 0)
+	await get_tree().create_timer(60).timeout
+	frank_spawn()
 
 
 func generator_on():
@@ -1941,7 +1942,7 @@ func decision_option(option):
 						0: day4_creature_kick()
 		6:
 			match call_index:
-				1:
+				2:
 					match option:
 						0: day6_tech_first_allow()
 						1: day6_tech_first_disallow()
@@ -2700,11 +2701,13 @@ func vamp_move_to_room():
 
 func day6_start():
 	shift_start()
-	sabo_time()
+	#sabo_time()
 
 func day6_time():
 	if shift_time == 1:
 		print("im here")
+	elif shift_time == 5:
+		day6_tech_appear()
 	elif shift_time == 60:
 		set_shift_values(15, 20)
 	elif shift_time == 150:
@@ -2730,38 +2733,63 @@ func day6_tech_appear():
 	$anomalies/tech.speed = 200
 	$anomalies/tech.destination = Vector2(-502.0, -26)
 	$anomalies/tech.move = 1
+	day6_tech_meet()
 
 func day6_tech_meet():
-	$areas/tech/CollisionShape2D.set_deferred("disabled", 0)
-	
+	if $anomalies/tech.position.x > -510 && $anomalies/tech.position.x < -495:
+		print("canmet")
+		$areas/tech/CollisionShape2D.set_deferred("disabled", 0)
+	else:
+		await get_tree().create_timer(1.0).timeout
+		day6_tech_meet()
 
 func day6_tech_steal():
 	pass
 
 var day6_tech = "bad"
+var attempt = 1
 
 func _on_tech_body_entered(body: Node2D) -> void:
-	$areas/tech/CollisionShape2D.set_deferred("disabled", 1)
-	stop_move()
-	await get_tree().create_timer(1.0).timeout
-
-	if day6_tech = "bad":
-	
-	else:
-	
-	start_chat()
+	if body == $player:
+		$areas/tech/CollisionShape2D.set_deferred("disabled", 1)
+		stop_move()
+		await get_tree().create_timer(1.0).timeout
+		start_chat()
 
 var day6_tech_chat_first = [
 	["tech1", 1.0],
 ]
 
-func day6_options1():
+func day6_tech_options1():
 	show_decision_option("Choose", "goon", "no")
 
 func day6_tech_first_allow():
-	day6_tech_appear()
+	#$anomalies/tech.visible = 1
+	allow_move()
+	$anomalies/tech.speed = 300
+	$anomalies/tech.destination = Vector2(2743.0, -26)
+	$anomalies/tech.move = 1
+	
+	await get_tree().create_timer(15).timeout
+	day6_check_space()
+
+func day6_check_space():
+	if ps4:
+		await get_tree().create_timer(10).timeout
+		day6_check_space()
+	elif attempt == 1:
+		if day6_tech == "bad" :
+			generator_steal_apply()
+		else:
+			$anomalies/tech.visible = 1
+			$anomalies/tech.speed = 300
+			$anomalies/tech.destination = Vector2(-3692.0, -26)
+			$anomalies/tech.move = 1
+	else:
+		pass
 
 func day6_tech_first_disallow():
+	allow_move()
 	$anomalies/tech.visible = 1
 	$anomalies/tech.speed = 300
 	$anomalies/tech.destination = Vector2(-3692.0, -26)

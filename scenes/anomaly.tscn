@@ -5,7 +5,8 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fuoq"]
 bg_color = Color(0.47933924, 0, 0.05596737, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qc3fp"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nacbu"]
+height = 62.846367
 
 [node name="anomaly" type="CharacterBody2D" unique_id=312059141]
 script = ExtResource("1_nacbu")
@@ -19,6 +20,7 @@ scale = Vector2(1, -2.7148278)
 theme_override_styles/panel = SubResource("StyleBoxFlat_3fuoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592067596]
-position = Vector2(20, 20.000004)
+position = Vector2(20.000002, -14)
+rotation = 3.1415927
 scale = Vector2(1.9094183, 1.9094183)
-shape = SubResource("CircleShape2D_qc3fp")
+shape = SubResource("CapsuleShape2D_nacbu")
