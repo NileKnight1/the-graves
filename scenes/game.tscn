@@ -1084,38 +1084,6 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd4ix"]
 bg_color = Color(0.72, 0, 0, 0.06666667)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fccuv"]
-bg_color = Color(0.84705883, 0.827451, 0.6039216, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-shadow_size = 21
-shadow_offset = Vector2(15.55, 0.065)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpl5h"]
-bg_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(15.55, 0.065)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nej56"]
-bg_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(15.55, 0.065)
-
-[sub_resource type="LabelSettings" id="LabelSettings_gxtfn"]
-font_size = 8
-font_color = Color(0, 0, 0, 1)
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qnb83"]
-shader = ExtResource("14_bhx41")
-shader_parameter/threshold = 0.05
-shader_parameter/softness = 0.05
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouja"]
 bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
 border_color = Color(0.8, 0, 0, 1)
@@ -1144,6 +1112,25 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 shadow_color = Color(0.84705883, 0.49803922, 1, 1)
 shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpl5h"]
+bg_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(15.55, 0.065)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nej56"]
+bg_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(15.55, 0.065)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gxtfn"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qnb83"]
+shader = ExtResource("14_bhx41")
+shader_parameter/threshold = 0.05
+shader_parameter/softness = 0.05
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wljb1"]
 atlas = ExtResource("18_qouja")
@@ -6424,6 +6411,7 @@ layout_direction = 1
 offset_top = 635.0
 offset_right = 1279.0
 offset_bottom = 716.0
+pivot_offset = Vector2(633, -175)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("6_p57ef")
@@ -6580,23 +6568,12 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="PastelYellowVignetteConcreteTexturedBackground53876124561" type="Sprite2D" parent="CanvasLayer/news" unique_id=570315062]
-visible = false
-position = Vector2(641, 361.0333)
+position = Vector2(638.1605, 341.01312)
 rotation = 1.5707964
-scale = Vector2(0.74439377, 0.83638483)
+scale = Vector2(0.7849027, 0.9789895)
 texture = ExtResource("14_wljb1")
 
-[node name="bg" type="Panel" parent="CanvasLayer/news" unique_id=1015984382]
-layout_direction = 2
-layout_mode = 0
-offset_left = 396.0
-offset_top = 48.0
-offset_right = 881.0
-offset_bottom = 634.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fccuv")
-
-[node name="control" type="Control" parent="CanvasLayer/news" unique_id=233356727]
+[node name="buttons" type="Control" parent="CanvasLayer/news" unique_id=1952980744]
 process_mode = 3
 layout_direction = 2
 anchors_preset = 0
@@ -6604,37 +6581,86 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="bg2" type="Panel" parent="CanvasLayer/news/control" unique_id=940363956]
-layout_direction = 2
+[node name="left" type="Button" parent="CanvasLayer/news/buttons" unique_id=1768647900]
 layout_mode = 0
-offset_left = 396.0
-offset_top = 125.0
-offset_right = 886.0
-offset_bottom = 126.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
+offset_left = 322.0
+offset_top = 319.0
+offset_right = 373.0
+offset_bottom = 371.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "<"
+icon_alignment = 1
 
-[node name="bg3" type="Panel" parent="CanvasLayer/news/control" unique_id=388625337]
-layout_direction = 2
+[node name="right" type="Button" parent="CanvasLayer/news/buttons" unique_id=1940355659]
 layout_mode = 0
-offset_left = 396.0
-offset_top = 130.0
-offset_right = 886.0
-offset_bottom = 131.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
+offset_left = 910.0
+offset_top = 319.0
+offset_right = 961.0
+offset_bottom = 371.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = ">"
+icon_alignment = 1
 
-[node name="line" type="Panel" parent="CanvasLayer/news/control" unique_id=1211975710]
+[node name="control2" type="Control" parent="CanvasLayer/news/buttons" unique_id=947843890]
+process_mode = 3
 layout_direction = 2
-layout_mode = 0
-offset_left = 396.0
-offset_top = 339.0
-offset_right = 886.0
-offset_bottom = 340.0
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
-[node name="title" type="Label" parent="CanvasLayer/news/control" unique_id=318868198]
+[node name="pages" type="Control" parent="CanvasLayer/news" unique_id=1667927580]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="page1" type="Control" parent="CanvasLayer/news/pages" unique_id=233356727]
+process_mode = 3
+visible = false
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="control" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=835955205]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="header" type="Control" parent="CanvasLayer/news/pages/page1/control" unique_id=99083704]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/control/header" unique_id=318868198]
 layout_mode = 0
 offset_left = 524.0
 offset_top = 48.0
@@ -6647,25 +6673,78 @@ theme_override_font_sizes/font_size = 49
 text = "NEWSPAPER"
 horizontal_alignment = 1
 
-[node name="title2" type="Label" parent="CanvasLayer/news/control" unique_id=1256709237]
+[node name="line1" type="Panel" parent="CanvasLayer/news/pages/page1/control/header" unique_id=940363956]
+layout_direction = 2
 layout_mode = 0
-offset_left = 409.0
-offset_top = 142.0
-offset_right = 608.0
-offset_bottom = 168.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 20
-text = "TITLE TITLE"
-autowrap_mode = 2
+offset_left = 396.0
+offset_top = 125.0
+offset_right = 886.0
+offset_bottom = 126.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
-[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/control" unique_id=1977343669]
-position = Vector2(760.5, 203.99998)
-scale = Vector2(0.15785496, 0.17126271)
-texture = ExtResource("15_v2yb1")
+[node name="line2" type="Panel" parent="CanvasLayer/news/pages/page1/control/header" unique_id=388625337]
+layout_direction = 2
+layout_mode = 0
+offset_left = 396.0
+offset_top = 130.0
+offset_right = 886.0
+offset_bottom = 131.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
-[node name="col1" type="Label" parent="CanvasLayer/news/control" unique_id=597896598]
+[node name="line" type="Panel" parent="CanvasLayer/news/pages/page1/control" unique_id=1211975710]
+layout_direction = 2
+layout_mode = 0
+offset_left = 420.0
+offset_top = 339.0
+offset_right = 862.0
+offset_bottom = 340.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
+[node name="line3" type="Panel" parent="CanvasLayer/news/pages/page1/control" unique_id=1957720911]
+layout_direction = 2
+layout_mode = 0
+offset_left = 524.0
+offset_top = 423.54233
+offset_right = 716.23315
+offset_bottom = 424.54233
+rotation = 1.5707964
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
+[node name="line4" type="Panel" parent="CanvasLayer/news/pages/page1/control" unique_id=587430305]
+layout_direction = 2
+layout_mode = 0
+offset_left = 749.0
+offset_top = 423.54233
+offset_right = 941.23315
+offset_bottom = 424.54233
+rotation = 1.5707964
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
+[node name="line5" type="Panel" parent="CanvasLayer/news/pages/page1/control" unique_id=858893571]
+layout_direction = 2
+layout_mode = 0
+offset_left = 634.0
+offset_top = 460.0
+offset_right = 789.7755
+offset_bottom = 461.0
+rotation = 1.5707964
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
+[node name="topic1" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1333321899]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=597896598]
 layout_mode = 0
 offset_left = 411.0
 offset_top = 174.0
@@ -6675,27 +6754,27 @@ pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers Workers."
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
 
-[node name="col3" type="Label" parent="CanvasLayer/news/control" unique_id=2098455089]
+[node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=622632829]
 layout_mode = 0
-offset_left = 530.0
+offset_left = 531.0
 offset_top = 174.0
-offset_right = 641.0
-offset_bottom = 329.0
+offset_right = 637.0
+offset_bottom = 353.0
 pivot_offset = Vector2(-196, -8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
-text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers Workers."
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
 
-[node name="col2" type="Label" parent="CanvasLayer/news/control" unique_id=790679055]
+[node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=790679055]
 layout_mode = 0
 offset_left = 656.0
 offset_top = 272.0
@@ -6709,6 +6788,599 @@ text = "The exact reopening date has not yet been announced, but officials expec
 label_settings = SubResource("LabelSettings_gxtfn")
 horizontal_alignment = 3
 autowrap_mode = 2
+
+[node name="title2" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=1256709237]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 142.0
+offset_right = 608.0
+offset_bottom = 168.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 20
+text = "TITLE TITLE"
+autowrap_mode = 2
+
+[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page1/topic1" unique_id=1977343669]
+position = Vector2(760.5, 203.99998)
+scale = Vector2(0.15785496, 0.17126271)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic2" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1719061689]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic2" unique_id=811979921]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 432.25
+offset_right = 517.0
+offset_bottom = 611.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic2" unique_id=709030984]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 410.25
+offset_right = 517.0
+offset_bottom = 455.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "TITLE TITLE"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page1/topic2" unique_id=1016450242]
+position = Vector2(464, 376.25)
+scale = Vector2(0.051359452, 0.084905624)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic3" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=2003324900]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 212.0
+offset_right = 40.0
+offset_bottom = 252.0
+mouse_filter = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic3" unique_id=114929905]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 159.0
+offset_right = 741.0
+offset_bottom = 240.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials.  "
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic3" unique_id=2140753474]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 137.0
+offset_right = 741.0
+offset_bottom = 176.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "TITLE TIT TIT TIT  TITLE"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="topic4" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1210515110]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 212.0
+offset_right = 40.0
+offset_bottom = 252.0
+mouse_filter = 2
+
+[node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic4" unique_id=242118464]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 271.0
+offset_right = 629.0
+offset_bottom = 396.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. After several months of repairs."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="title2" type="Label" parent="CanvasLayer/news/pages/page1/topic4" unique_id=1390632890]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 248.0
+offset_right = 629.0
+offset_bottom = 267.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "TITLE TITL"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="topic5" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=414487098]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_left = 119.0
+offset_right = 159.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic5" unique_id=1339056796]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 483.0
+offset_right = 617.0
+offset_bottom = 608.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. After several months of repairs."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="title3" type="Label" parent="CanvasLayer/news/pages/page1/topic5" unique_id=1370803138]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 460.0
+offset_right = 617.0
+offset_bottom = 479.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "TITLE TITL"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="topic6" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1915513161]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_left = 344.0
+offset_right = 384.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1770958912]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 432.25
+offset_right = 517.0
+offset_bottom = 611.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic6" unique_id=709184589]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 410.25
+offset_right = 517.0
+offset_bottom = 455.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "TITLE TITLE"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1122133333]
+position = Vector2(466, 376.25)
+scale = Vector2(0.051359452, 0.084905624)
+texture = ExtResource("15_v2yb1")
+
+[node name="page2" type="Control" parent="CanvasLayer/news/pages" unique_id=79335699]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="control" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=1321971899]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="header" type="Control" parent="CanvasLayer/news/pages/page2/control" unique_id=1471554619]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/control/header" unique_id=602381741]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 48.0
+offset_right = 749.0
+offset_bottom = 132.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0.47843137, 0.09019608, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 49
+text = "NEWSPAPER"
+horizontal_alignment = 1
+
+[node name="line1" type="Panel" parent="CanvasLayer/news/pages/page2/control/header" unique_id=442399217]
+layout_direction = 2
+layout_mode = 0
+offset_left = 396.0
+offset_top = 125.0
+offset_right = 886.0
+offset_bottom = 126.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
+
+[node name="line2" type="Panel" parent="CanvasLayer/news/pages/page2/control/header" unique_id=807832120]
+layout_direction = 2
+layout_mode = 0
+offset_left = 396.0
+offset_top = 130.0
+offset_right = 886.0
+offset_bottom = 131.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
+
+[node name="line" type="Panel" parent="CanvasLayer/news/pages/page2/control" unique_id=281140365]
+layout_direction = 2
+layout_mode = 0
+offset_left = 420.0
+offset_top = 339.0
+offset_right = 862.0
+offset_bottom = 340.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
+[node name="line3" type="Panel" parent="CanvasLayer/news/pages/page2/control" unique_id=887520616]
+layout_direction = 2
+layout_mode = 0
+offset_left = 524.0
+offset_top = 423.54233
+offset_right = 716.23315
+offset_bottom = 424.54233
+rotation = 1.5707964
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
+[node name="line4" type="Panel" parent="CanvasLayer/news/pages/page2/control" unique_id=237803559]
+layout_direction = 2
+layout_mode = 0
+offset_left = 749.0
+offset_top = 423.54233
+offset_right = 941.23315
+offset_bottom = 424.54233
+rotation = 1.5707964
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
+[node name="line5" type="Panel" parent="CanvasLayer/news/pages/page2/control" unique_id=1815657694]
+layout_direction = 2
+layout_mode = 0
+offset_left = 634.0
+offset_top = 460.0
+offset_right = 789.7755
+offset_bottom = 461.0
+rotation = 1.5707964
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
+[node name="topic1" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=410888199]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=437925247]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 174.0
+offset_right = 517.0
+offset_bottom = 353.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col3" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=1120747754]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 174.0
+offset_right = 637.0
+offset_bottom = 353.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col2" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=677103410]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 272.0
+offset_right = 865.0
+offset_bottom = 325.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "The exact reopening date has not yet been announced, but officials expect normal traffic to resume before the end of the week traffic to resume before the end of the week wekek week."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="title2" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=2034765006]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 142.0
+offset_right = 608.0
+offset_bottom = 168.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 20
+text = "TITLE TITLE"
+autowrap_mode = 2
+
+[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page2/topic1" unique_id=573655307]
+position = Vector2(760.5, 203.99998)
+scale = Vector2(0.15785496, 0.17126271)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic2" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=180901564]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic2" unique_id=1870239589]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 432.25
+offset_right = 517.0
+offset_bottom = 611.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic2" unique_id=935609907]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 410.25
+offset_right = 517.0
+offset_bottom = 455.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "TITLE TITLE"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page2/topic2" unique_id=1269876852]
+position = Vector2(464, 376.25)
+scale = Vector2(0.051359452, 0.084905624)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic3" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=1610298987]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 212.0
+offset_right = 40.0
+offset_bottom = 252.0
+mouse_filter = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic3" unique_id=2036565526]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 159.0
+offset_right = 741.0
+offset_bottom = 240.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials.  "
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic3" unique_id=2009135562]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 137.0
+offset_right = 741.0
+offset_bottom = 176.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "TITLE TIT TIT TIT  TITLE"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="topic4" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=287239598]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 212.0
+offset_right = 40.0
+offset_bottom = 252.0
+mouse_filter = 2
+
+[node name="col2" type="Label" parent="CanvasLayer/news/pages/page2/topic4" unique_id=1820223472]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 271.0
+offset_right = 629.0
+offset_bottom = 396.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. After several months of repairs."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="title2" type="Label" parent="CanvasLayer/news/pages/page2/topic4" unique_id=1485850668]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 248.0
+offset_right = 629.0
+offset_bottom = 267.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "TITLE TITL"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="topic5" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=2141759299]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_left = 119.0
+offset_right = 159.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="col3" type="Label" parent="CanvasLayer/news/pages/page2/topic5" unique_id=1947625388]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 483.0
+offset_right = 617.0
+offset_bottom = 608.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. After several months of repairs."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="title3" type="Label" parent="CanvasLayer/news/pages/page2/topic5" unique_id=1140567914]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 460.0
+offset_right = 617.0
+offset_bottom = 479.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "TITLE TITL"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="topic6" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=2146964670]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_left = 344.0
+offset_right = 384.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic6" unique_id=1335486807]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 432.25
+offset_right = 517.0
+offset_bottom = 611.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "After several months of repairs, the old Riverside Bridge is expected to reopen to the public later this week, according to local officials. The bridge was closed in March after inspectors discovered damage to several support beams. Workers have spent Workers "
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic6" unique_id=1917136098]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 410.25
+offset_right = 517.0
+offset_bottom = 455.25
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "TITLE TITLE"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="Frank1" type="Sprite2D" parent="CanvasLayer/news/pages/page2/topic6" unique_id=240153297]
+position = Vector2(466, 376.25)
+scale = Vector2(0.051359452, 0.084905624)
+texture = ExtResource("15_v2yb1")
 
 [node name="pause" type="Control" parent="CanvasLayer" unique_id=967419704]
 process_mode = 3
@@ -7388,6 +8060,8 @@ texture = ExtResource("19_264po")
 [connection signal="pressed" from="CanvasLayer/phone/ringing/decline" to="." method="_on_decline_call_pressed"]
 [connection signal="pressed" from="CanvasLayer/phone/accepted/decline" to="." method="_on_decline_call_pressed"]
 [connection signal="pressed" from="CanvasLayer/close_cam" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/news/buttons/left" to="." method="_on_left_news_pressed"]
+[connection signal="pressed" from="CanvasLayer/news/buttons/right" to="." method="_on_right_news_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/menu/environmental" to="." method="_on_environmental_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/menu/creatures" to="." method="_on_creatures_pressed"]
 [connection signal="pressed" from="CanvasLayer/room/menu/back" to="." method="_on_back_pressed"]

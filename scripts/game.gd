@@ -70,6 +70,8 @@ var electricity = preload("res://audio/electricity.mp3")
 var psst = preload("res://audio/psst.mp3")
 var door = preload("res://audio/door.mp3")
 var fnaf = preload("res://audio/freesound_community-cryo_outage-94622.mp3")
+var paper_turn = preload("res://audio/paper_turn.mp3")
+
 
 
 
@@ -3021,8 +3023,6 @@ func _on_news_mouse_exited() -> void:
 		$"map behind/room/news/hover".visible = 0
 		$"map behind/room/news/outline". visible = 1
 
-var news_open = 0
-
 func open_news():
 	news_open = 1
 	$CanvasLayer/news.visible = 1
@@ -3030,3 +3030,21 @@ func open_news():
 func close_news():
 	news_open = 0
 	$CanvasLayer/news.visible = 0
+
+var news_open = 0
+var opened_news_page = 0
+
+func _on_left_news_pressed() -> void:
+	$CanvasLayer/news/pages.get_child(opened_news_page).visible = 0
+	opened_news_page -= 1
+	if opened_news_page < 0:
+		opened_news_page = $CanvasLayer/news/pages.get_child_count() - 1
+	$CanvasLayer/news/pages.get_child(opened_news_page).visible = 1
+	play_sound(paper_turn)
+func _on_right_news_pressed() -> void:
+	$CanvasLayer/news/pages.get_child(opened_news_page).visible = 0
+	opened_news_page += 1
+	if opened_news_page > $CanvasLayer/news/pages.get_child_count() - 1:
+		opened_news_page = 0
+	$CanvasLayer/news/pages.get_child(opened_news_page).visible = 1
+	play_sound(paper_turn)
