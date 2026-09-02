@@ -33,7 +33,6 @@
 [ext_resource type="AudioStream" uid="uid://d0l4ciu1e13h1" path="res://audio/sub.mp3" id="19_5newe"]
 [ext_resource type="Texture2D" uid="uid://74yjv8hvpbk8" path="res://assets/rect.png" id="19_264po"]
 [ext_resource type="AudioStream" uid="uid://ca455xqgdh1qb" path="res://audio/artificiallyinspired-crt-tv-low-buzzing-static-577992.mp3" id="20_suyxu"]
-[ext_resource type="FontFile" uid="uid://diho8ojivs333" path="res://assets/LibreBaskerville-Italic.ttf" id="23_twgab"]
 [ext_resource type="AudioStream" uid="uid://dgxlfchq0oics" path="res://audio/voicebosch-heart-and-breath-suspense-196083.mp3" id="26_sww3w"]
 [ext_resource type="AudioStream" uid="uid://dwbycnc4g38ad" path="res://audio/soundreality-heart-beat-137135.mp3" id="27_suyxu"]
 
@@ -1292,8 +1291,6 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
-
-[sub_resource type="LabelSettings" id="LabelSettings_02fa5"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5newe"]
 playback_mode = 1
@@ -8384,92 +8381,21 @@ offset_bottom = 572.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1uieh")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/pause/brief_/mask" unique_id=403567165]
+[node name="scroll" type="ScrollContainer" parent="CanvasLayer/pause/brief_/mask" unique_id=403567165]
 layout_mode = 0
 offset_left = 11.023621
 offset_top = 12.0
-offset_right = 716.0236
+offset_right = 725.0236
 offset_bottom = 375.0
 horizontal_scroll_mode = 3
-scroll_hint_mode = 2
+scroll_hint_mode = 1
 tile_scroll_hint = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/pause/brief_/mask/ScrollContainer" unique_id=741904807]
+[node name="text" type="VBoxContainer" parent="CanvasLayer/pause/brief_/mask/scroll" unique_id=741904807]
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=1680564720]
-custom_minimum_size = Vector2(705, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("23_twgab")
-text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
-label_settings = SubResource("LabelSettings_02fa5")
-autowrap_mode = 3
-
-[node name="Label2" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=21331296]
-custom_minimum_size = Vector2(705, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("23_twgab")
-text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
-label_settings = SubResource("LabelSettings_02fa5")
-autowrap_mode = 3
-
-[node name="Label3" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=1984835489]
-custom_minimum_size = Vector2(705, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("23_twgab")
-text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
-label_settings = SubResource("LabelSettings_02fa5")
-autowrap_mode = 3
-
-[node name="Label4" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=1864874925]
-custom_minimum_size = Vector2(705, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("23_twgab")
-text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
-label_settings = SubResource("LabelSettings_02fa5")
-autowrap_mode = 3
-
-[node name="Label5" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=448326643]
-custom_minimum_size = Vector2(705, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("23_twgab")
-text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
-label_settings = SubResource("LabelSettings_02fa5")
-autowrap_mode = 3
-
-[node name="Label6" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=788525468]
-custom_minimum_size = Vector2(705, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("23_twgab")
-text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
-label_settings = SubResource("LabelSettings_02fa5")
-autowrap_mode = 3
-
-[node name="Label7" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=297671274]
-custom_minimum_size = Vector2(705, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("23_twgab")
-text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
-label_settings = SubResource("LabelSettings_02fa5")
-autowrap_mode = 3
-
-[node name="Label8" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=2142689755]
-custom_minimum_size = Vector2(705, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("23_twgab")
-text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
-label_settings = SubResource("LabelSettings_02fa5")
-autowrap_mode = 3
-
-[node name="Label9" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=1872014582]
-custom_minimum_size = Vector2(705, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("23_twgab")
-text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
-label_settings = SubResource("LabelSettings_02fa5")
-autowrap_mode = 3
+alignment = 2
 
 [node name="restart_" type="Control" parent="CanvasLayer/pause" unique_id=933704793]
 process_mode = 3

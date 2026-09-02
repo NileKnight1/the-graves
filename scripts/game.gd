@@ -76,9 +76,6 @@ var paper_turn = preload("res://audio/paper_turn.mp3")
 
 
 
-
-
-
 func play_sound(sound, vol = 0.0):
 	var temp = AudioStreamPlayer.new()
 	temp.stream = sound
@@ -748,7 +745,6 @@ func _on_decline_call_pressed() -> void:
 	print("shift",shift)
 	print("call_index",call_index)
 	
-	
 	match shift:
 		1:
 			match call_index:
@@ -774,10 +770,8 @@ func _on_decline_call_pressed() -> void:
 			match call_index:
 				0: day6_start()
 				1: day_end()
-			
-	
+		
 	call_index += 1
-	
 
 var call_time = 0
 
@@ -797,9 +791,7 @@ var chat_msg = 0
 func _on_skip_msg_timeout() -> void:
 	chat_msg += 1
 	#print("im still workingD")
-	
 	match_shift()
-
 
 func shift_end():
 	$timers/spawn.stop()
@@ -813,7 +805,6 @@ func shift_end():
 	
 	radio_access_off()
 	phone_up()
-
 
 func _on_cams_body_entered(body: Node2D) -> void:
 	if body == $player:
@@ -1384,14 +1375,14 @@ func _on_room_body_exited(body: Node2D) -> void:
 			light_off()
 			vamp_move += 1
 
-
-func subtitle(sub, time):
+func subtitle(sub, time, sayer = "System"):
 	$CanvasLayer/gui/subtitles.visible_ratio = 0
 	$CanvasLayer/gui/subtitles.text = tr(sub)
 	var tween = create_tween()
 	$sfx/sub.play()
 	tween.tween_property($CanvasLayer/gui/subtitles, "visible_ratio", 1.0, time)
 	await get_tree().create_timer(time).timeout
+	brief.insert(0, [tr(sayer), tr(sub)])
 	$sfx/sub.stop()
 
 func tasks():
@@ -2000,6 +1991,10 @@ func day_call(chat, target):
 				0: if !global.day2creature_found && chat_msg == 1: chat_msg+= 1
 	
 	var temp = tr(chat[chat_msg][0])
+	brief.insert(0, [tr(chat[chat_msg][2]), tr(chat[chat_msg][0])])
+	#print(tr(chat[chat_msg][2]))
+	#print(tr(chat[chat_msg][0]))
+	#
 	$CanvasLayer/gui/subtitles.visible_ratio = 0
 	var temp_sec = randi_range(0, 17)
 	$sfx/dia.play(temp_sec)
@@ -2031,6 +2026,7 @@ func day_chat(chat, target):
 		return
 	
 	var temp = tr(chat[chat_msg][0])
+	brief.insert(0, [tr(chat[chat_msg][2]), tr(chat[chat_msg][0])])
 	$CanvasLayer/gui/subtitles.visible_ratio = 0
 	var temp_sec = randi_range(0, 17)
 	$sfx/dia.play(temp_sec)
@@ -2177,21 +2173,21 @@ func day1_start():
 			day1task2_apply()
 
 var chat1_array = [
-	["chat1msg1", 2],  
-	["chat1msg2", 3.5], 
-	["chat1msg3", 3.5], 
-	["chat1msg4", 3.5], 
-	["chat1msg5", 4.5], 
-	["chat1msg6", 3.5], 
-	["chat1msg7", 1.5], 
-	["chat1msg8", 1.5], 
-	["chat1msg9", 0.5], 
+	["chat1msg1", 2, "manager"],  
+	["chat1msg2", 3.5, "manager"], 
+	["chat1msg3", 3.5, "manager"], 
+	["chat1msg4", 3.5, "manager"], 
+	["chat1msg5", 4.5, "manager"], 
+	["chat1msg6", 3.5, "manager"], 
+	["chat1msg7", 1.5, "manager"], 
+	["chat1msg8", 1.5, "manager"], 
+	["chat1msg9", 0.5, "manager"], 
 ]
 
 var day1_call2_chat = [
-	["chat2msg1", 1],
-	["chat2msg2", 1],
-	["chat2msg3", 1],
+	["chat2msg2", 1, "manager"],
+	["chat2msg3", 1, "manager"],
+	["chat2msg1", 1, "manager"],
 ]
 
 ### Planning
@@ -2219,11 +2215,11 @@ func start_chat():
 	match_shift()
 
 var day2_call1_chat = [
-	["day2call1sen1", 1.0],
-	["day2call1sen2", 2.0],
-	["day2call1sen3", 2.5],
-	["day2call1sen4", 2.0],
-	["day2call1sen5", 0.5],
+	["day2call1sen1", 1.0, "manager"],
+	["day2call1sen2", 2.0, "manager"],
+	["day2call1sen3", 2.5, "manager"],
+	["day2call1sen4", 2.0, "manager"],
+	["day2call1sen5", 0.5, "manager"],
 	
 ]
 #
@@ -2231,8 +2227,8 @@ var day2_call1_chat = [
 	#phone_up()
 
 var day2_call2_chat = [
-	["day2call2sen1", 1.5],
-	["day2call2sen2", 1.0],
+	["day2call2sen1", 1.5, "manager"],
+	["day2call2sen2", 1.0, "manager"],
 	
 	
 ]
@@ -2299,10 +2295,10 @@ func day3_time():
 		set_shift_values(8, 14)
 
 var day3_call1_chat = [
-	["day3call1sen1", 1.0],
-	["day3call1sen2", 1.0],
-	["day3call1sen3", 1.0],
-	["day3call1sen4", 1.0],
+	["day3call1sen1", 1.0, "manager"],
+	["day3call1sen2", 1.0, "manager"],
+	["day3call1sen3", 1.0, "manager"],
+	["day3call1sen4", 1.0, "manager"],
 ]
 
 func day3_start():
@@ -2382,9 +2378,9 @@ func _on_day_3_visitorfound_body_exited(body: Node2D) -> void:
 
 
 var day3_creature1_chat = [
-	["d3c1s1", 0.5],
-	["d3c1s2", 1.0],
-	["d3c1s3", 1.5],
+	["d3c1s1", 0.5, "stranger"],
+	["d3c1s2", 1.0, "stranger"],
+	["d3c1s3", 1.5, "stranger"],
 ]
 
 func day3_creature1_talked():
@@ -2401,12 +2397,12 @@ func day3_creature1_talked():
 ## no -> it goes -> he simply goes
 
 var day3_creature1_chat_stay = [
-	["d3c1s5", 1.0],
-	["d3c1s6", 1.0],
+	["d3c1s5", 1.0, "stranger"],
+	["d3c1s6", 1.0, "stranger"],
 ]
 
 var day3_creature1_chat_leave = [
-	["d3c1s4", 0.5],
+	["d3c1s4", 0.5, "stranger"],
 ]
 
 func day3_creature1_yes():
@@ -2435,8 +2431,8 @@ func day3_creature1_stay():
 	subtitle("", 0)
 
 var day3_creature1_chat_end = [
-	["d3c1s7", 1],
-	["d3c1s8", 1],
+	["d3c1s7", 1, "stranger"],
+	["d3c1s8", 1, "stranger"],
 ]
 
 var day3_creature1_shift = 0
@@ -2473,16 +2469,17 @@ func cam_helper_creature(area):
 	subtitle("area", 1.0)
 	await get_tree().create_timer(1).timeout
 	$CanvasLayer/gui/subtitles.text += str(area)
+	brief[0][1] += str(area)
 	await get_tree().create_timer(2.9).timeout
 	subtitle("", 0)
 
 var day3_call2_chat = [
-	["day3call2sen1", 1],
+	["day3call2sen1", 1, "stranger"],
 ]
 
 var day4_call1_chat = [
-	["", 1],
-	["", 1],
+	["", 1, "manager"],
+	["", 1, "manager"],
 ]
 
 func day4_time():
@@ -2516,19 +2513,19 @@ func day4_creature_appear():
 	$anomalies/anomaly2.visible = 1
 
 var day4_creature1_chat = [
-	["hello", 0.5],
-	["needhelp", 1.0],
+	["hello", 0.5, "stranger"],
+	["needhelp", 1.0, "stranger"],
 ]
 
 func day4_creature1_talked():
 	show_decision_option("Answer", "yesplease", "no")
 
 var day4_creature1_chat_stay = [
-	["stay", 1.0],
+	["stay", 1.0, "stranger"],
 ]
 
 var day4_creature1_chat_leave = [
-	["np", 0.5],
+	["np", 0.5, "stranger"],
 ]
 
 func day4_creature1_yes():
@@ -2553,7 +2550,7 @@ func day4_creature1_stay():
 	subtitle("", 0)
 
 var day4_creature1_chat_end = [
-	["im leave", 0],
+	["im leave", 0, "stranger"],
 ]
 
 var day4_creature1_shift = 0
@@ -2590,12 +2587,13 @@ func cam_sabo_creature(area):
 		area += 1
 		if area == 5: area = 1
 		$CanvasLayer/gui/subtitles.text += str(area)
+		brief[0][1] += str(area)
 		await get_tree().create_timer(2.9).timeout
 		subtitle("", 0)
 
 var day4_call2_chat = [
-	["day4call2sen1", 1],
-	["day4call2sen2", 1],
+	["day4call2sen1", 1, "manager"],
+	["day4call2sen2", 1, "manager"],
 ]
 
 var day4_crawl = 0
@@ -2611,8 +2609,8 @@ func day4_creature_kick():
 		force_cam_close = 0 
 
 var day4_end_chat = [
-	["day4c1", 1.0],
-	["day4c2", 1.0],
+	["day4c1", 1.0, "manager"],
+	["day4c2", 1.0], "manager",
 ]
 
 
@@ -2654,11 +2652,11 @@ func day5_start():
 	sabo_time()
 
 var day5_call1_chat = [
-	["a", 1.0],
+	["a", 1.0, "manager"],
 ]
 
 var day5_end_chat = [
-	["a", 1.0]
+	["a", 1.0, "manager"]
 ]
 
 var vamp_move = 0
@@ -2746,7 +2744,7 @@ func day6_time():
 		set_shift_values(8, 14)
 
 var day6_call1_chat = [
-	["day6start", 1.0],
+	["day6start", 1.0, "manager"],
 ]
 
 ### Day6
@@ -2784,7 +2782,7 @@ func _on_tech_body_entered(body: Node2D) -> void:
 		start_chat()
 
 var day6_tech_chat_first = [
-	["tech1", 1.0],
+	["tech1", 1.0, "tech"],
 ]
 
 func day6_starters():
@@ -2849,10 +2847,10 @@ func day6_tech_first_disallow():
 	$anomalies/tech.move = 1
 
 var day6_tech_chat_second = [
-	["im the good one", 1.0],
+	["im the good one", 1.0, "tech"],
 ]
 var day6_tech_chat_second_stolen = [
-	["he stole it", 1.0],
+	["he stole it", 1.0, "tech"],
 ]
 
 ### scenarios
@@ -2983,7 +2981,7 @@ func day6_battery_leave():
 	hide_decisions()
 
 var day6_end_chat = [
-	["day6end", 1.0],
+	["day6end", 1.0, "manager"],
 ]
 
 func day7_time():
@@ -2997,7 +2995,7 @@ func day7_time():
 		set_shift_values(8, 14)
 
 var day7_call1_chat = [
-	["day7start", 1.0],
+	["day7start", 1.0, "manager"],
 ]
 
 ### new creatures
@@ -3163,6 +3161,8 @@ var day2_page3 = [
 
 func _on_pause_pressed() -> void:
 	get_tree().paused = 1
+	refresh_brief()
+	$CanvasLayer/pause/brief_.visible = 1
 	$CanvasLayer/pause.visible = 1
 
 func _on_resume_pressed() -> void:
@@ -3170,12 +3170,21 @@ func _on_resume_pressed() -> void:
 	$CanvasLayer/pause.visible = 0
 
 var brief = [
-	["Sayer" , "Message"],
-	["Sayer" , "Message"],
-	["Sayer" , "Message"],
-	["Sayer" , "Message"],
-	["Sayer" , "Message"],
+
 ]
+
+func refresh_brief():
+	for i in $CanvasLayer/pause/brief_/mask/scroll/text.get_children():
+		i.queue_free()
+	
+	for i in range(len(brief)-1):
+		var label = Label.new()
+		label.text = brief[i][0] + ": " + brief[i][1]
+		label.set("theme_override_fonts/font", preload("res://assets/LibreBaskerville-Italic.ttf"))
+		label.custom_minimum_size.x = 705.0
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		
+		$CanvasLayer/pause/brief_/mask/scroll/text.add_child(label)
 
 
 func _on_restart_pressed() -> void:
@@ -3197,11 +3206,30 @@ func _on_quit_no_pressed() -> void:
 func _on_quit_pressed() -> void:
 	$CanvasLayer/pause/quit_.visible = 1
 func _on_brief_pressed() -> void:
+	refresh_brief()
 	$CanvasLayer/pause/brief_.visible = !$CanvasLayer/pause/brief_.visible
-	
-
 
 
 # ideas
 ### achievements
 ### save/load
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
