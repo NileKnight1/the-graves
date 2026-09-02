@@ -291,7 +291,7 @@ func _ready() -> void:
 	#vamp_kill()
 	#crawl_effect()
 	#await get_tree().create_timer(100).timeout
-	day2_news_paper_translation()
+	newspaper_translation()
 	phone_up()
 	#antenna_sabo()
 	#generator_sabo()
@@ -3075,7 +3075,18 @@ func _on_right_news_pressed() -> void:
 	#$CanvasLayer/news/pages/page1/topic1/col3
 	#$CanvasLayer/news/pages/page1/topic1/image.texture = day1_page1[0][4]
 
-func day1_news_paper_translation():
+func newspaper_translation():
+	match shift:
+		1: day1_newspaper_translation()
+		2: day2_newspaper_translation()
+		3: day3_newspaper_translation()
+		#4: day4_newspaper_translation()
+		#5: day5_newspaper_translation()
+		#6: day6_newspaper_translation()
+		#3: day3_newspaper_translation()
+		
+
+func day1_newspaper_translation():
 	var page1 = $CanvasLayer/news/pages/page1
 	var page2 = $CanvasLayer/news/pages/page2
 	var page3 = $CanvasLayer/news/pages/page3
@@ -3104,7 +3115,7 @@ func day1_news_paper_translation():
 			else:
 				page3.get_child(topic).get_child(part).texture = day1_page3[topic][part]
 
-func day2_news_paper_translation():
+func day2_newspaper_translation():
 	var page1 = $CanvasLayer/news/pages/page1
 	var page2 = $CanvasLayer/news/pages/page2
 	var page3 = $CanvasLayer/news/pages/page3
@@ -3132,6 +3143,36 @@ func day2_news_paper_translation():
 				page3.get_child(topic).get_child(part).text = tr(day2_page3[topic][part])
 			else:
 				page3.get_child(topic).get_child(part).texture = day2_page3[topic][part]
+
+func day3_newspaper_translation():
+	var page1 = $CanvasLayer/news/pages/page1
+	var page2 = $CanvasLayer/news/pages/page2
+	var page3 = $CanvasLayer/news/pages/page3
+	
+	for topic in page1.get_child_count():
+		if page1.get_child(topic).name == "control": break
+		for part in page1.get_child(topic).get_child_count():
+			if page1.get_child(topic).get_child(part) is Label:
+				page1.get_child(topic).get_child(part).text = tr(day3_page1[topic][part])
+			else:
+				page1.get_child(topic).get_child(part).texture = day3_page1[topic][part]
+
+	for topic in page2.get_child_count():
+		if page2.get_child(topic).name == "control": break
+		for part in page2.get_child(topic).get_child_count():
+			if page2.get_child(topic).get_child(part) is Label:
+				page2.get_child(topic).get_child(part).text = tr(day3_page2[topic][part])
+			else:
+				page2.get_child(topic).get_child(part).texture = day3_page2[topic][part]
+
+	for topic in page3.get_child_count():
+		if page3.get_child(topic).name == "control": break
+		for part in page3.get_child(topic).get_child_count():
+			if page3.get_child(topic).get_child(part) is Label:
+				page3.get_child(topic).get_child(part).text = tr(day3_page3[topic][part])
+			else:
+				page3.get_child(topic).get_child(part).texture = day3_page3[topic][part]
+
 
 
 var day1_page1 = [
@@ -3202,6 +3243,30 @@ var day3_page3 = [
 	["day3_page3_topic3_title", "day3_page3_topic3_col1", preload("res://assets/newspaper/cons.png")],
 	["day3_page3_topic4_title", "day3_page3_topic4_col1", preload("res://assets/newspaper/cons.png")],
 	["day3_page3_topic5_title", "day3_page3_topic5_col1", preload("res://assets/newspaper/cons.png")],
+]
+
+
+var day4_page1 = [
+	["day4_page1_topic1_title", "day4_page1_topic1_col1", "day4_page1_topic1_col2", "day4_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
+	["day4_page1_topic2_title", "day4_page1_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day4_page1_topic3_title", "day4_page1_topic3_col1"],
+	["day4_page1_topic4_title", "day4_page1_topic4_col1"],
+	["day4_page1_topic5_title", "day4_page1_topic5_col1"],
+	["day4_page1_topic6_title", "day4_page1_topic6_col1", preload("res://assets/newspaper/cons.png")],
+]
+var day4_page2 = [
+	["day4_page2_topic1_title", "day4_page2_topic1_col1", preload("res://assets/newspaper/cons.png")],
+	["day4_page2_topic2_title", "day4_page2_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day4_page2_topic3_title", "day4_page2_topic3_col1", preload("res://assets/newspaper/cons.png")],
+	["day4_page2_topic4_title", "day4_page2_topic4_col1", preload("res://assets/newspaper/cons.png")],
+	["day4_page2_topic5_title", "day4_page2_topic5_col1", preload("res://assets/newspaper/cons.png")],
+]
+var day4_page3 = [
+	["day4_page3_topic1_title", "day4_page3_topic1_col1", preload("res://assets/newspaper/cons.png")],
+	["day4_page3_topic2_title", "day4_page3_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day4_page3_topic3_title", "day4_page3_topic3_col1", preload("res://assets/newspaper/cons.png")],
+	["day4_page3_topic4_title", "day4_page3_topic4_col1", preload("res://assets/newspaper/cons.png")],
+	["day4_page3_topic5_title", "day4_page3_topic5_col1", preload("res://assets/newspaper/cons.png")],
 ]
 
 
