@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://d0l4ciu1e13h1" path="res://audio/sub.mp3" id="19_5newe"]
 [ext_resource type="Texture2D" uid="uid://74yjv8hvpbk8" path="res://assets/rect.png" id="19_264po"]
 [ext_resource type="AudioStream" uid="uid://ca455xqgdh1qb" path="res://audio/artificiallyinspired-crt-tv-low-buzzing-static-577992.mp3" id="20_suyxu"]
+[ext_resource type="FontFile" uid="uid://diho8ojivs333" path="res://assets/LibreBaskerville-Italic.ttf" id="23_twgab"]
 [ext_resource type="AudioStream" uid="uid://dgxlfchq0oics" path="res://audio/voicebosch-heart-and-breath-suspense-196083.mp3" id="26_sww3w"]
 [ext_resource type="AudioStream" uid="uid://dwbycnc4g38ad" path="res://audio/soundreality-heart-beat-137135.mp3" id="27_suyxu"]
 
@@ -1275,6 +1276,24 @@ animations = [{
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fccuv"]
 bg_color = Color(0, 0, 0, 0.49019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgiqa"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uieh"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_02fa5"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5newe"]
 playback_mode = 1
@@ -8224,7 +8243,6 @@ autoplay = "default"
 
 [node name="pause" type="Control" parent="CanvasLayer" unique_id=967419704]
 process_mode = 3
-visible = false
 z_index = 3
 layout_direction = 2
 layout_mode = 3
@@ -8336,6 +8354,122 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
 text = "Quit"
 icon_alignment = 1
+
+[node name="brief_" type="Control" parent="CanvasLayer/pause" unique_id=407268803]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="black" type="Panel" parent="CanvasLayer/pause/brief_" unique_id=94326865]
+layout_direction = 2
+layout_mode = 0
+offset_left = 435.97638
+offset_top = 163.0
+offset_right = 1184.0
+offset_bottom = 583.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vgiqa")
+
+[node name="mask" type="Panel" parent="CanvasLayer/pause/brief_" unique_id=2136222049]
+clip_children = 2
+layout_direction = 2
+layout_mode = 0
+offset_left = 445.97638
+offset_top = 174.0
+offset_right = 1174.0
+offset_bottom = 572.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1uieh")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/pause/brief_/mask" unique_id=403567165]
+layout_mode = 0
+offset_left = 11.023621
+offset_top = 12.0
+offset_right = 716.0236
+offset_bottom = 375.0
+horizontal_scroll_mode = 3
+scroll_hint_mode = 2
+tile_scroll_hint = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/pause/brief_/mask/ScrollContainer" unique_id=741904807]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=1680564720]
+custom_minimum_size = Vector2(705, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_twgab")
+text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
+label_settings = SubResource("LabelSettings_02fa5")
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=21331296]
+custom_minimum_size = Vector2(705, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_twgab")
+text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
+label_settings = SubResource("LabelSettings_02fa5")
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=1984835489]
+custom_minimum_size = Vector2(705, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_twgab")
+text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
+label_settings = SubResource("LabelSettings_02fa5")
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=1864874925]
+custom_minimum_size = Vector2(705, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_twgab")
+text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
+label_settings = SubResource("LabelSettings_02fa5")
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=448326643]
+custom_minimum_size = Vector2(705, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_twgab")
+text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
+label_settings = SubResource("LabelSettings_02fa5")
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=788525468]
+custom_minimum_size = Vector2(705, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_twgab")
+text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
+label_settings = SubResource("LabelSettings_02fa5")
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=297671274]
+custom_minimum_size = Vector2(705, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_twgab")
+text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
+label_settings = SubResource("LabelSettings_02fa5")
+autowrap_mode = 3
+
+[node name="Label8" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=2142689755]
+custom_minimum_size = Vector2(705, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_twgab")
+text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
+label_settings = SubResource("LabelSettings_02fa5")
+autowrap_mode = 3
+
+[node name="Label9" type="Label" parent="CanvasLayer/pause/brief_/mask/ScrollContainer/VBoxContainer" unique_id=1872014582]
+custom_minimum_size = Vector2(705, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_twgab")
+text = "Label IM LABEL IM LABEL LABEL IM LABELLABEL IM LABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABELLABEL IM LABEL"
+label_settings = SubResource("LabelSettings_02fa5")
+autowrap_mode = 3
 
 [node name="restart_" type="Control" parent="CanvasLayer/pause" unique_id=933704793]
 process_mode = 3
@@ -8671,7 +8805,7 @@ texture = ExtResource("19_264po")
 [connection signal="pressed" from="CanvasLayer/decision/o2" to="." method="_on_option_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CanvasLayer/pause/brief" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/brief" to="." method="_on_brief_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/settings" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/restart_/yes" to="." method="_on_restart_yes_pressed"]

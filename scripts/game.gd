@@ -3196,6 +3196,9 @@ func _on_quit_no_pressed() -> void:
 	$CanvasLayer/pause/quit_.visible = 0
 func _on_quit_pressed() -> void:
 	$CanvasLayer/pause/quit_.visible = 1
+func _on_brief_pressed() -> void:
+	$CanvasLayer/pause/brief_.visible = !$CanvasLayer/pause/brief_.visible
+	
 
 
 
