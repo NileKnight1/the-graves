@@ -482,6 +482,8 @@ func match_shift():
 				0: day_call(chat1_array, day1_start)
 				1: day_call(day1_call2_chat, day_end)
 		2:
+			print(calling)
+			print("hereXXX")
 			match call_index:
 				0: day_call(day2_call1_chat, day2_start)
 				1: day_call(day2_call2_chat, day_end)
@@ -704,6 +706,7 @@ func ladder_down():
 func phone_up():
 	$CanvasLayer/phone/ringing/accept.disabled = 0
 	$CanvasLayer/phone/ringing/decline.disabled = 0
+	$CanvasLayer/phone/accepted/decline.disabled = 0
 	
 	$CanvasLayer/phone/ringing.visible = 1
 	$CanvasLayer/phone/accepted.visible = 0
@@ -713,6 +716,7 @@ func phone_up():
 func phone_down():
 	$CanvasLayer/phone/ringing/accept.disabled = 1
 	$CanvasLayer/phone/ringing/decline.disabled = 1
+	$CanvasLayer/phone/accepted/decline.disabled = 1
 	var tween = create_tween()
 	tween.tween_property($CanvasLayer/phone, "position:y", $CanvasLayer/phone.position.y - 320 , 0.4)
 	$sfx/dia.stop()
@@ -731,10 +735,11 @@ func _on_accept_call_pressed() -> void:
 	$CanvasLayer/phone/accepted.visible = 1
 	$timers/call_time.start()
 	$timers/skip_msg.start()
-	
+	print("call_accepted")
 	match_shift()
 
 func _on_decline_call_pressed() -> void:
+	$timers/skip_msg.stop()
 	play_sound(hang_up)
 	#print("hanged")
 	$sfx/ringtone.stop()
@@ -753,7 +758,9 @@ func _on_decline_call_pressed() -> void:
 		2:
 			match call_index:
 				0: day2_start()
-				1: day_end()
+				1: 
+					print("hereX")
+					day_end()
 		3:
 			match call_index:
 				0: day3_start()
@@ -791,6 +798,7 @@ var chat_msg = 0
 func _on_skip_msg_timeout() -> void:
 	chat_msg += 1
 	#print("im still workingD")
+	print("timer_skip")
 	match_shift()
 
 func shift_end():
@@ -1382,7 +1390,8 @@ func subtitle(sub, time, sayer = "System"):
 	$sfx/sub.play()
 	tween.tween_property($CanvasLayer/gui/subtitles, "visible_ratio", 1.0, time)
 	await get_tree().create_timer(time).timeout
-	brief.insert(0, [tr(sayer), tr(sub)])
+	if sub != "":
+		brief.insert(0, [tr(sayer), tr(sub)])
 	$sfx/sub.stop()
 
 func tasks():
@@ -2042,6 +2051,7 @@ func day_chat(chat, target):
 	$sfx/dia.stop()
 
 func day_end():
+	print(call_index)
 	$sfx/morning.stop()
 	stop_move()
 	$CanvasLayer/overscreen/black.visible = 1
@@ -2211,7 +2221,7 @@ func start_chat():
 	call_time = 0
 	calling = 1
 	$timers/skip_msg.start()
-	
+	print("new chat started")
 	match_shift()
 
 var day2_call1_chat = [
@@ -3162,7 +3172,7 @@ var day2_page3 = [
 func _on_pause_pressed() -> void:
 	get_tree().paused = 1
 	refresh_brief()
-	$CanvasLayer/pause/brief_.visible = 1
+	#$CanvasLayer/pause/brief_.visible = 1
 	$CanvasLayer/pause.visible = 1
 
 func _on_resume_pressed() -> void:
