@@ -281,7 +281,7 @@ func _ready() -> void:
 		pc = 0
 	translation()
 	tasks()
-	newspaper_pages_refresh()
+	#newspaper_pages_refresh()
 	#day6_tech_steal()
 	#day1_end()
 	#get_tree().paused = 1
@@ -291,7 +291,7 @@ func _ready() -> void:
 	#vamp_kill()
 	#crawl_effect()
 	#await get_tree().create_timer(100).timeout
-	news_paper_translation()
+	day2_news_paper_translation()
 	phone_up()
 	#antenna_sabo()
 	#generator_sabo()
@@ -3018,7 +3018,6 @@ func _on_right_pressed() -> void:
 	Input.action_press("right")
 	Input.action_release("right")
 
-
 func _on_news_body_entered(body: Node2D) -> void:
 	if body == $player:
 		$"map behind/room/news/outline". visible = 1
@@ -3069,23 +3068,6 @@ func _on_right_news_pressed() -> void:
 	$CanvasLayer/news/pages.get_child(opened_news_page).visible = 1
 	play_sound(paper_turn)
 
-## Newspaper topics
-func newspaper_pages_refresh():
-	$CanvasLayer/news/pages/page1/topic2/image.texture = preload("res://assets/newspaper/market.PNG")
-	$CanvasLayer/news/pages/page1/topic6/image.texture = preload("res://assets/newspaper/weather.PNG")
-	
-	$CanvasLayer/news/pages/page2/topic1/image.texture = preload("res://assets/newspaper/reunion.PNG")
-	$CanvasLayer/news/pages/page2/topic2/image.texture = preload("res://assets/newspaper/internt.PNG")
-	$CanvasLayer/news/pages/page2/topic3/image.texture = preload("res://assets/newspaper/lake.PNG")
-	$CanvasLayer/news/pages/page2/topic4/image.texture = preload("res://assets/newspaper/secret.PNG")
-	$CanvasLayer/news/pages/page2/topic5/image.texture = preload("res://assets/newspaper/charity.PNG")
-	
-	$CanvasLayer/news/pages/page3/topic5/image.texture = preload("res://assets/newspaper/prison.PNG")
-	$CanvasLayer/news/pages/page3/topic4/image.texture = preload("res://assets/newspaper/elec.PNG")
-	$CanvasLayer/news/pages/page3/topic1/image.texture = preload("res://assets/newspaper/mystery.PNG")
-	$CanvasLayer/news/pages/page3/topic2/image.texture = preload("res://assets/newspaper/demo.PNG")
-	$CanvasLayer/news/pages/page3/topic3/image.texture = preload("res://assets/newspaper/sports.PNG")
-	
 	### page1
 	#$CanvasLayer/news/pages/page1/topic1/title
 	#$CanvasLayer/news/pages/page1/topic1/col1
@@ -3093,7 +3075,7 @@ func newspaper_pages_refresh():
 	#$CanvasLayer/news/pages/page1/topic1/col3
 	#$CanvasLayer/news/pages/page1/topic1/image.texture = day1_page1[0][4]
 
-func news_paper_translation():
+func day1_news_paper_translation():
 	var page1 = $CanvasLayer/news/pages/page1
 	var page2 = $CanvasLayer/news/pages/page2
 	var page3 = $CanvasLayer/news/pages/page3
@@ -3122,6 +3104,36 @@ func news_paper_translation():
 			else:
 				page3.get_child(topic).get_child(part).texture = day1_page3[topic][part]
 
+func day2_news_paper_translation():
+	var page1 = $CanvasLayer/news/pages/page1
+	var page2 = $CanvasLayer/news/pages/page2
+	var page3 = $CanvasLayer/news/pages/page3
+	
+	for topic in page1.get_child_count():
+		if page1.get_child(topic).name == "control": break
+		for part in page1.get_child(topic).get_child_count():
+			if page1.get_child(topic).get_child(part) is Label:
+				page1.get_child(topic).get_child(part).text = tr(day2_page1[topic][part])
+			else:
+				page1.get_child(topic).get_child(part).texture = day2_page1[topic][part]
+
+	for topic in page2.get_child_count():
+		if page2.get_child(topic).name == "control": break
+		for part in page2.get_child(topic).get_child_count():
+			if page2.get_child(topic).get_child(part) is Label:
+				page2.get_child(topic).get_child(part).text = tr(day2_page2[topic][part])
+			else:
+				page2.get_child(topic).get_child(part).texture = day2_page2[topic][part]
+
+	for topic in page3.get_child_count():
+		if page3.get_child(topic).name == "control": break
+		for part in page3.get_child(topic).get_child_count():
+			if page3.get_child(topic).get_child(part) is Label:
+				page3.get_child(topic).get_child(part).text = tr(day2_page3[topic][part])
+			else:
+				page3.get_child(topic).get_child(part).texture = day2_page3[topic][part]
+
+
 var day1_page1 = [
 	["day1_page1_topic1_title", "day1_page1_topic1_col1", "day1_page1_topic1_col2", "day1_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
 	["day1_page1_topic2_title", "day1_page1_topic2_col1", preload("res://assets/newspaper/market.PNG")],
@@ -3145,6 +3157,7 @@ var day1_page3 = [
 	["day1_page3_topic5_title", "day1_page3_topic5_col1", preload("res://assets/newspaper/sports.PNG")],
 ]
 
+
 var day2_page1 = [
 	["day2_page1_topic1_title", "day2_page1_topic1_col1", "day2_page1_topic1_col2", "day2_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
 	["day2_page1_topic2_title", "day2_page1_topic2_col1", preload("res://assets/newspaper/cons.png")],
@@ -3167,6 +3180,33 @@ var day2_page3 = [
 	["day2_page3_topic4_title", "day2_page3_topic4_col1", preload("res://assets/newspaper/cons.png")],
 	["day2_page3_topic5_title", "day2_page3_topic5_col1", preload("res://assets/newspaper/cons.png")],
 ]
+
+var day3_page1 = [
+	["day3_page1_topic1_title", "day3_page1_topic1_col1", "day3_page1_topic1_col2", "day3_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
+	["day3_page1_topic2_title", "day3_page1_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day3_page1_topic3_title", "day3_page1_topic3_col1"],
+	["day3_page1_topic4_title", "day3_page1_topic4_col1"],
+	["day3_page1_topic5_title", "day3_page1_topic5_col1"],
+	["day3_page1_topic6_title", "day3_page1_topic6_col1", preload("res://assets/newspaper/cons.png")],
+]
+var day3_page2 = [
+	["day3_page2_topic1_title", "day3_page2_topic1_col1", preload("res://assets/newspaper/cons.png")],
+	["day3_page2_topic2_title", "day3_page2_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day3_page2_topic3_title", "day3_page2_topic3_col1", preload("res://assets/newspaper/cons.png")],
+	["day3_page2_topic4_title", "day3_page2_topic4_col1", preload("res://assets/newspaper/cons.png")],
+	["day3_page2_topic5_title", "day3_page2_topic5_col1", preload("res://assets/newspaper/cons.png")],
+]
+var day3_page3 = [
+	["day3_page3_topic1_title", "day3_page3_topic1_col1", preload("res://assets/newspaper/cons.png")],
+	["day3_page3_topic2_title", "day3_page3_topic2_col1", preload("res://assets/newspaper/cons.png")],
+	["day3_page3_topic3_title", "day3_page3_topic3_col1", preload("res://assets/newspaper/cons.png")],
+	["day3_page3_topic4_title", "day3_page3_topic4_col1", preload("res://assets/newspaper/cons.png")],
+	["day3_page3_topic5_title", "day3_page3_topic5_col1", preload("res://assets/newspaper/cons.png")],
+]
+
+
+
+
 
 
 func _on_pause_pressed() -> void:
@@ -3219,25 +3259,29 @@ func _on_brief_pressed() -> void:
 	refresh_brief()
 	$CanvasLayer/pause/brief_.visible = !$CanvasLayer/pause/brief_.visible
 
+# Red Moon Night
 
-# ideas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## ideas
 ### achievements
 ### save/load
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
