@@ -3080,7 +3080,7 @@ func newspaper_translation():
 		1: day1_newspaper_translation()
 		2: day2_newspaper_translation()
 		3: day3_newspaper_translation()
-		#4: day4_newspaper_translation()
+		4: day4_newspaper_translation()
 		#5: day5_newspaper_translation()
 		#6: day6_newspaper_translation()
 		#3: day3_newspaper_translation()
@@ -3173,6 +3173,34 @@ func day3_newspaper_translation():
 			else:
 				page3.get_child(topic).get_child(part).texture = day3_page3[topic][part]
 
+func day4_newspaper_translation():
+	var page1 = $CanvasLayer/news/pages/page1
+	var page2 = $CanvasLayer/news/pages/page2
+	var page3 = $CanvasLayer/news/pages/page3
+	
+	for topic in page1.get_child_count():
+		if page1.get_child(topic).name == "control": break
+		for part in page1.get_child(topic).get_child_count():
+			if page1.get_child(topic).get_child(part) is Label:
+				page1.get_child(topic).get_child(part).text = tr(day4_page1[topic][part])
+			else:
+				page1.get_child(topic).get_child(part).texture = day4_page1[topic][part]
+
+	for topic in page2.get_child_count():
+		if page2.get_child(topic).name == "control": break
+		for part in page2.get_child(topic).get_child_count():
+			if page2.get_child(topic).get_child(part) is Label:
+				page2.get_child(topic).get_child(part).text = tr(day4_page2[topic][part])
+			else:
+				page2.get_child(topic).get_child(part).texture = day4_page2[topic][part]
+
+	for topic in page3.get_child_count():
+		if page3.get_child(topic).name == "control": break
+		for part in page3.get_child(topic).get_child_count():
+			if page3.get_child(topic).get_child(part) is Label:
+				page3.get_child(topic).get_child(part).text = tr(day4_page3[topic][part])
+			else:
+				page3.get_child(topic).get_child(part).texture = day4_page3[topic][part]
 
 
 var day1_page1 = [
