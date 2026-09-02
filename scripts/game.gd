@@ -295,7 +295,7 @@ func _ready() -> void:
 	#crawl_effect()
 	#await get_tree().create_timer(100).timeout
 	news_paper_translation()
-	#phone_up()
+	phone_up()
 	#antenna_sabo()
 	#generator_sabo()
 	developer()
@@ -3168,3 +3168,37 @@ func _on_pause_pressed() -> void:
 func _on_resume_pressed() -> void:
 	get_tree().paused = 0
 	$CanvasLayer/pause.visible = 0
+
+var brief = [
+	["Sayer" , "Message"],
+	["Sayer" , "Message"],
+	["Sayer" , "Message"],
+	["Sayer" , "Message"],
+	["Sayer" , "Message"],
+]
+
+
+func _on_restart_pressed() -> void:
+	$CanvasLayer/pause/restart_.visible = 1
+func _on_restart_yes_pressed() -> void:
+	get_tree().paused = 0
+	$CanvasLayer/pause.visible = 0
+	#await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+func _on_restart_no_pressed() -> void:
+	$CanvasLayer/pause/restart_.visible = 0
+
+func _on_quit_yes_pressed() -> void:
+	get_tree().paused = 0
+	$CanvasLayer/pause.visible = 0
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+func _on_quit_no_pressed() -> void:
+	$CanvasLayer/pause/quit_.visible = 0
+func _on_quit_pressed() -> void:
+	$CanvasLayer/pause/quit_.visible = 1
+
+
+
+# ideas
+### achievements
+### save/load
