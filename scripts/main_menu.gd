@@ -22,10 +22,10 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 	global.player_name = new_text
 
 func _on_o_2_pressed() -> void:
-	$CanvasLayer/o1.disabled = 1
-	$CanvasLayer/o2.disabled = 1
-	$CanvasLayer/o3.disabled = 1
-	$CanvasLayer/o4.disabled = 1
+	$CanvasLayer/buttons/o1.disabled = 1
+	$CanvasLayer/buttons/o2.disabled = 1
+	$CanvasLayer/buttons/o3.disabled = 1
+	$CanvasLayer/buttons/o4.disabled = 1
 	var tween = create_tween()
 	var tween2 = create_tween()
 	
@@ -39,7 +39,7 @@ func _on_o_2_pressed() -> void:
 	
 	await get_tree().create_timer(0.3).timeout
 	#
-	for i in range(5):
+	for i in range(3):
 		print(i)
 		$CanvasLayer/Container/Label.text = "Loading .."
 		await get_tree().create_timer(0.3).timeout
@@ -49,9 +49,10 @@ func _on_o_2_pressed() -> void:
 		await get_tree().create_timer(0.3).timeout
 		$CanvasLayer/Container/Label.text = "Loading ..."
 		await get_tree().create_timer(0.3).timeout
-		
-
-	await get_tree().create_timer(5).timeout
 	
-	#get_tree().change_scene_to_file("res://scenes/game.tscn")
+	var tween3 = create_tween()
+	tween3.tween_property($CanvasLayer/Container/Label, "modulate:a", 0.0, 0.3)
+	await get_tree().create_timer(0.5).timeout
+	
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 	

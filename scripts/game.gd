@@ -274,12 +274,26 @@ var pc = 1
 func _ready() -> void:
 	#await get_tree().create_timer(1.0, false, false, false).timeout
 	#print(p1_anomalies.find($anomalies/anomaly))
+	
+	var tween = create_tween()
+	tween.tween_property($CanvasLayer/end_screen/black, "modulate:a", 0.0, 1)
+	await get_tree().create_timer(1).timeout
+	
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$CanvasLayer/mobile.visible = 1
 		pc = 0
+	
+	$player/Camera2D.position_smoothing_enabled = 1
+	$player/Camera2D.rotation_smoothing_enabled = 1
+	
 	translation()
-	#subtitle(10, 1.0)
 	tasks()
+	newspaper_translation()
+	phone_up()
+	developer()
+	day_starters()
+	
+	#subtitle(10, 1.0)
 	#newspaper_pages_refresh()
 	#day6_tech_steal()
 	#day1_end()
@@ -290,15 +304,11 @@ func _ready() -> void:
 	#vamp_kill()
 	#crawl_effect()
 	#await get_tree().create_timer(100, false, false, false).timeout
-	newspaper_translation()
-	phone_up()
 	#antenna_sabo()
 	#generator_sabo()
-	developer()
 	#cam_sabo(2)
 	#cam_sabo(1)
 	#cam_sabo(4)
-	day_starters()
 	
 	#print($player/Camera2D.position)
 	#$player/cam_fix.position.x = $player/Camera2D.position.x - 350
