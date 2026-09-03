@@ -88,6 +88,25 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="LabelSettings" id="LabelSettings_oa1go"]
+font = ExtResource("6_oa1go")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbmy8"]
+font = ExtResource("6_oa1go")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
+font = ExtResource("6_oa1go")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5dd4i"]
+font = ExtResource("6_oa1go")
+
+[sub_resource type="LabelSettings" id="LabelSettings_lgwnu"]
+font = ExtResource("6_oa1go")
+
+[sub_resource type="LabelSettings" id="LabelSettings_flqon"]
+font = ExtResource("6_oa1go")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
 bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
 border_color = Color(0.8, 0, 0, 1)
@@ -321,7 +340,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
-text = "> Shift 1"
+text = ">   Shift 1"
 alignment = 0
 icon_alignment = 1
 
@@ -339,7 +358,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
-text = "> Shift 1"
+text = ">   Shift 2"
 alignment = 0
 icon_alignment = 1
 
@@ -357,7 +376,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
-text = "> Shift 1"
+text = ">   Shift 3"
 alignment = 0
 icon_alignment = 1
 
@@ -375,7 +394,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
-text = "> Shift 1"
+text = ">   Shift 4"
 alignment = 0
 icon_alignment = 1
 
@@ -393,7 +412,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
-text = "> Shift 1"
+text = ">   Shift 5"
 alignment = 0
 icon_alignment = 1
 
@@ -411,7 +430,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
-text = "> Shift 1"
+text = ">   Shift 6"
 alignment = 0
 icon_alignment = 1
 
@@ -429,7 +448,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
-text = "> Shift 1"
+text = ">   Shift 7"
 alignment = 0
 icon_alignment = 1
 
@@ -448,6 +467,258 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5pajh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j7ex8")
 text = "X"
 icon_alignment = 1
+
+[node name="scores_" type="Control" parent="CanvasLayer" unique_id=963286143]
+process_mode = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -163.0
+offset_top = 11.0
+offset_right = -123.0
+offset_bottom = 51.0
+mouse_filter = 2
+
+[node name="black" type="Panel" parent="CanvasLayer/scores_" unique_id=1978205067]
+layout_direction = 2
+layout_mode = 0
+offset_left = 234.72229
+offset_top = 30.0
+offset_right = 1385.254
+offset_bottom = 676.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/scores_" unique_id=418228047]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 66.0
+offset_right = 1345.0
+offset_bottom = 613.0
+scroll_hint_mode = 1
+tile_scroll_hint = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/scores_/ScrollContainer" unique_id=545551996]
+custom_minimum_size = Vector2(1074, 547)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=1479179566]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1194241870]
+custom_minimum_size = Vector2(174, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+text = "Rank"
+label_settings = SubResource("LabelSettings_oa1go")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=490694454]
+custom_minimum_size = Vector2(174, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 25
+text = "Player"
+label_settings = SubResource("LabelSettings_oa1go")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=33194983]
+custom_minimum_size = Vector2(174, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 25
+text = "Max Danger"
+label_settings = SubResource("LabelSettings_oa1go")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1400572707]
+custom_minimum_size = Vector2(174, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 25
+text = "Anomalies Reported"
+label_settings = SubResource("LabelSettings_oa1go")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=739854860]
+custom_minimum_size = Vector2(174, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 25
+text = "Sabotages Fixed"
+label_settings = SubResource("LabelSettings_oa1go")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=807730632]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=729649741]
+custom_minimum_size = Vector2(174, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+text = "01"
+label_settings = SubResource("LabelSettings_tbmy8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1893070024]
+custom_minimum_size = Vector2(174, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 25
+text = "Ammar"
+label_settings = SubResource("LabelSettings_jk1qb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1540469364]
+custom_minimum_size = Vector2(174, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 25
+text = "140"
+label_settings = SubResource("LabelSettings_5dd4i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=130305346]
+custom_minimum_size = Vector2(174, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 25
+text = "10"
+label_settings = SubResource("LabelSettings_lgwnu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=940462534]
+custom_minimum_size = Vector2(174, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 25
+text = "0"
+label_settings = SubResource("LabelSettings_flqon")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="close" type="Button" parent="CanvasLayer/scores_" unique_id=1348416946]
+custom_minimum_size = Vector2(10, 10)
+layout_direction = 2
+layout_mode = 0
+offset_left = 1343.0
+offset_top = 38.0
+offset_right = 1376.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_7b55j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5pajh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j7ex8")
+text = "X"
+icon_alignment = 1
+
+[node name="keys" type="HBoxContainer" parent="CanvasLayer/scores_" unique_id=479270804]
+custom_minimum_size = Vector2(707, 315)
+layout_mode = 0
+offset_left = 445.0
+offset_top = 253.0
+offset_right = 1152.0
+offset_bottom = 568.0
+
+[node name="rank" type="VBoxContainer" parent="CanvasLayer/scores_/keys" unique_id=1662213681]
+custom_minimum_size = Vector2(115, 60)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/separation = 13
+
+[node name="Label2" type="Label" parent="CanvasLayer/scores_/keys/rank" unique_id=1191253280]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+text = "01"
+horizontal_alignment = 1
+
+[node name="player" type="VBoxContainer" parent="CanvasLayer/scores_/keys" unique_id=144445576]
+custom_minimum_size = Vector2(115, 60)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 15.0
+theme_override_constants/separation = 13
+
+[node name="Label2" type="Label" parent="CanvasLayer/scores_/keys/player" unique_id=522711247]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+text = "Ammar"
+horizontal_alignment = 1
+
+[node name="key1" type="VBoxContainer" parent="CanvasLayer/scores_/keys" unique_id=738180370]
+custom_minimum_size = Vector2(115, 60)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 15.0
+theme_override_constants/separation = 13
+
+[node name="Label2" type="Label" parent="CanvasLayer/scores_/keys/key1" unique_id=96066007]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+text = "7"
+horizontal_alignment = 1
+
+[node name="key2" type="VBoxContainer" parent="CanvasLayer/scores_/keys" unique_id=1959792391]
+custom_minimum_size = Vector2(115, 60)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 15.0
+theme_override_constants/separation = 13
+
+[node name="Label2" type="Label" parent="CanvasLayer/scores_/keys/key2" unique_id=1541687335]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+text = "7"
+horizontal_alignment = 1
+
+[node name="key3" type="VBoxContainer" parent="CanvasLayer/scores_/keys" unique_id=1125815534]
+custom_minimum_size = Vector2(115, 60)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 15.0
+theme_override_constants/separation = 13
+
+[node name="Label2" type="Label" parent="CanvasLayer/scores_/keys/key3" unique_id=1772553114]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+text = "7"
+horizontal_alignment = 1
 
 [node name="buttons" type="VBoxContainer" parent="CanvasLayer" unique_id=469679139]
 visible = false
@@ -594,14 +865,15 @@ text = "Loading ..."
 [connection signal="pressed" from="CanvasLayer/settings/options/lang/arabic" to="." method="_on_arabic_pressed"]
 [connection signal="pressed" from="CanvasLayer/settings/options/lang/english" to="." method="_on_english_pressed"]
 [connection signal="pressed" from="CanvasLayer/settings/close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="CanvasLayer/scores/options/shift1" to="." method="_on_arabic_pressed"]
-[connection signal="pressed" from="CanvasLayer/scores/options/shift2" to="." method="_on_arabic_pressed"]
-[connection signal="pressed" from="CanvasLayer/scores/options/shift3" to="." method="_on_arabic_pressed"]
-[connection signal="pressed" from="CanvasLayer/scores/options/shift4" to="." method="_on_arabic_pressed"]
-[connection signal="pressed" from="CanvasLayer/scores/options/shift5" to="." method="_on_arabic_pressed"]
-[connection signal="pressed" from="CanvasLayer/scores/options/shift6" to="." method="_on_arabic_pressed"]
-[connection signal="pressed" from="CanvasLayer/scores/options/shift7" to="." method="_on_arabic_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift1" to="." method="_on_shift1_scores_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift2" to="." method="_on_shift2_scores_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift3" to="." method="_on_shift3_scores_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift4" to="." method="_on_shift4_scores_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift5" to="." method="_on_shift5_scores_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift6" to="." method="_on_shift6_scores_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift7" to="." method="_on_shift7_scores_pressed"]
 [connection signal="pressed" from="CanvasLayer/scores/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores_/close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="CanvasLayer/buttons/newgame" to="." method="_on_o_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/buttons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/buttons/scores" to="." method="_on_scores_pressed"]

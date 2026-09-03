@@ -85,11 +85,28 @@ func _on_english_pressed() -> void:
 	TranslationServer.set_locale("en")
 	translation()
 
-
 func _on_scores_pressed() -> void:
 	$CanvasLayer/buttons.visible = 0
 	$CanvasLayer/scores.visible = 1
 
+func _on_shift1_scores_pressed() -> void:
+	show_scores(1)
+func _on_shift2_scores_pressed() -> void:
+	show_scores(2)
+func _on_shift3_scores_pressed() -> void:
+	show_scores(3)
+func _on_shift4_scores_pressed() -> void:
+	show_scores(4)
+func _on_shift5_scores_pressed() -> void:
+	show_scores(5)
+func _on_shift6_scores_pressed() -> void:
+	show_scores(6)
+func _on_shift7_scores_pressed() -> void:
+	show_scores(7)
+
+func show_scores(shift):
+	
+	pass
 
 
 
