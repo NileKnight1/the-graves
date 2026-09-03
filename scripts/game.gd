@@ -338,6 +338,12 @@ func set_shift_values(
 	if maxsabogame != -1: max_sabo_game = maxsabogame
 
 func shift_time_manager():
+	
+	if shift_time == 142:
+		if randi_range(0,100) == 50:
+			timeshifter_spawn()
+	if shift_time == 180:
+		vamp_spawn()
 	match shift:
 		1: day1_time()
 		2: day2_time()
@@ -1948,8 +1954,18 @@ func _on_option_1_pressed() -> void:
 	decision_option(0)
 func _on_option_2_pressed() -> void:
 	decision_option(1)
+func _on_option_3_pressed() -> void:
+	decision_option(2)
+func _on_option_4_pressed() -> void:
+	decision_option(3)
+func _on_option_5_pressed() -> void:
+	decision_option(4)
+func _on_option_6_pressed() -> void:
+	decision_option(5)
 
-func show_decision_option(title, o1, o2):
+
+
+func show_decision_option(title, o1, o2, o3 = null, o4 = null, o5 = null, o6 = null):
 	if radio_opened: close_radio()
 	if computer_opened: close_cam()
 	force_radio_close = 1
@@ -1957,13 +1973,29 @@ func show_decision_option(title, o1, o2):
 	$CanvasLayer/decision/o1.text = o1
 	$CanvasLayer/decision/o2.text = o2
 	$CanvasLayer/decision.visible = 1
+	if o3 != null:
+		$CanvasLayer/decision/o3.text = o3
+		$CanvasLayer/decision/o3.visible = 1
+	if o4 != null:
+		$CanvasLayer/decision/o4.text = o4
+		$CanvasLayer/decision/o4.visible = 1
+	if o5 != null:
+		$CanvasLayer/decision/o5.text = o5
+		$CanvasLayer/decision/o5.visible = 1
+	if o6 != null:
+		$CanvasLayer/decision/o6.text = o6
+		$CanvasLayer/decision/o6.visible = 1
+		
+
 
 func decision_option(option):
 	#print(call_index)
 	print("call_index", call_index)
 	print("shift", shift)
 	#print("shift", shift)
-
+	if timeshifter_options:
+		timeshifter_apply(option)
+		return
 	force_radio_close = 0
 	match shift:
 		3:
@@ -2229,8 +2261,6 @@ var day1_call2_chat = [
 func day1_time():
 	if shift_time == 120:
 		set_shift_values(15, 20)
-	elif shift_time == 180:
-		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(14, 18)
 		
@@ -2276,8 +2306,6 @@ func day2_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
-	elif shift_time == 180:
-		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
 	elif shift_time == 300:
@@ -2318,8 +2346,6 @@ func day3_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
-	elif shift_time == 180:
-		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
 
@@ -2518,8 +2544,6 @@ func day4_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
-	elif shift_time == 180:
-		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
 
@@ -2670,8 +2694,6 @@ func day5_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
-	elif shift_time == 180:
-		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
 	
@@ -3495,8 +3517,6 @@ func day7_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
-	elif shift_time == 180:
-		vamp_spawn()
 	elif shift_time == 250:
 		vamp_despawn()
 	elif shift_time == 240:
@@ -3560,6 +3580,45 @@ func _on_settings_pressed() -> void:
 	$CanvasLayer/pause/quit_.visible = 0
 
 
+var timeshifter_exist = 0
+var timeshifter_options = 0
+
+
+func timeshifter_spawn():
+	timeshifter_exist = 1
+	$anomalies/timeshifter.visible = 1
+	$areas/timeshifter/CollisionShape2D.set_deferred("disabled", 0)
+	
+	await get_tree().create_timer(60).timeout
+	timeshifter_depsawn()
+
+func timeshifter_depsawn():
+	timeshifter_exist = 0
+	$anomalies/timeshifter.visible = 0
+	$areas/timeshifter/CollisionShape2D.set_deferred("disabled", 1)
+
+
+func _on_timeshifter_body_entered(body: Node2D) -> void:
+	timeshifter_options = 1
+	show_decision_option("What's time now?", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00")
+
+func _on_timeshifter_body_exited(body: Node2D) -> void:
+	timeshifter_options = 0
+	hide_decisions()
+
+func timeshifter_apply(option):
+		option += 1
+		option *= 60
+		option -= 1
+		
+		$CanvasLayer/decision/o3.visible = 0
+		$CanvasLayer/decision/o4.visible = 0
+		$CanvasLayer/decision/o5.visible = 0
+		$CanvasLayer/decision/o6.visible = 0
+		hide_decisions()
+		timeshifter_depsawn()
+		await get_tree().create_timer(5).timeout
+		shift_time = option
 
 
 

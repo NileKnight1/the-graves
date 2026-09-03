@@ -4588,6 +4588,13 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("10_sgl2t")
 
+[node name="timeshifter" parent="anomalies" unique_id=334977492 instance=ExtResource("3_lbhrr")]
+visible = false
+position = Vector2(448, -584)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("10_sgl2t")
+
 [node name="map above" type="Control" parent="." unique_id=385126786]
 layout_direction = 2
 layout_mode = 3
@@ -6145,6 +6152,14 @@ shape = SubResource("RectangleShape2D_e1j6l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areas/antenna" unique_id=1970571354]
 position = Vector2(154, -654)
 shape = SubResource("RectangleShape2D_pl11u")
+
+[node name="timeshifter" type="Area2D" parent="areas" unique_id=1301891526]
+position = Vector2(293, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/timeshifter" unique_id=215071330]
+position = Vector2(154, -654)
+shape = SubResource("RectangleShape2D_pl11u")
+disabled = true
 
 [node name="day3visitorfound" type="Area2D" parent="areas" unique_id=141652955]
 
@@ -8521,9 +8536,9 @@ mouse_filter = 1
 
 [node name="title" type="Label" parent="CanvasLayer/decision" unique_id=754728031]
 layout_mode = 0
-offset_left = 255.0
+offset_left = 151.0
 offset_top = -360.0
-offset_right = 438.0
+offset_right = 542.0
 offset_bottom = -299.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -8572,6 +8587,86 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
 text = "No sorry."
 icon_alignment = 1
 
+[node name="o3" type="Button" parent="CanvasLayer/decision" unique_id=1072811725]
+visible = false
+layout_mode = 0
+offset_left = 260.0
+offset_top = -180.0
+offset_right = 439.0
+offset_bottom = -128.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "You can stay."
+icon_alignment = 1
+
+[node name="o4" type="Button" parent="CanvasLayer/decision" unique_id=1689643143]
+visible = false
+layout_mode = 0
+offset_left = 260.0
+offset_top = -121.0
+offset_right = 439.0
+offset_bottom = -69.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "You can stay."
+icon_alignment = 1
+
+[node name="o5" type="Button" parent="CanvasLayer/decision" unique_id=112706494]
+visible = false
+layout_mode = 0
+offset_left = 260.0
+offset_top = -62.0
+offset_right = 439.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "No sorry."
+icon_alignment = 1
+
+[node name="o6" type="Button" parent="CanvasLayer/decision" unique_id=650720907]
+visible = false
+layout_mode = 0
+offset_left = 260.0
+offset_top = -3.0
+offset_right = 439.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("6_0tnpc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "You can stay."
+icon_alignment = 1
+
 [node name="textures" type="Control" parent="CanvasLayer" unique_id=729522698]
 visible = false
 z_index = 2
@@ -8616,6 +8711,7 @@ autoplay = "default"
 
 [node name="pause" type="Control" parent="CanvasLayer" unique_id=967419704]
 process_mode = 3
+visible = false
 z_index = 3
 layout_direction = 2
 layout_mode = 3
@@ -9162,6 +9258,8 @@ texture = ExtResource("19_264po")
 [connection signal="input_event" from="areas/antenna" to="." method="_on_antenna_input_event"]
 [connection signal="mouse_entered" from="areas/antenna" to="." method="_on_antenna_mouse_entered"]
 [connection signal="mouse_exited" from="areas/antenna" to="." method="_on_antenna_mouse_exited"]
+[connection signal="body_entered" from="areas/timeshifter" to="." method="_on_timeshifter_body_entered"]
+[connection signal="body_exited" from="areas/timeshifter" to="." method="_on_timeshifter_body_exited"]
 [connection signal="body_entered" from="areas/day3visitorfound" to="." method="_on_day_3_visitorfound_body_entered"]
 [connection signal="body_exited" from="areas/day3visitorfound" to="." method="_on_day_3_visitorfound_body_exited"]
 [connection signal="body_entered" from="areas/frank_battery" to="." method="_on_frank_battery_body_entered"]
@@ -9188,6 +9286,10 @@ texture = ExtResource("19_264po")
 [connection signal="pressed" from="CanvasLayer/room/creatures/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="CanvasLayer/decision/o1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/decision/o2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/decision/o3" to="." method="_on_option_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/decision/o4" to="." method="_on_option_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/decision/o5" to="." method="_on_option_5_pressed"]
+[connection signal="pressed" from="CanvasLayer/decision/o6" to="." method="_on_option_6_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/brief" to="." method="_on_brief_pressed"]
