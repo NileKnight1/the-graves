@@ -57,7 +57,12 @@ func _on_o_2_pressed() -> void:
 func _on_close_pressed() -> void:
 	$CanvasLayer/settings.visible = 0
 	$CanvasLayer/scores.visible = 0
+	$CanvasLayer/scores_.visible = 0
+	
+	
+	
 	$CanvasLayer/buttons.visible = 1
+	
 	
 
 func _on_settings_pressed() -> void:
@@ -88,6 +93,7 @@ func _on_english_pressed() -> void:
 func _on_scores_pressed() -> void:
 	$CanvasLayer/buttons.visible = 0
 	$CanvasLayer/scores.visible = 1
+	
 
 func _on_shift1_scores_pressed() -> void:
 	show_scores(1)
@@ -105,9 +111,13 @@ func _on_shift7_scores_pressed() -> void:
 	show_scores(7)
 
 func show_scores(shift):
-	
-	pass
+	$CanvasLayer/scores.visible = 0
+	$CanvasLayer/scores_.visible = 1
+	$CanvasLayer/scores_/title.text = tr('shift') + str(shift)
 
+func _on_scores_back_pressed() -> void:
+	$CanvasLayer/scores.visible = 1
+	$CanvasLayer/scores_.visible = 0
 
 
 
