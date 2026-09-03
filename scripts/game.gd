@@ -94,7 +94,7 @@ func flicker_effect():
 	$CanvasLayer/VideoStreamPlayer.visible = 1
 	$CanvasLayer/VideoStreamPlayer.stream = flicker
 	$CanvasLayer/VideoStreamPlayer.play()
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.2, false, false, false).timeout
 	$CanvasLayer/VideoStreamPlayer.stream = null
 	$CanvasLayer/VideoStreamPlayer.visible = 0
 	$CanvasLayer/VideoStreamPlayer.stop()
@@ -104,7 +104,7 @@ var force_camera = 0
 func crawl_effect():
 	global.day4crawl = 1
 	force_camera = 1
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2, false, false, false).timeout
 	print('effect')
 	var hand1 = $CanvasLayer/textures/hand1
 	var hand2 = $CanvasLayer/textures/hand2
@@ -116,20 +116,20 @@ func crawl_effect():
 	hand1.visible = 1
 	var tween = create_tween()
 	tween.tween_property(hand1 ,"position:y", hand1.position.y + 90 , 1)
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.5, false, false, false).timeout
 	$sfx/heartbeats.volume_db += 2
 	var tween2 = create_tween()
 	var tween3 = create_tween()
 	tween2.tween_property(hand1 ,"position:y", hand1.position.y - 90 , 0.5)
 	tween3.tween_property(time ,"position:y", time.position.y - 90 , 0.5)
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(5, false, false, false).timeout
 	$sfx/heartbeats.volume_db += 2
 	$sfx/night.volume_db = -80
 	$sfx/camera.volume_db = -80
 	var tween4 = create_tween()
 	tween4.tween_property(hand2 ,"position:x", hand2.position.x - 90 , 1)
 
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.5, false, false, false).timeout
 	$sfx/heartbeats.volume_db += 2
 	var tween5 = create_tween()
 	var tween6 = create_tween()
@@ -137,55 +137,55 @@ func crawl_effect():
 	tween6.tween_property(danger ,"position:x", danger.position.x + 350 , 0.2)
 	
 	#return
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(1.2, false, false, false).timeout
 	$CanvasLayer/overscreen/black.visible = 1
 	
 	play_sound(beep, 5.0)
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(1.2, false, false, false).timeout
 	play_sound(beep, 5.0)
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(1.2, false, false, false).timeout
 	play_sound(beep, 5.0)
 	$sfx/heartbeats.stop()
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(1.2, false, false, false).timeout
 	screen_shake(30, 4)
 
 
-	#await get_tree().create_timer(2).timeout
+	#await get_tree().create_timer(2, false, false, false).timeout
 	$CanvasLayer/overscreen/black.visible = 0
 	screen_shake(60, 3)
 	$sfx/heartbeats.volume_db += 2
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2, false, false, false).timeout
 	$sfx/heartbeats.stop()
 	#$sfx/night.volume_db = 0
 	#$sfx/camera.volume_db = 0
-	await get_tree().create_timer(2.8).timeout
+	await get_tree().create_timer(2.8, false, false, false).timeout
 	screen_shake(150, 1)
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.2, false, false, false).timeout
 	$CanvasLayer/videostream2.visible = 1
 	$CanvasLayer/videostream2.stream = crawl
 	$CanvasLayer/videostream2.play()
 	$CanvasLayer/videostream2.stream_position = 7
 	play_sound(scary, 10.0)
 	
-	await get_tree().create_timer(0.6).timeout
+	await get_tree().create_timer(0.6, false, false, false).timeout
 	#close_cam()
 	$CanvasLayer/videostream2.stream = null
 	$CanvasLayer/videostream2.visible = 0
 	$CanvasLayer/videostream2.stop()
 	play_sound(high_pitch, 5.0)
 	force_camera = 0
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.2, false, false, false).timeout
 	flicker_effect()
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.2, false, false, false).timeout
 	flicker_effect()
 	$CanvasLayer/overscreen/black.visible = 1
 	generator_sabo()
 	var tween7 = create_tween()
 	tween7.tween_property($CanvasLayer/overscreen/black, "modulate:a", 0, 5.0)
 	flicker_effect()
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.2, false, false, false).timeout
 	flicker_effect()
-	await get_tree().create_timer(0.7).timeout
+	await get_tree().create_timer(0.7, false, false, false).timeout
 	time.position.y += 90
 	danger.position.x -= 350
 	$sfx/night.volume_db = 0
@@ -274,7 +274,7 @@ func translation():
 var pc = 1
 
 func _ready() -> void:
-	#await get_tree().create_timer(1.0).timeout
+	#await get_tree().create_timer(1.0, false, false, false).timeout
 	#print(p1_anomalies.find($anomalies/anomaly))
 	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		$CanvasLayer/mobile.visible = 1
@@ -287,11 +287,11 @@ func _ready() -> void:
 	#day1_end()
 	#get_tree().paused = 1
 	#day6_battery_inspect()
-	#await get_tree().create_timer(3).timeout
+	#await get_tree().create_timer(3, false, false, false).timeout
 	#day6_battery_inspect()
 	#vamp_kill()
 	#crawl_effect()
-	#await get_tree().create_timer(100).timeout
+	#await get_tree().create_timer(100, false, false, false).timeout
 	newspaper_translation()
 	phone_up()
 	#antenna_sabo()
@@ -454,7 +454,7 @@ func close_cam():
 	
 	computer_opened = 0
 	allow_move()
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.2, false, false, false).timeout
 	allow_move()
 	if day1call1_done:
 		day1task2 = 1
@@ -703,11 +703,11 @@ func light_on():
 
 func ladder_up():
 	$player.position = Vector2(-533, -580)
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.1, false, false, false).timeout
 	$"map behind/out_left/p2/ladder/outline".visible = 1
 func ladder_down():
 	$player.position = Vector2(-764.0, -47)
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.1, false, false, false).timeout
 	$"map behind/out_left/p2/ladder/outline".visible = 1
 
 func phone_up():
@@ -1209,7 +1209,7 @@ func clear_anomaly_event(area):
 	$CanvasLayer/room/environment/p3.disabled = 1
 	$CanvasLayer/room/environment/p4.disabled = 1
 	
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(2.0, false, false, false).timeout
 	$CanvasLayer/room/environment/p1.disabled = 0
 	$CanvasLayer/room/environment/p2.disabled = 0
 	$CanvasLayer/room/environment/p3.disabled = 0
@@ -1245,7 +1245,7 @@ func clear_anomaly_event(area):
 		subtitle("right_report", 0.6)
 	wrong_report = 1
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false, false, false).timeout
 	subtitle("", 0)
 	
 
@@ -1272,7 +1272,7 @@ func lose():
 	$CanvasLayer/overscreen/black.visible = 1
 	$CanvasLayer/end_stats/label.visible = 1
 	$CanvasLayer/end_stats/label.text = tr("lose")
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false, false, false).timeout
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func win():
@@ -1402,7 +1402,7 @@ func subtitle(sub, time, sayer = "System"):
 	var tween = create_tween()
 	$sfx/sub.play()
 	tween.tween_property($CanvasLayer/gui/subtitles, "visible_ratio", 1.0, time)
-	await get_tree().create_timer(time).timeout
+	await get_tree().create_timer(time, false, false, false).timeout
 	if sub != "":
 		brief.insert(0, [tr(sayer), tr(sub)])
 	$sfx/sub.stop()
@@ -1451,7 +1451,7 @@ func generator_sabo():
 	light_off()
 	
 	subtitle("generatorsabo", 1.0)
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false, false, false).timeout
 	subtitle("", 0)
 
 func generator_steal_apply():
@@ -1469,9 +1469,9 @@ func generator_steal_apply():
 	$"map behind/generator".queue_free()
 	light_off()
 	subtitle("generatostolen", 1.0)
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false, false, false).timeout
 	subtitle("", 0)
-	await get_tree().create_timer(60).timeout
+	await get_tree().create_timer(60, false, false, false).timeout
 	frank_spawn()
 
 
@@ -1489,7 +1489,7 @@ func generator_on():
 
 
 	
-	#await get_tree().create_timer(5.0).timeout
+	#await get_tree().create_timer(5.0, false, false, false).timeout
 func generator_fixed():
 	cam_current = 1
 	cam_fixed()
@@ -1523,7 +1523,7 @@ func generator_failed():
 
 func generator_dec():
 	while generator_dec_apply:
-		await get_tree().create_timer(0.01).timeout
+		await get_tree().create_timer(0.01, false, false, false).timeout
 		$"map behind/generator/ProgressBar".value -= 2
 		if $"map behind/generator/ProgressBar".value <= 0:
 			generator_failed()
@@ -1625,7 +1625,7 @@ func antenna_sabo():
 	close_radio()
 	
 	subtitle("antennasabo", 1.0)
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false, false, false).timeout
 	subtitle("", 0)
 	
 
@@ -1667,7 +1667,7 @@ func antenna_time():
 	for i in range(5):
 		if !antenna_fixing: return
 		time -= 1
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.0, false, false, false).timeout
 		$"map behind/room/antenna/fix/time".text = "00:0" + str(time)
 	
 	antenna_failed()
@@ -1807,7 +1807,7 @@ func cam_fix_rand(x):
 		cam_fixed()
 	cam_prog_time = 0
 	$player/cam_fix/bar.value = 0
-	await get_tree().create_timer(0.02).timeout
+	await get_tree().create_timer(0.02, false, false, false).timeout
 
 	#$player/cam_fix.position.x = $player/Camera2D.position.x - 350
 	#$player/cam_fix.position.x = $player/Camera2D.position.x + 400
@@ -1824,14 +1824,14 @@ func cam_fix_rand(x):
 	print("x: "+str(x))
 	
 
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(3, false, false, false).timeout
 	if cam_fix_pressed < x:
 		cam_prog_time = 0
 		cam_failed()
 
 func cam_prog():
 	while cam_prog_time:
-		await get_tree().create_timer(0.01).timeout
+		await get_tree().create_timer(0.01, false, false, false).timeout
 		$player/cam_fix/bar.value += 1
 
 
@@ -1842,7 +1842,7 @@ func cam_sabo(num):
 	$"map above/cams_".get_child(num-1).get_child(7).visible = 0
 	$"map above/cams".get_child(num-1).get_child(0).visible = 1
 	
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false, false, false).timeout
 	subtitle("", 0)
 
 func cam_fixed():
@@ -2040,7 +2040,7 @@ func day_call(chat, target):
 	else:
 		$CanvasLayer/gui/subtitles.text = temp
 
-	await get_tree().create_timer(chat[chat_msg][1]).timeout
+	await get_tree().create_timer(chat[chat_msg][1], false, false, false).timeout
 	$sfx/dia.stop()
 
 func day_chat(chat, target):
@@ -2066,7 +2066,7 @@ func day_chat(chat, target):
 	else:
 		$CanvasLayer/gui/subtitles.text = temp
 
-	await get_tree().create_timer(chat[chat_msg][1]).timeout
+	await get_tree().create_timer(chat[chat_msg][1], false, false, false).timeout
 	$sfx/dia.stop()
 
 func day_end():
@@ -2075,22 +2075,22 @@ func day_end():
 	stop_move()
 	$CanvasLayer/overscreen/black.visible = 1
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false, false, false).timeout
 	play_sound(start_sound)
 	$CanvasLayer/end_stats/shift2.text = tr("shift") + " " + str(shift)
 	
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.5, false, false, false).timeout
 	$CanvasLayer/end_stats/t1.text = tr("anomalies_reported")
 	$CanvasLayer/end_stats/v1.text = str(right_reports_conut)
 	play_sound(punch)
 	
 	
-	await get_tree().create_timer(0.4).timeout
+	await get_tree().create_timer(0.4, false, false, false).timeout
 	$CanvasLayer/end_stats/t2.text = tr("anomalies_left")
 	$CanvasLayer/end_stats/v2.text = str(anomaly_events_count)
 	play_sound(punch)
 	
-	await get_tree().create_timer(0.4).timeout
+	await get_tree().create_timer(0.4, false, false, false).timeout
 	$CanvasLayer/end_stats/t3.text = tr("max_danger")
 	$CanvasLayer/end_stats/v3.text = str(bad_time)
 	play_sound(punch)
@@ -2098,7 +2098,7 @@ func day_end():
 	
 	#var tween = create_tween()
 	#tween.tween_property($CanvasLayer/overscreen/black, "modulate:a", 1.0 , 1.4)
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(5.0, false, false, false).timeout
 	global.shift += 1
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 	#day2_start()
@@ -2130,10 +2130,10 @@ func day1task2_apply():
 		return
 	
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false, false, false).timeout
 	subtitle("day1sub1", 0.5)
 	
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(2.0, false, false, false).timeout
 	play_sound(sudden)
 	var temp2 = 2
 	anomaly_events[temp2]["exist"] = 1
@@ -2149,7 +2149,7 @@ func day1task2_apply():
 	anomaly_events_count += 1
 	subtitle("day1sub2", 0.5)
 	
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false, false, false).timeout
 	day1task2 = 1
 	
 	
@@ -2167,16 +2167,16 @@ func day1task3_apply(area):
 		day1task3 = 1
 		$"map behind/room/tasks/day1/task3/done".visible = 1
 		#$"map behind/room/tasks/day1/task4".visible = 1
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(2.0, false, false, false).timeout
 		
 		subtitle("day1sub3", 1.0)
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(2.0, false, false, false).timeout
 		
 		shift_start()
 		
-		await get_tree().create_timer(5.0).timeout
+		await get_tree().create_timer(5.0, false, false, false).timeout
 		subtitle("day1sub4", 2.0)
-		await get_tree().create_timer(5.0).timeout
+		await get_tree().create_timer(5.0, false, false, false).timeout
 		subtitle("", 0.0)
 
 	else:
@@ -2198,7 +2198,7 @@ func day1_start():
 			opened_cam = 1
 			$"map above/cams".get_child(opened_cam-1).visible = 1
 			$"map above/cams".get_child(opened_cam-1).enabled = 1
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.0, false, false, false).timeout
 			day1task2_apply()
 
 var chat1_array = [
@@ -2290,17 +2290,17 @@ func day2_start():
 	subtitle("day2sub1", 1.0)
 	#call_index += 1
 	shift_start()
-	#await get_tree().create_timer(1.0).timeout
+	#await get_tree().create_timer(1.0, false, false, false).timeout
 	
 	sabo_time()
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false, false, false).timeout
 	subtitle("", 0)
 
 var day2creature1_appeared = 0
 
 func day2_creature1():
 	if ps1 || (computer_opened && opened_cam == 1): 
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.0, false, false, false).timeout
 		day2_creature1()
 		return
 	$anomalies/anomaly.visible = 1
@@ -2343,7 +2343,7 @@ var day3_visitor_safe = 1
 func day3_visitor():
 	#cam_sabo(3)
 	
-	await get_tree().create_timer(60).timeout
+	await get_tree().create_timer(60, false, false, false).timeout
 	if generator_area:
 		day3_visitor_appear()
 	day3_visitor_safe = 0 
@@ -2385,7 +2385,7 @@ func _on_day_3_visitorfound_body_entered(body: Node2D) -> void:
 					$player/Camera2D.enabled = 0
 					$player/Camera2D2.enabled = 1
 					flicker_effect()
-					await get_tree().create_timer(1.0).timeout
+					await get_tree().create_timer(1.0, false, false, false).timeout
 					$player.position.x = 300
 					$player/Camera2D.enabled = 1
 					$player/Camera2D2.enabled = 0
@@ -2394,7 +2394,7 @@ func _on_day_3_visitorfound_body_entered(body: Node2D) -> void:
 				if $anomalies/anomaly2.visible && !cam_sabo_creature_exist:
 					stop_move()
 					$timers/bad_time.paused = 1
-					await get_tree().create_timer(1.0).timeout
+					await get_tree().create_timer(1.0, false, false, false).timeout
 					$player.position.x = 300
 					start_chat()
 					
@@ -2416,7 +2416,7 @@ func day3_creature1_talked():
 	#allow_move()
 	#call_index += 1
 	print("call index" + str(call_index))
-	#await get_tree().create_timer(1.0).timeout
+	#await get_tree().create_timer(1.0, false, false, false).timeout
 	show_decision_option("Answer", "youcanstay", "nosorry.")
 	#subtitle("", 0)
 
@@ -2455,7 +2455,7 @@ func day3_creature1_stay():
 	
 	#$areas/day3visitorfound/CollisionShape2D.set_deferred("disabled", 1)
 	day3_creature1_end_()
-	await get_tree().create_timer(4.0).timeout
+	await get_tree().create_timer(4.0, false, false, false).timeout
 	sabo_time()
 	subtitle("", 0)
 
@@ -2468,7 +2468,7 @@ var day3_creature1_shift = 0
 
 func day3_creature1_end_():
 	print("leave soonss")
-	await get_tree().create_timer(90).timeout
+	await get_tree().create_timer(90, false, false, false).timeout
 	#call_index += 1
 	sabo_time()
 	cam_helper_creature_exist = 0
@@ -2487,19 +2487,19 @@ func day3_creature1_leave():
 	
 	$anomalies/anomaly2.move = 1
 	
-	await get_tree().create_timer(4.0).timeout
+	await get_tree().create_timer(4.0, false, false, false).timeout
 	$anomalies/anomaly2.visible = 0
 	allow_move()
 	$timers/bad_time.paused = 0
 	subtitle("", 0)
 
 func cam_helper_creature(area):
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(5, false, false, false).timeout
 	subtitle("area", 1.0)
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1, false, false, false).timeout
 	$CanvasLayer/gui/subtitles.text += str(area)
 	brief[0][1] += str(area)
-	await get_tree().create_timer(2.9).timeout
+	await get_tree().create_timer(2.9, false, false, false).timeout
 	subtitle("", 0)
 
 var day3_call2_chat = [
@@ -2533,7 +2533,7 @@ var day4_creature1_safe = 1
 var cam_sabo_creature_exist = 0
 
 func day4_visitor():
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(3, false, false, false).timeout
 	generator_sabo()
 	if generator_area:
 		day4_creature_appear()
@@ -2574,7 +2574,7 @@ func day4_creature1_stay():
 	$timers/bad_time.paused = 0
 	cam_sabo_creature_exist = 1
 	day4_creature1_end_()
-	await get_tree().create_timer(4.0).timeout
+	await get_tree().create_timer(4.0, false, false, false).timeout
 	sabo_time()
 	subtitle("", 0)
 
@@ -2586,7 +2586,7 @@ var day4_creature1_shift = 0
 
 func day4_creature1_end_():
 	print("leave soon")
-	await get_tree().create_timer(90).timeout
+	await get_tree().create_timer(90, false, false, false).timeout
 	sabo_time()
 	cam_helper_creature_exist = 0
 	day3_creature1_shift = 1
@@ -2602,22 +2602,22 @@ func day4_creature1_leave():
 	$anomalies/anomaly2.speed = 200
 	$anomalies/anomaly2.destination = Vector2(-706.0, $anomalies/anomaly2.global_position.y)
 	$anomalies/anomaly2.move = 1
-	await get_tree().create_timer(4.0).timeout
+	await get_tree().create_timer(4.0, false, false, false).timeout
 	$anomalies/anomaly2.visible = 0
 	allow_move()
 	$timers/bad_time.paused = 0
 	subtitle("", 0)
 
 func cam_sabo_creature(area):
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(10, false, false, false).timeout
 	if generator_working:
 		subtitle("sector", 1.0)
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(1, false, false, false).timeout
 		area += 1
 		if area == 5: area = 1
 		$CanvasLayer/gui/subtitles.text += str(area)
 		brief[0][1] += str(area)
-		await get_tree().create_timer(2.9).timeout
+		await get_tree().create_timer(2.9, false, false, false).timeout
 		subtitle("", 0)
 
 var day4_call2_chat = [
@@ -2634,7 +2634,7 @@ func day4_creature_kick():
 		start_chat()
 		force_cam_close = 1
 		day4_crawl = 1
-		await get_tree().create_timer(4.1).timeout
+		await get_tree().create_timer(4.1, false, false, false).timeout
 		force_cam_close = 0 
 
 var day4_end_chat = [
@@ -2693,14 +2693,14 @@ var vamp_move = 0
 func vamp_spawn():
 	if (computer_opened && opened_cam == 4) || ps4:
 		print("vamp spawne failed")
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(3, false, false, false).timeout
 		vamp_spawn()
 	else:
 		print("vamp spawned")
 		play_sound(vamp_laugh)
 		$anomalies/vamp.visible = 1
 		if shift == 5 || shift == 7:
-			await get_tree().create_timer(1.2).timeout
+			await get_tree().create_timer(1.2, false, false, false).timeout
 			if ps1:
 				light_off(1)
 				vamp_move_to_room()
@@ -2720,17 +2720,17 @@ func vamp_kill():
 	$CanvasLayer/image.visible = 1
 	$CanvasLayer/image.texture = vamp1
 	play_sound(hiss)
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.3, false, false, false).timeout
 	$CanvasLayer/image.texture = null
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.1, false, false, false).timeout
 	$CanvasLayer/image.texture = vamp2
 	play_sound(hiss)
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.3, false, false, false).timeout
 	$CanvasLayer/image.texture = null
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.1, false, false, false).timeout
 	$CanvasLayer/image.texture = vamp3
 	play_sound(hiss)
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.3, false, false, false).timeout
 	$CanvasLayer/overscreen/black.visible = 1
 	$CanvasLayer/image.texture = null
 	play_sound(bite)
@@ -2798,7 +2798,7 @@ func day6_tech_meet():
 		print("canmet")
 		$areas/tech/CollisionShape2D.set_deferred("disabled", 0)
 	else:
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.0, false, false, false).timeout
 		day6_tech_meet()
 
 var day6_tech = "bad"
@@ -2811,7 +2811,7 @@ func _on_tech_body_entered(body: Node2D) -> void:
 		if attempt == 2 && generator_stolen:
 			print("stolen")
 			call_index += 1
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.0, false, false, false).timeout
 		start_chat()
 
 var day6_tech_chat_first = [
@@ -2836,12 +2836,12 @@ func day6_tech_first_allow():
 	$anomalies/tech.speed = 300
 	$anomalies/tech.destination = Vector2(2743.0, -26)
 	$anomalies/tech.move = 1
-	await get_tree().create_timer(15).timeout #edit
+	await get_tree().create_timer(15, false, false, false).timeout #edit
 	day6_check_space()
 
 func day6_check_space():
 	if ps4:
-		await get_tree().create_timer(10).timeout
+		await get_tree().create_timer(10, false, false, false).timeout
 		day6_check_space()
 	else:
 		if day6_tech == "bad" :
@@ -2867,7 +2867,7 @@ func day6_next_tech():
 	else: day6_tech = "good"
 	
 	attempt += 1
-	await get_tree().create_timer(20).timeout #edit
+	await get_tree().create_timer(20, false, false, false).timeout #edit
 	day6_tech_appear()
 
 func day6_tech_first_disallow():
@@ -2894,14 +2894,14 @@ var day6_tech_chat_second_stolen = [
 
 func frank_spawn():
 	if ps4 || (computer_opened && opened_cam == 4):
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(3.0, false, false, false).timeout
 		frank_spawn()
 	else:
 		#generator_sabo()
 		antenna_sabo()
 		subtitle("RUN", 0.2)
 		$CanvasLayer/overscreen/red.visible = 1
-		#await get_tree().create_timer(5).timeout
+		#await get_tree().create_timer(5, false, false, false).timeout
 		$anomalies/frank.visible = 1
 		frank_sounds_on = 1
 		frank_sounds()
@@ -2909,7 +2909,7 @@ func frank_spawn():
 		$anomalies/frank.speed = 150
 		$anomalies/frank.move = 1
 		
-		await get_tree().create_timer(30).timeout
+		await get_tree().create_timer(30, false, false, false).timeout
 		subtitle("Stay away.", 0.5)
 		
 		frank_sounds_on = 0
@@ -2920,7 +2920,7 @@ func frank_spawn():
 		$areas/frank_battery/CollisionShape2D.set_deferred("disabled", 0)
 		$"map behind/out_left/p2/frank".visible = 1
 		
-		await get_tree().create_timer(2).timeout 
+		await get_tree().create_timer(2, false, false, false).timeout 
 		subtitle("", 0)
 		if shift == 6:
 			day6_next_tech()
@@ -2932,13 +2932,13 @@ func frank_sounds():
 	while frank_sounds_on:
 		play_sound(frank_scream)
 		screen_shake(30, 3)
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(1, false, false, false).timeout
 		screen_shake(30, 3)
 		play_sound(electricity)
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(1, false, false, false).timeout
 		screen_shake(30, 9)
 		play_sound(electricity)
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(3, false, false, false).timeout
 
 var temp_call_index = 1
 
@@ -2961,50 +2961,50 @@ func day6_battery_inspect():
 	stop_move()
 	hide_decisions()
 	play_sound(psst)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false, false, false).timeout
 	play_sound(door)
 	$"map behind/out_left/p2/cabin/open".visible = 1
 	$"map behind/out_left/p2/cabin/eye3".visible = 1
 	$"map behind/out_left/p2/cabin/eye4".visible = 1
 	$sfx/night.stop()
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false, false, false).timeout
 	var tween = create_tween()
 	tween.tween_property($player/Camera2D, "zoom", Vector2(3.5, 3.5), 3)
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(2.5, false, false, false).timeout
 	play_sound(electricity)
 	$"map behind/out_left/p2/cabin/eye1".visible = 1
 	$"map behind/out_left/p2/cabin/eye2".visible = 1
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false, false, false).timeout
 	#$CanvasLayer/image.visible = 1
 	#$CanvasLayer/image.texture = frank1
 	#play_sound(frank_scream)
-	#await get_tree().create_timer(0.3).timeout
+	#await get_tree().create_timer(0.3, false, false, false).timeout
 	#$CanvasLayer/image.texture = null
-	#await get_tree().create_timer(0.1).timeout
+	#await get_tree().create_timer(0.1, false, false, false).timeout
 	#$CanvasLayer/image.texture = frank2
 	#play_sound(electricity)
-	#await get_tree().create_timer(0.3).timeout
+	#await get_tree().create_timer(0.3, false, false, false).timeout
 	#$CanvasLayer/image.texture = null
-	#await get_tree().create_timer(0.1).timeout
+	#await get_tree().create_timer(0.1, false, false, false).timeout
 	#$CanvasLayer/image.texture = frank3
 	#play_sound(frank_scream)
-	#await get_tree().create_timer(0.3).timeout
+	#await get_tree().create_timer(0.3, false, false, false).timeout
 	#$CanvasLayer/image.texture = null
 	#sprite
 	#$player/Camera2D.zoom = Vector2(1.4, 1.4)
-	#await get_tree().create_timer(2).timeout
+	#await get_tree().create_timer(2, false, false, false).timeout
 	
-	await get_tree().create_timer(2.3).timeout
+	await get_tree().create_timer(2.3, false, false, false).timeout
 	screen_shake(35, 5)
 	$CanvasLayer/overscreen/black.visible = 1
 	$CanvasLayer/js.visible = 1
 	play_sound(fnaf, 10)
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false, false, false).timeout
 	play_sound(fnaf, 10)
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false, false, false).timeout
 	play_sound(fnaf, 10)
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2, false, false, false).timeout
 	$CanvasLayer/js.visible = 0
 	lose()
 
@@ -3465,7 +3465,7 @@ func _on_restart_pressed() -> void:
 func _on_restart_yes_pressed() -> void:
 	get_tree().paused = 0
 	$CanvasLayer/pause.visible = 0
-	#await get_tree().create_timer(1.0).timeout
+	#await get_tree().create_timer(1.0, false, false, false).timeout
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 func _on_restart_no_pressed() -> void:
 	$CanvasLayer/pause/restart_.visible = 0
@@ -3481,6 +3481,9 @@ func _on_quit_pressed() -> void:
 func _on_brief_pressed() -> void:
 	refresh_brief()
 	$CanvasLayer/pause/brief_.visible = !$CanvasLayer/pause/brief_.visible
+	$CanvasLayer/pause/settings_.visible = 0
+	$CanvasLayer/pause/restart_.visible = 0
+	$CanvasLayer/pause/quit_.visible = 0
 
 # Red Moon Night
 
@@ -3522,9 +3525,9 @@ func generator_steal_time():
 		if generator_area: 
 			generator_steal_stop()
 			return
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.0, false, false, false).timeout
 		subtitle(str(10-i), 0.2)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false, false, false).timeout
 	subtitle("", 0)
 	generator_steal_apply()
 
@@ -3535,13 +3538,26 @@ func generator_steal_stop():
 
 func generator_steal_prob():
 	var temp = randi_range(35, 60)
-	await get_tree().create_timer(temp).timeout
+	await get_tree().create_timer(temp, false, false, false).timeout
 	day_generator_steal()
 	
 
+func _on_arabic_pressed() -> void:
+	TranslationServer.set_locale("ar")
+	translation()
+	newspaper_translation()
+
+func _on_english_pressed() -> void:
+	TranslationServer.set_locale("en")
+	translation()
+	newspaper_translation()
 
 
-
+func _on_settings_pressed() -> void:
+	$CanvasLayer/pause/settings_.visible = !$CanvasLayer/pause/settings_.visible
+	$CanvasLayer/pause/brief_.visible = 0
+	$CanvasLayer/pause/restart_.visible = 0
+	$CanvasLayer/pause/quit_.visible = 0
 
 
 

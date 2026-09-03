@@ -8616,7 +8616,6 @@ autoplay = "default"
 
 [node name="pause" type="Control" parent="CanvasLayer" unique_id=967419704]
 process_mode = 3
-visible = false
 z_index = 3
 layout_direction = 2
 layout_mode = 3
@@ -8727,6 +8726,89 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
 text = "Quit"
+icon_alignment = 1
+
+[node name="settings_" type="Control" parent="CanvasLayer/pause" unique_id=1916121079]
+process_mode = 3
+visible = false
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="black" type="Panel" parent="CanvasLayer/pause/settings_" unique_id=1658938061]
+layout_direction = 2
+layout_mode = 0
+offset_left = 435.97638
+offset_top = 163.0
+offset_right = 1184.0
+offset_bottom = 583.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vgiqa")
+
+[node name="scroll" type="ScrollContainer" parent="CanvasLayer/pause/settings_" unique_id=292372092]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 186.0
+offset_right = 1171.0
+offset_bottom = 549.0
+horizontal_scroll_mode = 3
+scroll_hint_mode = 1
+tile_scroll_hint = true
+
+[node name="options" type="VBoxContainer" parent="CanvasLayer/pause/settings_/scroll" unique_id=1022781153]
+custom_minimum_size = Vector2(115, 60)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="lang" type="HBoxContainer" parent="CanvasLayer/pause/settings_/scroll/options" unique_id=673093793]
+process_mode = 3
+custom_minimum_size = Vector2(115, 50)
+layout_direction = 2
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 30
+
+[node name="label" type="Label" parent="CanvasLayer/pause/settings_/scroll/options/lang" unique_id=1629200502]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 28
+text = "Language:"
+
+[node name="arabic" type="Button" parent="CanvasLayer/pause/settings_/scroll/options/lang" unique_id=1415457423]
+custom_minimum_size = Vector2(115, 55)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "العربية"
+icon_alignment = 1
+
+[node name="english" type="Button" parent="CanvasLayer/pause/settings_/scroll/options/lang" unique_id=115928901]
+custom_minimum_size = Vector2(115, 55)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qouja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
+text = "English"
 icon_alignment = 1
 
 [node name="brief_" type="Control" parent="CanvasLayer/pause" unique_id=407268803]
@@ -9109,8 +9191,10 @@ texture = ExtResource("19_264po")
 [connection signal="pressed" from="CanvasLayer/pause/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/brief" to="." method="_on_brief_pressed"]
-[connection signal="pressed" from="CanvasLayer/pause/settings" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/settings_/scroll/options/lang/arabic" to="." method="_on_arabic_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/settings_/scroll/options/lang/english" to="." method="_on_english_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/restart_/yes" to="." method="_on_restart_yes_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/restart_/no" to="." method="_on_restart_no_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/quit_/yes" to="." method="_on_quit_yes_pressed"]
