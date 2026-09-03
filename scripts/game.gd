@@ -41,8 +41,6 @@ var frank1 = preload("res://assets/frank1.png")
 var frank2 = preload("res://assets/frank2.png")
 var frank3 = preload("res://assets/frank3.png")
 
-
-
 #var collect = preload("res://audio/collect.mp3")
 var click_phone = preload("res://audio/click_phone.mp3")
 var hang_up = preload("res://audio/hangup.mp3")
@@ -1472,6 +1470,7 @@ func generator_steal_apply():
 	if computer_opened: close_cam()
 	$"map behind/room/desk/VideoStreamPlayer".visible = 0
 	$areas/generator/CollisionShape2D.set_deferred("disabled", 1)
+	await get_tree().create_timer(0.2, false, false, false).timeout
 	$"map behind/generator".queue_free()
 	light_off()
 	subtitle("generatostolen", 1.0)
@@ -2102,7 +2101,12 @@ func day_chat(chat, target):
 	$sfx/dia.stop()
 
 func day_end():
+	phone_down()
+	stop_move()
 	print(call_index)
+	if computer_opened: close_cam()
+	if radio_opened: close_radio()
+	
 	$sfx/morning.stop()
 	stop_move()
 	$CanvasLayer/overscreen/black.visible = 1
@@ -2131,8 +2135,12 @@ func day_end():
 	#var tween = create_tween()
 	#tween.tween_property($CanvasLayer/overscreen/black, "modulate:a", 1.0 , 1.4)
 	await get_tree().create_timer(5.0, false, false, false).timeout
-	global.shift += 1
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	
+	if shift == 7:
+		end_game()
+	else:
+		global.shift += 1
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
 	#day2_start()
 
 
@@ -3589,7 +3597,7 @@ func timeshifter_spawn():
 	$anomalies/timeshifter.visible = 1
 	$areas/timeshifter/CollisionShape2D.set_deferred("disabled", 0)
 	
-	await get_tree().create_timer(60).timeout
+	await get_tree().create_timer(60, false, false, false).timeout
 	timeshifter_depsawn()
 
 func timeshifter_depsawn():
@@ -3617,15 +3625,24 @@ func timeshifter_apply(option):
 		$CanvasLayer/decision/o6.visible = 0
 		hide_decisions()
 		timeshifter_depsawn()
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(5, false, false, false).timeout
 		shift_time = option
 
+func end_game():
+	print("game over")
+	$CanvasLayer/end_screen/black.visible = 1
+	await get_tree().create_timer(0.6, false, false, false).timeout
+	$CanvasLayer/end_screen/poster.visible = 1
+	await get_tree().create_timer(4, false, false, false).timeout
+	$CanvasLayer/end_screen/poster.visible = 0
+	global.temp_reset()
+	await get_tree().create_timer(1, false, false, false).timeout
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 #ideas to do
 ## main menu
-## 
-#### new creatures -> time shifter -> very rare creature -> asks for time, player answer shifts time to it
+## high scores
 #### newspapre player's name on day7
 ### achievements
 ## leaderboard

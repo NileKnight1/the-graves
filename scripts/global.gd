@@ -7,8 +7,9 @@ var day3creature_stayed = 0
 var day4creature_stayed = 0
 var day4crawl = 0 
 
-func _ready() -> void:
-	pass # Replace with function body.
-
-func _process(delta: float) -> void:
-	pass
+func temp_reset():
+	shift = 1
+	day2creature_found = 0
+	day3creature_stayed = 0
+	day4creature_stayed = 0
+	day4crawl = 0 

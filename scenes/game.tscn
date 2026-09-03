@@ -4486,6 +4486,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
+visible = false
 position = Vector2(205, -40)
 collision_layer = 5
 collision_mask = 5
@@ -6183,6 +6184,7 @@ shape = SubResource("RectangleShape2D_wljb1")
 disabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1299766415]
+visible = false
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("5_iywne")]
 visible = false
@@ -9063,6 +9065,137 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v2yb1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
 text = "No"
 icon_alignment = 1
+
+[node name="end_screen" type="Control" parent="CanvasLayer" unique_id=1748277989]
+process_mode = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="black" type="Panel" parent="CanvasLayer/end_screen" unique_id=1222537379]
+visible = false
+layout_direction = 2
+layout_mode = 0
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 1298.0
+offset_bottom = 741.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_js0lu")
+
+[node name="poster" type="Control" parent="CanvasLayer/end_screen" unique_id=433337517]
+process_mode = 3
+visible = false
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="bg" type="Sprite2D" parent="CanvasLayer/end_screen/poster" unique_id=570810641]
+position = Vector2(638.1605, 341.01312)
+rotation = 1.5707964
+scale = Vector2(0.7849027, 0.9789895)
+texture = ExtResource("14_wljb1")
+
+[node name="pages" type="Control" parent="CanvasLayer/end_screen/poster" unique_id=1534098435]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="page4" type="Control" parent="CanvasLayer/end_screen/poster/pages" unique_id=1377478985]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="topic1" type="Control" parent="CanvasLayer/end_screen/poster/pages/page4" unique_id=1274215696]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/end_screen/poster/pages/page4/topic1" unique_id=1512652635]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 519.0
+offset_right = 813.0
+offset_bottom = 558.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 30
+text = "Victor  Frankenstein"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/end_screen/poster/pages/page4/topic1" unique_id=1282858067]
+layout_mode = 0
+offset_left = 458.00006
+offset_top = 143.99997
+offset_right = 2706.9
+offset_bottom = 2310.2627
+scale = Vector2(0.15785496, 0.17126271)
+texture = ExtResource("15_v2yb1")
+
+[node name="control" type="Control" parent="CanvasLayer/end_screen/poster/pages/page4" unique_id=1860036580]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="header" type="Control" parent="CanvasLayer/end_screen/poster/pages/page4/control" unique_id=775563795]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/end_screen/poster/pages/page4/control/header" unique_id=481492871]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 48.0
+offset_right = 749.0
+offset_bottom = 132.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0.47843137, 0.09019608, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 49
+text = "Busted"
+horizontal_alignment = 1
+
+[node name="line1" type="Panel" parent="CanvasLayer/end_screen/poster/pages/page4/control/header" unique_id=280372945]
+layout_direction = 2
+layout_mode = 0
+offset_left = 396.0
+offset_top = 125.0
+offset_right = 886.0
+offset_bottom = 126.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
+
+[node name="line2" type="Panel" parent="CanvasLayer/end_screen/poster/pages/page4/control/header" unique_id=1903080998]
+layout_direction = 2
+layout_mode = 0
+offset_left = 396.0
+offset_top = 130.0
+offset_right = 886.0
+offset_bottom = 131.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
 [node name="timers" type="Node" parent="." unique_id=896048706]
 
