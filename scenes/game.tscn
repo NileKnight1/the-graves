@@ -6709,6 +6709,7 @@ horizontal_alignment = 2
 
 [node name="news" type="Control" parent="CanvasLayer" unique_id=348508205]
 process_mode = 3
+visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
@@ -6778,7 +6779,6 @@ mouse_filter = 2
 
 [node name="page1" type="Control" parent="CanvasLayer/news/pages" unique_id=233356727]
 process_mode = 3
-visible = false
 layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
@@ -7784,6 +7784,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="page4" type="Control" parent="CanvasLayer/news/pages" unique_id=686101661]
 process_mode = 3
+visible = false
 layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0

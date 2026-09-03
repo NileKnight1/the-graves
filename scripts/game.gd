@@ -1312,6 +1312,7 @@ var ps4 = 0
 func _on_ps_1_body_entered(body: Node2D) -> void:
 	if body == $player:
 		ps1 = 1
+		
 		if vamp_move:
 			light_off(1)
 			vamp_move_to_room()
@@ -1338,8 +1339,8 @@ func _on_ps_4_body_entered(body: Node2D) -> void:
 		ps4 = 1
 		if $anomalies/vamp.visible:
 			print("vamp area")
-			if shift == 5: vamp_kill()
-			else: $anomalies/vamp.visible = 0
+			if shift == 5 || shift == 7: vamp_kill()
+			else: vamp_despawn()
 			
 func _on_ps_4_body_exited(body: Node2D) -> void:
 	if body == $player:
@@ -1517,8 +1518,13 @@ func generator_dec():
 func _on_generator_body_entered(body: Node2D) -> void:
 	if body == $player:
 		if day2force: return
-		if !day3_visitor_safe: day3_visitor_appear()
-		if !day4_creature1_safe: day4_creature_appear()
+		if !day3_visitor_safe: 
+			day3_visitor_appear()
+			print('day3_visitor_appear')
+		if !day4_creature1_safe: 
+			day4_creature_appear()
+			print('day4_visitor_appear')
+			
 		
 		generator_area = 1
 		if !generator_working:
@@ -2257,7 +2263,7 @@ func day2_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
-	elif shift_time == 180:
+	elif shift_time == 2:
 		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
@@ -2299,7 +2305,7 @@ func day3_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
-	elif shift_time == 180:
+	elif shift_time == 2:
 		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
@@ -2510,7 +2516,7 @@ func day4_start():
 	day4_visitor()
 	#sabo_time()
 
-var day4_creature1_safe = 0
+var day4_creature1_safe = 1
 var cam_sabo_creature_exist = 0
 
 func day4_visitor():
@@ -2680,13 +2686,14 @@ func vamp_spawn():
 		print("vamp spawned")
 		play_sound(vamp_laugh)
 		$anomalies/vamp.visible = 1
-		await get_tree().create_timer(1.2).timeout
-		if ps1:
-			light_off(1)
-			vamp_move_to_room()
-		else:
-			cam_sabo(1)
-			vamp_move = 1
+		if shift == 5 || shift == 7:
+			await get_tree().create_timer(1.2).timeout
+			if ps1:
+				light_off(1)
+				vamp_move_to_room()
+			else:
+				cam_sabo(1)
+				vamp_move = 1
 
 func vamp_kill():
 	print("killed")
@@ -2724,6 +2731,9 @@ func vamp_dead():
 	print("vamp dead")
 	vamp_move = 0
 	vamp_in_room = 0
+
+func vamp_despawn():
+	$anomalies/vamp.visible = 0
 
 var vamp_in_room = 0
 
@@ -2994,22 +3004,6 @@ var day6_end_chat = [
 	["day6end", 1.0, "manager"],
 ]
 
-func day7_time():
-	if shift_time == 1:
-		print("shift", shift)
-	elif shift_time == 60:
-		set_shift_values(15, 20)
-	elif shift_time == 150:
-		set_shift_values(12, 16)
-	elif shift_time == 240:
-		set_shift_values(8, 14)
-
-var day7_call1_chat = [
-	["day7start", 1.0, "manager"],
-]
-
-### new creatures
-# time shifter -> very rare creature -> asks for time, player answer shifts time to it
 
 func _on_left_pressed() -> void:
 	Input.action_press("left")
@@ -3299,7 +3293,6 @@ var day1_page3 = [
 	["day1_page3_topic5_title", "day1_page3_topic5_col1", preload("res://assets/newspaper/sports.PNG")],
 ]
 
-
 var day2_page1 = [
 	["day2_page1_topic1_title", "day2_page1_topic1_col1", "day2_page1_topic1_col2", "day2_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
 	["day2_page1_topic2_title", "day2_page1_topic2_col1", preload("res://assets/newspaper/cons.png")],
@@ -3346,7 +3339,6 @@ var day3_page3 = [
 	["day3_page3_topic5_title", "day3_page3_topic5_col1", preload("res://assets/newspaper/cons.png")],
 ]
 
-
 var day4_page1 = [
 	["day4_page1_topic1_title", "day4_page1_topic1_col1", "day4_page1_topic1_col2", "day4_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
 	["day4_page1_topic2_title", "day4_page1_topic2_col1", preload("res://assets/newspaper/cons.png")],
@@ -3370,7 +3362,6 @@ var day4_page3 = [
 	["day4_page3_topic5_title", "day4_page3_topic5_col1", preload("res://assets/newspaper/cons.png")],
 ]
 
-
 var day5_page1 = [
 	["day5_page1_topic1_title", "day5_page1_topic1_col1", "day5_page1_topic1_col2", "day5_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
 	["day5_page1_topic2_title", "day5_page1_topic2_col1", preload("res://assets/newspaper/cons.png")],
@@ -3386,7 +3377,6 @@ var day5_page2 = [
 	["day5_page2_topic4_title", "day5_page2_topic4_col1", preload("res://assets/newspaper/cons.png")],
 	["day5_page2_topic5_title", "day5_page2_topic5_col1", preload("res://assets/newspaper/cons.png")],
 ]
-
 var day5_page3 = [
 	["day5_page3_topic1_title", "day5_page3_topic1_col1", preload("res://assets/newspaper/cons.png")],
 	["day5_page3_topic2_title", "day5_page3_topic2_col1", preload("res://assets/newspaper/cons.png")],
@@ -3394,7 +3384,6 @@ var day5_page3 = [
 	["day5_page3_topic4_title", "day5_page3_topic4_col1", preload("res://assets/newspaper/cons.png")],
 	["day5_page3_topic5_title", "day5_page3_topic5_col1", preload("res://assets/newspaper/cons.png")],
 ]
-
 
 var day6_page1 = [
 	["day6_page1_topic1_title", "day6_page1_topic1_col1", "day6_page1_topic1_col2", "day6_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
@@ -3411,7 +3400,6 @@ var day6_page2 = [
 	["day6_page2_topic4_title", "day6_page2_topic4_col1", preload("res://assets/newspaper/cons.png")],
 	["day6_page2_topic5_title", "day6_page2_topic5_col1", preload("res://assets/newspaper/cons.png")],
 ]
-
 var day6_page3 = [
 	["day6_page3_topic1_title", "day6_page3_topic1_col1", preload("res://assets/newspaper/cons.png")],
 	["day6_page3_topic2_title", "day6_page3_topic2_col1", preload("res://assets/newspaper/cons.png")],
@@ -3428,8 +3416,6 @@ var day7_page1 = [
 	["day7_page1_topic5_title", "day7_page1_topic5_col1"],
 	["day7_page1_topic6_title", "day7_page1_topic6_col1"],
 ]
-
-
 
 
 func _on_pause_pressed() -> void:
@@ -3486,6 +3472,21 @@ func _on_brief_pressed() -> void:
 # Red Moon Night
 
 
+func day7_time():
+	if shift_time == 1:
+		print("shift", shift)
+	elif shift_time == 60:
+		set_shift_values(15, 20)
+	elif shift_time == 150:
+		set_shift_values(12, 16)
+	elif shift_time == 180:
+		vamp_spawn()
+	elif shift_time == 240:
+		set_shift_values(8, 14)
+
+var day7_call1_chat = [
+	["day7start", 1.0, "manager"],
+]
 
 
 
@@ -3507,6 +3508,8 @@ func _on_brief_pressed() -> void:
 ### achievements
 ### save/load
 ### newspapre player's name on day7
+### new creatures
+# time shifter -> very rare creature -> asks for time, player answer shifts time to it
 
 
 
