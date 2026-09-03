@@ -1,12 +1,8 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	translation()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
@@ -22,10 +18,12 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 	global.player_name = new_text
 
 func _on_o_2_pressed() -> void:
-	$CanvasLayer/buttons/o1.disabled = 1
-	$CanvasLayer/buttons/o2.disabled = 1
-	$CanvasLayer/buttons/o3.disabled = 1
-	$CanvasLayer/buttons/o4.disabled = 1
+	$CanvasLayer/buttons/continue.disabled = 1
+	$CanvasLayer/buttons/newgame.disabled = 1
+	$CanvasLayer/buttons/settings.disabled = 1
+	$CanvasLayer/buttons/scores.disabled = 1
+	$CanvasLayer/buttons/quit.disabled = 1
+	
 	var tween = create_tween()
 	var tween2 = create_tween()
 	
@@ -55,4 +53,49 @@ func _on_o_2_pressed() -> void:
 	await get_tree().create_timer(0.5).timeout
 	
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+
+func _on_close_pressed() -> void:
+	$CanvasLayer/settings.visible = 0
+	$CanvasLayer/scores.visible = 0
+	$CanvasLayer/buttons.visible = 1
 	
+
+func _on_settings_pressed() -> void:
+	
+	#var tween = create_tween()
+	#tween.tween_property($CanvasLayer/buttons, "modulate:a", 1.0, 0.3)
+	
+	$CanvasLayer/buttons.visible = 0
+	$CanvasLayer/settings.visible = 1
+
+func translation():
+	$CanvasLayer/buttons/continue.text = tr("continue")
+	$CanvasLayer/buttons/newgame.text = tr("newgame")
+	$CanvasLayer/buttons/settings.text = tr("settings")
+	$CanvasLayer/buttons/scores.text = tr("scores")
+	$CanvasLayer/buttons/quit.text = tr("quit")
+	$CanvasLayer/buttons/name.placeholder_text = tr("name") 
+
+
+func _on_arabic_pressed() -> void:
+	TranslationServer.set_locale("ar")
+	translation()
+
+func _on_english_pressed() -> void:
+	TranslationServer.set_locale("en")
+	translation()
+
+
+func _on_scores_pressed() -> void:
+	$CanvasLayer/buttons.visible = 0
+	$CanvasLayer/scores.visible = 1
+
+
+
+
+
+
+
+
+
+#

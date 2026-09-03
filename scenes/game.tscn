@@ -36,9 +36,6 @@
 [ext_resource type="AudioStream" uid="uid://dgxlfchq0oics" path="res://audio/voicebosch-heart-and-breath-suspense-196083.mp3" id="26_sww3w"]
 [ext_resource type="AudioStream" uid="uid://dwbycnc4g38ad" path="res://audio/soundreality-heart-beat-137135.mp3" id="27_suyxu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2ts8"]
-bg_color = Color(0.015686275, 0.05490196, 0.11372549, 1)
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = 6.0
 
@@ -1311,16 +1308,6 @@ layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
-
-[node name="Panel" type="Panel" parent="map behind" unique_id=1564614028]
-layout_direction = 2
-layout_mode = 0
-offset_left = -23587.0
-offset_top = -12120.0
-offset_right = 21980.0
-offset_bottom = 16457.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x2ts8")
 
 [node name="bottom bound" type="StaticBody2D" parent="map behind" unique_id=1747960841]
 
@@ -9086,6 +9073,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/end_screen" unique_id=1222537379]
+visible = false
 layout_direction = 2
 layout_mode = 0
 offset_left = -21.0

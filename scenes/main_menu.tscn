@@ -3,11 +3,90 @@
 [ext_resource type="Script" uid="uid://uqhx0gpgbhih" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://dq36kbaqntmh0" path="res://assets/main.png" id="2_bqqt6"]
 [ext_resource type="FontFile" uid="uid://deescy0invitk" path="res://assets/HennyPenny-Regular.ttf" id="3_wu84c"]
+[ext_resource type="FontFile" uid="uid://b2lxvl8k8x5ww" path="res://assets/LibreBaskerville-Regular.ttf" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://bpdb1m8u84ame" path="res://assets/i8cGom.png" id="4_wu84c"]
+[ext_resource type="FontFile" uid="uid://fv626k1q1ubw" path="res://assets/LibreBaskerville-Bold.ttf" id="5_oa1go"]
+[ext_resource type="FontFile" uid="uid://cim17fdmt5ywc" path="res://assets/Signika-Bold.ttf" id="6_oa1go"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
 bg_color = Color(0, 0, 0, 0.47058824)
 shadow_color = Color(0, 0, 0, 0.44705883)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgwnu"]
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flqon"]
+content_margin_left = 5.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcqid"]
+content_margin_left = 5.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ajci"]
+content_margin_left = 5.0
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.84705883, 0.49803922, 1, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7b55j"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pajh"]
+bg_color = Color(0.13319641, 0.13319641, 0.13319638, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7ex8"]
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
 bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
@@ -68,15 +147,13 @@ shadow_size = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgwnu"]
-bg_color = Color(0.015686275, 0.05490196, 0.11372549, 1)
-
 [node name="menu" type="Node2D" unique_id=631255614]
 script = ExtResource("1_l6cm7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1070363919]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=496245329]
+layout_direction = 2
 offset_right = 1355.3334
 offset_bottom = 722.0
 texture = ExtResource("2_bqqt6")
@@ -84,6 +161,7 @@ expand_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=715974639]
+layout_direction = 2
 offset_left = -2.0
 offset_right = 1303.0
 offset_bottom = 752.0
@@ -97,7 +175,282 @@ position = Vector2(642.5, 361)
 scale = Vector2(0.6640625, 0.6666667)
 texture = ExtResource("4_wu84c")
 
+[node name="settings" type="Control" parent="CanvasLayer" unique_id=577444520]
+process_mode = 3
+visible = false
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -163.0
+offset_top = 11.0
+offset_right = -123.0
+offset_bottom = 51.0
+mouse_filter = 2
+
+[node name="black" type="Panel" parent="CanvasLayer/settings" unique_id=273980237]
+layout_direction = 2
+layout_mode = 0
+offset_left = 435.97638
+offset_top = 163.0
+offset_right = 1184.0
+offset_bottom = 583.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="options" type="VBoxContainer" parent="CanvasLayer/settings" unique_id=200837837]
+custom_minimum_size = Vector2(115, 60)
+layout_direction = 2
+layout_mode = 0
+offset_left = 457.0
+offset_top = 186.0
+offset_right = 1171.0
+offset_bottom = 246.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="lang" type="HBoxContainer" parent="CanvasLayer/settings/options" unique_id=119177425]
+process_mode = 3
+custom_minimum_size = Vector2(115, 50)
+layout_direction = 2
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 30
+
+[node name="label" type="Label" parent="CanvasLayer/settings/options/lang" unique_id=1264352093]
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("4_rtw2f")
+theme_override_font_sizes/font_size = 28
+text = "Language:"
+
+[node name="arabic" type="Button" parent="CanvasLayer/settings/options/lang" unique_id=1320050266]
+custom_minimum_size = Vector2(115, 55)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "العربية"
+icon_alignment = 1
+
+[node name="english" type="Button" parent="CanvasLayer/settings/options/lang" unique_id=822861986]
+custom_minimum_size = Vector2(115, 55)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "English"
+icon_alignment = 1
+
+[node name="close" type="Button" parent="CanvasLayer/settings" unique_id=422517287]
+custom_minimum_size = Vector2(10, 10)
+layout_direction = 2
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 170.0
+offset_right = 1177.0
+offset_bottom = 203.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_7b55j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5pajh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j7ex8")
+text = "X"
+icon_alignment = 1
+
+[node name="scores" type="Control" parent="CanvasLayer" unique_id=290040016]
+process_mode = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -163.0
+offset_top = 11.0
+offset_right = -123.0
+offset_bottom = 51.0
+mouse_filter = 2
+
+[node name="black" type="Panel" parent="CanvasLayer/scores" unique_id=559517372]
+layout_direction = 2
+layout_mode = 0
+offset_left = 435.97638
+offset_top = 163.0
+offset_right = 1184.0
+offset_bottom = 583.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="options" type="VBoxContainer" parent="CanvasLayer/scores" unique_id=1857822935]
+custom_minimum_size = Vector2(115, 60)
+layout_direction = 2
+layout_mode = 0
+offset_left = 457.0
+offset_top = 186.0
+offset_right = 1171.0
+offset_bottom = 572.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="shift1" type="Button" parent="CanvasLayer/scores/options" unique_id=1236484001]
+custom_minimum_size = Vector2(115, 30)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "> Shift 1"
+alignment = 0
+icon_alignment = 1
+
+[node name="shift2" type="Button" parent="CanvasLayer/scores/options" unique_id=1370041234]
+custom_minimum_size = Vector2(115, 30)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "> Shift 1"
+alignment = 0
+icon_alignment = 1
+
+[node name="shift3" type="Button" parent="CanvasLayer/scores/options" unique_id=946063011]
+custom_minimum_size = Vector2(115, 30)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "> Shift 1"
+alignment = 0
+icon_alignment = 1
+
+[node name="shift4" type="Button" parent="CanvasLayer/scores/options" unique_id=1355910775]
+custom_minimum_size = Vector2(115, 30)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "> Shift 1"
+alignment = 0
+icon_alignment = 1
+
+[node name="shift5" type="Button" parent="CanvasLayer/scores/options" unique_id=1052057149]
+custom_minimum_size = Vector2(115, 30)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "> Shift 1"
+alignment = 0
+icon_alignment = 1
+
+[node name="shift6" type="Button" parent="CanvasLayer/scores/options" unique_id=909912980]
+custom_minimum_size = Vector2(115, 30)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "> Shift 1"
+alignment = 0
+icon_alignment = 1
+
+[node name="shift7" type="Button" parent="CanvasLayer/scores/options" unique_id=325473721]
+custom_minimum_size = Vector2(115, 30)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "> Shift 1"
+alignment = 0
+icon_alignment = 1
+
+[node name="close" type="Button" parent="CanvasLayer/scores" unique_id=1582493352]
+custom_minimum_size = Vector2(10, 10)
+layout_direction = 2
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 170.0
+offset_right = 1177.0
+offset_bottom = 203.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_7b55j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5pajh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j7ex8")
+text = "X"
+icon_alignment = 1
+
 [node name="buttons" type="VBoxContainer" parent="CanvasLayer" unique_id=469679139]
+visible = false
 layout_direction = 2
 anchors_preset = 8
 anchor_left = 0.5
@@ -112,8 +465,9 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="o1" type="Button" parent="CanvasLayer/buttons" unique_id=676032955]
+[node name="continue" type="Button" parent="CanvasLayer/buttons" unique_id=676032955]
 custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -130,8 +484,9 @@ disabled = true
 text = "Continue"
 icon_alignment = 1
 
-[node name="o2" type="Button" parent="CanvasLayer/buttons" unique_id=1249732743]
+[node name="newgame" type="Button" parent="CanvasLayer/buttons" unique_id=1249732743]
 custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -147,8 +502,9 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
 text = "New Game"
 icon_alignment = 1
 
-[node name="o3" type="Button" parent="CanvasLayer/buttons" unique_id=1063390557]
+[node name="settings" type="Button" parent="CanvasLayer/buttons" unique_id=1063390557]
 custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -164,8 +520,27 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
 text = "Settings"
 icon_alignment = 1
 
-[node name="o4" type="Button" parent="CanvasLayer/buttons" unique_id=1551865551]
+[node name="scores" type="Button" parent="CanvasLayer/buttons" unique_id=165535141]
 custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
+text = "Scores"
+icon_alignment = 1
+
+[node name="quit" type="Button" parent="CanvasLayer/buttons" unique_id=1551865551]
+custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -181,8 +556,9 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
 text = "Quit"
 icon_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="CanvasLayer/buttons" unique_id=1627626101]
+[node name="name" type="LineEdit" parent="CanvasLayer/buttons" unique_id=1627626101]
 custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 24
@@ -192,13 +568,16 @@ placeholder_text = "Name ..."
 
 [node name="black" type="Panel" parent="CanvasLayer" unique_id=328284058]
 visible = false
+layout_direction = 2
 offset_left = -2.0
 offset_right = 1303.0
 offset_bottom = 752.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5dd4i")
 
 [node name="Container" type="HBoxContainer" parent="CanvasLayer" unique_id=649265225]
+visible = false
 custom_minimum_size = Vector2(1280, 720)
+layout_direction = 2
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 1284.0
@@ -208,17 +587,22 @@ alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Container" unique_id=1624407775]
 visible = false
+layout_direction = 2
 layout_mode = 2
 text = "Loading ..."
 
-[node name="Panel" type="Panel" parent="." unique_id=1576112269]
-layout_direction = 2
-offset_left = -23587.0
-offset_top = -12120.0
-offset_right = 21980.0
-offset_bottom = 16457.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
-
-[connection signal="pressed" from="CanvasLayer/buttons/o2" to="." method="_on_o_2_pressed"]
-[connection signal="text_changed" from="CanvasLayer/buttons/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="CanvasLayer/settings/options/lang/arabic" to="." method="_on_arabic_pressed"]
+[connection signal="pressed" from="CanvasLayer/settings/options/lang/english" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="CanvasLayer/settings/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift1" to="." method="_on_arabic_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift2" to="." method="_on_arabic_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift3" to="." method="_on_arabic_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift4" to="." method="_on_arabic_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift5" to="." method="_on_arabic_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift6" to="." method="_on_arabic_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/options/shift7" to="." method="_on_arabic_pressed"]
+[connection signal="pressed" from="CanvasLayer/scores/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="CanvasLayer/buttons/newgame" to="." method="_on_o_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/buttons/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/buttons/scores" to="." method="_on_scores_pressed"]
+[connection signal="text_changed" from="CanvasLayer/buttons/name" to="." method="_on_line_edit_text_changed"]
