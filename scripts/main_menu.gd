@@ -27,13 +27,31 @@ func _on_o_2_pressed() -> void:
 	$CanvasLayer/o3.disabled = 1
 	$CanvasLayer/o4.disabled = 1
 	var tween = create_tween()
+	var tween2 = create_tween()
 	
 	$CanvasLayer/black.modulate = 0
 	$CanvasLayer/black.visible = 1
 	tween.tween_property($CanvasLayer/black, "modulate:a", 1.0, 0.3)
+	
+	#$CanvasLayer/Container/Label.modulate = 0
+	$CanvasLayer/Container/Label.visible = 1
+	tween2.tween_property($CanvasLayer/Container/Label, "modulate:a", 1.0, 0.3)
+	
+	await get_tree().create_timer(0.3).timeout
+	#
+	for i in range(5):
+		print(i)
+		$CanvasLayer/Container/Label.text = "Loading .."
+		await get_tree().create_timer(0.3).timeout
+		$CanvasLayer/Container/Label.text = "Loading ."
+		await get_tree().create_timer(0.3).timeout
+		$CanvasLayer/Container/Label.text = "Loading .."
+		await get_tree().create_timer(0.3).timeout
+		$CanvasLayer/Container/Label.text = "Loading ..."
+		await get_tree().create_timer(0.3).timeout
+		
 
 	await get_tree().create_timer(5).timeout
-	
 	
 	#get_tree().change_scene_to_file("res://scenes/game.tscn")
 	

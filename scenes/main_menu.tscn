@@ -182,5 +182,18 @@ offset_right = 1303.0
 offset_bottom = 752.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5dd4i")
 
+[node name="Container" type="HBoxContainer" parent="CanvasLayer" unique_id=649265225]
+custom_minimum_size = Vector2(1280, 720)
+offset_left = -2.0
+offset_right = 1278.0
+offset_bottom = 720.0
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Container" unique_id=1624407775]
+visible = false
+layout_mode = 2
+text = "Loading ..."
+
 [connection signal="pressed" from="CanvasLayer/o2" to="." method="_on_o_2_pressed"]
 [connection signal="text_changed" from="CanvasLayer/LineEdit" to="." method="_on_line_edit_text_changed"]
