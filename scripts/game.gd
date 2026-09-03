@@ -3081,9 +3081,9 @@ func newspaper_translation():
 		2: day2_newspaper_translation()
 		3: day3_newspaper_translation()
 		4: day4_newspaper_translation()
-		#5: day5_newspaper_translation()
-		#6: day6_newspaper_translation()
-		#3: day3_newspaper_translation()
+		5: day5_newspaper_translation()
+		6: day6_newspaper_translation()
+		7: day3_newspaper_translation()
 		
 
 func day1_newspaper_translation():
@@ -3240,26 +3240,40 @@ func day6_newspaper_translation():
 		if page1.get_child(topic).name == "control": break
 		for part in page1.get_child(topic).get_child_count():
 			if page1.get_child(topic).get_child(part) is Label:
-				page1.get_child(topic).get_child(part).text = tr(day5_page1[topic][part])
+				page1.get_child(topic).get_child(part).text = tr(day6_page1[topic][part])
 			else:
-				page1.get_child(topic).get_child(part).texture = day5_page1[topic][part]
+				page1.get_child(topic).get_child(part).texture = day6_page1[topic][part]
 
 	for topic in page2.get_child_count():
 		if page2.get_child(topic).name == "control": break
 		for part in page2.get_child(topic).get_child_count():
 			if page2.get_child(topic).get_child(part) is Label:
-				page2.get_child(topic).get_child(part).text = tr(day5_page2[topic][part])
+				page2.get_child(topic).get_child(part).text = tr(day6_page2[topic][part])
 			else:
-				page2.get_child(topic).get_child(part).texture = day5_page2[topic][part]
+				page2.get_child(topic).get_child(part).texture = day6_page2[topic][part]
 
 	for topic in page3.get_child_count():
 		if page3.get_child(topic).name == "control": break
 		for part in page3.get_child(topic).get_child_count():
 			if page3.get_child(topic).get_child(part) is Label:
-				page3.get_child(topic).get_child(part).text = tr(day5_page3[topic][part])
+				page3.get_child(topic).get_child(part).text = tr(day6_page3[topic][part])
 			else:
-				page3.get_child(topic).get_child(part).texture = day5_page3[topic][part]
+				page3.get_child(topic).get_child(part).texture = day6_page3[topic][part]
 
+func day7_newspaper_translation():
+	#var page1 = $CanvasLayer/news/pages/page1
+	#var page2 = $CanvasLayer/news/pages/page2
+	#var page3 = $CanvasLayer/news/pages/page3
+	var page1 = $CanvasLayer/news/pages/page3
+	
+	
+	for topic in page1.get_child_count():
+		if page1.get_child(topic).name == "control": break
+		for part in page1.get_child(topic).get_child_count():
+			if page1.get_child(topic).get_child(part) is Label:
+				page1.get_child(topic).get_child(part).text = tr(day7_page1[topic][part])
+			else:
+				page1.get_child(topic).get_child(part).texture = day7_page1[topic][part]
 
 
 var day1_page1 = [
@@ -3406,7 +3420,14 @@ var day6_page3 = [
 	["day6_page3_topic5_title", "day6_page3_topic5_col1", preload("res://assets/newspaper/cons.png")],
 ]
 
-
+var day7_page1 = [
+	["day7_page1_topic1_title", "day7_page1_topic1_col1", "day7_page1_topic1_col2", "day7_page1_topic1_col3", preload("res://assets/newspaper/cons.png")],
+	["day7_page1_topic2_title", "day7_page1_topic2_col1"],
+	["day7_page1_topic3_title", "day7_page1_topic3_col1"],
+	["day7_page1_topic4_title", "day7_page1_topic4_col1"],
+	["day7_page1_topic5_title", "day7_page1_topic5_col1"],
+	["day7_page1_topic6_title", "day7_page1_topic6_col1"],
+]
 
 
 
