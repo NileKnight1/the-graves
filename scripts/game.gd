@@ -280,6 +280,7 @@ func _ready() -> void:
 		$CanvasLayer/mobile.visible = 1
 		pc = 0
 	translation()
+	#subtitle(10, 1.0)
 	tasks()
 	#newspaper_pages_refresh()
 	#day6_tech_steal()
@@ -344,6 +345,8 @@ func shift_time_manager():
 		4: day4_time()
 		5: day5_time()
 		6: day6_time()
+		7: day7_time()
+		
 
 
 func day_starters():
@@ -514,6 +517,10 @@ func match_shift():
 				2: day_chat(day6_tech_chat_second, day6_tech_options1)
 				3: day_chat(day6_tech_chat_second_stolen, day6_tech_first_disallow)
 				4: day_chat(day6_end_chat, day_end)
+		7:
+			match call_index:
+				0: day_call(day7_call1_chat, day7_start)
+				1: day_chat(day7_end_chat, day_end)
 
 func _process(delta: float) -> void:
 	#print(day1task2)
@@ -764,11 +771,11 @@ func _on_decline_call_pressed() -> void:
 		3:
 			match call_index:
 				0: day3_start()
-				1: day_end()
+				5: day_end()
 		4:
 			match call_index:
 				0: day4_start()
-				1: day_end()
+				5: day_end()
 		5:
 			match call_index:
 				0: day5_start()
@@ -776,7 +783,12 @@ func _on_decline_call_pressed() -> void:
 		6:
 			match call_index:
 				0: day6_start()
+				4: day_end()
+		7:
+			match call_index:
+				0: day7_start()
 				1: day_end()
+		
 		
 	call_index += 1
 
@@ -1445,6 +1457,7 @@ func generator_sabo():
 func generator_steal_apply():
 	generator_working = 0
 	generator_stolen = 1
+	$anomalies/robber.visible = 0
 	$anomalies/tech.visible = 0
 	cam_sabo(1)
 	cam_sabo(2)
@@ -2263,7 +2276,7 @@ func day2_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
-	elif shift_time == 2:
+	elif shift_time == 180:
 		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
@@ -2305,7 +2318,7 @@ func day3_time():
 		set_shift_values(15, 20)
 	elif shift_time == 150:
 		set_shift_values(12, 16)
-	elif shift_time == 2:
+	elif shift_time == 180:
 		vamp_spawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
@@ -2909,7 +2922,8 @@ func frank_spawn():
 		
 		await get_tree().create_timer(2).timeout 
 		subtitle("", 0)
-		day6_next_tech()
+		if shift == 6:
+			day6_next_tech()
 		play_sound(frank_scream)
 
 var frank_sounds_on = 0
@@ -3468,12 +3482,11 @@ func _on_brief_pressed() -> void:
 	refresh_brief()
 	$CanvasLayer/pause/brief_.visible = !$CanvasLayer/pause/brief_.visible
 
-
 # Red Moon Night
-
 
 func day7_time():
 	if shift_time == 1:
+		#day_generator_steal()
 		print("shift", shift)
 	elif shift_time == 60:
 		set_shift_values(15, 20)
@@ -3481,6 +3494,8 @@ func day7_time():
 		set_shift_values(12, 16)
 	elif shift_time == 180:
 		vamp_spawn()
+	elif shift_time == 250:
+		vamp_despawn()
 	elif shift_time == 240:
 		set_shift_values(8, 14)
 
@@ -3488,6 +3503,41 @@ var day7_call1_chat = [
 	["day7start", 1.0, "manager"],
 ]
 
+var day7_end_chat = [
+	["day7end", 1.0, "manager"],
+]
+
+func day7_start():
+	shift_start()
+	generator_steal_prob()
+	#sabo_time()
+
+func day_generator_steal():
+	$anomalies/robber.visible = 1
+	subtitle("generator_steal", 1.0)
+	generator_steal_time()
+
+func generator_steal_time():
+	for i in range(11):
+		if generator_area: 
+			generator_steal_stop()
+			return
+		await get_tree().create_timer(1.0).timeout
+		subtitle(str(10-i), 0.2)
+	await get_tree().create_timer(1.0).timeout
+	subtitle("", 0)
+	generator_steal_apply()
+
+func generator_steal_stop():
+	subtitle("steal stop", 0)
+	$anomalies/robber.visible = 0
+	generator_steal_prob()
+
+func generator_steal_prob():
+	var temp = randi_range(35, 60)
+	await get_tree().create_timer(temp).timeout
+	day_generator_steal()
+	
 
 
 
@@ -3497,19 +3547,15 @@ var day7_call1_chat = [
 
 
 
-
-
-
-
-
-
-
-## ideas
+#ideas to do
+## main menu
+## 
+#### new creatures -> time shifter -> very rare creature -> asks for time, player answer shifts time to it
+#### newspapre player's name on day7
 ### achievements
-### save/load
-### newspapre player's name on day7
-### new creatures
-# time shifter -> very rare creature -> asks for time, player answer shifts time to it
+## leaderboard
+# save/load
+## visitors mode
 
 
 
