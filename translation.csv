@@ -317,6 +317,18 @@ day4c3,I'll watch cameras .. you radio.,سأراقب الكاميرات وأنت
 day5msg1,Hello %s.,أهلًأ يا %s.
 day5msg2,We're on the Red Moon Night.,نحن في ليلة القمر الحمراء.
 day5msg3,Open light switch if you need it.,افتح الضوء إذا احتجته.
-,"The generator has broken down, but you won't be able to fix it on your own.",لقد تعطل المولد لكن لن تستطيع إصلاحه بمفردك.
-,A company worker will come today to fix it.,سيأتي عامل الشركة اليوم لإصلاحه.
-,Be prepared for it.,كن في انتظاره.
+day6msg2,"The generator has broken down, but you won't be able to fix it on your own.",لقد تعطل المولد لكن لن تستطيع إصلاحه بمفردك.
+day6msg3,A company worker will come today to fix it.,سيأتي عامل الشركة اليوم لإصلاحه.
+day6msg4,Be prepared for it.,كن في انتظاره.
+techfirst1,"Hello %s, I am an employee of the electricity company.",أهلًا يا %s، أنا عامل شركة الكهرباء.
+techfirst2,"I'll go in and fix it, okay?",سأدخل لإصلاحه، حسنًأ؟
+techsecond1,"Hello %s, I learned that someone impersonated me and came to deceive you.",أهلًا يا %s، علمت أن شخصًا انتحل شخصيتي وجاء ليخدعك.
+techsecond2,"Thank God he didn't steal it. I'll go in and fix it, okay?",حمدًا لله أنه لم يسرقه. سأدخل لإصلاحه، حسنًا؟
+techstolen1,Hello @s. I'm an employee of the electricity company... the original one.,أهلًا يا @s. أنا عامل شركة الكهرباء ... الأصلي.
+techstolen2,The person who came before me tricked you and stole the generator.,لقد خدعك الشخص الذي جاء قبلي وسرق المولد.
+techstolen3,Didn't you read in the news about the theft of electric generators?,ألم تقرأ في الأخبار عن سرقة المولدات الكهربائية؟
+day7msg2,"The red moon night has come again, unusually. Beware of it.",أتت ليلة القمر الحمراء مجددًا على غير العادة. احذر منها.
+day7msg3,Theft of electric generators increased during those days.,وازدادت سرقة المولدات الكهربائية تلك الأيام.
+day7end2,I found a better worker than you.,وجدت عاملًا أفضل منك.
+day7end3,Your work with me is over.,انتهى عملك معي.
+day7end4,Farewell!,وداعًا!

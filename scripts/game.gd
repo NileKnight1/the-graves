@@ -2852,6 +2852,7 @@ var day6_call1_chat = [
 	["day6msg4", 1.0, "manager"],
 ]
 
+
 ### Day6
 ## -> generator tech, 
 # if yes -> it steals generator -> spawn franky
@@ -2887,7 +2888,8 @@ func _on_tech_body_entered(body: Node2D) -> void:
 		start_chat()
 
 var day6_tech_chat_first = [
-	["tech1", 1.0, "tech"],
+	["techfirst1", 1.5, "tech"],
+	["techfirst2", 1.0, "tech"],
 ]
 
 func day6_starters():
@@ -2952,11 +2954,16 @@ func day6_tech_first_disallow():
 	$anomalies/tech.move = 1
 
 var day6_tech_chat_second = [
-	["im the good one", 1.0, "tech"],
+	["techsecond1", 1.5, "tech"],
+	["techsecond2", 1.0, "tech"],
 ]
+
 var day6_tech_chat_second_stolen = [
-	["he stole it", 1.0, "tech"],
+	["techstolen1", 1.5, "tech"],
+	["techstolen2", 1.5, "tech"],
+	["techstolen3", 1.5, "tech"],
 ]
+
 
 ### scenarios
 # good come -> allowed -> bad come -> allowed/disallowed
@@ -3087,9 +3094,8 @@ func day6_battery_leave():
 	hide_decisions()
 
 var day6_end_chat = [
-	["day6end", 1.0, "manager"],
+	["goodluck", 0.5, "manager"],
 ]
-
 
 func _on_left_pressed() -> void:
 	Input.action_press("left")
@@ -3573,12 +3579,20 @@ func day7_time():
 		set_shift_values(8, 14)
 
 var day7_call1_chat = [
-	["day7start", 1.0, "manager"],
+	["day4msg1", 0.5, "manager"],
+	["day7msg2", 1.5, "manager"],
+	["day7msg3", 1.5, "manager"],
+	["goodluck", 0.5, "manager"],
+	
 ]
 
 var day7_end_chat = [
-	["day7end", 1.0, "manager"],
+	["goodjob", 0.5, "manager"],
+	["day7end2", 1.5, "manager"],
+	["day7end3", 1.5, "manager"],
+	["day7end4", 1.0, "manager"],
 ]
+
 
 func day7_start():
 	shift_start()
