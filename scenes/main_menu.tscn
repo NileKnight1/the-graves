@@ -145,9 +145,6 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
-bg_color = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
 content_margin_left = 20.0
 bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
@@ -175,6 +172,9 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 shadow_color = Color(1, 1, 1, 1)
 shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="menu" type="Node2D" unique_id=631255614]
 script = ExtResource("1_l6cm7")
@@ -303,6 +303,7 @@ text = "X"
 icon_alignment = 1
 
 [node name="title" type="Label" parent="CanvasLayer/settings" unique_id=1919529948]
+layout_direction = 2
 layout_mode = 0
 offset_left = 712.0
 offset_top = 156.0
@@ -494,6 +495,7 @@ text = "X"
 icon_alignment = 1
 
 [node name="title" type="Label" parent="CanvasLayer/scores" unique_id=1692334948]
+layout_direction = 2
 layout_mode = 0
 offset_left = 712.0
 offset_top = 156.0
@@ -532,6 +534,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/scores_" unique_id=1080848130]
 custom_minimum_size = Vector2(1074, 0)
+layout_direction = 2
 layout_mode = 0
 offset_left = 268.0
 offset_top = 101.0
@@ -541,6 +544,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/scores_/HBoxContainer" unique_id=1456521607]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 text = "Rank"
@@ -550,6 +554,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/scores_/HBoxContainer" unique_id=1152211956]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -562,6 +567,7 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer/scores_/HBoxContainer" unique_id=1130610954]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -574,6 +580,7 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="CanvasLayer/scores_/HBoxContainer" unique_id=1661035582]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -586,6 +593,7 @@ vertical_alignment = 1
 
 [node name="Label6" type="Label" parent="CanvasLayer/scores_/HBoxContainer" unique_id=201586392]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -597,6 +605,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/scores_" unique_id=418228047]
+layout_direction = 2
 layout_mode = 0
 offset_left = 271.0
 offset_top = 142.0
@@ -607,17 +616,20 @@ tile_scroll_hint = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/scores_/ScrollContainer" unique_id=545551996]
 custom_minimum_size = Vector2(1074, 547)
+layout_direction = 2
 layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=807730632]
 visible = false
+layout_direction = 2
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
 [node name="Label1" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=729649741]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 text = "01"
@@ -627,6 +639,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=1893070024]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -639,6 +652,7 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=1540469364]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -651,6 +665,7 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=130305346]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -663,6 +678,7 @@ vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=940462534]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -716,6 +732,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/scores_" unique_id=2017619720]
+layout_direction = 2
 layout_mode = 0
 offset_left = 271.0
 offset_top = 629.0
@@ -726,6 +743,7 @@ alignment = 1
 
 [node name="Label1" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=682088220]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 text = "01"
@@ -735,6 +753,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=906187339]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -747,6 +766,7 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=561888621]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -759,6 +779,7 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=1359542946]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -771,6 +792,7 @@ vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=551596499]
 custom_minimum_size = Vector2(174, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
@@ -782,6 +804,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="title" type="Label" parent="CanvasLayer/scores_" unique_id=739998937]
+layout_direction = 2
 layout_mode = 0
 offset_left = 712.0
 offset_top = 36.0
@@ -820,6 +843,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/achievments_" unique_id=396330206]
 custom_minimum_size = Vector2(1083, 471)
+layout_direction = 2
 layout_mode = 0
 offset_left = 271.0
 offset_top = 142.0
@@ -828,6 +852,7 @@ offset_bottom = 660.0
 columns = 4
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/achievments_" unique_id=619968286]
+layout_direction = 2
 layout_mode = 0
 offset_left = 271.0
 offset_top = 142.0
@@ -838,20 +863,24 @@ tile_scroll_hint = true
 
 [node name="HFlowContainer" type="HFlowContainer" parent="CanvasLayer/achievments_/ScrollContainer" unique_id=611588668]
 custom_minimum_size = Vector2(1083, 471)
+layout_direction = 2
 layout_mode = 2
 
 [node name="Control" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=2038847124]
 custom_minimum_size = Vector2(260, 170)
+layout_direction = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=1564981327]
 custom_minimum_size = Vector2(250, 200)
+layout_direction = 2
 layout_mode = 2
 texture = ExtResource("8_jk1qb")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=1540696213]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 31
@@ -861,6 +890,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=750783669]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 16
@@ -871,16 +901,19 @@ autowrap_mode = 2
 
 [node name="Control2" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=1586718748]
 custom_minimum_size = Vector2(260, 170)
+layout_direction = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control2" unique_id=195996385]
 custom_minimum_size = Vector2(250, 200)
+layout_direction = 2
 layout_mode = 2
 texture = ExtResource("8_jk1qb")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control2" unique_id=637018775]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 31
@@ -890,6 +923,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control2" unique_id=1813614477]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 16
@@ -900,16 +934,19 @@ autowrap_mode = 2
 
 [node name="Control3" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=1269945278]
 custom_minimum_size = Vector2(260, 170)
+layout_direction = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control3" unique_id=69677700]
 custom_minimum_size = Vector2(250, 200)
+layout_direction = 2
 layout_mode = 2
 texture = ExtResource("8_jk1qb")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control3" unique_id=504880256]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 31
@@ -919,6 +956,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control3" unique_id=958033116]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 16
@@ -929,16 +967,19 @@ autowrap_mode = 2
 
 [node name="Control4" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=830385686]
 custom_minimum_size = Vector2(260, 170)
+layout_direction = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control4" unique_id=787985004]
 custom_minimum_size = Vector2(250, 200)
+layout_direction = 2
 layout_mode = 2
 texture = ExtResource("8_jk1qb")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control4" unique_id=1070160035]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 31
@@ -948,6 +989,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control4" unique_id=2038345410]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 16
@@ -958,16 +1000,19 @@ autowrap_mode = 2
 
 [node name="Control5" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=1873901609]
 custom_minimum_size = Vector2(260, 170)
+layout_direction = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control5" unique_id=730793296]
 custom_minimum_size = Vector2(250, 200)
+layout_direction = 2
 layout_mode = 2
 texture = ExtResource("8_jk1qb")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control5" unique_id=1645572294]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 31
@@ -977,6 +1022,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control5" unique_id=686020372]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 16
@@ -987,16 +1033,19 @@ autowrap_mode = 2
 
 [node name="Control6" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=937120045]
 custom_minimum_size = Vector2(260, 170)
+layout_direction = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control6" unique_id=46071358]
 custom_minimum_size = Vector2(250, 200)
+layout_direction = 2
 layout_mode = 2
 texture = ExtResource("8_jk1qb")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control6" unique_id=1034461885]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 31
@@ -1006,6 +1055,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control6" unique_id=2043983429]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 16
@@ -1016,16 +1066,19 @@ autowrap_mode = 2
 
 [node name="Control7" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=985441999]
 custom_minimum_size = Vector2(260, 170)
+layout_direction = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control7" unique_id=1924930145]
 custom_minimum_size = Vector2(250, 200)
+layout_direction = 2
 layout_mode = 2
 texture = ExtResource("8_jk1qb")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control7" unique_id=1907615528]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 31
@@ -1035,6 +1088,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control7" unique_id=2004279724]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 16
@@ -1045,16 +1099,19 @@ autowrap_mode = 2
 
 [node name="Control8" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=851489714]
 custom_minimum_size = Vector2(260, 170)
+layout_direction = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control8" unique_id=451992660]
 custom_minimum_size = Vector2(250, 200)
+layout_direction = 2
 layout_mode = 2
 texture = ExtResource("8_jk1qb")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control8" unique_id=528801448]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 31
@@ -1064,6 +1121,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control8" unique_id=1666598548]
 custom_minimum_size = Vector2(250, 0)
+layout_direction = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 16
@@ -1089,6 +1147,7 @@ text = "X"
 icon_alignment = 1
 
 [node name="title" type="Label" parent="CanvasLayer/achievments_" unique_id=1336397684]
+layout_direction = 2
 layout_mode = 0
 offset_left = 665.0
 offset_top = 36.0
@@ -1227,21 +1286,15 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
 text = "Quit"
 icon_alignment = 1
 
-[node name="black" type="Panel" parent="CanvasLayer" unique_id=328284058]
-visible = false
-layout_direction = 2
-offset_left = -2.0
-offset_right = 1303.0
-offset_bottom = 752.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_5dd4i")
-
 [node name="account" type="VBoxContainer" parent="CanvasLayer" unique_id=280864093]
+layout_direction = 2
 offset_left = 993.0
 offset_top = 192.0
 offset_right = 1183.0
-offset_bottom = 548.0
+offset_bottom = 575.0
 
 [node name="title" type="Label" parent="CanvasLayer/account" unique_id=1085457971]
+layout_direction = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1312,6 +1365,7 @@ text = "123456"
 placeholder_text = "Password"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/account" unique_id=986410902]
+layout_direction = 2
 layout_mode = 2
 alignment = 1
 
@@ -1352,10 +1406,18 @@ text = "Log In"
 icon_alignment = 1
 
 [node name="feedback" type="Label" parent="CanvasLayer/account" unique_id=1917743011]
+layout_direction = 2
 layout_mode = 2
 
-[node name="Container" type="HBoxContainer" parent="CanvasLayer" unique_id=649265225]
+[node name="black" type="Panel" parent="CanvasLayer" unique_id=328284058]
 visible = false
+layout_direction = 2
+offset_left = -2.0
+offset_right = 1303.0
+offset_bottom = 752.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5dd4i")
+
+[node name="Container" type="HBoxContainer" parent="CanvasLayer" unique_id=649265225]
 custom_minimum_size = Vector2(1280, 720)
 layout_direction = 2
 offset_left = 4.0

@@ -337,9 +337,9 @@ func get_my_score(shift_number: int):
 			return {
 				"rank": i + 1,
 				"player": data[i]["player"],
-				"max_danger": data[i]["max_danger"],
-				"anomalies_reported": data[i]["anomalies_reported"],
-				"sabotages_fixed": data[i]["sabotages_fixed"]
+				"max_danger": int(data[i]["max_danger"]),
+				"anomalies_reported": int(data[i]["anomalies_reported"]),
+				"sabotages_fixed": int(data[i]["sabotages_fixed"])
 			}
 
 	return null

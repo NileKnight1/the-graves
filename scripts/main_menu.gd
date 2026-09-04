@@ -44,9 +44,9 @@ func fill_leaderboard(data):
 
 		row.get_node("Label1").text = str(i + 1)
 		row.get_node("Label2").text = str(entry["player"])
-		row.get_node("Label3").text = str(entry["max_danger"])
-		row.get_node("Label4").text = str(entry["anomalies_reported"])
-		row.get_node("Label5").text = str(entry["sabotages_fixed"])
+		row.get_node("Label3").text = str(int(entry["max_danger"]))
+		row.get_node("Label4").text = str(int(entry["anomalies_reported"]))
+		row.get_node("Label5").text = str(int(entry["sabotages_fixed"]))
 
 
 func _process(delta: float) -> void:
@@ -65,15 +65,17 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 
 func _on_o_2_pressed() -> void:
 	global.temp_reset()
-	loading()
+	await loading()
+	
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_continue_pressed() -> void:
-	loading()
+	await loading()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
 func loading():
+	disable_buttons()
 	$CanvasLayer/buttons/continue.disabled = 1
 	$CanvasLayer/buttons/newgame.disabled = 1
 	$CanvasLayer/buttons/settings.disabled = 1
@@ -95,13 +97,13 @@ func loading():
 	#
 	for i in range(3):
 		print(i)
-		$CanvasLayer/Container/Label.text = "Loading .."
+		$CanvasLayer/Container/Label.text = tr("Loading ..")
 		await get_tree().create_timer(0.3).timeout
-		$CanvasLayer/Container/Label.text = "Loading ."
+		$CanvasLayer/Container/Label.text = tr("Loading .")
 		await get_tree().create_timer(0.3).timeout
-		$CanvasLayer/Container/Label.text = "Loading .."
+		$CanvasLayer/Container/Label.text = tr("Loading ..")
 		await get_tree().create_timer(0.3).timeout
-		$CanvasLayer/Container/Label.text = "Loading ..."
+		$CanvasLayer/Container/Label.text = tr("Loading ...")
 		await get_tree().create_timer(0.3).timeout
 	
 	var tween3 = create_tween()
@@ -133,7 +135,39 @@ func translation():
 	$CanvasLayer/buttons/newgame.text = tr("newgame")
 	$CanvasLayer/buttons/settings.text = tr("settings")
 	$CanvasLayer/buttons/scores.text = tr("scores")
+	$CanvasLayer/buttons/achievments.text = tr("achievments")
 	$CanvasLayer/buttons/quit.text = tr("quit")
+	
+	$CanvasLayer/settings/options/lang/label.text = tr("language")
+	$CanvasLayer/settings/title.text = tr("settings")
+	
+	$CanvasLayer/scores/options/shift1.text = ">   " + tr("shift") + " 1"
+	$CanvasLayer/scores/options/shift2.text = ">   " + tr("shift") + " 2"
+	$CanvasLayer/scores/options/shift3.text = ">   " + tr("shift") + " 3"
+	$CanvasLayer/scores/options/shift4.text = ">   " + tr("shift") + " 4"
+	$CanvasLayer/scores/options/shift5.text = ">   " + tr("shift") + " 5"
+	$CanvasLayer/scores/options/shift6.text = ">   " + tr("shift") + " 6"
+	$CanvasLayer/scores/options/shift7.text = ">   " + tr("shift") + " 7"
+	$CanvasLayer/scores/title.text = tr("leaderboard")
+	
+	$CanvasLayer/scores_/HBoxContainer/Label.text = tr("rank")
+	$CanvasLayer/scores_/HBoxContainer/Label2.text = tr("Player")
+	$CanvasLayer/scores_/HBoxContainer/Label3.text = tr("max_danger")
+	$CanvasLayer/scores_/HBoxContainer/Label4.text = tr("anomalies_reported")
+	$CanvasLayer/scores_/HBoxContainer/Label6.text = tr("sabotages_fixed")
+	$CanvasLayer/scores_/title.text = tr("leaderboard")
+	
+	$CanvasLayer/achievments_/title.text = tr("achievments")
+	
+	$CanvasLayer/account/title.text = tr("account")
+	$CanvasLayer/account/player.placeholder_text = tr("acc_name")
+	$CanvasLayer/account/savename.text = tr("save_name")
+	$CanvasLayer/account/mail.placeholder_text = tr("acc_mail")
+	$CanvasLayer/account/password.placeholder_text = tr("acc_pass")
+	$CanvasLayer/account/HBoxContainer/signup.text = tr("signup")
+	$CanvasLayer/account/HBoxContainer/login.text = tr("login")
+	
+	
 	#$CanvasLayer/buttons/name.placeholder_text = tr("name") 
 
 
@@ -187,15 +221,15 @@ func _on_signup_pressed() -> void:
 	var code = await supabase.sign_up($CanvasLayer/account/mail.text, $CanvasLayer/account/password.text)
 
 	if code == 422:
-		$CanvasLayer/account/feedback.text = "Email is already registered."
+		$CanvasLayer/account/feedback.text = tr("Email is already registered.")
 	elif code == 400:
-		$CanvasLayer/account/feedback.text = "Please enter a valid email."
+		$CanvasLayer/account/feedback.text = tr("Please enter a valid email.")
 	elif code == 200 or code == 201:
-		$CanvasLayer/account/feedback.text = "Check your email!"
+		$CanvasLayer/account/feedback.text = tr("Check your email!")
 	elif code == 429:
-		$CanvasLayer/account/feedback.text = "Try again later."
+		$CanvasLayer/account/feedback.text = tr("Try again later.")
 	else:
-		$CanvasLayer/account/feedback.text = "Signup failed."
+		$CanvasLayer/account/feedback.text = tr("Signup failed.")
 	enable_buttons()
 
 func _on_login_pressed() -> void:
@@ -203,9 +237,9 @@ func _on_login_pressed() -> void:
 	var code = await supabase.login($CanvasLayer/account/mail.text, $CanvasLayer/account/password.text, $CanvasLayer/account/player.text)
 
 	if code == 200:
-		$CanvasLayer/account/feedback.text = "Login successful!"
+		$CanvasLayer/account/feedback.text = tr("Login successful!")
 	else:
-		$CanvasLayer/account/feedback.text = "Wrong email or password."
+		$CanvasLayer/account/feedback.text = tr("Wrong email or password.")
 		
 	var progress = await supabase.get_progress()
 	if progress:
