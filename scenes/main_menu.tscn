@@ -602,12 +602,13 @@ custom_minimum_size = Vector2(1074, 547)
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=807730632]
+[node name="HBoxContainer1" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=807730632]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=729649741]
+[node name="Label1" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=729649741]
 custom_minimum_size = Vector2(174, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
@@ -616,7 +617,7 @@ label_settings = SubResource("LabelSettings_tbmy8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1893070024]
+[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=1893070024]
 custom_minimum_size = Vector2(174, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -628,7 +629,7 @@ label_settings = SubResource("LabelSettings_jk1qb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1540469364]
+[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=1540469364]
 custom_minimum_size = Vector2(174, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -640,7 +641,7 @@ label_settings = SubResource("LabelSettings_5dd4i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=130305346]
+[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=130305346]
 custom_minimum_size = Vector2(174, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -652,999 +653,7 @@ label_settings = SubResource("LabelSettings_lgwnu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=940462534]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=1746000034]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=197257489]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1929897800]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=728490430]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=295371001]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1069968693]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=798161256]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=10156238]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=88026009]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=1243881179]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=790379000]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=1249786113]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=1313124340]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=1681026939]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=72307573]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=1380859721]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=556065536]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=900236560]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=1601136484]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=877617930]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=1501814989]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=633901334]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=520979210]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=1053145726]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=1608716251]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=988588410]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=1203996885]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=300942559]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=1229636657]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=1982235299]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer8" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=348327006]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=828920787]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=1072192575]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=2005400341]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=1258430537]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=12215810]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer9" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=1817980652]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer9" unique_id=2144168120]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer9" unique_id=1251380356]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer9" unique_id=1246576586]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer9" unique_id=574909274]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer9" unique_id=844941603]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer10" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=1129297771]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer10" unique_id=1711857715]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer10" unique_id=1227436565]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer10" unique_id=809641387]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer10" unique_id=1485197733]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer10" unique_id=1085213806]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer11" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=44177163]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer11" unique_id=1205865142]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer11" unique_id=1209572213]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer11" unique_id=501946324]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer11" unique_id=1525228337]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer11" unique_id=1548047911]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer12" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=769046073]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer12" unique_id=666821759]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer12" unique_id=624687491]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer12" unique_id=523777637]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer12" unique_id=2108226351]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer12" unique_id=1893028814]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer13" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=692527155]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer13" unique_id=1804614848]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer13" unique_id=1841527503]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer13" unique_id=1295092425]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer13" unique_id=986051282]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer13" unique_id=126352205]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer14" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=1082922456]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer14" unique_id=1475092086]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer14" unique_id=214745654]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer14" unique_id=572193094]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer14" unique_id=708384475]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer14" unique_id=125400526]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer15" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=900476302]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer15" unique_id=1607661750]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer15" unique_id=315701748]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer15" unique_id=668538120]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer15" unique_id=1623730376]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer15" unique_id=1810233887]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer16" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=1504299173]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer16" unique_id=994237591]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer16" unique_id=671637446]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer16" unique_id=785169223]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer16" unique_id=162535764]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer16" unique_id=592060004]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer17" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=1152811386]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer17" unique_id=1439347118]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer17" unique_id=295684654]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer17" unique_id=1377661862]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer17" unique_id=1108659739]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer17" unique_id=253091645]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "0"
-label_settings = SubResource("LabelSettings_flqon")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer18" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=1986006041]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer18" unique_id=762804121]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_oa1go")
-text = "01"
-label_settings = SubResource("LabelSettings_tbmy8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer18" unique_id=1057390247]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "Ammar"
-label_settings = SubResource("LabelSettings_jk1qb")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer18" unique_id=221714924]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "140"
-label_settings = SubResource("LabelSettings_5dd4i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer18" unique_id=1751900090]
-custom_minimum_size = Vector2(174, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-theme_override_fonts/font = ExtResource("6_oa1go")
-theme_override_font_sizes/font_size = 25
-text = "10"
-label_settings = SubResource("LabelSettings_lgwnu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer18" unique_id=1849203890]
+[node name="Label5" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=940462534]
 custom_minimum_size = Vector2(174, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1707,7 +716,7 @@ offset_bottom = 650.0
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=682088220]
+[node name="Label1" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=682088220]
 custom_minimum_size = Vector2(174, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
@@ -1752,7 +761,7 @@ label_settings = SubResource("LabelSettings_lgwnu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=551596499]
+[node name="Label5" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=551596499]
 custom_minimum_size = Vector2(174, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1781,6 +790,7 @@ vertical_alignment = 1
 
 [node name="achievments_" type="Control" parent="CanvasLayer" unique_id=314716637]
 process_mode = 3
+visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
@@ -2086,7 +1096,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="buttons" type="VBoxContainer" parent="CanvasLayer" unique_id=469679139]
-visible = false
 layout_direction = 2
 anchors_preset = 8
 anchor_left = 0.5
@@ -2189,7 +1198,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
-text = "Scores"
+text = "achievments"
 icon_alignment = 1
 
 [node name="quit" type="Button" parent="CanvasLayer/buttons" unique_id=1551865551]
@@ -2245,6 +1254,107 @@ layout_direction = 2
 layout_mode = 2
 text = "Loading ..."
 
+[node name="signup" type="Button" parent="CanvasLayer" unique_id=709629081]
+layout_direction = 2
+offset_left = 1042.0
+offset_top = 468.0
+offset_right = 1129.0
+offset_bottom = 523.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
+text = "Sign Up"
+icon_alignment = 1
+
+[node name="savename" type="Button" parent="CanvasLayer" unique_id=945365606]
+layout_direction = 2
+offset_left = 1042.0
+offset_top = 287.0
+offset_right = 1227.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
+text = "Save Name"
+icon_alignment = 1
+
+[node name="login" type="Button" parent="CanvasLayer" unique_id=2118814951]
+layout_direction = 2
+offset_left = 1142.0
+offset_top = 468.0
+offset_right = 1229.0
+offset_bottom = 523.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
+text = "Log In"
+icon_alignment = 1
+
+[node name="mail" type="LineEdit" parent="CanvasLayer" unique_id=1789535359]
+custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
+offset_left = 1040.0
+offset_top = 347.0
+offset_right = 1230.0
+offset_bottom = 402.0
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
+text = "ammartube777@gmail.com"
+placeholder_text = "Name ..."
+
+[node name="player" type="LineEdit" parent="CanvasLayer" unique_id=466748353]
+custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
+offset_left = 1040.0
+offset_top = 228.0
+offset_right = 1230.0
+offset_bottom = 283.0
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
+placeholder_text = "Name ..."
+
+[node name="password" type="LineEdit" parent="CanvasLayer" unique_id=677713904]
+custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
+offset_left = 1040.0
+offset_top = 407.0
+offset_right = 1230.0
+offset_bottom = 462.0
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
+text = "123456"
+placeholder_text = "Name ..."
+
 [connection signal="pressed" from="CanvasLayer/settings/options/lang/arabic" to="." method="_on_arabic_pressed"]
 [connection signal="pressed" from="CanvasLayer/settings/options/lang/english" to="." method="_on_english_pressed"]
 [connection signal="pressed" from="CanvasLayer/settings/close" to="." method="_on_close_pressed"]
@@ -2265,3 +1375,6 @@ text = "Loading ..."
 [connection signal="pressed" from="CanvasLayer/buttons/scores" to="." method="_on_scores_pressed"]
 [connection signal="pressed" from="CanvasLayer/buttons/achievments" to="." method="_on_achievments_pressed"]
 [connection signal="text_changed" from="CanvasLayer/buttons/name" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="CanvasLayer/signup" to="." method="_on_signup_pressed"]
+[connection signal="pressed" from="CanvasLayer/savename" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/login" to="." method="_on_login_pressed"]

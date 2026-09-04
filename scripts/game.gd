@@ -270,10 +270,13 @@ func translation():
 	
 	
 var pc = 1
+var sabotages_fixed = 1
 
 func _ready() -> void:
 	#await get_tree().create_timer(1.0, false, false, false).timeout
 	#print(p1_anomalies.find($anomalies/anomaly))
+	
+	
 	
 	var tween = create_tween()
 	tween.tween_property($CanvasLayer/end_screen/black, "modulate:a", 0.0, 1)
@@ -2148,8 +2151,10 @@ func day_end():
 	
 	if shift == 7:
 		end_game()
+		await supabase.save_progress(player_name, 0)
 	else:
 		global.shift += 1
+		await supabase.save_progress(player_name, shift)
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
 	#day2_start()
 
@@ -3651,13 +3656,12 @@ func end_game():
 
 
 #ideas to do
-## main menu
 ## high scores
 #### newspapre player's name on day7
 ### achievements
 ## leaderboard
-# save/load
 ## visitors mode
+# save/load
 
 
 
