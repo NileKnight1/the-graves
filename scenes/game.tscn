@@ -6790,6 +6790,375 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wljb1")
 text = ">"
 icon_alignment = 1
 
+[node name="day7" type="Control" parent="CanvasLayer/news" unique_id=686101661]
+process_mode = 3
+visible = false
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="topic1" type="Control" parent="CanvasLayer/news/day7" unique_id=284921492]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=482767235]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 142.0
+offset_right = 637.0
+offset_bottom = 168.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 20
+text = "Victor Frankenstein"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=1827741137]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 174.0
+offset_right = 517.0
+offset_bottom = 353.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "The police gathered all the evidence and discovered that the person responsible for the escape was Victor Frank, a man who, according to his neighbors, had been insane his entire life. He would go out all day and return at night. "
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col2" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=1425792436]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 174.0
+offset_right = 637.0
+offset_bottom = 353.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "It turned out that he had a laboratory on the outskirts of the city where he conducted his mad experiments, the latest of which involved electrically transforming a human into a monster that would serve and defend him."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col3" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=1393997301]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 272.0
+offset_right = 865.0
+offset_bottom = 325.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = " a huge number of them. He had also kidnapped the electricity company employees, drugging them in a way that rendered them incapable of thinking but simultaneously gave them strange energy. The police now is searching for him."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="image" type="TextureRect" parent="CanvasLayer/news/day7/topic1" unique_id=1599292984]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 143.99997
+offset_right = 1980.0
+offset_bottom = 833.0
+scale = Vector2(0.15785496, 0.17126271)
+texture = ExtResource("15_v2yb1")
+
+[node name="topic2" type="Control" parent="CanvasLayer/news/day7" unique_id=1220166043]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/day7/topic2" unique_id=1031313054]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 358.0
+offset_right = 521.0
+offset_bottom = 403.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "Victors Crimes"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/day7/topic2" unique_id=1091379967]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 380.0
+offset_right = 517.0
+offset_bottom = 615.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "It was discovered that Victor was also responsible for the generator thefts, as his experiment required a huge number of generators. He had also kidnapped the electricity company employees, drugging them in a way that rendered them incapable of thinking while simultaneously giving them strange energy. They left the company with him and helped him in the escape."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="topic3" type="Control" parent="CanvasLayer/news/day7" unique_id=2122964584]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 212.0
+offset_right = 40.0
+offset_bottom = 252.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/day7/topic3" unique_id=2091129561]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 137.0
+offset_right = 741.0
+offset_bottom = 176.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "Schools Mini FIFA"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/day7/topic3" unique_id=1716775716]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 159.0
+offset_right = 741.0
+offset_bottom = 240.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "Willomere won the FIFA Mini Schools Cup after a thrilling final against one of the country’s strongest school teams. Students and supporters celebrated as the team lifted the cup."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="topic4" type="Control" parent="CanvasLayer/news/day7" unique_id=1250576542]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_top = 212.0
+offset_right = 40.0
+offset_bottom = 252.0
+mouse_filter = 2
+
+[node name="title2" type="Label" parent="CanvasLayer/news/day7/topic4" unique_id=293955435]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 248.0
+offset_right = 629.0
+offset_bottom = 267.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "The Road"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col2" type="Label" parent="CanvasLayer/news/day7/topic4" unique_id=1798635802]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 271.0
+offset_right = 629.0
+offset_bottom = 396.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "Ravenford's main road reopened this morning after a week of repairs. Traffic is back to normal, and officials say the improvements will last for years."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="topic5" type="Control" parent="CanvasLayer/news/day7" unique_id=35287688]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_left = 119.0
+offset_right = 159.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/day7/topic5" unique_id=1469189338]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 460.0
+offset_right = 617.0
+offset_bottom = 479.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "He Still OUT"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="col3" type="Label" parent="CanvasLayer/news/day7/topic5" unique_id=5516978]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 483.0
+offset_right = 622.0
+offset_bottom = 608.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "But he hadn't killed anyone... not yet. Police have intensified their search for Frank; all citizens should be cautious. If you see him, call 111."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="topic6" type="Control" parent="CanvasLayer/news/day7" unique_id=598927589]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_left = 344.0
+offset_right = 384.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/day7/topic6" unique_id=695460434]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 356.0
+offset_right = 517.0
+offset_bottom = 401.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_gxtfn")
+theme_override_font_sizes/font_size = 14
+text = "The Escape"
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="col1" type="Label" parent="CanvasLayer/news/day7/topic6" unique_id=1697616764]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 378.0
+offset_right = 517.0
+offset_bottom = 627.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_twgab")
+theme_override_font_sizes/font_size = 10
+text = "Frank smuggled some prisoners with him to deflect suspicion. He used his tricks and inventions to drug the police officers, allowing him to escape without a trace or a sound. He used the same method for stealing the generators and for the kidnapping. The two men who smelled a pleasant scent were unaware that it was coming from his laboratory. He drugged them, so they forgot what they had seen there."
+label_settings = SubResource("LabelSettings_gxtfn")
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="control" type="Control" parent="CanvasLayer/news/day7" unique_id=186024147]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="header" type="Control" parent="CanvasLayer/news/day7/control" unique_id=1085394936]
+process_mode = 3
+layout_direction = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="title" type="Label" parent="CanvasLayer/news/day7/control/header" unique_id=233475283]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 48.0
+offset_right = 749.0
+offset_bottom = 132.0
+pivot_offset = Vector2(-196, -8)
+theme_override_colors/font_color = Color(0.47843137, 0.09019608, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("5_gee14")
+theme_override_font_sizes/font_size = 49
+text = "NEWSPAPER"
+horizontal_alignment = 1
+
+[node name="line1" type="Panel" parent="CanvasLayer/news/day7/control/header" unique_id=1955519370]
+layout_direction = 2
+layout_mode = 0
+offset_left = 396.0
+offset_top = 125.0
+offset_right = 886.0
+offset_bottom = 126.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
+
+[node name="line2" type="Panel" parent="CanvasLayer/news/day7/control/header" unique_id=742775392]
+layout_direction = 2
+layout_mode = 0
+offset_left = 396.0
+offset_top = 130.0
+offset_right = 886.0
+offset_bottom = 131.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
+
+[node name="line" type="Panel" parent="CanvasLayer/news/day7/control" unique_id=1179436334]
+layout_direction = 2
+layout_mode = 0
+offset_left = 420.0
+offset_top = 339.0
+offset_right = 862.0
+offset_bottom = 340.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
+[node name="line3" type="Panel" parent="CanvasLayer/news/day7/control" unique_id=1631995332]
+layout_direction = 2
+layout_mode = 0
+offset_left = 524.0
+offset_top = 423.54233
+offset_right = 716.23315
+offset_bottom = 424.54233
+rotation = 1.5707964
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
+[node name="line4" type="Panel" parent="CanvasLayer/news/day7/control" unique_id=1682377894]
+layout_direction = 2
+layout_mode = 0
+offset_left = 749.0
+offset_top = 423.54233
+offset_right = 941.23315
+offset_bottom = 424.54233
+rotation = 1.5707964
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
+[node name="line5" type="Panel" parent="CanvasLayer/news/day7/control" unique_id=271068592]
+layout_direction = 2
+layout_mode = 0
+offset_left = 634.0
+offset_top = 460.0
+offset_right = 789.7755
+offset_bottom = 461.0
+rotation = 1.5707964
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
+
 [node name="pages" type="Control" parent="CanvasLayer/news" unique_id=1667927580]
 process_mode = 3
 layout_direction = 2
@@ -7800,375 +8169,6 @@ offset_left = 420.0
 offset_top = 371.0
 offset_right = 862.0
 offset_bottom = 372.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
-
-[node name="page4" type="Control" parent="CanvasLayer/news/pages" unique_id=686101661]
-process_mode = 3
-visible = false
-layout_direction = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="topic1" type="Control" parent="CanvasLayer/news/pages/page4" unique_id=284921492]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page4/topic1" unique_id=482767235]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 142.0
-offset_right = 637.0
-offset_bottom = 168.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 20
-text = "Victor Frankenstein"
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page4/topic1" unique_id=1827741137]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 174.0
-offset_right = 517.0
-offset_bottom = 353.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "The police gathered all the evidence and discovered that the person responsible for the escape was Victor Frank, a man who, according to his neighbors, had been insane his entire life. He would go out all day and return at night. "
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="col2" type="Label" parent="CanvasLayer/news/pages/page4/topic1" unique_id=1425792436]
-layout_mode = 0
-offset_left = 531.0
-offset_top = 174.0
-offset_right = 637.0
-offset_bottom = 353.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "It turned out that he had a laboratory on the outskirts of the city where he conducted his mad experiments, the latest of which involved electrically transforming a human into a monster that would serve and defend him."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="col3" type="Label" parent="CanvasLayer/news/pages/page4/topic1" unique_id=1393997301]
-layout_mode = 0
-offset_left = 656.0
-offset_top = 272.0
-offset_right = 865.0
-offset_bottom = 325.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = " a huge number of them. He had also kidnapped the electricity company employees, drugging them in a way that rendered them incapable of thinking but simultaneously gave them strange energy. The police now is searching for him."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page4/topic1" unique_id=1599292984]
-layout_mode = 0
-offset_left = 656.0
-offset_top = 143.99997
-offset_right = 1980.0
-offset_bottom = 833.0
-scale = Vector2(0.15785496, 0.17126271)
-texture = ExtResource("15_v2yb1")
-
-[node name="topic2" type="Control" parent="CanvasLayer/news/pages/page4" unique_id=1220166043]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page4/topic2" unique_id=1031313054]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 358.0
-offset_right = 521.0
-offset_bottom = 403.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "Victors Crimes"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page4/topic2" unique_id=1091379967]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 380.0
-offset_right = 517.0
-offset_bottom = 615.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "It was discovered that Victor was also responsible for the generator thefts, as his experiment required a huge number of generators. He had also kidnapped the electricity company employees, drugging them in a way that rendered them incapable of thinking while simultaneously giving them strange energy. They left the company with him and helped him in the escape."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="topic3" type="Control" parent="CanvasLayer/news/pages/page4" unique_id=2122964584]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_top = 212.0
-offset_right = 40.0
-offset_bottom = 252.0
-mouse_filter = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page4/topic3" unique_id=2091129561]
-layout_mode = 0
-offset_left = 530.0
-offset_top = 137.0
-offset_right = 741.0
-offset_bottom = 176.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "Schools Mini FIFA"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page4/topic3" unique_id=1716775716]
-layout_mode = 0
-offset_left = 530.0
-offset_top = 159.0
-offset_right = 741.0
-offset_bottom = 240.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "Willomere won the FIFA Mini Schools Cup after a thrilling final against one of the country’s strongest school teams. Students and supporters celebrated as the team lifted the cup."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="topic4" type="Control" parent="CanvasLayer/news/pages/page4" unique_id=1250576542]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_top = 212.0
-offset_right = 40.0
-offset_bottom = 252.0
-mouse_filter = 2
-
-[node name="title2" type="Label" parent="CanvasLayer/news/pages/page4/topic4" unique_id=293955435]
-layout_mode = 0
-offset_left = 530.0
-offset_top = 248.0
-offset_right = 629.0
-offset_bottom = 267.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "The Road"
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="col2" type="Label" parent="CanvasLayer/news/pages/page4/topic4" unique_id=1798635802]
-layout_mode = 0
-offset_left = 530.0
-offset_top = 271.0
-offset_right = 629.0
-offset_bottom = 396.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "Ravenford's main road reopened this morning after a week of repairs. Traffic is back to normal, and officials say the improvements will last for years."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="topic5" type="Control" parent="CanvasLayer/news/pages/page4" unique_id=35287688]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_left = 119.0
-offset_right = 159.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page4/topic5" unique_id=1469189338]
-layout_mode = 0
-offset_left = 518.0
-offset_top = 460.0
-offset_right = 617.0
-offset_bottom = 479.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "He Still OUT"
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="col3" type="Label" parent="CanvasLayer/news/pages/page4/topic5" unique_id=5516978]
-layout_mode = 0
-offset_left = 518.0
-offset_top = 483.0
-offset_right = 622.0
-offset_bottom = 608.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "But he hadn't killed anyone... not yet. Police have intensified their search for Frank; all citizens should be cautious. If you see him, call 111."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="topic6" type="Control" parent="CanvasLayer/news/pages/page4" unique_id=598927589]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_left = 344.0
-offset_right = 384.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page4/topic6" unique_id=695460434]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 356.0
-offset_right = 517.0
-offset_bottom = 401.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
-theme_override_fonts/font = ExtResource("15_gxtfn")
-theme_override_font_sizes/font_size = 14
-text = "The Escape"
-horizontal_alignment = 3
-vertical_alignment = 3
-autowrap_mode = 2
-
-[node name="col1" type="Label" parent="CanvasLayer/news/pages/page4/topic6" unique_id=1697616764]
-layout_mode = 0
-offset_left = 411.0
-offset_top = 378.0
-offset_right = 517.0
-offset_bottom = 627.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("17_twgab")
-theme_override_font_sizes/font_size = 10
-text = "Frank smuggled some prisoners with him to deflect suspicion. He used his tricks and inventions to drug the police officers, allowing him to escape without a trace or a sound. He used the same method for stealing the generators and for the kidnapping. The two men who smelled a pleasant scent were unaware that it was coming from his laboratory. He drugged them, so they forgot what they had seen there."
-label_settings = SubResource("LabelSettings_gxtfn")
-horizontal_alignment = 3
-autowrap_mode = 2
-
-[node name="control" type="Control" parent="CanvasLayer/news/pages/page4" unique_id=186024147]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="header" type="Control" parent="CanvasLayer/news/pages/page4/control" unique_id=1085394936]
-process_mode = 3
-layout_direction = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="title" type="Label" parent="CanvasLayer/news/pages/page4/control/header" unique_id=233475283]
-layout_mode = 0
-offset_left = 524.0
-offset_top = 48.0
-offset_right = 749.0
-offset_bottom = 132.0
-pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0.47843137, 0.09019608, 0.09019608, 1)
-theme_override_fonts/font = ExtResource("5_gee14")
-theme_override_font_sizes/font_size = 49
-text = "NEWSPAPER"
-horizontal_alignment = 1
-
-[node name="line1" type="Panel" parent="CanvasLayer/news/pages/page4/control/header" unique_id=1955519370]
-layout_direction = 2
-layout_mode = 0
-offset_left = 396.0
-offset_top = 125.0
-offset_right = 886.0
-offset_bottom = 126.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
-
-[node name="line2" type="Panel" parent="CanvasLayer/news/pages/page4/control/header" unique_id=742775392]
-layout_direction = 2
-layout_mode = 0
-offset_left = 396.0
-offset_top = 130.0
-offset_right = 886.0
-offset_bottom = 131.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
-
-[node name="line" type="Panel" parent="CanvasLayer/news/pages/page4/control" unique_id=1179436334]
-layout_direction = 2
-layout_mode = 0
-offset_left = 420.0
-offset_top = 339.0
-offset_right = 862.0
-offset_bottom = 340.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
-
-[node name="line3" type="Panel" parent="CanvasLayer/news/pages/page4/control" unique_id=1631995332]
-layout_direction = 2
-layout_mode = 0
-offset_left = 524.0
-offset_top = 423.54233
-offset_right = 716.23315
-offset_bottom = 424.54233
-rotation = 1.5707964
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
-
-[node name="line4" type="Panel" parent="CanvasLayer/news/pages/page4/control" unique_id=1682377894]
-layout_direction = 2
-layout_mode = 0
-offset_left = 749.0
-offset_top = 423.54233
-offset_right = 941.23315
-offset_bottom = 424.54233
-rotation = 1.5707964
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
-
-[node name="line5" type="Panel" parent="CanvasLayer/news/pages/page4/control" unique_id=271068592]
-layout_direction = 2
-layout_mode = 0
-offset_left = 634.0
-offset_top = 460.0
-offset_right = 789.7755
-offset_bottom = 461.0
-rotation = 1.5707964
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
