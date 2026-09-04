@@ -98,75 +98,101 @@ day1_page3_topic4_title,Demolition,هدم
 day1_page3_topic4_col1,"The municipality plans to demolish some dilapidated buildings to protect them, as an old building last year caused the death of seven people living in it, and would have had even worse consequences if it weren't for God's mercy.",وتعتزم البلدية هدم بعض المباني المتهالكة لحمايتها، إذ تسبب مبنى قديم العام الماضي في وفاة سبعة أشخاص يسكنونه، وكان من الممكن أن تكون له عواقب أسوأ لولا رحمة الله.
 day1_page3_topic5_title,Revamp,تجديد
 day1_page3_topic5_col1,"The franchise decided to rebuild its struggling roster to revamp them, as an injury crisis last season ruined the chances of seven starters competing in it, and would have brought even worse results if it weren't for luck's favor and the resilience of the rookies.",قرر الامتياز إعادة بناء قائمته المتعثرة لتجديدها، حيث دمرت أزمة الإصابة الموسم الماضي فرص سبعة مبتدئين في التنافس فيها، وكان من الممكن أن تؤدي إلى نتائج أسوأ لولا الحظ ومرونة الناشئين.
-day2_page1_topic1_title,Road Construction,
-day2_page1_topic1_col1,"Construction on Ravenford's main road continued yesterday as government workers tried to finish the project on time. Officials said the work is going well, but some repairs are taking longer than expected. The road remains partly blocked, causing traffic across the city.",
-day2_page1_topic1_col2,"Drivers still complaining about the long delays, with many saying the situation become worse during busy hours. The family of the person who died in the ambulance is still waiting for an indemnity. The two food trucks also reported more financial losses caused by the delays.",
-day2_page1_topic1_col3,"Officials are now working on ways to reduce the traffic and prevent further losses. Extra workers have been sent to speed up the repairs, while authorities continue to promise that the road will reopen soon.  ",
-day2_page1_topic2_title,A New Library,
+day2_page1_topic1_title,Road Construction,بناء الطريق
+day2_page1_topic1_col1,"Construction on Ravenford's main road continued yesterday as government workers tried to finish the project on time. Officials said the work is going well, but some repairs are taking longer than expected. The road remains partly blocked, causing traffic across the city.",استمر بناء الطريق الرئيسي في رافنفورد أمس، حيث حاول عمال الحكومة إنهاء المشروع في الموعد المحدد. وقال المسؤولون إن العمل يسير بشكل جيد، لكن بعض أعمال الإصلاح تستغرق وقتًا أطول من المتوقع. ولا يزال الطريق مغلقًا جزئيًا، مما يتسبب في ازدحام مروري في أنحاء المدينة.
+day2_page1_topic1_col2,"Drivers still complaining about the long delays, with many saying the situation become worse during busy hours. The family of the person who died in the ambulance is still waiting for an indemnity. The two food trucks also reported more financial losses caused by the delays.",ولا يزال السائقون يشتكون من التأخيرات الطويلة، حيث يقول الكثيرون إن الوضع أصبح أسوأ خلال ساعات الذروة. ولا تزال عائلة الشخص الذي توفي داخل سيارة الإسعاف تنتظر التعويض. كما أفادت شاحنتا الطعام بتكبدهما المزيد من الخسائر المالية بسبب التأخيرات.
+day2_page1_topic1_col3,"Officials are now working on ways to reduce the traffic and prevent further losses. Extra workers have been sent to speed up the repairs, while authorities continue to promise that the road will reopen soon.  ",ويعمل المسؤولون الآن على إيجاد طرق لتقليل الازدحام ومنع المزيد من الخسائر. وقد تم إرسال عمال إضافيين لتسريع أعمال الإصلاح، بينما تواصل السلطات التأكيد على أن الطريق سيفتح قريبًا.
+day2_page1_topic2_title,A New Library,مكتبة جديدة
 day2_page1_topic2_col1,"A new public library announced its opening date yesterday. The library will contain hundreds of books, newspapers, computers, study rooms and many other useful things for visitors. Opening date is after 3 days from now. Don't forget to give it a visit that day.
-",
-day2_page1_topic3_title,Schools Mini FIFA,
-day2_page1_topic3_col1,"Willowmere's school defeated Mapleton's team 2:1 in today's competition match. The game stayed close until the final minutes, when Willowmere scored the winning goal. Students celebrated as their school moved closer to the next round.",
-day2_page1_topic4_title,WEiRD,
-day2_page1_topic4_col1,A local resident claims to have seen a stray black cat sleeping on his front porch earlier this morning. None of his neighbors could confirm seeing the animal anywhere around. Just another small piece of neighborhood chatter.,
-day2_page1_topic5_title,City Park,
-day2_page1_topic5_col1,Workers have begun setting up construction barriers in the main park today. Curious residents stopped by to watch the early progress unfold. Anticipation remains high as the project officially gets under way.,
-day2_page1_topic6_title,Weather Cast,
-day2_page1_topic6_col1,"Weather reports indicate that today is indeed the calmest day of the whole week, yesterday. The mild temperatures and clear skies are bringing even more visitors into Ravenford from surrounding cities. It is turning out to be the perfect day for everyone to head outdoors and enjoy their favorite activities.",
-day2_page2_topic1_title,A Cute Reunite,
-day2_page2_topic1_col1,"A stray cat strolled into a hardware store and fell asleep on the register scanner. When the cashier tried moving it, the machine beeped and registered a three-dollar charge. Waiting customers laughed, declaring it the store's newest and most relaxed employee.",
-day2_page2_topic2_title,Internet?,
-day2_page2_topic2_col1,A severed phone line cut off dial-up Internet for downtown businesses this morning. Offices had to switch to fax machines until repair crews reconnected the modems by late afternoon.,
-day2_page2_topic3_title,Red Moon,
-day2_page2_topic3_col1,"The red moon night has arrived at the doorstep of our village... with its beauty, grandeur and bright light... three days from today it will honor us in the village.",
-day2_page2_topic4_title,SUPER SECRET TOPIC,
-day2_page2_topic4_col1,"Reports surfaced today that another resident followed a sweet, inexplicable fragrance deep into the woods at the town's edge. Neighboring families claim he hasn't returned since yesterday evening, though town leaders insist the entire story is just local folklore. Search efforts remain unconfirmed as residents debate whether to enter the woods.",
-day2_page2_topic5_title,Bursting Water Main,
-day2_page2_topic5_col1,"A water main burst near the central square this morning, flooding a section of the main street and forcing several shops to close early. Maintenance crews shut off the valve and began pumping out the standing water, while local commuters were diverted around the slushy roads until repairs wrap up.",
-day2_page3_topic1_title,Kidnapped Employees,
-day2_page3_topic1_col1,"The police have officially suspended the investigation today after searching the entire district without finding a single clue. Families of the missing workers held a quiet vigil outside the power station, desperate for answers. Rumors continue to circulate among residents, but officials admit there are no remaining leads to follow.",
-day2_page3_topic2_title,A prisoner escape,
-day2_page3_topic2_col1,Authorities have placed the city on lockdown while search teams sweep surrounding neighborhoods for any sign of the fugitives. Nervous residents are staying indoors and locking their doors. Officials urge everyone to report any suspicious activity immediately.,
-day2_page3_topic3_title,The Walking Objects,
-day2_page3_topic3_col1,Police received several reports today regarding property strangely shifting places across the neighborhood overnight. Puzzled residents gathered outside to inspect the odd occurrences and compare their stories. Authorities are reviewing local camera footage to determine what actually took place.,
-day2_page3_topic4_title,New Recipe,
-day2_page3_topic4_col1,"A local bakery introduced a fresh sourdough recipe today, selling out their first batch early. Regular customers enjoyed the new taste, and staff plan to make it a daily menu item.",
-day2_page3_topic5_title,Marathoon,
-day2_page3_topic5_col1,"The city marathon took place this morning, drawing hundreds of runners to the main street. Volunteers handed out water along the route, and participants celebrated at the finish line by midday.",
-day3_page1_topic1_title,Road Construction,
-day3_page1_topic1_col1,"Construction on Ravenford's main road entered another day as workers continued trying to finish the project. Officials said most of the major repairs are now complete, but the road remains partly blocked while final work is being done. Traffic is slowly improving in some areas.",
-day3_page1_topic1_col2,"Drivers reported shorter delays yesterday, although busy hours still caused long lines. The family of the person who died in the ambulance has received no update about their indemnity request. The two food trucks also said they are still recovering from the losses caused by this.",
-day3_page1_topic1_col3,Officials announced that the road could reopen soon if the remaining work goes as planned. More workers are being kept at the site to finish the final repairs faster. Residents are hoping the road will finally return to normal before the end of the week,
-day3_page1_topic2_title,City Clock,
-day3_page1_topic2_col1,"The town square's electronic clock tower malfunctioned this morning, chiming seventeen times at eight o'clock and spinning its hands backward. Passersby paused to watch the erratic clock before a local technician arrived to reset the internal wiring.",
-day3_page1_topic3_title,Schools Mini FIFA,
-day3_page1_topic3_col1,"Students from Willowmere spent the morning decorating the main hallway with victory banners and original posters celebrating yesterday's win. Meanwhile, Mapleton's team resumed silent practice drills after school, focused on adjusting their strategy for the rest of the season.",
-day3_page1_topic4_title,Power Surge,
-day3_page1_topic4_col1,"A localized power surge briefly flickered the streetlights along Elm Street around noon, despite bright sunlight. Electrical workers inspected the transformers nearby but reported no blown fuses or technical faults in the line.",
-day3_page1_topic5_title,Passion and love,
-day3_page1_topic5_col1,"A stray dog trotted into the diner around lunchtime and quietly sat down in an empty booth. The cook brought out a small bowl of roast beef scraps, which the dog finished before walking back out the door.",
-day3_page1_topic6_title,Weather Cast,
-day3_page1_topic6_col1,"The local news radio predicted clear skies and a high of 72 degrees for tomorrow, with a slight cool breeze rolling in from the valley by late afternoon. Residents are advised to carry a light jacket if they plan to be out past sunset.",
-day3_page2_topic1_title,A Cute Girlie,
-day3_page2_topic1_col1,"A little girl dropped her mitten into a hollow tree on her way home. The next day, she found a squirrel asleep inside it. She left a few acorns nearby and walked home with her bare hand tucked into her pocket.",
-day3_page2_topic2_title,Internet?,
-day3_page2_topic2_col1,The high school computer lab got two 14.4k modems today. Students queued for an hour just to send a test email and watch a single image slowly load line by line.,
-day3_page2_topic3_title,Generators!,
-day3_page2_topic3_col1,"Two electric generators were reported stolen from two different places yesterday. The authorities tried to trace them, but did not find any trace or evidence of them.",
-day3_page2_topic4_title,SUPER SECRET TOPIC,
-day3_page2_topic4_col1,"The man who disappeared two days ago returned this morning, and he seemed to be in a strange state of activity. He was asked about the smell he smelled on the edge of the city, but he denied it and said, “I don’t know what you are talking about.” He does not show any signs of kidnapping or torture!",
-day3_page2_topic5_title,A Cat in The Bakery,
-day3_page2_topic5_col1,"A stray ginger cat snuck into the town bakery before dawn and fell asleep right on top of a warm, unbaked sack of flour. The baker didn't have the heart to move him, so he baked around the cat and named the morning's sourdough batch after him.",
-day3_page3_topic1_title,Kidnapped Employees,
-day3_page3_topic1_col1,One person claims that he saw the kidnapped workers at the time of their abduction but was unable to intervene; It was a large gang that kidnapped them. His neighbors say he is always making up stories to attract attention.,
-day3_page3_topic2_title,A Prisoner Talk,
-day3_page3_topic2_col1,"One of the prisoners at Ravenford Prison was asked about the prisoners who escaped the day before yesterday. He said that they had nothing in common. He explained that one of them was muscular, another was a surgeon, another was working in agriculture, and some ordinary people, and among them was a person who appeared crazy.",
-day3_page3_topic3_title,Some Strange Signal,
-day3_page3_topic3_col1,"The town library's microfiche machine started picking up faint audio interference from an unknown AM radio signal late this afternoon. Patrons using the viewer reported hearing low static punctuated by what sounded like distant piano chords, though staff couldn't locate any transmitting device inside the building.",
-day3_page3_topic4_title,A Big Laugh,
-day3_page3_topic4_col1,"A citizen on Cemetery Street claimed to have heard loud laughter late, but when he looked out the window he found no one.",
-day3_page3_topic5_title,Baseball,
-day3_page3_topic5_col1,"The annual adult baseball league opened its season at the community park tonight. The local hardware store’s team edged out the fire department’s squad 6 to 5, sealed by a sharp line drive to left field in the bottom of the seventh inning.",
+",أُعلن أمس عن موعد افتتاح مكتبة عامة جديدة. ستحتوي المكتبة على مئات الكتب والصحف وأجهزة الكمبيوتر وغرف للدراسة والعديد من الأشياء المفيدة الأخرى للزوار. سيكون موعد الافتتاح بعد ثلاثة أيام من الآن. لا تنسَ زيارتها في ذلك اليوم.
+day2_page1_topic3_title,Schools Mini FIFA,فيفا المدارس المصغرة
+day2_page1_topic3_col1,"Willowmere's school defeated Mapleton's team 2:1 in today's competition match. The game stayed close until the final minutes, when Willowmere scored the winning goal. Students celebrated as their school moved closer to the next round.","فاز فريق مدرسة ويلو مير على فريق مدرسة مابلتون بنتيجة 2-1 في مباراة اليوم ضمن المنافسة. وظلت المباراة متقاربة حتى الدقائق الأخيرة، عندما سجلت ويلو مير هدف الفوز. واحتفل الطلاب بينما اقتربت مدرستهم من التأهل إلى الجولة التالية.
+"
+day2_page1_topic4_title,WEiRD,مريب
+day2_page1_topic4_col1,A local resident claims to have seen a stray black cat sleeping on his front porch earlier this morning. None of his neighbors could confirm seeing the animal anywhere around. Just another small piece of neighborhood chatter.,"يزعم أحد السكان المحليين أنه رأى قطة سوداء شاردة نائمة على شرفته الأمامية في وقت مبكر من صباح اليوم. ولم يتمكن أي من جيرانه من تأكيد رؤية الحيوان في أي مكان بالمنطقة. مجرد قصة صغيرة أخرى يتناقلها سكان الحي.
+"
+day2_page1_topic5_title,City Park,حديقة المدينة
+day2_page1_topic5_col1,Workers have begun setting up construction barriers in the main park today. Curious residents stopped by to watch the early progress unfold. Anticipation remains high as the project officially gets under way.,"بدأ العمال اليوم في وضع حواجز البناء في الحديقة الرئيسية. وتوقف بعض السكان الفضوليين لمشاهدة بداية العمل. ولا يزال الحماس مرتفعًا مع انطلاق المشروع رسميًا.
+"
+day2_page1_topic6_title,Weather Cast,نشرة الطقس
+day2_page1_topic6_col1,"Weather reports indicate that today is indeed the calmest day of the whole week, yesterday. The mild temperatures and clear skies are bringing even more visitors into Ravenford from surrounding cities. It is turning out to be the perfect day for everyone to head outdoors and enjoy their favorite activities.","تشير تقارير الطقس إلى أن اليوم هو بالفعل أهدأ يوم في الأسبوع بأكمله، أمس. درجات الحرارة المعتدلة والسماء الصافية تجلب المزيد من الزوار إلى رافنفورد من المدن المحيطة. ويبدو أنه اليوم المثالي للجميع للخروج والاستمتاع بأنشطتهم المفضلة.
+"
+day2_page2_topic1_title,A Cute Reunite,لم شمل لطيف
+day2_page2_topic1_col1,"A stray cat strolled into a hardware store and fell asleep on the register scanner. When the cashier tried moving it, the machine beeped and registered a three-dollar charge. Waiting customers laughed, declaring it the store's newest and most relaxed employee.","دخلت قطة شاردة إلى متجر للأدوات ونامت على جهاز تسجيل المدفوعات. وعندما حاول أمين الصندوق تحريكها، أصدر الجهاز صوتًا وسجل رسومًا بقيمة ثلاثة دولارات. وضحك الزبائن المنتظرون، معلنين أن القطة أصبحت أحدث موظف وأكثرهم استرخاءً في المتجر.
+"
+day2_page2_topic2_title,Internet?,الإنترنت؟
+day2_page2_topic2_col1,A severed phone line cut off dial-up Internet for downtown businesses this morning. Offices had to switch to fax machines until repair crews reconnected the modems by late afternoon.,"تسبب انقطاع أحد خطوط الهاتف في توقف خدمة الإنترنت الهاتفي في شركات وسط المدينة هذا الصباح. واضطرت المكاتب إلى استخدام أجهزة الفاكس حتى تمكنت فرق الإصلاح من إعادة توصيل أجهزة المودم في وقت متأخر من بعد الظهر.
+"
+day2_page2_topic3_title,Red Moon,القمر الأحمر
+day2_page2_topic3_col1,"The red moon night has arrived at the doorstep of our village... with its beauty, grandeur and bright light... three days from today it will honor us in the village.","لقد حلّ ليل القمر الأحمر على أبواب قريتنا... بجماله وعظمته وضوئه الساطع... وبعد ثلاثة أيام من اليوم، سيشرّف قريتنا بحضوره.
+"
+day2_page2_topic4_title,SUPER SECRET TOPIC,موضوع سري للغاية
+day2_page2_topic4_col1,"Reports surfaced today that another resident followed a sweet, inexplicable fragrance deep into the woods at the town's edge. Neighboring families claim he hasn't returned since yesterday evening, though town leaders insist the entire story is just local folklore. Search efforts remain unconfirmed as residents debate whether to enter the woods.","ظهرت تقارير اليوم تفيد بأن أحد السكان اتبع رائحة عطرة وحلوة لا يمكن تفسيرها إلى أعماق الغابة عند أطراف البلدة. وتقول العائلات المجاورة إنه لم يعد منذ مساء أمس، بينما يصر قادة البلدة على أن القصة بأكملها ليست سوى أسطورة محلية. ولم يتم تأكيد جهود البحث، بينما يتجادل السكان حول ما إذا كان ينبغي لهم دخول الغابة.
+"
+day2_page2_topic5_title,Bursting Water Main,انفجار أنبوب المياه الرئيسي
+day2_page2_topic5_col1,"A water main burst near the central square this morning, flooding a section of the main street and forcing several shops to close early. Maintenance crews shut off the valve and began pumping out the standing water, while local commuters were diverted around the slushy roads until repairs wrap up.","انفجر أنبوب مياه رئيسي بالقرب من الساحة المركزية هذا الصباح، مما أدى إلى غمر جزء من الشارع الرئيسي بالمياه وأجبر عدة متاجر على الإغلاق مبكرًا. وأغلقت فرق الصيانة الصمام وبدأت في ضخ المياه المتجمعة، بينما تم تحويل حركة المرور المحلية بعيدًا عن الطرق الموحلة إلى أن تنتهي أعمال الإصلاح.
+"
+day2_page3_topic1_title,Kidnapped Employees,الموظفون المختطفون
+day2_page3_topic1_col1,"The police have officially suspended the investigation today after searching the entire district without finding a single clue. Families of the missing workers held a quiet vigil outside the power station, desperate for answers. Rumors continue to circulate among residents, but officials admit there are no remaining leads to follow.","أعلنت الشرطة رسميًا اليوم تعليق التحقيق بعد تفتيش المنطقة بأكملها دون العثور على أي دليل. وأقامت عائلات العمال المفقودين وقفة هادئة خارج محطة الطاقة، وهي يائسة للحصول على إجابات. ولا تزال الشائعات تنتشر بين السكان، لكن المسؤولين يعترفون بعدم وجود أي خيوط أخرى يمكن متابعتها.
+"
+day2_page3_topic2_title,A prisoner escape,هروب سجين
+day2_page3_topic2_col1,Authorities have placed the city on lockdown while search teams sweep surrounding neighborhoods for any sign of the fugitives. Nervous residents are staying indoors and locking their doors. Officials urge everyone to report any suspicious activity immediately.,"فرضت السلطات إغلاقًا على المدينة بينما تقوم فرق البحث بتمشيط الأحياء المحيطة بحثًا عن أي أثر للهاربين. ويبقى السكان القلقون داخل منازلهم ويغلقون أبوابهم. وتحث السلطات الجميع على الإبلاغ عن أي نشاط مشبوه فورًا.
+"
+day2_page3_topic3_title,The Walking Objects,الأشياء المتحركة
+day2_page3_topic3_col1,Police received several reports today regarding property strangely shifting places across the neighborhood overnight. Puzzled residents gathered outside to inspect the odd occurrences and compare their stories. Authorities are reviewing local camera footage to determine what actually took place.,"تلقت الشرطة عدة بلاغات اليوم بشأن انتقال الممتلكات من أماكنها بشكل غريب خلال الليل في أنحاء الحي. وتجمع السكان الحائرون في الخارج لمعاينة الأحداث الغريبة ومقارنة رواياتهم. وتراجع السلطات تسجيلات كاميرات المراقبة المحلية لمعرفة ما حدث بالفعل.
+"
+day2_page3_topic4_title,New Recipe,وصفة جديدة
+day2_page3_topic4_col1,"A local bakery introduced a fresh sourdough recipe today, selling out their first batch early. Regular customers enjoyed the new taste, and staff plan to make it a daily menu item.","قدّم مخبز محلي وصفة جديدة لخبز العجين المخمر اليوم، ونفدت الدفعة الأولى منه في وقت مبكر. واستمتع الزبائن المعتادون بالطعم الجديد، ويخطط الموظفون لإضافته إلى القائمة اليومية.
+"
+day2_page3_topic5_title,Marathoon,الماراثون
+day2_page3_topic5_col1,"The city marathon took place this morning, drawing hundreds of runners to the main street. Volunteers handed out water along the route, and participants celebrated at the finish line by midday.",أُقيم ماراثون المدينة هذا الصباح، وجذب مئات العدّائين إلى الشارع الرئيسي. ووزع المتطوعون المياه على طول المسار، واحتفل المشاركون عند خط النهاية بحلول منتصف النهار.
+day3_page1_topic1_title,Road Construction,بناء الطريق
+day3_page1_topic1_col1,"Construction on Ravenford's main road entered another day as workers continued trying to finish the project. Officials said most of the major repairs are now complete, but the road remains partly blocked while final work is being done. Traffic is slowly improving in some areas.",دخلت أعمال بناء الطريق الرئيسي في رافنفورد يومًا جديدًا، بينما واصل العمال محاولاتهم لإنهاء المشروع. وقال المسؤولون إن معظم أعمال الإصلاح الرئيسية قد اكتملت الآن، لكن الطريق لا يزال مغلقًا جزئيًا أثناء تنفيذ الأعمال النهائية. وبدأت حركة المرور تتحسن ببطء في بعض المناطق.
+day3_page1_topic1_col2,"Drivers reported shorter delays yesterday, although busy hours still caused long lines. The family of the person who died in the ambulance has received no update about their indemnity request. The two food trucks also said they are still recovering from the losses caused by this.",وأفاد السائقون بأن التأخيرات كانت أقصر أمس، رغم أن ساعات الذروة لا تزال تتسبب في طوابير طويلة. ولم تتلقَ عائلة الشخص الذي توفي داخل سيارة الإسعاف أي تحديث بشأن طلب التعويض الخاص بها. كما قالت شاحنتا الطعام إنهما لا تزالان تتعافيان من الخسائر التي سببتها هذه المشكلة.
+day3_page1_topic1_col3,Officials announced that the road could reopen soon if the remaining work goes as planned. More workers are being kept at the site to finish the final repairs faster. Residents are hoping the road will finally return to normal before the end of the week,وأعلن المسؤولون أن الطريق قد يُعاد فتحه قريبًا إذا سارت الأعمال المتبقية وفقًا للخطة. وتم الإبقاء على المزيد من العمال في الموقع لإنهاء الإصلاحات النهائية بشكل أسرع. ويأمل السكان أن تعود حركة الطريق إلى طبيعتها أخيرًا قبل نهاية الأسبوع.
+day3_page1_topic2_title,City Clock,ساعة المدينة
+day3_page1_topic2_col1,"The town square's electronic clock tower malfunctioned this morning, chiming seventeen times at eight o'clock and spinning its hands backward. Passersby paused to watch the erratic clock before a local technician arrived to reset the internal wiring.",تعطلت ساعة البرج الإلكترونية في ساحة البلدة هذا الصباح، حيث دقت سبع عشرة مرة عند الساعة الثامنة، وأخذت عقاربها تدور إلى الخلف. وتوقف المارة لمشاهدة الساعة وهي تعمل بشكل غريب، قبل أن يصل فني محلي لإعادة ضبط الأسلاك الداخلية.
+day3_page1_topic3_title,Schools Mini FIFA,بطولة FIFA المدرسية
+day3_page1_topic3_col1,"Students from Willowmere spent the morning decorating the main hallway with victory banners and original posters celebrating yesterday's win. Meanwhile, Mapleton's team resumed silent practice drills after school, focused on adjusting their strategy for the rest of the season.","قضى طلاب ويلو مير الصباح في تزيين الممر الرئيسي بلافتات النصر والملصقات الأصلية احتفالًا بفوز الأمس. وفي الوقت نفسه، استأنف فريق مابلتون تدريباته الصامتة بعد المدرسة، مركزًا على تعديل استراتيجيته لبقية الموسم.
+"
+day3_page1_topic4_title,Power Surge,ارتفاع كهربائي
+day3_page1_topic4_col1,"A localized power surge briefly flickered the streetlights along Elm Street around noon, despite bright sunlight. Electrical workers inspected the transformers nearby but reported no blown fuses or technical faults in the line.","تسبب ارتفاع مفاجئ في التيار الكهربائي في منطقة محدودة في وميض أضواء الشوارع على طول شارع إلم وقت الظهيرة، رغم سطوع الشمس. وفحص عمال الكهرباء المحولات القريبة، لكنهم لم يبلغوا عن احتراق أي مصاهر أو وجود أعطال فنية في الخط.
+"
+day3_page1_topic5_title,Passion and love,الشغف والحب
+day3_page1_topic5_col1,"A stray dog trotted into the diner around lunchtime and quietly sat down in an empty booth. The cook brought out a small bowl of roast beef scraps, which the dog finished before walking back out the door.","دخل كلب شارد إلى المطعم وقت الغداء تقريبًا، وجلس بهدوء في إحدى المقصورات الفارغة. وأحضر الطاهي وعاءً صغيرًا من بقايا لحم البقر المشوي، وأنهى الكلب طعامه قبل أن يخرج من الباب مرة أخرى.
+"
+day3_page1_topic6_title,Weather Cast,نشرة الطقس
+day3_page1_topic6_col1,"The local news radio predicted clear skies and a high of 72 degrees for tomorrow, with a slight cool breeze rolling in from the valley by late afternoon. Residents are advised to carry a light jacket if they plan to be out past sunset.","توقعت إذاعة الأخبار المحلية سماءً صافية ودرجة حرارة قصوى تبلغ 72 درجة غدًا، مع نسيم بارد خفيف قادم من الوادي في وقت متأخر من بعد الظهر. ويُنصح السكان بحمل سترة خفيفة إذا كانوا يخططون للبقاء خارج المنزل بعد غروب الشمس.
+"
+day3_page2_topic1_title,A Cute Girlie,فتاة لطيفة
+day3_page2_topic1_col1,"A little girl dropped her mitten into a hollow tree on her way home. The next day, she found a squirrel asleep inside it. She left a few acorns nearby and walked home with her bare hand tucked into her pocket.","أسقطت طفلة قفازها داخل شجرة مجوفة أثناء عودتها إلى المنزل. وفي اليوم التالي، وجدت سنجابًا نائمًا بداخله. فتركت بعض حبات البلوط بالقرب من الشجرة وعادت إلى منزلها، بينما أخفت يدها العارية داخل جيبها.
+"
+day3_page2_topic2_title,Internet?,الإنترنت؟
+day3_page2_topic2_col1,The high school computer lab got two 14.4k modems today. Students queued for an hour just to send a test email and watch a single image slowly load line by line.,"حصل مختبر الكمبيوتر في المدرسة الثانوية اليوم على جهازي مودم بسرعة 14.4 كيلوبت. وانتظر الطلاب في طابور لمدة ساعة كاملة فقط لإرسال رسالة بريد إلكتروني تجريبية ومشاهدة صورة واحدة وهي تُحمّل ببطء سطرًا بعد سطر.
+"
+day3_page2_topic3_title,Generators!,المولدات!
+day3_page2_topic3_col1,"Two electric generators were reported stolen from two different places yesterday. The authorities tried to trace them, but did not find any trace or evidence of them.","أُبلغ أمس عن سرقة مولدين كهربائيين من مكانين مختلفين. وحاولت السلطات تعقبهما، لكنها لم تجد أي أثر أو دليل عليهما.
+"
+day3_page2_topic4_title,SUPER SECRET TOPIC,موضوع سري للغاية
+day3_page2_topic4_col1,"The man who disappeared two days ago returned this morning, and he seemed to be in a strange state of activity. He was asked about the smell he smelled on the edge of the city, but he denied it and said, “I don’t know what you are talking about.” He does not show any signs of kidnapping or torture!","عاد الرجل الذي اختفى قبل يومين هذا الصباح، وبدا أنه في حالة غريبة من النشاط. وسُئل عن الرائحة التي شمها على أطراف المدينة، لكنه أنكر الأمر وقال: «لا أعرف عما تتحدثون». ولم تظهر عليه أي علامات تدل على اختطافه أو تعرضه للتعذيب!
+"
+day3_page2_topic5_title,A Cat in The Bakery,قطة في المخبز
+day3_page2_topic5_col1,"A stray ginger cat snuck into the town bakery before dawn and fell asleep right on top of a warm, unbaked sack of flour. The baker didn't have the heart to move him, so he baked around the cat and named the morning's sourdough batch after him.","تسللت قطة برتقالية شاردة إلى مخبز البلدة قبل الفجر، ونامت مباشرة فوق كيس دافئ من الدقيق غير المخبوز. ولم يملك الخباز قلبًا لتحريكها، لذلك خبز حول القطة وسمّى دفعة خبز العجين المخمر الصباحية باسمها.
+"
+day3_page3_topic1_title,Kidnapped Employees,الموظفون المختطفون
+day3_page3_topic1_col1,One person claims that he saw the kidnapped workers at the time of their abduction but was unable to intervene; It was a large gang that kidnapped them. His neighbors say he is always making up stories to attract attention.,"يدّعي أحد الأشخاص أنه رأى العمال المختطفين وقت اختطافهم، لكنه لم يتمكن من التدخل. وقال إن عصابة كبيرة هي التي اختطفتهم. بينما يقول جيرانه إنه دائمًا ما يختلق القصص لجذب الانتباه.
+"
+day3_page3_topic2_title,A Prisoner Talk,حديث مع سجين
+day3_page3_topic2_col1,"One of the prisoners at Ravenford Prison was asked about the prisoners who escaped the day before yesterday. He said that they had nothing in common. He explained that one of them was muscular, another was a surgeon, another was working in agriculture, and some ordinary people, and among them was a person who appeared crazy.","سُئل أحد السجناء في سجن رافنفورد عن السجناء الذين هربوا أول أمس. وقال إنهم لم يكن بينهم أي شيء مشترك. وأوضح أن أحدهم كان قوي البنية، وآخر كان جراحًا، وآخر كان يعمل في الزراعة، إلى جانب بعض الأشخاص العاديين، وكان من بينهم شخص بدا مجنونًا.
+"
+day3_page3_topic3_title,Some Strange Signal,إشارة غريبة
+day3_page3_topic3_col1,"The town library's microfiche machine started picking up faint audio interference from an unknown AM radio signal late this afternoon. Patrons using the viewer reported hearing low static punctuated by what sounded like distant piano chords, though staff couldn't locate any transmitting device inside the building.","بدأ جهاز الميكروفيش في مكتبة البلدة يلتقط تشويشًا صوتيًا ضعيفًا من إشارة راديو AM مجهولة في وقت متأخر من بعد ظهر اليوم. وأفاد الزوار الذين كانوا يستخدمون الجهاز بسماع تشويش منخفض يتخلله ما بدا وكأنه نغمات بيانو بعيدة، لكن الموظفين لم يتمكنوا من تحديد موقع أي جهاز إرسال داخل المبنى.
+"
+day3_page3_topic4_title,A Big Laugh,ضحكة كبيرة
+day3_page3_topic4_col1,"A citizen on Cemetery Street claimed to have heard loud laughter late, but when he looked out the window he found no one.","ادعى أحد المواطنين في شارع المقبرة أنه سمع ضحكات عالية في وقت متأخر من الليل، لكنه عندما نظر من النافذة لم يجد أحدًا.
+"
+day3_page3_topic5_title,Baseball,البيسبول
+day3_page3_topic5_col1,"The annual adult baseball league opened its season at the community park tonight. The local hardware store’s team edged out the fire department’s squad 6 to 5, sealed by a sharp line drive to left field in the bottom of the seventh inning.",افتتح دوري البيسبول السنوي للكبار موسمه الليلة في حديقة المجتمع. وتمكن فريق متجر الأدوات المحلي من التغلب على فريق إدارة الإطفاء بنتيجة 6-5، بعد ضربة قوية إلى الحقل الأيسر في الجزء السفلي من الشوط السابع حسمت المباراة.
 day4_page1_topic1_title,Road Construction,
 day4_page1_topic1_col1,"By mid-morning, the freshly paved main road was fully cleared of barriers, letting traffic flow smoothly through town again. Shopkeepers swept away construction dust and opened their doors, while the lingering smell of hot tar filled the late-summer air.",
 day4_page1_topic1_col2,"Residents gathered at the hardware store and the nearby food trucks to swap stories about the weeks of detours. Down at town hall, clerks worked through a stack of newly filed business adjustment forms from affected vendors.",
