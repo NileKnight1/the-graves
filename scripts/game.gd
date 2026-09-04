@@ -71,9 +71,6 @@ var fnaf = preload("res://audio/freesound_community-cryo_outage-94622.mp3")
 var paper_turn = preload("res://audio/paper_turn.mp3")
 
 
-
-
-
 func play_sound(sound, vol = 0.0):
 	var temp = AudioStreamPlayer.new()
 	temp.stream = sound
@@ -86,7 +83,6 @@ func play_sound(sound, vol = 0.0):
 var flicker = preload("res://assets/flicker.ogv")
 #var crawl = preload("res://assets/chroma-keyed-video2.ogv")
 var crawl = preload("res://assets/chroma-keyed-video (1).ogv")
-
 
 func flicker_effect():
 	$CanvasLayer/VideoStreamPlayer.visible = 1
@@ -268,8 +264,21 @@ func translation():
 	$"map behind/room/tasks/day1/task2/text".text = tr("day1task2")
 	$"map behind/room/tasks/day1/task3/text".text = tr("day1task3")
 	
+	$CanvasLayer/pause/resume.text = tr("resume")
+	$CanvasLayer/pause/restart.text = tr("restart")
+	$CanvasLayer/pause/brief.text = tr("brief")
+	$CanvasLayer/pause/settings.text = tr("settings")
+	$CanvasLayer/pause/quit.text = tr("quit")
+	$CanvasLayer/pause/settings_/scroll/options/lang/label.text = tr("language")
 	
+	$CanvasLayer/pause/restart_/yes.text = tr("confirm")
+	$CanvasLayer/pause/restart_/no.text = tr("cancel")
+	$CanvasLayer/pause/quit_/yes.text = tr("confirm")
+	$CanvasLayer/pause/quit_/no.text = tr("cancel")
+
 	
+
+
 var pc = 1
 var sabotages_fixed = 1
 

@@ -304,4 +304,8 @@ acc_mail,Email...,...البريد
 acc_pass,Password...,...كلمة السر
 signup,Sign Up,إنشاء
 login,Log In,دخول
-	
+resume,Resume,استئناف
+restart,Restart,إعادة
+brief,Brief,الموجز
+confirm,Confirm,تأكيد
+cancel,Cancel,إلغاء

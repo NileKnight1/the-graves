@@ -180,6 +180,7 @@ func translation():
 	$CanvasLayer/account/HBoxContainer/signup.text = tr("signup")
 	$CanvasLayer/account/HBoxContainer/login.text = tr("login")
 	
+
 	
 	#$CanvasLayer/buttons/name.placeholder_text = tr("name") 
 

@@ -8868,11 +8868,12 @@ mouse_filter = 2
 theme_override_constants/separation = 30
 
 [node name="label" type="Label" parent="CanvasLayer/pause/settings_/scroll/options/lang" unique_id=1629200502]
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 28
-text = "Language:"
+text = "Language: "
 
 [node name="arabic" type="Button" parent="CanvasLayer/pause/settings_/scroll/options/lang" unique_id=1415457423]
 custom_minimum_size = Vector2(115, 55)
@@ -9073,6 +9074,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/end_screen" unique_id=1222537379]
+visible = false
 layout_direction = 2
 layout_mode = 0
 offset_left = -21.0
