@@ -270,12 +270,12 @@ mouse_filter = 2
 theme_override_constants/separation = 30
 
 [node name="label" type="Label" parent="CanvasLayer/settings/options/lang" unique_id=1264352093]
+custom_minimum_size = Vector2(160, 0)
 layout_direction = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_fonts/font = ExtResource("4_rtw2f")
 theme_override_font_sizes/font_size = 28
-text = "Language:"
 
 [node name="arabic" type="Button" parent="CanvasLayer/settings/options/lang" unique_id=1320050266]
 custom_minimum_size = Vector2(115, 55)

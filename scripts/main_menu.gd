@@ -143,10 +143,12 @@ func _on_settings_pressed() -> void:
 
 func translation():
 	$CanvasLayer/buttons/continue.text = tr("continue")
+
+	
 	$CanvasLayer/buttons/newgame.text = tr("newgame")
 	$CanvasLayer/buttons/settings.text = tr("settings")
-	$CanvasLayer/buttons/scores.text = tr("scores")
-	$CanvasLayer/buttons/achievments.text = tr("achievments")
+	$CanvasLayer/buttons/scores.text = tr("leaderboard")
+	$CanvasLayer/buttons/achievments.text = tr("achievements")
 	$CanvasLayer/buttons/quit.text = tr("quit")
 	
 	$CanvasLayer/settings/options/lang/label.text = tr("language")
@@ -162,13 +164,13 @@ func translation():
 	$CanvasLayer/scores/title.text = tr("leaderboard")
 	
 	$CanvasLayer/scores_/HBoxContainer/Label.text = tr("rank")
-	$CanvasLayer/scores_/HBoxContainer/Label2.text = tr("Player")
+	$CanvasLayer/scores_/HBoxContainer/Label2.text = tr("player")
 	$CanvasLayer/scores_/HBoxContainer/Label3.text = tr("max_danger")
 	$CanvasLayer/scores_/HBoxContainer/Label4.text = tr("anomalies_reported")
 	$CanvasLayer/scores_/HBoxContainer/Label6.text = tr("sabotages_fixed")
 	$CanvasLayer/scores_/title.text = tr("leaderboard")
 	
-	$CanvasLayer/achievments_/title.text = tr("achievments")
+	$CanvasLayer/achievments_/title.text = tr("achievements")
 	
 	$CanvasLayer/account/title.text = tr("account")
 	$CanvasLayer/account/player.placeholder_text = tr("acc_name")
