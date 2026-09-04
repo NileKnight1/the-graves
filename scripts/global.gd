@@ -1,5 +1,5 @@
 extends Node
-var shift = 1
+var shift = 3
 var player_name = "Player"
 var loggedin = 0
 

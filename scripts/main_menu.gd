@@ -376,6 +376,7 @@ func update_my_score(shift_number: int):
 
 	$CanvasLayer/scores_/HBoxContainer3/Label1.text = str(data["rank"])
 	$CanvasLayer/scores_/HBoxContainer3/Label2.text = str(data["player"])
+	global.player_name = str(data["player"])
 	$CanvasLayer/scores_/HBoxContainer3/Label3.text = str(data["max_danger"])
 	$CanvasLayer/scores_/HBoxContainer3/Label4.text = str(data["anomalies_reported"])
 	$CanvasLayer/scores_/HBoxContainer3/Label5.text = str(data["sabotages_fixed"])

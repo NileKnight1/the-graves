@@ -302,6 +302,8 @@ func _ready() -> void:
 		$CanvasLayer/mobile.visible = 1
 		pc = 0
 	
+	generator_sabo()
+	
 	$player/Camera2D.position_smoothing_enabled = 1
 	$player/Camera2D.rotation_smoothing_enabled = 1
 	
@@ -3592,7 +3594,6 @@ var day7_end_chat = [
 	["day7end3", 1.5, "manager"],
 	["day7end4", 1.0, "manager"],
 ]
-
 
 func day7_start():
 	shift_start()
