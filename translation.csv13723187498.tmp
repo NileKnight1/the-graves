@@ -23,7 +23,7 @@ chat1msg2,This place is normal as the whole city. Some weird things happen ... b
 chat1msg3,Some creatures  like to play with things ... they change their position .. take some and bring others!,بعض المخلوقات تحب أن تعبث بالأشياء ... يغيرون أماكنها .. يأخذون بعضها ويجلبون أخرى!
 chat1msg4,"Your shift starts at midnight and ends at 6 AM. Until that, you have to keep the place as it was.",تبدأ ورديتك في منتصف الليل وتنتهي في السادسة صباحًا. وحتى ذلك الوقت، عليك أن تحافظ على المكان كما كان عليه.
 chat1msg5,The place has 4 sectors .. each one has a camera. You can watch them inside your room. The room is in the middle of the sectors.,المكان يتكون من 4 قطاعات .. كل واحد يحتوي على كاميرا. يمكنك المراقبة من غرفتك. تقع الغرفة بمنتصف القطاعات.
-chat1msg6,"If you observed a change or a weird thing, report it at the radio, and specialists will deal with it.",إذا لاحظت تغيرًا أو شيئًا مريبًا، فقم بالإبلاغ في الراديو، وسيتعامل المختصون مع المشكلة.
+chat1msg6,"If you observe a change or a weird thing, report it at the radio, and specialists will deal with it.",إذا لاحظت تغيرًا أو شيئًا مريبًا، فقم بالإبلاغ في الراديو، وسيتعامل المختصون مع المشكلة.
 chat1msg7,You have to report fast before anomalies effect spread in the place.,عليك أن تبلغ بسرعة قبل أن ينتشر الخطر في المكان.
 chat1msg8,"And keep in mind, if you reported wrong many times, we won't need you with us.",وضع في اعتبارك، إذا أبلغت بلاغات خاطئة عدة مرات، فلا حاجة لنا إليك.
 chat1msg9,Stay alive!,ابقَ حيًّا!
@@ -49,7 +49,7 @@ wrong_report,Wrong report.,إبلاغً خاطئ.
 right_report,Handled.,تم التعامل.
 day1sub3,"Put your eyes on trees, bushes, graves and etc.",ضع عيونك على الأشجار، والشجيرات، والمقابر وإلخ.
 report_sent,Report sent ...,تم إرسال البلاغ.
-day2call1sen1,New night Nile Knight.,ليلةً جديدة يا فارس النيل
+day2call1sen1,New night Nile Knight.,ليلةً جديدة يا فارس النيل.
 day2call1sen2,"The generator has broken down this morning, but the worker forgot to fix it.",لقد تعطل المحرك صباح اليوم، ولكن نسي العامل أن يصلحه.
 day2call1sen3,"You have to fix it yourself, it supports room light and cameras energy ... unless you don't need them!",عليك أن تصلحه بنفسك، فهو يغذي الغرفة والكاميرات بالطاقة ... إلا ألا تكن في حاجتها!
 day2sub1,The device is beside sector 4.,الجهاز بجانب القطاع 4.
@@ -57,10 +57,15 @@ camsabo,A camera has just been sabotaged.,تعرضت إحدى الكاميرات
 generatorsabo,The generator has just been sabotaged.,تعرض المولد للتخريب للتو.
 antennasabo,The antenna has just been sabotaged.,تعرض هوائي الراديو للتخريب للتو.
 day2call1sen4,The radio antenna on the roof was sparking .. it might go down too.,كان هوائي الراديو يعطي شرزًا .. يمكن أن يتعطل هو أيضًا.
-day2call1sen5,Good luck.,وفقك الله.
+goodluck,Good luck.,وفقك الله.
+goodjob,Good Job.,لقد أحسنت.
+day2call2sen2,,
 day3call1sen1,You did well %s.,
 day3call1sen2,And the guy you have seen is probably just a visitor .. so don't worry. ,
-day3call1sen3,You can report to the radio if you see someone.,
+day3call1sen3,,
+d3c1s1,Hey!,
+d3c1s2,I was just wondering what's this place.,
+d3c1s3,Would you mind if I stay with you?,
 day1_page1_topic1_title,Road Construction,
 day1_page1_topic1_col1,A main road in Ravenford city was blocked due to heavy road construstion that being done by the government. Workers are doing their best to finish the project by the end of the week. The road can't be blocked so much since it's so important one.,
 day1_page1_topic1_col2,Drivers are complaining of the big blockage. One person died in an ambulance going to the hospital .. his family is asking for an indemnity. Two food trucks content was damaged because of staying much time on road leading to not-small financial losses.,
@@ -304,10 +309,3 @@ restart,Restart,إعادة
 brief,Brief,الموجز
 confirm,Confirm,تأكيد
 cancel,Cancel,إلغاء
-d3c1s1,Hello.,أهلاً.
-d3c1s2,I didn't mean to scare you.,لم أقصد إخافتك.
-d3c1s3,Would you mind if I stayed here?,هل تمانع إذا بقيت هنا؟
-d3c1s4,No problem.,لا مشكلة.
-d3c1s5,"Thank you, I'll watch the cameras for you, and you handle the radio",شكراً لك، سأراقب الكاميرات نيابةً عنك، وأنت ستتولى أمر الراديو.
-d3c1s7
-d3c1s8,,

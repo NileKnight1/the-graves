@@ -285,7 +285,7 @@ var sabotages_fixed = 1
 func _ready() -> void:
 	#await get_tree().create_timer(1.0, false, false, false).timeout
 	#print(p1_anomalies.find($anomalies/anomaly))
-	
+	print(tr("d3c1s5"))
 	
 	
 	translation()
@@ -1431,11 +1431,12 @@ func subtitle(sub, time, sayer = "System"):
 	$CanvasLayer/gui/subtitles.visible_ratio = 0
 	$CanvasLayer/gui/subtitles.text = tr(sub)
 	var tween = create_tween()
+	if sub != "":
+		brief.insert(0, [sayer, sub])
 	$sfx/sub.play()
 	tween.tween_property($CanvasLayer/gui/subtitles, "visible_ratio", 1.0, time)
 	await get_tree().create_timer(time, false, false, false).timeout
-	if sub != "":
-		brief.insert(0, [tr(sayer), tr(sub)])
+
 	$sfx/sub.stop()
 
 func tasks():
@@ -2077,7 +2078,7 @@ func day_call(chat, target):
 				0: if !global.day2creature_found && chat_msg == 1: chat_msg+= 1
 	
 	var temp = tr(chat[chat_msg][0])
-	brief.insert(0, [tr(chat[chat_msg][2]), tr(chat[chat_msg][0])])
+	brief.insert(0, [chat[chat_msg][2], chat[chat_msg][0]])
 	#print(tr(chat[chat_msg][2]))
 	#print(tr(chat[chat_msg][0]))
 	#
@@ -2112,7 +2113,7 @@ func day_chat(chat, target):
 		return
 	
 	var temp = tr(chat[chat_msg][0])
-	brief.insert(0, [tr(chat[chat_msg][2]), tr(chat[chat_msg][0])])
+	brief.insert(0, [chat[chat_msg][2], chat[chat_msg][0]])
 	$CanvasLayer/gui/subtitles.visible_ratio = 0
 	var temp_sec = randi_range(0, 17)
 	$sfx/dia.play(temp_sec)
@@ -2327,7 +2328,7 @@ var day2_call1_chat = [
 	["day2call1sen2", 2.0, "manager"],
 	["day2call1sen3", 2.5, "manager"],
 	["day2call1sen4", 2.0, "manager"],
-	["day2call1sen5", 0.5, "manager"],
+	["goodluck", 0.5, "manager"],
 	
 ]
 #
@@ -2335,10 +2336,7 @@ var day2_call1_chat = [
 	#phone_up()
 
 var day2_call2_chat = [
-	["day2call2sen1", 1.5, "manager"],
-	["day2call2sen2", 1.0, "manager"],
-	
-	
+	["goodjob", 0.5, "manager"],
 ]
 
 var day2force = 0
@@ -2401,8 +2399,7 @@ func day3_time():
 var day3_call1_chat = [
 	["day3call1sen1", 1.0, "manager"],
 	["day3call1sen2", 1.0, "manager"],
-	["day3call1sen3", 1.0, "manager"],
-	["day3call1sen4", 1.0, "manager"],
+	["goodluck", 1.0, "manager"],
 ]
 
 func day3_start():
@@ -2487,6 +2484,7 @@ var day3_creature1_chat = [
 	["d3c1s3", 1.5, "stranger"],
 ]
 
+
 func day3_creature1_talked():
 	#allow_move()
 	#call_index += 1
@@ -2502,7 +2500,6 @@ func day3_creature1_talked():
 
 var day3_creature1_chat_stay = [
 	["d3c1s5", 1.0, "stranger"],
-	["d3c1s6", 1.0, "stranger"],
 ]
 
 var day3_creature1_chat_leave = [
@@ -2536,8 +2533,9 @@ func day3_creature1_stay():
 
 var day3_creature1_chat_end = [
 	["d3c1s7", 1, "stranger"],
-	["d3c1s8", 1, "stranger"],
 ]
+
+
 
 var day3_creature1_shift = 0
 
@@ -2578,13 +2576,16 @@ func cam_helper_creature(area):
 	subtitle("", 0)
 
 var day3_call2_chat = [
-	["day3call2sen1", 1, "stranger"],
+	["goodjob", 1, "manager"],
 ]
 
 var day4_call1_chat = [
-	["", 1, "manager"],
-	["", 1, "manager"],
+	["day4msg1", 0.5, "manager"],
+	["day4msg2", 1.5, "manager"],
 ]
+
+
+
 
 func day4_time():
 	if shift_time == 1:
@@ -3523,7 +3524,7 @@ func refresh_brief():
 	
 	for i in range(len(brief)-1):
 		var label = Label.new()
-		label.text = brief[i][0] + ": " + brief[i][1]
+		label.text = tr(brief[i][0]) + ": " + tr(brief[i][1])
 		label.set("theme_override_fonts/font", preload("res://assets/LibreBaskerville-Italic.ttf"))
 		label.custom_minimum_size.x = 705.0
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART

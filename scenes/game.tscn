@@ -6658,7 +6658,7 @@ text = "00:00"
 horizontal_alignment = 1
 
 [node name="subtitles" type="Label" parent="CanvasLayer/gui" unique_id=802554335]
-layout_direction = 1
+layout_direction = 2
 layout_mode = 0
 offset_top = 635.0
 offset_right = 1279.0
