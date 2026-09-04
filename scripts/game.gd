@@ -2149,6 +2149,17 @@ func day_end():
 	#tween.tween_property($CanvasLayer/overscreen/black, "modulate:a", 1.0 , 1.4)
 	await get_tree().create_timer(5.0, false, false, false).timeout
 	
+	
+	await supabase.submit_shift_score(
+		shift,
+		$CanvasLayer/player.text,
+		bad_time,
+		right_reports_conut,
+		sabotages_fixed,
+		wrong_reports_conut,
+		anomaly_events_count
+	)
+	
 	if shift == 7:
 		end_game()
 		await supabase.save_progress(player_name, 0)

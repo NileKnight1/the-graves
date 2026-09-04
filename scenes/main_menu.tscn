@@ -145,6 +145,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
 content_margin_left = 30.0
 bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
@@ -155,6 +158,14 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 shadow_size = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8gd2"]
+content_margin_left = 30.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
 bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
 border_color = Color(0.8, 0, 0, 1)
@@ -164,9 +175,6 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 shadow_color = Color(1, 1, 1, 1)
 shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
-bg_color = Color(0, 0, 0, 1)
 
 [node name="menu" type="Node2D" unique_id=631255614]
 script = ExtResource("1_l6cm7")
@@ -195,6 +203,13 @@ modulate = Color(1, 1, 1, 0.27058825)
 position = Vector2(642.5, 361)
 scale = Vector2(0.6640625, 0.6666667)
 texture = ExtResource("4_wu84c")
+
+[node name="ErrorLabel" type="Label" parent="CanvasLayer" unique_id=1917743011]
+offset_left = 1000.0
+offset_top = 556.0
+offset_right = 1068.0
+offset_bottom = 579.0
+text = "Succefly!"
 
 [node name="settings" type="Control" parent="CanvasLayer" unique_id=577444520]
 process_mode = 3
@@ -1219,16 +1234,6 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
 text = "Quit"
 icon_alignment = 1
 
-[node name="name" type="LineEdit" parent="CanvasLayer/buttons" unique_id=1627626101]
-custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_wu84c")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
-placeholder_text = "Name ..."
-
 [node name="black" type="Panel" parent="CanvasLayer" unique_id=328284058]
 visible = false
 layout_direction = 2
@@ -1236,6 +1241,120 @@ offset_left = -2.0
 offset_right = 1303.0
 offset_bottom = 752.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5dd4i")
+
+[node name="account" type="VBoxContainer" parent="CanvasLayer" unique_id=280864093]
+offset_left = 993.0
+offset_top = 192.0
+offset_right = 1183.0
+offset_bottom = 548.0
+
+[node name="title" type="Label" parent="CanvasLayer/account" unique_id=1085457971]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("7_tbmy8")
+theme_override_font_sizes/font_size = 36
+text = "Account"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="player" type="LineEdit" parent="CanvasLayer/account" unique_id=707319315]
+custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_a8gd2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
+placeholder_text = "Name ..."
+editable = false
+emoji_menu_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="savename" type="Button" parent="CanvasLayer/account" unique_id=740976158]
+custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
+disabled = true
+text = "Save Name"
+icon_alignment = 1
+
+[node name="mail" type="LineEdit" parent="CanvasLayer/account" unique_id=297306567]
+custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
+text = "ammartube777@gmail.com"
+placeholder_text = "Name ..."
+
+[node name="password" type="LineEdit" parent="CanvasLayer/account" unique_id=1708202058]
+custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
+text = "123456"
+placeholder_text = "Name ..."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/account" unique_id=986410902]
+layout_mode = 2
+alignment = 1
+
+[node name="signup" type="Button" parent="CanvasLayer/account/HBoxContainer" unique_id=159605032]
+custom_minimum_size = Vector2(90, 55)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
+text = "Sign Up"
+icon_alignment = 1
+
+[node name="login" type="Button" parent="CanvasLayer/account/HBoxContainer" unique_id=324922428]
+custom_minimum_size = Vector2(90, 55)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
+text = "Log In"
+icon_alignment = 1
 
 [node name="Container" type="HBoxContainer" parent="CanvasLayer" unique_id=649265225]
 visible = false
@@ -1253,107 +1372,6 @@ visible = false
 layout_direction = 2
 layout_mode = 2
 text = "Loading ..."
-
-[node name="signup" type="Button" parent="CanvasLayer" unique_id=709629081]
-layout_direction = 2
-offset_left = 1042.0
-offset_top = 468.0
-offset_right = 1129.0
-offset_bottom = 523.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("3_wu84c")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
-theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
-text = "Sign Up"
-icon_alignment = 1
-
-[node name="savename" type="Button" parent="CanvasLayer" unique_id=945365606]
-layout_direction = 2
-offset_left = 1042.0
-offset_top = 287.0
-offset_right = 1227.0
-offset_bottom = 342.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("3_wu84c")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
-theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
-text = "Save Name"
-icon_alignment = 1
-
-[node name="login" type="Button" parent="CanvasLayer" unique_id=2118814951]
-layout_direction = 2
-offset_left = 1142.0
-offset_top = 468.0
-offset_right = 1229.0
-offset_bottom = 523.0
-theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
-theme_override_fonts/font = ExtResource("3_wu84c")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
-theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
-text = "Log In"
-icon_alignment = 1
-
-[node name="mail" type="LineEdit" parent="CanvasLayer" unique_id=1789535359]
-custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
-offset_left = 1040.0
-offset_top = 347.0
-offset_right = 1230.0
-offset_bottom = 402.0
-theme_override_fonts/font = ExtResource("3_wu84c")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
-text = "ammartube777@gmail.com"
-placeholder_text = "Name ..."
-
-[node name="player" type="LineEdit" parent="CanvasLayer" unique_id=466748353]
-custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
-offset_left = 1040.0
-offset_top = 228.0
-offset_right = 1230.0
-offset_bottom = 283.0
-theme_override_fonts/font = ExtResource("3_wu84c")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
-placeholder_text = "Name ..."
-
-[node name="password" type="LineEdit" parent="CanvasLayer" unique_id=677713904]
-custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
-offset_left = 1040.0
-offset_top = 407.0
-offset_right = 1230.0
-offset_bottom = 462.0
-theme_override_fonts/font = ExtResource("3_wu84c")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
-text = "123456"
-placeholder_text = "Name ..."
 
 [connection signal="pressed" from="CanvasLayer/settings/options/lang/arabic" to="." method="_on_arabic_pressed"]
 [connection signal="pressed" from="CanvasLayer/settings/options/lang/english" to="." method="_on_english_pressed"]
@@ -1374,7 +1392,6 @@ placeholder_text = "Name ..."
 [connection signal="pressed" from="CanvasLayer/buttons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/buttons/scores" to="." method="_on_scores_pressed"]
 [connection signal="pressed" from="CanvasLayer/buttons/achievments" to="." method="_on_achievments_pressed"]
-[connection signal="text_changed" from="CanvasLayer/buttons/name" to="." method="_on_line_edit_text_changed"]
-[connection signal="pressed" from="CanvasLayer/signup" to="." method="_on_signup_pressed"]
-[connection signal="pressed" from="CanvasLayer/savename" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="CanvasLayer/login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="CanvasLayer/account/savename" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/account/HBoxContainer/signup" to="." method="_on_signup_pressed"]
+[connection signal="pressed" from="CanvasLayer/account/HBoxContainer/login" to="." method="_on_login_pressed"]

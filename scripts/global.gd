@@ -1,6 +1,7 @@
 extends Node
 var shift = 1
 var player_name = "Player"
+var loggedin = 0
 
 var day2creature_found = 0
 var day3creature_stayed = 0

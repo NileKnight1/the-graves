@@ -1,6 +1,7 @@
 extends Node2D
 
 var current_shift = 1
+var loggedin = 0
 
 func _ready() -> void:
 	translation()
@@ -132,7 +133,7 @@ func translation():
 	$CanvasLayer/buttons/settings.text = tr("settings")
 	$CanvasLayer/buttons/scores.text = tr("scores")
 	$CanvasLayer/buttons/quit.text = tr("quit")
-	$CanvasLayer/buttons/name.placeholder_text = tr("name") 
+	#$CanvasLayer/buttons/name.placeholder_text = tr("name") 
 
 
 func _on_arabic_pressed() -> void:
@@ -178,18 +179,36 @@ func _on_achievments_pressed() -> void:
 	$CanvasLayer/achievments_.visible = 1
 
 func _on_signup_pressed() -> void:
-	supabase.sign_up($CanvasLayer/mail.text, $CanvasLayer/password.text)
+	var code = await supabase.sign_up($CanvasLayer/account/mail.text, $CanvasLayer/account/password.text)
+
+	if code == 422:
+		$CanvasLayer/ErrorLabel.text = "Email is already registered."
+	elif code == 400:
+		$CanvasLayer/ErrorLabel.text = "Please enter a valid email."
+	elif code == 200 or code == 201:
+		$CanvasLayer/ErrorLabel.text = "Account created!"
+	else:
+		$CanvasLayer/ErrorLabel.text = "Signup failed."
 
 func _on_login_pressed() -> void:
-	await supabase.login($CanvasLayer/mail.text, $CanvasLayer/password.text, $CanvasLayer/player.text)
-	
+	var code = await supabase.login($CanvasLayer/account/mail.text, $CanvasLayer/account/password.text, $CanvasLayer/account/player.text)
+
+	if code == 200:
+		$CanvasLayer/ErrorLabel.text = "Login successful!"
+		logged()
+	else:
+		$CanvasLayer/ErrorLabel.text = "Wrong email or password."
+		
 	var progress = await supabase.get_progress()
 	if progress:
-		$CanvasLayer/player.text = str(progress["player_name"])
+		$CanvasLayer/account/player.text = str(progress["player_name"])
 	
 	if global.shift != 1:
 		$CanvasLayer/buttons/continue.disabled = 0
-	
+	#
+	#if global.loggedin:
+		#logged()
+
 func _on_save_pressed() -> void:
 	var name = $CanvasLayer/player.text.strip_edges()
 
@@ -227,7 +246,9 @@ func update_my_score(shift_number: int):
 	$CanvasLayer/scores_/HBoxContainer3/Label4.text = str(data["anomalies_reported"])
 	$CanvasLayer/scores_/HBoxContainer3/Label5.text = str(data["sabotages_fixed"])
 
-
+func logged():
+	$CanvasLayer/account/player.editable = 1
+	$CanvasLayer/account/savename.disabled = 0
 
 
 

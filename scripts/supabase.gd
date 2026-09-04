@@ -7,7 +7,6 @@ var access_token = ""
 var user_id = ""
 
 func sign_up(email, password):
-	print("account created")
 	var http = HTTPRequest.new()
 	add_child(http)
 	
@@ -15,19 +14,33 @@ func sign_up(email, password):
 	
 	var headers = [
 		"apikey: " + SUPABASE_KEY,
-		"Content-Type : application/json" 
+		"Content-Type: application/json"
 	]
+
 	var data = {
 		"email": email,
 		"password": password
 	}
-	http.request(
+	
+	var error = http.request(
 		url,
 		headers,
 		HTTPClient.METHOD_POST,
 		JSON.stringify(data)
-		
 	)
+
+	if error != OK:
+		print("Request error: ", error)
+		return -1
+
+	var result = await http.request_completed
+	var response_code = result[1]
+	var body = result[3]
+
+	print("Signup response: ", response_code)
+	print("Signup data: ", body.get_string_from_utf8())
+
+	return response_code
 
 func login(email: String, password: String, player):
 	if player == "":
@@ -57,7 +70,7 @@ func login(email: String, password: String, player):
 
 	if error != OK:
 		print("Request error: ", error)
-		return
+		return -1
 
 	var result = await http.request_completed
 	var response_code = result[1]
@@ -75,13 +88,9 @@ func login(email: String, password: String, player):
 		print("LOGIN SUCCESS!")
 		print("User ID: ", user_id)
 		print("Access Token received: YES")
-		
+
 		await create_progress()
-		
-		
-		
-		#create_player_data(player)
-		#supabase.get_leaderboard(1)
+
 		var progress = await get_progress()
 
 		if progress == null:
@@ -90,13 +99,12 @@ func login(email: String, password: String, player):
 			print("Player name: ", progress["player_name"])
 			print("Last shift won: ", progress["last_shift_won"])
 			global.shift = int(progress["last_shift_won"]) + 1
-			
-		
 
-	else:
-		print("LOGIN FAILED")
-	
-	
+			global.loggedin = 1
+
+	return response_code
+
+
 func create_player_data(shift_number: int, player_name: String = "Player"):
 	var http = HTTPRequest.new()
 	add_child(http)
