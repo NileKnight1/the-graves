@@ -3,6 +3,23 @@ extends Node2D
 var current_shift = 1
 var loggedin = 0
 
+var click_menu = preload("res://audio/buttonpress.mp3")
+var cam_on = preload("res://audio/cam_on.mp3")
+var load_sound = preload("res://audio/freesound_community-shield-recharging-107016.mp3")
+var game_start = preload("res://audio/start.mp3")
+var selected = preload("res://audio/ps5-selection-button.mp3")
+
+
+func play_sound(sound, vol = 0.0):
+	var temp = AudioStreamPlayer.new()
+	temp.stream = sound
+	temp.volume_db = vol
+	add_child(temp)
+	
+	temp.finished.connect(temp.queue_free)
+	temp.play()
+
+
 func _ready() -> void:
 	translation()
 	#supabase.get_leaderboard(1)
@@ -49,32 +66,24 @@ func fill_leaderboard(data):
 		row.get_node("Label5").text = str(int(entry["sabotages_fixed"]))
 
 
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_button_pressed() -> void:
-	TranslationServer.set_locale("ar")
-
-
-func _on_button_2_pressed() -> void:
-	TranslationServer.set_locale("en")
-
 func _on_line_edit_text_changed(new_text: String) -> void:
 	global.player_name = new_text
 
 func _on_o_2_pressed() -> void:
+	play_sound(click_menu)
 	global.temp_reset()
 	await loading()
 	
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_continue_pressed() -> void:
+	play_sound(click_menu)
 	await loading()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
 func loading():
+	play_sound(load_sound)
 	disable_buttons()
 	$CanvasLayer/buttons/continue.disabled = 1
 	$CanvasLayer/buttons/newgame.disabled = 1
@@ -109,8 +118,10 @@ func loading():
 	var tween3 = create_tween()
 	tween3.tween_property($CanvasLayer/Container/Label, "modulate:a", 0.0, 0.3)
 	await get_tree().create_timer(0.5).timeout
+	#play_sound(game_start)
 
 func _on_close_pressed() -> void:
+	play_sound(click_menu)
 	$CanvasLayer/settings.visible = 0
 	$CanvasLayer/scores.visible = 0
 	$CanvasLayer/scores_.visible = 0
@@ -122,7 +133,7 @@ func _on_close_pressed() -> void:
 	
 
 func _on_settings_pressed() -> void:
-	
+	play_sound(click_menu)
 	#var tween = create_tween()
 	#tween.tween_property($CanvasLayer/buttons, "modulate:a", 1.0, 0.3)
 	
@@ -172,14 +183,20 @@ func translation():
 
 
 func _on_arabic_pressed() -> void:
+	#play_sound(click_menu)
+	play_sound(selected)
 	TranslationServer.set_locale("ar")
 	translation()
 
 func _on_english_pressed() -> void:
+	#play_sound(click_menu)
+	play_sound(selected)
+	
 	TranslationServer.set_locale("en")
 	translation()
 
 func _on_scores_pressed() -> void:
+	play_sound(click_menu)
 	$CanvasLayer/buttons.visible = 0
 	$CanvasLayer/account.visible = 0
 	$CanvasLayer/scores.visible = 1
@@ -201,6 +218,7 @@ func _on_shift7_scores_pressed() -> void:
 	show_scores(7)
 
 func show_scores(shift):
+	play_sound(click_menu)
 	disable_score_buttons()
 	await load_shift(shift)
 	enable_score_buttons()
@@ -230,15 +248,18 @@ func enable_score_buttons():
 
 
 func _on_scores_back_pressed() -> void:
+	play_sound(click_menu)
 	$CanvasLayer/scores.visible = 1
 	$CanvasLayer/scores_.visible = 0
 
 func _on_achievments_pressed() -> void:
+	play_sound(click_menu)
 	$CanvasLayer/buttons.visible = 0
 	$CanvasLayer/account.visible = 0
 	$CanvasLayer/achievments_.visible = 1
 
 func _on_signup_pressed() -> void:
+	play_sound(click_menu)
 	disable_buttons()
 	
 	var code = await supabase.sign_up($CanvasLayer/account/mail.text, $CanvasLayer/account/password.text)
@@ -253,9 +274,12 @@ func _on_signup_pressed() -> void:
 		$CanvasLayer/account/feedback.text = tr("Try again later.")
 	else:
 		$CanvasLayer/account/feedback.text = tr("Signup failed.")
+	
+	play_sound(selected)
 	enable_buttons()
 
 func _on_login_pressed() -> void:
+	play_sound(click_menu)
 	disable_buttons()
 	var code = await supabase.login($CanvasLayer/account/mail.text, $CanvasLayer/account/password.text, $CanvasLayer/account/player.text)
 
@@ -271,6 +295,7 @@ func _on_login_pressed() -> void:
 	if global.shift != 1:
 		$CanvasLayer/buttons/continue.disabled = 0
 	
+	play_sound(selected)
 	enable_buttons()
 	logged()
 	
@@ -279,7 +304,7 @@ func _on_login_pressed() -> void:
 		#logged()
 
 func disable_buttons():
-	#$CanvasLayer/buttons/continue.disabled = 1
+	$CanvasLayer/buttons/continue.disabled = 1
 	$CanvasLayer/buttons/newgame.disabled = 1
 	$CanvasLayer/buttons/settings.disabled = 1
 	$CanvasLayer/buttons/scores.disabled = 1
@@ -293,6 +318,8 @@ func disable_buttons():
 	$CanvasLayer/account/password.editable = 0
 
 func enable_buttons():
+	if global.shift != 1:
+		$CanvasLayer/buttons/continue.disabled = 0
 	$CanvasLayer/buttons/newgame.disabled = 0
 	$CanvasLayer/buttons/settings.disabled = 0
 	$CanvasLayer/buttons/scores.disabled = 0
@@ -307,6 +334,8 @@ func enable_buttons():
 
 
 func _on_save_pressed() -> void:
+	disable_buttons()
+	play_sound(click_menu)
 	var name = $CanvasLayer/account/player.text.strip_edges()
 
 	if name == "":
@@ -323,8 +352,12 @@ func _on_save_pressed() -> void:
 
 	await supabase.save_progress(name, last_shift_won)
 
+	play_sound(selected)
+
 	print("Name updated to: ", name)
 	$CanvasLayer/account/feedback.text = "Name upadted."
+	enable_buttons()
+	
 
 
 func update_my_score(shift_number: int):

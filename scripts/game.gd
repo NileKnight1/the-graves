@@ -213,6 +213,7 @@ func screen_shake(intensity, time):
 
 func translation():
 	#TranslationServer.set_locale("ar") 
+	newspaper_translation()
 	$player.get_child(0).text = player_name
 	
 	$CanvasLayer/room/menu/title.text = tr("report_radio")
@@ -278,6 +279,12 @@ func _ready() -> void:
 	
 	
 	
+	translation()
+	day_starters()
+	tasks()
+	developer()
+	
+	
 	var tween = create_tween()
 	tween.tween_property($CanvasLayer/end_screen/black, "modulate:a", 0.0, 1)
 	await get_tree().create_timer(1).timeout
@@ -289,12 +296,10 @@ func _ready() -> void:
 	$player/Camera2D.position_smoothing_enabled = 1
 	$player/Camera2D.rotation_smoothing_enabled = 1
 	
-	translation()
-	tasks()
-	newspaper_translation()
+	
+	await get_tree().create_timer(3).timeout
+	
 	phone_up()
-	developer()
-	day_starters()
 	
 	#subtitle(10, 1.0)
 	#newspaper_pages_refresh()
@@ -2152,13 +2157,14 @@ func day_end():
 	
 	await supabase.submit_shift_score(
 		shift,
-		$CanvasLayer/player.text,
+		player_name,
 		bad_time,
 		right_reports_conut,
 		sabotages_fixed,
 		wrong_reports_conut,
 		anomaly_events_count
 	)
+	
 	
 	if shift == 7:
 		end_game()
@@ -3667,10 +3673,9 @@ func end_game():
 
 
 #ideas to do
-## high scores
+##### every single step sound
 #### newspapre player's name on day7
 ### achievements
-## leaderboard
 ## visitors mode
 # save/load
 
