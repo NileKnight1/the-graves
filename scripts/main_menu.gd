@@ -114,7 +114,7 @@ func _on_close_pressed() -> void:
 	$CanvasLayer/scores_.visible = 0
 	$CanvasLayer/achievments_.visible = 0
 	
-	
+	$CanvasLayer/account.visible = 1
 	$CanvasLayer/buttons.visible = 1
 	
 	
@@ -125,6 +125,7 @@ func _on_settings_pressed() -> void:
 	#tween.tween_property($CanvasLayer/buttons, "modulate:a", 1.0, 0.3)
 	
 	$CanvasLayer/buttons.visible = 0
+	$CanvasLayer/account.visible = 0
 	$CanvasLayer/settings.visible = 1
 
 func translation():
@@ -146,6 +147,7 @@ func _on_english_pressed() -> void:
 
 func _on_scores_pressed() -> void:
 	$CanvasLayer/buttons.visible = 0
+	$CanvasLayer/account.visible = 0
 	$CanvasLayer/scores.visible = 1
 	
 
@@ -176,28 +178,34 @@ func _on_scores_back_pressed() -> void:
 
 func _on_achievments_pressed() -> void:
 	$CanvasLayer/buttons.visible = 0
+	$CanvasLayer/account.visible = 0
 	$CanvasLayer/achievments_.visible = 1
 
 func _on_signup_pressed() -> void:
+	disable_buttons()
+	
 	var code = await supabase.sign_up($CanvasLayer/account/mail.text, $CanvasLayer/account/password.text)
 
 	if code == 422:
-		$CanvasLayer/ErrorLabel.text = "Email is already registered."
+		$CanvasLayer/account/feedback.text = "Email is already registered."
 	elif code == 400:
-		$CanvasLayer/ErrorLabel.text = "Please enter a valid email."
+		$CanvasLayer/account/feedback.text = "Please enter a valid email."
 	elif code == 200 or code == 201:
-		$CanvasLayer/ErrorLabel.text = "Account created!"
+		$CanvasLayer/account/feedback.text = "Check your email!"
+	elif code == 429:
+		$CanvasLayer/account/feedback.text = "Try again later."
 	else:
-		$CanvasLayer/ErrorLabel.text = "Signup failed."
+		$CanvasLayer/account/feedback.text = "Signup failed."
+	enable_buttons()
 
 func _on_login_pressed() -> void:
+	disable_buttons()
 	var code = await supabase.login($CanvasLayer/account/mail.text, $CanvasLayer/account/password.text, $CanvasLayer/account/player.text)
 
 	if code == 200:
-		$CanvasLayer/ErrorLabel.text = "Login successful!"
-		logged()
+		$CanvasLayer/account/feedback.text = "Login successful!"
 	else:
-		$CanvasLayer/ErrorLabel.text = "Wrong email or password."
+		$CanvasLayer/account/feedback.text = "Wrong email or password."
 		
 	var progress = await supabase.get_progress()
 	if progress:
@@ -205,12 +213,44 @@ func _on_login_pressed() -> void:
 	
 	if global.shift != 1:
 		$CanvasLayer/buttons/continue.disabled = 0
+	
+	enable_buttons()
+	logged()
+	
 	#
 	#if global.loggedin:
 		#logged()
 
+func disable_buttons():
+	#$CanvasLayer/buttons/continue.disabled = 1
+	$CanvasLayer/buttons/newgame.disabled = 1
+	$CanvasLayer/buttons/settings.disabled = 1
+	$CanvasLayer/buttons/scores.disabled = 1
+	$CanvasLayer/buttons/achievments.disabled = 1
+	$CanvasLayer/buttons/quit.disabled = 1
+	$CanvasLayer/account/savename.disabled = 1
+	$CanvasLayer/account/HBoxContainer/signup.disabled = 1
+	$CanvasLayer/account/HBoxContainer/login.disabled = 1
+	$CanvasLayer/account/player.editable = 0
+	$CanvasLayer/account/mail.editable = 0
+	$CanvasLayer/account/password.editable = 0
+
+func enable_buttons():
+	$CanvasLayer/buttons/newgame.disabled = 0
+	$CanvasLayer/buttons/settings.disabled = 0
+	$CanvasLayer/buttons/scores.disabled = 0
+	$CanvasLayer/buttons/achievments.disabled = 0
+	$CanvasLayer/buttons/quit.disabled = 0
+	$CanvasLayer/account/savename.disabled = 0
+	$CanvasLayer/account/HBoxContainer/signup.disabled = 0
+	$CanvasLayer/account/HBoxContainer/login.disabled = 0
+	$CanvasLayer/account/player.editable = 1
+	$CanvasLayer/account/mail.editable = 1
+	$CanvasLayer/account/password.editable = 1
+
+
 func _on_save_pressed() -> void:
-	var name = $CanvasLayer/player.text.strip_edges()
+	var name = $CanvasLayer/account/player.text.strip_edges()
 
 	if name == "":
 		print("Name cannot be empty!")
@@ -227,6 +267,7 @@ func _on_save_pressed() -> void:
 	await supabase.save_progress(name, last_shift_won)
 
 	print("Name updated to: ", name)
+	$CanvasLayer/account/feedback.text = "Name upadted."
 
 
 func update_my_score(shift_number: int):
