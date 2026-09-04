@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://fv626k1q1ubw" path="res://assets/LibreBaskerville-Bold.ttf" id="5_oa1go"]
 [ext_resource type="FontFile" uid="uid://cim17fdmt5ywc" path="res://assets/Signika-Bold.ttf" id="6_oa1go"]
 [ext_resource type="FontFile" uid="uid://cw8o8fcnfldoe" path="res://assets/Creepster-Regular.ttf" id="7_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://c7a12ky5d3u86" path="res://assets/circle.png" id="8_jk1qb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
 bg_color = Color(0, 0, 0, 0.47058824)
@@ -222,11 +223,10 @@ custom_minimum_size = Vector2(115, 60)
 layout_direction = 2
 layout_mode = 0
 offset_left = 457.0
-offset_top = 186.0
+offset_top = 221.0
 offset_right = 1171.0
-offset_bottom = 246.0
+offset_bottom = 563.0
 size_flags_horizontal = 3
-alignment = 2
 
 [node name="lang" type="HBoxContainer" parent="CanvasLayer/settings/options" unique_id=119177425]
 process_mode = 3
@@ -293,6 +293,21 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5pajh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j7ex8")
 text = "X"
 icon_alignment = 1
+
+[node name="title" type="Label" parent="CanvasLayer/settings" unique_id=1919529948]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 156.0
+offset_right = 895.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("7_tbmy8")
+theme_override_font_sizes/font_size = 36
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="scores" type="Control" parent="CanvasLayer" unique_id=290040016]
 process_mode = 3
@@ -469,6 +484,21 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5pajh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j7ex8")
 text = "X"
 icon_alignment = 1
+
+[node name="title" type="Label" parent="CanvasLayer/scores" unique_id=1692334948]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 156.0
+offset_right = 895.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("7_tbmy8")
+theme_override_font_sizes/font_size = 36
+text = "Leaderboard"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="scores_" type="Control" parent="CanvasLayer" unique_id=963286143]
 process_mode = 3
@@ -1734,22 +1764,329 @@ label_settings = SubResource("LabelSettings_flqon")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="title" type="Label" parent="CanvasLayer/scores_" unique_id=1915518695]
+[node name="title" type="Label" parent="CanvasLayer/scores_" unique_id=739998937]
 layout_mode = 0
-offset_left = 694.0
-offset_top = 37.0
-offset_right = 877.0
-offset_bottom = 98.0
+offset_left = 712.0
+offset_top = 36.0
+offset_right = 895.0
+offset_bottom = 97.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("7_tbmy8")
 theme_override_font_sizes/font_size = 36
-text = "Shift 1"
+text = "Leaderboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="achievments_" type="Control" parent="CanvasLayer" unique_id=314716637]
+process_mode = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -163.0
+offset_top = 11.0
+offset_right = -123.0
+offset_bottom = 51.0
+mouse_filter = 2
+
+[node name="black" type="Panel" parent="CanvasLayer/achievments_" unique_id=260737195]
+layout_direction = 2
+layout_mode = 0
+offset_left = 234.72229
+offset_top = 30.0
+offset_right = 1385.254
+offset_bottom = 676.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/achievments_" unique_id=396330206]
+custom_minimum_size = Vector2(1083, 471)
+layout_mode = 0
+offset_left = 271.0
+offset_top = 142.0
+offset_right = 1354.0
+offset_bottom = 660.0
+columns = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/achievments_" unique_id=619968286]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 142.0
+offset_right = 1354.0
+offset_bottom = 613.0
+scroll_hint_mode = 1
+tile_scroll_hint = true
+
+[node name="HFlowContainer" type="HFlowContainer" parent="CanvasLayer/achievments_/ScrollContainer" unique_id=611588668]
+custom_minimum_size = Vector2(1083, 471)
+layout_mode = 2
+
+[node name="Control" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=2038847124]
+custom_minimum_size = Vector2(260, 170)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=1564981327]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+texture = ExtResource("8_jk1qb")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=1540696213]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 31
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=750783669]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 16
+text = "Go up and downstairs 10 times in 1 second and be fast as much as you can without getting tired."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control2" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=1586718748]
+custom_minimum_size = Vector2(260, 170)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control2" unique_id=195996385]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+texture = ExtResource("8_jk1qb")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control2" unique_id=637018775]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 31
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control2" unique_id=1813614477]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 16
+text = "Go up and downstairs 10 times in 1 second and be fast as much as you can without getting tired."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control3" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=1269945278]
+custom_minimum_size = Vector2(260, 170)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control3" unique_id=69677700]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+texture = ExtResource("8_jk1qb")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control3" unique_id=504880256]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 31
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control3" unique_id=958033116]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 16
+text = "Go up and downstairs 10 times in 1 second and be fast as much as you can without getting tired."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control4" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=830385686]
+custom_minimum_size = Vector2(260, 170)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control4" unique_id=787985004]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+texture = ExtResource("8_jk1qb")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control4" unique_id=1070160035]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 31
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control4" unique_id=2038345410]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 16
+text = "Go up and downstairs 10 times in 1 second and be fast as much as you can without getting tired."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control5" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=1873901609]
+custom_minimum_size = Vector2(260, 170)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control5" unique_id=730793296]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+texture = ExtResource("8_jk1qb")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control5" unique_id=1645572294]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 31
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control5" unique_id=686020372]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 16
+text = "Go up and downstairs 10 times in 1 second and be fast as much as you can without getting tired."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control6" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=937120045]
+custom_minimum_size = Vector2(260, 170)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control6" unique_id=46071358]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+texture = ExtResource("8_jk1qb")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control6" unique_id=1034461885]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 31
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control6" unique_id=2043983429]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 16
+text = "Go up and downstairs 10 times in 1 second and be fast as much as you can without getting tired."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control7" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=985441999]
+custom_minimum_size = Vector2(260, 170)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control7" unique_id=1924930145]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+texture = ExtResource("8_jk1qb")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control7" unique_id=1907615528]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 31
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control7" unique_id=2004279724]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 16
+text = "Go up and downstairs 10 times in 1 second and be fast as much as you can without getting tired."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control8" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=851489714]
+custom_minimum_size = Vector2(260, 170)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control8" unique_id=451992660]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+texture = ExtResource("8_jk1qb")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control8" unique_id=528801448]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 31
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control8" unique_id=1666598548]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 16
+text = "Go up and downstairs 10 times in 1 second and be fast as much as you can without getting tired."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="close" type="Button" parent="CanvasLayer/achievments_" unique_id=1792034014]
+custom_minimum_size = Vector2(10, 10)
+layout_direction = 2
+layout_mode = 0
+offset_left = 1343.0
+offset_top = 38.0
+offset_right = 1376.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_7b55j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5pajh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j7ex8")
+text = "X"
+icon_alignment = 1
+
+[node name="title" type="Label" parent="CanvasLayer/achievments_" unique_id=1336397684]
+layout_mode = 0
+offset_left = 665.0
+offset_top = 36.0
+offset_right = 942.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("7_tbmy8")
+theme_override_font_sizes/font_size = 36
+text = "achievments"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="buttons" type="VBoxContainer" parent="CanvasLayer" unique_id=469679139]
+visible = false
 layout_direction = 2
 anchors_preset = 8
 anchor_left = 0.5
@@ -1837,6 +2174,24 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
 text = "Scores"
 icon_alignment = 1
 
+[node name="achievments" type="Button" parent="CanvasLayer/buttons" unique_id=715962346]
+custom_minimum_size = Vector2(190, 55)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
+text = "Scores"
+icon_alignment = 1
+
 [node name="quit" type="Button" parent="CanvasLayer/buttons" unique_id=1551865551]
 custom_minimum_size = Vector2(190, 55)
 layout_direction = 2
@@ -1903,7 +2258,10 @@ text = "Loading ..."
 [connection signal="pressed" from="CanvasLayer/scores/close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="CanvasLayer/scores_/close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="CanvasLayer/scores_/back" to="." method="_on_scores_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/achievments_/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="CanvasLayer/buttons/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CanvasLayer/buttons/newgame" to="." method="_on_o_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/buttons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/buttons/scores" to="." method="_on_scores_pressed"]
+[connection signal="pressed" from="CanvasLayer/buttons/achievments" to="." method="_on_achievments_pressed"]
 [connection signal="text_changed" from="CanvasLayer/buttons/name" to="." method="_on_line_edit_text_changed"]
