@@ -201,10 +201,33 @@ func _on_shift7_scores_pressed() -> void:
 	show_scores(7)
 
 func show_scores(shift):
-	load_shift(shift)
+	disable_score_buttons()
+	await load_shift(shift)
+	enable_score_buttons()
 	$CanvasLayer/scores.visible = 0
 	$CanvasLayer/scores_.visible = 1
 	$CanvasLayer/scores_/title.text = tr('shift') + str(shift)
+
+func disable_score_buttons():
+	$CanvasLayer/scores/options/shift1.disabled = 1
+	$CanvasLayer/scores/options/shift2.disabled = 1
+	$CanvasLayer/scores/options/shift3.disabled = 1
+	$CanvasLayer/scores/options/shift4.disabled = 1
+	$CanvasLayer/scores/options/shift5.disabled = 1
+	$CanvasLayer/scores/options/shift6.disabled = 1
+	$CanvasLayer/scores/options/shift7.disabled = 1
+	$CanvasLayer/scores/close.disabled = 1
+
+func enable_score_buttons():
+	$CanvasLayer/scores/options/shift1.disabled = 0
+	$CanvasLayer/scores/options/shift2.disabled = 0
+	$CanvasLayer/scores/options/shift3.disabled = 0
+	$CanvasLayer/scores/options/shift4.disabled = 0
+	$CanvasLayer/scores/options/shift5.disabled = 0
+	$CanvasLayer/scores/options/shift6.disabled = 0
+	$CanvasLayer/scores/options/shift7.disabled = 0
+	$CanvasLayer/scores/close.disabled = 0
+
 
 func _on_scores_back_pressed() -> void:
 	$CanvasLayer/scores.visible = 1
