@@ -310,4 +310,13 @@ d3c1s3,Would you mind if I stayed here?,هل تمانع إذا بقيت هنا؟
 d3c1s4,No problem.,لا مشكلة.
 d3c1s5,"Thank you, I'll watch the cameras for you, and you handle the radio",شكراً لك، سأراقب الكاميرات نيابةً عنك، وأنت ستتولى أمر الراديو.
 d3c1s7
-d3c1s8,,
+day4msg1,Hello %s.,أهلًا يا %s.
+day4msg2,Tomorrow is the red moon night .. stay alert.,غدًا ليلة القمر الحمراء .. توخَ الحذر.
+day4c2,Do you need help today?,هل تحتاج مساعدة اليوم؟
+day4c3,I'll watch cameras .. you radio.,سأراقب الكاميرات وأنت الراديو.
+day5msg1,Hello %s.,أهلًأ يا %s.
+day5msg2,We're on the Red Moon Night.,نحن في ليلة القمر الحمراء.
+day5msg3,Open light switch if you need it.,افتح الضوء إذا احتجته.
+,"The generator has broken down, but you won't be able to fix it on your own.",لقد تعطل المولد لكن لن تستطيع إصلاحه بمفردك.
+,A company worker will come today to fix it.,سيأتي عامل الشركة اليوم لإصلاحه.
+,Be prepared for it.,كن في انتظاره.

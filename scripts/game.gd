@@ -2585,8 +2585,6 @@ var day4_call1_chat = [
 ]
 
 
-
-
 func day4_time():
 	if shift_time == 1:
 		print("im here")
@@ -2617,18 +2615,18 @@ func day4_creature_appear():
 
 var day4_creature1_chat = [
 	["hello", 0.5, "stranger"],
-	["needhelp", 1.0, "stranger"],
+	["day4c2", 1.0, "stranger"],
 ]
 
 func day4_creature1_talked():
 	show_decision_option("Answer", "yesplease", "no")
 
 var day4_creature1_chat_stay = [
-	["stay", 1.0, "stranger"],
+	["day4c3", 1.0, "stranger"],
 ]
 
 var day4_creature1_chat_leave = [
-	["np", 0.5, "stranger"],
+	["d3c1s4", 0.5, "stranger"],
 ]
 
 func day4_creature1_yes():
@@ -2653,7 +2651,7 @@ func day4_creature1_stay():
 	subtitle("", 0)
 
 var day4_creature1_chat_end = [
-	["im leave", 0, "stranger"],
+	["d3c1s7", 0, "stranger"],
 ]
 
 var day4_creature1_shift = 0
@@ -2753,18 +2751,20 @@ func day5_start():
 	sabo_time()
 
 var day5_call1_chat = [
-	["a", 1.0, "manager"],
+	["day5msg1", 0.5, "manager"],
+	["day5msg2", 0.5, "manager"],
+	["day5msg3", 0.5, "manager"],
 ]
 
 var day5_end_chat = [
-	["a", 1.0, "manager"]
+	["goodjob", 0.5, "manager"]
 ]
 
 var vamp_move = 0
 
 func vamp_spawn():
 	if (computer_opened && opened_cam == 4) || ps4:
-		print("vamp spawne failed")
+		print("vamp spawn failed")
 		await get_tree().create_timer(3, false, false, false).timeout
 		vamp_spawn()
 	else:
@@ -2808,9 +2808,6 @@ func vamp_kill():
 	play_sound(bite)
 	
 	lose()
-	
-	
-	#lose()
 
 func vamp_dead():
 	print("vamp dead")
@@ -2849,7 +2846,10 @@ func day6_time():
 		set_shift_values(8, 14)
 
 var day6_call1_chat = [
-	["day6start", 1.0, "manager"],
+	["day5msg1", 0.5, "manager"],
+	["day6msg2", 1.0, "manager"],
+	["day6msg3", 1.5, "manager"],
+	["day6msg4", 1.0, "manager"],
 ]
 
 ### Day6
