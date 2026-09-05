@@ -71,9 +71,9 @@ var fnaf = preload("res://audio/freesound_community-cryo_outage-94622.mp3")
 var paper_turn = preload("res://audio/paper_turn.mp3")
 var click_menu = preload("res://audio/buttonpress.mp3")
 var selected = preload("res://audio/ps5-selection-button.mp3")
-var warning = preload("res://audio/grimgravy-warning-notification-call-184996.mp3")
-
-
+var warning = preload("res://audio/freesound_community-sucked-into-classroom-103774.mp3")
+var error = preload("res://audio/freesound_community-error-83494.mp3")
+var warn = preload("res://audio/freesound_community-beep-warning-6387.mp3")
 
 func play_sound(sound, vol = 0.0):
 	var temp = AudioStreamPlayer.new()
@@ -1664,7 +1664,7 @@ func antenna_on():
 var antenna_current_num = 1
 
 func antenna_sabo():
-	play_sound(warning)
+	play_sound(warn)
 	antenna_working = 0
 	$"map behind/room/antenna/off".visible = 1
 	$"map behind/room/antenna/on".visible = 0
@@ -1883,7 +1883,7 @@ func cam_prog():
 
 func cam_sabo(num, silent = 0):
 	if !silent:
-		play_sound(warning)
+		play_sound(warn)
 		subtitle("camsabo", 1.0)
 	
 	cam_working[num-1] = 0
