@@ -120,6 +120,14 @@ font = ExtResource("6_oa1go")
 [sub_resource type="LabelSettings" id="LabelSettings_flqon"]
 font = ExtResource("6_oa1go")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8egab"]
+bg_color = Color(0.7482179, 0.64395267, 3.85046e-07, 1)
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
 bg_color = Color(0.050980393, 0.05882353, 0.07058824, 1)
 border_color = Color(0.8, 0, 0, 1)
@@ -853,7 +861,6 @@ vertical_alignment = 1
 
 [node name="achievments_" type="Control" parent="CanvasLayer" unique_id=314716637]
 process_mode = 3
-visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
@@ -898,10 +905,47 @@ custom_minimum_size = Vector2(1083, 471)
 layout_direction = 2
 layout_mode = 2
 
-[node name="Control" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=2038847124]
-custom_minimum_size = Vector2(260, 170)
+[node name="black" type="Panel" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=694327467]
 layout_direction = 2
 layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Control" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=2038847124]
+visible = false
+custom_minimum_size = Vector2(260, 365)
+layout_direction = 2
+layout_mode = 2
+
+[node name="tier" type="Control" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=526976387]
+custom_minimum_size = Vector2(0, 20)
+layout_direction = 2
+layout_mode = 2
+mouse_filter = 2
+
+[node name="bg" type="Panel" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control/tier" unique_id=1750223996]
+layout_direction = 2
+layout_mode = 0
+offset_left = 91.0
+offset_top = 2.0
+offset_right = 167.0
+offset_bottom = 24.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8egab")
+
+[node name="tier" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control/tier" unique_id=455129942]
+custom_minimum_size = Vector2(20, 0)
+layout_direction = 2
+layout_mode = 0
+offset_left = -1.0
+offset_top = 3.0
+offset_right = 259.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("6_oa1go")
+theme_override_font_sizes/font_size = 16
+text = "Secret"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=1564981327]
 custom_minimum_size = Vector2(250, 200)
@@ -910,7 +954,7 @@ layout_mode = 2
 texture = ExtResource("8_jk1qb")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=1540696213]
+[node name="title" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=1540696213]
 custom_minimum_size = Vector2(250, 0)
 layout_direction = 2
 layout_mode = 2
@@ -920,7 +964,7 @@ text = "Label"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=750783669]
+[node name="description" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=750783669]
 custom_minimum_size = Vector2(250, 0)
 layout_direction = 2
 layout_mode = 2

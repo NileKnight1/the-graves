@@ -256,6 +256,7 @@ func _on_scores_back_pressed() -> void:
 	$CanvasLayer/scores_.visible = 0
 
 func _on_achievments_pressed() -> void:
+	refresh_achievements()
 	play_sound(click_menu)
 	$CanvasLayer/buttons.visible = 0
 	$CanvasLayer/account.visible = 0
@@ -401,8 +402,18 @@ func logged():
 # door hand anomaly
 
 var achievements = [
-	{"id"= "no_anomalies_left", "secret"= 0, "done"= 0, "description"= "Win a shift without leaving an active anomaly."},
-	{"id"= "door_hand", "secret"= 1, "done"= 0, "description"= ""},
+	{"id"= "no_anomalies_left", "tier"= 2, "done"= 0, "description"= "Win a shift without leaving an active anomaly."},
+	{"id"= "x", "tier"= 4, "done"= 1, "description"= ""},
+	{"id"= "y", "tier"= 2, "done"= 1, "description"= ""},
+	{"id"= "z", "tier"= 3, "done"= 1, "description"= ""},
+	{"id"= "l", "tier"= 1, "done"= 1, "description"= ""},
+	{"id"= "a", "tier"= 3, "done"= 0, "description"= ""},
+	{"id"= "b", "tier"= 4, "done"= 0, "description"= ""},
+	{"id"= "c", "tier"= 2, "done"= 0, "description"= ""},
+	{"id"= "d", "tier"= 2, "done"= 1, "description"= ""},
+	{"id"= "e", "tier"= 1, "done"= 0, "description"= ""},
+	
+	
 	#{"id"= "", "secret"= , "done"= 0, "description"= ""},
 	#{"id"= "", "secret"= , "done"= 0, "description"= ""},
 ]
@@ -411,7 +422,69 @@ var secret_achievements = [
 	{"id"= "door_hand", "description"= "Report the door hand anomaly."},
 ]
 
+func refresh_achievements():
+	style_not_done.bg_color = Color("#0c0d0fff")
+	style_common.bg_color = Color("4a524a")
+	style_novice.bg_color = Color("1e7a50")
+	style_epic.bg_color = Color("7c2230")
+	style_secret.bg_color = Color("4b0082")
+	style_not_done.set_border_width_all(1)
+	style_secret.set_border_width_all(1)
+	style_epic.set_border_width_all(1)
+	style_novice.set_border_width_all(1)
+	style_common.set_border_width_all(1)
+	style_not_done.set_corner_radius_all(15)
+	style_secret.set_corner_radius_all(15)
+	style_epic.set_corner_radius_all(15)
+	style_novice.set_corner_radius_all(15)
+	style_common.set_corner_radius_all(15)
+	
+	
+	for i in $CanvasLayer/achievments_/ScrollContainer/HFlowContainer.get_children():
+		if i.name != "black" && i.name != "Control":
+			i.queue_free()
+	
+	for j in range(5):
+		for i in achievements:
+			if i["done"] && j == 4-i["tier"]:
+				show_achievement(i)
+				#print(i["id"])
+	for j in range(5):
+		for i in achievements:
+			if !i["done"] && j == 4-i["tier"]:
+				show_achievement(i)
+		
+		
+var style_not_done = StyleBoxFlat.new()
+var style_secret = StyleBoxFlat.new()
+var style_epic = StyleBoxFlat.new()
+var style_novice = StyleBoxFlat.new()
+var style_common = StyleBoxFlat.new()
 
+
+func show_achievement(ach):
+	var temp = $CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control.duplicate()
+	$CanvasLayer/achievments_/ScrollContainer/HFlowContainer.add_child(temp)
+	temp.visible = 1
+	temp.get_node("title").text = tr(ach["id"])
+	temp.get_node("description").text = tr(ach["description"])
+	match ach["tier"]:
+		1:
+			temp.get_node("tier").get_node("tier").text = "Common"
+			temp.get_node("tier").get_node("bg").add_theme_stylebox_override("panel", style_common)
+		2:
+			temp.get_node("tier").get_node("tier").text = "Novice"
+			temp.get_node("tier").get_node("bg").add_theme_stylebox_override("panel", style_novice)
+		3:
+			temp.get_node("tier").get_node("tier").text = "Epic"
+			temp.get_node("tier").get_node("bg").add_theme_stylebox_override("panel", style_epic)
+		4:
+			temp.get_node("tier").get_node("tier").text = "Secret"
+			temp.get_node("tier").get_node("bg").add_theme_stylebox_override("panel", style_secret)
+	if !ach["done"]:
+
+		temp.get_node("tier").get_node("bg").add_theme_stylebox_override("panel", style_not_done)
+		
 
 
 #
