@@ -1,0 +1,380 @@
+keys,en,ar
+report_radio,Report Radio,راديو الإبلاغ
+environmental,Environmental,تغيير بيئي
+creatures,Creatures,مخلوقات
+back,Back,رجوع
+part1,Sector 1,القطاع 1
+part2,Sector 2,القطاع 2
+part3,Sector 3,القطاع 3
+part4,Sector 4,القطاع 4
+shift,Shift,الوردية
+win,You Win!,لقد فزت!
+lose,You Lose!,لقد خسرت!
+danger,Danger,الخطر
+cam1,cam 01,كاميرا 01
+cam2,cam 02,كاميرا 02
+cam3,cam 03,كاميرا 03
+cam4,cam 04,كاميرا 04
+manager,Manager,المدير
+accept,Accept, قبول
+decline,Decline, رفض
+chat1msg1,Welcome %s on your first day.,السلام عليكم يا %s في يومك الأول.
+chat1msg2,This place is normal as the whole city. Some weird things happen ... but yeah this is Ravenford.,المكان هنا طبيعي مثل المدينة كلها. بعض الأشياء الغريبة تحدث ... لكن هذه هي ريفن فورد.
+chat1msg3,Some creatures  like to play with things ... they change their position .. take some and bring others!,بعض المخلوقات تحب أن تعبث بالأشياء ... يغيرون أماكنها .. يأخذون بعضها ويجلبون أخرى!
+chat1msg4,"Your shift starts at midnight and ends at 6 AM. Until that, you have to keep the place as it was.",تبدأ ورديتك في منتصف الليل وتنتهي في السادسة صباحًا. وحتى ذلك الوقت، عليك أن تحافظ على المكان كما كان عليه.
+chat1msg5,The place has 4 sectors .. each one has a camera. You can watch them inside your room. The room is in the middle of the sectors.,المكان يتكون من 4 قطاعات .. كل واحد يحتوي على كاميرا. يمكنك المراقبة من غرفتك. تقع الغرفة بمنتصف القطاعات.
+chat1msg6,"If you observed a change or a weird thing, report it at the radio, and specialists will deal with it.",إذا لاحظت تغيرًا أو شيئًا مريبًا، فقم بالإبلاغ في الراديو، وسيتعامل المختصون مع المشكلة.
+chat1msg7,You have to report fast before anomalies effect spread in the place.,عليك أن تبلغ بسرعة قبل أن ينتشر الخطر في المكان.
+chat1msg8,"And keep in mind, if you reported wrong many times, we won't need you with us.",وضع في اعتبارك، إذا أبلغت بلاغات خاطئة عدة مرات، فلا حاجة لنا إليك.
+chat1msg9,Stay alive!,ابقَ حيًّا!
+wrong_reports,Wrong Reports,البلاغات الخاطئة
+calling,calling ...,يتصل ...
+chat2msg1,Hello again %s! Good news that you're still alive haha.,أهلًا مجددًا يا %s! خبرٌ رائع أنك مازلت حيًّا ههههه.
+chat2msg2,"That was an easy night anyways .. but don't worry, you'll get paid.",كانت ليلةً سهلة على أية حال .. لكن لا تقلق، ستؤجر على ذلك.
+chat2msg3,Now go home and sleep well .. nights haven't finished yet.,الآن اذهب للمنزل ونم جيدًا .. فالليالي لم تنتهِ بعد.
+sprint,Sprint,جري
+jump,Jump,قفز
+use,Interact,استخدام
+anomalies_reported,Anomalies Reported,الظواهر المبلغ عنها
+anomalies_left,Anomalies Left,الظواهر المتروكة
+max_danger,Maximum Danger,أقصى خطر
+press_e,Press 'E' to interact.,اضغط 'E' للاستخدام.
+day1task1,Discover the area.,استكشف المنطقة.
+day1task2,Open the computer.,افتح الحاسوب.
+day1task3,Report to the radio! (Sec 1),بلغ في الراديو! (قطاع 1)
+day1sub4,But you'll never see it changing!,ولكن لن تراها تتغير أبدًا!
+day1sub1,Watch carefully.,راقب بدقة.
+day1sub2,This is sector 1!,ذلك القطاع الأول.
+wrong_report,Wrong report.,إبلاغً خاطئ.
+right_report,Handled.,تم التعامل.
+day1sub3,"Put your eyes on trees, bushes, graves and etc.",ضع عيونك على الأشجار، والشجيرات، والمقابر وإلخ.
+report_sent,Report sent ...,تم إرسال البلاغ.
+day2call1sen1,New night Nile Knight.,ليلةً جديدة يا فارس النيل
+day2call1sen2,"The generator has broken down this morning, but the worker forgot to fix it.",لقد تعطل المحرك صباح اليوم، ولكن نسي العامل أن يصلحه.
+day2call1sen3,"You have to fix it yourself, it supports room light and cameras energy ... unless you don't need them!",عليك أن تصلحه بنفسك، فهو يغذي الغرفة والكاميرات بالطاقة ... إلا ألا تكن في حاجتها!
+day2sub1,The device is beside sector 4.,الجهاز بجانب القطاع 4.
+camsabo,A camera has just been sabotaged.,تعرضت إحدى الكاميرات للتخريب للتو.
+generatorsabo,The generator has just been sabotaged.,تعرض المولد للتخريب للتو.
+antennasabo,The antenna has just been sabotaged.,تعرض هوائي الراديو للتخريب للتو.
+day2call1sen4,The radio antenna on the roof was sparking .. it might go down too.,كان هوائي الراديو يعطي شرزًا .. يمكن أن يتعطل هو أيضًا.
+day2call1sen5,Good luck.,وفقك الله.
+day3call1sen1,You did well %s.,أحسنت صنعًا يا %s.
+day3call1sen2,And the guy you have seen is probably just a visitor .. so don't worry.,ومن المحتمل أن يكون الرجل الذي رأيته مجرد زائر.. فلا تقلق.
+day1_page1_topic1_title,XXX,بناء الطرق
+day1_page1_topic1_col1,A main road in Ravenford city was blocked due to heavy road construstion that being done by the government. Workers are doing their best to finish the project by the end of the week. The road can't be blocked so much since it's so important one.,تم إغلاق طريق رئيسي في مدينة رافينفورد بسبب أعمال البناء الثقيلة للطرق التي قامت بها الحكومة. ويبذل العمال قصارى جهدهم لإنهاء المشروع بحلول نهاية الأسبوع. لا يمكن أن يكون الطريق مسدودًا كثيرًا لأنه مهم جدًا.
+day1_page1_topic1_col2,Drivers are complaining of the big blockage. One person died in an ambulance going to the hospital .. his family is asking for an indemnity. Two food trucks content was damaged because of staying much time on road leading to not-small financial losses.,السائقون يشكون من الانسداد الكبير. توفي شخص في سيارة الإسعاف أثناء ذهابه إلى المستشفى.. وأهله يطالبون بالتعويض. تعرض محتوى شاحنتي طعام لأضرار بسبب بقائهما لفترة طويلة على الطريق مما أدى إلى خسائر مالية ليست بالقليلة.
+day1_page1_topic1_col3,Officials are trying to fix losses that happened and reduce incoming ones during this coming week. Its opening will make a huge difference after the so many repairs done in it.,ويحاول المسؤولون معالجة الخسائر التي حدثت وتقليل الخسائر القادمة خلال الأسبوع المقبل. سيحدث افتتاحه فرقًا كبيرًا بعد الإصلاحات العديدة التي تمت فيه.
+day1_page1_topic2_title,Supermarket,سوبر ماركت
+day1_page1_topic2_col1,"A brand new supermarket announced its opening date yesterday .. the supermarket will contiang all fruits, vegetables, sweets, medicine and all things a person can think of. Opening date is after 2 days from now. Don't forget to give a visit that day.",سوبر ماركت جديد أعلن أمس عن موعد افتتاحه .. السوبر ماركت سيحتوي على جميع الفواكه والخضروات والحلويات والأدوية وكل ما يمكن أن يخطر على بال الإنسان. موعد الافتتاح بعد يومين من الآن. لا تنسى أن تقوم بزيارة في ذلك اليوم.
+day1_page1_topic3_title,Schools Mini FIFA,فيفا المدارس المصغرة
+day1_page1_topic3_col1,Briarwood's school won against Oakridge's private school with a score of 4:0 .. biggest score differnce through the whole competition. All students are so exciting for playing in the mid-finals. Willowmere and Mapleton schools are going to play their match tommorow.,فازت مدرسة برياروود على مدرسة أوكريدج الخاصة بنتيجة 4:0.. أكبر فارق في النتيجة خلال المسابقة بأكملها. جميع الطلاب متحمسون للغاية للعب في الدور نصف النهائي. ستلعب مدارس ويلومير ومابلتون مباراتهما غدًا.
+day1_page1_topic4_title,WEiRD,مريب!
+day1_page1_topic4_col1,A local resident claims to seeing a very tall creature looking through his window .. no one of his neighbours ensureds this situation. Another rumors maybe ...,يدعي أحد السكان المحليين أنه رأى مخلوقًا طويل القامة ينظر من خلال نافذته.. ولم يتأكد أحد من جيرانه من هذا الموقف. شائعات أخرى ربما ...
+day1_page1_topic5_title,City Park,حديقة المدينة
+day1_page1_topic5_col1,The main park of Ravenford is going to be renovated so soon .. workers have put their equipment in the area and going to start in couple of days. People are so excited for the reopening.,سيتم تجديد الحديقة الرئيسية في رافينفورد قريبًا .. وقد وضع العمال معداتهم في المنطقة وسيبدأون العمل في غضون يومين. الناس متحمسون جدًا لإعادة الافتتاح.
+day1_page1_topic6_title,Weather Cast,أخبار الطقس
+day1_page1_topic6_col1,"Weather cast saying that weather is being calm this week .. not harch not cold. They suggest people to do what they love during this week.
+Tomorrow specifically is gonna be the calmset day during the whole week.
+Resident of another cities are moving to Ravenford to enjoy this weather.","يشير خبراء الطقس إلى أن الطقس هادئ هذا الأسبوع.. ليس قاسيًا وليس باردًا. ويقترحون على الناس أن يفعلوا ما يحبونه خلال هذا الأسبوع.
+غدًا على وجه التحديد سيكون اليوم الأكثر هدوءًا خلال الأسبوع بأكمله.
+سكان مدن أخرى ينتقلون إلى رافينفورد للاستمتاع بهذا الطقس."
+day1_page2_topic1_title,A Cute Reunite,لم شمل لطيف
+day1_page2_topic1_col1,After several months of sorrowful separation .. depressed and lost in life obstacles .. a resident find a pet of his neighbour and join them together as a surprise on his birthday. That meaningful moment was recorded in a near restaurnt in cemetry street.,بعد عدة أشهر من الفراق الحزين.. مكتئب وتائه في عقبات الحياة.. أحد السكان يجد حيوانًا أليفًا لجاره ويجمعهما معًا كمفاجأة في عيد ميلاده. تم تسجيل تلك اللحظة المهمة في مطعم قريب في شارع المقبرة.
+day1_page2_topic2_title,Internet?,إنترنت؟
+day1_page2_topic2_col1,"Network coverage throughout the village has been weak lately. Most importantly, some mail has been delayed, causing numerous problems. Other couln't enjoy their times.",أصبحت تغطية الشبكة في جميع أنحاء القرية ضعيفة في الآونة الأخيرة. والأهم من ذلك، أن بعض البريد قد تأخر، مما تسبب في العديد من المشاكل. البعض الآخر لا يستطيع الاستمتاع بأوقاتهم.
+day1_page2_topic3_title,What was that,ماذا كان ذلك؟
+day1_page2_topic3_col1,A lake in Ravenford changes its color suddenly without any sensic reason .. researchers are investigating the area trying to find any clue. ,بحيرة في رافينفورد يتغير لونها فجأة دون أي سبب منطقي.. الباحثون يحققون في المنطقة محاولين العثور على أي دليل.
+day1_page2_topic4_title,SUPER SECRET TOPIC,موضوع سري للغاية
+day1_page2_topic4_col1,"We learned from some of our informants that someone discovered a secret area with strange things... This person smelled attractive scents that brought him to the area... Some say that this story is fabricated and there is no person by this name, and some say that he has been kidnapped!",وعلمنا من بعض مخبرينا أن أحد الأشخاص اكتشف منطقة سرية فيها أشياء غريبة... هذا الشخص اشتم روائح جذابة أوصلته إلى المنطقة... البعض يقول أن هذه القصة مفبركة ولا يوجد شخص بهذا الاسم، والبعض يقول أنه تم اختطافه!
+day1_page2_topic5_title,Celebrating Charites,الاحتفال بالأعمال الخيرية
+day1_page2_topic5_col1,"Charities across Ravenford celebrated local donation day, with wealthy residents donating large sums to help the city's poor and needy. A gang attempted to steal some of the money but were apprehended before they could escape.",احتفلت الجمعيات الخيرية في جميع أنحاء رافينفورد بيوم التبرع المحلي، حيث تبرع السكان الأثرياء بمبالغ كبيرة لمساعدة الفقراء والمحتاجين في المدينة. وحاولت عصابة سرقة بعض الأموال لكن تم القبض عليهم قبل أن يتمكنوا من الفرار.
+day1_page3_topic1_title,Kidnapped Employees,الموظفون المختطفون
+day1_page3_topic1_col1,"Ravenford Electric Company reported that three of its employees disappeared while on duty, but no evidence or trace of them has been found. The police are now investigating, but it appears that this is a case that will not be solved, or at least not in the near future.",أفادت شركة رافينفورد للكهرباء أن ثلاثة من موظفيها اختفوا أثناء أداء عملهم، لكن لم يتم العثور على أي دليل أو أثر لهم. وتقوم الشرطة الآن بالتحقيق، ولكن يبدو أن هذه قضية لن يتم حلها، أو على الأقل ليس في المستقبل القريب.
+day1_page3_topic2_title,A prisoner escape,هروب سجين
+day1_page3_topic2_col1,"Some prisoners escaped from the prison without anyone noticing, as if they used a supernatural ability to move to the outside. It is said that one person was responsible for the escape, but his identity has not determined. Citizens have been in a state of extreme panic since hearing the news.",هرب بعض السجناء من السجن دون أن يلاحظ أحد، وكأنهم استخدموا قدرة خارقة للطبيعة للانتقال إلى الخارج. ويقال إن شخصا واحدا كان مسؤولا عن الهروب، لكن لم يتم تحديد هويته. ويعيش المواطنون في حالة من الذعر الشديد منذ سماع الخبر.
+day1_page3_topic3_title,The Walking Objects,الأشياء الماشية
+day1_page3_topic3_col1,"One person reported that a tree appeared under his house when he woke up, while someone on the opposite street reported that a tree had disappeared from his house, and it turned out to be the same tree that had appeared at the other person's house. Another reported seeing a strange creature moving a bench in the street . ",أفاد أحد الأشخاص عن ظهور شجرة تحت منزله عندما استيقظ، بينما أفاد شخص في الشارع المقابل عن اختفاء شجرة من منزله، وتبين أنها نفس الشجرة التي ظهرت في منزل الشخص الآخر. وذكر آخر أنه رأى مخلوقا غريبا يحرك مقعدا في الشارع.
+day1_page3_topic4_title,Demolition,هدم
+day1_page3_topic4_col1,"The municipality plans to demolish some dilapidated buildings to protect them, as an old building last year caused the death of seven people living in it, and would have had even worse consequences if it weren't for God's mercy.",وتعتزم البلدية هدم بعض المباني المتهالكة لحمايتها، إذ تسبب مبنى قديم العام الماضي في وفاة سبعة أشخاص يسكنونه، وكان من الممكن أن تكون له عواقب أسوأ لولا رحمة الله.
+day1_page3_topic5_title,Revamp,تجديد
+day1_page3_topic5_col1,"The franchise decided to rebuild its struggling roster to revamp them, as an injury crisis last season ruined the chances of seven starters competing in it, and would have brought even worse results if it weren't for luck's favor and the resilience of the rookies.",قرر الامتياز إعادة بناء قائمته المتعثرة لتجديدها، حيث دمرت أزمة الإصابة الموسم الماضي فرص سبعة مبتدئين في التنافس فيها، وكان من الممكن أن تؤدي إلى نتائج أسوأ لولا الحظ ومرونة الناشئين.
+day2_page1_topic1_title,Road Construction,بناء الطريق
+day2_page1_topic1_col1,"Construction on Ravenford's main road continued yesterday as government workers tried to finish the project on time. Officials said the work is going well, but some repairs are taking longer than expected. The road remains partly blocked, causing traffic across the city.",استمر بناء الطريق الرئيسي في رافنفورد أمس، حيث حاول عمال الحكومة إنهاء المشروع في الموعد المحدد. وقال المسؤولون إن العمل يسير بشكل جيد، لكن بعض أعمال الإصلاح تستغرق وقتًا أطول من المتوقع. ولا يزال الطريق مغلقًا جزئيًا، مما يتسبب في ازدحام مروري في أنحاء المدينة.
+day2_page1_topic1_col2,"Drivers still complaining about the long delays, with many saying the situation become worse during busy hours. The family of the person who died in the ambulance is still waiting for an indemnity. The two food trucks also reported more financial losses caused by the delays.",ولا يزال السائقون يشتكون من التأخيرات الطويلة، حيث يقول الكثيرون إن الوضع أصبح أسوأ خلال ساعات الذروة. ولا تزال عائلة الشخص الذي توفي داخل سيارة الإسعاف تنتظر التعويض. كما أفادت شاحنتا الطعام بتكبدهما المزيد من الخسائر المالية بسبب التأخيرات.
+day2_page1_topic1_col3,"Officials are now working on ways to reduce the traffic and prevent further losses. Extra workers have been sent to speed up the repairs, while authorities continue to promise that the road will reopen soon.  ",ويعمل المسؤولون الآن على إيجاد طرق لتقليل الازدحام ومنع المزيد من الخسائر. وقد تم إرسال عمال إضافيين لتسريع أعمال الإصلاح، بينما تواصل السلطات التأكيد على أن الطريق سيفتح قريبًا.
+day2_page1_topic2_title,A New Library,مكتبة جديدة
+day2_page1_topic2_col1,"A new public library announced its opening date yesterday. The library will contain hundreds of books, newspapers, computers, study rooms and many other useful things for visitors. Opening date is after 3 days from now. Don't forget to give it a visit that day.
+",أُعلن أمس عن موعد افتتاح مكتبة عامة جديدة. ستحتوي المكتبة على مئات الكتب والصحف وأجهزة الكمبيوتر وغرف للدراسة والعديد من الأشياء المفيدة الأخرى للزوار. سيكون موعد الافتتاح بعد ثلاثة أيام من الآن. لا تنسَ زيارتها في ذلك اليوم.
+day2_page1_topic3_title,Schools Mini FIFA,فيفا المدارس المصغرة
+day2_page1_topic3_col1,"Willowmere's school defeated Mapleton's team 2:1 in today's competition match. The game stayed close until the final minutes, when Willowmere scored the winning goal. Students celebrated as their school moved closer to the next round.","فاز فريق مدرسة ويلو مير على فريق مدرسة مابلتون بنتيجة 2-1 في مباراة اليوم ضمن المنافسة. وظلت المباراة متقاربة حتى الدقائق الأخيرة، عندما سجلت ويلو مير هدف الفوز. واحتفل الطلاب بينما اقتربت مدرستهم من التأهل إلى الجولة التالية.
+"
+day2_page1_topic4_title,WEiRD,مريب
+day2_page1_topic4_col1,A local resident claims to have seen a stray black cat sleeping on his front porch earlier this morning. None of his neighbors could confirm seeing the animal anywhere around. Just another small piece of neighborhood chatter.,"يزعم أحد السكان المحليين أنه رأى قطة سوداء شاردة نائمة على شرفته الأمامية في وقت مبكر من صباح اليوم. ولم يتمكن أي من جيرانه من تأكيد رؤية الحيوان في أي مكان بالمنطقة. مجرد قصة صغيرة أخرى يتناقلها سكان الحي.
+"
+day2_page1_topic5_title,City Park,حديقة المدينة
+day2_page1_topic5_col1,Workers have begun setting up construction barriers in the main park today. Curious residents stopped by to watch the early progress unfold. Anticipation remains high as the project officially gets under way.,"بدأ العمال اليوم في وضع حواجز البناء في الحديقة الرئيسية. وتوقف بعض السكان الفضوليين لمشاهدة بداية العمل. ولا يزال الحماس مرتفعًا مع انطلاق المشروع رسميًا.
+"
+day2_page1_topic6_title,Weather Cast,نشرة الطقس
+day2_page1_topic6_col1,"Weather reports indicate that today is indeed the calmest day of the whole week, yesterday. The mild temperatures and clear skies are bringing even more visitors into Ravenford from surrounding cities. It is turning out to be the perfect day for everyone to head outdoors and enjoy their favorite activities.","تشير تقارير الطقس إلى أن اليوم هو بالفعل أهدأ يوم في الأسبوع بأكمله، أمس. درجات الحرارة المعتدلة والسماء الصافية تجلب المزيد من الزوار إلى رافنفورد من المدن المحيطة. ويبدو أنه اليوم المثالي للجميع للخروج والاستمتاع بأنشطتهم المفضلة.
+"
+day2_page2_topic1_title,A Cute Reunite,لم شمل لطيف
+day2_page2_topic1_col1,"A stray cat strolled into a hardware store and fell asleep on the register scanner. When the cashier tried moving it, the machine beeped and registered a three-dollar charge. Waiting customers laughed, declaring it the store's newest and most relaxed employee.","دخلت قطة شاردة إلى متجر للأدوات ونامت على جهاز تسجيل المدفوعات. وعندما حاول أمين الصندوق تحريكها، أصدر الجهاز صوتًا وسجل رسومًا بقيمة ثلاثة دولارات. وضحك الزبائن المنتظرون، معلنين أن القطة أصبحت أحدث موظف وأكثرهم استرخاءً في المتجر.
+"
+day2_page2_topic2_title,Internet?,الإنترنت؟
+day2_page2_topic2_col1,A severed phone line cut off dial-up Internet for downtown businesses this morning. Offices had to switch to fax machines until repair crews reconnected the modems by late afternoon.,"تسبب انقطاع أحد خطوط الهاتف في توقف خدمة الإنترنت الهاتفي في شركات وسط المدينة هذا الصباح. واضطرت المكاتب إلى استخدام أجهزة الفاكس حتى تمكنت فرق الإصلاح من إعادة توصيل أجهزة المودم في وقت متأخر من بعد الظهر.
+"
+day2_page2_topic3_title,Red Moon,القمر الأحمر
+day2_page2_topic3_col1,"The red moon night has arrived at the doorstep of our village... with its beauty, grandeur and bright light... three days from today it will honor us in the village.","لقد حلّ ليل القمر الأحمر على أبواب قريتنا... بجماله وعظمته وضوئه الساطع... وبعد ثلاثة أيام من اليوم، سيشرّف قريتنا بحضوره.
+"
+day2_page2_topic4_title,SUPER SECRET TOPIC,موضوع سري للغاية
+day2_page2_topic4_col1,"Reports surfaced today that another resident followed a sweet, inexplicable fragrance deep into the woods at the town's edge. Neighboring families claim he hasn't returned since yesterday evening, though town leaders insist the entire story is just local folklore. Search efforts remain unconfirmed as residents debate whether to enter the woods.","ظهرت تقارير اليوم تفيد بأن أحد السكان اتبع رائحة عطرة وحلوة لا يمكن تفسيرها إلى أعماق الغابة عند أطراف البلدة. وتقول العائلات المجاورة إنه لم يعد منذ مساء أمس، بينما يصر قادة البلدة على أن القصة بأكملها ليست سوى أسطورة محلية. ولم يتم تأكيد جهود البحث، بينما يتجادل السكان حول ما إذا كان ينبغي لهم دخول الغابة.
+"
+day2_page2_topic5_title,Bursting Water Main,انفجار أنبوب المياه الرئيسي
+day2_page2_topic5_col1,"A water main burst near the central square this morning, flooding a section of the main street and forcing several shops to close early. Maintenance crews shut off the valve and began pumping out the standing water, while local commuters were diverted around the slushy roads until repairs wrap up.","انفجر أنبوب مياه رئيسي بالقرب من الساحة المركزية هذا الصباح، مما أدى إلى غمر جزء من الشارع الرئيسي بالمياه وأجبر عدة متاجر على الإغلاق مبكرًا. وأغلقت فرق الصيانة الصمام وبدأت في ضخ المياه المتجمعة، بينما تم تحويل حركة المرور المحلية بعيدًا عن الطرق الموحلة إلى أن تنتهي أعمال الإصلاح.
+"
+day2_page3_topic1_title,Kidnapped Employees,الموظفون المختطفون
+day2_page3_topic1_col1,"The police have officially suspended the investigation today after searching the entire district without finding a single clue. Families of the missing workers held a quiet vigil outside the power station, desperate for answers. Rumors continue to circulate among residents, but officials admit there are no remaining leads to follow.","أعلنت الشرطة رسميًا اليوم تعليق التحقيق بعد تفتيش المنطقة بأكملها دون العثور على أي دليل. وأقامت عائلات العمال المفقودين وقفة هادئة خارج محطة الطاقة، وهي يائسة للحصول على إجابات. ولا تزال الشائعات تنتشر بين السكان، لكن المسؤولين يعترفون بعدم وجود أي خيوط أخرى يمكن متابعتها.
+"
+day2_page3_topic2_title,A prisoner escape,هروب سجين
+day2_page3_topic2_col1,Authorities have placed the city on lockdown while search teams sweep surrounding neighborhoods for any sign of the fugitives. Nervous residents are staying indoors and locking their doors. Officials urge everyone to report any suspicious activity immediately.,"فرضت السلطات إغلاقًا على المدينة بينما تقوم فرق البحث بتمشيط الأحياء المحيطة بحثًا عن أي أثر للهاربين. ويبقى السكان القلقون داخل منازلهم ويغلقون أبوابهم. وتحث السلطات الجميع على الإبلاغ عن أي نشاط مشبوه فورًا.
+"
+day2_page3_topic3_title,The Walking Objects,الأشياء المتحركة
+day2_page3_topic3_col1,Police received several reports today regarding property strangely shifting places across the neighborhood overnight. Puzzled residents gathered outside to inspect the odd occurrences and compare their stories. Authorities are reviewing local camera footage to determine what actually took place.,"تلقت الشرطة عدة بلاغات اليوم بشأن انتقال الممتلكات من أماكنها بشكل غريب خلال الليل في أنحاء الحي. وتجمع السكان الحائرون في الخارج لمعاينة الأحداث الغريبة ومقارنة رواياتهم. وتراجع السلطات تسجيلات كاميرات المراقبة المحلية لمعرفة ما حدث بالفعل.
+"
+day2_page3_topic4_title,New Recipe,وصفة جديدة
+day2_page3_topic4_col1,"A local bakery introduced a fresh sourdough recipe today, selling out their first batch early. Regular customers enjoyed the new taste, and staff plan to make it a daily menu item.","قدّم مخبز محلي وصفة جديدة لخبز العجين المخمر اليوم، ونفدت الدفعة الأولى منه في وقت مبكر. واستمتع الزبائن المعتادون بالطعم الجديد، ويخطط الموظفون لإضافته إلى القائمة اليومية.
+"
+day2_page3_topic5_title,Marathoon,الماراثون
+day2_page3_topic5_col1,"The city marathon took place this morning, drawing hundreds of runners to the main street. Volunteers handed out water along the route, and participants celebrated at the finish line by midday.",أُقيم ماراثون المدينة هذا الصباح، وجذب مئات العدّائين إلى الشارع الرئيسي. ووزع المتطوعون المياه على طول المسار، واحتفل المشاركون عند خط النهاية بحلول منتصف النهار.
+day3_page1_topic1_title,Road Construction,بناء الطريق
+day3_page1_topic1_col1,"Construction on Ravenford's main road entered another day as workers continued trying to finish the project. Officials said most of the major repairs are now complete, but the road remains partly blocked while final work is being done. Traffic is slowly improving in some areas.",دخلت أعمال بناء الطريق الرئيسي في رافنفورد يومًا جديدًا، بينما واصل العمال محاولاتهم لإنهاء المشروع. وقال المسؤولون إن معظم أعمال الإصلاح الرئيسية قد اكتملت الآن، لكن الطريق لا يزال مغلقًا جزئيًا أثناء تنفيذ الأعمال النهائية. وبدأت حركة المرور تتحسن ببطء في بعض المناطق.
+day3_page1_topic1_col2,"Drivers reported shorter delays yesterday, although busy hours still caused long lines. The family of the person who died in the ambulance has received no update about their indemnity request. The two food trucks also said they are still recovering from the losses caused by this.",وأفاد السائقون بأن التأخيرات كانت أقصر أمس، رغم أن ساعات الذروة لا تزال تتسبب في طوابير طويلة. ولم تتلقَ عائلة الشخص الذي توفي داخل سيارة الإسعاف أي تحديث بشأن طلب التعويض الخاص بها. كما قالت شاحنتا الطعام إنهما لا تزالان تتعافيان من الخسائر التي سببتها هذه المشكلة.
+day3_page1_topic1_col3,Officials announced that the road could reopen soon if the remaining work goes as planned. More workers are being kept at the site to finish the final repairs faster. Residents are hoping the road will finally return to normal before the end of the week,وأعلن المسؤولون أن الطريق قد يُعاد فتحه قريبًا إذا سارت الأعمال المتبقية وفقًا للخطة. وتم الإبقاء على المزيد من العمال في الموقع لإنهاء الإصلاحات النهائية بشكل أسرع. ويأمل السكان أن تعود حركة الطريق إلى طبيعتها أخيرًا قبل نهاية الأسبوع.
+day3_page1_topic2_title,City Clock,ساعة المدينة
+day3_page1_topic2_col1,"The town square's electronic clock tower malfunctioned this morning, chiming seventeen times at eight o'clock and spinning its hands backward. Passersby paused to watch the erratic clock before a local technician arrived to reset the internal wiring.",تعطلت ساعة البرج الإلكترونية في ساحة البلدة هذا الصباح، حيث دقت سبع عشرة مرة عند الساعة الثامنة، وأخذت عقاربها تدور إلى الخلف. وتوقف المارة لمشاهدة الساعة وهي تعمل بشكل غريب، قبل أن يصل فني محلي لإعادة ضبط الأسلاك الداخلية.
+day3_page1_topic3_title,Schools Mini FIFA,بطولة FIFA المدرسية
+day3_page1_topic3_col1,"Students from Willowmere spent the morning decorating the main hallway with victory banners and original posters celebrating yesterday's win. Meanwhile, Mapleton's team resumed silent practice drills after school, focused on adjusting their strategy for the rest of the season.","قضى طلاب ويلو مير الصباح في تزيين الممر الرئيسي بلافتات النصر والملصقات الأصلية احتفالًا بفوز الأمس. وفي الوقت نفسه، استأنف فريق مابلتون تدريباته الصامتة بعد المدرسة، مركزًا على تعديل استراتيجيته لبقية الموسم.
+"
+day3_page1_topic4_title,Power Surge,ارتفاع كهربائي
+day3_page1_topic4_col1,"A localized power surge briefly flickered the streetlights along Elm Street around noon, despite bright sunlight. Electrical workers inspected the transformers nearby but reported no blown fuses or technical faults in the line.","تسبب ارتفاع مفاجئ في التيار الكهربائي في منطقة محدودة في وميض أضواء الشوارع على طول شارع إلم وقت الظهيرة، رغم سطوع الشمس. وفحص عمال الكهرباء المحولات القريبة، لكنهم لم يبلغوا عن احتراق أي مصاهر أو وجود أعطال فنية في الخط.
+"
+day3_page1_topic5_title,Passion and love,الشغف والحب
+day3_page1_topic5_col1,"A stray dog trotted into the diner around lunchtime and quietly sat down in an empty booth. The cook brought out a small bowl of roast beef scraps, which the dog finished before walking back out the door.","دخل كلب شارد إلى المطعم وقت الغداء تقريبًا، وجلس بهدوء في إحدى المقصورات الفارغة. وأحضر الطاهي وعاءً صغيرًا من بقايا لحم البقر المشوي، وأنهى الكلب طعامه قبل أن يخرج من الباب مرة أخرى.
+"
+day3_page1_topic6_title,Weather Cast,نشرة الطقس
+day3_page1_topic6_col1,"The local news radio predicted clear skies and a high of 72 degrees for tomorrow, with a slight cool breeze rolling in from the valley by late afternoon. Residents are advised to carry a light jacket if they plan to be out past sunset.","توقعت إذاعة الأخبار المحلية سماءً صافية ودرجة حرارة قصوى تبلغ 72 درجة غدًا، مع نسيم بارد خفيف قادم من الوادي في وقت متأخر من بعد الظهر. ويُنصح السكان بحمل سترة خفيفة إذا كانوا يخططون للبقاء خارج المنزل بعد غروب الشمس.
+"
+day3_page2_topic1_title,A Cute Girlie,فتاة لطيفة
+day3_page2_topic1_col1,"A little girl dropped her mitten into a hollow tree on her way home. The next day, she found a squirrel asleep inside it. She left a few acorns nearby and walked home with her bare hand tucked into her pocket.","أسقطت طفلة قفازها داخل شجرة مجوفة أثناء عودتها إلى المنزل. وفي اليوم التالي، وجدت سنجابًا نائمًا بداخله. فتركت بعض حبات البلوط بالقرب من الشجرة وعادت إلى منزلها، بينما أخفت يدها العارية داخل جيبها.
+"
+day3_page2_topic2_title,Internet?,الإنترنت؟
+day3_page2_topic2_col1,The high school computer lab got two 14.4k modems today. Students queued for an hour just to send a test email and watch a single image slowly load line by line.,"حصل مختبر الكمبيوتر في المدرسة الثانوية اليوم على جهازي مودم بسرعة 14.4 كيلوبت. وانتظر الطلاب في طابور لمدة ساعة كاملة فقط لإرسال رسالة بريد إلكتروني تجريبية ومشاهدة صورة واحدة وهي تُحمّل ببطء سطرًا بعد سطر.
+"
+day3_page2_topic3_title,Generators!,المولدات!
+day3_page2_topic3_col1,"Two electric generators were reported stolen from two different places yesterday. The authorities tried to trace them, but did not find any trace or evidence of them.","أُبلغ أمس عن سرقة مولدين كهربائيين من مكانين مختلفين. وحاولت السلطات تعقبهما، لكنها لم تجد أي أثر أو دليل عليهما.
+"
+day3_page2_topic4_title,SUPER SECRET TOPIC,موضوع سري للغاية
+day3_page2_topic4_col1,"The man who disappeared two days ago returned this morning, and he seemed to be in a strange state of activity. He was asked about the smell he smelled on the edge of the city, but he denied it and said, “I don’t know what you are talking about.” He does not show any signs of kidnapping or torture!","عاد الرجل الذي اختفى قبل يومين هذا الصباح، وبدا أنه في حالة غريبة من النشاط. وسُئل عن الرائحة التي شمها على أطراف المدينة، لكنه أنكر الأمر وقال: «لا أعرف عما تتحدثون». ولم تظهر عليه أي علامات تدل على اختطافه أو تعرضه للتعذيب!
+"
+day3_page2_topic5_title,A Cat in The Bakery,قطة في المخبز
+day3_page2_topic5_col1,"A stray ginger cat snuck into the town bakery before dawn and fell asleep right on top of a warm, unbaked sack of flour. The baker didn't have the heart to move him, so he baked around the cat and named the morning's sourdough batch after him.","تسللت قطة برتقالية شاردة إلى مخبز البلدة قبل الفجر، ونامت مباشرة فوق كيس دافئ من الدقيق غير المخبوز. ولم يملك الخباز قلبًا لتحريكها، لذلك خبز حول القطة وسمّى دفعة خبز العجين المخمر الصباحية باسمها.
+"
+day3_page3_topic1_title,Kidnapped Employees,الموظفون المختطفون
+day3_page3_topic1_col1,One person claims that he saw the kidnapped workers at the time of their abduction but was unable to intervene; It was a large gang that kidnapped them. His neighbors say he is always making up stories to attract attention.,"يدّعي أحد الأشخاص أنه رأى العمال المختطفين وقت اختطافهم، لكنه لم يتمكن من التدخل. وقال إن عصابة كبيرة هي التي اختطفتهم. بينما يقول جيرانه إنه دائمًا ما يختلق القصص لجذب الانتباه.
+"
+day3_page3_topic2_title,A Prisoner Talk,حديث مع سجين
+day3_page3_topic2_col1,"One of the prisoners at Ravenford Prison was asked about the prisoners who escaped the day before yesterday. He said that they had nothing in common. He explained that one of them was muscular, another was a surgeon, another was working in agriculture, and some ordinary people, and among them was a person who appeared crazy.","سُئل أحد السجناء في سجن رافنفورد عن السجناء الذين هربوا أول أمس. وقال إنهم لم يكن بينهم أي شيء مشترك. وأوضح أن أحدهم كان قوي البنية، وآخر كان جراحًا، وآخر كان يعمل في الزراعة، إلى جانب بعض الأشخاص العاديين، وكان من بينهم شخص بدا مجنونًا.
+"
+day3_page3_topic3_title,Some Strange Signal,إشارة غريبة
+day3_page3_topic3_col1,"The town library's microfiche machine started picking up faint audio interference from an unknown AM radio signal late this afternoon. Patrons using the viewer reported hearing low static punctuated by what sounded like distant piano chords, though staff couldn't locate any transmitting device inside the building.","بدأ جهاز الميكروفيش في مكتبة البلدة يلتقط تشويشًا صوتيًا ضعيفًا من إشارة راديو AM مجهولة في وقت متأخر من بعد ظهر اليوم. وأفاد الزوار الذين كانوا يستخدمون الجهاز بسماع تشويش منخفض يتخلله ما بدا وكأنه نغمات بيانو بعيدة، لكن الموظفين لم يتمكنوا من تحديد موقع أي جهاز إرسال داخل المبنى.
+"
+day3_page3_topic4_title,A Big Laugh,ضحكة كبيرة
+day3_page3_topic4_col1,"A citizen on Cemetery Street claimed to have heard loud laughter late, but when he looked out the window he found no one.","ادعى أحد المواطنين في شارع المقبرة أنه سمع ضحكات عالية في وقت متأخر من الليل، لكنه عندما نظر من النافذة لم يجد أحدًا.
+"
+day3_page3_topic5_title,Baseball,البيسبول
+day3_page3_topic5_col1,"The annual adult baseball league opened its season at the community park tonight. The local hardware store’s team edged out the fire department’s squad 6 to 5, sealed by a sharp line drive to left field in the bottom of the seventh inning.",افتتح دوري البيسبول السنوي للكبار موسمه الليلة في حديقة المجتمع. وتمكن فريق متجر الأدوات المحلي من التغلب على فريق إدارة الإطفاء بنتيجة 6-5، بعد ضربة قوية إلى الحقل الأيسر في الجزء السفلي من الشوط السابع حسمت المباراة.
+day4_page1_topic1_title,Road Construction,بناء الطريق
+day4_page1_topic1_col1,"By mid-morning, the freshly paved main road was fully cleared of barriers, letting traffic flow smoothly through town again. Shopkeepers swept away construction dust and opened their doors, while the lingering smell of hot tar filled the late-summer air.",بحلول منتصف الصباح، أُزيلت الحواجز بالكامل من الطريق الرئيسي الذي تم رصفه حديثًا، مما سمح لحركة المرور بالانسياب بسلاسة عبر البلدة من جديد. كنس أصحاب المتاجر غبار البناء وفتحوا أبوابهم، بينما ملأت رائحة القطران الساخن المتبقية هواء أواخر الصيف.
+day4_page1_topic1_col2,"Residents gathered at the hardware store and the nearby food trucks to swap stories about the weeks of detours. Down at town hall, clerks worked through a stack of newly filed business adjustment forms from affected vendors.",تجمع السكان عند متجر الأدوات وشاحنات الطعام القريبة لتبادل القصص حول أسابيع الطرق الالتفافية. وفي مبنى البلدية، كان الموظفون يعملون على مجموعة من استمارات تعديل أوضاع الأعمال التي قدمها التجار المتضررون حديثًا.
+day4_page1_topic1_col3,"By late afternoon, the bank’s digital clock flickered and froze on a timestamp from three nights ago. Drivers at the traffic light heard a faint, high-pitched whine buzzing through their radios whenever the signal turned green.",تجمع السكان عند متجر الأدوات وشاحنات الطعام القريبة لتبادل القصص حول أسابيع الطرق الالتفافية. وفي مبنى البلدية، كان الموظفون يعملون على مجموعة من استمارات تعديل أوضاع الأعمال التي قدمها التجار المتضررون حديثًا.
+day4_page1_topic2_title,Clockmaker,صانع الساعات
+day4_page1_topic2_col1,"A retired clockmaker in town spent his afternoon attempting to fix an old brass barometer that arrived in the mail without a return address. Whenever he tapped the glass, the needle pointed firmly toward ""Storm,"" despite the dry, clear skies outside his window.",قضى صانع ساعات متقاعد في البلدة فترة بعد الظهر محاولًا إصلاح مقياس ضغط جوي نحاسي قديم وصل بالبريد دون عنوان للمرسل. وكلما طرق على الزجاج، كانت الإبرة تشير بثبات نحو كلمة «عاصفة»، رغم أن السماء في الخارج كانت جافة وصافية.
+day4_page1_topic3_title,Schools Mini FIFA,بطولة FIFA المدرسية
+day4_page1_topic3_col1,"Willowmere’s hallways buzzed with chatter over victory posters while Mapleton’s players walked straight home in silence. By late afternoon, the radio station broadcast ambient static instead of the sports recap, filling the high school parking lot with a low, rhythmic hum.",ضجت ممرات ويلو مير بالأحاديث حول ملصقات الفوز، بينما عاد لاعبو مابلتون إلى منازلهم مباشرة في صمت. وبحلول وقت متأخر من بعد الظهر، بثت محطة الراديو تشويشًا صوتيًا بدلًا من ملخص المباريات الرياضية، مما ملأ موقف المدرسة الثانوية بطنين منخفض وإيقاعي.
+day4_page1_topic4_title,A Cassette,شريط كاسيت
+day4_page1_topic4_col1,"An unmarked cassette left on the library counter played thirty seconds of dial-up screeching, followed by the soft sound of rain falling indoors.","شغّل شريط كاسيت مجهول المصدر تُرك على طاولة المكتبة صوت اتصال بالإنترنت عبر الهاتف لمدة ثلاثين ثانية، تبعه صوت هادئ لسقوط المطر داخل المبنى.
+"
+day4_page1_topic5_title,TheRedMoon,القمر الأحمر
+day4_page1_topic5_col1,"And now the time of the awaited night has come, the red night of the moon. We await it tomorrow. Tomorrow we will see the red sky at night, so stay tuned for it!","والآن، لقد حان وقت الليلة المنتظرة، ليلة القمر الأحمر. نحن ننتظرها غدًا. غدًا سنرى السماء الحمراء في الليل، لذا ابقوا على اطلاع!
+"
+day4_page1_topic6_title,Weather Cast,نشرة الطقس
+day4_page1_topic6_col1,"Clear skies held through noon as a crisp breeze swept down from the valley, sending dry leaves tumbling along the freshly paved Main Street. As shadows lengthened, a low static crackled across local car radios, accompanied by a sudden, faint scent of sweet pine floating through the autumn air.","استمرت السماء صافية حتى الظهر، بينما هبت نسمة باردة ومنعشة من الوادي، وحملت أوراقًا جافة تتدحرج على طول شارع مين الذي تم رصفه حديثًا. ومع امتداد الظلال، بدأ تشويش منخفض يتفرقع عبر أجهزة راديو السيارات المحلية، مصحوبًا برائحة حلوة وخافتة تشبه رائحة الصنوبر، انتشرت فجأة في هواء الخريف.
+"
+day4_page2_topic1_title,A Compassionate,الرحيمة
+day4_page2_topic1_col1,"An elderly woman found a stray kitten asleep inside an old rotary phone sitting in her hallway. Whenever the bell gave its occasional faint chime, the kitten simply purred louder, content to stay curled inside the plastic receiver.","عثرت امرأة مسنة على قطة صغيرة شاردة نائمة داخل هاتف دوّار قديم كان موجودًا في ممر منزلها. وكلما أصدر جرس الهاتف رنينًا خافتًا من حين لآخر، كانت القطة تخرخر بصوت أعلى ببساطة، سعيدة بالبقاء ملتفة داخل سماعة الهاتف البلاستيكية.
+"
+day4_page2_topic2_title,Internet?,الإنترنت؟
+day4_page2_topic2_col1,"A local hobbyist spent twenty minutes downloading a single text file about constellations from a distant bulletin board system, listening to the phone line screech and hum the entire time.",الإنترنت؟
+day4_page2_topic3_title,Generators!,المولدات!
+day4_page2_topic3_col1,Another generator was stolen from the electricity company last night. It was a luxury generator. What is the story of those stolen generators?,"سُرق مولد كهربائي آخر من شركة الكهرباء ليلة أمس. وكان مولدًا فاخرًا. ما قصة تلك المولدات المسروقة؟
+"
+day4_page2_topic4_title,Cemetery Street Mysteries,ألغاز شارع المقبرة
+day4_page2_topic4_col1,"A citizen of one of our informants who lives on Cemetery Street reported seeing a strange shadow before dawn. He sat and watched it all night, and with the first white streak of sunlight it had disappeared.","أبلغ أحد المواطنين، وهو أحد مصادرنا الذين يعيشون في شارع المقبرة، عن رؤية ظل غريب قبل الفجر. جلس يراقبه طوال الليل، ومع ظهور أول خيط أبيض من ضوء الشمس، كان قد اختفى.
+"
+day4_page2_topic5_title,A Cat in The Bakery,قطة في المخبز
+day4_page2_topic5_col1,"The town hardware store's resident tabby cat spent the entire morning purring atop a stack of warm copper pipes. Whenever a customer tried to reach for one, the owner simply offered them a free roll of electrical tape if they came back after the cat finished its nap.","قضت قطة البلدة المخططة المقيمة في متجر الأدوات طوال الصباح وهي تخرخر فوق كومة من الأنابيب النحاسية الدافئة. وكلما حاول أحد الزبائن أخذ أحدها، كان المالك يعرض عليه ببساطة لفة مجانية من الشريط الكهربائي إذا عاد بعد أن تنتهي القطة من قيلولتها.
+"
+day4_page3_topic1_title,Kidnapped Employees,الموظفون المختطفون
+day4_page3_topic1_col1,"The claim of the person who claimed to have seen a gang kidnapping Raven Ford employees has been verified, and investigation revealed that he was in a town far from here on the day of the incident.","تم التحقق من ادعاء الشخص الذي زعم أنه رأى عصابة تختطف موظفي رافنفورد، وكشف التحقيق أنه كان في بلدة بعيدة عن هنا في يوم وقوع الحادث.
+"
+day4_page3_topic2_title,A Prisoner Talk,حديث مع سجين
+day4_page3_topic2_col1,"Another prisoner was asked about the prison atmosphere before the controversial escape took place. He said that the atmosphere was normal throughout the week before the escape, but two days before the escape there was a person laughing hysterically at night. I do not know who he was, but it stopped after the day of the escape.","سُئل سجين آخر عن أجواء السجن قبل وقوع حادثة الهروب المثيرة للجدل. وقال إن الأجواء كانت طبيعية طوال الأسبوع الذي سبق الهروب، لكن قبل الهروب بيومين، كان هناك شخص يضحك بشكل هستيري في الليل. لا أعرف من كان، لكن ذلك توقف بعد يوم الهروب.
+"
+day4_page3_topic3_title,FloorboardsFrequency,تردد ألواح الأرضية
+day4_page3_topic3_col1,"The town library's microfiche machine started picking up faint audio interference from an unknown AM radio signal late this afternoon. Patrons using the viewer reported hearing low static punctuated by what sounded like distant piano chords, though staff couldn't locate any transmitting device inside the building.",بدأ جهاز الميكروفيش في مكتبة البلدة يلتقط تشويشًا صوتيًا ضعيفًا من إشارة راديو AM مجهولة في وقت متأخر من بعد ظهر اليوم. وأفاد الزوار الذين كانوا يستخدمون الجهاز بسماع تشويش منخفض يتخلله ما بدا وكأنه نغمات بيانو بعيدة، لكن الموظفين لم يتمكنوا من تحديد موقع أي جهاز إرسال داخل المبنى.
+day4_page3_topic4_title,SilverSurface,السطح الفضي
+day4_page3_topic4_col1,"At midnight, the public pool's filtration system hummed a low tone that matched the town's emergency sirens. By morning, a thin layer of fine silver dust coated the water.",عند منتصف الليل، أصدر نظام تنقية المياه في المسبح العام نغمة منخفضة تطابقت مع نغمات صفارات الطوارئ في البلدة. وبحلول الصباح، غطت طبقة رقيقة من غبار فضي ناعم سطح الماء.
+day4_page3_topic5_title,Marathoon,الماراثون
+day4_page3_topic5_col1,"The annual adult baseball league opened its season at the community park tonight. The local hardware store’s team edged out the fire department’s squad 6 to 5, sealed by a sharp line drive to left field in the bottom of the seventh inning.","افتتح دوري البيسبول السنوي للكبار موسمه الليلة في حديقة المجتمع. وتمكن فريق متجر الأدوات المحلي من التغلب على فريق إدارة الإطفاء بنتيجة 6-5، بعد ضربة قوية إلى الحقل الأيسر في الجزء السفلي من الشوط السابع حسمت المباراة.
+"
+day5_page1_topic1_title,Road Construction,بناء الطريق
+day5_page1_topic1_col1,"Morning traffic ground to a halt as crews returned to inspect razor-thin fissures running in straight geometric lines down the asphalt. Foremen knelt beside the splits, baffled by the complete absence of ground settling beneath the fresh pavement.",توقفت حركة المرور الصباحية تمامًا عندما عاد العمال لتفقد شقوق رفيعة للغاية تمتد في خطوط هندسية مستقيمة عبر الأسفلت. وجثا رؤساء العمال بجانب الشقوق، في حيرة من عدم وجود أي علامات على هبوط الأرض أسفل الرصف الجديد
+day5_page1_topic1_col2,"By noon, an intense heat radiated upward from the cracks, softening the soles of the workers' rubber boots. Whenever a metal shovel approached the open fissures, a sharp static buzzed through their handheld radios.",وبحلول الظهر، بدأت حرارة شديدة تنبعث من الشقوق إلى الأعلى، مما أدى إلى تليين نعال أحذية العمال المطاطية. وكلما اقترب مجرف معدني من الشقوق المفتوحة، انطلق طنين كهربائي حاد عبر أجهزة الراديو المحمولة الخاصة بهم.
+day5_page1_topic1_col3,"By dusk, the road was closed again, the faint smell of hot tar mixing with a sweet, unnatural scent of crushed pine.",ومع حلول الغسق، أُغلق الطريق مرة أخرى، بينما اختلطت رائحة القطران الساخن الخافتة برائحة حلوة وغير طبيعية تشبه الصنوبر المسحوق.
+day5_page1_topic2_title,Copper Relay,مرحّل نحاسي
+day5_page1_topic2_col1,"At 6:14 PM, the disconnected park payphone began ringing. Anyone picking up heard only the rhythmic clicking of a telegraph key. When the electrician opened the coin box, he found no wiring—only a spool of green thread, humming softly amidst a dusting of silver powder.",في الساعة 6:14 مساءً، بدأ هاتف الدفع العام المنفصل في الحديقة بالرنين. وكل من رفع السماعة لم يسمع سوى نقرات إيقاعية تشبه صوت مفتاح التلغراف. وعندما فتح الكهربائي صندوق العملات، لم يجد أي أسلاك، بل وجد فقط بكرة من الخيط الأخضر، تصدر طنينًا خافتًا وسط طبقة من الغبار الفضي
+day5_page1_topic3_title,Schools Mini FIFA,بطولة FIFA المدرسية
+day5_page1_topic3_col1,"By morning, an eerie quiet replaced the radio static as students gathered around the empty bulletin board where the tournament schedule usually hung. With neither team holding practice and the final match just forty-eight hours away, the town felt suspended in a heavy, anxious calm.",بطولة FIFA المدرسية
+day5_page1_topic4_title,A Cassette,شريط كاسيت
+day5_page1_topic4_col1,"Basement microfiche reader switched on, projecting a glowing square onto the brick wall. Its film spun backward, showing 1994 front pages where every headline had been replaced by lines of silver dust.",شريط كاسيت
+day5_page1_topic5_title,TheRedMoon,القمر الأحمر
+day5_page1_topic5_col1,"And now the time of the awaited night has come, the red night of the moon. We await it tomorrow. Tomorrow we will see the red sky at night, so stay tuned for it!","والآن، لقد حان وقت الليلة المنتظرة، ليلة القمر الأحمر. نحن ننتظرها غدًا. غدًا سنرى السماء الحمراء في الليل، لذا ابقوا على اطلاع!
+"
+day5_page1_topic6_title,Weather Cast,نشرة الطقس
+day5_page1_topic6_col1,"By afternoon, the crisp breeze had turned into a steady, cold wind, carrying that same sweet pine scent across every corner of town. The radio static gave way to an uninterrupted, high-pitched frequency, and beneath the dimming sky, a thin layer of fine golden dust now settled over the freshly paved street","بحلول فترة بعد الظهر، تحولت النسمة الباردة والمنعشة إلى رياح باردة وثابتة، حاملةً رائحة الصنوبر الحلوة نفسها إلى كل زاوية من زوايا البلدة. واختفى تشويش الراديو ليحل محله تردد حاد ومتواصل، وتحت السماء التي بدأت تظلم، استقرت الآن طبقة رقيقة من الغبار الذهبي الناعم فوق الشارع المرصوف حديثًا.
+"
+day5_page2_topic1_title,The Unspoken Draft,المسودة غير المنطوقة
+day5_page2_topic1_col1,"The diner’s old typewriter struck a single line on a paper napkin whenever the front door opened, typing the exact words the person entering had wanted to say years ago but kept buried. By closing time, the counter was covered in scraps smelling of sweet pine, each holding a secret left unsaid.","كانت آلة الكتابة القديمة في المطعم تكتب سطرًا واحدًا على منديل ورقي كلما فُتح الباب الأمامي، وتطبع الكلمات نفسها التي كان الشخص الداخل يرغب في قولها منذ سنوات، لكنه ظل يخفيها في داخله. وبحلول وقت الإغلاق، كان المنضدّة مغطاة بقطع من الورق تفوح منها رائحة الصنوبر الحلو، وكل واحدة منها تحمل سرًا لم يُقل.
+"
+day5_page2_topic2_title,ClockworkBell,الجرس الآلي
+day5_page2_topic2_col1,"At three, the hardware store bell chimed on its own. Customers froze as their shadows stretched toward the back aisle, bathed in the scent of sweet pine.","في الثالثة، رن جرس متجر الأدوات من تلقاء نفسه. وتجمد الزبائن في أماكنهم بينما امتدت ظلالهم نحو الممر الخلفي، وسط رائحة الصنوبر الحلو.
+"
+day5_page2_topic3_title,Generators!,المولدات!
+day5_page2_topic3_col1,"The theft of electric generators continues in Ravenford, an unprecedented event. Authorities have intensified their investigation to solve this strange mystery.",تستمر سرقة المولدات الكهربائية في رافنفورد، في حادثة غير مسبوقة. وقد كثفت السلطات تحقيقاتها لحل هذا اللغز الغريب.
+day5_page2_topic4_title,Cemetery Street Mysteries,ألغاز شارع المقبرة
+day5_page2_topic4_col1,"The wonders of Ravenford are many, and especially so on Symmetry Street... A citizen reported seeing a strange fog after the streetlight was turned on.","إن عجائب رافنفورد كثيرة، وخاصةً في شارع التناظر... أبلغ أحد المواطنين عن رؤية ضباب غريب بعد تشغيل مصباح الشارع.
+"
+day5_page2_topic5_title,The Silver Signal,الإشارة الفضية
+day5_page2_topic5_col1,"The television in the diner’s corner booth flickered to channel 3, broadcasting a live image of the empty booth itself. On the screen, a fine layer of silver dust drifted through the air, though the seat remained completely clear in the room.","ومض التلفاز الموجود في المقصورة الركنية بالمطعم وانتقل إلى القناة 3، عارضًا صورة حية للمقصورة الفارغة نفسها. وعلى الشاشة، كانت طبقة رقيقة من الغبار الفضي تتساقط في الهواء، رغم أن المقعد ظل خاليًا تمامًا في الغرفة.
+"
+day5_page3_topic1_title,Kidnapped Employees,الموظفون المختطفون
+day5_page3_topic1_col1,"An elderly man who lives near the electricity company in a small house was questioned. He stated that he saw three people leaving the company at night, which was unusual, before the end of the workday, but it did not appear to be a kidnapping at all.","تم استجواب رجل مسن يعيش بالقرب من شركة الكهرباء في منزل صغير. وقال إنه رأى ثلاثة أشخاص يغادرون الشركة ليلًا، وهو أمر غير معتاد، قبل نهاية يوم العمل، لكنه لم يبدُ الأمر وكأنه عملية اختطاف على الإطلاق.
+"
+day5_page3_topic2_title,A Prisoner Talk,حديث مع سجين
+day5_page3_topic2_col1,"One of the inmates at Ravenford prison was questioned and said he smelled a pleasant fragrance on the day of the escape, and that the police officers appeared unusually active. He also testified to seeing an inmate laughing hysterically.",تم استجواب أحد السجناء في سجن رافنفورد، وقال إنه شم رائحة عطرة وممتعة في يوم الهروب، وإن ضباط الشرطة بدوا أكثر نشاطًا من المعتاد. كما شهد بأنه رأى سجينًا يضحك بشكل هستيري
+day5_page3_topic3_title,The Static Map,خريطة التشويش
+day5_page3_topic3_col1,"The gas station’s illuminated road map flickered whenever a car pulled up to the pumps. Instead of highway routes, its faint blue lines slowly shifted to trace the exact shape of the town as it had been thirty years ago.",كانت خريطة الطريق المضيئة في محطة الوقود تومض كلما توقفت سيارة عند مضخات الوقود. وبدلًا من إظهار مسارات الطرق السريعة، بدأت خطوطها الزرقاء الخافتة تتحرك ببطء لترسم الشكل الدقيق للبلدة كما كانت قبل ثلاثين عامًا.
+day5_page3_topic4_title,Clocktower,برج الساعة
+day5_page3_topic4_col1,"The high school clocktower struck thirteen times at midnight, its deep chime echoing twice as long as usual. Beneath the tower, the grass was coated in a thin frost of silver dust, perfectly warm to the touch.","دق برج الساعة في المدرسة الثانوية ثلاث عشرة مرة عند منتصف الليل، وتردد صدى دقاته العميقة لمدة ضعف المدة المعتادة. وتحت البرج، كان العشب مغطى بطبقة رقيقة من الصقيع المصنوع من الغبار الفضي، وكان دافئًا تمامًا عند لمسه.
+"
+day5_page3_topic5_title,SilentBench,المقعد الصامت
+day5_page3_topic5_col1,"During basketball practice, the bleachers hummed with a low vibration. Every time the point guard stepped on the court, the scoreboard flickered, displaying scores for a game two days in the future.",أثناء تدريب كرة السلة، أصدرت مدرجات الملعب طنينًا مصحوبًا باهتزاز منخفض. وفي كل مرة يخطو فيها صانع ألعاب الفريق إلى أرض الملعب، كانت لوحة النتائج تومض وتعرض نتائج مباراة ستقام بعد يومين.
+day6_page1_topic1_title,Road Construction,أعمال إنشاء الطريق
+day6_page1_topic1_col1,"The main road in Ravenford is almost ready to reopen after six days of heavy construction. Government workers have completed most of the repairs, with only a few final tasks remaining. Officials confirmed that the road is expected to open tomorrow.",الطريق الرئيسي في رافنفورد يكاد يكون جاهزًا لإعادة الافتتاح بعد ستة أيام من أعمال البناء المكثفة. وقد أكمل عمال الحكومة معظم الإصلاحات، ولم يتبقَّ سوى بعض المهام النهائية. وأكد المسؤولون أن الطريق من المتوقع أن يُفتح غدًا.
+day6_page1_topic1_col2,"Traffic has slowly improved as workers cleared parts of the road. Drivers are still reporting some delays during busy hours, but the situation is much better than earlier this week. Authorities are asking everyone to remain patient until the work is fully finished.",تحسنت حركة المرور تدريجيًا مع قيام العمال بفتح أجزاء من الطريق. ولا يزال السائقون يبلغون عن بعض التأخيرات خلال ساعات الذروة، لكن الوضع أصبح أفضل بكثير مقارنة ببداية هذا الأسبوع. وتطلب السلطات من الجميع التحلي بالصبر حتى تنتهي الأعمال بالكامل.
+day6_page1_topic1_col3,"Officials are reviewing losses from the blockage. The affected family awaits compensation, while the food trucks recover financially. Residents look forward to tomorrow’s reopening.",ويقوم المسؤولون بمراجعة الخسائر الناتجة عن إغلاق الطريق. ولا تزال الأسرة المتضررة تنتظر التعويض، بينما تحاول عربات الطعام استعادة وضعها المالي. ويتطلع السكان إلى إعادة افتتاح الطريق غدًا.
+day6_page1_topic2_title,A Shop Fire,حريق في متجر
+day6_page1_topic2_col1,"A small fire broke out at a local electronics shop late last night after a faulty television overheated. The owner managed to get everyone outside before firefighters arrived, and no one was injured. Several televisions, radios, and cassette players were damaged, leaving the shop closed while repairs are carried.",اندلع حريق صغير في متجر إلكترونيات محلي في وقت متأخر من الليلة الماضية، بعد أن ارتفعت حرارة جهاز تلفاز معطوب بشكل مفرط. وتمكن صاحب المتجر من إخراج الجميع قبل وصول رجال الإطفاء، ولم يُصب أحد بأذى. وتضررت عدة أجهزة تلفاز وراديو وأجهزة كاسيت، مما أدى إلى إغلاق المتجر مؤقتًا بينما تُجرى الإصلاحات.
+day6_page1_topic3_title,Schools Mini FIFA,بطولة FIFA المدرسية المصغرة
+day6_page1_topic3_col1,"Tomorrow is the final match of the FIFA Mini Schools Cup. Students from all schools are eagerly anticipating this match, as it features two of the strongest teams at the national level. Who will prevail and lift the cup?",غدًا ستكون المباراة النهائية لكأس FIFA المدرسية المصغرة. وينتظر الطلاب من جميع المدارس هذه المباراة بحماس شديد، لأنها تجمع فريقين من أقوى الفرق على المستوى الوطني. فمن سيفوز ويرفع الكأس؟
+day6_page1_topic4_title,MadScientist,العالم المجنون
+day6_page1_topic4_col1,A citizen confirmed that his neighbor had been imprisoned from two months. His neighbor was obsessed with science and electricity and was planning suspicious things.,أكد أحد المواطنين أن جاره كان قد سُجن منذ شهرين. وكان جاره مهووسًا بالعلوم والكهرباء، وكان يخطط لأشياء مريبة.
+day6_page1_topic5_title,TheRedMoon,القمر الأحمر
+day6_page1_topic5_col1,"News reports cast doubt on the arrival of the red moon night again tomorrow. We see it tonight with its distinctive red color and beautiful tranquility, but will it surprise us again tomorrow?",تثير التقارير الإخبارية الشكوك حول وصول ليلة القمر الأحمر مرة أخرى غدًا. نراه الليلة بلونه الأحمر المميز وهدوئه الجميل، لكن هل سيفاجئنا مرة أخرى غدًا؟
+day6_page1_topic6_title,Weather Cast,نشرة الطقس
+day6_page1_topic6_col1,"Ravenford continues to enjoy calm, pleasant weather, with residents and visitors spending more time outdoors. Local businesses are also seeing more activity as visitors arrive to enjoy the week.",تواصل رافنفورد الاستمتاع بطقس هادئ وممتع، مع قضاء السكان والزوار وقتًا أطول في الخارج. كما تشهد الأعمال التجارية المحلية نشاطًا أكبر مع وصول الزوار للاستمتاع بهذا الأسبوع.
+day6_page2_topic1_title,A Lost Wallet Found,العثور على محفظة مفقودة
+day6_page2_topic1_col1,"A wallet was found yesterday near Ravenford's central bus station. It contained some cash, an old photograph, and several letters, but no identification. The wallet is now being kept at the station office while its owner is being searched for.",عُثر على محفظة أمس بالقرب من محطة الحافلات المركزية في رافنفورد. وكانت تحتوي على بعض النقود، وصورة قديمة، وعدة رسائل، لكنها لم تكن تحتوي على أي إثبات للهوية. وتُحفظ المحفظة الآن في مكتب المحطة بينما يجري البحث عن صاحبها.
+day6_page2_topic2_title,Power Outage,انقطاع الكهرباء
+day6_page2_topic2_col1,"A brief power outage affected several streets in Ravenford last night. The electricity returned after about an hour, and officials said the cause was a damaged power line. No major problems were reported.",أثر انقطاع قصير للكهرباء على عدة شوارع في رافنفورد الليلة الماضية. وعادت الكهرباء بعد حوالي ساعة، وقال المسؤولون إن السبب كان خط كهرباء تالفًا. ولم يتم الإبلاغ عن أي مشكلات كبيرة.
+day6_page2_topic3_title,Generators!,المولدات!
+day6_page2_topic3_col1,Three more generators were stolen yesterday. Authorities found traces of an aromatic substance at the scene of one of the thefts. No thefts were reported today... Who's next?,سُرقت ثلاث مولدات كهربائية أخرى أمس. وعثرت السلطات على آثار لمادة عطرية في موقع إحدى عمليات السرقة. لم يتم الإبلاغ عن أي سرقات اليوم... من التالي؟
+day6_page2_topic4_title,Strange Noise,ضوضاء غريبة
+day6_page2_topic4_col1,"Residents near Oak Street reported hearing a loud noise late last night, causing several people to check outside their homes. Officials inspected the area but found no damage or signs of an accident. They believe the noise may have come from an old machine operating at a nearby workshop.",أبلغ سكان بالقرب من شارع أوك عن سماع ضوضاء عالية في وقت متأخر من الليلة الماضية، مما دفع عدة أشخاص إلى الخروج لتفقد ما يحدث خارج منازلهم. فتش المسؤولون المنطقة، لكنهم لم يجدوا أي أضرار أو علامات تدل على وقوع حادث. ويعتقدون أن الضوضاء ربما جاءت من آلة قديمة كانت تعمل في ورشة قريبة.
+day6_page2_topic5_title,A New City Center Arcade ,صالة ألعاب جديدة في وسط المدينة
+day6_page2_topic5_col1,"A small arcade has opened near Ravenford's city center, quickly attracting teenagers and families from nearby streets. The arcade currently has several classic machines, with the owner promising to bring in more games and equipment soon. The new business is expected to become a popular place for young residents.",افتتحت صالة ألعاب صغيرة بالقرب من وسط مدينة رافنفورد، وسرعان ما بدأت في جذب المراهقين والعائلات من الشوارع القريبة. تحتوي الصالة حاليًا على عدة أجهزة ألعاب كلاسيكية، مع وعد المالك بإضافة المزيد من الألعاب والمعدات قريبًا. ومن المتوقع أن تصبح هذه المنشأة الجديدة مكانًا شهيرًا بين السكان الشباب.
+day6_page3_topic1_title,Kidnapped Employees,الموظفون المختطفون
+day6_page3_topic1_col1,"Days after the disappearance of the two electricity company workers, the police found one of them walking on the outskirts of the town. No signs of kidnapping or torture were found, which confirms what the old man said. He is now being questioned.",بعد أيام من اختفاء عاملي شركة الكهرباء، عثرت الشرطة على أحدهما وهو يسير على أطراف البلدة. ولم يتم العثور على أي علامات تدل على الاختطاف أو التعذيب، مما يؤكد ما قاله الرجل العجوز. ويجري استجوابه الآن.
+day6_page3_topic2_title,A Prisoner Talk,حديث مع سجين
+day6_page3_topic2_col1,"When one of the prisoners was asked about that crazy person, he said that he used to do strange things. Once, he tried to tamper with the prison's electrical box, but the police saved the situation.",عندما سُئل أحد السجناء عن ذلك الشخص المجنون، قال إنه كان يقوم بأشياء غريبة. وفي إحدى المرات، حاول العبث بصندوق الكهرباء الخاص بالسجن، لكن الشرطة تمكنت من السيطرة على الموقف.
+day6_page3_topic3_title,The Empty House,المنزل الفارغ
+day6_page3_topic3_col1,"Residents on Willow Lane have become curious about an empty house that has been untouched for several years. Neighbors say a moving truck arrived there late one evening, but nobody remembers seeing anyone move in. The house has remained quiet ever since, with its curtains always closed and its garden slowly becoming overgrown.",أصبح سكان شارع ويلو يشعرون بالفضول تجاه منزل فارغ لم يُمس منذ عدة سنوات. ويقول الجيران إن شاحنة نقل وصلت إلى هناك في إحدى الأمسيات المتأخرة، لكن لا أحد يتذكر رؤية أي شخص ينتقل إلى المنزل. وظل المنزل هادئًا منذ ذلك الحين، وستائره مغلقة دائمًا، بينما بدأت حديقته تزداد نموًا بالأعشاب ببطء.
+day6_page3_topic4_title,A Photograph,صورة فوتوغرافية
+day6_page3_topic4_col1,A collection of old photographs was discovered inside a box during renovations at a local house. The owner plans to display some of them for neighbors to identify the people pictured.,اكتُشفت مجموعة من الصور الفوتوغرافية القديمة داخل صندوق أثناء أعمال تجديد في منزل محلي. ويخطط صاحب المنزل لعرض بعضها على الجيران للتعرف على الأشخاص الظاهرين فيها.
+day6_page3_topic5_title,Team Wins,الفريق يفوز
+day6_page3_topic5_col1,"Ravenford's football team secured a surprising victory yesterday by scoring twice in the final minutes. Hundreds of fans celebrated after the match, and the players thanked them for their support. The team is now preparing next game.",حقق فريق رافنفورد لكرة القدم فوزًا مفاجئًا أمس بعد تسجيل هدفين في الدقائق الأخيرة. واحتفل مئات المشجعين بعد المباراة، وشكرهم اللاعبون على دعمهم. ويستعد الفريق الآن لمباراته القادمة.
+day7_page1_topic1_title,Victor Frankenstein,فيكتور فرانكنشتاين
+day7_page1_topic1_col1,"The police gathered all the evidence and discovered that the person responsible for the escape was Victor Frank, a man who, according to his neighbors, had been insane his entire life. He would go out all day and return at night. ",جمعت الشرطة كل الأدلة واكتشفت أن الشخص المسؤول عن الهروب هو فيكتور فرانك، وهو رجل، بحسب جيرانه، كان مجنونًا طوال حياته. كان يخرج طوال النهار ويعود ليلاً.
+day7_page1_topic1_col2,"It turned out that he had a laboratory on the outskirts of the city where he conducted his mad experiments, the latest of which involved electrically transforming a human into a monster that would serve and defend him.",وتبين أن لديه معملاً على أطراف المدينة يجري فيه تجاربه المجنونة، والتي كان آخرها تحويل الإنسان كهربائياً إلى وحش يخدمه ويدافع عنه.
+day7_page1_topic1_col3," a huge number of them. He had also kidnapped the electricity company employees, drugging them in a way that rendered them incapable of thinking but simultaneously gave them strange energy. The police now is searching for him.",عدد كبير منهم. كما قام باختطاف موظفي شركة الكهرباء وتخديرهم بطريقة تجعلهم غير قادرين على التفكير وفي الوقت نفسه يمنحهم طاقة غريبة. والشرطة الآن تبحث عنه.
+day7_page1_topic2_title,Victors Crimes,جرائم فيكتور
+day7_page1_topic2_col1,"It was discovered that Victor was also responsible for the generator thefts, as his experiment required a huge number of generators. He had also kidnapped the electricity company employees, drugging them in a way that rendered them incapable of thinking while simultaneously giving them strange energy. They left the company with him and helped him in the escape.",تم اكتشاف أن فيكتور كان مسؤولاً أيضاً عن سرقة المولدات، حيث أن تجربته تطلبت عدداً هائلاً من المولدات. كما قام باختطاف موظفي شركة الكهرباء وتخديرهم بطريقة تجعلهم غير قادرين على التفكير وفي نفس الوقت يمنحهم طاقة غريبة. وتركوا الشركة معه وساعدوه في الهروب.
+day7_page1_topic3_title,Schools Mini FIFA,مدارس ميني فيفاالهروب
+day7_page1_topic3_col1,Willomere won the FIFA Mini Schools Cup after a thrilling final against one of the country’s strongest school teams. Students and supporters celebrated as the team lifted the cup.,فاز ويلومير بكأس FIFA Mini Schools بعد مباراة نهائية مثيرة ضد أحد أقوى الفرق المدرسية في البلاد. احتفل الطلاب والمشجعون برفع الفريق الكأس.
+day7_page1_topic4_title,The Road,الطريق
+day7_page1_topic4_col1,"Ravenford's main road reopened this morning after a week of repairs. Traffic is back to normal, and officials say the improvements will last for years.",أعيد فتح طريق رافينفورد الرئيسي هذا الصباح بعد أسبوع من الإصلاحات. عادت حركة المرور إلى طبيعتها، ويقول المسؤولون إن التحسينات ستستمر لسنوات.
+day7_page1_topic5_title,He Still OUT,لا يزال طليقًا
+day7_page1_topic5_col1,"But he hadn't killed anyone... not yet. Police have intensified their search for Frank; all citizens should be cautious. If you see him, call 111.",لكنه لم يقتل أحداً... ليس بعد. كثفت الشرطة بحثها عن فرانك. على جميع المواطنين أخذ الحيطة والحذر. إذا رأيته اتصل بالرقم 111.
+day7_page1_topic6_title,The Escape,الهروب
+day7_page1_topic6_col1,"Frank smuggled some prisoners with him to deflect suspicion. He used his tricks and inventions to drug the police officers, allowing him to escape without a trace or a sound. He used the same method for stealing the generators and for the kidnapping. The two men who smelled a pleasant scent were unaware that it was coming from his laboratory. He drugged them, so they forgot what they had seen there.",قام فرانك بتهريب بعض السجناء معه لإبعاد الشكوك. استخدم حيله واختراعاته لتخدير رجال الشرطة، مما سمح له بالهروب دون أثر أو صوت. لقد استخدم نفس الأسلوب في سرقة المولدات وفي عملية الاختطاف. الرجلان اللذان اشتما رائحة طيبة لم يعلما أنها قادمة من مختبره. لقد خدرهم فنسوا ما رأوه هناك.
+continue,Continue,استمرار
+newgame,New Game,لعبة جديدة
+settings,Settings,الإعدادات
+leaderboard,Leaderboards,لوحات الصدارة
+achievements,Achievements,الإنجازات
+quit,Quit,خروج
+language,Language: ,:اللغة
+rank,Rank,المركز
+player,Player,اللاعب
+sabotages_fixed,Sabotages Fixed, التخربيات المصلوحة
+account,Account,الحساب
+acc_name,Name...,...الاسم
+save_name,Save Name,حفظ الاسم
+acc_mail,Email...,...البريد
+acc_pass,Password...,...كلمة السر
+signup,Sign Up,إنشاء
+login,Log In,دخول
+resume,Resume,استئناف
+restart,Restart,إعادة
+brief,Brief,الموجز
+confirm,Confirm,تأكيد
+cancel,Cancel,إلغاء
+d3c1s1,Hello.,أهلاً.
+d3c1s2,I didn't mean to scare you.,لم أقصد إخافتك.
+d3c1s3,Would you mind if I stayed here?,هل تمانع إذا بقيت هنا؟
+d3c1s4,No problem.,لا مشكلة.
+d3c1s5,"Thank you, I'll watch the cameras for you, and you handle the radio",شكراً لك، سأراقب الكاميرات نيابةً عنك، وأنت ستتولى أمر الراديو.
+d3c1s7
+day4msg1,Hello %s.,أهلًا يا %s.
+day4msg2,Tomorrow is the red moon night .. stay alert.,غدًا ليلة القمر الحمراء .. توخَ الحذر.
+day4c2,Do you need help today?,هل تحتاج مساعدة اليوم؟
+day4c3,I'll watch cameras .. you radio.,سأراقب الكاميرات وأنت الراديو.
+day5msg1,Hello %s.,أهلًأ يا %s.
+day5msg2,We're on the Red Moon Night.,نحن في ليلة القمر الحمراء.
+day5msg3,Open light switch if you need it.,افتح الضوء إذا احتجته.
+day6msg2,"The generator has broken down, but you won't be able to fix it on your own.",لقد تعطل المولد لكن لن تستطيع إصلاحه بمفردك.
+day6msg3,A company worker will come today to fix it.,سيأتي عامل الشركة اليوم لإصلاحه.
+day6msg4,Be prepared for it.,كن في انتظاره.
+techfirst1,"Hello %s, I am an employee of the electricity company.",أهلًا يا %s، أنا عامل شركة الكهرباء.
+techfirst2,"I'll go in and fix it, okay?",سأدخل لإصلاحه، حسنًأ؟
+techsecond1,"Hello %s, I learned that someone impersonated me and came to deceive you.",أهلًا يا %s، علمت أن شخصًا انتحل شخصيتي وجاء ليخدعك.
+techsecond2,"Thank God he didn't steal it. I'll go in and fix it, okay?",حمدًا لله أنه لم يسرقه. سأدخل لإصلاحه، حسنًا؟
+techstolen1,Hello @s. I'm an employee of the electricity company... the original one.,أهلًا يا @s. أنا عامل شركة الكهرباء ... الأصلي.
+techstolen2,The person who came before me tricked you and stole the generator.,لقد خدعك الشخص الذي جاء قبلي وسرق المولد.
+techstolen3,Didn't you read in the news about the theft of electric generators?,ألم تقرأ في الأخبار عن سرقة المولدات الكهربائية؟
+day7msg2,"The red moon night has come again, unusually. Beware of it.",أتت ليلة القمر الحمراء مجددًا على غير العادة. احذر منها.
+day7msg3,Theft of electric generators increased during those days.,وازدادت سرقة المولدات الكهربائية تلك الأيام.
+day7end2,I found a better worker than you.,وجدت عاملًا أفضل منك.
+day7end3,Your work with me is over.,انتهى عملك معي.
+day7end4,Farewell!,وداعًا!
+xxx,xsaxsa,سشيشس

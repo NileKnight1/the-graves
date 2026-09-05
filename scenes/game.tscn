@@ -6753,6 +6753,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="left" type="Button" parent="CanvasLayer/news/buttons" unique_id=1768647900]
+layout_direction = 2
 layout_mode = 0
 offset_left = 322.0
 offset_top = 319.0
@@ -6772,6 +6773,7 @@ text = "<"
 icon_alignment = 1
 
 [node name="right" type="Button" parent="CanvasLayer/news/buttons" unique_id=1940355659]
+layout_direction = 2
 layout_mode = 0
 offset_left = 910.0
 offset_top = 319.0
@@ -6808,6 +6810,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=482767235]
+layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 142.0
@@ -6822,6 +6825,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=1827741137]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 174.0
@@ -6837,6 +6841,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col2" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=1425792436]
+layout_direction = 2
 layout_mode = 0
 offset_left = 531.0
 offset_top = 174.0
@@ -6852,6 +6857,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col3" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=1393997301]
+layout_direction = 2
 layout_mode = 0
 offset_left = 656.0
 offset_top = 272.0
@@ -6867,12 +6873,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/day7/topic1" unique_id=1599292984]
+layout_direction = 2
 layout_mode = 0
 offset_left = 656.0
 offset_top = 143.99997
 offset_right = 1980.0
 offset_bottom = 833.0
 scale = Vector2(0.15785496, 0.17126271)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic2" type="Control" parent="CanvasLayer/news/day7" unique_id=1220166043]
@@ -6884,6 +6892,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/topic2" unique_id=1031313054]
+layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 358.0
@@ -6899,6 +6908,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/day7/topic2" unique_id=1091379967]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 380.0
@@ -6923,6 +6933,7 @@ offset_bottom = 252.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/topic3" unique_id=2091129561]
+layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 137.0
@@ -6938,6 +6949,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/day7/topic3" unique_id=1716775716]
+layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 159.0
@@ -6962,6 +6974,7 @@ offset_bottom = 252.0
 mouse_filter = 2
 
 [node name="title2" type="Label" parent="CanvasLayer/news/day7/topic4" unique_id=293955435]
+layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 248.0
@@ -6976,6 +6989,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col2" type="Label" parent="CanvasLayer/news/day7/topic4" unique_id=1798635802]
+layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 271.0
@@ -7000,6 +7014,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/topic5" unique_id=1469189338]
+layout_direction = 2
 layout_mode = 0
 offset_left = 518.0
 offset_top = 460.0
@@ -7014,6 +7029,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col3" type="Label" parent="CanvasLayer/news/day7/topic5" unique_id=5516978]
+layout_direction = 2
 layout_mode = 0
 offset_left = 518.0
 offset_top = 483.0
@@ -7038,6 +7054,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/topic6" unique_id=695460434]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 356.0
@@ -7053,6 +7070,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/day7/topic6" unique_id=1697616764]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 378.0
@@ -7084,6 +7102,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/control/header" unique_id=233475283]
+layout_direction = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 48.0
@@ -7184,13 +7203,14 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=1256709237]
+layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 142.0
 offset_right = 637.0
 offset_bottom = 168.0
 pivot_offset = Vector2(-196, -8)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0.5176471, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 20
 text = "Victor Frankenstein"
@@ -7198,6 +7218,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=597896598]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 174.0
@@ -7213,6 +7234,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=622632829]
+layout_direction = 2
 layout_mode = 0
 offset_left = 531.0
 offset_top = 174.0
@@ -7228,6 +7250,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=790679055]
+layout_direction = 2
 layout_mode = 0
 offset_left = 656.0
 offset_top = 272.0
@@ -7243,12 +7266,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic1" unique_id=636836928]
+layout_direction = 2
 layout_mode = 0
 offset_left = 656.0
 offset_top = 143.99997
 offset_right = 1980.0
 offset_bottom = 833.0
 scale = Vector2(0.15785496, 0.17126271)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic2" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1719061689]
@@ -7260,6 +7285,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic2" unique_id=709030984]
+layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 410.25
@@ -7275,6 +7301,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic2" unique_id=811979921]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 432.25
@@ -7290,12 +7317,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic2" unique_id=435259365]
+layout_direction = 2
 layout_mode = 0
 offset_left = 424.99997
 offset_top = 349.0
 offset_right = 1749.0
 offset_bottom = 1038.0
 scale = Vector2(0.051359452, 0.084905624)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic3" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=2003324900]
@@ -7308,6 +7337,7 @@ offset_bottom = 252.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic3" unique_id=2140753474]
+layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 137.0
@@ -7323,6 +7353,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic3" unique_id=114929905]
+layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 159.0
@@ -7347,6 +7378,7 @@ offset_bottom = 252.0
 mouse_filter = 2
 
 [node name="title2" type="Label" parent="CanvasLayer/news/pages/page1/topic4" unique_id=1390632890]
+layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 248.0
@@ -7361,6 +7393,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic4" unique_id=242118464]
+layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 271.0
@@ -7385,6 +7418,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic5" unique_id=1370803138]
+layout_direction = 2
 layout_mode = 0
 offset_left = 518.0
 offset_top = 460.0
@@ -7399,6 +7433,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic5" unique_id=1339056796]
+layout_direction = 2
 layout_mode = 0
 offset_left = 518.0
 offset_top = 483.0
@@ -7423,6 +7458,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic6" unique_id=709184589]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 410.25
@@ -7438,6 +7474,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1770958912]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 432.25
@@ -7453,12 +7490,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1665023708]
+layout_direction = 2
 layout_mode = 0
 offset_left = 430.0
 offset_top = 349.0
 offset_right = 1754.0
 offset_bottom = 1038.0
 scale = Vector2(0.051359452, 0.084905624)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="control" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=835955205]
@@ -7478,6 +7517,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/control/header" unique_id=318868198]
+layout_direction = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 48.0
@@ -7571,6 +7611,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title2" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=2034765006]
+layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 142.0
@@ -7585,6 +7626,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=437925247]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 174.0
@@ -7600,12 +7642,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic1" unique_id=1026975133]
+layout_direction = 2
 layout_mode = 0
 offset_left = 528.75
 offset_top = 173.75
 offset_right = 1852.75
 offset_bottom = 862.75
 scale = Vector2(0.072885215, 0.21480413)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic2" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=180901564]
@@ -7619,6 +7663,7 @@ offset_bottom = -163.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic2" unique_id=935609907]
+layout_direction = 2
 layout_mode = 0
 offset_left = 405.0
 offset_top = 410.25
@@ -7634,6 +7679,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic2" unique_id=1870239589]
+layout_direction = 2
 layout_mode = 0
 offset_left = 405.0
 offset_top = 432.25
@@ -7649,12 +7695,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic2" unique_id=348311215]
+layout_direction = 2
 layout_mode = 0
 offset_left = 422.0
 offset_top = 344.0
 offset_right = 1746.0
 offset_bottom = 1033.0
 scale = Vector2(0.051359452, 0.084905624)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic3" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=2146964670]
@@ -7669,6 +7717,7 @@ pivot_offset = Vector2(405, 503)
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1917136098]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 410.25
@@ -7684,6 +7733,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1335486807]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 432.25
@@ -7699,12 +7749,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1695907823]
+layout_direction = 2
 layout_mode = 0
 offset_left = 430.0
 offset_top = 344.0
 offset_right = 1754.0
 offset_bottom = 1033.0
 scale = Vector2(0.051359452, 0.084905624)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic4" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=1610298987]
@@ -7717,6 +7769,7 @@ offset_bottom = 269.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic4" unique_id=2009135562]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 137.0
@@ -7732,6 +7785,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic4" unique_id=2036565526]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 159.0
@@ -7747,12 +7801,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic4" unique_id=237226839]
+layout_direction = 2
 layout_mode = 0
 offset_left = 637.0
 offset_top = 137.0
 offset_right = 1961.0
 offset_bottom = 826.0
 scale = Vector2(0.16918427, 0.14513792)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic5" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=392915576]
@@ -7765,6 +7821,7 @@ offset_bottom = 386.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic5" unique_id=952150160]
+layout_direction = 2
 layout_mode = 0
 offset_left = 647.0
 offset_top = 137.0
@@ -7780,6 +7837,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic5" unique_id=102070001]
+layout_direction = 2
 layout_mode = 0
 offset_left = 647.0
 offset_top = 159.0
@@ -7795,12 +7853,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic5" unique_id=467814411]
+layout_direction = 2
 layout_mode = 0
 offset_left = 405.0
 offset_top = 142.0
 offset_right = 1729.0
 offset_bottom = 831.0
 scale = Vector2(0.16918427, 0.14513792)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="control" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=1321971899]
@@ -7820,6 +7880,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page2/control/header" unique_id=602381741]
+layout_direction = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 48.0
@@ -7881,6 +7942,7 @@ offset_bottom = 44.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic1" unique_id=1310083190]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 137.0
@@ -7896,6 +7958,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic1" unique_id=1698378134]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 159.0
@@ -7911,12 +7974,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic1" unique_id=1665929119]
+layout_direction = 2
 layout_mode = 0
 offset_left = 639.0
 offset_top = 136.99998
 offset_right = 1963.0
 offset_bottom = 826.0
 scale = Vector2(0.16918427, 0.14513792)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic2" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=178429179]
@@ -7929,6 +7994,7 @@ offset_bottom = 161.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic2" unique_id=2127148859]
+layout_direction = 2
 layout_mode = 0
 offset_left = 647.0
 offset_top = 137.0
@@ -7944,6 +8010,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic2" unique_id=1237849378]
+layout_direction = 2
 layout_mode = 0
 offset_left = 647.0
 offset_top = 159.0
@@ -7959,12 +8026,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic2" unique_id=969598055]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 141.0
 offset_right = 1735.0
 offset_bottom = 830.0
 scale = Vector2(0.16918427, 0.14513792)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic3" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1819073805]
@@ -7977,6 +8046,7 @@ offset_bottom = 283.0
 mouse_filter = 2
 
 [node name="title2" type="Label" parent="CanvasLayer/news/pages/page3/topic3" unique_id=733973477]
+layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 142.0
@@ -7991,6 +8061,7 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic3" unique_id=1832124511]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 174.0
@@ -8006,12 +8077,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic3" unique_id=1040885148]
+layout_direction = 2
 layout_mode = 0
 offset_left = 530.00006
 offset_top = 176.0
 offset_right = 1854.0
 offset_bottom = 865.0
 scale = Vector2(0.072885215, 0.21480413)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic4" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1171888755]
@@ -8025,6 +8098,7 @@ offset_bottom = 80.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic4" unique_id=653408070]
+layout_direction = 2
 layout_mode = 0
 offset_left = 405.0
 offset_top = 410.25
@@ -8040,6 +8114,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic4" unique_id=1042597104]
+layout_direction = 2
 layout_mode = 0
 offset_left = 405.0
 offset_top = 432.25
@@ -8055,12 +8130,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic4" unique_id=876928134]
+layout_direction = 2
 layout_mode = 0
 offset_left = 418.0
 offset_top = 345.25
 offset_right = 1742.0
 offset_bottom = 1034.25
 scale = Vector2(0.051359452, 0.084905624)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic5" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=577463497]
@@ -8075,6 +8152,7 @@ pivot_offset = Vector2(405, 503)
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic5" unique_id=1375415083]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 410.25
@@ -8090,6 +8168,7 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic5" unique_id=1701588571]
+layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 432.25
@@ -8105,12 +8184,14 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic5" unique_id=2044569369]
+layout_direction = 2
 layout_mode = 0
 offset_left = 427.0
 offset_top = 345.25
 offset_right = 1751.0
 offset_bottom = 1034.25
 scale = Vector2(0.051359452, 0.084905624)
+mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="control" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1509597104]
@@ -8130,6 +8211,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page3/control/header" unique_id=1118695269]
+layout_direction = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 48.0

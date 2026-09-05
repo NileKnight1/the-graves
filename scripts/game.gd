@@ -69,6 +69,8 @@ var psst = preload("res://audio/psst.mp3")
 var door = preload("res://audio/door.mp3")
 var fnaf = preload("res://audio/freesound_community-cryo_outage-94622.mp3")
 var paper_turn = preload("res://audio/paper_turn.mp3")
+var click_menu = preload("res://audio/buttonpress.mp3")
+var selected = preload("res://audio/ps5-selection-button.mp3")
 
 
 func play_sound(sound, vol = 0.0):
@@ -386,6 +388,8 @@ func day_starters():
 	match shift:
 		2: day2_starters()
 		6: day6_starters()
+		7: day7_starters()
+		
 
 func _on_cams_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and computer_area && generator_working:
@@ -3164,6 +3168,7 @@ func _on_right_news_pressed() -> void:
 	#$CanvasLayer/news/pages/page1/topic1/image.texture = day1_page1[0][4]
 
 func newspaper_translation():
+	print("newpaper_translate")
 	match shift:
 		1: day1_newspaper_translation()
 		2: day2_newspaper_translation()
@@ -3171,13 +3176,16 @@ func newspaper_translation():
 		4: day4_newspaper_translation()
 		5: day5_newspaper_translation()
 		6: day6_newspaper_translation()
-		7: day3_newspaper_translation()
+		7: day7_newspaper_translation()
 		
 
 func day1_newspaper_translation():
 	var page1 = $CanvasLayer/news/pages/page1
 	var page2 = $CanvasLayer/news/pages/page2
 	var page3 = $CanvasLayer/news/pages/page3
+	print("imhere", shift)
+	print(tr("xxx"))
+	print(tr(day1_page1[0][0]))
 	
 	for topic in page1.get_child_count():
 		if page1.get_child(topic).name == "control": break
@@ -3352,8 +3360,7 @@ func day7_newspaper_translation():
 	#var page1 = $CanvasLayer/news/pages/page1
 	#var page2 = $CanvasLayer/news/pages/page2
 	#var page3 = $CanvasLayer/news/pages/page3
-	var page1 = $CanvasLayer/news/pages/page3
-	
+	var page1 = $CanvasLayer/news/day7
 	
 	for topic in page1.get_child_count():
 		if page1.get_child(topic).name == "control": break
@@ -3514,11 +3521,13 @@ var day7_page1 = [
 
 func _on_pause_pressed() -> void:
 	get_tree().paused = 1
+	play_sound(click_menu)
 	refresh_brief()
 	#$CanvasLayer/pause/brief_.visible = 1
 	$CanvasLayer/pause.visible = 1
 
 func _on_resume_pressed() -> void:
+	play_sound(click_menu)
 	get_tree().paused = 0
 	$CanvasLayer/pause.visible = 0
 
@@ -3541,24 +3550,31 @@ func refresh_brief():
 
 
 func _on_restart_pressed() -> void:
+	play_sound(click_menu)
 	$CanvasLayer/pause/restart_.visible = 1
 func _on_restart_yes_pressed() -> void:
+	play_sound(click_menu)
 	get_tree().paused = 0
 	$CanvasLayer/pause.visible = 0
 	#await get_tree().create_timer(1.0, false, false, false).timeout
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 func _on_restart_no_pressed() -> void:
+	play_sound(click_menu)
 	$CanvasLayer/pause/restart_.visible = 0
 
 func _on_quit_yes_pressed() -> void:
+	play_sound(click_menu)
 	get_tree().paused = 0
 	$CanvasLayer/pause.visible = 0
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 func _on_quit_no_pressed() -> void:
+	play_sound(click_menu)
 	$CanvasLayer/pause/quit_.visible = 0
 func _on_quit_pressed() -> void:
+	play_sound(click_menu)
 	$CanvasLayer/pause/quit_.visible = 1
 func _on_brief_pressed() -> void:
+	play_sound(click_menu)
 	refresh_brief()
 	$CanvasLayer/pause/brief_.visible = !$CanvasLayer/pause/brief_.visible
 	$CanvasLayer/pause/settings_.visible = 0
@@ -3566,6 +3582,11 @@ func _on_brief_pressed() -> void:
 	$CanvasLayer/pause/quit_.visible = 0
 
 # Red Moon Night
+
+func day7_starters():
+	$CanvasLayer/news/day7.visible = 1
+	$CanvasLayer/news/pages.visible = 0
+	$CanvasLayer/news/buttons.visible = 0
 
 func day7_time():
 	if shift_time == 1:
@@ -3628,17 +3649,20 @@ func generator_steal_prob():
 	
 
 func _on_arabic_pressed() -> void:
+	play_sound(selected)
 	TranslationServer.set_locale("ar")
 	translation()
 	newspaper_translation()
 
 func _on_english_pressed() -> void:
+	play_sound(selected)
 	TranslationServer.set_locale("en")
 	translation()
 	newspaper_translation()
 
 
 func _on_settings_pressed() -> void:
+	play_sound(click_menu)
 	$CanvasLayer/pause/settings_.visible = !$CanvasLayer/pause/settings_.visible
 	$CanvasLayer/pause/brief_.visible = 0
 	$CanvasLayer/pause/restart_.visible = 0
@@ -3703,7 +3727,5 @@ func end_game():
 ### achievements
 ## visitors mode
 # save/load
-
-
 
 #

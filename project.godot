@@ -10,7 +10,7 @@ config_version=5
 
 [addons]
 
-translations_plugin/last_edited_file_path="res://translation.csv"
+translations_plugin/last_edited_file_path="res://Xtranslation.csv"
 
 [application]
 
@@ -78,7 +78,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translation.ar.translation", "res://translation.en.translation")
+locale/translations=PackedStringArray("res://Xtranslation.ar.translation", "res://Xtranslation.en.translation")
 
 [physics]
 
