@@ -35,6 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://ca455xqgdh1qb" path="res://audio/artificiallyinspired-crt-tv-low-buzzing-static-577992.mp3" id="20_suyxu"]
 [ext_resource type="AudioStream" uid="uid://dgxlfchq0oics" path="res://audio/voicebosch-heart-and-breath-suspense-196083.mp3" id="26_sww3w"]
 [ext_resource type="AudioStream" uid="uid://dwbycnc4g38ad" path="res://audio/soundreality-heart-beat-137135.mp3" id="27_suyxu"]
+[ext_resource type="AudioStream" uid="uid://cck7stb0l0da3" path="res://audio/freesound_community-moving-tools-3-40372.mp3" id="34_twgab"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = 6.0
@@ -4486,7 +4487,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(205, -40)
+position = Vector2(-746, -40)
 collision_layer = 5
 collision_mask = 5
 
@@ -9342,6 +9343,10 @@ stream = ExtResource("26_sww3w")
 
 [node name="heartbeats" type="AudioStreamPlayer" parent="sfx" unique_id=2059519708]
 stream = ExtResource("27_suyxu")
+
+[node name="fixing" type="AudioStreamPlayer" parent="sfx" unique_id=940400389]
+stream = ExtResource("34_twgab")
+parameters/looping = true
 
 [node name="lights" type="Node2D" parent="." unique_id=125245000]
 visible = false

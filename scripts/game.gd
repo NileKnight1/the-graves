@@ -74,6 +74,8 @@ var selected = preload("res://audio/ps5-selection-button.mp3")
 var warning = preload("res://audio/freesound_community-sucked-into-classroom-103774.mp3")
 var error = preload("res://audio/freesound_community-error-83494.mp3")
 var warn = preload("res://audio/freesound_community-beep-warning-6387.mp3")
+var fixing = preload("res://audio/freesound_community-moving-tools-3-40372.mp3")
+var fixed = preload("res://audio/freesound_community-correct-98705.mp3")
 
 func play_sound(sound, vol = 0.0):
 	var temp = AudioStreamPlayer.new()
@@ -306,7 +308,8 @@ func _ready() -> void:
 		$CanvasLayer/mobile.visible = 1
 		pc = 0
 	
-	generator_sabo()
+	#generator_sabo()
+	antenna_sabo()
 	
 	$player/Camera2D.position_smoothing_enabled = 1
 	$player/Camera2D.rotation_smoothing_enabled = 1
@@ -1528,7 +1531,9 @@ func generator_on():
 	$"map behind/generator/ProgressBar".visible = 1
 	$"map behind/generator/E".visible = 1
 	generator_dec_apply = 1
+	$sfx/fixing.play()
 	generator_dec()
+	
 	generator_fixing = 1
 	#$"map behind/generator/ProgressBar".value -= 5
 
@@ -1536,6 +1541,8 @@ func generator_on():
 	
 	#await get_tree().create_timer(5.0, false, false, false).timeout
 func generator_fixed():
+	play_sound(fixed)
+	
 	cam_current = 1
 	cam_fixed()
 	cam_current = 2
@@ -1572,6 +1579,7 @@ func generator_dec():
 		$"map behind/generator/ProgressBar".value -= 2
 		if $"map behind/generator/ProgressBar".value <= 0:
 			generator_failed()
+	$sfx/fixing.stop()
 
 func _on_generator_body_entered(body: Node2D) -> void:
 	if body == $player:
@@ -1591,6 +1599,7 @@ func _on_generator_body_entered(body: Node2D) -> void:
 		print("here")
 func _on_generator_body_exited(body: Node2D) -> void:
 	if body == $player:
+		generator_failed()
 		generator_area = 0
 		$"map behind/generator/outline".visible = 0
 		$"map behind/generator/hover".visible = 0
@@ -1635,6 +1644,7 @@ func _on_antenna_body_entered(body: Node2D) -> void:
 			$"map behind/room/antenna/outline".visible = 1
 func _on_antenna_body_exited(body: Node2D) -> void:
 	if body == $player:
+		$sfx/fixing.stop()
 		antenna_area = 0
 		$"map behind/room/antenna/outline".visible = 0
 		$"map behind/room/antenna/hover".visible = 0
@@ -1646,6 +1656,7 @@ var antenna_nums = [1, 2, 3, 4, 5, 6, 7 ,8, 9, 10]
 var antenna_nums_temp = []
 
 func antenna_on():
+	$sfx/fixing.play()
 	$"map behind/room/antenna/fix".visible = 1
 	antenna_fixing = 1
 	antenna_current_num = 1
@@ -1676,6 +1687,8 @@ func antenna_sabo():
 	
 
 func antenna_fixed():
+	play_sound(fixed)
+	$sfx/fixing.stop()
 	antenna_working = 1
 	$"map behind/room/antenna/outline".visible = 0
 	$"map behind/room/antenna/hover".visible = 0
@@ -1687,6 +1700,7 @@ func antenna_fixed():
 
 func antenna_failed():
 	antenna_reset()
+	$sfx/fixing.stop()
 	for i in $"map behind/room/antenna/fix/nums".get_children():
 		i.set_deferred("disabled", 0)
 
@@ -1895,6 +1909,7 @@ func cam_sabo(num, silent = 0):
 	subtitle("", 0)
 
 func cam_fixed():
+	play_sound(fixed)
 	cam_prog_time = 0
 	cam_working[cam_current-1] = 1
 	$CanvasLayer/gui/press_e.visible = 0
