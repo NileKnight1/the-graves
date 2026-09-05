@@ -60,7 +60,7 @@ day2call1sen4,The radio antenna on the roof was sparking .. it might go down too
 day2call1sen5,Good luck.,وفقك الله.
 day3call1sen1,You did well %s.,أحسنت صنعًا يا %s.
 day3call1sen2,And the guy you have seen is probably just a visitor .. so don't worry.,ومن المحتمل أن يكون الرجل الذي رأيته مجرد زائر.. فلا تقلق.
-day1_page1_topic1_title,XXX,بناء الطرق
+day1_page1_topic1_title,Road Construction,بناء الطرق
 day1_page1_topic1_col1,A main road in Ravenford city was blocked due to heavy road construstion that being done by the government. Workers are doing their best to finish the project by the end of the week. The road can't be blocked so much since it's so important one.,تم إغلاق طريق رئيسي في مدينة رافينفورد بسبب أعمال البناء الثقيلة للطرق التي قامت بها الحكومة. ويبذل العمال قصارى جهدهم لإنهاء المشروع بحلول نهاية الأسبوع. لا يمكن أن يكون الطريق مسدودًا كثيرًا لأنه مهم جدًا.
 day1_page1_topic1_col2,Drivers are complaining of the big blockage. One person died in an ambulance going to the hospital .. his family is asking for an indemnity. Two food trucks content was damaged because of staying much time on road leading to not-small financial losses.,السائقون يشكون من الانسداد الكبير. توفي شخص في سيارة الإسعاف أثناء ذهابه إلى المستشفى.. وأهله يطالبون بالتعويض. تعرض محتوى شاحنتي طعام لأضرار بسبب بقائهما لفترة طويلة على الطريق مما أدى إلى خسائر مالية ليست بالقليلة.
 day1_page1_topic1_col3,Officials are trying to fix losses that happened and reduce incoming ones during this coming week. Its opening will make a huge difference after the so many repairs done in it.,ويحاول المسؤولون معالجة الخسائر التي حدثت وتقليل الخسائر القادمة خلال الأسبوع المقبل. سيحدث افتتاحه فرقًا كبيرًا بعد الإصلاحات العديدة التي تمت فيه.
@@ -378,3 +378,6 @@ day7end2,I found a better worker than you.,وجدت عاملًا أفضل منك
 day7end3,Your work with me is over.,انتهى عملك معي.
 day7end4,Farewell!,وداعًا!
 xxx,xsaxsa,سشيشس
+system,System,النظام
+tech,Technician,الفني
+stranger,Stranger,الغريب

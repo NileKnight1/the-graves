@@ -3,7 +3,7 @@ extends Node2D
 @onready var walking_sound = $sfx/walk_dirt
 
 var player_name = global.player_name
-var shift = global.shift
+var shift = 1
 
 var computer_area = 0
 var computer_opened = 0
@@ -71,6 +71,8 @@ var fnaf = preload("res://audio/freesound_community-cryo_outage-94622.mp3")
 var paper_turn = preload("res://audio/paper_turn.mp3")
 var click_menu = preload("res://audio/buttonpress.mp3")
 var selected = preload("res://audio/ps5-selection-button.mp3")
+var warning = preload("res://audio/grimgravy-warning-notification-call-184996.mp3")
+
 
 
 func play_sound(sound, vol = 0.0):
@@ -1433,12 +1435,15 @@ func _on_room_body_exited(body: Node2D) -> void:
 			light_off()
 			vamp_move += 1
 
-func subtitle(sub, time, sayer = "System"):
+func subtitle(sub, time, sayer = "system"):
 	$CanvasLayer/gui/subtitles.visible_ratio = 0
 	$CanvasLayer/gui/subtitles.text = tr(sub)
+
 	var tween = create_tween()
 	if sub != "":
+		#print("yes")
 		brief.insert(0, [sayer, sub])
+	#print(brief)
 	$sfx/sub.play()
 	tween.tween_property($CanvasLayer/gui/subtitles, "visible_ratio", 1.0, time)
 	await get_tree().create_timer(time, false, false, false).timeout
@@ -1476,11 +1481,12 @@ var generator_fixing = 0
 var generator_dec_apply = 0
 
 func generator_sabo():
+	play_sound(warning)
 	generator_working = 0
-	cam_sabo(1)
-	cam_sabo(2)
-	cam_sabo(3)
-	cam_sabo(4)
+	cam_sabo(1, 1)
+	cam_sabo(2, 1)
+	cam_sabo(3, 1)
+	cam_sabo(4, 1)
 	
 	if computer_opened: close_cam()
 	$"map behind/generator/on".visible = 0
@@ -1497,10 +1503,10 @@ func generator_steal_apply():
 	generator_stolen = 1
 	$anomalies/robber.visible = 0
 	$anomalies/tech.visible = 0
-	cam_sabo(1)
-	cam_sabo(2)
-	cam_sabo(3)
-	cam_sabo(4)
+	cam_sabo(1, 1)
+	cam_sabo(2, 1)
+	cam_sabo(3, 1)
+	cam_sabo(4, 1)
 	if computer_opened: close_cam()
 	$"map behind/room/desk/VideoStreamPlayer".visible = 0
 	$areas/generator/CollisionShape2D.set_deferred("disabled", 1)
@@ -1658,6 +1664,7 @@ func antenna_on():
 var antenna_current_num = 1
 
 func antenna_sabo():
+	play_sound(warning)
 	antenna_working = 0
 	$"map behind/room/antenna/off".visible = 1
 	$"map behind/room/antenna/on".visible = 0
@@ -1874,8 +1881,11 @@ func cam_prog():
 		$player/cam_fix/bar.value += 1
 
 
-func cam_sabo(num):
-	subtitle("camsabo", 1.0)
+func cam_sabo(num, silent = 0):
+	if !silent:
+		play_sound(warning)
+		subtitle("camsabo", 1.0)
+	
 	cam_working[num-1] = 0
 	$"map above/cams_".get_child(num-1).get_child(8).visible = 1
 	$"map above/cams_".get_child(num-1).get_child(7).visible = 0
@@ -3522,6 +3532,7 @@ var day7_page1 = [
 func _on_pause_pressed() -> void:
 	get_tree().paused = 1
 	play_sound(click_menu)
+	#print("solsol")
 	refresh_brief()
 	#$CanvasLayer/pause/brief_.visible = 1
 	$CanvasLayer/pause.visible = 1
@@ -3539,9 +3550,12 @@ func refresh_brief():
 	for i in $CanvasLayer/pause/brief_/mask/scroll/text.get_children():
 		i.queue_free()
 	
-	for i in range(len(brief)-1):
+	print(len(brief)-1)
+	for i in range(len(brief)):
+		#print("sol")
 		var label = Label.new()
 		label.text = tr(brief[i][0]) + ": " + tr(brief[i][1])
+		print(brief[i][0])
 		label.set("theme_override_fonts/font", preload("res://assets/LibreBaskerville-Italic.ttf"))
 		label.custom_minimum_size.x = 705.0
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -3726,6 +3740,9 @@ func end_game():
 #### newspapre player's name on day7
 ### achievements
 ## visitors mode
+## birthday 
+## special interface
+## newspaper images
 # save/load
 
 #
