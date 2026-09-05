@@ -76,6 +76,9 @@ var error = preload("res://audio/freesound_community-error-83494.mp3")
 var warn = preload("res://audio/freesound_community-beep-warning-6387.mp3")
 var fixing = preload("res://audio/freesound_community-moving-tools-3-40372.mp3")
 var fixed = preload("res://audio/freesound_community-correct-98705.mp3")
+var failed = preload("res://audio/lesiakower-error-mistake-sound-effect-incorrect-answer-437420.mp3")
+var ladder = preload("res://audio/freesound-community-moving-wood-105395_4fZeUVbU.mp3")
+
 
 func play_sound(sound, vol = 0.0):
 	var temp = AudioStreamPlayer.new()
@@ -378,6 +381,8 @@ func shift_time_manager():
 			timeshifter_spawn()
 	if shift_time == 180:
 		vamp_spawn()
+	if shift_time == 200:
+		vamp_despawn()
 	match shift:
 		1: day1_time()
 		2: day2_time()
@@ -744,10 +749,12 @@ func light_on():
 		vamp_dead()
 
 func ladder_up():
+	play_sound(ladder)
 	$player.position = Vector2(-533, -580)
 	await get_tree().create_timer(0.1, false, false, false).timeout
 	$"map behind/out_left/p2/ladder/outline".visible = 1
 func ladder_down():
+	play_sound(ladder)
 	$player.position = Vector2(-764.0, -47)
 	await get_tree().create_timer(0.1, false, false, false).timeout
 	$"map behind/out_left/p2/ladder/outline".visible = 1
@@ -1567,6 +1574,7 @@ func generator_fixed():
 	generator_fixing = 0
 
 func generator_failed():
+	play_sound(failed)
 	generator_dec_apply = 0
 	generator_fixing = 0
 	$"map behind/generator/ProgressBar".visible = 0
@@ -1699,6 +1707,7 @@ func antenna_fixed():
 	
 
 func antenna_failed():
+	play_sound(failed)
 	antenna_reset()
 	$sfx/fixing.stop()
 	for i in $"map behind/room/antenna/fix/nums".get_children():
@@ -1932,6 +1941,7 @@ func cam_mouse_click(event, num):
 			camera_on(num)
 
 func cam_failed():
+	play_sound(failed)
 	$player/cam_fix.visible = 0
 	cam_fixing = 0
 	cam_prog_time = 0
@@ -3751,7 +3761,7 @@ func end_game():
 
 
 #ideas to do
-##### every single step sound
+# every single step sound
 #### newspapre player's name on day7
 ### achievements
 ## visitors mode
