@@ -29,7 +29,6 @@
 [ext_resource type="AudioStream" uid="uid://ydxyyrrs28d7" path="res://audio/morning.mp3" id="17_rysoc"]
 [ext_resource type="FontFile" uid="uid://b2lxvl8k8x5ww" path="res://assets/LibreBaskerville-Regular.ttf" id="17_twgab"]
 [ext_resource type="Texture2D" uid="uid://c3ycbukd021du" path="res://assets/js/spritesheet.png" id="18_qouja"]
-[ext_resource type="Texture2D" uid="uid://bqmj5f70pyrd2" path="res://assets/cone.png" id="18_ssvqc"]
 [ext_resource type="AudioStream" uid="uid://d0l4ciu1e13h1" path="res://audio/sub.mp3" id="19_5newe"]
 [ext_resource type="Texture2D" uid="uid://74yjv8hvpbk8" path="res://assets/rect.png" id="19_264po"]
 [ext_resource type="AudioStream" uid="uid://ca455xqgdh1qb" path="res://audio/artificiallyinspired-crt-tv-low-buzzing-static-577992.mp3" id="20_suyxu"]
@@ -1127,6 +1126,9 @@ shadow_offset = Vector2(15.55, 0.065)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nej56"]
 bg_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(15.55, 0.065)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2ts8"]
+bg_color = Color(0, 0, 0, 0.92156863)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qnb83"]
 shader = ExtResource("14_bhx41")
@@ -4487,7 +4489,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-746, -40)
+position = Vector2(-723, -40)
 collision_layer = 5
 collision_mask = 5
 
@@ -8255,6 +8257,16 @@ offset_bottom = 372.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
+[node name="dark" type="Panel" parent="CanvasLayer/news" unique_id=1108195066]
+layout_direction = 2
+layout_mode = 0
+offset_left = 395.0
+offset_top = 50.0
+offset_right = 881.0
+offset_bottom = 632.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x2ts8")
+
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=826777888]
 visible = false
 offset_right = 40.0
@@ -9300,7 +9312,6 @@ one_shot = true
 
 [node name="ringtone" type="AudioStreamPlayer" parent="sfx" unique_id=1353244250]
 stream = ExtResource("10_vtaks")
-volume_db = -80.0
 parameters/looping = true
 
 [node name="dia" type="AudioStreamPlayer" parent="sfx" unique_id=590644922]
@@ -9349,21 +9360,20 @@ stream = ExtResource("34_twgab")
 parameters/looping = true
 
 [node name="lights" type="Node2D" parent="." unique_id=125245000]
-visible = false
 
 [node name="room_dark" type="PointLight2D" parent="lights" unique_id=1301865641]
 position = Vector2(-25.000044, -162.49994)
 scale = Vector2(0.82526666, 1.2843136)
-energy = 0.55
+energy = 0.88
 blend_mode = 1
 texture = ExtResource("19_264po")
 
-[node name="room" type="PointLight2D" parent="lights" unique_id=59616191]
+[node name="room" type="PointLight2D" parent="lights" unique_id=1213517252]
 visible = false
-position = Vector2(-33, -153.00003)
-scale = Vector2(1.0000001, 0.75787085)
-energy = 2.09
-texture = ExtResource("18_ssvqc")
+position = Vector2(-25.000044, -162.49994)
+scale = Vector2(0.82526666, 1.2843136)
+energy = 0.88
+texture = ExtResource("19_264po")
 
 [node name="left" type="PointLight2D" parent="lights" unique_id=2115687293]
 position = Vector2(-2157.25, -555)

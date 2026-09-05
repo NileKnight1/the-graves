@@ -300,7 +300,7 @@ func _ready() -> void:
 	translation()
 	day_starters()
 	tasks()
-	developer()
+	#developer()
 	
 	
 	var tween = create_tween()
@@ -312,7 +312,7 @@ func _ready() -> void:
 		pc = 0
 	
 	#generator_sabo()
-	antenna_sabo()
+	#antenna_sabo()
 	
 	$player/Camera2D.position_smoothing_enabled = 1
 	$player/Camera2D.rotation_smoothing_enabled = 1
@@ -730,6 +730,7 @@ func allow_move():
 func light_off(silent = 0):
 	if !light: return
 	light = 0
+	$CanvasLayer/news/dark.visible = 1
 	$lights/room.visible = 0
 	$"map behind/room/bg/lamp/off".visible = 1
 	$"map behind/room/bg/lamp/on".visible = 0
@@ -740,6 +741,7 @@ var light = 0
 
 func light_on():
 	light = 1
+	$CanvasLayer/news/dark.visible = 0
 	$lights/room.visible = 1
 	$"map behind/room/bg/lamp/off".visible = 0
 	$"map behind/room/bg/lamp/on".visible = 1

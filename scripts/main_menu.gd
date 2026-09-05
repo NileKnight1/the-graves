@@ -403,19 +403,13 @@ func logged():
 
 var achievements = [
 	{"id"= "no_anomalies_left", "tier"= 2, "done"= 0, "description"= "Win a shift without leaving an active anomaly."},
-	{"id"= "x", "tier"= 4, "done"= 1, "description"= ""},
-	{"id"= "y", "tier"= 2, "done"= 1, "description"= ""},
-	{"id"= "z", "tier"= 3, "done"= 1, "description"= ""},
-	{"id"= "l", "tier"= 1, "done"= 1, "description"= ""},
-	{"id"= "a", "tier"= 3, "done"= 0, "description"= ""},
-	{"id"= "b", "tier"= 4, "done"= 0, "description"= ""},
-	{"id"= "c", "tier"= 2, "done"= 0, "description"= ""},
-	{"id"= "d", "tier"= 2, "done"= 1, "description"= ""},
-	{"id"= "e", "tier"= 1, "done"= 0, "description"= ""},
+	{"id"= "door_hand", "tier"=4 , "done"=0 , "description"= "I see you."},
+	{"id"= "perfect_reporter", "tier"=4 , "done"=0 , "description"= "I see you."},
 	
 	
-	#{"id"= "", "secret"= , "done"= 0, "description"= ""},
-	#{"id"= "", "secret"= , "done"= 0, "description"= ""},
+	#{"id"= "", "tier"= , "done"= , "description"= ""},
+	#{"id"= "", "tier"= , "done"= , "description"= ""},
+	
 ]
 
 var secret_achievements = [

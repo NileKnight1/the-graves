@@ -861,6 +861,7 @@ vertical_alignment = 1
 
 [node name="achievments_" type="Control" parent="CanvasLayer" unique_id=314716637]
 process_mode = 3
+visible = false
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
