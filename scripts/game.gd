@@ -3770,4 +3770,20 @@ func end_game():
 ## newspaper images
 # save/load
 
+### Achievements
+# go and down loadder 10 times in 1 second
+# finish the game (1:7) + one complete
+# Reporter (good reports 10:20:50)
+# Perfect shifts (no wrong reports)
+# don't leave anomalies
+# finish shift with -1 max_bad_time
+# fsat report (report at less than 2 sec)
+# fast reporter (report 5:10:20) less than 5 sec
+# reapirer (repair 5:10:20)
+# repair each camera in one game
+# report (5:10:20) with generator sabotaged
+# door hand anomaly
+# 
+
+
 #

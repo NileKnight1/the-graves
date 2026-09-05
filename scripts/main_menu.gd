@@ -386,5 +386,32 @@ func logged():
 	$CanvasLayer/account/savename.disabled = 0
 
 
+### Achievements
+# go and down loadder 10 times in 1 second
+# finish the game (1:7) + one complete
+# Reporter (good reports 10:20:50)
+# Perfect shifts (no wrong reports)
+# don't leave anomalies
+# finish shift with -1 max_bad_time
+# fsat report (report at less than 2 sec)
+# fast reporter (report 5:10:20) less than 5 sec
+# reapirer (repair 5:10:20)
+# repair each camera in one game
+# report (5:10:20) with generator sabotaged
+# door hand anomaly
+
+var achievements = [
+	{"id"= "no_anomalies_left", "secret"= 0, "done"= 0, "description"= "Win a shift without leaving an active anomaly."},
+	{"id"= "door_hand", "secret"= 1, "done"= 0, "description"= ""},
+	#{"id"= "", "secret"= , "done"= 0, "description"= ""},
+	#{"id"= "", "secret"= , "done"= 0, "description"= ""},
+]
+
+var secret_achievements = [
+	{"id"= "door_hand", "description"= "Report the door hand anomaly."},
+]
+
+
+
 
 #
