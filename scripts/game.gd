@@ -3,7 +3,8 @@ extends Node2D
 @onready var walking_sound = $sfx/walk_dirt
 
 var player_name = global.player_name
-var shift = 1
+
+var shift = global.shift
 
 var computer_area = 0
 var computer_opened = 0
@@ -2386,7 +2387,7 @@ var day2force = 0
 
 func day2_starters():
 	#generator_sabo()
-	set_shift_values(15, 20, 4, 300, 40, 60, 7)
+	set_shift_values(15, 20, 4, 3000, 40, 60, 7)
 	day2force = 1
 
 func day2_time():
@@ -2875,7 +2876,7 @@ func day6_start():
 func day6_time():
 	if shift_time == 1:
 		print("im here")
-	elif shift_time == 30: #edit
+	elif shift_time == 10: #edit
 		var temp = randi_range(0,1)
 		if temp: day6_tech = "bad"
 		else: day6_tech = "good"
@@ -3028,7 +3029,7 @@ func frank_spawn():
 		frank_sounds_on = 1
 		frank_sounds()
 		$anomalies/frank.player = $player
-		$anomalies/frank.speed = 150
+		$anomalies/frank.speed = 500
 		$anomalies/frank.move = 1
 		
 		await get_tree().create_timer(30, false, false, false).timeout
@@ -3061,6 +3062,8 @@ func frank_sounds():
 		screen_shake(30, 9)
 		play_sound(electricity)
 		await get_tree().create_timer(3, false, false, false).timeout
+
+
 
 var temp_call_index = 1
 
@@ -3129,6 +3132,23 @@ func day6_battery_inspect():
 	await get_tree().create_timer(2, false, false, false).timeout
 	$CanvasLayer/js.visible = 0
 	lose()
+
+func _on_frank_body_entered(body: Node2D) -> void:
+	if body == $player:
+		stop_move()
+		await get_tree().create_timer(2.3, false, false, false).timeout
+		screen_shake(35, 5)
+		$CanvasLayer/overscreen/black.visible = 1
+		$CanvasLayer/js.visible = 1
+		play_sound(fnaf, 10)
+		await get_tree().create_timer(0.5, false, false, false).timeout
+		play_sound(fnaf, 10)
+		await get_tree().create_timer(0.5, false, false, false).timeout
+		play_sound(fnaf, 10)
+		await get_tree().create_timer(2, false, false, false).timeout
+		$CanvasLayer/js.visible = 0
+		lose()
+
 
 func day6_battery_leave():
 	$"map behind/out_left/p2/frank/outline".visible = 0

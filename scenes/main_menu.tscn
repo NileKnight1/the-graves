@@ -1195,7 +1195,6 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_a8gd2")
 theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
-text = "ammartube777@gmail.com"
 placeholder_text = "Email ..."
 
 [node name="password" type="LineEdit" parent="CanvasLayer/account" unique_id=1708202058]
@@ -1207,7 +1206,6 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_a8gd2")
 theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
-text = "123456"
 placeholder_text = "Password"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/account" unique_id=986410902]

@@ -344,12 +344,15 @@ func _on_save_pressed() -> void:
 
 	if name == "":
 		print("Name cannot be empty!")
+		enable_buttons()
 		return
 
 	var progress = await supabase.get_progress()
 
 	if progress == null:
 		print("No progress found!")
+		enable_buttons()
+		
 		return
 
 	var last_shift_won = int(progress["last_shift_won"])
@@ -388,32 +391,47 @@ func logged():
 
 
 ### Achievements
-# go and down loadder 10 times in 1 second
 # finish the game (1:7) + one complete
 # Reporter (good reports 10:20:50)
-# Perfect shifts (no wrong reports)
-# don't leave anomalies
-# finish shift with -1 max_bad_time
-# fsat report (report at less than 2 sec)
 # fast reporter (report 5:10:20) less than 5 sec
 # reapirer (repair 5:10:20)
-# repair each camera in one game
 # report (5:10:20) with generator sabotaged
-# door hand anomaly
 
 var achievements = [
 	{"id"= "no_anomalies_left", "tier"= 2, "done"= 0, "description"= "Win a shift without leaving an active anomaly."},
 	{"id"= "door_hand", "tier"=4 , "done"=0 , "description"= "I see you."},
-	{"id"= "perfect_reporter", "tier"=4 , "done"=0 , "description"= "I see you."},
+	{"id"= "perfect_reporter", "tier"=2 , "done"=0 , "description"= "Complete a shift without any wrong report."},
+	{"id"= "all_cameras", "tier"=4 , "done"=0 , "description"= ""},
+	{"id"= "time_shifter", "tier"=4 , "done"=0 , "description"= "What's time now?"},
+	{"id"= "fast_report", "tier"=4 , "done"=0 , "description"= ""},
+	{"id"= "phew", "tier"=4 , "done"=0 , "description"= ""},
+	{"id"= "clean_sheet", "tier"=2 , "done"=0 , "description"= "Win a shift with no anomalies left."},
+	{"id"= "stop_playing", "tier"=4 , "done"=0 , "description"= ""},
+	{"id"= "shift1", "tier"=1 , "done"=0 , "description"= ""},
+	{"id"= "shift2", "tier"=1 , "done"=0 , "description"= ""},
+	{"id"= "shift3", "tier"=1 , "done"=0 , "description"= ""},
+	{"id"= "shift4", "tier"=1 , "done"=0 , "description"= ""},
+	{"id"= "shift5", "tier"=1 , "done"=0 , "description"= ""},
+	{"id"= "shift6", "tier"=1 , "done"=0 , "description"= ""},
+	{"id"= "shift7", "tier"=1 , "done"=0 , "description"= ""},
 	
 	
-	#{"id"= "", "tier"= , "done"= , "description"= ""},
-	#{"id"= "", "tier"= , "done"= , "description"= ""},
+	#{"id"= "", "tier"= , "done"=0 , "description"= ""},
+	#{"id"= "", "tier"= , "done"=0 , "description"= ""},
 	
 ]
 
 var secret_achievements = [
 	{"id"= "door_hand", "description"= "Report the door hand anomaly."},
+	{"id"= "all_cameras", "description"= "Repair each camera in a single shift."},
+	{"id"= "time_shifter", "description"= "Meet the timeshifter once and speak with him."},
+	{"id"= "fast_report", "description"= "Report an anomaly in less that 2 seconds."},
+	{"id"= "phew", "description"= "Win a shift with only 1 single point left on loss."},
+	{"id"= "stop_playing", "tier"=4 , "done"=0 , "description"= "Go ladder up and down"},
+	
+	
+	{"id"= "", "description"= ""},
+	
 ]
 
 func refresh_achievements():

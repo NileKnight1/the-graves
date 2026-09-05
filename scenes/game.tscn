@@ -759,6 +759,9 @@ corner_radius_top_right = 60
 corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxtfn"]
+size = Vector2(195, 282)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgl2t"]
 bg_color = Color(0.10980392, 0.16470589, 0, 1)
 
@@ -4489,7 +4492,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-723, -40)
+position = Vector2(-2594, -40)
 collision_layer = 5
 collision_mask = 5
 
@@ -4582,6 +4585,12 @@ position = Vector2(3533, -26)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("10_sgl2t")
+
+[node name="Area2D" type="Area2D" parent="anomalies/frank" unique_id=1303699592]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anomalies/frank/Area2D" unique_id=1114097963]
+position = Vector2(22.5, -49)
+shape = SubResource("RectangleShape2D_gxtfn")
 
 [node name="robber" parent="anomalies" unique_id=932835127 instance=ExtResource("3_lbhrr")]
 visible = false
@@ -9312,6 +9321,7 @@ one_shot = true
 
 [node name="ringtone" type="AudioStreamPlayer" parent="sfx" unique_id=1353244250]
 stream = ExtResource("10_vtaks")
+volume_db = -80.0
 parameters/looping = true
 
 [node name="dia" type="AudioStreamPlayer" parent="sfx" unique_id=590644922]
@@ -9407,6 +9417,7 @@ texture = ExtResource("19_264po")
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n9" to="." method="_on_antenna_fix_num9_pressed"]
 [connection signal="pressed" from="map behind/room/antenna/fix/nums/n10" to="." method="_on_antenna_fix_num10_pressed"]
 [connection signal="pressed" from="player/cam_fix/but" to="." method="_on_cam_fix_pressed"]
+[connection signal="body_entered" from="anomalies/frank/Area2D" to="." method="_on_frank_body_entered"]
 [connection signal="body_entered" from="areas/ps1" to="." method="_on_ps_1_body_entered"]
 [connection signal="body_exited" from="areas/ps1" to="." method="_on_ps_1_body_exited"]
 [connection signal="body_entered" from="areas/ps2" to="." method="_on_ps_2_body_entered"]

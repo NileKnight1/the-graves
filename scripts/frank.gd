@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var anomaly = 1
 var destination = Vector2(0, 0)
-var speed = 100
+var speed = 250
 var move = 0
 var target_player = 1
 var player
