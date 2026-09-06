@@ -4493,7 +4493,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-395, -40)
+position = Vector2(-2475, -40)
 collision_layer = 5
 collision_mask = 5
 
@@ -6639,6 +6639,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="time" type="Label" parent="CanvasLayer/gui" unique_id=297290087]
+visible = false
 layout_direction = 2
 layout_mode = 0
 offset_left = 522.0
@@ -6667,6 +6668,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="shift" type="Label" parent="CanvasLayer/gui" unique_id=2086180496]
+visible = false
 layout_direction = 2
 layout_mode = 0
 offset_left = 49.0
@@ -6696,6 +6698,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="danger" type="Label" parent="CanvasLayer/gui" unique_id=1023276724]
+visible = false
 layout_direction = 2
 layout_mode = 0
 offset_left = 973.0
@@ -6710,6 +6713,7 @@ text = "Danger"
 horizontal_alignment = 3
 
 [node name="reports" type="Label" parent="CanvasLayer/gui" unique_id=1040645522]
+visible = false
 layout_direction = 2
 layout_mode = 0
 offset_left = 813.0
@@ -9304,7 +9308,6 @@ one_shot = true
 
 [node name="ringtone" type="AudioStreamPlayer" parent="sfx" unique_id=1353244250]
 stream = ExtResource("10_vtaks")
-volume_db = -80.0
 parameters/looping = true
 
 [node name="dia" type="AudioStreamPlayer" parent="sfx" unique_id=590644922]

@@ -70,11 +70,28 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 	global.player_name = new_text
 
 func _on_o_2_pressed() -> void:
+	disable_buttons()
+	if loggedin:
+		play_sound(click_menu)
+		global.temp_reset()
+		await loading()
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
+	else:
+		$CanvasLayer/msg.visible = 1
+		
+	
+	
+
+
+func _on_play_pressed() -> void:
 	play_sound(click_menu)
 	global.temp_reset()
 	await loading()
-	
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+func _on_cancel_pressed() -> void:
+	$CanvasLayer/msg.visible = 0
+	enable_buttons()
+
 
 func _on_continue_pressed() -> void:
 	play_sound(click_menu)
@@ -273,7 +290,7 @@ func _on_signup_pressed() -> void:
 	elif code == 400:
 		$CanvasLayer/account/feedback.text = tr("Please enter a valid email.")
 	elif code == 200 or code == 201:
-		$CanvasLayer/account/feedback.text = tr("Check your email!")
+		$CanvasLayer/account/feedback.text = tr("Confirm mail then sign in.")
 	elif code == 429:
 		$CanvasLayer/account/feedback.text = tr("Try again later.")
 	else:
@@ -289,6 +306,7 @@ func _on_login_pressed() -> void:
 
 	if code == 200:
 		$CanvasLayer/account/feedback.text = tr("Login successful!")
+		loggedin = 1
 	else:
 		$CanvasLayer/account/feedback.text = tr("Wrong email or password.")
 		
@@ -301,7 +319,8 @@ func _on_login_pressed() -> void:
 	
 	play_sound(selected)
 	enable_buttons()
-	logged()
+	
+	#logged()
 	
 	#
 	#if global.loggedin:
@@ -324,15 +343,18 @@ func disable_buttons():
 func enable_buttons():
 	if global.shift != 1:
 		$CanvasLayer/buttons/continue.disabled = 0
+	if loggedin:
+		$CanvasLayer/account/player.editable = 1
+		$CanvasLayer/account/savename.disabled = 0
+		
 	$CanvasLayer/buttons/newgame.disabled = 0
 	$CanvasLayer/buttons/settings.disabled = 0
 	$CanvasLayer/buttons/scores.disabled = 0
-	$CanvasLayer/buttons/achievments.disabled = 0
+	#$CanvasLayer/buttons/achievments.disabled = 0
 	$CanvasLayer/buttons/quit.disabled = 0
-	$CanvasLayer/account/savename.disabled = 0
 	$CanvasLayer/account/HBoxContainer/signup.disabled = 0
 	$CanvasLayer/account/HBoxContainer/login.disabled = 0
-	$CanvasLayer/account/player.editable = 1
+
 	$CanvasLayer/account/mail.editable = 1
 	$CanvasLayer/account/password.editable = 1
 

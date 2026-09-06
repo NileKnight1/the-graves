@@ -297,7 +297,7 @@ func _ready() -> void:
 	#print(p1_anomalies.find($anomalies/anomaly))
 	print(tr("d3c1s5"))
 	
-	developer()
+	#developer()
 	translation()
 	day_starters()
 	tasks()
