@@ -26,6 +26,10 @@ func _ready() -> void:
 	
 	if global.shift != 1:
 		$CanvasLayer/buttons/continue.disabled = 0
+		
+	if global.loggedin:
+		loggedin = 1
+		enable_buttons()
 	
 	load_shift(1)
 
@@ -71,7 +75,6 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 
 func _on_o_2_pressed() -> void:
 	disable_buttons()
-	
 	if !$CanvasLayer/buttons/continue.disabled:
 		$CanvasLayer/msg2.visible = 1
 	elif loggedin:
@@ -81,7 +84,6 @@ func _on_o_2_pressed() -> void:
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
 	else:
 		$CanvasLayer/msg.visible = 1
-
 
 func _on_play_pressed() -> void:
 	play_sound(click_menu)
@@ -313,6 +315,7 @@ func _on_login_pressed() -> void:
 	if code == 200:
 		$CanvasLayer/account/feedback.text = tr("Login successful!")
 		loggedin = 1
+		global.loggedin = 1
 	else:
 		$CanvasLayer/account/feedback.text = tr("Wrong email or password.")
 		
