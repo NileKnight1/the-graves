@@ -418,9 +418,9 @@ var achievements = [
 ]
 
 var acc_achievements = [
-	{"id"= "good_reporter", "description"= "Report anomalies.", "value"= global.total_good_reports, "current"= 2, "levels"= [15,30,50,100], "tiers"= [1,2,2,3]},
-	{"id"= "fast_reporter", "description"= "Report anomalies withing 5 seconds.", "value"= global.total_fast_reports,  "current"= 2, "levels"= [5,15,25,35], "tiers"= [2,2,3,3]},
-	{"id"= "blind_reporter", "description"= "Report anomalies when generator is shut.", "value"= global.total_no_generator_reports, "current"= 3, "levels"= [5,15,25,35], "tiers"= [2,2,3,3]},
+	{"id"= "good_reporter", "description"= "Report anomalies.", "value"= global.total_good_reports, "current"= 0, "levels"= [15,30,50,100], "tiers"= [1,2,2,3]},
+	{"id"= "fast_reporter", "description"= "Report anomalies withing 5 seconds.", "value"= global.total_fast_reports,  "current"= 0, "levels"= [5,15,25,35], "tiers"= [2,2,3,3]},
+	{"id"= "blind_reporter", "description"= "Report anomalies when generator is shut.", "value"= global.total_no_generator_reports, "current"= 0, "levels"= [5,15,25,35], "tiers"= [2,2,3,3]},
 	{"id"= "tech_man", "description"= "Fix sabotages.", "value"= global.total_sabotages_fixed, "current"= 0, "levels"= [15,25,35,50], "tiers"= [1,2,2,3]},
 	
 ]

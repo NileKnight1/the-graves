@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://cie144tqxiphy" path="res://scripts/frank.gd" id="10_sgl2t"]
 [ext_resource type="AudioStream" uid="uid://mytxcdg0yh6f" path="res://audio/ringtone.mp3" id="10_vtaks"]
 [ext_resource type="AudioStream" uid="uid://dgeubm3gi5is4" path="res://audio/dialogue.mp3" id="11_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://loibbbh810sx" path="res://scenes/tech.tscn" id="11_twgab"]
 [ext_resource type="AudioStream" uid="uid://2xs1l0vulvmj" path="res://audio/radio.mp3" id="12_dinhu"]
 [ext_resource type="VideoStream" uid="uid://d0ng2x86780y7" path="res://assets/flicker.ogv" id="13_e1j6l"]
 [ext_resource type="Shader" uid="uid://bjgqtqhyfbet8" path="res://scripts/video.gdshader" id="14_bhx41"]
@@ -4574,12 +4575,6 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("10_pl11u")
 
-[node name="tech" parent="anomalies" unique_id=1494754720 instance=ExtResource("3_lbhrr")]
-position = Vector2(-3692, -26)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("10_pl11u")
-
 [node name="frank" parent="anomalies" unique_id=456403309 instance=ExtResource("3_lbhrr")]
 position = Vector2(3533, -26)
 collision_layer = 0
@@ -4605,6 +4600,9 @@ position = Vector2(448, -584)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("10_sgl2t")
+
+[node name="tech" parent="anomalies" unique_id=1833789352 instance=ExtResource("11_twgab")]
+position = Vector2(-3692, -24)
 
 [node name="map above" type="Control" parent="." unique_id=385126786]
 layout_direction = 2

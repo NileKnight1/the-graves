@@ -1078,8 +1078,6 @@ func _on_spawn_timeout() -> void:
 	apply_anomaly_event()
 	$timers/spawn.wait_time = randi_range(min_spawn_time, max_spawn_time)
 	$timers/spawn.start()
-	
-
 
 func spawn():
 	#print("spawn")
@@ -1293,6 +1291,9 @@ func clear_anomaly_event(area):
 		wrong_report_penalty()
 		subtitle("wrong_report", 0.6)
 	else:
+		global.total_good_reports += 1
+		if !generator_working:
+			global.total_no_generator_reports += 1
 		play_sound(correct)
 		subtitle("right_report", 0.6)
 	wrong_report = 1
@@ -1553,6 +1554,7 @@ func generator_on():
 func generator_fixed():
 	play_sound(fixed)
 	sabotages_fixed += 1
+	global.total_sabotages_fixed += 1
 	
 	cam_current = 1
 	cam_fixed(1)
@@ -1700,6 +1702,7 @@ func antenna_sabo():
 
 func antenna_fixed():
 	sabotages_fixed += 1
+	global.total_sabotages_fixed += 1
 	play_sound(fixed)
 	$sfx/fixing.stop()
 	antenna_working = 1
@@ -1924,6 +1927,7 @@ func cam_sabo(num, silent = 0):
 
 func cam_fixed(silent = 0):
 	if !silent:
+		global.total_sabotages_fixed += 1
 		sabotages_fixed += 1
 	play_sound(fixed)
 	cam_prog_time = 0
@@ -2882,8 +2886,12 @@ func day6_time():
 		print("im here")
 	elif shift_time == 10: #edit
 		var temp = randi_range(0,1)
-		if temp: day6_tech = "bad"
-		else: day6_tech = "good"
+		if temp: 
+			day6_tech = "bad"
+			$tech.good = 0
+		else: 
+			day6_tech = "good"
+			$tech.good = 1
 		print(day6_tech)
 		day6_tech_appear()
 	elif shift_time == 60:
@@ -2985,8 +2993,12 @@ func generator_tech_fix():
 
 func day6_next_tech():
 	if attempt == 2: return
-	if day6_tech == "good": day6_tech = "bad"
-	else: day6_tech = "good"
+	if day6_tech == "good": 
+		day6_tech = "bad"
+		$tech.good = 0
+	else: 
+		day6_tech = "good"
+		$tech.good = 1
 	
 	attempt += 1
 	await get_tree().create_timer(20, false, false, false).timeout #edit
