@@ -4,7 +4,7 @@ var anomaly = 0
 var destination = Vector2(0, 0)
 var speed = 100
 var move = 0
-var good = 0
+var good = 1
 
 func _process(delta: float) -> void:
 	if !move:

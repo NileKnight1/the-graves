@@ -12,12 +12,14 @@
 [ext_resource type="FontFile" uid="uid://deescy0invitk" path="res://assets/HennyPenny-Regular.ttf" id="6_0tnpc"]
 [ext_resource type="FontFile" uid="uid://cim17fdmt5ywc" path="res://assets/Signika-Bold.ttf" id="6_p57ef"]
 [ext_resource type="StyleBox" uid="uid://xanwnstf0v21" path="res://new_style_box_flat.tres" id="8_1kice"]
+[ext_resource type="PackedScene" uid="uid://by677rpqnvbej" path="res://scenes/stranger.tscn" id="8_02fa5"]
 [ext_resource type="Script" uid="uid://dc6hvb8b843gw" path="res://scripts/creature.gd" id="10_pl11u"]
 [ext_resource type="Script" uid="uid://cie144tqxiphy" path="res://scripts/frank.gd" id="10_sgl2t"]
 [ext_resource type="AudioStream" uid="uid://mytxcdg0yh6f" path="res://audio/ringtone.mp3" id="10_vtaks"]
 [ext_resource type="AudioStream" uid="uid://dgeubm3gi5is4" path="res://audio/dialogue.mp3" id="11_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://loibbbh810sx" path="res://scenes/tech.tscn" id="11_twgab"]
 [ext_resource type="AudioStream" uid="uid://2xs1l0vulvmj" path="res://audio/radio.mp3" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://bu5ul3n05ce1m" path="res://scenes/frank.tscn" id="12_nepv3"]
 [ext_resource type="VideoStream" uid="uid://d0ng2x86780y7" path="res://assets/flicker.ogv" id="13_e1j6l"]
 [ext_resource type="Shader" uid="uid://bjgqtqhyfbet8" path="res://scripts/video.gdshader" id="14_bhx41"]
 [ext_resource type="AudioStream" uid="uid://doi0hb801udh0" path="res://audio/night.mp3" id="14_trtic"]
@@ -4550,11 +4552,15 @@ rotation_smoothing_enabled = true
 
 [node name="anomalies" type="Node2D" parent="." unique_id=1338437649]
 
-[node name="anomaly" parent="anomalies" unique_id=312059141 instance=ExtResource("3_lbhrr")]
+[node name="anomaly2" parent="anomalies" unique_id=312059141 instance=ExtResource("8_02fa5")]
+visible = false
+position = Vector2(-52, -26)
+
+[node name="anomaly" parent="anomalies" unique_id=1950428374 instance=ExtResource("3_lbhrr")]
 visible = false
 position = Vector2(-326, 358)
 
-[node name="anomaly2" parent="anomalies" unique_id=1260922437 instance=ExtResource("3_lbhrr")]
+[node name="anomaly2s" parent="anomalies" unique_id=1260922437 instance=ExtResource("3_lbhrr")]
 visible = false
 position = Vector2(-52, -26)
 collision_layer = 0
@@ -4575,24 +4581,24 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("10_pl11u")
 
-[node name="frank" parent="anomalies" unique_id=456403309 instance=ExtResource("3_lbhrr")]
+[node name="frankx" parent="anomalies" unique_id=456403309 instance=ExtResource("3_lbhrr")]
+visible = false
 position = Vector2(3533, -26)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("10_sgl2t")
 
+[node name="frank" parent="anomalies" unique_id=1061656339 instance=ExtResource("12_nepv3")]
+position = Vector2(3526, -43)
+scale = Vector2(1.4146106, 1.4146106)
+
 [node name="Area2D" type="Area2D" parent="anomalies/frank" unique_id=1303699592]
+position = Vector2(4.948242, 9.8967285)
+scale = Vector2(0.7069083, 0.7069083)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="anomalies/frank/Area2D" unique_id=1114097963]
 position = Vector2(22.5, -49)
 shape = SubResource("RectangleShape2D_gxtfn")
-
-[node name="robber" parent="anomalies" unique_id=932835127 instance=ExtResource("3_lbhrr")]
-visible = false
-position = Vector2(3073, -26)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("10_sgl2t")
 
 [node name="timeshifter" parent="anomalies" unique_id=334977492 instance=ExtResource("3_lbhrr")]
 visible = false
@@ -4600,6 +4606,9 @@ position = Vector2(448, -584)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("10_sgl2t")
+
+[node name="robber" parent="anomalies" unique_id=2051502778 instance=ExtResource("11_twgab")]
+position = Vector2(3533, -22)
 
 [node name="tech" parent="anomalies" unique_id=1833789352 instance=ExtResource("11_twgab")]
 position = Vector2(-3692, -24)
