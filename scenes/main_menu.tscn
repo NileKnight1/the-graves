@@ -1334,6 +1334,86 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
 text = "Cancel"
 icon_alignment = 1
 
+[node name="msg2" type="Control" parent="CanvasLayer" unique_id=532291291]
+process_mode = 3
+visible = false
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -163.0
+offset_top = 11.0
+offset_right = -123.0
+offset_bottom = 51.0
+mouse_filter = 2
+
+[node name="black" type="Panel" parent="CanvasLayer/msg2" unique_id=1895636178]
+layout_direction = 2
+layout_mode = 0
+offset_left = 521.9764
+offset_top = 234.0
+offset_right = 1098.0
+offset_bottom = 413.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="title" type="Label" parent="CanvasLayer/msg2" unique_id=1664273779]
+layout_direction = 2
+layout_mode = 0
+offset_left = 596.0
+offset_top = 233.0
+offset_right = 1007.0
+offset_bottom = 294.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("7_tbmy8")
+theme_override_font_sizes/font_size = 36
+text = "Log in first to save progress"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play" type="Button" parent="CanvasLayer/msg2" unique_id=1353476507]
+custom_minimum_size = Vector2(115, 55)
+layout_direction = 2
+layout_mode = 0
+offset_left = 636.0
+offset_top = 312.0
+offset_right = 751.0
+offset_bottom = 367.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "Play anyway"
+icon_alignment = 1
+
+[node name="cancel" type="Button" parent="CanvasLayer/msg2" unique_id=1008846972]
+custom_minimum_size = Vector2(115, 55)
+layout_direction = 2
+layout_mode = 0
+offset_left = 860.0
+offset_top = 312.0
+offset_right = 975.0
+offset_bottom = 367.0
+theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
+theme_override_fonts/font = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "Cancel"
+icon_alignment = 1
+
 [node name="black" type="Panel" parent="CanvasLayer" unique_id=328284058]
 visible = false
 layout_direction = 2
@@ -1382,3 +1462,5 @@ text = "Loading ..."
 [connection signal="pressed" from="CanvasLayer/account/HBoxContainer/login" to="." method="_on_login_pressed"]
 [connection signal="pressed" from="CanvasLayer/msg/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/msg/cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="CanvasLayer/msg2/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/msg2/cancel" to="." method="_on_cancel_pressed"]

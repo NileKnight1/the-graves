@@ -71,16 +71,16 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 
 func _on_o_2_pressed() -> void:
 	disable_buttons()
-	if loggedin:
+	
+	if !$CanvasLayer/buttons/continue.disabled:
+		$CanvasLayer/msg2.visible = 1
+	elif loggedin:
 		play_sound(click_menu)
 		global.temp_reset()
 		await loading()
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
 	else:
 		$CanvasLayer/msg.visible = 1
-		
-	
-	
 
 
 func _on_play_pressed() -> void:
@@ -197,7 +197,13 @@ func translation():
 	$CanvasLayer/account/HBoxContainer/signup.text = tr("signup")
 	$CanvasLayer/account/HBoxContainer/login.text = tr("login")
 	
-
+	$CanvasLayer/msg/title.text = tr("loginbeforeplay")
+	$CanvasLayer/msg/play.text = tr("playanyway")
+	$CanvasLayer/msg/cancel.text = tr("cancel")
+	
+	$CanvasLayer/msg2/title.text = tr("resetshift")
+	$CanvasLayer/msg2/play.text = tr("playanyway")
+	$CanvasLayer/msg2/cancel.text = tr("cancel")
 	
 	#$CanvasLayer/buttons/name.placeholder_text = tr("name") 
 
