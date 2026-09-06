@@ -3,6 +3,8 @@ var shift = 1
 var player_name = "Player"
 var loggedin = 0
 
+var agent_x = 1
+
 var day2creature_found = 0
 var day3creature_stayed = 0
 var day4creature_stayed = 0
@@ -27,7 +29,6 @@ var total_sabotages_fixed = 0
 # repair each camera in one game
 # report (5:10:20) with generator sabotaged
 # door hand anomaly
-
 
 func temp_reset():
 	shift = 1

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://uqhx0gpgbhih" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://dq36kbaqntmh0" path="res://assets/main.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://nw5e1jffel1i" path="res://assets/pink-daisy-flower-rose-hibiscus-flower-red-flower-horizontal-frame-watercolor-painting-hand-drawn-png.png" id="3_5dd4i"]
 [ext_resource type="FontFile" uid="uid://deescy0invitk" path="res://assets/HennyPenny-Regular.ttf" id="3_wu84c"]
 [ext_resource type="FontFile" uid="uid://b2lxvl8k8x5ww" path="res://assets/LibreBaskerville-Regular.ttf" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://bpdb1m8u84ame" path="res://assets/i8cGom.png" id="4_wu84c"]
@@ -216,6 +217,13 @@ offset_bottom = 752.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ln24")
 metadata/_edit_lock_ = true
+
+[node name="agent_x" type="Sprite2D" parent="CanvasLayer" unique_id=1923477795]
+visible = false
+modulate = Color(1, 1, 1, 0.29411766)
+position = Vector2(639.3828, 361)
+scale = Vector2(2.0571423, 2.0571427)
+texture = ExtResource("3_5dd4i")
 
 [node name="I8cGom" type="Sprite2D" parent="CanvasLayer" unique_id=1023838804]
 modulate = Color(1, 1, 1, 0.27058825)

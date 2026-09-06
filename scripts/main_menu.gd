@@ -2,13 +2,13 @@ extends Node2D
 
 var current_shift = 1
 var loggedin = 0
-
 var click_menu = preload("res://audio/buttonpress.mp3")
 var cam_on = preload("res://audio/cam_on.mp3")
 var load_sound = preload("res://audio/freesound_community-shield-recharging-107016.mp3")
 var game_start = preload("res://audio/start.mp3")
 var selected = preload("res://audio/ps5-selection-button.mp3")
 
+var agent_x = global.agent_x
 
 func play_sound(sound, vol = 0.0):
 	var temp = AudioStreamPlayer.new()
@@ -30,6 +30,9 @@ func _ready() -> void:
 	if global.loggedin:
 		loggedin = 1
 		enable_buttons()
+	
+	if agent_x:
+		agent_x_apply()
 	
 	load_shift(1)
 
@@ -547,5 +550,7 @@ func show_achievement(ach):
 		temp.get_node("tier").get_node("bg").add_theme_stylebox_override("panel", style_not_done)
 		
 
-
+func agent_x_apply():
+	$CanvasLayer/agent_x.visible = 1
+	$CanvasLayer/title.text = tr("agent_x_hello")
 #

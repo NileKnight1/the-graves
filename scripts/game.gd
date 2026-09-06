@@ -6,6 +6,9 @@ var player_name = global.player_name
 
 var shift = global.shift
 
+var agent_x = global.agent_x
+var agent_x_index = 1
+
 var computer_area = 0
 var computer_opened = 0
 var radio_area = 0
@@ -319,7 +322,7 @@ func _ready() -> void:
 	$player/Camera2D.rotation_smoothing_enabled = 1
 	
 	
-	await get_tree().create_timer(1).timeout
+	#await get_tree().create_timer(1).timeout
 	
 	phone_up()
 	
@@ -698,6 +701,8 @@ func _process(delta: float) -> void:
 		$"map above/cams".get_child(opened_cam-1).enabled = 1
 		#
 	if calling && Input.is_action_just_pressed("skip"):
+		if agent_x && shift == 1:
+			return
 		chat_msg += 1
 		$timers/skip_msg.start()
 		match_shift()
@@ -797,9 +802,64 @@ func _on_accept_call_pressed() -> void:
 	$CanvasLayer/phone/ringing.visible = 0
 	$CanvasLayer/phone/accepted.visible = 1
 	$timers/call_time.start()
-	$timers/skip_msg.start()
 	print("call_accepted")
-	match_shift()
+	
+	if agent_x && shift == 1 && call_index == 0:
+		if agent_x_index == 1:
+			await get_tree().create_timer(3, false, false, false).timeout
+			calling = 0
+			play_sound(hang_up)
+			$sfx/ringtone.play()
+			
+			$CanvasLayer/phone/ringing/accept.disabled = 0
+			$CanvasLayer/phone/ringing/decline.disabled = 0
+			$CanvasLayer/phone/accepted/decline.disabled = 0
+			
+			$CanvasLayer/phone/ringing.visible = 1
+			$CanvasLayer/phone/accepted.visible = 0
+			$CanvasLayer/phone/caller.text = tr("agent_x_caller")
+		elif agent_x_index == 2:
+			calling = 0
+			agent_x_call(shift1_agent_x_, day1_start)
+		
+		agent_x_index += 1
+	else:
+		$timers/skip_msg.start()
+		match_shift()
+
+var shift1_agent_x_ = [
+	["shift1_agent_x_msg1", 1.5],
+	["shift1_agent_x_msg2", 1.5],
+	["shift1_agent_x_msg3", 2.0],
+	["shift1_agent_x_msg4", 2.5],
+	["shift1_agent_x_msg5", 2.5],
+	["shift1_agent_x_msg6", 3.5],
+
+]
+
+func agent_x_call(chat, target):
+	if chat_msg == len(chat):
+		chat_msg = 0
+		call_index += 1
+		phone_down()
+		target.call()
+		return
+	print(chat[chat_msg][0])
+	var temp = tr(chat[chat_msg][0])
+	$CanvasLayer/gui/subtitles.text = temp
+	brief.insert(0, [tr("agent_x_caller"), chat[chat_msg][0]])
+	var temp_sec = randi_range(0, 17)
+	$sfx/dia.play(temp_sec)
+	$CanvasLayer/gui/subtitles.visible_ratio = 0
+	var tween = create_tween()
+	tween.tween_property($CanvasLayer/gui/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
+	await get_tree().create_timer(chat[chat_msg][1], false, false, false).timeout
+	$sfx/dia.stop()
+	
+	await get_tree().create_timer(chat[chat_msg][1]+2, false, false, false).timeout
+	chat_msg += 1
+	agent_x_call(shift1_agent_x_, day1_start)
+
 
 func _on_decline_call_pressed() -> void:
 	$timers/skip_msg.stop()
@@ -812,6 +872,8 @@ func _on_decline_call_pressed() -> void:
 	calling = 0
 	print("shift",shift)
 	print("call_index",call_index)
+	
+	
 	
 	match shift:
 		1:
@@ -2149,10 +2211,11 @@ func day_call(chat, target):
 	brief.insert(0, [chat[chat_msg][2], chat[chat_msg][0]])
 	#print(tr(chat[chat_msg][2]))
 	#print(tr(chat[chat_msg][0]))
-	#
-	$CanvasLayer/gui/subtitles.visible_ratio = 0
+	
+	
 	var temp_sec = randi_range(0, 17)
 	$sfx/dia.play(temp_sec)
+	$CanvasLayer/gui/subtitles.visible_ratio = 0
 	var tween = create_tween()
 	tween.tween_property($CanvasLayer/gui/subtitles, "visible_ratio", 1.0, chat[chat_msg][1])
 	
