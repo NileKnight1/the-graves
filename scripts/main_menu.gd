@@ -410,18 +410,18 @@ var achievements = [
 	{"id"= "shift6", "tier"=2 , "done"=0 , "description"= "", "acc" = 0},
 	{"id"= "busted", "tier"=3 , "done"=0 , "description"= "", "acc" = 0},
 	
-	{"id"= "good_reporter", "tier"=10 , "done"=0 , "description"= "", "acc" =1},
-	{"id"= "fast_reporter", "tier"=10 , "done"=0 , "description"= "", "acc" =1},
-	{"id"= "blind_reporter", "tier"=10 , "done"=0 , "description"= "", "acc" =1},
-	{"id"= "tech_man", "tier"=10 , "done"=0 , "description"= "", "acc" =1},
+	{"id"= "good_reporter", "tier"=1 , "done"=0 , "description"= "", "acc" =1},
+	{"id"= "fast_reporter", "tier"=2 , "done"=0 , "description"= "", "acc" =1},
+	{"id"= "blind_reporter", "tier"=2 , "done"=0 , "description"= "", "acc" =1},
+	{"id"= "tech_man", "tier"=1 , "done"=0 , "description"= "", "acc" =1},
 	#{"id"= "", "tier"= , "done"=0 , "description"= "", "acc" =0},
 ]
 
 var acc_achievements = [
-	{"id"= "good_reporter", "description"= "Report anomalies.", "current"= 0, "levels"= [15,30,50,100], "tiers"= [1,2,2,3]},
-	{"id"= "fast_reporter", "description"= "Report anomalies withing 5 seconds.", "current"= 0, "levels"= [5,15,25,35], "tiers"= [2,2,3,3]},
-	{"id"= "blind_reporter", "description"= "Report anomalies.", "current"= 0, "levels"= [5,15,25,35], "tiers"= [2,2,3,3]},
-	{"id"= "tech_man", "description"= "Fix sabotages.", "current"= 0, "levels"= [15,25,35,50], "tiers"= [1,2,2,3]},
+	{"id"= "good_reporter", "description"= "Report anomalies.", "value"= global.total_good_reports, "current"= 2, "levels"= [15,30,50,100], "tiers"= [1,2,2,3]},
+	{"id"= "fast_reporter", "description"= "Report anomalies withing 5 seconds.", "value"= global.total_fast_reports,  "current"= 2, "levels"= [5,15,25,35], "tiers"= [2,2,3,3]},
+	{"id"= "blind_reporter", "description"= "Report anomalies when generator is shut.", "value"= global.total_no_generator_reports, "current"= 3, "levels"= [5,15,25,35], "tiers"= [2,2,3,3]},
+	{"id"= "tech_man", "description"= "Fix sabotages.", "value"= global.total_sabotages_fixed, "current"= 0, "levels"= [15,25,35,50], "tiers"= [1,2,2,3]},
 	
 ]
 
@@ -434,7 +434,7 @@ var secret_achievements = [
 	{"id"= "stop_playing", "tier"=4 , "done"=0 , "description"= "Go ladder up and down"},
 	
 	
-	{"id"= "", "description"= ""},
+	#{"id"= "", "description"= ""},
 	
 ]
 
@@ -460,16 +460,25 @@ func refresh_achievements():
 		if i.name != "black" && i.name != "Control":
 			i.queue_free()
 	
+	for i in achievements:
+		if i["acc"] == 1:
+			for j in acc_achievements:
+				if j["id"] == i["id"]:
+					i["description"] = j["description"] + " " + str(j["value"]) + "/" + str(j["levels"][j["current"]])
+					if j["current"] != 0:
+						i["tier"] = j["tiers"][j["current"]-1]
+						i["done"] = 1
+		
+		
 	for j in range(5):
 		for i in achievements:
 			if i["done"] && j == 4-i["tier"]:
 				show_achievement(i)
 				#print(i["id"])
-	for i in achievements:
-		if i["tier"] == 10:
-			pass
-			#acc_achievements[""]
-			
+
+					
+				
+				
 	for j in range(5):
 		for i in achievements:
 			if !i["done"] && j == 4-i["tier"]:
