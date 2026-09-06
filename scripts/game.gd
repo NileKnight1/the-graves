@@ -290,7 +290,7 @@ func translation():
 
 
 var pc = 1
-var sabotages_fixed = 1
+var sabotages_fixed = 0
 
 func _ready() -> void:
 	#await get_tree().create_timer(1.0, false, false, false).timeout
@@ -1552,15 +1552,16 @@ func generator_on():
 	#await get_tree().create_timer(5.0, false, false, false).timeout
 func generator_fixed():
 	play_sound(fixed)
+	sabotages_fixed += 1
 	
 	cam_current = 1
-	cam_fixed()
+	cam_fixed(1)
 	cam_current = 2
-	cam_fixed()
+	cam_fixed(1)
 	cam_current = 3
-	cam_fixed()
+	cam_fixed(1)
 	cam_current = 4
-	cam_fixed()
+	cam_fixed(1)
 	
 	generator_working = 1
 	$"map behind/generator/on".visible = 1
@@ -1698,6 +1699,7 @@ func antenna_sabo():
 	
 
 func antenna_fixed():
+	sabotages_fixed += 1
 	play_sound(fixed)
 	$sfx/fixing.stop()
 	antenna_working = 1
@@ -1920,7 +1922,9 @@ func cam_sabo(num, silent = 0):
 	await get_tree().create_timer(3.0, false, false, false).timeout
 	subtitle("", 0)
 
-func cam_fixed():
+func cam_fixed(silent = 0):
+	if !silent:
+		sabotages_fixed += 1
 	play_sound(fixed)
 	cam_prog_time = 0
 	cam_working[cam_current-1] = 1

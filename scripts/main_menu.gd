@@ -391,33 +391,37 @@ func logged():
 
 
 ### Achievements
-# finish the game (1:7) + one complete
-# Reporter (good reports 10:20:50)
-# fast reporter (report 5:10:20) less than 5 sec
-# reapirer (repair 5:10:20)
-# report (5:10:20) with generator sabotaged
 
 var achievements = [
-	{"id"= "no_anomalies_left", "tier"= 2, "done"= 0, "description"= "Win a shift without leaving an active anomaly."},
-	{"id"= "door_hand", "tier"=4 , "done"=0 , "description"= "I see you."},
-	{"id"= "perfect_reporter", "tier"=2 , "done"=0 , "description"= "Complete a shift without any wrong report."},
-	{"id"= "all_cameras", "tier"=4 , "done"=0 , "description"= ""},
-	{"id"= "time_shifter", "tier"=4 , "done"=0 , "description"= "What's time now?"},
-	{"id"= "fast_report", "tier"=4 , "done"=0 , "description"= ""},
-	{"id"= "phew", "tier"=4 , "done"=0 , "description"= ""},
-	{"id"= "clean_sheet", "tier"=2 , "done"=0 , "description"= "Win a shift with no anomalies left."},
-	{"id"= "stop_playing", "tier"=4 , "done"=0 , "description"= ""},
-	{"id"= "shift1", "tier"=1 , "done"=0 , "description"= ""},
-	{"id"= "shift2", "tier"=1 , "done"=0 , "description"= ""},
-	{"id"= "shift3", "tier"=1 , "done"=0 , "description"= ""},
-	{"id"= "shift4", "tier"=1 , "done"=0 , "description"= ""},
-	{"id"= "shift5", "tier"=1 , "done"=0 , "description"= ""},
-	{"id"= "shift6", "tier"=1 , "done"=0 , "description"= ""},
-	{"id"= "shift7", "tier"=1 , "done"=0 , "description"= ""},
+	{"id"= "no_anomalies_left", "tier"= 2, "done"= 0, "description"= "Win a shift without leaving an active anomaly.", "acc" = 0},
+	{"id"= "door_hand", "tier"=4 , "done"=0 , "description"= "I see you.", "acc" = 0},
+	{"id"= "perfect_reporter", "tier"=2 , "done"=0 , "description"= "Complete a shift without any wrong report.", "acc" = 0},
+	{"id"= "all_cameras", "tier"=4 , "done"=0 , "description"= "", "acc" = 0},
+	{"id"= "time_shifter", "tier"=4 , "done"=0 , "description"= "What's time now?", "acc" = 0},
+	{"id"= "fast_report", "tier"=4 , "done"=0 , "description"= "", "acc" = 0},
+	{"id"= "phew", "tier"=4 , "done"=0 , "description"= "", "acc" = 0},
+	{"id"= "clean_sheet", "tier"=2 , "done"=0 , "description"= "Win a shift with no anomalies left.", "acc" = 0},
+	{"id"= "stop_playing", "tier"=4 , "done"=0 , "description"= "", "acc" = 0},
+	{"id"= "shift1", "tier"=1 , "done"=0 , "description"= "", "acc" = 0},
+	{"id"= "shift2", "tier"=1 , "done"=0 , "description"= "", "acc" = 0},
+	{"id"= "shift3", "tier"=1 , "done"=0 , "description"= "", "acc" = 0},
+	{"id"= "shift4", "tier"=2 , "done"=0 , "description"= "", "acc" = 0},
+	{"id"= "shift5", "tier"=2 , "done"=0 , "description"= "", "acc" = 0},
+	{"id"= "shift6", "tier"=2 , "done"=0 , "description"= "", "acc" = 0},
+	{"id"= "busted", "tier"=3 , "done"=0 , "description"= "", "acc" = 0},
 	
-	
-	#{"id"= "", "tier"= , "done"=0 , "description"= ""},
-	#{"id"= "", "tier"= , "done"=0 , "description"= ""},
+	{"id"= "good_reporter", "tier"=10 , "done"=0 , "description"= "", "acc" =1},
+	{"id"= "fast_reporter", "tier"=10 , "done"=0 , "description"= "", "acc" =1},
+	{"id"= "blind_reporter", "tier"=10 , "done"=0 , "description"= "", "acc" =1},
+	{"id"= "tech_man", "tier"=10 , "done"=0 , "description"= "", "acc" =1},
+	#{"id"= "", "tier"= , "done"=0 , "description"= "", "acc" =0},
+]
+
+var acc_achievements = [
+	{"id"= "good_reporter", "description"= "Report anomalies.", "current"= 0, "levels"= [15,30,50,100], "tiers"= [1,2,2,3]},
+	{"id"= "fast_reporter", "description"= "Report anomalies withing 5 seconds.", "current"= 0, "levels"= [5,15,25,35], "tiers"= [2,2,3,3]},
+	{"id"= "blind_reporter", "description"= "Report anomalies.", "current"= 0, "levels"= [5,15,25,35], "tiers"= [2,2,3,3]},
+	{"id"= "tech_man", "description"= "Fix sabotages.", "current"= 0, "levels"= [15,25,35,50], "tiers"= [1,2,2,3]},
 	
 ]
 
@@ -461,6 +465,11 @@ func refresh_achievements():
 			if i["done"] && j == 4-i["tier"]:
 				show_achievement(i)
 				#print(i["id"])
+	for i in achievements:
+		if i["tier"] == 10:
+			pass
+			#acc_achievements[""]
+			
 	for j in range(5):
 		for i in achievements:
 			if !i["done"] && j == 4-i["tier"]:
