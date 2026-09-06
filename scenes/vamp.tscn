@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://2cqrtwmeik7s"]
+
+[ext_resource type="Script" uid="uid://cie144tqxiphy" path="res://scripts/frank.gd" id="1_vr8nv"]
+[ext_resource type="Texture2D" uid="uid://dax3ft172o4nt" path="res://assets/vamp.png" id="2_0rd3w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nacbu"]
+height = 62.846367
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyva2"]
+atlas = ExtResource("2_0rd3w")
+region = Rect2(0, 0, 456, 547)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jqhj0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyva2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 16.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[node name="vampire" type="CharacterBody2D" unique_id=312059141]
+script = ExtResource("1_vr8nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592067596]
+position = Vector2(20.000002, -14)
+rotation = 3.1415927
+scale = Vector2(1.9094183, 1.9094183)
+shape = SubResource("CapsuleShape2D_nacbu")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1858876522]
+position = Vector2(19, -25)
+rotation = -1.5707964
+scale = Vector2(0.38833338, 0.3883334)
+sprite_frames = SubResource("SpriteFrames_jqhj0")
+animation = &"idle"
+autoplay = "idle"
+flip_v = true

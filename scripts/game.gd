@@ -297,7 +297,7 @@ func _ready() -> void:
 	#print(p1_anomalies.find($anomalies/anomaly))
 	print(tr("d3c1s5"))
 	
-	
+	developer()
 	translation()
 	day_starters()
 	tasks()
@@ -382,7 +382,7 @@ func shift_time_manager():
 			timeshifter_spawn()
 	if shift_time == 180:
 		vamp_spawn()
-	if shift_time == 200:
+	if shift_time == 280:
 		vamp_despawn()
 	match shift:
 		1: day1_time()
@@ -613,7 +613,7 @@ func _process(delta: float) -> void:
 	
 	match shift:
 		2:
-			if ps1: $anomalies/anomaly.visible = 0
+			if ps1: $anomalies/anomaly2.visible = 0
 
 	if Input.is_action_just_pressed("interact"):
 		if computer_area && !computer_opened && generator_working:
@@ -1601,7 +1601,7 @@ func _on_generator_body_entered(body: Node2D) -> void:
 		if !day3_visitor_safe: 
 			day3_visitor_appear()
 			print('day3_visitor_appear')
-		if !day4_creature1_safe: 
+		if !day4_visitor_safe: 
 			day4_creature_appear()
 			print('day4_visitor_appear')
 			
@@ -2430,7 +2430,7 @@ func day2_creature1():
 		await get_tree().create_timer(1.0, false, false, false).timeout
 		day2_creature1()
 		return
-	$anomalies/anomaly.visible = 1
+	$anomalies/anomaly2.visible = 1
 	day2creature1_appeared = 1
 	global.day2creature_found = 1
 	
@@ -2653,12 +2653,13 @@ func day4_start():
 	day4_visitor()
 	#sabo_time()
 
-var day4_creature1_safe = 1
+var day4_visitor_safe = 1
 var cam_sabo_creature_exist = 0
 
 func day4_visitor():
 	await get_tree().create_timer(3, false, false, false).timeout
 	generator_sabo()
+	day4_visitor_safe = 0 
 	if generator_area:
 		day4_creature_appear()
 
@@ -2731,6 +2732,7 @@ func day4_creature1_leave():
 	allow_move()
 	$timers/bad_time.paused = 0
 	subtitle("", 0)
+	call_index = 5
 
 func cam_sabo_creature(area):
 	await get_tree().create_timer(10, false, false, false).timeout
@@ -2888,10 +2890,10 @@ func day6_time():
 		var temp = randi_range(0,1)
 		if temp: 
 			day6_tech = "bad"
-			$tech.good = 0
+			$anomalies/tech.good = 0
 		else: 
 			day6_tech = "good"
-			$tech.good = 1
+			$anomalies/tech.good = 1
 		print(day6_tech)
 		day6_tech_appear()
 	elif shift_time == 60:
@@ -2995,10 +2997,10 @@ func day6_next_tech():
 	if attempt == 2: return
 	if day6_tech == "good": 
 		day6_tech = "bad"
-		$tech.good = 0
+		$anomalies/tech.good = 0
 	else: 
 		day6_tech = "good"
-		$tech.good = 1
+		$anomalies/tech.good = 1
 	
 	attempt += 1
 	await get_tree().create_timer(20, false, false, false).timeout #edit

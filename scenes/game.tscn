@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://chwnt2iey800b" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cfj564wppea61" path="res://scenes/temp_player.tscn" id="1_uwrxv"]
 [ext_resource type="VideoStream" uid="uid://cho7udnr6dowp" path="res://assets/27519-364430915.ogv" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://bgqrhww4gnhow" path="res://scenes/anomaly.tscn" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://chd4yw0eswb32" path="res://assets/progress-bar-frame.png" id="4_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://ctcmxmp2uqnw8" path="res://assets/grunge-paint-stripe-vector-brush-260nw-601672577-removebg-preview.png" id="4_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://cyqmhmc2lnv3i" path="res://assets/progress-bar-circle.png" id="5_e1j6l"]
@@ -13,9 +12,8 @@
 [ext_resource type="FontFile" uid="uid://cim17fdmt5ywc" path="res://assets/Signika-Bold.ttf" id="6_p57ef"]
 [ext_resource type="StyleBox" uid="uid://xanwnstf0v21" path="res://new_style_box_flat.tres" id="8_1kice"]
 [ext_resource type="PackedScene" uid="uid://by677rpqnvbej" path="res://scenes/stranger.tscn" id="8_02fa5"]
-[ext_resource type="Script" uid="uid://dc6hvb8b843gw" path="res://scripts/creature.gd" id="10_pl11u"]
-[ext_resource type="Script" uid="uid://cie144tqxiphy" path="res://scripts/frank.gd" id="10_sgl2t"]
 [ext_resource type="AudioStream" uid="uid://mytxcdg0yh6f" path="res://audio/ringtone.mp3" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://2cqrtwmeik7s" path="res://scenes/vamp.tscn" id="11_7025r"]
 [ext_resource type="AudioStream" uid="uid://dgeubm3gi5is4" path="res://audio/dialogue.mp3" id="11_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://loibbbh810sx" path="res://scenes/tech.tscn" id="11_twgab"]
 [ext_resource type="AudioStream" uid="uid://2xs1l0vulvmj" path="res://audio/radio.mp3" id="12_dinhu"]
@@ -4495,7 +4493,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=952241435 instance=ExtResource("1_uwrxv")]
-position = Vector2(-2594, -40)
+position = Vector2(-395, -40)
 collision_layer = 5
 collision_mask = 5
 
@@ -4554,43 +4552,22 @@ rotation_smoothing_enabled = true
 
 [node name="anomaly2" parent="anomalies" unique_id=312059141 instance=ExtResource("8_02fa5")]
 visible = false
-position = Vector2(-52, -26)
-
-[node name="anomaly" parent="anomalies" unique_id=1950428374 instance=ExtResource("3_lbhrr")]
-visible = false
-position = Vector2(-326, 358)
-
-[node name="anomaly2s" parent="anomalies" unique_id=1260922437 instance=ExtResource("3_lbhrr")]
-visible = false
-position = Vector2(-52, -26)
+position = Vector2(-52, -44)
+scale = Vector2(1.1099278, 1.1099278)
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("10_pl11u")
 
-[node name="anomaly3" parent="anomalies" unique_id=1729570609 instance=ExtResource("3_lbhrr")]
+[node name="vamp" parent="anomalies" unique_id=553155133 instance=ExtResource("11_7025r")]
 visible = false
-position = Vector2(-52, -26)
+position = Vector2(2093, -26)
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("10_pl11u")
-
-[node name="vamp" parent="anomalies" unique_id=260498244 instance=ExtResource("3_lbhrr")]
-visible = false
-position = Vector2(2190, -26)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("10_pl11u")
-
-[node name="frankx" parent="anomalies" unique_id=456403309 instance=ExtResource("3_lbhrr")]
-visible = false
-position = Vector2(3533, -26)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("10_sgl2t")
 
 [node name="frank" parent="anomalies" unique_id=1061656339 instance=ExtResource("12_nepv3")]
 position = Vector2(3526, -43)
 scale = Vector2(1.4146106, 1.4146106)
+collision_layer = 0
+collision_mask = 0
 
 [node name="Area2D" type="Area2D" parent="anomalies/frank" unique_id=1303699592]
 position = Vector2(4.948242, 9.8967285)
@@ -4600,18 +4577,17 @@ scale = Vector2(0.7069083, 0.7069083)
 position = Vector2(22.5, -49)
 shape = SubResource("RectangleShape2D_gxtfn")
 
-[node name="timeshifter" parent="anomalies" unique_id=334977492 instance=ExtResource("3_lbhrr")]
-visible = false
-position = Vector2(448, -584)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("10_sgl2t")
-
 [node name="robber" parent="anomalies" unique_id=2051502778 instance=ExtResource("11_twgab")]
 position = Vector2(3533, -22)
+scale = Vector2(1.1062185, 1.1062185)
+collision_layer = 0
+collision_mask = 0
 
 [node name="tech" parent="anomalies" unique_id=1833789352 instance=ExtResource("11_twgab")]
-position = Vector2(-3692, -24)
+position = Vector2(-3692, -33)
+scale = Vector2(1.1485701, 1.1485701)
+collision_layer = 0
+collision_mask = 0
 
 [node name="map above" type="Control" parent="." unique_id=385126786]
 layout_direction = 2
