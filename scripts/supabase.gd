@@ -474,3 +474,66 @@ func save_progress(player_name: String, last_shift_won: int):
 	response_code = result[1]
 
 	print("Leaderboard names updated: ", response_code)
+
+
+func submit_game(
+	result: String,
+	player_name: String,
+	shift: int,
+	max_danger: int,
+	anomalies_reported: int,
+	sabotages_fixed: int,
+	wrong_reports: int,
+	anomalies_left: int
+):
+	var http := HTTPRequest.new()
+	add_child(http)
+
+	http.request_completed.connect(_on_submit_completed.bind(http))
+
+	var data = {
+		"guest_id": "guest_" + str(randi()) + str(Time.get_ticks_msec()),
+		"player": player_name,
+		"result": result,
+		"shift": shift,
+		"max_danger": max_danger,
+		"anomalies_reported": anomalies_reported,
+		"sabotages_fixed": sabotages_fixed,
+		"wrong_reports": wrong_reports,
+		"anomalies_left": anomalies_left
+	}
+
+	var headers = [
+		"apikey: " + SUPABASE_KEY,
+		"Authorization: Bearer " + SUPABASE_KEY,
+		"Content-Type: application/json",
+		"Prefer: return=minimal"
+	]
+
+	var error = http.request(
+		SUPABASE_URL + "/rest/v1/game_sessions",
+		headers,
+		HTTPClient.METHOD_POST,
+		JSON.stringify(data)
+	)
+
+	if error != OK:
+		print("Failed to send request: ", error)
+	else:
+		print("Request sent to Supabase")
+
+
+func _on_submit_completed(
+	result: int,
+	response_code: int,
+	headers: PackedStringArray,
+	body: PackedByteArray,
+	http: HTTPRequest
+):
+	var response_text = body.get_string_from_utf8()
+
+	print("HTTP result: ", result)
+	print("HTTP status: ", response_code)
+	print("Response: ", response_text)
+
+	http.queue_free()

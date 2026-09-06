@@ -319,9 +319,13 @@ func _ready() -> void:
 	$player/Camera2D.rotation_smoothing_enabled = 1
 	
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
 	
 	phone_up()
+	
+	#await get_tree().create_timer(10).timeout
+	#lose()
+	#day_end()
 	
 	#subtitle(10, 1.0)
 	#newspaper_pages_refresh()
@@ -1320,11 +1324,23 @@ func wrong_report_penalty():
 		lose()
 
 func lose():
+
+	
 	$timers/spawn.stop()
 	$timers/bad_time.stop()
 	$CanvasLayer/overscreen/black.visible = 1
 	$CanvasLayer/end_stats/label.visible = 1
 	$CanvasLayer/end_stats/label.text = tr("lose")
+	await supabase.submit_game(
+		"lose",
+		player_name,
+		shift,
+		bad_time,
+		right_reports_conut,
+		sabotages_fixed,
+		wrong_reports_conut,
+		anomaly_events_count
+	)
 	await get_tree().create_timer(3.0, false, false, false).timeout
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
@@ -2216,6 +2232,16 @@ func day_end():
 	#tween.tween_property($CanvasLayer/overscreen/black, "modulate:a", 1.0 , 1.4)
 	await get_tree().create_timer(5.0, false, false, false).timeout
 	
+	await supabase.submit_game(
+		"win",
+		player_name,
+		shift,
+		bad_time,
+		right_reports_conut,
+		sabotages_fixed,
+		wrong_reports_conut,
+		anomaly_events_count
+	)
 	
 	await supabase.submit_shift_score(
 		shift,
