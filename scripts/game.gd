@@ -413,6 +413,7 @@ func shift_time_manager():
 func day_starters():
 	match shift:
 		2: day2_starters()
+		5: day5_starters()
 		6: day6_starters()
 		7: day7_starters()
 		
@@ -952,8 +953,10 @@ func shift_end():
 	$timers/bad_time.stop()
 	$sfx/night.stop()
 	$sfx/morning.play()
-	$"map behind/out_left/bg/sky2".visible = 1
-	$"map behind/out_right/bg/Panel3".visible = 1
+	$"map behind/left bound/redmoon"
+	$"map behind/left bound/morning".visible = 1
+	#$"map behind/out_left/bg/sky2".visible = 1
+	#$"map behind/out_right/bg/Panel3".visible = 1
 	$lights/left.visible = 0
 	$lights/right.visible = 0
 	
@@ -2954,6 +2957,9 @@ func day5_time():
 		set_shift_values(8, 14)
 	
 
+func day5_starters():
+	$"map behind/left bound/redmoon".visible = 1
+
 func day5_start():
 	shift_start()
 	sabo_time()
@@ -3817,6 +3823,7 @@ func _on_brief_pressed() -> void:
 # Red Moon Night
 
 func day7_starters():
+	$"map behind/left bound/redmoon".visible = 1
 	$CanvasLayer/news/day7.visible = 1
 	$CanvasLayer/news/pages.visible = 0
 	$CanvasLayer/news/buttons.visible = 0

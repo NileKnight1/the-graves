@@ -43,6 +43,12 @@ distance = 6.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
 bg_color = Color(0.015686275, 0.05490196, 0.11372549, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fiuy"]
+bg_color = Color(0.1764706, 0.039215688, 0.019607844, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fikvi"]
+bg_color = Color(0.49019608, 0.29411766, 0.12941177, 1)
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bt5mj"]
 a = Vector2(522, -535)
 b = Vector2(-574, -534)
@@ -1338,7 +1344,26 @@ offset_bottom = -1150.275
 scale = Vector2(38.873165, 8.967383)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
-metadata/_edit_lock_ = true
+
+[node name="redmoon" type="Panel" parent="map behind/left bound" unique_id=1406632660]
+visible = false
+offset_left = -3643.0
+offset_top = -1289.0
+offset_right = -3458.9912
+offset_bottom = -1150.275
+scale = Vector2(38.873165, 8.967383)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1fiuy")
+
+[node name="morning" type="Panel" parent="map behind/left bound" unique_id=743476526]
+visible = false
+offset_left = -3643.0
+offset_top = -1289.0
+offset_right = -3458.9912
+offset_bottom = -1150.275
+scale = Vector2(38.873165, 8.967383)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fikvi")
 
 [node name="right bound" type="StaticBody2D" parent="map behind" unique_id=2129267498]
 position = Vector2(6174, 290)
@@ -3713,15 +3738,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7itva")
 [node name="out_right" type="Node2D" parent="map behind" unique_id=1672557119]
 
 [node name="bg" type="Node2D" parent="map behind/out_right" unique_id=1187041632]
-
-[node name="Panel" type="Panel" parent="map behind/out_right/bg" unique_id=136629081]
-offset_left = 501.0
-offset_top = -520.0
-offset_right = 578.6114
-offset_bottom = -466.24963
-scale = Vector2(38.873165, 8.967383)
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
 
 [node name="Panel3" type="Panel" parent="map behind/out_right/bg" unique_id=831023181]
 visible = false
