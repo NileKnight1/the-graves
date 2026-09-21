@@ -1,9 +1,10 @@
 extends Node
 var shift = 1
+var max_shift = 1
 var player_name = "Player"
 var loggedin = 0
 
-var agent_x = 1
+var agent_x = 0
 
 var day2creature_found = 0
 var day3creature_stayed = 0
@@ -15,6 +16,16 @@ var total_fast_reports = 0
 var total_no_generator_reports = 0
 var total_wrong_reports = 0
 var total_sabotages_fixed = 0
+
+var no_anomalies_left = 0
+var door_hand = 0
+var perfect_reporter = 0
+var all_cameras = 0
+var time_shifter = 0
+var fast_report = 0
+var phew = 0
+var clean_sheet = 0
+
 
 ### Achievements
 # go and down loadder 10 times in 1 second

@@ -8,7 +8,7 @@ var load_sound = preload("res://audio/freesound_community-shield-recharging-1070
 var game_start = preload("res://audio/start.mp3")
 var selected = preload("res://audio/ps5-selection-button.mp3")
 
-var agent_x = global.agent_x
+#var agent_x = global.agent_x
 
 func play_sound(sound, vol = 0.0):
 	var temp = AudioStreamPlayer.new()
@@ -31,7 +31,7 @@ func _ready() -> void:
 		loggedin = 1
 		enable_buttons()
 	
-	if agent_x:
+	if global.agent_x:
 		agent_x_apply()
 	
 	load_shift(1)
@@ -330,10 +330,12 @@ func _on_login_pressed() -> void:
 		$CanvasLayer/buttons/continue.disabled = 0
 	
 	play_sound(selected)
+	if global.agent_x:
+		agent_x_apply()
+	
 	enable_buttons()
 	
-	#logged()
-	
+	#logged()ي
 	#
 	#if global.loggedin:
 		#logged()
@@ -425,6 +427,32 @@ func logged():
 
 
 ### Achievements
+func apply_achievements():
+	
+	if global.max_shift > 2:
+		achievements[9]["done"] = 1
+	if global.max_shift > 3:
+		achievements[10]["done"] = 1
+	if global.max_shift > 4:
+		achievements[11]["done"] = 1
+	if global.max_shift > 5:
+		achievements[12]["done"] = 1
+	if global.max_shift > 6:
+		achievements[13]["done"] = 1
+	if global.max_shift > 7:
+		achievements[14]["done"] = 1
+		
+	achievements[0]["done"] = global.no_anomalies_left
+	achievements[1]["done"] = global.door_hand
+	achievements[2]["done"] = global.perfect_reporter
+	achievements[3]["done"] = global.all_cameras
+	achievements[4]["done"] = global.time_shifter
+	achievements[5]["done"] = global.fast_report
+	achievements[6]["done"] = global.phew
+	achievements[7]["done"] = global.clean_sheet
+	
+	
+
 
 var achievements = [
 	{"id"= "no_anomalies_left", "tier"= 2, "done"= 0, "description"= "Win a shift without leaving an active anomaly.", "acc" = 0},
@@ -498,7 +526,20 @@ func refresh_achievements():
 		if i["acc"] == 1:
 			for j in acc_achievements:
 				if j["id"] == i["id"]:
-					i["description"] = j["description"] + " " + str(j["value"]) + "/" + str(j["levels"][j["current"]])
+					if j["value"] >= j["levels"][0]:
+						j["current"] = 1
+					if j["value"] >= j["levels"][1]:
+						j["current"] = 2
+					if j["value"] >= j["levels"][2]:
+						j["current"] = 3
+					if j["value"] >= j["levels"][2]:
+						j["current"] = 4
+					
+					if j["current"] < 4:
+						i["description"] = j["description"] + " " + str(j["value"]) + "/" + str(j["levels"][j["current"]])
+					else:
+						i["description"] = j["description"] + " " + str(j["value"]) + "/" + str(j["levels"][j["current"]-1])
+					
 					if j["current"] != 0:
 						i["tier"] = j["tiers"][j["current"]-1]
 						i["done"] = 1

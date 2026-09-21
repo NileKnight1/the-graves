@@ -108,6 +108,12 @@ func flicker_effect():
 
 var force_camera = 0
 
+var cam1_fi = 0
+var cam2_fi = 0
+var cam3_fi = 0
+var cam4_fi = 0
+
+
 func crawl_effect():
 	global.day4crawl = 1
 	force_camera = 1
@@ -306,6 +312,8 @@ func _ready() -> void:
 	tasks()
 	#developer()
 	
+	if agent_x:
+		agent_x_apply()
 	
 	var tween = create_tween()
 	tween.tween_property($CanvasLayer/end_screen/black, "modulate:a", 0.0, 1)
@@ -701,7 +709,7 @@ func _process(delta: float) -> void:
 		$"map above/cams".get_child(opened_cam-1).enabled = 1
 		#
 	if calling && Input.is_action_just_pressed("skip"):
-		if agent_x && shift == 1:
+		if agent_x && shift == 1 && !call_index:
 			return
 		chat_msg += 1
 		$timers/skip_msg.start()
@@ -860,6 +868,14 @@ func agent_x_call(chat, target):
 	chat_msg += 1
 	agent_x_call(shift1_agent_x_, day1_start)
 
+func agent_x_apply():
+	if shift != 1:
+		$CanvasLayer/phone/caller.text = tr("agent_x_caller")
+		day1_call2_chat = [
+		["agent_x_chat2msg1", 1, "manager"],
+		["agent_x_chat2msg2", 2, "manager"],
+		
+	]
 
 func _on_decline_call_pressed() -> void:
 	$timers/skip_msg.stop()
@@ -1338,6 +1354,10 @@ func clear_anomaly_event(area):
 		if i["area"] == area && i["exist"] == 1:
 			i["exist"] = 0
 			wrong_report = 0
+			
+			if i["show"] == ^"map behind/out_left/p2/cabin/door_hand2":
+				global.door_hand = 1
+			
 			if i["show"] != null:
 				for j in i["show"]:
 					#print(i)
@@ -2007,6 +2027,13 @@ func cam_fixed(silent = 0):
 	if !silent:
 		global.total_sabotages_fixed += 1
 		sabotages_fixed += 1
+		match cam_current:
+			1: cam1_fi = 1
+			2: cam2_fi = 1
+			3: cam3_fi = 1
+			4: cam4_fi = 1
+			
+			
 	play_sound(fixed)
 	cam_prog_time = 0
 	cam_working[cam_current-1] = 1
@@ -2260,6 +2287,19 @@ func day_chat(chat, target):
 	$sfx/dia.stop()
 
 func day_end():
+	
+	if anomaly_events_count == 0: global.no_anomalies_left = 1
+	
+	if cam1_fi && cam2_fi && cam3_fi && cam4_fi:
+		global.all_cameras = 1
+	if wrong_reports_conut == 0:
+		global.perfect_reporter = 1
+	if anomaly_events_count == 0:
+		global.clean_sheet = 1
+	if bad_time == max_bad_time-1:
+		global.phew = 1
+
+	
 	phone_down()
 	stop_move()
 	print(call_index)
@@ -2316,6 +2356,7 @@ func day_end():
 		anomaly_events_count
 	)
 	
+	global.max_shift = max(global.max_shift, shift)
 	
 	if shift == 7:
 		end_game()
@@ -3843,6 +3884,8 @@ var timeshifter_options = 0
 
 func timeshifter_spawn():
 	timeshifter_exist = 1
+
+	global.time_shifter = 1
 	$anomalies/timeshifter.visible = 1
 	$areas/timeshifter/CollisionShape2D.set_deferred("disabled", 0)
 	
@@ -3890,7 +3933,6 @@ func end_game():
 
 
 #ideas to do
-# every single step sound
 #### newspapre player's name on day7
 ### achievements
 ## visitors mode

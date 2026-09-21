@@ -202,18 +202,18 @@ script = ExtResource("1_l6cm7")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1070363919]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=496245329]
-layout_direction = 2
 offset_right = 1355.3334
 offset_bottom = 722.0
+layout_direction = 2
 texture = ExtResource("2_bqqt6")
 expand_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=715974639]
-layout_direction = 2
 offset_left = -2.0
 offset_right = 1303.0
 offset_bottom = 752.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ln24")
 metadata/_edit_lock_ = true
@@ -232,10 +232,10 @@ scale = Vector2(0.6640625, 0.6666667)
 texture = ExtResource("4_wu84c")
 
 [node name="title" type="Label" parent="CanvasLayer" unique_id=904590312]
-layout_direction = 2
 offset_left = 317.0
 offset_right = 974.0
 offset_bottom = 161.0
+layout_direction = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_constants/outline_size = 9
@@ -248,55 +248,55 @@ vertical_alignment = 1
 [node name="settings" type="Control" parent="CanvasLayer" unique_id=577444520]
 process_mode = 3
 visible = false
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = -163.0
 offset_top = 11.0
 offset_right = -123.0
 offset_bottom = 51.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/settings" unique_id=273980237]
-layout_direction = 2
 layout_mode = 0
 offset_left = 435.97638
 offset_top = 163.0
 offset_right = 1184.0
 offset_bottom = 583.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
 
 [node name="options" type="VBoxContainer" parent="CanvasLayer/settings" unique_id=200837837]
 custom_minimum_size = Vector2(115, 60)
-layout_direction = 2
 layout_mode = 0
 offset_left = 457.0
 offset_top = 221.0
 offset_right = 1171.0
 offset_bottom = 563.0
 size_flags_horizontal = 3
+layout_direction = 2
 
 [node name="lang" type="HBoxContainer" parent="CanvasLayer/settings/options" unique_id=119177425]
 process_mode = 3
 custom_minimum_size = Vector2(115, 50)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 mouse_filter = 2
 theme_override_constants/separation = 30
 
 [node name="label" type="Label" parent="CanvasLayer/settings/options/lang" unique_id=1264352093]
 custom_minimum_size = Vector2(160, 0)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_fonts/font = ExtResource("4_rtw2f")
 theme_override_font_sizes/font_size = 28
 
 [node name="arabic" type="Button" parent="CanvasLayer/settings/options/lang" unique_id=1320050266]
 custom_minimum_size = Vector2(115, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -312,8 +312,8 @@ icon_alignment = 1
 
 [node name="english" type="Button" parent="CanvasLayer/settings/options/lang" unique_id=822861986]
 custom_minimum_size = Vector2(115, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -329,12 +329,12 @@ icon_alignment = 1
 
 [node name="close" type="Button" parent="CanvasLayer/settings" unique_id=422517287]
 custom_minimum_size = Vector2(10, 10)
-layout_direction = 2
 layout_mode = 0
 offset_left = 1144.0
 offset_top = 170.0
 offset_right = 1177.0
 offset_bottom = 203.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_7b55j")
@@ -344,12 +344,12 @@ text = "X"
 icon_alignment = 1
 
 [node name="title" type="Label" parent="CanvasLayer/settings" unique_id=1919529948]
-layout_direction = 2
 layout_mode = 0
 offset_left = 712.0
 offset_top = 156.0
 offset_right = 895.0
 offset_bottom = 217.0
+layout_direction = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_constants/outline_size = 9
@@ -362,41 +362,41 @@ vertical_alignment = 1
 [node name="scores" type="Control" parent="CanvasLayer" unique_id=290040016]
 process_mode = 3
 visible = false
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = -163.0
 offset_top = 11.0
 offset_right = -123.0
 offset_bottom = 51.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/scores" unique_id=559517372]
-layout_direction = 2
 layout_mode = 0
 offset_left = 435.97638
 offset_top = 163.0
 offset_right = 1184.0
 offset_bottom = 583.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
 
 [node name="options" type="VBoxContainer" parent="CanvasLayer/scores" unique_id=1857822935]
 custom_minimum_size = Vector2(115, 60)
-layout_direction = 2
 layout_mode = 0
 offset_left = 457.0
 offset_top = 186.0
 offset_right = 1171.0
 offset_bottom = 572.0
 size_flags_horizontal = 3
+layout_direction = 2
 theme_override_constants/separation = 13
 alignment = 1
 
 [node name="shift1" type="Button" parent="CanvasLayer/scores/options" unique_id=1236484001]
 custom_minimum_size = Vector2(115, 30)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -414,8 +414,8 @@ icon_alignment = 1
 
 [node name="shift2" type="Button" parent="CanvasLayer/scores/options" unique_id=1370041234]
 custom_minimum_size = Vector2(115, 30)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -433,8 +433,8 @@ icon_alignment = 1
 
 [node name="shift3" type="Button" parent="CanvasLayer/scores/options" unique_id=946063011]
 custom_minimum_size = Vector2(115, 30)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -452,8 +452,8 @@ icon_alignment = 1
 
 [node name="shift4" type="Button" parent="CanvasLayer/scores/options" unique_id=1355910775]
 custom_minimum_size = Vector2(115, 30)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -471,8 +471,8 @@ icon_alignment = 1
 
 [node name="shift5" type="Button" parent="CanvasLayer/scores/options" unique_id=1052057149]
 custom_minimum_size = Vector2(115, 30)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -490,8 +490,8 @@ icon_alignment = 1
 
 [node name="shift6" type="Button" parent="CanvasLayer/scores/options" unique_id=909912980]
 custom_minimum_size = Vector2(115, 30)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -509,8 +509,8 @@ icon_alignment = 1
 
 [node name="shift7" type="Button" parent="CanvasLayer/scores/options" unique_id=325473721]
 custom_minimum_size = Vector2(115, 30)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -528,12 +528,12 @@ icon_alignment = 1
 
 [node name="close" type="Button" parent="CanvasLayer/scores" unique_id=1582493352]
 custom_minimum_size = Vector2(10, 10)
-layout_direction = 2
 layout_mode = 0
 offset_left = 1144.0
 offset_top = 170.0
 offset_right = 1177.0
 offset_bottom = 203.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_7b55j")
@@ -543,12 +543,12 @@ text = "X"
 icon_alignment = 1
 
 [node name="title" type="Label" parent="CanvasLayer/scores" unique_id=1692334948]
-layout_direction = 2
 layout_mode = 0
 offset_left = 712.0
 offset_top = 156.0
 offset_right = 895.0
 offset_bottom = 217.0
+layout_direction = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_constants/outline_size = 9
@@ -561,39 +561,39 @@ vertical_alignment = 1
 [node name="scores_" type="Control" parent="CanvasLayer" unique_id=963286143]
 process_mode = 3
 visible = false
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = -163.0
 offset_top = 11.0
 offset_right = -123.0
 offset_bottom = 51.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/scores_" unique_id=1978205067]
-layout_direction = 2
 layout_mode = 0
 offset_left = 234.72229
 offset_top = 30.0
 offset_right = 1385.254
 offset_bottom = 676.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/scores_" unique_id=1080848130]
 custom_minimum_size = Vector2(1074, 0)
-layout_direction = 2
 layout_mode = 0
 offset_left = 268.0
 offset_top = 101.0
 offset_right = 1342.0
 offset_bottom = 129.0
+layout_direction = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/scores_/HBoxContainer" unique_id=1456521607]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 text = "Rank"
 label_settings = SubResource("LabelSettings_oa1go")
@@ -602,10 +602,10 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/scores_/HBoxContainer" unique_id=1152211956]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "Player"
@@ -615,10 +615,10 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer/scores_/HBoxContainer" unique_id=1130610954]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "Max Danger"
@@ -628,10 +628,10 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="CanvasLayer/scores_/HBoxContainer" unique_id=1661035582]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "Anomalies Reported"
@@ -641,10 +641,10 @@ vertical_alignment = 1
 
 [node name="Label6" type="Label" parent="CanvasLayer/scores_/HBoxContainer" unique_id=201586392]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "Sabotages Fixed"
@@ -653,32 +653,32 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/scores_" unique_id=418228047]
-layout_direction = 2
 layout_mode = 0
 offset_left = 271.0
 offset_top = 142.0
 offset_right = 1354.0
 offset_bottom = 613.0
+layout_direction = 2
 scroll_hint_mode = 1
 tile_scroll_hint = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/scores_/ScrollContainer" unique_id=545551996]
 custom_minimum_size = Vector2(1074, 547)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_constants/separation = 15
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer" unique_id=807730632]
 visible = false
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_constants/separation = 0
 alignment = 1
 
 [node name="Label1" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=729649741]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 text = "01"
 label_settings = SubResource("LabelSettings_tbmy8")
@@ -687,10 +687,10 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=1893070024]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "Ammar"
@@ -700,10 +700,10 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=1540469364]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "140"
@@ -713,10 +713,10 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=130305346]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "10"
@@ -726,10 +726,10 @@ vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="CanvasLayer/scores_/ScrollContainer/VBoxContainer/HBoxContainer1" unique_id=940462534]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "0"
@@ -739,12 +739,12 @@ vertical_alignment = 1
 
 [node name="close" type="Button" parent="CanvasLayer/scores_" unique_id=1348416946]
 custom_minimum_size = Vector2(10, 10)
-layout_direction = 2
 layout_mode = 0
 offset_left = 1343.0
 offset_top = 38.0
 offset_right = 1376.0
 offset_bottom = 71.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_7b55j")
@@ -755,12 +755,12 @@ icon_alignment = 1
 
 [node name="back" type="Button" parent="CanvasLayer/scores_" unique_id=1746075341]
 custom_minimum_size = Vector2(10, 10)
-layout_direction = 2
 layout_mode = 0
 offset_left = 246.0
 offset_top = 38.0
 offset_right = 279.0
 offset_bottom = 71.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_7b55j")
@@ -770,29 +770,29 @@ text = "<-"
 icon_alignment = 1
 
 [node name="black2" type="Panel" parent="CanvasLayer/scores_" unique_id=1259510468]
-layout_direction = 2
 layout_mode = 0
 offset_left = 248.97632
 offset_top = 612.0
 offset_right = 1371.0
 offset_bottom = 666.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/scores_" unique_id=2017619720]
-layout_direction = 2
 layout_mode = 0
 offset_left = 271.0
 offset_top = 629.0
 offset_right = 1345.0
 offset_bottom = 650.0
+layout_direction = 2
 theme_override_constants/separation = 0
 alignment = 1
 
 [node name="Label1" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=682088220]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 text = "01"
 label_settings = SubResource("LabelSettings_tbmy8")
@@ -801,10 +801,10 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=906187339]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "Ammar"
@@ -814,10 +814,10 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=561888621]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "140"
@@ -827,10 +827,10 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=1359542946]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "10"
@@ -840,10 +840,10 @@ vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="CanvasLayer/scores_/HBoxContainer3" unique_id=551596499]
 custom_minimum_size = Vector2(174, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 25
 text = "0"
@@ -852,12 +852,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="title" type="Label" parent="CanvasLayer/scores_" unique_id=739998937]
-layout_direction = 2
 layout_mode = 0
 offset_left = 712.0
 offset_top = 36.0
 offset_right = 895.0
 offset_bottom = 97.0
+layout_direction = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_constants/outline_size = 9
@@ -870,86 +870,86 @@ vertical_alignment = 1
 [node name="achievments_" type="Control" parent="CanvasLayer" unique_id=314716637]
 process_mode = 3
 visible = false
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = -163.0
 offset_top = 11.0
 offset_right = -123.0
 offset_bottom = 51.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/achievments_" unique_id=260737195]
-layout_direction = 2
 layout_mode = 0
 offset_left = 234.72229
 offset_top = 30.0
 offset_right = 1385.254
 offset_bottom = 676.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/achievments_" unique_id=396330206]
 custom_minimum_size = Vector2(1083, 471)
-layout_direction = 2
 layout_mode = 0
 offset_left = 271.0
 offset_top = 142.0
 offset_right = 1354.0
 offset_bottom = 660.0
+layout_direction = 2
 columns = 4
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/achievments_" unique_id=619968286]
-layout_direction = 2
 layout_mode = 0
 offset_left = 271.0
 offset_top = 142.0
 offset_right = 1354.0
 offset_bottom = 613.0
+layout_direction = 2
 scroll_hint_mode = 1
 tile_scroll_hint = true
 
 [node name="HFlowContainer" type="HFlowContainer" parent="CanvasLayer/achievments_/ScrollContainer" unique_id=611588668]
 custom_minimum_size = Vector2(1083, 471)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=694327467]
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
 
 [node name="Control" type="VBoxContainer" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer" unique_id=2038847124]
 visible = false
 custom_minimum_size = Vector2(260, 365)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 
 [node name="tier" type="Control" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=526976387]
 custom_minimum_size = Vector2(0, 20)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 mouse_filter = 2
 
 [node name="bg" type="Panel" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control/tier" unique_id=1750223996]
-layout_direction = 2
 layout_mode = 0
 offset_left = 91.0
 offset_top = 2.0
 offset_right = 167.0
 offset_bottom = 24.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8egab")
 
 [node name="tier" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control/tier" unique_id=455129942]
 custom_minimum_size = Vector2(20, 0)
-layout_direction = 2
 layout_mode = 0
 offset_left = -1.0
 offset_top = 3.0
 offset_right = 259.0
 offset_bottom = 24.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 16
 text = "Secret"
@@ -958,15 +958,15 @@ vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=1564981327]
 custom_minimum_size = Vector2(250, 200)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 texture = ExtResource("8_jk1qb")
 expand_mode = 2
 
 [node name="title" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=1540696213]
 custom_minimum_size = Vector2(250, 0)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 31
 text = "Label"
@@ -975,8 +975,8 @@ vertical_alignment = 1
 
 [node name="description" type="Label" parent="CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control" unique_id=750783669]
 custom_minimum_size = Vector2(250, 0)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 16
 text = "Go up and downstairs 10 times in 1 second and be fast as much as you can without getting tired."
@@ -986,12 +986,12 @@ autowrap_mode = 2
 
 [node name="close" type="Button" parent="CanvasLayer/achievments_" unique_id=1792034014]
 custom_minimum_size = Vector2(10, 10)
-layout_direction = 2
 layout_mode = 0
 offset_left = 1343.0
 offset_top = 38.0
 offset_right = 1376.0
 offset_bottom = 71.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_oa1go")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_7b55j")
@@ -1001,12 +1001,12 @@ text = "X"
 icon_alignment = 1
 
 [node name="title" type="Label" parent="CanvasLayer/achievments_" unique_id=1336397684]
-layout_direction = 2
 layout_mode = 0
 offset_left = 665.0
 offset_top = 36.0
 offset_right = 942.0
 offset_bottom = 97.0
+layout_direction = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_constants/outline_size = 9
@@ -1017,7 +1017,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="buttons" type="VBoxContainer" parent="CanvasLayer" unique_id=469679139]
-layout_direction = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1029,12 +1028,13 @@ offset_right = 69.0
 offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
+layout_direction = 2
 alignment = 1
 
 [node name="continue" type="Button" parent="CanvasLayer/buttons" unique_id=676032955]
 custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1052,8 +1052,8 @@ icon_alignment = 1
 
 [node name="newgame" type="Button" parent="CanvasLayer/buttons" unique_id=1249732743]
 custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1070,8 +1070,8 @@ icon_alignment = 1
 
 [node name="settings" type="Button" parent="CanvasLayer/buttons" unique_id=1063390557]
 custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1088,8 +1088,8 @@ icon_alignment = 1
 
 [node name="scores" type="Button" parent="CanvasLayer/buttons" unique_id=165535141]
 custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1106,8 +1106,8 @@ icon_alignment = 1
 
 [node name="achievments" type="Button" parent="CanvasLayer/buttons" unique_id=715962346]
 custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1119,14 +1119,13 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oa1go")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tbmy8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_jk1qb")
-disabled = true
 text = "achievments"
 icon_alignment = 1
 
 [node name="quit" type="Button" parent="CanvasLayer/buttons" unique_id=1551865551]
 custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1142,15 +1141,15 @@ text = "Quit"
 icon_alignment = 1
 
 [node name="account" type="VBoxContainer" parent="CanvasLayer" unique_id=280864093]
-layout_direction = 2
 offset_left = 993.0
 offset_top = 192.0
 offset_right = 1183.0
 offset_bottom = 575.0
+layout_direction = 2
 
 [node name="title" type="Label" parent="CanvasLayer/account" unique_id=1085457971]
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_constants/outline_size = 9
@@ -1162,8 +1161,8 @@ vertical_alignment = 1
 
 [node name="player" type="LineEdit" parent="CanvasLayer/account" unique_id=707319315]
 custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
@@ -1178,8 +1177,8 @@ drag_and_drop_selection_enabled = false
 
 [node name="savename" type="Button" parent="CanvasLayer/account" unique_id=740976158]
 custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1197,8 +1196,8 @@ icon_alignment = 1
 
 [node name="mail" type="LineEdit" parent="CanvasLayer/account" unique_id=297306567]
 custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
@@ -1208,8 +1207,8 @@ placeholder_text = "Email ..."
 
 [node name="password" type="LineEdit" parent="CanvasLayer/account" unique_id=1708202058]
 custom_minimum_size = Vector2(190, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
@@ -1218,14 +1217,14 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_wu84c")
 placeholder_text = "Password"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/account" unique_id=986410902]
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 alignment = 1
 
 [node name="signup" type="Button" parent="CanvasLayer/account/HBoxContainer" unique_id=159605032]
 custom_minimum_size = Vector2(90, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1242,8 +1241,8 @@ icon_alignment = 1
 
 [node name="login" type="Button" parent="CanvasLayer/account/HBoxContainer" unique_id=324922428]
 custom_minimum_size = Vector2(90, 55)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1259,38 +1258,38 @@ text = "Log In"
 icon_alignment = 1
 
 [node name="feedback" type="Label" parent="CanvasLayer/account" unique_id=1917743011]
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 
 [node name="msg" type="Control" parent="CanvasLayer" unique_id=1250708687]
 process_mode = 3
 visible = false
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = -163.0
 offset_top = 11.0
 offset_right = -123.0
 offset_bottom = 51.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/msg" unique_id=1011758647]
-layout_direction = 2
 layout_mode = 0
 offset_left = 521.9764
 offset_top = 234.0
 offset_right = 1098.0
 offset_bottom = 413.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
 
 [node name="title" type="Label" parent="CanvasLayer/msg" unique_id=1262301275]
-layout_direction = 2
 layout_mode = 0
 offset_left = 596.0
 offset_top = 233.0
 offset_right = 1007.0
 offset_bottom = 294.0
+layout_direction = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_constants/outline_size = 9
@@ -1302,12 +1301,12 @@ vertical_alignment = 1
 
 [node name="play" type="Button" parent="CanvasLayer/msg" unique_id=640819852]
 custom_minimum_size = Vector2(115, 55)
-layout_direction = 2
 layout_mode = 0
 offset_left = 636.0
 offset_top = 312.0
 offset_right = 751.0
 offset_bottom = 367.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1323,12 +1322,12 @@ icon_alignment = 1
 
 [node name="cancel" type="Button" parent="CanvasLayer/msg" unique_id=816984490]
 custom_minimum_size = Vector2(115, 55)
-layout_direction = 2
 layout_mode = 0
 offset_left = 860.0
 offset_top = 312.0
 offset_right = 975.0
 offset_bottom = 367.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1345,32 +1344,32 @@ icon_alignment = 1
 [node name="msg2" type="Control" parent="CanvasLayer" unique_id=532291291]
 process_mode = 3
 visible = false
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = -163.0
 offset_top = 11.0
 offset_right = -123.0
 offset_bottom = 51.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/msg2" unique_id=1895636178]
-layout_direction = 2
 layout_mode = 0
 offset_left = 521.9764
 offset_top = 234.0
 offset_right = 1098.0
 offset_bottom = 413.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
 
 [node name="title" type="Label" parent="CanvasLayer/msg2" unique_id=1664273779]
-layout_direction = 2
 layout_mode = 0
 offset_left = 596.0
 offset_top = 233.0
 offset_right = 1007.0
 offset_bottom = 294.0
+layout_direction = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_constants/outline_size = 9
@@ -1382,12 +1381,12 @@ vertical_alignment = 1
 
 [node name="play" type="Button" parent="CanvasLayer/msg2" unique_id=1353476507]
 custom_minimum_size = Vector2(115, 55)
-layout_direction = 2
 layout_mode = 0
 offset_left = 636.0
 offset_top = 312.0
 offset_right = 751.0
 offset_bottom = 367.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1403,12 +1402,12 @@ icon_alignment = 1
 
 [node name="cancel" type="Button" parent="CanvasLayer/msg2" unique_id=1008846972]
 custom_minimum_size = Vector2(115, 55)
-layout_direction = 2
 layout_mode = 0
 offset_left = 860.0
 offset_top = 312.0
 offset_right = 975.0
 offset_bottom = 367.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -1424,26 +1423,27 @@ icon_alignment = 1
 
 [node name="black" type="Panel" parent="CanvasLayer" unique_id=328284058]
 visible = false
-layout_direction = 2
 offset_left = -2.0
 offset_right = 1303.0
 offset_bottom = 752.0
+layout_direction = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5dd4i")
 
 [node name="Container" type="HBoxContainer" parent="CanvasLayer" unique_id=649265225]
+visible = false
 custom_minimum_size = Vector2(1280, 720)
-layout_direction = 2
 offset_left = 5.0
 offset_top = 4.0
 offset_right = 1285.0
 offset_bottom = 724.0
+layout_direction = 2
 mouse_filter = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Container" unique_id=1624407775]
 visible = false
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 text = "Loading ..."
 
 [connection signal="pressed" from="CanvasLayer/settings/options/lang/arabic" to="." method="_on_arabic_pressed"]

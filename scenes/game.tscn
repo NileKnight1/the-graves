@@ -1275,7 +1275,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rm0al")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 25.0
 }]
@@ -1311,9 +1311,9 @@ position = Vector2(-214, 443)
 script = ExtResource("1_lnu2h")
 
 [node name="map behind" type="Control" parent="." unique_id=1360215130]
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="bottom bound" type="StaticBody2D" parent="map behind" unique_id=1747960841]
@@ -1710,20 +1710,20 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ms3bu")
 
 [node name="tasks" type="Control" parent="map behind/room" unique_id=218274819]
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="bg" type="Panel" parent="map behind/room/tasks" unique_id=368551991]
-layout_direction = 2
 layout_mode = 0
 offset_left = -380.0
 offset_top = -215.0
 offset_right = -200.0
 offset_bottom = -92.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
 
@@ -1735,31 +1735,31 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="task1" type="Control" parent="map behind/room/tasks/day1" unique_id=938100191]
-layout_direction = 2
 anchors_preset = 0
 offset_left = -364.0
 offset_top = -196.0
 offset_right = -241.0
 offset_bottom = -156.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="square" type="Panel" parent="map behind/room/tasks/day1/task1" unique_id=1790408629]
-layout_direction = 2
 layout_mode = 0
 offset_left = -5.0
 offset_top = -4.0
 offset_right = 5.0
 offset_bottom = 5.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
 
 [node name="text" type="Label" parent="map behind/room/tasks/day1/task1" unique_id=115280092]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_top = -13.0
 offset_right = 131.0
 offset_bottom = 14.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 14
@@ -1768,70 +1768,70 @@ vertical_alignment = 1
 
 [node name="done" type="Control" parent="map behind/room/tasks/day1/task1" unique_id=1299267010]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="red_line" type="Panel" parent="map behind/room/tasks/day1/task1/done" unique_id=1378474082]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.845398
 offset_top = -1.0479736
 offset_right = -0.24182129
 offset_bottom = 38.130463
 rotation = 0.9626736
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
 
 [node name="done1" type="Panel" parent="map behind/room/tasks/day1/task1/done" unique_id=1197772792]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.0295715
 offset_top = 1.9082184
 offset_right = 7.6251526
 offset_bottom = 41.22783
 rotation = -0.5877817
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
 
 [node name="done2" type="Panel" parent="map behind/room/tasks/day1/task1/done" unique_id=10427462]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_right = 106.0
 offset_bottom = 39.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
 
 [node name="task2" type="Control" parent="map behind/room/tasks/day1" unique_id=1295540046]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_left = -364.0
 offset_top = -178.0
 offset_right = -241.0
 offset_bottom = -138.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="square" type="Panel" parent="map behind/room/tasks/day1/task2" unique_id=1497833224]
-layout_direction = 2
 layout_mode = 0
 offset_left = -5.0
 offset_top = -4.0
 offset_right = 5.0
 offset_bottom = 5.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
 
 [node name="text" type="Label" parent="map behind/room/tasks/day1/task2" unique_id=1240203777]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_top = -13.0
 offset_right = 131.0
 offset_bottom = 14.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 14
@@ -1840,70 +1840,70 @@ vertical_alignment = 1
 
 [node name="done" type="Control" parent="map behind/room/tasks/day1/task2" unique_id=1931622200]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="red_line" type="Panel" parent="map behind/room/tasks/day1/task2/done" unique_id=2099213656]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.845398
 offset_top = -1.0479736
 offset_right = -0.24182129
 offset_bottom = 38.130463
 rotation = 0.9626736
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
 
 [node name="done1" type="Panel" parent="map behind/room/tasks/day1/task2/done" unique_id=186250221]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.0295715
 offset_top = 1.9082184
 offset_right = 7.6251526
 offset_bottom = 41.22783
 rotation = -0.5877817
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
 
 [node name="done2" type="Panel" parent="map behind/room/tasks/day1/task2/done" unique_id=2144459027]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_right = 115.0
 offset_bottom = 39.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
 
 [node name="task3" type="Control" parent="map behind/room/tasks/day1" unique_id=2015458067]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_left = -364.0
 offset_top = -161.0
 offset_right = -241.0
 offset_bottom = -121.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="square" type="Panel" parent="map behind/room/tasks/day1/task3" unique_id=1455714262]
-layout_direction = 2
 layout_mode = 0
 offset_left = -5.0
 offset_top = -4.0
 offset_right = 5.0
 offset_bottom = 5.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
 
 [node name="text" type="Label" parent="map behind/room/tasks/day1/task3" unique_id=337663303]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_top = -13.0
 offset_right = 163.0
 offset_bottom = 29.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 14
@@ -1912,60 +1912,60 @@ autowrap_mode = 2
 
 [node name="done" type="Control" parent="map behind/room/tasks/day1/task3" unique_id=1180040795]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="red_line" type="Panel" parent="map behind/room/tasks/day1/task3/done" unique_id=1242009214]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.845398
 offset_top = -1.0479736
 offset_right = -0.24182129
 offset_bottom = 38.130463
 rotation = 0.9626736
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
 
 [node name="done1" type="Panel" parent="map behind/room/tasks/day1/task3/done" unique_id=3819402]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.0295715
 offset_top = 1.9082184
 offset_right = 7.6251526
 offset_bottom = 41.22783
 rotation = -0.5877817
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
 
 [node name="done2" type="Panel" parent="map behind/room/tasks/day1/task3/done" unique_id=1750019167]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_right = 156.0
 offset_bottom = 39.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
 
 [node name="task4" type="Control" parent="map behind/room/tasks/day1" unique_id=415202400]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_left = -364.0
 offset_top = -143.0
 offset_right = -241.0
 offset_bottom = -103.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="text" type="Label" parent="map behind/room/tasks/day1/task4" unique_id=503089493]
-layout_direction = 2
 layout_mode = 0
 offset_left = -4.0
 offset_top = -13.0
 offset_right = 160.0
 offset_bottom = 14.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 14
@@ -1974,40 +1974,40 @@ vertical_alignment = 1
 
 [node name="done" type="Control" parent="map behind/room/tasks/day1/task4" unique_id=104070359]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="red_line" type="Panel" parent="map behind/room/tasks/day1/task4/done" unique_id=1662540483]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.845398
 offset_top = -1.0479736
 offset_right = -0.24182129
 offset_bottom = 38.130463
 rotation = 0.9626736
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
 
 [node name="done1" type="Panel" parent="map behind/room/tasks/day1/task4/done" unique_id=1254332275]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.0295715
 offset_top = 1.9082184
 offset_right = 7.6251526
 offset_bottom = 41.22783
 rotation = -0.5877817
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
 
 [node name="done2" type="Panel" parent="map behind/room/tasks/day1/task4/done" unique_id=1850243944]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_right = 115.0
 offset_bottom = 39.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
 
@@ -2019,31 +2019,31 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="task1" type="Control" parent="map behind/room/tasks/day2" unique_id=940278587]
-layout_direction = 2
 anchors_preset = 0
 offset_left = -364.0
 offset_top = -196.0
 offset_right = -241.0
 offset_bottom = -156.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="square" type="Panel" parent="map behind/room/tasks/day2/task1" unique_id=1122715094]
-layout_direction = 2
 layout_mode = 0
 offset_left = -5.0
 offset_top = -4.0
 offset_right = 5.0
 offset_bottom = 5.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
 
 [node name="text" type="Label" parent="map behind/room/tasks/day2/task1" unique_id=2105188642]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_top = -13.0
 offset_right = 131.0
 offset_bottom = 14.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 14
@@ -2052,70 +2052,70 @@ vertical_alignment = 1
 
 [node name="done" type="Control" parent="map behind/room/tasks/day2/task1" unique_id=1427779521]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="red_line" type="Panel" parent="map behind/room/tasks/day2/task1/done" unique_id=479433772]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.845398
 offset_top = -1.0479736
 offset_right = -0.24182129
 offset_bottom = 38.130463
 rotation = 0.9626736
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
 
 [node name="done1" type="Panel" parent="map behind/room/tasks/day2/task1/done" unique_id=1405868808]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.0295715
 offset_top = 1.9082184
 offset_right = 7.6251526
 offset_bottom = 41.22783
 rotation = -0.5877817
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
 
 [node name="done2" type="Panel" parent="map behind/room/tasks/day2/task1/done" unique_id=100095611]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_right = 106.0
 offset_bottom = 39.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
 
 [node name="task2" type="Control" parent="map behind/room/tasks/day2" unique_id=1523614950]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_left = -364.0
 offset_top = -178.0
 offset_right = -241.0
 offset_bottom = -138.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="square" type="Panel" parent="map behind/room/tasks/day2/task2" unique_id=965606890]
-layout_direction = 2
 layout_mode = 0
 offset_left = -5.0
 offset_top = -4.0
 offset_right = 5.0
 offset_bottom = 5.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
 
 [node name="text" type="Label" parent="map behind/room/tasks/day2/task2" unique_id=1298206387]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_top = -13.0
 offset_right = 131.0
 offset_bottom = 14.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 14
@@ -2124,70 +2124,70 @@ vertical_alignment = 1
 
 [node name="done" type="Control" parent="map behind/room/tasks/day2/task2" unique_id=1647032095]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="red_line" type="Panel" parent="map behind/room/tasks/day2/task2/done" unique_id=375732142]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.845398
 offset_top = -1.0479736
 offset_right = -0.24182129
 offset_bottom = 38.130463
 rotation = 0.9626736
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
 
 [node name="done1" type="Panel" parent="map behind/room/tasks/day2/task2/done" unique_id=289295118]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.0295715
 offset_top = 1.9082184
 offset_right = 7.6251526
 offset_bottom = 41.22783
 rotation = -0.5877817
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
 
 [node name="done2" type="Panel" parent="map behind/room/tasks/day2/task2/done" unique_id=160901869]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_right = 115.0
 offset_bottom = 39.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
 
 [node name="task3" type="Control" parent="map behind/room/tasks/day2" unique_id=1788385370]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_left = -364.0
 offset_top = -161.0
 offset_right = -241.0
 offset_bottom = -121.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="square" type="Panel" parent="map behind/room/tasks/day2/task3" unique_id=1073017526]
-layout_direction = 2
 layout_mode = 0
 offset_left = -5.0
 offset_top = -4.0
 offset_right = 5.0
 offset_bottom = 5.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
 
 [node name="text" type="Label" parent="map behind/room/tasks/day2/task3" unique_id=1256370778]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_top = -13.0
 offset_right = 163.0
 offset_bottom = 29.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 14
@@ -2196,60 +2196,60 @@ autowrap_mode = 2
 
 [node name="done" type="Control" parent="map behind/room/tasks/day2/task3" unique_id=1165321734]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="red_line" type="Panel" parent="map behind/room/tasks/day2/task3/done" unique_id=826316671]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.845398
 offset_top = -1.0479736
 offset_right = -0.24182129
 offset_bottom = 38.130463
 rotation = 0.9626736
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
 
 [node name="done1" type="Panel" parent="map behind/room/tasks/day2/task3/done" unique_id=745592152]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.0295715
 offset_top = 1.9082184
 offset_right = 7.6251526
 offset_bottom = 41.22783
 rotation = -0.5877817
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
 
 [node name="done2" type="Panel" parent="map behind/room/tasks/day2/task3/done" unique_id=1598140461]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_right = 156.0
 offset_bottom = 39.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
 
 [node name="task4" type="Control" parent="map behind/room/tasks/day2" unique_id=1041198977]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_left = -364.0
 offset_top = -143.0
 offset_right = -241.0
 offset_bottom = -103.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="text" type="Label" parent="map behind/room/tasks/day2/task4" unique_id=1827750982]
-layout_direction = 2
 layout_mode = 0
 offset_left = -4.0
 offset_top = -13.0
 offset_right = 160.0
 offset_bottom = 14.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 14
@@ -2258,194 +2258,194 @@ vertical_alignment = 1
 
 [node name="done" type="Control" parent="map behind/room/tasks/day2/task4" unique_id=218672508]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="red_line" type="Panel" parent="map behind/room/tasks/day2/task4/done" unique_id=1730134731]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.845398
 offset_top = -1.0479736
 offset_right = -0.24182129
 offset_bottom = 38.130463
 rotation = 0.9626736
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_1kice")
 
 [node name="done1" type="Panel" parent="map behind/room/tasks/day2/task4/done" unique_id=1782555251]
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.0295715
 offset_top = 1.9082184
 offset_right = 7.6251526
 offset_bottom = 41.22783
 rotation = -0.5877817
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_5newe")
 
 [node name="done2" type="Panel" parent="map behind/room/tasks/day2/task4/done" unique_id=1459528111]
-layout_direction = 2
 layout_mode = 0
 offset_left = 10.0
 offset_right = 115.0
 offset_bottom = 39.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_0rmfi")
 
 [node name="antenna" type="Control" parent="map behind/room" unique_id=40966851]
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="outline" type="Control" parent="map behind/room/antenna" unique_id=1690097760]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="p1" type="Panel" parent="map behind/room/antenna/outline" unique_id=261706652]
-layout_direction = 2
 layout_mode = 0
 offset_left = 129.0
 offset_top = -633.0
 offset_right = 161.0
 offset_bottom = -541.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_15b3c")
 
 [node name="p2" type="Panel" parent="map behind/room/antenna/outline" unique_id=1082636166]
-layout_direction = 2
 layout_mode = 0
 offset_left = 133.0
 offset_top = -695.0
 offset_right = 157.0
 offset_bottom = -631.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_15b3c")
 
 [node name="p3" type="Panel" parent="map behind/room/antenna/outline" unique_id=253540504]
-layout_direction = 2
 layout_mode = 0
 offset_left = 140.0
 offset_top = -745.0
 offset_right = 150.0
 offset_bottom = -681.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_15b3c")
 
 [node name="p5" type="Panel" parent="map behind/room/antenna/outline" unique_id=1486996068]
-layout_direction = 2
 layout_mode = 0
 offset_left = 160.0
 offset_top = -764.0
 offset_right = 178.0
 offset_bottom = -696.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_15b3c")
 
 [node name="hover" type="Control" parent="map behind/room/antenna" unique_id=1061285790]
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="p1" type="Panel" parent="map behind/room/antenna/hover" unique_id=781341485]
-layout_direction = 2
 layout_mode = 0
 offset_left = 129.0
 offset_top = -633.0
 offset_right = 161.0
 offset_bottom = -541.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tc8uq")
 
 [node name="p2" type="Panel" parent="map behind/room/antenna/hover" unique_id=1672738330]
-layout_direction = 2
 layout_mode = 0
 offset_left = 133.0
 offset_top = -695.0
 offset_right = 157.0
 offset_bottom = -631.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tc8uq")
 
 [node name="p3" type="Panel" parent="map behind/room/antenna/hover" unique_id=1475590911]
-layout_direction = 2
 layout_mode = 0
 offset_left = 140.0
 offset_top = -745.0
 offset_right = 150.0
 offset_bottom = -681.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tc8uq")
 
 [node name="p5" type="Panel" parent="map behind/room/antenna/hover" unique_id=502890577]
-layout_direction = 2
 layout_mode = 0
 offset_left = 160.0
 offset_top = -764.0
 offset_right = 178.0
 offset_bottom = -696.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tc8uq")
 
 [node name="p1" type="Panel" parent="map behind/room/antenna" unique_id=656477779]
-layout_direction = 2
 layout_mode = 0
 offset_left = 129.0
 offset_top = -633.0
 offset_right = 161.0
 offset_bottom = -541.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_veukt")
 
 [node name="p2" type="Panel" parent="map behind/room/antenna" unique_id=1879171358]
-layout_direction = 2
 layout_mode = 0
 offset_left = 133.0
 offset_top = -695.0
 offset_right = 157.0
 offset_bottom = -631.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_veukt")
 
 [node name="p3" type="Panel" parent="map behind/room/antenna" unique_id=156764547]
-layout_direction = 2
 layout_mode = 0
 offset_left = 140.0
 offset_top = -745.0
 offset_right = 150.0
 offset_bottom = -689.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_veukt")
 
 [node name="p4" type="Panel" parent="map behind/room/antenna" unique_id=1287739702]
-layout_direction = 2
 layout_mode = 0
 offset_left = 140.0
 offset_top = -731.0
 offset_right = 166.0
 offset_bottom = -724.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_veukt")
 
 [node name="p5" type="Panel" parent="map behind/room/antenna" unique_id=404423078]
-layout_direction = 2
 layout_mode = 0
 offset_left = 160.0
 offset_top = -764.0
 offset_right = 178.0
 offset_bottom = -696.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_veukt")
 
@@ -2453,21 +2453,21 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_veukt")
 visible = false
 light_mask = 2
 z_index = 4
-layout_direction = 2
 anchors_preset = 0
 offset_left = 253.0
 offset_top = 44.0
 offset_right = 293.0
 offset_bottom = 84.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="nums" type="Control" parent="map behind/room/antenna/fix" unique_id=2019480273]
 light_mask = 2
 z_index = 4
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="n1" type="Button" parent="map behind/room/antenna/fix/nums" unique_id=2023190139]
@@ -2621,12 +2621,12 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_okmmv")
 text = "1"
 
 [node name="p1" type="Panel" parent="map behind/room/antenna/fix" unique_id=1557582852]
-layout_direction = 2
 layout_mode = 0
 offset_left = -266.0
 offset_top = -878.0
 offset_right = 52.0
 offset_bottom = -722.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nbjts")
 
@@ -4458,12 +4458,12 @@ theme_override_styles/panel = SubResource("StyleBoxLine_3x338")
 [node name="ProgressBar" type="TextureProgressBar" parent="map behind/generator" unique_id=468849089]
 visible = false
 light_mask = 2
-layout_direction = 2
 offset_left = 94.0
 offset_top = -162.0
 offset_right = 222.0
 offset_bottom = -34.0
 scale = Vector2(0.79761904, 0.79761904)
+layout_direction = 2
 mouse_filter = 2
 max_value = 1000.0
 value = 250.0
@@ -4481,11 +4481,11 @@ shape = SubResource("RectangleShape2D_5newe")
 [node name="E" type="Label" parent="map behind/generator" unique_id=580490757]
 visible = false
 light_mask = 2
-layout_direction = 2
 offset_left = 110.0
 offset_top = -145.0
 offset_right = 181.0
 offset_bottom = -78.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("6_p57ef")
 theme_override_font_sizes/font_size = 28
 text = "E"
@@ -4507,12 +4507,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="bar" type="TextureProgressBar" parent="player/cam_fix" unique_id=425859501]
-layout_direction = 2
 layout_mode = 0
 offset_left = -90.0
 offset_top = -323.0
 offset_right = 38.0
 offset_bottom = -195.0
+layout_direction = 2
 max_value = 180.0
 fill_mode = 4
 texture_over = ExtResource("4_bt5mj")
@@ -4583,6 +4583,13 @@ scale = Vector2(1.1062185, 1.1062185)
 collision_layer = 0
 collision_mask = 0
 
+[node name="timeshifter" parent="anomalies" unique_id=2028989712 instance=ExtResource("11_twgab")]
+visible = false
+position = Vector2(488, -584)
+scale = Vector2(-1.106, 1.106)
+collision_layer = 0
+collision_mask = 0
+
 [node name="tech" parent="anomalies" unique_id=1833789352 instance=ExtResource("11_twgab")]
 position = Vector2(-3692, -33)
 scale = Vector2(1.1485701, 1.1485701)
@@ -4590,9 +4597,9 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="map above" type="Control" parent="." unique_id=385126786]
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
+layout_direction = 2
 mouse_filter = 1
 
 [node name="left" type="Control" parent="map above" unique_id=1382695952]
@@ -5865,11 +5872,11 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 
 [node name="cam" type="Label" parent="map above/cams/cam1" unique_id=835605917]
-layout_direction = 2
 offset_left = -433.59146
 offset_top = -270.29892
 offset_right = -191.59146
 offset_bottom = -165.29892
+layout_direction = 2
 theme_override_colors/font_color = Color(0.60960835, 0.5529119, 0.56141627, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 38
@@ -5902,11 +5909,11 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 
 [node name="cam" type="Label" parent="map above/cams/cam2" unique_id=1086956351]
-layout_direction = 2
 offset_left = -433.59146
 offset_top = -270.29892
 offset_right = -191.59146
 offset_bottom = -165.29892
+layout_direction = 2
 theme_override_colors/font_color = Color(0.60960835, 0.5529119, 0.56141627, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 38
@@ -5939,11 +5946,11 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 
 [node name="cam" type="Label" parent="map above/cams/cam3" unique_id=1021493561]
-layout_direction = 2
 offset_left = -433.59146
 offset_top = -270.29892
 offset_right = -191.59146
 offset_bottom = -165.29892
+layout_direction = 2
 theme_override_colors/font_color = Color(0.60960835, 0.5529119, 0.56141627, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 38
@@ -5976,11 +5983,11 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 
 [node name="cam" type="Label" parent="map above/cams/cam4" unique_id=119792344]
-layout_direction = 2
 offset_left = -433.59146
 offset_top = -270.29892
 offset_right = -191.59146
 offset_bottom = -165.29892
+layout_direction = 2
 theme_override_colors/font_color = Color(0.60960835, 0.5529119, 0.56141627, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 38
@@ -6183,30 +6190,30 @@ visible = false
 
 [node name="control2" type="Control" parent="CanvasLayer" unique_id=947843890]
 process_mode = 3
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="camera" type="Control" parent="CanvasLayer" unique_id=177041334]
 process_mode = 3
 visible = false
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="close_cam" type="Button" parent="CanvasLayer/camera" unique_id=170245993]
-layout_direction = 2
 layout_mode = 0
 offset_left = 1035.0
 offset_top = 111.0
 offset_right = 1109.0
 offset_bottom = 209.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5931331, 0.59313387, 0.59313315, 1)
 theme_override_colors/font_pressed_color = Color(0.3779187, 0.3779189, 0.37791875, 1)
 theme_override_colors/font_hover_color = Color(0.42745098, 0.42745098, 0.42745098, 1)
@@ -6258,45 +6265,45 @@ icon_alignment = 1
 
 [node name="overscreen" type="Control" parent="CanvasLayer" unique_id=968829197]
 process_mode = 3
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="red" type="Panel" parent="CanvasLayer/overscreen" unique_id=145079217]
 visible = false
-layout_direction = 2
 layout_mode = 0
 offset_left = -21.0
 offset_top = -21.0
 offset_right = 1298.0
 offset_bottom = 741.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
 
 [node name="black" type="Panel" parent="CanvasLayer/overscreen" unique_id=1548742578]
 visible = false
-layout_direction = 2
 layout_mode = 0
 offset_left = -21.0
 offset_top = -21.0
 offset_right = 1298.0
 offset_bottom = 741.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_js0lu")
 
 [node name="phone" type="Control" parent="CanvasLayer" unique_id=1368197327]
 light_mask = 2
 z_index = 1
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = -39.0
 offset_top = 921.0
 offset_right = -39.0
 offset_bottom = 921.0
+layout_direction = 2
 
 [node name="Panel" type="Panel" parent="CanvasLayer/phone" unique_id=300349657]
 light_mask = 2
@@ -6478,33 +6485,33 @@ vertical_alignment = 1
 
 [node name="end_stats" type="Control" parent="CanvasLayer" unique_id=86515314]
 process_mode = 3
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="label" type="Label" parent="CanvasLayer/end_stats" unique_id=1269449842]
 visible = false
-layout_direction = 2
 layout_mode = 0
 offset_left = 159.0
 offset_top = 152.0
 offset_right = 1140.0
 offset_bottom = 554.0
+layout_direction = 2
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 236
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="shift2" type="Label" parent="CanvasLayer/end_stats" unique_id=1903131424]
-layout_direction = 2
 layout_mode = 0
 offset_left = 263.0
 offset_top = 18.0
 offset_right = 1014.0
 offset_bottom = 251.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("5_gee14")
@@ -6512,12 +6519,12 @@ theme_override_font_sizes/font_size = 138
 horizontal_alignment = 1
 
 [node name="t1" type="Label" parent="CanvasLayer/end_stats" unique_id=912889990]
-layout_direction = 2
 layout_mode = 0
 offset_left = 20.0
 offset_top = 242.0
 offset_right = 393.0
 offset_bottom = 323.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("5_gee14")
@@ -6525,12 +6532,12 @@ theme_override_font_sizes/font_size = 48
 horizontal_alignment = 1
 
 [node name="v1" type="Label" parent="CanvasLayer/end_stats" unique_id=1654253977]
-layout_direction = 2
 layout_mode = 0
 offset_left = 20.0
 offset_top = 279.0
 offset_right = 393.0
 offset_bottom = 440.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("5_gee14")
@@ -6538,12 +6545,12 @@ theme_override_font_sizes/font_size = 95
 horizontal_alignment = 1
 
 [node name="t2" type="Label" parent="CanvasLayer/end_stats" unique_id=1413644552]
-layout_direction = 2
 layout_mode = 0
 offset_left = 440.0
 offset_top = 242.0
 offset_right = 813.0
 offset_bottom = 323.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("5_gee14")
@@ -6551,12 +6558,12 @@ theme_override_font_sizes/font_size = 48
 horizontal_alignment = 1
 
 [node name="v2" type="Label" parent="CanvasLayer/end_stats" unique_id=66418767]
-layout_direction = 2
 layout_mode = 0
 offset_left = 440.0
 offset_top = 279.0
 offset_right = 813.0
 offset_bottom = 440.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("5_gee14")
@@ -6564,12 +6571,12 @@ theme_override_font_sizes/font_size = 95
 horizontal_alignment = 1
 
 [node name="t3" type="Label" parent="CanvasLayer/end_stats" unique_id=975299774]
-layout_direction = 2
 layout_mode = 0
 offset_left = 838.0
 offset_top = 242.0
 offset_right = 1211.0
 offset_bottom = 323.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("5_gee14")
@@ -6577,12 +6584,12 @@ theme_override_font_sizes/font_size = 48
 horizontal_alignment = 1
 
 [node name="v3" type="Label" parent="CanvasLayer/end_stats" unique_id=1171375192]
-layout_direction = 2
 layout_mode = 0
 offset_left = 838.0
 offset_top = 279.0
 offset_right = 1211.0
 offset_bottom = 440.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("5_gee14")
@@ -6591,18 +6598,18 @@ horizontal_alignment = 1
 
 [node name="gui" type="Control" parent="CanvasLayer" unique_id=2042194003]
 process_mode = 3
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="pause" type="Control" parent="CanvasLayer/gui" unique_id=2063931936]
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="pause" type="Button" parent="CanvasLayer/gui/pause" unique_id=1429207877]
@@ -6640,12 +6647,12 @@ vertical_alignment = 1
 
 [node name="time" type="Label" parent="CanvasLayer/gui" unique_id=297290087]
 visible = false
-layout_direction = 2
 layout_mode = 0
 offset_left = 522.0
 offset_top = 8.0
 offset_right = 764.0
 offset_bottom = 113.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
@@ -6654,12 +6661,12 @@ text = "00:00"
 horizontal_alignment = 1
 
 [node name="subtitles" type="Label" parent="CanvasLayer/gui" unique_id=802554335]
-layout_direction = 2
 layout_mode = 0
 offset_top = 635.0
 offset_right = 1279.0
 offset_bottom = 716.0
 pivot_offset = Vector2(633, -175)
+layout_direction = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("6_p57ef")
@@ -6669,12 +6676,12 @@ autowrap_mode = 2
 
 [node name="shift" type="Label" parent="CanvasLayer/gui" unique_id=2086180496]
 visible = false
-layout_direction = 2
 layout_mode = 0
 offset_left = 49.0
 offset_top = 105.0
 offset_right = 291.0
 offset_bottom = 210.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
@@ -6683,12 +6690,12 @@ text = "Shift 1"
 
 [node name="press_e" type="Label" parent="CanvasLayer/gui" unique_id=1381870537]
 visible = false
-layout_direction = 2
 layout_mode = 0
 offset_left = 543.0
 offset_top = 171.0
 offset_right = 785.0
 offset_bottom = 276.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.9495844, 0.90889615, 0.97020274, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
@@ -6699,12 +6706,12 @@ vertical_alignment = 1
 
 [node name="danger" type="Label" parent="CanvasLayer/gui" unique_id=1023276724]
 visible = false
-layout_direction = 2
 layout_mode = 0
 offset_left = 973.0
 offset_top = 8.0
 offset_right = 1246.0
 offset_bottom = 69.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
@@ -6714,12 +6721,12 @@ horizontal_alignment = 3
 
 [node name="reports" type="Label" parent="CanvasLayer/gui" unique_id=1040645522]
 visible = false
-layout_direction = 2
 layout_mode = 0
 offset_left = 813.0
 offset_top = 48.0
 offset_right = 1247.0
 offset_bottom = 153.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.5185001, 0.305, 0.61, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("6_p57ef")
@@ -6730,11 +6737,11 @@ horizontal_alignment = 2
 [node name="news" type="Control" parent="CanvasLayer" unique_id=348508205]
 process_mode = 3
 visible = false
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="bg" type="Sprite2D" parent="CanvasLayer/news" unique_id=570315062]
@@ -6745,19 +6752,19 @@ texture = ExtResource("14_wljb1")
 
 [node name="buttons" type="Control" parent="CanvasLayer/news" unique_id=1952980744]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="left" type="Button" parent="CanvasLayer/news/buttons" unique_id=1768647900]
-layout_direction = 2
 layout_mode = 0
 offset_left = 322.0
 offset_top = 319.0
 offset_right = 373.0
 offset_bottom = 371.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -6772,12 +6779,12 @@ text = "<"
 icon_alignment = 1
 
 [node name="right" type="Button" parent="CanvasLayer/news/buttons" unique_id=1940355659]
-layout_direction = 2
 layout_mode = 0
 offset_left = 910.0
 offset_top = 319.0
 offset_right = 961.0
 offset_bottom = 371.0
+layout_direction = 2
 theme_override_colors/font_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_focus_color = Color(0.84705883, 0.49803922, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.84705883, 0.49803922, 1, 1)
@@ -6794,28 +6801,28 @@ icon_alignment = 1
 [node name="day7" type="Control" parent="CanvasLayer/news" unique_id=686101661]
 process_mode = 3
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="topic1" type="Control" parent="CanvasLayer/news/day7" unique_id=284921492]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=482767235]
-layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 142.0
 offset_right = 637.0
 offset_bottom = 168.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 20
@@ -6824,13 +6831,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=1827741137]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 174.0
 offset_right = 517.0
 offset_bottom = 353.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -6840,13 +6847,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col2" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=1425792436]
-layout_direction = 2
 layout_mode = 0
 offset_left = 531.0
 offset_top = 174.0
 offset_right = 637.0
 offset_bottom = 353.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -6856,13 +6863,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col3" type="Label" parent="CanvasLayer/news/day7/topic1" unique_id=1393997301]
-layout_direction = 2
 layout_mode = 0
 offset_left = 656.0
 offset_top = 272.0
 offset_right = 865.0
 offset_bottom = 325.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -6872,32 +6879,32 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/day7/topic1" unique_id=1599292984]
-layout_direction = 2
 layout_mode = 0
 offset_left = 656.0
 offset_top = 143.99997
 offset_right = 1980.0
 offset_bottom = 833.0
 scale = Vector2(0.15785496, 0.17126271)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic2" type="Control" parent="CanvasLayer/news/day7" unique_id=1220166043]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/topic2" unique_id=1031313054]
-layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 358.0
 offset_right = 521.0
 offset_bottom = 403.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -6907,13 +6914,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/day7/topic2" unique_id=1091379967]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 380.0
 offset_right = 517.0
 offset_bottom = 615.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -6924,21 +6931,21 @@ autowrap_mode = 2
 
 [node name="topic3" type="Control" parent="CanvasLayer/news/day7" unique_id=2122964584]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_top = 212.0
 offset_right = 40.0
 offset_bottom = 252.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/topic3" unique_id=2091129561]
-layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 137.0
 offset_right = 741.0
 offset_bottom = 176.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -6948,13 +6955,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/day7/topic3" unique_id=1716775716]
-layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 159.0
 offset_right = 741.0
 offset_bottom = 240.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -6965,21 +6972,21 @@ autowrap_mode = 2
 
 [node name="topic4" type="Control" parent="CanvasLayer/news/day7" unique_id=1250576542]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_top = 212.0
 offset_right = 40.0
 offset_bottom = 252.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title2" type="Label" parent="CanvasLayer/news/day7/topic4" unique_id=293955435]
-layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 248.0
 offset_right = 629.0
 offset_bottom = 267.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -6988,13 +6995,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col2" type="Label" parent="CanvasLayer/news/day7/topic4" unique_id=1798635802]
-layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 271.0
 offset_right = 629.0
 offset_bottom = 396.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7005,21 +7012,21 @@ autowrap_mode = 2
 
 [node name="topic5" type="Control" parent="CanvasLayer/news/day7" unique_id=35287688]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_left = 119.0
 offset_right = 159.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/topic5" unique_id=1469189338]
-layout_direction = 2
 layout_mode = 0
 offset_left = 518.0
 offset_top = 460.0
 offset_right = 617.0
 offset_bottom = 479.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7028,13 +7035,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col3" type="Label" parent="CanvasLayer/news/day7/topic5" unique_id=5516978]
-layout_direction = 2
 layout_mode = 0
 offset_left = 518.0
 offset_top = 483.0
 offset_right = 622.0
 offset_bottom = 608.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7045,21 +7052,21 @@ autowrap_mode = 2
 
 [node name="topic6" type="Control" parent="CanvasLayer/news/day7" unique_id=598927589]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_left = 344.0
 offset_right = 384.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/topic6" unique_id=695460434]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 356.0
 offset_right = 517.0
 offset_bottom = 401.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0.79607844, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7069,13 +7076,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/day7/topic6" unique_id=1697616764]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 378.0
 offset_right = 517.0
 offset_bottom = 627.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7086,28 +7093,28 @@ autowrap_mode = 2
 
 [node name="control" type="Control" parent="CanvasLayer/news/day7" unique_id=186024147]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="header" type="Control" parent="CanvasLayer/news/day7/control" unique_id=1085394936]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/day7/control/header" unique_id=233475283]
-layout_direction = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 48.0
 offset_right = 749.0
 offset_bottom = 132.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0.47843137, 0.09019608, 0.09019608, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 49
@@ -7115,100 +7122,100 @@ text = "NEWSPAPER"
 horizontal_alignment = 1
 
 [node name="line1" type="Panel" parent="CanvasLayer/news/day7/control/header" unique_id=1955519370]
-layout_direction = 2
 layout_mode = 0
 offset_left = 396.0
 offset_top = 125.0
 offset_right = 886.0
 offset_bottom = 126.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
 [node name="line2" type="Panel" parent="CanvasLayer/news/day7/control/header" unique_id=742775392]
-layout_direction = 2
 layout_mode = 0
 offset_left = 396.0
 offset_top = 130.0
 offset_right = 886.0
 offset_bottom = 131.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
 [node name="line" type="Panel" parent="CanvasLayer/news/day7/control" unique_id=1179436334]
-layout_direction = 2
 layout_mode = 0
 offset_left = 420.0
 offset_top = 339.0
 offset_right = 862.0
 offset_bottom = 340.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="line3" type="Panel" parent="CanvasLayer/news/day7/control" unique_id=1631995332]
-layout_direction = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 423.54233
 offset_right = 716.23315
 offset_bottom = 424.54233
 rotation = 1.5707964
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="line4" type="Panel" parent="CanvasLayer/news/day7/control" unique_id=1682377894]
-layout_direction = 2
 layout_mode = 0
 offset_left = 749.0
 offset_top = 423.54233
 offset_right = 941.23315
 offset_bottom = 424.54233
 rotation = 1.5707964
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="line5" type="Panel" parent="CanvasLayer/news/day7/control" unique_id=271068592]
-layout_direction = 2
 layout_mode = 0
 offset_left = 634.0
 offset_top = 460.0
 offset_right = 789.7755
 offset_bottom = 461.0
 rotation = 1.5707964
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="pages" type="Control" parent="CanvasLayer/news" unique_id=1667927580]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="page1" type="Control" parent="CanvasLayer/news/pages" unique_id=233356727]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="topic1" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1333321899]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=1256709237]
-layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 142.0
 offset_right = 637.0
 offset_bottom = 168.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 20
@@ -7217,13 +7224,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=597896598]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 174.0
 offset_right = 517.0
 offset_bottom = 353.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7233,13 +7240,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=622632829]
-layout_direction = 2
 layout_mode = 0
 offset_left = 531.0
 offset_top = 174.0
 offset_right = 637.0
 offset_bottom = 353.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7249,13 +7256,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic1" unique_id=790679055]
-layout_direction = 2
 layout_mode = 0
 offset_left = 656.0
 offset_top = 272.0
 offset_right = 865.0
 offset_bottom = 325.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7265,32 +7272,32 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic1" unique_id=636836928]
-layout_direction = 2
 layout_mode = 0
 offset_left = 656.0
 offset_top = 143.99997
 offset_right = 1980.0
 offset_bottom = 833.0
 scale = Vector2(0.15785496, 0.17126271)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic2" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1719061689]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic2" unique_id=709030984]
-layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 410.25
 offset_right = 521.0
 offset_bottom = 455.25
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7300,13 +7307,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic2" unique_id=811979921]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 432.25
 offset_right = 517.0
 offset_bottom = 611.25
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7316,33 +7323,33 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic2" unique_id=435259365]
-layout_direction = 2
 layout_mode = 0
 offset_left = 424.99997
 offset_top = 349.0
 offset_right = 1749.0
 offset_bottom = 1038.0
 scale = Vector2(0.051359452, 0.084905624)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic3" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=2003324900]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_top = 212.0
 offset_right = 40.0
 offset_bottom = 252.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic3" unique_id=2140753474]
-layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 137.0
 offset_right = 741.0
 offset_bottom = 176.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7352,13 +7359,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic3" unique_id=114929905]
-layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 159.0
 offset_right = 741.0
 offset_bottom = 240.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7369,21 +7376,21 @@ autowrap_mode = 2
 
 [node name="topic4" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1210515110]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_top = 212.0
 offset_right = 40.0
 offset_bottom = 252.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title2" type="Label" parent="CanvasLayer/news/pages/page1/topic4" unique_id=1390632890]
-layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 248.0
 offset_right = 629.0
 offset_bottom = 267.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7392,13 +7399,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col2" type="Label" parent="CanvasLayer/news/pages/page1/topic4" unique_id=242118464]
-layout_direction = 2
 layout_mode = 0
 offset_left = 530.0
 offset_top = 271.0
 offset_right = 629.0
 offset_bottom = 396.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7409,21 +7416,21 @@ autowrap_mode = 2
 
 [node name="topic5" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=414487098]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_left = 119.0
 offset_right = 159.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic5" unique_id=1370803138]
-layout_direction = 2
 layout_mode = 0
 offset_left = 518.0
 offset_top = 460.0
 offset_right = 617.0
 offset_bottom = 479.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7432,13 +7439,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col3" type="Label" parent="CanvasLayer/news/pages/page1/topic5" unique_id=1339056796]
-layout_direction = 2
 layout_mode = 0
 offset_left = 518.0
 offset_top = 483.0
 offset_right = 622.0
 offset_bottom = 608.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7449,21 +7456,21 @@ autowrap_mode = 2
 
 [node name="topic6" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=1915513161]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_left = 344.0
 offset_right = 384.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/topic6" unique_id=709184589]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 410.25
 offset_right = 517.0
 offset_bottom = 455.25
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7473,13 +7480,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1770958912]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 432.25
 offset_right = 517.0
 offset_bottom = 611.25
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7489,40 +7496,40 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page1/topic6" unique_id=1665023708]
-layout_direction = 2
 layout_mode = 0
 offset_left = 430.0
 offset_top = 349.0
 offset_right = 1754.0
 offset_bottom = 1038.0
 scale = Vector2(0.051359452, 0.084905624)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="control" type="Control" parent="CanvasLayer/news/pages/page1" unique_id=835955205]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="header" type="Control" parent="CanvasLayer/news/pages/page1/control" unique_id=99083704]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page1/control/header" unique_id=318868198]
-layout_direction = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 48.0
 offset_right = 749.0
 offset_bottom = 132.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0.47843137, 0.09019608, 0.09019608, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 49
@@ -7530,93 +7537,93 @@ text = "NEWSPAPER"
 horizontal_alignment = 1
 
 [node name="line1" type="Panel" parent="CanvasLayer/news/pages/page1/control/header" unique_id=940363956]
-layout_direction = 2
 layout_mode = 0
 offset_left = 396.0
 offset_top = 125.0
 offset_right = 886.0
 offset_bottom = 126.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
 [node name="line2" type="Panel" parent="CanvasLayer/news/pages/page1/control/header" unique_id=388625337]
-layout_direction = 2
 layout_mode = 0
 offset_left = 396.0
 offset_top = 130.0
 offset_right = 886.0
 offset_bottom = 131.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
 [node name="line" type="Panel" parent="CanvasLayer/news/pages/page1/control" unique_id=1211975710]
-layout_direction = 2
 layout_mode = 0
 offset_left = 420.0
 offset_top = 339.0
 offset_right = 862.0
 offset_bottom = 340.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="line3" type="Panel" parent="CanvasLayer/news/pages/page1/control" unique_id=1957720911]
-layout_direction = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 423.54233
 offset_right = 716.23315
 offset_bottom = 424.54233
 rotation = 1.5707964
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="line4" type="Panel" parent="CanvasLayer/news/pages/page1/control" unique_id=587430305]
-layout_direction = 2
 layout_mode = 0
 offset_left = 749.0
 offset_top = 423.54233
 offset_right = 941.23315
 offset_bottom = 424.54233
 rotation = 1.5707964
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="line5" type="Panel" parent="CanvasLayer/news/pages/page1/control" unique_id=858893571]
-layout_direction = 2
 layout_mode = 0
 offset_left = 634.0
 offset_top = 460.0
 offset_right = 789.7755
 offset_bottom = 461.0
 rotation = 1.5707964
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="page2" type="Control" parent="CanvasLayer/news/pages" unique_id=79335699]
 process_mode = 3
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="topic1" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=410888199]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title2" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=2034765006]
-layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 142.0
 offset_right = 629.0
 offset_bottom = 168.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 20
@@ -7625,13 +7632,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic1" unique_id=437925247]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 174.0
 offset_right = 517.0
 offset_bottom = 353.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7641,34 +7648,34 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic1" unique_id=1026975133]
-layout_direction = 2
 layout_mode = 0
 offset_left = 528.75
 offset_top = 173.75
 offset_right = 1852.75
 offset_bottom = 862.75
 scale = Vector2(0.072885215, 0.21480413)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic2" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=180901564]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_left = 234.0
 offset_top = -203.0
 offset_right = 274.0
 offset_bottom = -163.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic2" unique_id=935609907]
-layout_direction = 2
 layout_mode = 0
 offset_left = 405.0
 offset_top = 410.25
 offset_right = 511.0
 offset_bottom = 455.25
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7678,13 +7685,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic2" unique_id=1870239589]
-layout_direction = 2
 layout_mode = 0
 offset_left = 405.0
 offset_top = 432.25
 offset_right = 511.0
 offset_bottom = 547.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7694,35 +7701,35 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic2" unique_id=348311215]
-layout_direction = 2
 layout_mode = 0
 offset_left = 422.0
 offset_top = 344.0
 offset_right = 1746.0
 offset_bottom = 1033.0
 scale = Vector2(0.051359452, 0.084905624)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic3" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=2146964670]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_left = 344.0
 offset_top = -203.0
 offset_right = 384.0
 offset_bottom = -163.0
 pivot_offset = Vector2(405, 503)
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1917136098]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 410.25
 offset_right = 517.0
 offset_bottom = 455.25
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7732,13 +7739,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1335486807]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 432.25
 offset_right = 517.0
 offset_bottom = 543.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7748,33 +7755,33 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic3" unique_id=1695907823]
-layout_direction = 2
 layout_mode = 0
 offset_left = 430.0
 offset_top = 344.0
 offset_right = 1754.0
 offset_bottom = 1033.0
 scale = Vector2(0.051359452, 0.084905624)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic4" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=1610298987]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_top = 229.0
 offset_right = 40.0
 offset_bottom = 269.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic4" unique_id=2009135562]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 137.0
 offset_right = 622.0
 offset_bottom = 176.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7784,13 +7791,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic4" unique_id=2036565526]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 159.0
 offset_right = 622.0
 offset_bottom = 240.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7800,33 +7807,33 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic4" unique_id=237226839]
-layout_direction = 2
 layout_mode = 0
 offset_left = 637.0
 offset_top = 137.0
 offset_right = 1961.0
 offset_bottom = 826.0
 scale = Vector2(0.16918427, 0.14513792)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic5" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=392915576]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_top = 346.0
 offset_right = 40.0
 offset_bottom = 386.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page2/topic5" unique_id=952150160]
-layout_direction = 2
 layout_mode = 0
 offset_left = 647.0
 offset_top = 137.0
 offset_right = 858.0
 offset_bottom = 176.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7836,13 +7843,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page2/topic5" unique_id=102070001]
-layout_direction = 2
 layout_mode = 0
 offset_left = 647.0
 offset_top = 159.0
 offset_right = 858.0
 offset_bottom = 240.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7852,40 +7859,40 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page2/topic5" unique_id=467814411]
-layout_direction = 2
 layout_mode = 0
 offset_left = 405.0
 offset_top = 142.0
 offset_right = 1729.0
 offset_bottom = 831.0
 scale = Vector2(0.16918427, 0.14513792)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="control" type="Control" parent="CanvasLayer/news/pages/page2" unique_id=1321971899]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="header" type="Control" parent="CanvasLayer/news/pages/page2/control" unique_id=1471554619]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page2/control/header" unique_id=602381741]
-layout_direction = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 48.0
 offset_right = 749.0
 offset_bottom = 132.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0.47843137, 0.09019608, 0.09019608, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 49
@@ -7893,61 +7900,61 @@ text = "NEWSPAPER"
 horizontal_alignment = 1
 
 [node name="line1" type="Panel" parent="CanvasLayer/news/pages/page2/control/header" unique_id=442399217]
-layout_direction = 2
 layout_mode = 0
 offset_left = 396.0
 offset_top = 125.0
 offset_right = 886.0
 offset_bottom = 126.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
 [node name="line2" type="Panel" parent="CanvasLayer/news/pages/page2/control/header" unique_id=807832120]
-layout_direction = 2
 layout_mode = 0
 offset_left = 396.0
 offset_top = 130.0
 offset_right = 886.0
 offset_bottom = 131.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
 [node name="line" type="Panel" parent="CanvasLayer/news/pages/page2/control" unique_id=281140365]
-layout_direction = 2
 layout_mode = 0
 offset_left = 420.0
 offset_top = 350.0
 offset_right = 862.0
 offset_bottom = 351.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="page3" type="Control" parent="CanvasLayer/news/pages" unique_id=420574280]
 process_mode = 3
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="topic1" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1335578913]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_top = 4.0
 offset_right = 40.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic1" unique_id=1310083190]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 137.0
 offset_right = 622.0
 offset_bottom = 176.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -7957,13 +7964,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic1" unique_id=1698378134]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 159.0
 offset_right = 622.0
 offset_bottom = 240.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -7973,33 +7980,33 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic1" unique_id=1665929119]
-layout_direction = 2
 layout_mode = 0
 offset_left = 639.0
 offset_top = 136.99998
 offset_right = 1963.0
 offset_bottom = 826.0
 scale = Vector2(0.16918427, 0.14513792)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic2" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=178429179]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_top = 121.0
 offset_right = 40.0
 offset_bottom = 161.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic2" unique_id=2127148859]
-layout_direction = 2
 layout_mode = 0
 offset_left = 647.0
 offset_top = 137.0
 offset_right = 858.0
 offset_bottom = 176.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -8009,13 +8016,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic2" unique_id=1237849378]
-layout_direction = 2
 layout_mode = 0
 offset_left = 647.0
 offset_top = 159.0
 offset_right = 858.0
 offset_bottom = 240.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -8025,33 +8032,33 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic2" unique_id=969598055]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 141.0
 offset_right = 1735.0
 offset_bottom = 830.0
 scale = Vector2(0.16918427, 0.14513792)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic3" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1819073805]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_top = 243.0
 offset_right = 40.0
 offset_bottom = 283.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title2" type="Label" parent="CanvasLayer/news/pages/page3/topic3" unique_id=733973477]
-layout_direction = 2
 layout_mode = 0
 offset_left = 409.0
 offset_top = 142.0
 offset_right = 629.0
 offset_bottom = 168.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 20
@@ -8060,13 +8067,13 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic3" unique_id=1832124511]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 174.0
 offset_right = 517.0
 offset_bottom = 353.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -8076,34 +8083,34 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic3" unique_id=1040885148]
-layout_direction = 2
 layout_mode = 0
 offset_left = 530.00006
 offset_top = 176.0
 offset_right = 1854.0
 offset_bottom = 865.0
 scale = Vector2(0.072885215, 0.21480413)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic4" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1171888755]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_left = 234.0
 offset_top = 40.0
 offset_right = 274.0
 offset_bottom = 80.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic4" unique_id=653408070]
-layout_direction = 2
 layout_mode = 0
 offset_left = 405.0
 offset_top = 410.25
 offset_right = 511.0
 offset_bottom = 455.25
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -8113,13 +8120,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic4" unique_id=1042597104]
-layout_direction = 2
 layout_mode = 0
 offset_left = 405.0
 offset_top = 432.25
 offset_right = 511.0
 offset_bottom = 571.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -8129,35 +8136,35 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic4" unique_id=876928134]
-layout_direction = 2
 layout_mode = 0
 offset_left = 418.0
 offset_top = 345.25
 offset_right = 1742.0
 offset_bottom = 1034.25
 scale = Vector2(0.051359452, 0.084905624)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="topic5" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=577463497]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_left = 344.0
 offset_top = 40.0
 offset_right = 384.0
 offset_bottom = 80.0
 pivot_offset = Vector2(405, 503)
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page3/topic5" unique_id=1375415083]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 410.25
 offset_right = 517.0
 offset_bottom = 455.25
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_gxtfn")
 theme_override_font_sizes/font_size = 14
@@ -8167,13 +8174,13 @@ vertical_alignment = 3
 autowrap_mode = 2
 
 [node name="col1" type="Label" parent="CanvasLayer/news/pages/page3/topic5" unique_id=1701588571]
-layout_direction = 2
 layout_mode = 0
 offset_left = 411.0
 offset_top = 432.25
 offset_right = 517.0
 offset_bottom = 543.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_twgab")
 theme_override_font_sizes/font_size = 10
@@ -8183,40 +8190,40 @@ horizontal_alignment = 3
 autowrap_mode = 2
 
 [node name="image" type="TextureRect" parent="CanvasLayer/news/pages/page3/topic5" unique_id=2044569369]
-layout_direction = 2
 layout_mode = 0
 offset_left = 427.0
 offset_top = 345.25
 offset_right = 1751.0
 offset_bottom = 1034.25
 scale = Vector2(0.051359452, 0.084905624)
+layout_direction = 2
 mouse_filter = 2
 texture = ExtResource("15_v2yb1")
 
 [node name="control" type="Control" parent="CanvasLayer/news/pages/page3" unique_id=1509597104]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="header" type="Control" parent="CanvasLayer/news/pages/page3/control" unique_id=249100368]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/news/pages/page3/control/header" unique_id=1118695269]
-layout_direction = 2
 layout_mode = 0
 offset_left = 524.0
 offset_top = 48.0
 offset_right = 749.0
 offset_bottom = 132.0
 pivot_offset = Vector2(-196, -8)
+layout_direction = 2
 theme_override_colors/font_color = Color(0.47843137, 0.09019608, 0.09019608, 1)
 theme_override_fonts/font = ExtResource("5_gee14")
 theme_override_font_sizes/font_size = 49
@@ -8224,42 +8231,42 @@ text = "NEWSPAPER"
 horizontal_alignment = 1
 
 [node name="line1" type="Panel" parent="CanvasLayer/news/pages/page3/control/header" unique_id=9784]
-layout_direction = 2
 layout_mode = 0
 offset_left = 396.0
 offset_top = 125.0
 offset_right = 886.0
 offset_bottom = 126.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
 [node name="line2" type="Panel" parent="CanvasLayer/news/pages/page3/control/header" unique_id=1448547328]
-layout_direction = 2
 layout_mode = 0
 offset_left = 396.0
 offset_top = 130.0
 offset_right = 886.0
 offset_bottom = 131.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
 [node name="line" type="Panel" parent="CanvasLayer/news/pages/page3/control" unique_id=577951258]
-layout_direction = 2
 layout_mode = 0
 offset_left = 420.0
 offset_top = 371.0
 offset_right = 862.0
 offset_bottom = 372.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nej56")
 
 [node name="dark" type="Panel" parent="CanvasLayer/news" unique_id=1108195066]
-layout_direction = 2
 layout_mode = 0
 offset_left = 395.0
 offset_top = 50.0
 offset_right = 881.0
 offset_bottom = 632.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x2ts8")
 
@@ -8283,13 +8290,13 @@ expand = true
 
 [node name="room" type="Control" parent="CanvasLayer" unique_id=1019839140]
 z_index = 2
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = 296.0
 offset_top = 478.0
 offset_right = 296.0
 offset_bottom = 478.0
+layout_direction = 2
 mouse_filter = 1
 
 [node name="menu" type="Control" parent="CanvasLayer/room" unique_id=1031709947]
@@ -8615,13 +8622,13 @@ vertical_alignment = 1
 [node name="decision" type="Control" parent="CanvasLayer" unique_id=77446715]
 visible = false
 z_index = 2
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = 296.0
 offset_top = 478.0
 offset_right = 296.0
 offset_bottom = 478.0
+layout_direction = 2
 mouse_filter = 1
 
 [node name="title" type="Label" parent="CanvasLayer/decision" unique_id=754728031]
@@ -8760,13 +8767,13 @@ icon_alignment = 1
 [node name="textures" type="Control" parent="CanvasLayer" unique_id=729522698]
 visible = false
 z_index = 2
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = 296.0
 offset_top = 478.0
 offset_right = 296.0
 offset_bottom = 478.0
+layout_direction = 2
 mouse_filter = 1
 
 [node name="hand1" type="TextureRect" parent="CanvasLayer/textures" unique_id=287474889]
@@ -8803,20 +8810,20 @@ autoplay = "default"
 process_mode = 3
 visible = false
 z_index = 3
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/pause" unique_id=2123467837]
-layout_direction = 2
 layout_mode = 0
 offset_left = -21.0
 offset_top = -21.0
 offset_right = 1298.0
 offset_bottom = 741.0
+layout_direction = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fccuv")
 
 [node name="resume" type="Button" parent="CanvasLayer/pause" unique_id=98084972]
@@ -8917,19 +8924,19 @@ icon_alignment = 1
 [node name="settings_" type="Control" parent="CanvasLayer/pause" unique_id=1916121079]
 process_mode = 3
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/pause/settings_" unique_id=1658938061]
-layout_direction = 2
 layout_mode = 0
 offset_left = 435.97638
 offset_top = 163.0
 offset_right = 1184.0
 offset_bottom = 583.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vgiqa")
 
@@ -8945,16 +8952,16 @@ tile_scroll_hint = true
 
 [node name="options" type="VBoxContainer" parent="CanvasLayer/pause/settings_/scroll" unique_id=1022781153]
 custom_minimum_size = Vector2(115, 60)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
+layout_direction = 2
 alignment = 2
 
 [node name="lang" type="HBoxContainer" parent="CanvasLayer/pause/settings_/scroll/options" unique_id=673093793]
 process_mode = 3
 custom_minimum_size = Vector2(115, 50)
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 mouse_filter = 2
 theme_override_constants/separation = 30
 
@@ -9000,30 +9007,30 @@ icon_alignment = 1
 
 [node name="brief_" type="Control" parent="CanvasLayer/pause" unique_id=407268803]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/pause/brief_" unique_id=94326865]
-layout_direction = 2
 layout_mode = 0
 offset_left = 435.97638
 offset_top = 163.0
 offset_right = 1184.0
 offset_bottom = 583.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vgiqa")
 
 [node name="mask" type="Panel" parent="CanvasLayer/pause/brief_" unique_id=2136222049]
 clip_children = 2
-layout_direction = 2
 layout_mode = 0
 offset_left = 445.97638
 offset_top = 174.0
 offset_right = 1174.0
 offset_bottom = 572.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1uieh")
 
@@ -9038,27 +9045,27 @@ scroll_hint_mode = 1
 tile_scroll_hint = true
 
 [node name="text" type="VBoxContainer" parent="CanvasLayer/pause/brief_/mask/scroll" unique_id=741904807]
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
+layout_direction = 2
 alignment = 2
 
 [node name="restart_" type="Control" parent="CanvasLayer/pause" unique_id=933704793]
 process_mode = 3
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/pause/restart_" unique_id=474874374]
-layout_direction = 2
 layout_mode = 0
 offset_left = -21.0
 offset_top = -21.0
 offset_right = 1298.0
 offset_bottom = 741.0
+layout_direction = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fccuv")
 
 [node name="yes" type="Button" parent="CanvasLayer/pause/restart_" unique_id=223548708]
@@ -9102,19 +9109,19 @@ icon_alignment = 1
 [node name="quit_" type="Control" parent="CanvasLayer/pause" unique_id=81264562]
 process_mode = 3
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/pause/quit_" unique_id=1432402183]
-layout_direction = 2
 layout_mode = 0
 offset_left = -21.0
 offset_top = -21.0
 offset_right = 1298.0
 offset_bottom = 741.0
+layout_direction = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fccuv")
 
 [node name="yes" type="Button" parent="CanvasLayer/pause/quit_" unique_id=1897918686]
@@ -9157,31 +9164,31 @@ icon_alignment = 1
 
 [node name="end_screen" type="Control" parent="CanvasLayer" unique_id=1748277989]
 process_mode = 3
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="black" type="Panel" parent="CanvasLayer/end_screen" unique_id=1222537379]
 visible = false
-layout_direction = 2
 layout_mode = 0
 offset_left = -21.0
 offset_top = -21.0
 offset_right = 1298.0
 offset_bottom = 741.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_js0lu")
 
 [node name="poster" type="Control" parent="CanvasLayer/end_screen" unique_id=433337517]
 process_mode = 3
 visible = false
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="bg" type="Sprite2D" parent="CanvasLayer/end_screen/poster" unique_id=570810641]
@@ -9192,26 +9199,26 @@ texture = ExtResource("14_wljb1")
 
 [node name="pages" type="Control" parent="CanvasLayer/end_screen/poster" unique_id=1534098435]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="page4" type="Control" parent="CanvasLayer/end_screen/poster/pages" unique_id=1377478985]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="topic1" type="Control" parent="CanvasLayer/end_screen/poster/pages/page4" unique_id=1274215696]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/end_screen/poster/pages/page4/topic1" unique_id=1512652635]
@@ -9239,18 +9246,18 @@ texture = ExtResource("15_v2yb1")
 
 [node name="control" type="Control" parent="CanvasLayer/end_screen/poster/pages/page4" unique_id=1860036580]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="header" type="Control" parent="CanvasLayer/end_screen/poster/pages/page4/control" unique_id=775563795]
 process_mode = 3
-layout_direction = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 
 [node name="title" type="Label" parent="CanvasLayer/end_screen/poster/pages/page4/control/header" unique_id=481492871]
@@ -9267,22 +9274,22 @@ text = "Busted"
 horizontal_alignment = 1
 
 [node name="line1" type="Panel" parent="CanvasLayer/end_screen/poster/pages/page4/control/header" unique_id=280372945]
-layout_direction = 2
 layout_mode = 0
 offset_left = 396.0
 offset_top = 125.0
 offset_right = 886.0
 offset_bottom = 126.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 
 [node name="line2" type="Panel" parent="CanvasLayer/end_screen/poster/pages/page4/control/header" unique_id=1903080998]
-layout_direction = 2
 layout_mode = 0
 offset_left = 396.0
 offset_top = 130.0
 offset_right = 886.0
 offset_bottom = 131.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpl5h")
 

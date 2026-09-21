@@ -84,6 +84,9 @@ func login(email: String, password: String, player):
 
 		access_token = json["access_token"]
 		user_id = json["user"]["id"]
+		
+		if user_id == "aa04766b-5089-4791-85da-6fefa4a9baea":
+			global.agent_x = 1
 
 		print("LOGIN SUCCESS!")
 		print("User ID: ", user_id)
