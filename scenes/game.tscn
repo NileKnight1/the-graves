@@ -9311,6 +9311,9 @@ wait_time = 7.0
 [node name="sabo_timer" type="Timer" parent="timers" unique_id=1760832061]
 one_shot = true
 
+[node name="anomalies" type="Timer" parent="timers" unique_id=542086999]
+autostart = true
+
 [node name="sfx" type="Node2D" parent="." unique_id=864452028]
 
 [node name="ringtone" type="AudioStreamPlayer" parent="sfx" unique_id=1353244250]
@@ -9539,3 +9542,4 @@ texture = ExtResource("19_264po")
 [connection signal="timeout" from="timers/skip_msg" to="." method="_on_skip_msg_timeout"]
 [connection signal="timeout" from="timers/shift_time" to="." method="_on_shift_time_timeout"]
 [connection signal="timeout" from="timers/sabo_timer" to="." method="_on_sabo_timer_timeout"]
+[connection signal="timeout" from="timers/anomalies" to="." method="_on_anomalies_timeout"]

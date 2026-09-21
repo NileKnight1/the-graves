@@ -22,6 +22,7 @@ func play_sound(sound, vol = 0.0):
 
 func _ready() -> void:
 	translation()
+	apply_achievements()
 	#supabase.get_leaderboard(1)
 	
 	if global.shift != 1:
@@ -429,17 +430,18 @@ func logged():
 ### Achievements
 func apply_achievements():
 	
-	if global.max_shift > 2:
+	
+	if global.max_shift > 1:
 		achievements[9]["done"] = 1
-	if global.max_shift > 3:
+	if global.max_shift > 2:
 		achievements[10]["done"] = 1
-	if global.max_shift > 4:
+	if global.max_shift > 3:
 		achievements[11]["done"] = 1
-	if global.max_shift > 5:
+	if global.max_shift > 4:
 		achievements[12]["done"] = 1
-	if global.max_shift > 6:
+	if global.max_shift > 5:
 		achievements[13]["done"] = 1
-	if global.max_shift > 7:
+	if global.max_shift > 6:
 		achievements[14]["done"] = 1
 		
 	achievements[0]["done"] = global.no_anomalies_left
@@ -570,6 +572,8 @@ var style_common = StyleBoxFlat.new()
 func show_achievement(ach):
 	var temp = $CanvasLayer/achievments_/ScrollContainer/HFlowContainer/Control.duplicate()
 	$CanvasLayer/achievments_/ScrollContainer/HFlowContainer.add_child(temp)
+	
+	
 	temp.visible = 1
 	temp.get_node("title").text = tr(ach["id"])
 	temp.get_node("description").text = tr(ach["description"])
